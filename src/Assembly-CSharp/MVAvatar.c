@@ -13,12 +13,24 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_AddChild
   if ((this->fields).body != (MVBody *)0x0) {
     MVBody::MVBody_Detach((this->fields).body,(MethodInfo *)0x0);
   }
-  if (((child != (MVWorldObjectClient *)0x0) &&
-      ((TypeInfo__MVBody->_1).naturalAligment <= (child->klass->_1).naturalAligment)) &&
-     ((MVBody__Class *)(child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
-      == TypeInfo__MVBody)) {
-    (this->fields).body = (MVBody *)child;
-    func_?(&(this->fields).body);
+  if (child != (MVWorldObjectClient *)0x0) {
+    if (((child->klass->_1).naturalAligment < (TypeInfo__MVBody->_1).naturalAligment) ||
+       ((MVBody__Class *)
+        (child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1] !=
+        TypeInfo__MVBody)) {
+      bVar1 = false;
+    }
+    else {
+      bVar1 = true;
+    }
+    pMVar2 = (MVBody *)0x0;
+    if (bVar1) {
+      pMVar2 = (MVBody *)child;
+    }
+    if (pMVar2 != (MVBody *)0x0) {
+      (this->fields).body = pMVar2;
+      func_?();
+    }
   }
   return;
 }
@@ -1285,23 +1297,32 @@ void Assembly-CSharp.dll::MVAvatar::MVAvatar_TransferChild
             ((Object *)StringLiteral_Transfer_child,(MethodInfo *)0x0);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    pMStack1 =
-         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                   (this_00,id,(MethodInfo *)0x0);
-    if (pMStack1 != (MVWorldObject *)0x0) {
-      if (((TypeInfo__MVBody->_1).naturalAligment <= (pMStack1->klass->_1).naturalAligment)
-         && ((MVBody__Class *)
-             (pMStack1->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
-             == TypeInfo__MVBody)) {
-        pIStack2 = (this->klass->vtable).__unknown.methodPtr;
+    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_00,id,(MethodInfo *)0x0);
+    if (pMVar1 != (MVWorldObject *)0x0) {
+      if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVBody->_1).naturalAligment) ||
+         ((MVBody__Class *)
+          (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1] !=
+          TypeInfo__MVBody)) {
+        bVar2 = false;
+      }
+      else {
+        bVar2 = true;
+      }
+      pMStack3 = (MVWorldObject *)0x0;
+      if (bVar2) {
+        pMStack3 = pMVar1;
+      }
+      if (pMStack3 != (MVWorldObject *)0x0) {
+        pIStack4 = (this->klass->vtable).__unknown.methodPtr;
         (*(code *)(this->klass->vtable).AttachBody.method)();
       }
     }
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

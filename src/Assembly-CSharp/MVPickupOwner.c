@@ -167,72 +167,84 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_CheckItemHolstering
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).currentItem;
-  if (pPVar1 != (PickupItem *)0x0) {
-    cVar2 = (*(code *)(pPVar1->klass->vtable).get_CanHolster.method)
-                      (pPVar1,(pPVar1->klass->vtable).get_HasUnlimitedAmmo.methodPtr);
-    if (cVar2 != '\0') {
-      if ((state & UpdateItemState__Enum_Holster) != UpdateItemState__Enum_None) {
-        pPVar1 = (this->fields).currentItem;
-        if (pPVar1 == (PickupItem *)0x0) goto code_?;
-        if ((pPVar1->fields)._IsHolstered_k__BackingField == 0) {
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__MVAvatar);
-            cRam_? = '\x01';
-          }
-          pMVar3 = (this->fields)._.worldObjectParent;
-          if (((pMVar3 == (MVWorldObjectClient *)0x0) ||
-              ((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment)) ||
-             ((MVAvatar__Class *)
-              (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
-              TypeInfo__MVAvatar)) {
-            targetHolsterTransform = (Transform *)0x0;
-          }
-          else {
-            this_00 = (MVBody *)pMVar3[1].fields.PositionChanged;
-            if ((this_00 == (MVBody *)0x0) ||
-               (this_01 = (MethodCall *)MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0),
-               this_01 == (MethodCall *)0x0)) goto code_?;
-            targetHolsterTransform =
-                 (Transform *)
-                 mscorlib.dll::System::Runtime::Remoting::Messaging::MethodCall::MethodCall_GetArg
-                           (this_01,8,(MethodInfo *)0x0);
-          }
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
-          }
-          bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)targetHolsterTransform,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar4 != 0) {
-            pPVar1 = (this->fields).currentItem;
-            if (pPVar1 == (PickupItem *)0x0) goto code_?;
-            PickupItem::PickupItem_HolsterPickup(pPVar1,targetHolsterTransform,(MethodInfo *)0x0);
-            pAVar5 = (this->fields).OnHolsteredChanged;
-            if (pAVar5 != (Action_1_Boolean_ *)0x0) {
-              (*(pAVar5->fields)._._.invoke_impl)
-                        ((pAVar5->fields)._._.method_code,1,(pAVar5->fields)._._.method);
-            }
-          }
-        }
-      }
-      if ((state & UpdateItemState__Enum_Unholster) != UpdateItemState__Enum_None) {
-        pPVar1 = (this->fields).currentItem;
-        if (pPVar1 == (PickupItem *)0x0) goto code_?;
-        if ((pPVar1->fields)._IsHolstered_k__BackingField != 0) {
-          PickupItem::PickupItem_UnholsterPickup(pPVar1,(MethodInfo *)0x0);
-          pAVar5 = (this->fields).OnHolsteredChanged;
-          if (pAVar5 != (Action_1_Boolean_ *)0x0) {
-            (*(pAVar5->fields)._._.invoke_impl)
-                      ((pAVar5->fields)._._.method_code,0,(pAVar5->fields)._._.method);
-          }
-        }
-      }
-    }
+  if (pPVar1 == (PickupItem *)0x0) goto code_?;
+  cVar2 = (*(code *)(pPVar1->klass->vtable).get_CanHolster.method)
+                    (pPVar1,(pPVar1->klass->vtable).get_HasUnlimitedAmmo.methodPtr);
+  if (cVar2 == '\0') {
     return;
   }
+  if ((state & UpdateItemState__Enum_Holster) != UpdateItemState__Enum_None) {
+    pPVar1 = (this->fields).currentItem;
+    if (pPVar1 == (PickupItem *)0x0) goto code_?;
+    if ((pPVar1->fields)._IsHolstered_k__BackingField != 0) goto code_?;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVAvatar);
+      cRam_? = '\x01';
+    }
+    pMVar3 = (this->fields)._.worldObjectParent;
+    if (pMVar3 == (MVWorldObjectClient *)0x0) {
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+      targetHolsterTransform = (Transform *)0x0;
+    }
+    else {
+      if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) ||
+         ((MVAvatar__Class *)
+          (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatar)) {
+        bVar4 = false;
+      }
+      else {
+        bVar4 = true;
+      }
+      pMVar5 = (MVWorldObjectClient *)0x0;
+      if (bVar4) {
+        pMVar5 = pMVar3;
+      }
+      if (pMVar5 == (MVWorldObjectClient *)0x0) goto code_?;
+      this_00 = (MVBody *)pMVar5[1].fields.PositionChanged;
+      if ((this_00 == (MVBody *)0x0) ||
+         (this_01 = (MethodCall *)MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0),
+         this_01 == (MethodCall *)0x0)) goto code_?;
+      targetHolsterTransform =
+           (Transform *)
+           mscorlib.dll::System::Runtime::Remoting::Messaging::MethodCall::MethodCall_GetArg
+                     (this_01,8,(MethodInfo *)0x0);
+    }
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)targetHolsterTransform,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar6 != 0) {
+      pPVar1 = (this->fields).currentItem;
+      if (pPVar1 == (PickupItem *)0x0) goto code_?;
+      PickupItem::PickupItem_HolsterPickup(pPVar1,targetHolsterTransform,(MethodInfo *)0x0);
+      pAVar7 = (this->fields).OnHolsteredChanged;
+      if (pAVar7 != (Action_1_Boolean_ *)0x0) {
+        (*(pAVar7->fields)._._.invoke_impl)
+                  ((pAVar7->fields)._._.method_code,1,(pAVar7->fields)._._.method);
+      }
+    }
+  }
+code_?:
+  if ((state & UpdateItemState__Enum_Unholster) != UpdateItemState__Enum_None) {
+    pPVar1 = (this->fields).currentItem;
+    if (pPVar1 == (PickupItem *)0x0) {
+code_?:
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    if ((pPVar1->fields)._IsHolstered_k__BackingField != 0) {
+      PickupItem::PickupItem_UnholsterPickup(pPVar1,(MethodInfo *)0x0);
+      pAVar7 = (this->fields).OnHolsteredChanged;
+      if (pAVar7 != (Action_1_Boolean_ *)0x0) {
+        (*(pAVar7->fields)._._.invoke_impl)
+                  ((pAVar7->fields)._._.method_code,0,(pAVar7->fields)._._.method);
+      }
+    }
+  }
   return;
 }
 
@@ -538,11 +550,11 @@ Vector3 * Assembly-CSharp.dll::MVPickupOwner::
     puVar4 = (undefined8 *)func_?(&stack0xffffffc8,&uStack_5,0);
     uVar10 = *puVar4;
     fStack_11 = *(float *)(puVar4 + 1);
-    uStack_7._0_4_ = (float)uVar10;
     fStack_12 = (float)uVar8;
+    uStack_7._0_4_ = (float)uVar10;
     uStack_7._4_4_ = (float)((ulonglong)uVar10 >> 0x20);
     fStack_13 = (float)((ulonglong)uVar8 >> 0x20);
-    fStack_14 = uStack_7._4_4_ * fStack_13 + (float)uStack_7 * fStack_12 + fStack_11 * fVar9;
+    fStack_14 = uStack_7._4_4_ * fStack_13 + fStack_12 * (float)uStack_7 + fStack_11 * fVar9;
     if (0.0 < fStack_14) {
       uStack_7 = uVar10;
       puVar4 = (undefined8 *)(**(code **)&x->klass[1]._0.byval_arg.attrs)();
@@ -576,24 +588,34 @@ Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_GetTargetHolsterTransform
   }
   pMVar1 = (this->fields)._.worldObjectParent;
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVAvatar->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
+    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) ||
        ((MVAvatar__Class *)
-        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] ==
+        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
         TypeInfo__MVAvatar)) {
-      this_00 = (MVBody *)pMVar1[1].fields.PositionChanged;
+      bVar2 = false;
+    }
+    else {
+      bVar2 = true;
+    }
+    pMVar3 = (MVWorldObjectClient *)0x0;
+    if (bVar2) {
+      pMVar3 = pMVar1;
+    }
+    if (pMVar3 != (MVWorldObjectClient *)0x0) {
+      this_00 = (MVBody *)pMVar3[1].fields.PositionChanged;
       if (this_00 != (MVBody *)0x0) {
         this_01 = (MethodCall *)MVBody::MVBody_get_BodyData(this_00,(MethodInfo *)0x0);
         if (this_01 != (MethodCall *)0x0) {
-          pTVar2 = (Transform *)
+          pTVar4 = (Transform *)
                    mscorlib.dll::System::Runtime::Remoting::Messaging::MethodCall::MethodCall_GetArg
                              (this_01,8,(MethodInfo *)0x0);
-          return pTVar2;
+          return pTVar4;
         }
       }
       func_?();
-      pcVar3 = (code *)swi(3);
-      pTVar2 = (Transform *)(*pcVar3)();
-      return pTVar2;
+      pcVar5 = (code *)swi(3);
+      pTVar4 = (Transform *)(*pcVar5)();
+      return pTVar4;
     }
   }
   return (Transform *)0x0;

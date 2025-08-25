@@ -42,8 +42,8 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelMotor::HamsterWheelMotor_GetVehicleVe
                      ((MethodInfo *)0x0);
   fVar7 = fVar7 / _UNK_?;
   fStack_4 = velocity.x - fStack_4 * fVar7;
-  fStack_8 = velocity.y - fVar7 * fStack_5;
-  uStack_9 = CONCAT44(velocity.z - fVar7 * (float)pQStack_6,(undefined4)uStack_9);
+  fStack_8 = velocity.y - fStack_5 * fVar7;
+  uStack_9 = CONCAT44(velocity.z - (float)pQStack_6 * fVar7,(undefined4)uStack_9);
   if ((this->fields)._.HandleInput != 0) {
     pCVar10 = (Component *)
               System.Data.dll::System::Data::DataTable::DataTable_get_MinimumCapacity

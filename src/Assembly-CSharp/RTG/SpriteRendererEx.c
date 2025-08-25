@@ -177,7 +177,7 @@ code_?:
         uStack_17._0_4_ = pVVar10->x;
         uStack_17._4_4_ = pVVar10->y;
         fStack_18 = pVVar10->z;
-        fVar19 = fStack_16 * uStack_17._4_4_ + fStack_15 * (float)uStack_17 + fStack_14 * fStack_18
+        fVar19 = uStack_17._4_4_ * fStack_16 + (float)uStack_17 * fStack_15 + fStack_18 * fStack_14
                  + 0.0;
         fStack_20 = fStack_16 - uStack_17._4_4_ * fVar19;
         fStack_21 = fStack_15 - (float)uStack_17 * fVar19;
@@ -206,11 +206,11 @@ code_?:
         bVar8 = AABB::AABB_ContainsPoint(&AStack_25,point,(MethodInfo *)0x0);
         if (bVar8 == 0) goto code_?;
         fVar26 = AStack_25._center.y - AStack_23._size.x * _UNK_?;
-        fVar19 = AStack_25._center.x - CStack_24.r * _UNK_?;
-        fVar27 = fStack_18 * (AStack_25._center.z - _UNK_?) +
-                 uStack_17._4_4_ * fVar26 + fVar19 * (float)uStack_17 + 0.0;
-        fStack_20 = fStack_20 - (fVar26 - uStack_17._4_4_ * fVar27);
-        fStack_21 = fStack_21 - (fVar19 - (float)uStack_17 * fVar27);
+        fVar27 = AStack_25._center.x - CStack_24.r * _UNK_?;
+        fVar19 = uStack_17._4_4_ * fVar26 + fVar27 * (float)uStack_17 +
+                 fStack_18 * (AStack_25._center.z - _UNK_?) + 0.0;
+        fStack_20 = fStack_20 - (fVar26 - uStack_17._4_4_ * fVar19);
+        fStack_21 = fStack_21 - (fVar27 - (float)uStack_17 * fVar19);
         fStack_14 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_pixelsPerUnit
                               (this,(MethodInfo *)0x0);
         fStack_28 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_pixelsPerUnit

@@ -113,8 +113,8 @@ bool MVWorldObject.dll::WinningConditionGroup::WinningConditionGroup_Traverse
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
+  puStack_4 = &stack0xffffffb0;
+  puVar5 = &stack0xffffffb0;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__get_Values__
@@ -200,24 +200,25 @@ code_?:
           pOStack_13 = (DStack_6._currentValue)->klass;
           uVar14 = 0;
           uStack_15 = 0;
-          uVar16._0_1_ = (pOStack_13->_1).rank;
-          uVar16._1_1_ = (pOStack_13->_1).minimumAlignment;
-          uStack_17 = (uint)uVar16;
-          if (uVar16 != 0) {
+          sVar16._0_1_ = (pOStack_13->_1).rank;
+          sVar16._1_1_ = (pOStack_13->_1).minimumAlignment;
+          if (sVar16 != 0) {
             do {
               if (pOStack_13->interfaceOffsets[uVar14].interfaceType ==
                   (Il2CppClass *)TypeInfo__IWinningCondition) {
-                ppvVar18 = &(DStack_6._currentValue)->klass[1]._0.gc_desc +
+                ppvVar17 = &(DStack_6._currentValue)->klass[1]._0.gc_desc +
                           (DStack_6._currentValue)->klass->interfaceOffsets[uVar14].offset * 2;
                 goto code_?;
               }
               uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar16);
+              uVar18._0_1_ = ((DStack_6._currentValue)->klass->_1).rank;
+              uVar18._1_1_ = ((DStack_6._currentValue)->klass->_1).minimumAlignment;
+            } while (uVar14 < uVar18);
           }
-          ppvVar18 = (void **)func_?(DStack_6._currentValue,TypeInfo__IWinningCondition,4);
+          ppvVar17 = (void **)func_?(DStack_6._currentValue,TypeInfo__IWinningCondition,4);
 code_?:
           method_00 = callBack;
-          cVar7 = (**ppvVar18)(pOVar11,callBack,ppvVar18[1]);
+          cVar7 = (**ppvVar17)(pOVar11,callBack,ppvVar17[1]);
         } while (cVar7 == '\0');
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

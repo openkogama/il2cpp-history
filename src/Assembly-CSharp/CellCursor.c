@@ -250,31 +250,24 @@ IntVector Assembly-CSharp.dll::CellCursor::CellCursor_GetCubeCursorPos
   if (method == (MethodInfo *)0x0) {
     uVar6 = func_?();
     bVar7 = (byte)((ushort)uVar6 >> 8);
-    bVar8 = (byte)uVar6;
-    in_AF = 9 < (bVar8 & 0xf) | in_AF;
-    bVar9 = 0x99 < bVar8 || (CARRY1(bVar7,bVar7) || CARRY1(bVar7 * '\x02',bVar5));
-    bVar5 = bVar8 + in_AF * -6 + bVar9 * -0x60;
-    bVar8 = (byte)((uint)extraout_ECX >> 8);
-    pcVar10 = (char *)CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                              CONCAT11(bVar8 * '\x02' + bVar9,(char)extraout_ECX));
-    in_AF = 9 < (bVar5 & 0xf) | in_AF;
-    bVar9 = 0x99 < bVar5 || (CARRY1(bVar8,bVar8) || CARRY1(bVar8 * '\x02',bVar9));
-    bVar5 = bVar5 + in_AF * -6 + bVar9 * -0x60;
-    *pcVar10 = *pcVar10 + bVar5 + (9 < (bVar5 & 0xf) | in_AF) * -6 +
-                        (0x99 < bVar5 ||
-                        (CARRY1(extraout_DH,extraout_DH) || CARRY1(extraout_DH * '\x02',bVar9))) *
-                        -0x5f;
-    pcVar11 = (code *)swi(3);
-    IVar12 = (IntVector)(*pcVar11)();
-    return IVar12;
+    bVar8 = CARRY1(bVar7,bVar7) || CARRY1(bVar7 * '\x02',bVar5);
+    bVar5 = (byte)((uint)extraout_ECX >> 8);
+    pcVar9 = (char *)CONCAT22((short)((uint)extraout_ECX >> 0x10),
+                              CONCAT11(bVar5 * '\x02' + bVar8,(char)extraout_ECX));
+    *pcVar9 = *pcVar9 + (char)uVar6 +
+              (CARRY1(extraout_DH,extraout_DH) ||
+              CARRY1(extraout_DH * '\x02',CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar8)));
+    pcVar10 = (code *)swi(3);
+    IVar11 = (IntVector)(*pcVar10)();
+    return IVar11;
   }
   cube = (Cube *)method->invoker_method;
-  pcVar10 = method->name;
+  pcVar9 = method->name;
   if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Cube);
   }
-  bVar13 = Cube::Cube_IsFaceBoxSideAligened(cube,(Face__Enum)pcVar10,(MethodInfo *)0x0);
-  if (bVar13 != 0) {
+  bVar12 = Cube::Cube_IsFaceBoxSideAligened(cube,(Face__Enum)pcVar9,(MethodInfo *)0x0);
+  if (bVar12 != 0) {
     if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__IntVector);
     }
@@ -298,31 +291,31 @@ IntVector Assembly-CSharp.dll::CellCursor::CellCursor_GetCubeCursorPos
     case (char *)0x5:
       iVar3 = 1;
     }
-    iVar14 = (int16_t)puVar4;
-    pIVar15 = method[1].methodPointer;
+    iVar13 = (int16_t)puVar4;
+    pIVar14 = method[1].methodPointer;
     uVar6 = *(undefined2 *)&method[1].virtualMethodPointer;
     if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
       puVar4 = &UNK_?;
       func_?();
     }
-    i1.z = (int16_t)pIVar15;
+    i1.z = (int16_t)pIVar14;
     i1._0_4_ = &stack0xffffffec;
-    i2.y = in_stack_16;
+    i2.y = in_stack_15;
     i2.x = uVar6;
     i2.z = iVar3;
-    IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                       (i1,i2,(MethodInfo *)CONCAT22((short)((uint)puVar4 >> 0x10),iVar14));
-    this->klass = (CellCursor__Class *)*IVar12._0_4_;
-    *(undefined2 *)&this->monitor = *(undefined2 *)(IVar12._0_4_ + 1);
-    IVar17.z = (int16_t)this;
-    IVar17._0_4_ = this;
-    return IVar17;
+    IVar11 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+                       (i1,i2,(MethodInfo *)CONCAT22((short)((uint)puVar4 >> 0x10),iVar13));
+    this->klass = (CellCursor__Class *)*IVar11._0_4_;
+    *(undefined2 *)&this->monitor = *(undefined2 *)(IVar11._0_4_ + 1);
+    IVar16.z = (int16_t)this;
+    IVar16._0_4_ = this;
+    return IVar16;
   }
   this->klass = (CellCursor__Class *)method[1].methodPointer;
   *(undefined2 *)&this->monitor = *(undefined2 *)&method[1].virtualMethodPointer;
-  IVar12.z = extraout_DX;
-  IVar12._0_4_ = this;
-  return IVar12;
+  IVar11.z = extraout_DX;
+  IVar11._0_4_ = this;
+  return IVar11;
 }
 
 
@@ -433,206 +426,87 @@ void Assembly-CSharp.dll::CellCursor::CellCursor_SetCursor
                )
 
 {
-  puVar1 = unaff_EDI;
-  method_00 = unaff_EBX;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__Cube);
+    func_?(0xdd04);
     cRam_? = '\x01';
   }
-  iVar2 = 0;
-  iVar3 = 0;
-  iVar4 = 0;
+  IStack_1.x = 0;
+  IStack_1.y = 0;
+  IStack_1.z = 0;
   if (info != (CubePickingInfo *)0x0) {
     cube = (info->fields).cube;
-    unaff_EBX = (IntVector__Class *)(info->fields).pickedFace;
+    face = (info->fields).pickedFace;
     if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-      iVar4 = 0;
-      func_?();
+      func_?(TypeInfo__Cube);
     }
-    uVar5 = 0;
-    uVar6 = (undefined2)((uint)cube >> 0x10);
-    bVar7 = Cube::Cube_IsFaceBoxSideAligened(cube,(Face__Enum)unaff_EBX,(MethodInfo *)0x0);
-    if (bVar7 == 0) {
-      unaff_EDI = *(undefined4 **)&(info->fields).iLocalPos;
-      iVar4 = (info->fields).iLocalPos.z;
+    uVar2 = 0;
+    uVar3 = (undefined2)((uint)cube >> 0x10);
+    bVar4 = Cube::Cube_IsFaceBoxSideAligened(cube,face,(MethodInfo *)0x0);
+    if (bVar4 == 0) {
+      uVar5._0_2_ = (info->fields).iLocalPos.x;
+      uVar5._2_2_ = (info->fields).iLocalPos.y;
+      iVar6 = (info->fields).iLocalPos.z;
     }
     else {
       if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-        method_00 = TypeInfo__MV__WorldObject__IntVector;
-        func_?();
+        func_?(TypeInfo__MV__WorldObject__IntVector);
       }
-      puStackY_48 = &UNK_?;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&stack0xfffffff4,0,0,0,(MethodInfo *)0x0);
+                (&IStack_1,0,0,0,(MethodInfo *)0x0);
       switch((info->fields).pickedFace) {
       case 0:
-        iVar3 = 1;
+        IStack_1.y = 1;
         break;
       case 1:
-        iVar3 = -1;
+        IStack_1.y = -1;
         break;
       case 2:
-        iVar4 = -1;
+        IStack_1.z = -1;
         break;
       case 3:
-        iVar4 = 1;
+        IStack_1.z = 1;
         break;
       case 4:
-        iVar2 = -1;
+        IStack_1.x = -1;
         break;
       case 5:
-        iVar2 = 1;
+        IStack_1.x = 1;
       }
-      uVar8 = (info->fields).iLocalPos.x;
-      iVar9 = (info->fields).iLocalPos.z;
-      unaff_EBX = (IntVector__Class *)CONCAT22(iVar3,iVar2);
+      iVar7 = IStack_1.z;
+      iVar8 = IStack_1.x;
+      uVar9 = (info->fields).iLocalPos.x;
+      iVar6 = (info->fields).iLocalPos.z;
       if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-        uVar5 = 0x1045;
-        func_?();
+        uVar2 = 0x1045;
+        func_?(TypeInfo__MV__WorldObject__IntVector);
       }
-      puVar1 = (undefined4 *)0x0;
-      IVar10.z = uVar8;
-      IVar10._0_4_ = &stack0xffffffec;
-      i2.y = uVar6;
-      i2.x = iVar9;
-      i2.z = iVar2;
+      IVar10.z = uVar9;
+      IVar10._0_4_ = auStack_11;
+      i2.y = uVar3;
+      i2.x = iVar6;
+      i2.z = iVar8;
       IVar10 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                         (IVar10,i2,(MethodInfo *)CONCAT22(uVar5,iVar4));
-      unaff_EDI = (undefined4 *)*IVar10._0_4_;
-      iVar4 = *(int16_t *)(IVar10._0_4_ + 1);
+                        (IVar10,i2,(MethodInfo *)CONCAT22(uVar2,iVar7));
+      uVar5 = *IVar10._0_4_;
+      iVar6 = *(int16_t *)(IVar10._0_4_ + 1);
     }
-    iLocalPos.z = iVar4;
-    iLocalPos._0_4_ = unaff_EDI;
-    this_02 = CellCursor_GetCellCursor(this,iLocalPos,(MethodInfo *)0x0);
-    if (this_02 != (CellCursorCubeLineMesh *)0x0) {
-      position.z = iVar4;
-      position._0_4_ = unaff_EDI;
+    iLocalPos.z = iVar6;
+    iLocalPos.x = (short)uVar5;
+    iLocalPos.y = (short)((uint)uVar5 >> 0x10);
+    this_00 = CellCursor_GetCellCursor(this,iLocalPos,(MethodInfo *)0x0);
+    if (this_00 != (CellCursorCubeLineMesh *)0x0) {
+      position.z = iVar6;
+      position.x = (short)uVar5;
+      position.y = (short)((uint)uVar5 >> 0x10);
       CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-                (this_02,position,cubeGameObject,(MethodInfo *)0x0);
+                (this_00,position,cubeGameObject,(MethodInfo *)0x0);
       return;
     }
   }
-  uVar11 = func_?();
-  uVar12 = *(uint *)((int)unaff_FS_OFFSET + (int)&cubeGameObject);
-  uVar13 = in((short)((uint6)uVar11 >> 0x20));
-  *unaff_EDI = uVar13;
-  uVar12 = (uint)uVar11 ^ (uint)cubeGameObject ^ uVar12 ^ (uint)cubeGameObject;
-  if (uVar12 != 0) {
-    *(char *)((int)puVar1 + -0x79efbacd) = *(char *)((int)puVar1 + -0x79efbacd) + (char)uVar12;
-    pcVar14 = (code *)swi(3);
-    (*pcVar14)();
-    return;
-  }
-  pcVar15 = (char *)((int)&(unaff_EBX->_0).implementedInterfaces + 2);
-  *pcVar15 = *pcVar15 + (char)((uint6)uVar11 >> 0x20);
-  if (*pcVar15 == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    uRam_? = 1;
-  }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).cursorCubes;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                          *)&pIStackY_4c,this_00,
-                         MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
-                        );
-    uVar17 = (pLVar16->_current).First;
-    uVar18 = (pLVar16->_current).Last;
-    while( true ) {
-      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-               List_1_T_Enumerator_System_Object__MoveNext
-                         ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc4,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
-                         );
-      if (bVar7 == 0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc4,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__Dispose__
-                   ,(MethodInfo *)method_00);
-        *unaff_FS_OFFSET = in_stack_19;
-        return;
-      }
-      iVar20 = CONCAT22(uVar18,uVar17);
-      if (iVar20 == 0) break;
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      fVar21 = *(float *)(iVar20 + 0x10);
-      method_00 = (IntVector__Class *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      this_01 = *(GameObject **)(iVar20 + 0x1c);
-      fVar21 = fVar21 - ((float)method_00 - *(float *)(iVar20 + 0x18));
-      if (0.0 < fVar21) {
-        if ((this_01 == (GameObject *)0x0) ||
-           (this_03 = (Renderer *)
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                                (this_01,
-                                 UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
-                                ), this_03 == (Renderer *)0x0)) break;
-        uVar17 = 0x35c0;
-        uVar18 = 0x1045;
-        this_04 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
-                            (this_03,(MethodInfo *)0x0);
-        uVar12 = 0;
-        if (this_04 == (Material__Array *)0x0) break;
-        for (; (int)uVar12 < (int)this_04->max_length; uVar12 = uVar12 + 1) {
-          if (this_04->max_length <= uVar12) goto code_?;
-          if (this_04->vector[uVar12] == (Material *)0x0) goto code_?;
-          uVar17 = 0x35f8;
-          uVar18 = 0x1045;
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
-                    ((Object_1 *)this_04->vector[uVar12],HideFlags__Enum_DontSave,(MethodInfo *)0x0)
-          ;
-          if ((TypeInfo__CellCursorCubeLineMesh->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          this_04 = (Material__Array *)0x0;
-          nameID = TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID;
-          pCVar22 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor_1
-                              (&CStackY_5c,(Material *)0x0,nameID,(MethodInfo *)0x0);
-          pIStackY_4c = (IntVector__Class *)pCVar22->r;
-          puStackY_48 = (undefined *)pCVar22->g;
-          in_stack_19 = pCVar22->b;
-          uVar23 = pCVar22->r;
-          uVar24 = pCVar22->g;
-          uVar25 = pCVar22->b;
-          value.b = (float)uVar25;
-          value.g = (float)uVar24;
-          value.r = (float)uVar23;
-          fVar26 = (fVar21 / *(float *)(nameID + 0x10)) * *(float *)(nameID + 0x14);
-          value.a._0_2_ = SUB42(fVar26,0);
-          value.a._2_2_ = (int16_t)((uint)fVar26 >> 0x10);
-          method_00 = pIStackY_4c;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor_1
-                    ((Material *)this_04,TypeInfo__CellCursorCubeLineMesh->static_fields->ColorID,
-                     value,(MethodInfo *)0x0);
-        }
-      }
-      else {
-        if (this_01 == (GameObject *)0x0) break;
-        uVar17 = 0;
-        uVar18 = 0;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_01,0,(MethodInfo *)0x0);
-      }
-    }
-  }
-code_?:
   func_?();
-code_?:
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

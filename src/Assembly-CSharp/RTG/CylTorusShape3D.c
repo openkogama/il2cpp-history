@@ -199,18 +199,18 @@ void Assembly-CSharp.dll::RTG::CylTorusShape3D::CylTorusShape3D_RenderWire
     pCVar28 = this;
     pVVar29 = TriangPrismShape3D::TriangPrismShape3D_get_Up
                         (pVVar12,(TriangPrismShape3D *)this,(MethodInfo *)0x0);
+    fVar2 = (this->fields)._vertRadius;
     uVar30 = pVVar29->x;
     uVar31 = pVVar29->y;
-    fVar2 = (this->fields)._vertRadius;
     fVar13 = (this->fields)._rotation.x;
     fVar10 = (this->fields)._rotation.y;
     fVar11 = (this->fields)._rotation.z;
     fVar9 = (this->fields)._rotation.w;
     fVar1 = (fVar8 * fVar13 + fVar5 * fVar9 + fVar7 * fVar10) - fVar6 * fVar11;
     pMVar20 = (Matrix4x4 *)&stack0xfffffee0;
-    pos_01.y = fVar2 * (float)uVar31 + (float)uVar27;
-    pos_01.x = fVar2 * (float)uVar30 + (float)uVar26;
-    pos_01.z = fVar2 * pVVar29->z + fVar3;
+    pos_01.y = (float)uVar27 + fVar2 * (float)uVar31;
+    pos_01.x = (float)uVar26 + fVar2 * (float)uVar30;
+    pos_01.z = fVar3 + fVar2 * pVVar29->z;
     q_01.y = (fVar8 * fVar10 + fVar6 * fVar9 + fVar5 * fVar11) - fVar7 * fVar13;
     q_01.x = fVar1;
     q_01.z = (fVar8 * fVar11 + fVar7 * fVar9 + fVar6 * fVar13) - fVar5 * fVar10;

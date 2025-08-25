@@ -119,11 +119,11 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_UpdateCul
                ScaleChangedEventArgs *scaleArg,MethodInfo *method)
 
 {
-  fVar1 = (this->fields).cullingRadius;
   if (scaleArg != (ScaleChangedEventArgs *)0x0) {
-    fVar2 = (scaleArg->fields).NewScale.y;
-    pCVar3 = (this->fields).cullingSubscriberDynamic;
-    if (pCVar3 != (CullingSubscriberDynamic *)0x0) {
+    pCVar1 = (this->fields).cullingSubscriberDynamic;
+    if (pCVar1 != (CullingSubscriberDynamic *)0x0) {
+      fVar2 = (this->fields).cullingRadius;
+      fVar3 = (scaleArg->fields).NewScale.y;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__CullingApiWrapper);
         cRam_? = '\x01';
@@ -133,9 +133,9 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_UpdateCul
       }
       pBVar4 = TypeInfo__CullingApiWrapper->static_fields->spheres;
       if (pBVar4 != (BoundingSphere__Array *)0x0) {
-        uVar5 = (pCVar3->fields)._CullingIndex_k__BackingField;
+        uVar5 = (pCVar1->fields)._CullingIndex_k__BackingField;
         if (uVar5 < pBVar4->max_length) {
-          pBVar4->vector[uVar5].radius = fVar2 * fVar1;
+          pBVar4->vector[uVar5].radius = fVar2 * fVar3;
           return;
         }
         goto code_?;

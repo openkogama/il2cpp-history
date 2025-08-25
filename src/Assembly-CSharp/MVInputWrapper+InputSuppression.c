@@ -20,17 +20,16 @@ bool Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
 
 {
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-  iVar2 = (this->fields).suppressionFrame;
+  uVar2 = iVar1 - (this->fields).suppressionFrame;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  uVar3 = iVar1 - iVar2;
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  uVar4 = (int)uVar3 >> 0x1f;
-  return (int)((uVar3 ^ uVar4) - uVar4) < 2;
+  uVar3 = (int)uVar2 >> 0x1f;
+  return (int)((uVar2 ^ uVar3) - uVar3) < 2;
 }
 
 

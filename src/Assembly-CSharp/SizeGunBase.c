@@ -73,73 +73,73 @@ void Assembly-CSharp.dll::SizeGunBase::SizeGunBase_OnFire
     func_?(&StringLiteral_Sound___SizeGunFire);
     cRam_? = '\x01';
   }
-  func_?(&puStack_1,0,0x48);
-  pMVar2 = (this->fields)._._.owner;
+  func_?(&stack0xffffff64,0,0x48);
+  pMVar1 = (this->fields)._._.owner;
   this_01 = (MVWorldObjectClient *)0x0;
-  if (pMVar2 != (MVPickupOwner *)0x0) {
-    VStack_3.x = (pMVar2->fields).lookOrigin.x;
-    VStack_3.y = (pMVar2->fields).lookOrigin.y;
-    fVar4 = (pMVar2->fields).lookOrigin.z;
-    pVVar5 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                        (&VStack_6,(this->fields)._._.owner,(MethodInfo *)0x0);
-    RStack_7.m_Origin.x = VStack_3.x;
-    RStack_7.m_Origin.y = VStack_3.y;
-    RStack_7.m_Origin.z = fVar4;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        (&VStack_6,*pVVar5,(MethodInfo *)0x0);
-    uVar8 = pVVar5->x;
-    uVar9 = pVVar5->y;
-    RStack_7.m_Direction.z = pVVar5->z;
-    bVar10 = false;
-    RStack_7.m_Direction.x = (float)uVar8;
-    RStack_7.m_Direction.y = (float)uVar9;
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    VStack_2.x = (pMVar1->fields).lookOrigin.x;
+    VStack_2.y = (pMVar1->fields).lookOrigin.y;
+    fVar3 = (pMVar1->fields).lookOrigin.z;
+    pVVar4 = MVPickupOwner::MVPickupOwner_get_LookDirection
+                        (&VStack_5,(this->fields)._._.owner,(MethodInfo *)0x0);
+    RStack_6.m_Origin.x = VStack_2.x;
+    RStack_6.m_Origin.y = VStack_2.y;
+    RStack_6.m_Origin.z = fVar3;
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        (&VStack_5,*pVVar4,(MethodInfo *)0x0);
+    uVar7 = pVVar4->x;
+    uVar8 = pVVar4->y;
+    RStack_6.m_Direction.z = pVVar4->z;
+    bVar9 = false;
+    RStack_6.m_Direction.x = (float)uVar7;
+    RStack_6.m_Direction.y = (float)uVar8;
     this_01 = (MVWorldObjectClient *)
               MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
     unaff_EBX = (MVWorldObjectClient__Class *)(this->fields).audioSource;
-    pTVar11 = (this->fields)._._.muzzlePoint;
-    if ((pTVar11 != (Transform *)0x0) &&
-       (pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            (&VStack_6,pTVar11,(MethodInfo *)0x0),
+    pTVar10 = (this->fields)._._.muzzlePoint;
+    if ((pTVar10 != (Transform *)0x0) &&
+       (pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            (&VStack_5,pTVar10,(MethodInfo *)0x0),
        this_01 != (MVWorldObjectClient *)0x0)) {
       AudioManager::AudioManager_Play_2
                 ((AudioManager *)this_01,StringLiteral_Sound___SizeGunFire,(AudioSource *)unaff_EBX,
-                 *pVVar5,(MethodInfo *)0x0);
-      pMVar2 = (this->fields)._._.owner;
-      fStack_12 = RStack_7.m_Origin.x;
-      VStack_6.x = RStack_7.m_Origin.y;
-      VStack_6.z = RStack_7.m_Direction.x;
-      VStack_6.y = RStack_7.m_Origin.z;
-      VStack_3.y = RStack_7.m_Direction.z;
-      VStack_3.x = RStack_7.m_Direction.y;
-      VStack_3.z = (this->fields).range;
-      if (pMVar2 != (MVPickupOwner *)0x0) {
+                 *pVVar4,(MethodInfo *)0x0);
+      pMVar1 = (this->fields)._._.owner;
+      fStack_11 = RStack_6.m_Origin.x;
+      VStack_5.x = RStack_6.m_Origin.y;
+      VStack_5.z = RStack_6.m_Direction.x;
+      VStack_5.y = RStack_6.m_Origin.z;
+      VStack_2.y = RStack_6.m_Direction.z;
+      VStack_2.x = RStack_6.m_Direction.y;
+      VStack_2.z = (this->fields).range;
+      if (pMVar1 != (MVPickupOwner *)0x0) {
         ignoreWoIds = (HashSet_1_System_Int32_ *)
-                      (*(code *)(pMVar2->klass->vtable).get_IgnoreWOIDs.method)
-                                (pMVar2,pMVar2->klass[1]._0.image);
-        ray.m_Origin.y = VStack_6.x;
-        ray.m_Origin.x = fStack_12;
-        ray.m_Origin.z = VStack_6.y;
-        ray.m_Direction.x = VStack_6.z;
-        ray.m_Direction.y = VStack_3.x;
-        ray.m_Direction.z = VStack_3.y;
-        bVar13 = CollisionDetection::CollisionDetection_MVHit_1
-                           (ray,(VoxelHit *)&puStack_1,VStack_3.z,ignoreWoIds,
+                      (*(code *)(pMVar1->klass->vtable).get_IgnoreWOIDs.method)
+                                (pMVar1,pMVar1->klass[1]._0.image);
+        ray.m_Origin.y = VStack_5.x;
+        ray.m_Origin.x = fStack_11;
+        ray.m_Origin.z = VStack_5.y;
+        ray.m_Direction.x = VStack_5.z;
+        ray.m_Direction.y = VStack_2.x;
+        ray.m_Direction.z = VStack_2.y;
+        bVar12 = CollisionDetection::CollisionDetection_MVHit_1
+                           (ray,(VoxelHit *)&stack0xffffff64,VStack_2.z,ignoreWoIds,
                             (this->fields).layerMask,(MethodInfo *)0x0);
-        if (bVar13 == 0) {
-          pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                              (&VStack_6,&RStack_7,(this->fields).range,(MethodInfo *)0x0);
-          VStack_3.x = pVVar5->x;
-          VStack_3.y = pVVar5->y;
-          unaff_EBX = (MVWorldObjectClient__Class *)pVVar5->z;
-          VStack_3.z = (float)unaff_EBX;
+        if (bVar12 == 0) {
+          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                              (&VStack_5,&RStack_6,(this->fields).range,(MethodInfo *)0x0);
+          VStack_2.x = pVVar4->x;
+          VStack_2.y = pVVar4->y;
+          unaff_EBX = (MVWorldObjectClient__Class *)pVVar4->z;
+          VStack_2.z = (float)unaff_EBX;
 code_?:
           if (cRam_? == '\0') {
-            func_?();
+            func_?(&TypeInfo__PrefabPool);
             cRam_? = '\x01';
           }
-          pPVar14 = TypeInfo__PrefabPool->static_fields->instance;
-          if (((pPVar14 != (PrefabPool *)0x0) &&
-              (this_00 = (pPVar14->fields).enumPoolManager, this_00 != (EnumPoolManager *)0x0)) &&
+          pPVar13 = TypeInfo__PrefabPool->static_fields->instance;
+          if (((pPVar13 != (PrefabPool *)0x0) &&
+              (this_00 = (pPVar13->fields).enumPoolManager, this_00 != (EnumPoolManager *)0x0)) &&
              (this_01 = (MVWorldObjectClient *)
                         EnumPoolManager::EnumPoolManager_Instantiate
                                   (this_00,PoolEnums__Enum_RailGunRay,
@@ -148,89 +148,88 @@ code_?:
             unaff_EBX = (MVWorldObjectClient__Class *)
                         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   ((Component *)this_01,(MethodInfo *)0x0);
-            pTVar11 = (this->fields)._._.muzzlePoint;
-            if ((pTVar11 != (Transform *)0x0) &&
-               (pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                    (&VStack_6,pTVar11,(MethodInfo *)0x0),
+            pTVar10 = (this->fields)._._.muzzlePoint;
+            if ((pTVar10 != (Transform *)0x0) &&
+               (pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                    (&VStack_5,pTVar10,(MethodInfo *)0x0),
                unaff_EBX != (MVWorldObjectClient__Class *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        ((Transform *)unaff_EBX,*pVVar5,(MethodInfo *)0x0);
-              *(undefined8 *)&(this_01->fields)._.itemId = VStack_3._0_8_;
-              (this_01->fields)._.outputLinkRefs = (List_1_MV_WorldObject_Link_ *)VStack_3.z;
-              if (bVar10) {
-                pLVar15 = (List_1_MV_WorldObject_ObjectLink_ *)(this->fields).hitColor.r;
-                fVar4 = (this->fields).hitColor.g;
-                fVar16 = (this->fields).hitColor.b;
-                fVar17 = (this->fields).hitColor.a;
+                        ((Transform *)unaff_EBX,*pVVar4,(MethodInfo *)0x0);
+              *(undefined8 *)&(this_01->fields)._.itemId = VStack_2._0_8_;
+              (this_01->fields)._.outputLinkRefs = (List_1_MV_WorldObject_Link_ *)VStack_2.z;
+              if (bVar9) {
+                pLVar14 = (List_1_MV_WorldObject_ObjectLink_ *)(this->fields).hitColor.r;
+                fVar3 = (this->fields).hitColor.g;
+                fVar15 = (this->fields).hitColor.b;
+                fVar16 = (this->fields).hitColor.a;
               }
               else {
-                pLVar15 = (List_1_MV_WorldObject_ObjectLink_ *)(this->fields).missColor.r;
-                fVar4 = (this->fields).missColor.g;
-                fVar16 = (this->fields).missColor.b;
-                fVar17 = (this->fields).missColor.a;
+                pLVar14 = (List_1_MV_WorldObject_ObjectLink_ *)(this->fields).missColor.r;
+                fVar3 = (this->fields).missColor.g;
+                fVar15 = (this->fields).missColor.b;
+                fVar16 = (this->fields).missColor.a;
               }
-              (this_01->fields)._.objectLinkRefs = pLVar15;
-              (this_01->fields)._.ownerActorNr = (int32_t)fVar4;
-              (this_01->fields)._.previewOwnerProfileId = (int32_t)fVar16;
-              (this_01->fields)._.position.x = fVar17;
+              (this_01->fields)._.objectLinkRefs = pLVar14;
+              (this_01->fields)._.ownerActorNr = (int32_t)fVar3;
+              (this_01->fields)._.previewOwnerProfileId = (int32_t)fVar15;
+              (this_01->fields)._.position.x = fVar16;
               RailRay::RailRay_Reset((RailRay *)this_01,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
-                func_?();
-                func_?();
-                func_?();
+                func_?(&
+                                MVEquipable_MethodInfo__UnityEngine__Component__GetComponent<MVEquipable>__
+                               );
+                func_?(&TypeInfo__UnityEngine__Object);
+                func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
                 cRam_? = '\x01';
               }
-              auStack_18._0_4_ = (this->fields).currentAmmo.currentCryptoKey;
-              auStack_18._4_4_ = (this->fields).currentAmmo.hiddenValue;
-              auStack_18._8_4_ = (this->fields).currentAmmo.fakeValue;
-              auStack_18[0xc] = (this->fields).currentAmmo.inited;
-              auStack_18._13_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
+              OStack_17.currentCryptoKey = (this->fields).currentAmmo.currentCryptoKey;
+              OStack_17.hiddenValue = (this->fields).currentAmmo.hiddenValue;
+              OStack_17.fakeValue = (this->fields).currentAmmo.fakeValue;
+              OStack_17.inited = (this->fields).currentAmmo.inited;
+              OStack_17._13_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
               if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
                   cctor_finished_or_no_cctor == 0) {
-                func_?();
+                func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
               }
-              OVar19.hiddenValue = auStack_18._4_4_;
-              OVar19.currentCryptoKey = auStack_18._0_4_;
-              OVar19.fakeValue = auStack_18._8_4_;
-              OVar19._12_4_ = auStack_18._12_4_;
-              pOVar20 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                        ObscuredInt::ObscuredInt_op_Decrement
-                                  ((ObscuredInt *)auStack_18,OVar19,(MethodInfo *)0x0);
-              iVar21 = pOVar20->hiddenValue;
-              iVar22 = pOVar20->fakeValue;
-              bVar13 = pOVar20->inited;
-              uVar23 = *(undefined3 *)&pOVar20->field_0xd;
-              OVar19 = *pOVar20;
-              (this->fields).currentAmmo.currentCryptoKey = pOVar20->currentCryptoKey;
-              (this->fields).currentAmmo.hiddenValue = iVar21;
-              (this->fields).currentAmmo.fakeValue = iVar22;
-              (this->fields).currentAmmo.inited = bVar13;
-              *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar23;
-              iVar21 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                       ObscuredInt::ObscuredInt_op_Implicit_1(OVar19,(MethodInfo *)0x0);
-              if (0 < iVar21) {
+              OVar18.hiddenValue = OStack_17.hiddenValue;
+              OVar18.currentCryptoKey = OStack_17.currentCryptoKey;
+              OVar18.fakeValue = OStack_17.fakeValue;
+              OVar18.inited = OStack_17.inited;
+              OVar18._13_3_ = OStack_17._13_3_;
+              pOVar19 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                        ObscuredInt::ObscuredInt_op_Decrement(&OStack_17,OVar18,(MethodInfo *)0x0);
+              iVar20 = pOVar19->hiddenValue;
+              iVar21 = pOVar19->fakeValue;
+              bVar12 = pOVar19->inited;
+              uVar22 = *(undefined3 *)&pOVar19->field_0xd;
+              OVar18 = *pOVar19;
+              (this->fields).currentAmmo.currentCryptoKey = pOVar19->currentCryptoKey;
+              (this->fields).currentAmmo.hiddenValue = iVar20;
+              (this->fields).currentAmmo.fakeValue = iVar21;
+              (this->fields).currentAmmo.inited = bVar12;
+              *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar22;
+              iVar20 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                       ObscuredInt::ObscuredInt_op_Implicit_1(OVar18,(MethodInfo *)0x0);
+              if (0 < iVar20) {
                 return;
               }
-              RStack_7.m_Origin.x = (float)(this->klass->vtable).get_CanUnequip.methodPtr;
-              auStack_18._12_4_ = this;
-              auStack_18._8_4_ = &UNK_?;
-              cVar24 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)();
-              if (cVar24 != '\0') {
+              cVar23 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)();
+              if (cVar23 != '\0') {
                 return;
               }
-              pMVar2 = (this->fields)._._.owner;
-              if (pMVar2 != (MVPickupOwner *)0x0) {
+              pMVar1 = (this->fields)._._.owner;
+              if (pMVar1 != (MVPickupOwner *)0x0) {
                 x = (Object_1 *)
                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                              ((Component *)pMVar2,
+                              ((Component *)pMVar1,
                                MVEquipable_MethodInfo__UnityEngine__Component__GetComponent<MVEquipable>__
                               );
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                   func_?(TypeInfo__UnityEngine__Object);
                 }
-                bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                                    (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-                if (bVar13 == 0) {
+                if (bVar12 == 0) {
                   return;
                 }
                 this_01 = (MVWorldObjectClient *)0x0;
@@ -244,15 +243,15 @@ code_?:
           }
         }
         else {
-          VStack_3.y = in_stack_25;
-          VStack_3.x = (float)puStack_1;
-          VStack_3.z = (float)in_stack_26;
+          VStack_2.y = in_stack_24;
+          VStack_2.x = in_stack_25;
+          VStack_2.z = (float)in_stack_26;
           pMVar27 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
           if (pMVar27 != (MVWorldObjectClientManager *)0x0) {
             this_01 = (MVWorldObjectClient *)
                       MVWorldObjectClientManager::
                       MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
-                                (pMVar27,in_stack_28,
+                                (pMVar27,iStack_28,
                                  int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
                                 );
             pMVar27 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
@@ -260,74 +259,77 @@ code_?:
               this_01 = (MVWorldObjectClient *)
                         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                                   (pMVar27,(int32_t)this_01,(MethodInfo *)0x0);
-              pMVar2 = (this->fields)._._.owner;
-              if (pMVar2 != (MVPickupOwner *)0x0) {
-                if (((((pMVar2->fields)._IsLocal_k__BackingField != 0) &&
+              pMVar1 = (this->fields)._._.owner;
+              if (pMVar1 != (MVPickupOwner *)0x0) {
+                if (((((pMVar1->fields)._IsLocal_k__BackingField != 0) &&
                      (this_01 != (MVWorldObjectClient *)0x0)) &&
                     (unaff_EBX = this_01->klass,
                     (TypeInfo__MVAvatar->_1).naturalAligment <= (unaff_EBX->_1).naturalAligment)) &&
                    ((MVAvatar__Class *)
                     (unaff_EBX->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] ==
                     TypeInfo__MVAvatar)) {
-                  uVar29._0_2_ = 0;
-                  uVar29._2_2_ = 0;
-                  puVar30 = &UNK_?;
-                  pMVar31 = this_01;
                   unaff_EBX = (MVWorldObjectClient__Class *)
                               MVWorldObjectClient::
                               MVWorldObjectClient_get_InteractionDataHandlerBase
                                         (this_01,(MethodInfo *)0x0);
                   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                    pOStack_32 = TypeInfo__UnityEngine__Object;
-                    in_stack_33 = &UNK_?;
-                    func_?();
+                    func_?(TypeInfo__UnityEngine__Object);
                   }
-                  bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                  bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                                      ((Object_1 *)unaff_EBX,(Object_1 *)0x0,(MethodInfo *)0x0);
-                  if (bVar13 != 0) {
+                  if (bVar12 != 0) {
                     this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
                     ;
                     if ((this_02 != (MVNetworkGame *)0x0) &&
                        (this_03 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
                                             (this_02,(MethodInfo *)0x0),
                        this_03 != (MVLocalPlayer *)0x0)) {
-                      bVar13 = MVPlayer::MVPlayer_IsOnSameTeam_1
+                      bVar12 = MVPlayer::MVPlayer_IsOnSameTeam_1
                                          ((MVPlayer *)this_03,this_01,(MethodInfo *)0x0);
-                      if (bVar13 != 0) goto code_?;
-                      pMVar2 = (this->fields)._._.owner;
-                      puStack_1 = &stack0xffffffb4;
-                      puVar34 = (undefined4 *)
-                                (*(code *)(this->klass->vtable).GetPackageData.method)();
+                      if (bVar12 != 0) goto code_?;
+                      pMVar1 = (this->fields)._._.owner;
+                      uVar29 = CONCAT44(this,auStack_30);
+                      puVar31 = (undefined4 *)
+                                (*(code *)(this->klass->vtable).GetPackageData.method)
+                                          (auStack_30,this,this->klass[1]._0.image);
                       if (unaff_EBX != (MVWorldObjectClient__Class *)0x0) {
-                        func_?(7,unaff_EBX,pMVar2,*puVar34,puVar34[1],puVar34[2],puVar34[3]
-                                        ,puVar34[4],0);
-                        pMVar35 = (MVWorldObjectClient__Class *)TypeInfo__IBulletImpactVisualizer;
-                        pMVar2 = (this->fields)._._.owner;
-                        auStack_18._12_4_ = pSStack_36;
-                        VStack_6.z = in_stack_37;
-                        VStack_6.y = in_stack_38;
-                        fVar4 = RStack_7.m_Origin.x;
-                        auStack_18._0_4_ = in_stack_39;
-                        auStack_18._4_4_ = in_stack_40;
-                        auStack_18._8_4_ = in_stack_41;
-                        if ((pMVar2 != (MVPickupOwner *)0x0) &&
-                           ((pMVar2->fields)._.worldObjectParent != (MVWorldObjectClient *)0x0)) {
-                          iVar42 = func_?(this_01,TypeInfo__IBulletImpactVisualizer);
+                        func_?(7,unaff_EBX,pMVar1,*puVar31,puVar31[1],puVar31[2],puVar31[3]
+                                        ,puVar31[4],0);
+                        pMVar32 = (MVWorldObjectClient__Class *)TypeInfo__IBulletImpactVisualizer;
+                        pMVar1 = (this->fields)._._.owner;
+                        OStack_17.currentCryptoKey = (int32_t)fStack_33;
+                        OStack_17.hiddenValue = (int32_t)pCStack_34;
+                        OStack_17.fakeValue = (int32_t)pTStack_35;
+                        OStack_17._12_4_ = uStack_36;
+                        VStack_5._4_8_ = iStack_37;
+                        uVar38 = CONCAT44(RStack_6.m_Direction.z,RStack_6.m_Direction.y);
+                        if ((pMVar1 != (MVPickupOwner *)0x0) &&
+                           (pMVar39 = (pMVar1->fields)._.worldObjectParent,
+                           pMVar39 != (MVWorldObjectClient *)0x0)) {
+                          iVar20 = (pMVar39->fields)._.ownerActorNr;
+                          fVar3 = RStack_6.m_Origin.x;
+                          fVar15 = RStack_6.m_Origin.y;
+                          fVar16 = RStack_6.m_Origin.z;
+                          fVar40 = RStack_6.m_Direction.x;
+                          iVar41 = func_?(this_01,TypeInfo__IBulletImpactVisualizer,uVar29,
+                                                   iStack_42,uStack_43,iStack_28,pCStack_44,
+                                                   fStack_45,fStack_46,IStack_47._0_4_,
+                                                   stack0xffffff80,in_stack_25,
+                                                   in_stack_24,in_stack_26,fStack_48,
+                                                   RStack_6.m_Origin.x,RStack_6.m_Origin.y,
+                                                   RStack_6.m_Origin.z,RStack_6.m_Direction.x);
                           unaff_EBX = (MVWorldObjectClient__Class *)
                                       TypeInfo__IBulletImpactVisualizer;
-                          if (iVar42 == 0) goto code_?;
-                          puVar43 = &UNK_?;
-                          pMVar44 = this_01;
-                          pIVar45 = TypeInfo__IBulletImpactVisualizer;
-                          iVar42 = func_?(this_01,TypeInfo__IBulletImpactVisualizer);
-                          pMVar35 = unaff_EBX;
-                          if (iVar42 == 0) goto code_?;
-                          func_?(0,TypeInfo__IBulletImpactVisualizer,iVar42,fVar4,puVar43,
-                                          pMVar44,pIVar45,puVar30,pMVar31,uVar29,in_stack_33,
-                                          pOStack_32,in_stack_46,in_stack_28,
-                                          in_stack_47,auStack_18._0_4_,auStack_18._4_4_,
-                                          auStack_18._8_4_,auStack_18._12_4_,VStack_6.y,VStack_6.z
-                                         );
+                          if ((iVar41 == 0) ||
+                             (iVar41 = func_?(this_01,TypeInfo__IBulletImpactVisualizer),
+                             pMVar32 = unaff_EBX, iVar41 == 0)) goto code_?;
+                          func_?(0,TypeInfo__IBulletImpactVisualizer,iVar41,
+                                          in_stack_25,in_stack_24,in_stack_26,
+                                          fStack_48,fStack_45,fStack_46,IStack_47._0_4_,
+                                          stack0xffffff40,iStack_42,uStack_43,iStack_28,pCStack_44,
+                                          OStack_17.currentCryptoKey,OStack_17.hiddenValue,
+                                          OStack_17.fakeValue,OStack_17._12_4_,VStack_5.y,
+                                          VStack_5.z,fVar3,fVar15,fVar16,fVar40,uVar38,iVar20,0);
                           goto code_?;
                         }
                       }
@@ -336,7 +338,7 @@ code_?:
                   }
                 }
 code_?:
-                bVar10 = true;
+                bVar9 = true;
                 goto code_?;
               }
             }
@@ -347,11 +349,11 @@ code_?:
   }
 code_?:
   func_?();
-  pMVar35 = unaff_EBX;
+  pMVar32 = unaff_EBX;
 code_?:
-  func_?(this_01,pMVar35);
-  pcVar48 = (code *)swi(3);
-  (*pcVar48)();
+  func_?(this_01,pMVar32);
+  pcVar49 = (code *)swi(3);
+  (*pcVar49)();
   return;
 }
 

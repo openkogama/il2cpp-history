@@ -41,8 +41,8 @@ Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc2DQuadCornerPoints
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   pMVar6 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fVar7 = (quadCenter.x - (float)pLVar1 * fVar4) + fVar3 * fVar5;
-  fVar8 = (quadCenter.y - fVar2 * fVar4) + (float)method_00 * fVar5;
+  fVar7 = fVar3 * fVar5 + (quadCenter.x - (float)pLVar1 * fVar4);
+  fVar8 = (float)method_00 * fVar5 + (quadCenter.y - fVar2 * fVar4);
   if (this != (List_1_UnityEngine_Vector2_ *)0x0) {
     piVar9 = &(this->fields)._version;
     *piVar9 = *piVar9 + 1;
@@ -66,8 +66,8 @@ Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc2DQuadCornerPoints
       pMVar6 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fVar7 = quadCenter.x + (float)pLVar1 * fVar4 + fVar3 * fVar5;
-      fVar8 = quadCenter.y + fVar2 * fVar4 + (float)method_00 * fVar5;
+      fVar7 = fVar3 * fVar5 + (float)pLVar1 * fVar4 + quadCenter.x;
+      fVar8 = (float)method_00 * fVar5 + fVar2 * fVar4 + quadCenter.y;
       piVar9 = &(this->fields)._version;
       *piVar9 = *piVar9 + 1;
       pVVar10 = (this->fields)._items;
@@ -92,8 +92,8 @@ Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc2DQuadCornerPoints
         pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        fVar7 = (quadCenter.x + (float)pLVar1 * fVar4) - fVar3 * fVar5;
-        fVar8 = (quadCenter.y + fVar2 * fVar4) - (float)method_00 * fVar5;
+        fVar7 = ((float)pLVar1 * fVar4 + quadCenter.x) - fVar3 * fVar5;
+        fVar8 = (fVar2 * fVar4 + quadCenter.y) - (float)method_00 * fVar5;
         piVar9 = &(this->fields)._version;
         *piVar9 = *piVar9 + 1;
         pVVar10 = (this->fields)._items;
@@ -180,8 +180,8 @@ Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc2DQuadCornerPoints_1
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   pMVar4 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fVar5 = (quadCenter.x - right.x * fVar1) + up.x * fVar2;
-  fVar6 = (quadCenter.y - right.y * fVar1) + up.y * fVar2;
+  fVar5 = up.x * fVar2 + (quadCenter.x - right.x * fVar1);
+  fVar6 = up.y * fVar2 + (quadCenter.y - right.y * fVar1);
   if (pLVar3 != (List_1_UnityEngine_Vector2_ *)0x0) {
     piVar7 = &(pLVar3->fields)._version;
     *piVar7 = *piVar7 + 1;
@@ -204,8 +204,8 @@ Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc2DQuadCornerPoints_1
       pMVar4 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fVar5 = quadCenter.x + right.x * fVar1 + up.x * fVar2;
-      fVar6 = quadCenter.y + right.y * fVar1 + up.y * fVar2;
+      fVar5 = up.x * fVar2 + quadCenter.x + right.x * fVar1;
+      fVar6 = up.y * fVar2 + quadCenter.y + right.y * fVar1;
       piVar7 = &(pLVar3->fields)._version;
       *piVar7 = *piVar7 + 1;
       pVVar8 = (pLVar3->fields)._items;
@@ -375,8 +375,8 @@ Vector3 * Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc3DQuadCorner
   fVar6 = quadRotation.w * fVar3;
   fVar2 = fVar2 * fVar3;
   if (quadCorner == QuadCorner__Enum_TopLeft) {
-    fVar5 = quadCenter.x - fVar5;
     fVar6 = quadCenter.y - fVar6;
+    fVar5 = quadCenter.x - fVar5;
     fVar2 = quadCenter.z - fVar2;
   }
   else {
@@ -393,22 +393,18 @@ Vector3 * Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc3DQuadCorner
       }
       uVar7 = pVVar1->x;
       uVar8 = pVVar1->y;
-      fVar5 = fVar5 - (float)uVar7 * fVar4;
-      fVar6 = fVar6 - (float)uVar8 * fVar4;
+      uRam_? = CONCAT44(fVar6 - (float)uVar8 * fVar4,fVar5 - (float)uVar7 * fVar4);
       fRam00000008 = fVar2 - pVVar1->z * fVar4;
-      goto code_?;
+      return (Vector3 *)0x0;
     }
-    fVar5 = quadCenter.x + fVar5;
     fVar6 = quadCenter.y + fVar6;
+    fVar5 = quadCenter.x + fVar5;
     fVar2 = quadCenter.z + fVar2;
   }
   uVar9 = pVVar1->x;
   uVar10 = pVVar1->y;
-  fRam00000008 = fVar2 + pVVar1->z * fVar4;
-  fVar6 = fVar6 + (float)uVar10 * fVar4;
-  fVar5 = fVar5 + (float)uVar9 * fVar4;
-code_?:
-  uRam_? = CONCAT44(fVar6,fVar5);
+  uRam_? = CONCAT44((float)uVar10 * fVar4 + fVar6,(float)uVar9 * fVar4 + fVar5);
+  fRam00000008 = pVVar1->z * fVar4 + fVar2;
   return (Vector3 *)0x0;
 }
 
@@ -547,45 +543,42 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Contains3DPoint
                Vector3 quadRight,Vector3 quadUp,QuadEpsilon epsilon,MethodInfo *method)
 
 {
-  VStack_1.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
-  VVar2.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
-  VVar2.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
-  VVar2.z = VStack_1.z;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_1,VVar2,(MethodInfo *)0x0);
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffc0,*pVVar3,(MethodInfo *)0x0);
-  VStack_1.x = pVVar3->x;
-  VStack_1.y = pVVar3->y;
-  VStack_1.z = pVVar3->z;
+  VVar1.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
+  VVar1.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
+  VVar1.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&puStack_3,VVar1,(MethodInfo *)0x0);
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_4,*pVVar2,(MethodInfo *)0x0);
+  uVar5 = pVVar2->x;
+  uVar6 = pVVar2->y;
+  plane.m_Normal.y = (float)uVar6;
+  plane.m_Normal.x = (float)uVar5;
+  puStack_3 = (undefined *)uVar5;
   if ((checkOnPlane != 0) &&
-     (plane.m_Normal.z = point.x, plane.m_Normal.x = VStack_1.x, plane.m_Normal.y = VStack_1.y,
-     plane.m_Distance = point.y,
-     fVar4 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0),
-     epsilon._extrudeEps < fVar4)) {
+     (plane.m_Normal.z = point.x, plane.m_Distance = point.y,
+     fVar7 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0),
+     epsilon._extrudeEps < fVar7)) {
     return 0;
   }
-  mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]::
-  KeyValuePair_2_System_Single_System_Single__get_Key
-            ((KeyValuePair_2_System_Single_System_Single_ *)&epsilon,(MethodInfo *)0x0);
-  mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
-            ((Nullable_1_Single_ *)&epsilon,(MethodInfo *)0x0);
-  fVar5 = point.z - quadCenter.z;
-  fVar6 = point.x - quadCenter.x;
+  fVar8 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]
+          ::KeyValuePair_2_System_Single_System_Single__get_Key
+                    ((KeyValuePair_2_System_Single_System_Single_ *)&epsilon,(MethodInfo *)0x0);
+  fVar9 = mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
+                    ((Nullable_1_Single_ *)&epsilon,(MethodInfo *)0x0);
+  fVar10 = point.x - quadCenter.x;
   fVar7 = point.y - quadCenter.y;
-  VStack_1.z = (float)&UNK_?;
   v1.y = fVar7;
-  v1.x = fVar6;
-  v1.z = fVar5;
-  fVar4 = fVar5;
-  fVar8 = Vector3Ex::Vector3Ex_AbsDot(v1,quadRight,(MethodInfo *)0x0);
+  v1.x = fVar10;
+  v1.z = point.z - quadCenter.z;
+  fVar11 = Vector3Ex::Vector3Ex_AbsDot(v1,quadRight,(MethodInfo *)0x0);
   stack0xfffffffc = fVar7;
-  fStack_9 = fVar6;
-  VVar2.z = fVar5;
-  VVar2 = (Vector3)CONCAT48(VVar2.z,uVar10);
-  fVar5 = Vector3Ex::Vector3Ex_AbsDot(VVar2,quadUp,(MethodInfo *)0x0);
-  if ((fVar8 <= (quadRight.y + quadWidth) * _UNK_?) &&
-     (fVar5 <= (fVar4 + quadHeight) * _UNK_?)) {
+  fStack_12 = fVar10;
+  VVar1.z = point.z - quadCenter.z;
+  VVar1 = (Vector3)CONCAT48(VVar1.z,uVar13);
+  fVar7 = Vector3Ex::Vector3Ex_AbsDot(VVar1,quadUp,(MethodInfo *)0x0);
+  if ((fVar11 <= (fVar8 + quadWidth) * _UNK_?) &&
+     (fVar7 <= (fVar9 + quadHeight) * _UNK_?)) {
     return 1;
   }
   return 0;

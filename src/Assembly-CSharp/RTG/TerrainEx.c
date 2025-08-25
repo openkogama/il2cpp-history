@@ -12,32 +12,36 @@ Vector3 * Assembly-CSharp.dll::RTG::TerrainEx::TerrainEx_GetInterpolatedNormal
     if (this != (Transform *)0x0) {
       pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                          ((Vector3 *)&stack0xffffffe0,this,(MethodInfo *)0x0);
-      fStack_2 = pVVar1->x;
-      puStack_3 = (undefined *)pVVar1->y;
-      fVar4 = worldPos.z - pVVar1->z;
-      pTVar5 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData
+      uVar2 = pVVar1->x;
+      fVar3 = worldPos.x - (float)uVar2;
+      pTVar4 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData
                          (terrain,(MethodInfo *)0x0);
-      if (pTVar5 != (TerrainData *)0x0) {
+      if (pTVar4 != (TerrainData *)0x0) {
         pVVar1 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_size
-                           ((Vector3 *)&stack0xffffffec,pTVar5,(MethodInfo *)0x0);
+                           (&worldPos,pTVar4,(MethodInfo *)0x0);
         worldPos.z = pVVar1->x;
-        pTVar5 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData
+        pTVar4 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData
                            (terrain,(MethodInfo *)0x0);
-        if (pTVar5 != (TerrainData *)0x0) {
+        if (pTVar4 != (TerrainData *)0x0) {
           worldPos.z = _UNK_? / worldPos.z;
-          pVVar1 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_size
-                             ((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
-          fVar4 = fVar4 * (_UNK_? / pVVar1->z);
-          pTVar5 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData
+          UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_size
+                    ((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+          fVar3 = fVar3 * worldPos.z;
+          pTVar4 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData
                              (terrain,(MethodInfo *)0x0);
-          if (pTVar5 != (TerrainData *)0x0) {
-            worldPos.z = 0.0;
-            worldPos.x = (float)terrain;
-            worldPos.y = fVar4;
-            UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::
-            TerrainData_GetInterpolatedNormal
-                      (&worldPos,pTVar5,(float)terrain,fVar4,(MethodInfo *)0x0);
-            return &worldPos;
+          if (pTVar4 != (TerrainData *)0x0) {
+            worldPos.y = (float)&worldPos;
+            worldPos.x = (float)&UNK_?;
+            worldPos.z = (float)pTVar4;
+            pVVar1 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::
+                     TerrainData_GetInterpolatedNormal
+                               ((Vector3 *)worldPos.y,pTVar4,fVar3,0.0,(MethodInfo *)0x0);
+            fVar3 = pVVar1->y;
+            pvVar5 = (void *)pVVar1->z;
+            terrain->klass = (Terrain__Class *)pVVar1->x;
+            terrain->monitor = (MonitorData *)fVar3;
+            (terrain->fields)._._._.m_CachedPtr = pvVar5;
+            return (Vector3 *)terrain;
           }
         }
       }

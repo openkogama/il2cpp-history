@@ -43,34 +43,32 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
     uVar10 = (this->fields).gradientDirection.y;
     fStack_7 = (this->fields).gradientDirection.z;
     dVar11 = (double)((this->fields).gradientAngle * _UNK_?);
-    pMStack_12 = (MVInteractableBase *)uVar9;
+    fStack_12 = (float)uVar9;
     fStack_6 = (float)uVar10;
     func_?();
-    fStack_13 = (float)dVar11;
-    fVar14 = (float)pMStack_12 * fStack_13;
-    fStack_15 = fStack_6 * fStack_13;
-    fStack_13 = fStack_7 * fStack_13;
-    pMVar16 = (this->fields).groundMaterial;
-    if (pMVar16 != (MVMaterial *)0x0) {
+    fVar13 = (float)dVar11;
+    fStack_14 = fStack_12 * fVar13;
+    fStack_15 = fStack_6 * fVar13;
+    pMStack_16 = (MethodInfo *)(fStack_7 * fVar13);
+    pMVar17 = (this->fields).groundMaterial;
+    if (pMVar17 != (MVMaterial *)0x0) {
       if (interactableLocal != (MVInteractableBase *)0x0) {
-        pMStack_17 = (interactableLocal->klass->vtable).__unknown_8.method;
-        fVar18 = (float10)(*(code *)pMStack_17)
+        fVar18 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                     (interactableLocal,0xc,
-                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.friction,
+                                     (pMVar17->fields)._PhysicalProperties_k__BackingField.friction,
                                      (interactableLocal->klass->vtable).__unknown_9.methodPtr,
-                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.bouncyness
-                                     ,(pMVar16->fields)._PhysicalProperties_k__BackingField.softness,
-                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.
+                                     (pMVar17->fields)._PhysicalProperties_k__BackingField.bouncyness
+                                     ,(pMVar17->fields)._PhysicalProperties_k__BackingField.softness,
+                                     (pMVar17->fields)._PhysicalProperties_k__BackingField.
                                      staticFriction,
-                                     (pMVar16->fields)._PhysicalProperties_k__BackingField.toughness)
+                                     (pMVar17->fields)._PhysicalProperties_k__BackingField.toughness)
         ;
-        pMStack_17 = (MethodInfo *)(float)fVar18;
-        fVar19 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
-                 Easing_InQuad((float)pMStack_17,(MethodInfo *)0x0);
-        pMStack_17 = (MethodInfo *)(1.0 - fVar19);
-        fVar14 = fVar14 * (float)pMStack_17;
-        fStack_15 = fStack_15 * (float)pMStack_17;
-        fStack_13 = fStack_13 * (float)pMStack_17;
+        fVar13 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
+                 Easing_InQuad((float)fVar18,(MethodInfo *)0x0);
+        fVar13 = 1.0 - fVar13;
+        fVar19 = fVar13 * fStack_14;
+        fStack_15 = fVar13 * fStack_15;
+        fStack_14 = fVar13 * (float)pMStack_16;
         if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVPhysics);
         }
@@ -85,7 +83,7 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
         puVar21 = (undefined *)(pMVar20->gravity).currentCryptoKey;
         AVar22 = (pMVar20->gravity).hiddenValue;
         pBVar23 = (pMVar20->gravity).hiddenValueOld;
-        fVar19 = (pMVar20->gravity).fakeValue;
+        fVar13 = (pMVar20->gravity).fakeValue;
         if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
             cctor_finished_or_no_cctor == 0) {
           puVar21 = &UNK_?;
@@ -95,42 +93,37 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
         value_00.hiddenValue = AVar22;
         value_00.currentCryptoKey = (int32_t)puVar21;
         value_00.hiddenValueOld = pBVar23;
-        value_00.fakeValue = fVar19;
+        value_00.fakeValue = fVar13;
         value_00.inited = (pMVar20->gravity).inited;
         value_00._17_3_ = *(undefined3 *)&(pMVar20->gravity).field_0x11;
-        fVar19 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+        fVar13 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
                  ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
-        fStack_15 = fStack_15 * fVar19;
-        fStack_13 = fStack_13 * fVar19;
-        pMStack_17 = (interactableLocal->klass->vtable).__unknown_8.method;
-        fStack_7 = density;
-        fStack_6 = 0.0;
-        pMStack_12 = interactableLocal;
-        fVar18 = (float10)(*(code *)pMStack_17)();
-        pMStack_17 = (MethodInfo *)(float)fVar18;
-        fStack_7 = fStack_13 * (float)pMStack_17;
-        pMVar24 = (MVInteractableBase *)(fVar14 * fVar19 * (float)pMStack_17);
-        fStack_6 = fStack_15 * (float)pMStack_17;
-        pMStack_12 = pMVar24;
-        fStack_13 = fStack_7;
-        fStack_15 = fStack_6;
-        fVar18 = (float10)func_?(&pMStack_12,0);
-        pMVar16 = (this->fields).groundMaterial;
-        fStack_7 = (float)fVar18;
-        if (pMVar16 != (MVMaterial *)0x0) {
-          pMStack_17 = (interactableLocal->klass->vtable).__unknown_8.method;
-          fVar18 = (float10)(*(code *)pMStack_17)
+        fStack_15 = fStack_15 * fVar13;
+        fStack_14 = fStack_14 * fVar13;
+        pMStack_16 = (interactableLocal->klass->vtable).__unknown_8.method;
+        uStack_24 = CONCAT44((interactableLocal->klass->vtable).__unknown_9.methodPtr,density);
+        fVar18 = (float10)(*(code *)pMStack_16)(interactableLocal,0);
+        pMStack_16 = (MethodInfo *)(float)fVar18;
+        fStack_7 = (float)pMStack_16 * fVar19 * fVar13;
+        fStack_15 = (float)pMStack_16 * fStack_15;
+        fStack_25 = (float)pMStack_16 * fStack_14;
+        uStack_24 = CONCAT44(fStack_15,fStack_7);
+        fVar13 = 0.0;
+        fVar18 = (float10)func_?(&uStack_24);
+        pMVar17 = (this->fields).groundMaterial;
+        pMStack_16 = (MethodInfo *)(float)fVar18;
+        if (pMVar17 != (MVMaterial *)0x0) {
+          fVar18 = (float10)(*(code *)(interactableLocal->klass->vtable).__unknown_8.method)
                                       (interactableLocal,0x11,
-                                       (pMVar16->fields)._PhysicalProperties_k__BackingField.
+                                       (pMVar17->fields)._PhysicalProperties_k__BackingField.
                                        staticFriction,
                                        (interactableLocal->klass->vtable).__unknown_9.methodPtr);
-          pMStack_17 = (MethodInfo *)(float)fVar18;
-          if ((float)pMStack_17 < fStack_7) {
-            fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+          if ((float)fVar18 < (float)pMStack_16) {
+            fVar19 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                ((MethodInfo *)0x0);
-            __return_storage_ptr__->x = velocity.x + (float)pMVar24 * fVar14;
-            __return_storage_ptr__->y = velocity.y + fStack_15 * fVar14;
-            __return_storage_ptr__->z = velocity.z + fStack_13 * fVar14;
+            __return_storage_ptr__->x = velocity.x + fStack_7 * fVar19;
+            __return_storage_ptr__->y = velocity.y + fStack_15 * fVar19;
+            __return_storage_ptr__->z = velocity.z + fVar13 * fVar19;
             return __return_storage_ptr__;
           }
           goto code_?;
@@ -138,9 +131,9 @@ Vector3 * Assembly-CSharp.dll::MVGroundState::MVGroundState_ApplySlidingVelocity
       }
     }
     func_?();
-    pcVar25 = (code *)swi(3);
-    pVVar26 = (Vector3 *)(*pcVar25)();
-    return pVVar26;
+    pcVar26 = (code *)swi(3);
+    pVVar27 = (Vector3 *)(*pcVar26)();
+    return pVVar27;
   }
 code_?:
   __return_storage_ptr__->x = (float)(int)velocity._0_8_;

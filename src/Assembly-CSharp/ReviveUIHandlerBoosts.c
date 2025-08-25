@@ -498,14 +498,14 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-              func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
+    unaff_ESI = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+                func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
     UxmlObjectListAttributeDescription`1[System::Object]::
-    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-    if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-      this_01[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)this;
-      func_?(this_01 + 1,this);
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(unaff_ESI,(MethodInfo *)0x0);
+    if (unaff_ESI != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      unaff_ESI[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)this;
+      func_?(unaff_ESI + 1,this);
       original = (this->fields)._.errorNotification;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -515,9 +515,9 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
                          ((Object *)original,
                           NotificationPopup_MethodInfo__UnityEngine__Object__Instantiate<NotificationPopup>_NotificationPopup_
                          );
-      (this_01->fields)._._defaultValue_k__BackingField = pLVar1;
-      func_?(&this_01->fields,pLVar1);
-      unaff_EBX = (NotificationPopup *)(this_01->fields)._._defaultValue_k__BackingField;
+      (unaff_ESI->fields)._._defaultValue_k__BackingField = pLVar1;
+      func_?(&unaff_ESI->fields,pLVar1);
+      unaff_EBX = (NotificationPopup *)(unaff_ESI->fields)._._defaultValue_k__BackingField;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
       unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
@@ -536,7 +536,7 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                     (Object *)this_01,
+                     (Object *)unaff_ESI,
                      MethodInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0___OnRewardedAdWatched_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
@@ -565,13 +565,25 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  uVar4 = func_?();
-  puVar5 = &unaff_EDI[-1].fields.field_0x5e;
-  *puVar5 = *puVar5 + (char)((uint)unaff_EBX >> 8) + (uVar4 < 0x3dfea810);
-  *(char *)(uVar4 + 0xcc103dfe) = *(char *)(uVar4 + 0xcc103dfe) + extraout_CH + (uVar4 < 0x3dfea610)
-  ;
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  bVar4 = 0;
+  pcVar5 = (char *)func_?();
+  bVar6 = *(byte *)&unaff_EDI->klass;
+  bVar7 = *(char *)&unaff_EDI->klass - extraout_DH;
+  *(byte *)&unaff_EDI->klass = bVar7 - bVar4;
+  *pcVar5 = *pcVar5 + (char)unaff_EBX + (bVar6 < extraout_DH || bVar7 < bVar4);
+  in_AF = 9 < ((byte)pcVar5 & 0xf) | in_AF;
+  bVar7 = (byte)pcVar5 + in_AF * '\x06' & 0xf;
+  bVar6 = (byte)((uint)unaff_EBX >> 8);
+  *(char *)&unaff_ESI->klass =
+       *(char *)&unaff_ESI->klass + extraout_DL +
+       (CARRY1(bVar6,extraout_CH) || CARRY1(bVar6 + extraout_CH,in_AF));
+  bVar6 = 9 < bVar7 | in_AF;
+  uVar8 = CONCAT31((int3)((uint)pcVar5 >> 8),bVar7 + bVar6 * '\x06') & 0xffff000f;
+  pcVar5 = (char *)CONCAT22((short)(uVar8 >> 0x10),
+                            CONCAT11((char)((uint)pcVar5 >> 8) + in_AF + bVar6,(char)uVar8));
+  *pcVar5 = *pcVar5 + (char)unaff_EBX + bVar6;
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -645,8 +657,8 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts__OnReward
 {
   pBVar1 = (this->fields)._.continueButton;
   if ((pBVar1 != (Button *)0x0) &&
-     (unityEventBase = (ReviveUIHandlerBoosts *)(pBVar1->fields).m_OnClick,
-     unityEventBase != (ReviveUIHandlerBoosts *)0x0)) {
+     (unityEventBase = (pBVar1->fields).m_OnClick,
+     unityEventBase != (Button_ButtonClickedEvent *)0x0)) {
     if (cRam_? == '\0') {
       func_?();
       func_?();
@@ -654,23 +666,22 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts__OnReward
       func_?(&TypeInfo__System__Object);
       cRam_? = '\x01';
     }
-    if (*(bool *)&(unityEventBase->fields)._.continueButton != 0) {
-      this_00 = ((UnityEventBase__Fields *)&(unityEventBase->fields)._._)->m_PersistentCalls;
+    if ((unityEventBase->fields)._._.m_CallsDirty != 0) {
+      this_00 = (unityEventBase->fields)._._.m_PersistentCalls;
       if (this_00 == (PersistentCallGroup *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
       PersistentCallGroup_Initialize
-                (this_00,((UnityEventBase__Fields *)&(unityEventBase->fields)._._)->m_Calls,
-                 (UnityEventBase *)unityEventBase,(MethodInfo *)0x0);
-      *(bool *)&(unityEventBase->fields)._.continueButton = 0;
+                (this_00,(unityEventBase->fields)._._.m_Calls,(UnityEventBase *)unityEventBase,
+                 (MethodInfo *)0x0);
+      (unityEventBase->fields)._._.m_CallsDirty = 0;
     }
-    pIVar2 = ((UnityEventBase__Fields *)&(unityEventBase->fields)._._)->m_Calls;
+    pIVar2 = (unityEventBase->fields)._._.m_Calls;
     if (pIVar2 != (InvokableCallList *)0x0) {
       if (cRam_? == '\0') {
         func_?();
         func_?();
         cRam_? = '\x01';
       }
-      this = unityEventBase;
       if ((pIVar2->fields).m_NeedsUpdate != 0) {
         pLVar3 = (pIVar2->fields).m_ExecutingCalls;
         if (pLVar3 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) goto code_?;
@@ -691,9 +702,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts__OnReward
                   );
         pLVar6 = (List_1_System_Object_ *)(pIVar2->fields).m_ExecutingCalls;
         if (pLVar6 == (List_1_System_Object_ *)0x0) goto code_?;
-        this = (ReviveUIHandlerBoosts *)
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-        ;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__AddRange
                   (pLVar6,(IEnumerable_1_System_Object_ *)(pIVar2->fields).m_RuntimeCalls,
@@ -701,76 +709,88 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts__OnReward
                   );
         (pIVar2->fields).m_NeedsUpdate = 0;
       }
-      pBVar1 = (Button *)(pIVar2->fields).m_ExecutingCalls;
+      RVar7 = (RegexCharClass_SingleRange)(pIVar2->fields).m_ExecutingCalls;
       iVar4 = 0;
-      if (pBVar1 != (Button *)0x0) {
-        while( true ) {
+      this = (ReviveUIHandlerBoosts *)RVar7;
+      if (RVar7 != (RegexCharClass_SingleRange)0x0) {
+code_?:
+        do {
           while( true ) {
-            while( true ) {
-              pRVar7 = this;
-              if ((int)(pBVar1->fields)._._._.m_CancellationTokenSource <= iVar4) {
-                return;
-              }
-              RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                  *)pBVar1,iVar4,
-                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                                );
-              if (((RVar8 == (RegexCharClass_SingleRange)0x0) ||
-                  (*(byte *)(*(int *)RVar8 + 0xb8) <
-                   (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment)) ||
-                 (unityEventBase = this,
-                 *(InvokableCall__Class **)
-                  (*(int *)(*(int *)RVar8 + 100) + -4 +
-                  (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
-                 TypeInfo__UnityEngine__Events__InvokableCall)) break;
-              this = (ReviveUIHandlerBoosts *)0x0;
-              UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                        ((InvokableCall *)RVar8,(MethodInfo *)0x0);
-              iVar4 = iVar4 + 1;
-              unityEventBase = pRVar7;
+            if (*(int *)((int)RVar7 + 0xc) <= iVar4) {
+              return;
             }
-            mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)pBVar1,
-                       iVar4,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                      );
-            this = (ReviveUIHandlerBoosts *)TypeInfo__UnityEngine__Events__InvokableCall;
-            this_01 = (InvokableCall *)func_?();
-            if (this_01 == (InvokableCall *)0x0) break;
+            RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               RVar7,iVar4,
+                               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                              );
+            if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
+            if ((*(byte *)(*(int *)RVar8 + 0xb8) <
+                 (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment) ||
+               (*(InvokableCall__Class **)
+                 (*(int *)(*(int *)RVar8 + 100) + -4 +
+                 (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
+                TypeInfo__UnityEngine__Events__InvokableCall)) {
+              bVar9 = false;
+            }
+            else {
+              bVar9 = true;
+            }
+            this_01.First = 0;
+            this_01.Last = 0;
+            if (bVar9) {
+              this_01 = RVar8;
+            }
+            RVar7 = (RegexCharClass_SingleRange)this;
+            if (this_01 == (RegexCharClass_SingleRange)0x0) break;
             UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                      (this_01,(MethodInfo *)0x0);
+                      ((InvokableCall *)this_01,(MethodInfo *)0x0);
             iVar4 = iVar4 + 1;
+            RVar7 = this_01;
+            this = (ReviveUIHandlerBoosts *)this_01;
           }
-          RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             pBVar1,iVar4,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                            );
-          if ((unityEventBase->fields)._.declineButton == (Button *)0x0) {
-            pBVar1 = (Button *)func_?();
-            (unityEventBase->fields)._.declineButton = pBVar1;
+          this = (ReviveUIHandlerBoosts *)
+                 mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            RVar7,iVar4,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                           );
+          this_02 = (InvokableCall *)func_?();
+          if (this_02 == (InvokableCall *)0x0) {
+            RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                     RegularExpressions::RegexCharClass+SingleRange]::
+                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                                )RVar7,iVar4,
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                               );
+            if ((unityEventBase->fields)._.m_InvokeArray == (Object__Array *)0x0) {
+              pOVar10 = (Object__Array *)func_?();
+              (unityEventBase->fields)._.m_InvokeArray = pOVar10;
+              func_?();
+            }
+            if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
             func_?();
+            iVar4 = iVar4 + 1;
+            RVar7 = (RegexCharClass_SingleRange)this;
+            goto code_?;
           }
-          if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
-          pBVar1 = (unityEventBase->fields)._.declineButton;
-          func_?();
+          UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                    (this_02,(MethodInfo *)0x0);
           iVar4 = iVar4 + 1;
-        }
+        } while( true );
       }
     }
   }
 code_?:
-  uVar9 = func_?(&stack0xffffffec);
-  func_?(uVar9);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  uVar11 = func_?(&stack0xfffffff0);
+  func_?(uVar11);
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

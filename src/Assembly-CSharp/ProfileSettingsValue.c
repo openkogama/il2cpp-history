@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::ProfileSettingsValue::ProfileSettingsValue_OnChange
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel);
     func_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
     func_?(&TypeInfo__UnityEngine__FilterMode);
     func_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
@@ -175,12 +175,15 @@ code_?:
   func_?(value,pAVar5);
 code_?:
   func_?();
-  *(char *)(extraout_ECX + -0x1befdcc5) =
-       *(char *)(extraout_ECX + -0x1befdcc5) + (char)unaff_EBX +
-       (&stack0xffffffb8 <
-       *(undefined1 **)CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(0x3a,(char)unaff_EBX)));
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  *unaff_EBX = *unaff_EBX & 0x10;
+  cVar9 = (char)((uint)unaff_EBX >> 8);
+  *unaff_EBX = *unaff_EBX + cVar9;
+  pcVar20 = (char *)(CONCAT22((short)((uint)extraout_ECX >> 0x10),
+                             CONCAT11((char)((uint)extraout_ECX >> 8) + cVar9,(char)extraout_ECX)) +
+                   -0x2befdc7b);
+  *pcVar20 = *pcVar20 + (char)extraout_ECX;
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

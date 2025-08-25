@@ -116,55 +116,56 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::SpawnRoleAvatarSelection
                    );
     cRam_? = '\x01';
   }
-  iVar1 = amountOfElements + previousStartElement;
-  do {
-    if (iVar1 <= previousStartElement) {
-      return;
-    }
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionElement>__get_Count__
-                     );
-      cRam_? = '\x01';
-    }
-    if (-1 < previousStartElement) {
-      pLVar2 = (this->fields).selectionElements;
-      if (pLVar2 == (List_1_SpawnRoleAvatarSelectionElement_ *)0x0) goto code_?;
-      if ((previousStartElement < (pLVar2->fields)._size) &&
-         ((previousStartElement < newStartElement ||
-          ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement))))
-      {
-        this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             (this->fields).selectionElements,previousStartElement,
-                             MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionElement>__get_Item_int_
-                            );
-        if (this_01 == (RegexCharClass_SingleRange)0x0) {
-code_?:
-          func_?();
-          pcVar3 = (code *)swi(3);
-          (*pcVar3)();
-          return;
-        }
-        SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelectionElement_Deactivate
-                  ((SpawnRoleAvatarSelectionElement *)this_01,(MethodInfo *)0x0);
-        pLVar4 = (this->fields).avatarSelectionDataList;
-        if (pLVar4 == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) goto code_?;
-        pMStack_5 = 
-        MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Item_int_;
-        iStack_6 = previousStartElement;
-        piVar7 = (int *)func_?(&iStack_6,pLVar4);
-        if ((*piVar7 == 0) ||
-           (this_00 = *(GameObject **)(*piVar7 + 0x88), this_00 == (GameObject *)0x0))
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_00,0,(MethodInfo *)0x0);
+  if (previousStartElement < previousStartElement + amountOfElements) {
+    iVar1 = previousStartElement + amountOfElements;
+    do {
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionElement>__get_Count__
+                       );
+        cRam_? = '\x01';
       }
-    }
-    previousStartElement = previousStartElement + 1;
-  } while( true );
+      if (-1 < previousStartElement) {
+        pLVar2 = (this->fields).selectionElements;
+        if (pLVar2 == (List_1_SpawnRoleAvatarSelectionElement_ *)0x0) goto code_?;
+        if ((previousStartElement < (pLVar2->fields)._size) &&
+           ((previousStartElement < newStartElement ||
+            ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement)))
+           ) {
+          this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                               (this->fields).selectionElements,previousStartElement,
+                               MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionElement>__get_Item_int_
+                              );
+          if (this_01 == (RegexCharClass_SingleRange)0x0) {
+code_?:
+            func_?();
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelectionElement_Deactivate
+                    ((SpawnRoleAvatarSelectionElement *)this_01,(MethodInfo *)0x0);
+          pLVar4 = (this->fields).avatarSelectionDataList;
+          if (pLVar4 == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) goto code_?;
+          pMStack_5 = 
+          MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Item_int_
+          ;
+          iStack_6 = previousStartElement;
+          piVar7 = (int *)func_?(&iStack_6,pLVar4);
+          if ((*piVar7 == 0) ||
+             (this_00 = *(GameObject **)(*piVar7 + 0x88), this_00 == (GameObject *)0x0))
+          goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (this_00,0,(MethodInfo *)0x0);
+        }
+      }
+      previousStartElement = previousStartElement + 1;
+    } while (previousStartElement < iVar1);
+  }
+  return;
 }
 
 
@@ -323,7 +324,9 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::
     return;
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionElement>__get_Count__
+                   );
     func_?(&
                     MethodInfo__System__Collections__Generic__List<SpawnRoleAvatarSelectionData>__get_Count__
                    );
@@ -347,11 +350,11 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionMenu::
       fVar5 = (float10)func_?((double)((float)iVar3 * fVar1));
       fVar1 = (float)(this->fields).maxSelectionElementsOnScreen * _UNK_?;
       if (cVar4 == '\0') {
-        func_?();
+        func_?(&TypeInfo__System__Math);
         cRam_? = '\x01';
       }
       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__System__Math);
       }
       fVar5 = (float10)func_?((double)((float)(int)fVar5 - fVar1));
       pLVar6 = (this->fields).selectionElements;

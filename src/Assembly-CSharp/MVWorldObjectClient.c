@@ -643,8 +643,8 @@ float Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ComputeObjec
   uVar11 = pVVar10->x;
   uVar12 = pVVar10->y;
   fVar6 = pVVar10->z * _UNK_?;
-  return (float)uVar11 * _UNK_? * (float)uVar11 * _UNK_? +
-         (float)uVar12 * _UNK_? * (float)uVar12 * _UNK_? + fVar6 * fVar6;
+  return (float)uVar12 * _UNK_? * (float)uVar12 * _UNK_? +
+         (float)uVar11 * _UNK_? * (float)uVar11 * _UNK_? + fVar6 * fVar6;
 }
 
 
@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.54177e-29;
-              value.x = (float)uVar4 * 4.54177e-29;
-              value.z = (pVVar3->oneVector).z * 4.54177e-29;
+              value.y = (float)uVar5 * 4.5448564e-29;
+              value.x = (float)uVar4 * 4.5448564e-29;
+              value.z = (pVVar3->oneVector).z * 4.5448564e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1130,35 +1130,45 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_DestroyRecurs
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVGroup->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+    if (((wo->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
        ((MVGroup__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1]
-        == TypeInfo__MVGroup)) {
-      this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             MVGroup::MVGroup_get_Children((MVGroup *)wo,(MethodInfo *)0x0);
-      if (this == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        != TypeInfo__MVGroup)) {
+      bVar7 = false;
+    }
+    else {
+      bVar7 = true;
+    }
+    this = (MVGroup *)0x0;
+    if (bVar7) {
+      this = (MVGroup *)wo;
+    }
+    if (this != (MVGroup *)0x0) {
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                MVGroup::MVGroup_get_Children(this,(MethodInfo *)0x0);
+      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
       goto code_?;
       method_00 = (MethodInfo *)&UNK_?;
-      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_8,this,
+                         (&LStack_9,this_00,
                           MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                          );
-      LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-      LStack_6._index = pLVar7->_index;
-      LStack_6._version = pLVar7->_version;
-      LStack_6._current = *(Object **)&pLVar7->_current;
-      LStack_8._version = 0;
+      LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
+      LStack_6._index = pLVar8->_index;
+      LStack_6._version = pLVar8->_version;
+      LStack_6._current = *(Object **)&pLVar8->_current;
+      LStack_9._version = 0;
       uStack_1 = 1;
-      LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+      LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
       while( true ) {
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
                           (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
                           );
         wo_00 = LStack_6._current;
-        if (bVar9 == 0) break;
+        if (bVar10 == 0) break;
         if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVWorldObjectClient);
         }
@@ -1177,10 +1187,10 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_DestroyRecurs
     return;
   }
 code_?:
-  uVar10 = func_?();
-  func_?(uVar10);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  uVar11 = func_?();
+  func_?(uVar11);
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -1482,21 +1492,21 @@ code_?:
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (this = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     this == (MVWorldObjectClient *)0x0)) {
-    cVar2 = '\0';
-    uVar3 = func_?();
-    pcVar4 = (char *)(CONCAT31((int3)((uint)uVar3 >> 8),-cVar2) + -0x5aef99a7);
-    *pcVar4 = *pcVar4 + (char)((uint)uVar3 >> 8) + cVar2;
-    pcVar5 = (code *)swi(3);
-    pMVar6 = (MVWorldObjectClient *)(*pcVar5)();
-    return pMVar6;
+     (pMVar2 = (MVWorldObjectClient *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
+     pMVar2 == (MVWorldObjectClient *)0x0)) {
+    func_?();
+    piVar3 = &(this->fields)._.itemId;
+    *piVar3 = *piVar3 & 0xADDR;
+    pcVar4 = (code *)swi(3);
+    pMVar2 = (MVWorldObjectClient *)(*pcVar4)();
+    return pMVar2;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_7;
+  unaff_EBP = in_stack_5;
   unaff_ESI = pMVar1;
+  this = pMVar2;
   goto code_?;
 }
 
@@ -2910,8 +2920,8 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ResetRotation
         pTVar5 = (this->fields).transform;
         uVar17 = pVVar16->x;
         uVar18 = pVVar16->y;
-        fVar13 = fVar13 + (float)uVar17;
-        fStack_12 = fStack_15 + pVVar16->z;
+        fVar13 = (float)uVar17 + fVar13;
+        fStack_12 = pVVar16->z + fStack_15;
         uStack_2 = CONCAT44((float)uVar18 + fStack_14,fVar13);
         if (pTVar5 != (Transform *)0x0) {
           value.y = (float)uVar18 + fStack_14;
@@ -3031,7 +3041,7 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RotateAroundL
   pTVar1 = (this->fields).transform;
   if (pTVar1 != (Transform *)0x0) {
     pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                       ((Quaternion *)&stack0xffffffc4,pTVar1,(MethodInfo *)0x0);
+                       ((Quaternion *)&stack0xffffffdc,pTVar1,(MethodInfo *)0x0);
     fVar3 = pQVar2->w;
     if (rotationMode == RotationMode__Enum_X) {
       pTVar1 = (this->fields).transform;
@@ -3043,41 +3053,41 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RotateAroundL
       pTVar1 = (this->fields).transform;
       if (pTVar1 == (Transform *)0x0) goto code_?;
       pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                         ((Vector3 *)&puStack_6,pTVar1,(MethodInfo *)0x0);
+                         ((Vector3 *)(auStack_5 + 4),pTVar1,(MethodInfo *)0x0);
     }
     else {
       pTVar1 = (this->fields).transform;
       if (pTVar1 == (Transform *)0x0) goto code_?;
       pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                         ((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
+                         ((Vector3 *)(auStack_5 + 4),pTVar1,(MethodInfo *)0x0);
     }
     pTVar1 = (this->fields).transform;
-    fVar7 = pVVar4->z;
+    fVar6 = pVVar4->z;
     if (pTVar1 != (Transform *)0x0) {
-      fVar8 = 0.0;
+      fVar7 = 0.0;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_RotateAround
                 (pTVar1,pivot,*pVVar4,angle,(MethodInfo *)0x0);
       pTVar1 = (this->fields).transform;
       if (pTVar1 != (Transform *)0x0) {
         pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                            ((Quaternion *)auStack_5,pTVar1,(MethodInfo *)0x0);
-        if ((angle * pQVar2->y + fVar7 * pQVar2->x + fVar8 * pQVar2->z + fVar3 * pQVar2->w <=
+        if ((angle * pQVar2->y + fVar6 * pQVar2->x + fVar7 * pQVar2->z + fVar3 * pQVar2->w <=
              _UNK_?) &&
            ((this->fields).RotationChanged !=
             (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0)) {
           fVar3 = pQVar2->x;
-          fVar7 = pQVar2->y;
-          fVar8 = pQVar2->z;
-          fVar9 = pQVar2->w;
-          pUVar10 = (this->fields).RotationChanged;
+          fVar6 = pQVar2->y;
+          fVar7 = pQVar2->z;
+          fVar8 = pQVar2->w;
+          pUVar9 = (this->fields).RotationChanged;
           this_00 = (RotationChangedEventArgs *)func_?();
-          newRotation.y = fVar7;
+          newRotation.y = fVar6;
           newRotation.x = fVar3;
-          newRotation.z = fVar8;
-          newRotation.w = fVar9;
+          newRotation.z = fVar7;
+          newRotation.w = fVar8;
           RotationChangedEventArgs::RotationChangedEventArgs__ctor
                     (this_00,newRotation,(MethodInfo *)0x0);
-          (*(pUVar10->fields)._._.invoke_impl)();
+          (*(pUVar9->fields)._._.invoke_impl)();
         }
         return;
       }
@@ -3085,8 +3095,8 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RotateAroundL
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

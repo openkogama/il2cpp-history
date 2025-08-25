@@ -700,14 +700,24 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::
       (*pcVar1)();
       return;
     }
-    this_01 = (MVCubeModelBase *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_00,worldId,(MethodInfo *)0x0);
-    if (this_01 != (MVCubeModelBase *)0x0) {
-      if (((TypeInfo__MVCubeModelBase->_1).naturalAligment <= (this_01->klass->_1).naturalAligment)
-         && ((MVCubeModelBase__Class *)
-             (this_01->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1]
-             == TypeInfo__MVCubeModelBase)) {
+    pMVar2 = (MVCubeModelBase *)
+             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_00,worldId,(MethodInfo *)0x0);
+    if (pMVar2 != (MVCubeModelBase *)0x0) {
+      if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVCubeModelBase->_1).naturalAligment) ||
+         ((MVCubeModelBase__Class *)
+          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] !=
+          TypeInfo__MVCubeModelBase)) {
+        bVar3 = false;
+      }
+      else {
+        bVar3 = true;
+      }
+      this_01 = (MVCubeModelBase *)0x0;
+      if (bVar3) {
+        this_01 = pMVar2;
+      }
+      if (this_01 != (MVCubeModelBase *)0x0) {
         MVCubeModelBase::MVCubeModelBase_UpdatePrototypeScale(this_01,scale,(MethodInfo *)0x0);
       }
     }

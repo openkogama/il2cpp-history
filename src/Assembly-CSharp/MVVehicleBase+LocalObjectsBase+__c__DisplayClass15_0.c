@@ -11,13 +11,24 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase+<>c__DisplayClass15_0::
     func_?(&TypeInfo__MVAvatarLocal);
     cRam_? = '\x01';
   }
-  if (((wo != (MVWorldObjectClient *)0x0) &&
-      ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (wo->klass->_1).naturalAligment)) &&
-     ((MVAvatarLocal__Class *)
-      (wo->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
-      TypeInfo__MVAvatarLocal)) {
-    (this->fields).localAvatar = (MVAvatarLocal *)wo;
-    func_?(&this->fields,wo);
+  if (wo != (MVWorldObjectClient *)0x0) {
+    if (((wo->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
+       ((MVAvatarLocal__Class *)
+        (wo->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+        TypeInfo__MVAvatarLocal)) {
+      bVar1 = false;
+    }
+    else {
+      bVar1 = true;
+    }
+    pMVar2 = (MVAvatarLocal *)0x0;
+    if (bVar1) {
+      pMVar2 = (MVAvatarLocal *)wo;
+    }
+    if (pMVar2 != (MVAvatarLocal *)0x0) {
+      (this->fields).localAvatar = pMVar2;
+      func_?(&this->fields,pMVar2);
+    }
   }
   return;
 }

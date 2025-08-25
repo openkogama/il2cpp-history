@@ -408,12 +408,12 @@ void Assembly-CSharp.dll::MVWorldObjectClientManagerNetwork::
     }
     else {
       if (pMVar6 == (MVGroup__Class *)0x0) goto code_?;
-      if (((TypeInfo__MVGroup->_1).naturalAligment <=
-           (((MVGroup__Class *)(pMVar6->_0).image)->_1).naturalAligment) &&
-         ((MVGroup__Class *)
-          (((MVGroup__Class *)(pMVar6->_0).image)->_1).typeHierarchy
-          [(TypeInfo__MVGroup->_1).naturalAligment - 1] == TypeInfo__MVGroup)) {
-        if (pMVar6 == (MVGroup__Class *)0x0) goto code_?;
+      if ((((TypeInfo__MVGroup->_1).naturalAligment <=
+            (((MVGroup__Class *)(pMVar6->_0).image)->_1).naturalAligment) &&
+          ((MVGroup__Class *)
+           (((MVGroup__Class *)(pMVar6->_0).image)->_1).typeHierarchy
+           [(TypeInfo__MVGroup->_1).naturalAligment - 1] == TypeInfo__MVGroup)) &&
+         (pMVar6 != (MVGroup__Class *)0x0)) {
         if ((((((MVGroup__Class *)(pMVar6->_0).image)->_1).naturalAligment <
               (TypeInfo__MVGroup->_1).naturalAligment) ||
             ((MVGroup__Class *)
@@ -777,17 +777,19 @@ code_?:
         ((MVVehicleBase__Class *)
          (this_00->klass->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] !=
          TypeInfo__MVVehicleBase)) || (this_00 == (MVVehicleBase *)0x0)) goto code_?;
-    if (((MVVehicleBase__Class *)worldObjectID == (MVVehicleBase__Class *)0x0) ||
-       (((pMVar3 = (MVAvatar__Class *)(((MVVehicleBase__Class *)worldObjectID)->_0).image,
-         (TypeInfo__MVAvatar->_1).naturalAligment <= (pMVar3->_1).naturalAligment &&
-         ((MVAvatar__Class *)
-          (pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] ==
-          TypeInfo__MVAvatar)) &&
-        ((MVVehicleBase__Class *)worldObjectID != (MVVehicleBase__Class *)0x0)))) {
+    if ((MVVehicleBase__Class *)worldObjectID == (MVVehicleBase__Class *)0x0) {
+      worldObjectID = 0;
+code_?:
       MVVehicleBase::MVVehicleBase_Enter(this_00,(MVAvatar *)worldObjectID,seatID,(MethodInfo *)0x0)
       ;
       return;
     }
+    pMVar3 = (MVAvatar__Class *)(((MVVehicleBase__Class *)worldObjectID)->_0).image;
+    if ((((TypeInfo__MVAvatar->_1).naturalAligment <= (pMVar3->_1).naturalAligment) &&
+        ((MVAvatar__Class *)(pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
+         == TypeInfo__MVAvatar)) &&
+       ((MVVehicleBase__Class *)worldObjectID != (MVVehicleBase__Class *)0x0))
+    goto code_?;
   }
   func_?();
 code_?:

@@ -70,8 +70,8 @@ int32_t Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
+  puStack_4 = &stack0xffffff98;
+  puVar5 = &stack0xffffff98;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
@@ -137,7 +137,7 @@ int32_t Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
       pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                          &stack0xffffffa0,
+                          &stack0xffffffa4,
                           (Dictionary_2_System_UInt32_System_Object_ *)pKVar9[1].klass,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                          );
@@ -175,43 +175,48 @@ int32_t Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                                );
         if (iVar14 == 0) goto code_?;
-        this = (GamePassesSpawnRoleRewardInfo *)
-               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+        pGStack_15 = (GamePassesSpawnRoleRewardInfo__Class *)
+                     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
         ;
-        piStack_15 = (int *)func_?(pOVar6,
-                                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                           );
-        if (piStack_15 == (int *)0x0) goto code_?;
-        iVar14 = *piStack_15;
+        this = (GamePassesSpawnRoleRewardInfo *)
+               func_?(pOVar6,
+                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                              );
+        if (this == (GamePassesSpawnRoleRewardInfo *)0x0) goto code_?;
+        pGStack_15 = this->klass;
         uVar16 = 0;
         uStack_17 = 0;
-        uVar18 = *(ushort *)(iVar14 + 0xb6);
-        uStack_19 = (uint)uVar18;
-        if (uVar18 != 0) {
+        sVar18._0_1_ = (pGStack_15->_1).rank;
+        sVar18._1_1_ = (pGStack_15->_1).minimumAlignment;
+        if (sVar18 != 0) {
           do {
-            if (*(IAttributeSetting__Class **)(*(int *)(iVar14 + 0x58) + (uint)uVar16 * 8) ==
+            if (pGStack_15->interfaceOffsets[uVar16].interfaceType ==
+                (Il2CppClass *)
                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                ) {
-              puVar20 = (undefined4 *)
-                       (iVar14 + (*(int *)(*(int *)(iVar14 + 0x58) + 4 + (uint)uVar16 * 8) + 0x18) * 8
-                       );
+              ppMVar19 = &(&(this->klass->vtable).Equals)
+                         [this->klass->interfaceOffsets[uVar16].offset].method;
               goto code_?;
             }
             uVar16 = uVar16 + 1;
-          } while (uVar16 < uVar18);
+            uVar20._0_1_ = (this->klass->_1).rank;
+            uVar20._1_1_ = (this->klass->_1).minimumAlignment;
+          } while (uVar16 < uVar20);
         }
-        puVar20 = (undefined4 *)
-                 func_?(piStack_15,
-                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                 ,0);
+        ppMVar19 = (MethodInfo **)
+                  func_?(this,
+                                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                  ,0);
 code_?:
-        iVar14 = (*(code *)*puVar20)(piStack_15,puVar20[1]);
+        iVar14 = (*(code *)*ppMVar19)(this,ppMVar19[1]);
         pOVar6 = (Object *)((int)&pOStack_8->klass + iVar14);
         pOStack_8 = pOVar6;
       }
     }
   }
   func_?();
+code_?:
+  func_?(pOVar6,pGStack_15);
 code_?:
   uVar21 = func_?(pOVar6,this);
   func_?(uVar21);
@@ -287,7 +292,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xd2,(MethodInfo *)0x0);
+                  (pGVar1,0x92,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -667,186 +672,180 @@ code_?:
     func_?();
 code_?:
     func_?();
-    CStack_1.g = (float)extraout_ECX;
-    pAVar2 = extraout_EDX;
   }
   else {
-    MVar3 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
+    MVar1 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
                        (spawnRole,(MethodInfo *)0x0);
-    (this->fields).team = MVar3;
+    (this->fields).team = MVar1;
     (this->fields).spawnRolePreviewObject = spawnRolePreviewObject;
     func_?(&(this->fields).spawnRolePreviewObject,spawnRolePreviewObject);
     (this->fields).woid = (spawnRole->fields)._._._._.id;
-    pIVar4 = (this->fields).spawnRoleTeamImage;
-    MVar3 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
+    pIVar2 = (this->fields).spawnRoleTeamImage;
+    MVar1 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team
                        (spawnRole,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__Styles);
       cRam_? = '\x01';
     }
-    if (MVar3 == MVTeam__Enum_Blue) {
+    if (MVar1 == MVTeam__Enum_Blue) {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
       colorStyle = ColorStyle__Enum_TeamBlue;
-      pCVar5 = (Color *)&puStack_6;
     }
-    else if (MVar3 == MVTeam__Enum_Red) {
+    else if (MVar1 == MVTeam__Enum_Red) {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
       colorStyle = ColorStyle__Enum_TeamRed;
-      pCVar5 = (Color *)&stack0xffffffb4;
     }
-    else if (MVar3 == MVTeam__Enum_Green) {
+    else if (MVar1 == MVTeam__Enum_Green) {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
       colorStyle = ColorStyle__Enum_TeamGreen;
-      pCVar5 = &CStack_7;
     }
-    else if (MVar3 == MVTeam__Enum_Yellow) {
+    else if (MVar1 == MVTeam__Enum_Yellow) {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
       colorStyle = ColorStyle__Enum_TeamYellow;
-      pCVar5 = &CStack_1;
     }
     else {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
       colorStyle = ColorStyle__Enum_TeamNone;
-      pCVar5 = &CStack_8;
     }
-    pCVar5 = Styles::Styles_GetColor(pCVar5,colorStyle,(MethodInfo *)0x0);
-    if (pIVar4 == (Image *)0x0) goto code_?;
-    (*(code *)(pIVar4->klass->vtable).set_color.method)
-              (pIVar4,pCVar5->r,pCVar5->g,pCVar5->b,pCVar5->a,
-               (pIVar4->klass->vtable).get_raycastTarget.methodPtr);
-    pGVar9 = (this->fields).backgroundTier1;
-    _bStack_8 = CONCAT31(uStack_10,(undefined1)tierRequirment == GamePassTier__Enum_Tier3);
-    if (pGVar9 == (GameObject *)0x0) goto code_?;
-    bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar9,(MethodInfo *)0x0);
-    if ((bool)bVar11 != ((undefined1)tierRequirment == GamePassTier__Enum_Tier1)) {
-      pGVar9 = (this->fields).backgroundTier1;
-      if (pGVar9 == (GameObject *)0x0) goto code_?;
+    pCVar3 = Styles::Styles_GetColor((Color *)&puStack_4,colorStyle,(MethodInfo *)0x0);
+    if (pIVar2 == (Image *)0x0) goto code_?;
+    (*(code *)(pIVar2->klass->vtable).set_color.method)
+              (pIVar2,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
+               (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
+    pGVar5 = (this->fields).backgroundTier1;
+    if (pGVar5 == (GameObject *)0x0) goto code_?;
+    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar5,(MethodInfo *)0x0);
+    if ((bool)bVar6 != ((undefined1)tierRequirment == GamePassTier__Enum_Tier1)) {
+      pGVar5 = (this->fields).backgroundTier1;
+      if (pGVar5 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar9,(undefined1)tierRequirment == GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
+                (pGVar5,(undefined1)tierRequirment == GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
     }
-    pGVar9 = (this->fields).backgroundTier2;
-    if (pGVar9 == (GameObject *)0x0) goto code_?;
-    bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar9,(MethodInfo *)0x0);
-    if ((bool)bVar11 != ((undefined1)tierRequirment == GamePassTier__Enum_Tier2)) {
-      pGVar9 = (this->fields).backgroundTier2;
-      if (pGVar9 == (GameObject *)0x0) goto code_?;
+    pGVar5 = (this->fields).backgroundTier2;
+    if (pGVar5 == (GameObject *)0x0) goto code_?;
+    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar5,(MethodInfo *)0x0);
+    if ((bool)bVar6 != ((undefined1)tierRequirment == GamePassTier__Enum_Tier2)) {
+      pGVar5 = (this->fields).backgroundTier2;
+      if (pGVar5 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar9,(undefined1)tierRequirment == GamePassTier__Enum_Tier2,(MethodInfo *)0x0);
+                (pGVar5,(undefined1)tierRequirment == GamePassTier__Enum_Tier2,(MethodInfo *)0x0);
     }
-    pGVar9 = (this->fields).backgroundTier3;
-    if (pGVar9 == (GameObject *)0x0) goto code_?;
-    bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar9,(MethodInfo *)0x0);
-    if ((bool)bVar11 != bStack_12) {
-      pGVar9 = (this->fields).backgroundTier3;
-      if (pGVar9 == (GameObject *)0x0) goto code_?;
+    pGVar5 = (this->fields).backgroundTier3;
+    if (pGVar5 == (GameObject *)0x0) goto code_?;
+    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar5,(MethodInfo *)0x0);
+    if ((bool)bVar6 != ((undefined1)tierRequirment == GamePassTier__Enum_Tier3)) {
+      pGVar5 = (this->fields).backgroundTier3;
+      if (pGVar5 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar9,bStack_12,(MethodInfo *)0x0);
+                (pGVar5,(undefined1)tierRequirment == GamePassTier__Enum_Tier3,(MethodInfo *)0x0);
     }
     GamePassesSpawnRoleRewardInfo_SetupPreviewImage(this,spawnRolePreviewObject,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    pGVar13 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar13 == (GameSessionData *)0x0) goto code_?;
-    if ((pGVar13->fields).gameMode == 0) {
+    pGVar7 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar7 == (GameSessionData *)0x0) goto code_?;
+    if ((pGVar7->fields).gameMode == 0) {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MVGameControllerBase);
         cRam_? = '\x01';
       }
-      pIVar14 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-      if (pIVar14 != (IEditModeUI *)0x0) {
-        cVar15 = func_?(1,TypeInfo__IEditModeUI,pIVar14);
-        if (cVar15 != '\0') goto code_?;
+      pIVar8 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+      if (pIVar8 != (IEditModeUI *)0x0) {
+        cVar9 = func_?(1,TypeInfo__IEditModeUI,pIVar8);
+        if (cVar9 != '\0') goto code_?;
         goto code_?;
       }
       goto code_?;
     }
 code_?:
-    pGVar9 = (this->fields).spawnRoleEditButton;
-    if (pGVar9 == (GameObject *)0x0) goto code_?;
+    pGVar5 = (this->fields).spawnRoleEditButton;
+    if (pGVar5 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar9,0,(MethodInfo *)0x0);
+              (pGVar5,0,(MethodInfo *)0x0);
 code_?:
-    IStack_16.m_value = GamePassesSpawnRoleRewardInfo_CalculateSpawnRoleCost(this,(MethodInfo *)0x0);
-    pTVar17 = (this->fields).spawnRoleCostAmount;
-    pSVar18 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_16,(MethodInfo *)0x0);
-    if (pTVar17 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar17->klass->vtable).set_text.method)
-              (pTVar17,pSVar18,(pTVar17->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar17 = (this->fields).spawnRoleCostAmount;
-    pCVar5 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
-                        ((Color *)&puStack_6,IStack_16.m_value,(MethodInfo *)0x0);
-    if (pTVar17 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar17->klass->vtable).set_color.method)
-              (pTVar17,pCVar5->r,pCVar5->g,pCVar5->b,pCVar5->a,
-               (pTVar17->klass->vtable).get_raycastTarget.methodPtr);
+    skillCost.m_value = GamePassesSpawnRoleRewardInfo_CalculateSpawnRoleCost(this,(MethodInfo *)0x0)
+    ;
+    pTVar10 = (this->fields).spawnRoleCostAmount;
+    pSVar11 = mscorlib.dll::System::Int32::Int32_ToString
+                        ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
+    if (pTVar10 == (Text *)0x0) goto code_?;
+    (*(code *)(pTVar10->klass->vtable).set_text.method)
+              (pTVar10,pSVar11,(pTVar10->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pTVar10 = (this->fields).spawnRoleCostAmount;
+    pCVar3 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
+                        ((Color *)&puStack_4,skillCost.m_value,(MethodInfo *)0x0);
+    if (pTVar10 == (Text *)0x0) goto code_?;
+    (*(code *)(pTVar10->klass->vtable).set_color.method)
+              (pTVar10,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
+               (pTVar10->klass->vtable).get_raycastTarget.methodPtr);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
     }
-    pPVar19 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar19 == (PlayerPlanetData *)0x0) goto code_?;
-    uVar20 = (uint)CONCAT11((undefined1)tierRequirment,cRam_?);
-    if ((pPVar19->fields).gamePassTier < (byte)(undefined1)tierRequirment) {
+    pPVar12 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if (pPVar12 == (PlayerPlanetData *)0x0) goto code_?;
+    uVar13 = (uint)CONCAT11((undefined1)tierRequirment,cRam_?);
+    if ((pPVar12->fields).gamePassTier < (byte)(undefined1)tierRequirment) {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__GamePassesManager);
-        uVar20 = (uint)CONCAT11((undefined1)tierRequirment,1);
+        uVar13 = (uint)CONCAT11((undefined1)tierRequirment,1);
         cRam_? = '\x01';
       }
-      pPVar19 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-      if (pPVar19 == (PlayerPlanetData *)0x0) goto code_?;
-      playerHasUnlockedTier = (byte)(uVar20 >> 8) <= (pPVar19->fields).previewGamePassTier;
+      pPVar12 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+      if (pPVar12 == (PlayerPlanetData *)0x0) goto code_?;
+      playerHasUnlockedTier = (byte)(uVar13 >> 8) <= (pPVar12->fields).previewGamePassTier;
     }
     else {
       playerHasUnlockedTier = true;
     }
-    if ((char)uVar20 == '\0') {
+    if ((char)uVar13 == '\0') {
       func_?(&TypeInfo__GamePassesManager);
-      uVar20 = (tierRequirment & 0xff) << 8;
+      uVar13 = (tierRequirment & 0xff) << 8;
       cRam_? = '\x01';
     }
-    pPVar19 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar19 == (PlayerPlanetData *)0x0) goto code_?;
+    pPVar12 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if (pPVar12 == (PlayerPlanetData *)0x0) goto code_?;
     GamePassesSpawnRoleRewardInfo_HandleLockedUIVisibility
               (this,playerHasUnlockedTier,
-               (char)(uVar20 >> 8) == (uint8_t)((pPVar19->fields).gamePassTier + 1),(MethodInfo *)0x0
+               (char)(uVar13 >> 8) == (uint8_t)((pPVar12->fields).gamePassTier + 1),(MethodInfo *)0x0
               );
-    pAVar21 = (spawnRole->fields).OnBodyUpdate;
-    pNVar22 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    pAVar14 = (spawnRole->fields).OnBodyUpdate;
+    pNVar15 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar22,(Object *)this,
+              (pNVar15,(Object *)this,
                MethodInfo__GamePassesSpawnRoleRewardInfo__OnSpawnRoleBodyUpdate__,(MethodInfo *)0x0)
     ;
-    pAVar21 = (Action *)
+    pAVar14 = (Action *)
               mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar21,(Delegate *)pNVar22,(MethodInfo *)0x0);
-    if (pAVar21 != (Action *)0x0) {
-      pAVar23 = (Action *)0x0;
-      if (pAVar21->klass == TypeInfo__System__Action) {
-        pAVar23 = pAVar21;
+                        ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
+    if (pAVar14 != (Action *)0x0) {
+      pAVar16 = (Action *)0x0;
+      if (pAVar14->klass == TypeInfo__System__Action) {
+        pAVar16 = pAVar14;
       }
-      if (pAVar23 != (Action *)0x0) {
-        (spawnRole->fields).OnBodyUpdate = pAVar23;
-        pAVar23 = (Action *)0x0;
-        if (pAVar21->klass == TypeInfo__System__Action) {
-          pAVar23 = pAVar21;
+      if (pAVar16 != (Action *)0x0) {
+        (spawnRole->fields).OnBodyUpdate = pAVar16;
+        pAVar16 = (Action *)0x0;
+        if (pAVar14->klass == TypeInfo__System__Action) {
+          pAVar16 = pAVar14;
         }
-        if (pAVar23 != (Action *)0x0) goto code_?;
+        if (pAVar16 != (Action *)0x0) goto code_?;
         goto code_?;
       }
       goto code_?;
@@ -854,83 +853,75 @@ code_?:
     (spawnRole->fields).OnBodyUpdate = (Action *)0x0;
 code_?:
     func_?();
-    pAVar21 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-    pNVar22 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    pAVar14 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+    pNVar15 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar22,(Object *)this,
+              (pNVar15,(Object *)this,
                MethodInfo__GamePassesSpawnRoleRewardInfo__OnPlayerPlanetDataUpdated__,
                (MethodInfo *)0x0);
-    CStack_1.g = (float)mscorlib.dll::System::Delegate::Delegate_Combine
-                                   ((Delegate *)pAVar21,(Delegate *)pNVar22,(MethodInfo *)0x0);
-    if ((Action *)CStack_1.g == (Action *)0x0) {
+    pAVar14 = (Action *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
+    if (pAVar14 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
-      CStack_1.b = 0.0;
 code_?:
-      CStack_1.g = (float)&TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-      CStack_1.r = (float)&UNK_?;
       func_?();
-      pCVar24 = (this->fields).continueButtonHandler;
-      if (pCVar24 != (ContinueButtonHandler *)0x0) {
-        pAVar21 = (pCVar24->fields).OnClick;
-        pNVar22 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      pCVar17 = (this->fields).continueButtonHandler;
+      if (pCVar17 != (ContinueButtonHandler *)0x0) {
+        pAVar14 = (pCVar17->fields).OnClick;
+        pNVar15 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar22,(Object *)this,MethodInfo__GamePassesSpawnRoleRewardInfo__OnPlayPressed__
+                  (pNVar15,(Object *)this,MethodInfo__GamePassesSpawnRoleRewardInfo__OnPlayPressed__
                    ,(MethodInfo *)0x0);
-        pAVar21 = (Action *)
+        pAVar14 = (Action *)
                   mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pAVar21,(Delegate *)pNVar22,(MethodInfo *)0x0);
-        if (pAVar21 == (Action *)0x0) {
-          (pCVar24->fields).OnClick = (Action *)0x0;
+                            ((Delegate *)pAVar14,(Delegate *)pNVar15,(MethodInfo *)0x0);
+        if (pAVar14 == (Action *)0x0) {
+          (pCVar17->fields).OnClick = (Action *)0x0;
         }
         else {
-          pAVar23 = (Action *)0x0;
-          if (pAVar21->klass == TypeInfo__System__Action) {
-            pAVar23 = pAVar21;
+          pAVar16 = (Action *)0x0;
+          if (pAVar14->klass == TypeInfo__System__Action) {
+            pAVar16 = pAVar14;
           }
-          if (pAVar23 == (Action *)0x0) goto code_?;
-          (pCVar24->fields).OnClick = pAVar23;
-          pAVar23 = (Action *)0x0;
-          if (pAVar21->klass == TypeInfo__System__Action) {
-            pAVar23 = pAVar21;
+          if (pAVar16 == (Action *)0x0) goto code_?;
+          (pCVar17->fields).OnClick = pAVar16;
+          pAVar16 = (Action *)0x0;
+          if (pAVar14->klass == TypeInfo__System__Action) {
+            pAVar16 = pAVar14;
           }
-          if (pAVar23 == (Action *)0x0) goto code_?;
+          if (pAVar16 == (Action *)0x0) goto code_?;
         }
         func_?();
-        pIVar4 = (this->fields).buttonAdImage;
-        pTVar25 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
-        if ((pTVar25 != (TogglePreviewState *)0x0) && (pIVar4 != (Image *)0x0)) {
+        pIVar2 = (this->fields).buttonAdImage;
+        pTVar18 = GamePassesManager::GamePassesManager_get_TogglePreviewState((MethodInfo *)0x0);
+        if ((pTVar18 != (TogglePreviewState *)0x0) && (pIVar2 != (Image *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                    ((Behaviour *)pIVar4,(pTVar25->fields).freeTry == 0,(MethodInfo *)0x0);
+                    ((Behaviour *)pIVar2,(pTVar18->fields).freeTry == 0,(MethodInfo *)0x0);
           return;
         }
       }
       goto code_?;
     }
-    pAVar21 = (Action *)0x0;
-    if (((Action *)CStack_1.g)->klass == TypeInfo__System__Action) {
-      pAVar21 = (Action *)CStack_1.g;
+    pAVar16 = (Action *)0x0;
+    if (pAVar14->klass == TypeInfo__System__Action) {
+      pAVar16 = pAVar14;
     }
-    CStack_1.b = (float)TypeInfo__System__Action;
-    if (pAVar21 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar21;
-    CStack_1.b = (float)(Action *)0x0;
-    if (((Action *)CStack_1.g)->klass == TypeInfo__System__Action) {
-      CStack_1.b = CStack_1.g;
+    if (pAVar16 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar16;
+    pAVar16 = (Action *)0x0;
+    if (pAVar14->klass == TypeInfo__System__Action) {
+      pAVar16 = pAVar14;
     }
-    pAVar2 = TypeInfo__System__Action;
-    if ((Action *)CStack_1.b != (Action *)0x0) goto code_?;
+    if (pAVar16 != (Action *)0x0) goto code_?;
   }
-  CStack_1.r = (float)&UNK_?;
-  CStack_1.b = (float)pAVar2;
-  CStack_1.b = (float)func_?();
-  CStack_1.g = (float)extraout_ECX_00;
-code_?:
-  CStack_1.r = (float)&UNK_?;
   func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+code_?:
+  func_?();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

@@ -8,14 +8,12 @@ void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyP
   fVar1 = _UNK_?;
   fVar2 = _UNK_?;
   fVar3 = _UNK_?;
+  fVar4 = _UNK_?;
   (this->fields).TopColor.r = _UNK_?;
   (this->fields).TopColor.g = fVar3;
   (this->fields).TopColor.b = fVar2;
   (this->fields).TopColor.a = fVar1;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields).BottomColor.r = _UNK_?;
+  (this->fields).BottomColor.r = fVar4;
   (this->fields).BottomColor.g = fVar3;
   (this->fields).BottomColor.b = fVar2;
   (this->fields).BottomColor.a = fVar1;

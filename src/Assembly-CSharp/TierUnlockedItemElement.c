@@ -542,79 +542,66 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
 {
   pIVar1 = (this->fields).teamRequirementImage;
   (this->fields).team = team;
-  if ((pIVar1 == (Image *)0x0) ||
+  if ((pIVar1 != (Image *)0x0) &&
      (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pIVar1,(MethodInfo *)0x0), this_00 == (GameObject *)0x0))
-  goto code_?;
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_00,1,(MethodInfo *)0x0);
-  pIVar1 = (this->fields).teamRequirementImage;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+                          ((Component *)pIVar1,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (this_00,1,(MethodInfo *)0x0);
+    pIVar1 = (this->fields).teamRequirementImage;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    switch(team) {
+    case MVTeam__Enum_Blue:
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      colorStyle = 1.12104e-44;
+      break;
+    case MVTeam__Enum_Red:
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      colorStyle = 1.26117e-44;
+      break;
+    case MVTeam__Enum_Green:
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      colorStyle = 1.54143e-44;
+      break;
+    case MVTeam__Enum_Yellow:
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      colorStyle = 1.4013e-44;
+      break;
+    default:
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      colorStyle = 3.64338e-44;
+    }
+    Styles::Styles_GetColor
+              ((Color *)&stack0xffffffec,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
+    if (pIVar1 != (Image *)0x0) {
+      (*(code *)(pIVar1->klass->vtable).set_color.method)();
+      return;
+    }
   }
-  switch(team) {
-  case MVTeam__Enum_Blue:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    colorStyle = 1.12104e-44;
-    pCVar2 = &CStack_3;
-    break;
-  case MVTeam__Enum_Red:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    colorStyle = 1.26117e-44;
-    pCVar2 = &CStack_4;
-    break;
-  case MVTeam__Enum_Green:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    colorStyle = 1.54143e-44;
-    pCVar2 = &CStack_5;
-    break;
-  case MVTeam__Enum_Yellow:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    colorStyle = 1.4013e-44;
-    pCVar2 = &CStack_6;
-    break;
-  default:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pCVar2 = (Color *)&stack0xffffff9c;
-    goto code_?;
-  case MVTeam__Enum_None:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pCVar2 = &CStack_7;
-code_?:
-    colorStyle = 3.64338e-44;
-  }
-  pCVar2 = Styles::Styles_GetColor(pCVar2,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
-  CStack_7.r = pCVar2->a;
-  this = (TierUnlockedItemElement *)0x0;
-  if (pIVar1 != (Image *)0x0) {
-    pIVar8 = pIVar1->klass;
-    CStack_7.g = (float)(pIVar8->vtable).get_raycastTarget.methodPtr;
-    (*(code *)(pIVar8->vtable).set_color.method)();
-    return;
-  }
-code_?:
-  cVar9 = '\0';
-  CStack_7.g = (float)&UNK_?;
+  bVar2 = 0;
   func_?();
-  uVar10 = in(extraout_DX);
-  *(undefined1 *)&this->klass = uVar10;
-  *(char *)(extraout_ECX + -0x39efb860) =
-       *(char *)(extraout_ECX + -0x39efb860) + (char)((uint)extraout_ECX >> 8) + cVar9;
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pbVar3 = (byte *)(extraout_EDX + -0x2c);
+  bVar4 = *pbVar3;
+  bVar5 = (byte)((uint)extraout_EDX >> 8);
+  bVar6 = *pbVar3 + bVar5;
+  *pbVar3 = bVar6 + bVar2;
+  (&stack0xd4a6104f)[extraout_EDX * 8] =
+       (&stack0xd4a6104f)[extraout_EDX * 8] + extraout_CL +
+       (CARRY1(bVar4,bVar5) || CARRY1(bVar6,bVar2));
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

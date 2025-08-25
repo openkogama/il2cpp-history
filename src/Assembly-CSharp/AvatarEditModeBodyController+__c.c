@@ -35,11 +35,21 @@ bool Assembly-CSharp.dll::AvatarEditModeBodyController+<>c::
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVBody->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+    if (((wo->klass->_1).naturalAligment < (TypeInfo__MVBody->_1).naturalAligment) ||
        ((MVBody__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
-        == TypeInfo__MVBody)) {
-      bVar1 = MVBody::MVBody_get_IsPlayerBody((MVBody *)wo,(MethodInfo *)0x0);
-      return bVar1 ^ 1;
+        != TypeInfo__MVBody)) {
+      bVar1 = false;
+    }
+    else {
+      bVar1 = true;
+    }
+    this_00 = (MVBody *)0x0;
+    if (bVar1) {
+      this_00 = (MVBody *)wo;
+    }
+    if (this_00 != (MVBody *)0x0) {
+      bVar2 = MVBody::MVBody_get_IsPlayerBody(this_00,(MethodInfo *)0x0);
+      return bVar2 ^ 1;
     }
   }
   return 0;

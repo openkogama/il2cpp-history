@@ -13,7 +13,7 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
     if (pGVar2 != (GizmoPlaneSlider3DSettings *)0x0) {
       pVVar3 = Vector3Ex::Vector3Ex_FromValue
                          ((Vector3 *)&stack0xffffffe8,
-                          (pGVar2->fields)._borderBoxHoverEps * zoomFactor,(MethodInfo *)0x0);
+                          zoomFactor * (pGVar2->fields)._borderBoxHoverEps,(MethodInfo *)0x0);
       pGVar1 = (this->fields)._._data;
       uVar4 = pVVar3->x;
       uVar5 = pVVar3->y;
@@ -191,455 +191,471 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                (GizmoBoxQuad3DBorderController *this,float zoomFactor,MethodInfo *method)
 
 {
-  pGVar1 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                    );
     cRam_? = '\x01';
   }
-  pGVar2 = (this->fields)._._data;
-  if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-     (pGVar3 = (pGVar2->fields).PlaneSlider, pGVar3 != (GizmoPlaneSlider3D *)0x0)) {
-    GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel(pGVar3,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._._data;
-    if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-       (pQVar4 = (pGVar2->fields).TargetQuad, pQVar4 != (QuadShape3D *)0x0)) {
-      pVVar5 = TriangPrismShape3D::TriangPrismShape3D_get_Right
-                         ((Vector3 *)&VStack_6,(TriangPrismShape3D *)pQVar4,(MethodInfo *)0x0);
-      uStack_7._0_4_ = pVVar5->x;
-      uStack_7._4_4_ = pVVar5->y;
-      pGVar2 = (this->fields)._._data;
-      if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-         (pQVar4 = (pGVar2->fields).TargetQuad, pQVar4 != (QuadShape3D *)0x0)) {
-        pVVar5 = TriangPrismShape3D::TriangPrismShape3D_get_Up
-                           ((Vector3 *)&VStack_6,(TriangPrismShape3D *)pQVar4,(MethodInfo *)0x0);
-        uStack_8._0_4_ = pVVar5->x;
-        uStack_8._4_4_ = pVVar5->y;
-        fStack_9 = pVVar5->z;
-        pGVar2 = (this->fields)._._data;
-        uStack_10 = uStack_8;
-        fStack_11 = fStack_9;
-        if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-           (pQVar4 = (pGVar2->fields).TargetQuad, pQVar4 != (QuadShape3D *)0x0)) {
-          pVVar5 = TriangPrismShape3D::TriangPrismShape3D_get_Look
-                             ((Vector3 *)&VStack_6,(TriangPrismShape3D *)pQVar4,(MethodInfo *)0x0);
-          uStack_12._0_4_ = pVVar5->x;
-          uStack_12._4_4_ = pVVar5->y;
-          pGVar2 = (this->fields)._._data;
-          if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-             (pQVar4 = (pGVar2->fields).TargetQuad, pQVar4 != (QuadShape3D *)0x0)) {
-            SphereTreeNodeRayHit`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-            SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_HitEnter
-                      ((SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
-                       )pQVar4,(MethodInfo *)0x0);
-            pGVar2 = (this->fields)._._data;
-            if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-               (pQVar4 = (pGVar2->fields).TargetQuad, pQVar4 != (QuadShape3D *)0x0)) {
-              SphereTreeNode`1[System::Object]::SphereTreeNode_1_System_Object__get_Radius
-                        ((SphereTreeNode_1_System_Object_ *)pQVar4,(MethodInfo *)0x0);
-              pGVar2 = (this->fields)._._data;
-              if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-                 (pQVar4 = (pGVar2->fields).TargetQuad, pQVar4 != (QuadShape3D *)0x0)) {
-                this_01 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                          QuadShape3D::QuadShape3D_GetCorners(pQVar4,(MethodInfo *)0x0);
-                if (this_01 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+  pGVar1 = (this->fields)._._data;
+  if ((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+     (pGVar2 = (pGVar1->fields).PlaneSlider, pGVar2 != (GizmoPlaneSlider3D *)0x0)) {
+    GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel(pGVar2,(MethodInfo *)0x0);
+    pGVar1 = (this->fields)._._data;
+    if ((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+       (pQVar3 = (pGVar1->fields).TargetQuad, pQVar3 != (QuadShape3D *)0x0)) {
+      pVVar4 = TriangPrismShape3D::TriangPrismShape3D_get_Right
+                          ((Vector3 *)&VStack_5,(TriangPrismShape3D *)pQVar3,(MethodInfo *)0x0);
+      fVar6 = pVVar4->z;
+      pGVar1 = (this->fields)._._data;
+      if ((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+         (pQVar3 = (pGVar1->fields).TargetQuad, pQVar3 != (QuadShape3D *)0x0)) {
+        pVVar4 = TriangPrismShape3D::TriangPrismShape3D_get_Up
+                            ((Vector3 *)&VStack_5,(TriangPrismShape3D *)pQVar3,(MethodInfo *)0x0);
+        pSVar7 = (String *)pVVar4->x;
+        uVar8 = pVVar4->y;
+        fVar9 = pVVar4->z;
+        pGVar1 = (this->fields)._._data;
+        if ((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+           (pQVar3 = (pGVar1->fields).TargetQuad, pQVar3 != (QuadShape3D *)0x0)) {
+          pVVar4 = TriangPrismShape3D::TriangPrismShape3D_get_Look
+                              ((Vector3 *)&VStack_5,(TriangPrismShape3D *)pQVar3,(MethodInfo *)0x0)
+          ;
+          fVar10 = pVVar4->z;
+          pGVar1 = (this->fields)._._data;
+          if ((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+             (pQVar3 = (pGVar1->fields).TargetQuad, pQVar3 != (QuadShape3D *)0x0)) {
+            fVar11 = SphereTreeNodeRayHit`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
+                     ::
+                     SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_HitEnter
+                               ((SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                 *)pQVar3,(MethodInfo *)0x0);
+            pGVar1 = (this->fields)._._data;
+            if ((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+               (pQVar3 = (pGVar1->fields).TargetQuad, pQVar3 != (QuadShape3D *)0x0)) {
+              fVar12 = SphereTreeNode`1[System::Object]::SphereTreeNode_1_System_Object__get_Radius
+                                 ((SphereTreeNode_1_System_Object_ *)pQVar3,(MethodInfo *)0x0);
+              pGVar1 = (this->fields)._._data;
+              if ((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+                 (pQVar3 = (pGVar1->fields).TargetQuad, pQVar3 != (QuadShape3D *)0x0)) {
+                this_02 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                          QuadShape3D::QuadShape3D_GetCorners(pQVar3,(MethodInfo *)0x0);
+                if (this_02 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
                   pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                           UIElements::VisualTreeAsset+UsingEntry]::
-                           List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                     (&VStack_6,this_01,0,
-                                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                                     );
-                  __return_storage_ptr__ = pVVar13->path;
+                            UIElements::VisualTreeAsset+UsingEntry]::
+                            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                                      (&VStack_5,this_02,0,
+                                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                                      );
+                  uVar14 = pVVar13->alias;
+                  uVar15 = pVVar13->path;
+                  pVVar16 = pVVar13->asset;
                   pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                           UIElements::VisualTreeAsset+UsingEntry]::
-                           List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                     ((VisualTreeAsset_UsingEntry *)__return_storage_ptr__,this_01,1
-                                      ,
-                                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                                     );
-                  uVar14._0_4_ = pVVar13->alias;
-                  uVar14._4_4_ = pVVar13->path;
-                  pVVar15 = pVVar13->asset;
+                            UIElements::VisualTreeAsset+UsingEntry]::
+                            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                                      (&VStack_5,this_02,1,
+                                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                                      );
+                  this_00 = pVVar13->alias;
+                  index = pVVar13->path;
                   pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                           UIElements::VisualTreeAsset+UsingEntry]::
-                           List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                     (&VStack_6,this_01,2,
-                                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                                     );
-                  fVar16 = 4.2039e-45;
+                            UIElements::VisualTreeAsset+UsingEntry]::
+                            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                                      (&VStack_5,
+                                       (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                                       this_00,index,(MethodInfo *)pVVar13->asset);
                   uVar17._0_4_ = pVVar13->alias;
                   uVar17._4_4_ = pVVar13->path;
-                  pVVar18 = pVVar13->asset;
-                  pVVar13 = (VisualTreeAsset_UsingEntry *)&stack0xffffff74;
+                  fVar18 = 4.2039e-45;
                   puVar19 = &UNK_?;
                   pMVar20 = 
                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                   ;
-                  pVVar21 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                           UIElements::VisualTreeAsset+UsingEntry]::
-                           List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                     (pVVar13,this_01,3,
-                                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                                     );
-                  pGVar2 = (this->fields)._._data;
-                  VStack_6.alias = pVVar21->alias;
-                  VStack_6.path = pVVar21->path;
-                  VStack_6.asset = pVVar21->asset;
-                  if (((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-                      (pGVar22 = (pGVar2->fields).Border, pGVar22 != (GizmoQuad3DBorder *)0x0)) &&
-                     (pGVar3 = (pGVar22->fields)._planeSlider, pGVar3 != (GizmoPlaneSlider3D *)0x0)
-                     ) {
-                    pGVar23 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
-                                        (pGVar3,(MethodInfo *)0x0);
-                    if (pGVar23 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                      pGVar24 = (pGVar22->fields)._planeSlider;
-                      if (pGVar24 != (GizmoPlaneSlider3D *)0x0) {
-                        puVar25 = &UNK_?;
-                        pGVar23 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
-                                            (pGVar24,(MethodInfo *)0x0);
-                        if (pGVar23 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                          pGVar2 = (this->fields)._._data;
-                          if (((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-                              (pGVar22 = (pGVar2->fields).Border, pGVar22 != (GizmoQuad3DBorder *)0x0)
-                              ) && (pGVar24 = (pGVar22->fields)._planeSlider,
-                                   pGVar24 != (GizmoPlaneSlider3D *)0x0)) {
-                            pGVar23 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
-                                                (pGVar24,(MethodInfo *)0x0);
-                            if (pGVar23 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                              pGVar24 = (pGVar22->fields)._planeSlider;
-                              if (pGVar24 != (GizmoPlaneSlider3D *)0x0) {
-                                pGVar23 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
-                                                    (pGVar24,(MethodInfo *)0x0);
-                                if (pGVar23 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                  pGVar2 = (this->fields)._._data;
-                                  if ((pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) &&
-                                     (this_00 = (pGVar2->fields).TopLeftBox,
-                                     this_00 != (BoxShape3D *)0x0)) {
-                                    fVar26 = (float)uStack_12;
-                                    this = (GizmoBoxQuad3DBorderController *)pGVar3;
-                                    fVar27 = (float)(int)((ulonglong)uStack_12 >> 0x20);
-                                    value = &UNK_?;
-                                    VVar28 = (Vector3)CONCAT84(uVar29,fVar26);
-                                    pGVar24 = pGVar3;
-                                    BoxShape3D::BoxShape3D_AlignHeight
-                                              (this_00,VVar28,(MethodInfo *)0x0);
-                                    VVar28.z = (float)puVar25;
-                                    VVar28.x = (float)(undefined4)uStack_7;
-                                    VVar28.y = (float)uStack_7._4_4_;
-                                    BoxShape3D::BoxShape3D_AlignWidth
-                                              (this_00,VVar28,(MethodInfo *)0x0);
-                                    TorusShape3D::TorusShape3D_set_TubeRadius
-                                              ((TorusShape3D *)this_00,(float)pGVar3,
-                                               (MethodInfo *)0x0);
-                                    RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                                              ((RightAngTriangle2D *)this_00,(float)value,
-                                               (MethodInfo *)0x0);
-                                    TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                              ((TriangPrismShape3D *)this_00,(float)pGVar3,
-                                               (MethodInfo *)0x0);
-                                    fVar30 = fStack_11;
-                                    direction.z = fStack_11;
-                                    direction.x = (float)(undefined4)uStack_8;
-                                    direction.y = (float)uStack_8._4_4_;
-                                    fVar31 = BoxShape3D::BoxShape3D_GetSizeAlongDirection
-                                                       (this_00,direction,(MethodInfo *)0x0);
-                                    newCenter.y = (float)pVVar13 -
-                                                  uStack_10._4_4_ * fVar31 * _UNK_?;
-                                    newCenter.x = (float)puVar19 -
-                                                  (float)uStack_10 * fVar31 * _UNK_?;
-                                    newCenter.z = (float)this_01 -
-                                                  fStack_9 * fVar31 * _UNK_?;
-                                    BoxShape3D::BoxShape3D_SetFaceCenter
-                                              (this_00,BoxFace__Enum_Left,newCenter,
-                                               (MethodInfo *)0x0);
-                                    pGVar2 = (pGVar1->fields)._._data;
-                                    if (pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) {
-                                      pBVar32 = (pGVar2->fields).TopRightBox;
-                                      if (pBVar32 != (BoxShape3D *)0x0) {
-                                        axis.z = (float)pGVar24;
-                                        axis.x = (float)(undefined4)uStack_12;
-                                        axis.y = (float)uStack_12._4_4_;
-                                        BoxShape3D::BoxShape3D_AlignHeight
-                                                  (pBVar32,axis,(MethodInfo *)0x0);
-                                        axis_00.z = (float)puVar25;
-                                        axis_00.x = (float)(undefined4)uStack_7;
-                                        axis_00.y = (float)uStack_7._4_4_;
-                                        BoxShape3D::BoxShape3D_AlignWidth
-                                                  (pBVar32,axis_00,(MethodInfo *)0x0);
-                                        TorusShape3D::TorusShape3D_set_TubeRadius
-                                                  ((TorusShape3D *)pBVar32,(float)pGVar3,
-                                                   (MethodInfo *)0x0);
-                                        RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                                                  ((RightAngTriangle2D *)pBVar32,(float)value,
-                                                   (MethodInfo *)0x0);
-                                        TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                                  ((TriangPrismShape3D *)pBVar32,(float)pGVar3,
-                                                   (MethodInfo *)0x0);
-                                        direction_00.z = fVar30;
-                                        direction_00.x = (float)(undefined4)uStack_8;
-                                        direction_00.y = (float)uStack_8._4_4_;
-                                        fVar31 = BoxShape3D::BoxShape3D_GetSizeAlongDirection
-                                                           (pBVar32,direction_00,(MethodInfo *)0x0);
-                                        newCenter_00.y =
-                                             (float)((ulonglong)uVar14 >> 0x20) -
-                                             uStack_10._4_4_ * fVar31 * _UNK_?;
-                                        newCenter_00.x =
-                                             (float)uVar14 -
-                                             (float)uStack_10 * fVar31 * _UNK_?;
-                                        newCenter_00.z =
-                                             (float)pVVar15 - fStack_9 * fVar31 * _UNK_?;
-                                        BoxShape3D::BoxShape3D_SetFaceCenter
-                                                  (pBVar32,BoxFace__Enum_Right,newCenter_00,
-                                                   (MethodInfo *)0x0);
-                                        pGVar2 = (pGVar1->fields)._._data;
-                                        if (pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) {
-                                          pBStack_33 = (pGVar2->fields).BottomRightBox;
-                                          if (pBStack_33 != (BoxShape3D *)0x0) {
-                                            axis_01.z = (float)pGVar24;
-                                            axis_01.x = (float)(undefined4)uStack_12;
-                                            axis_01.y = (float)uStack_12._4_4_;
-                                            BoxShape3D::BoxShape3D_AlignHeight
-                                                      (pBStack_33,axis_01,(MethodInfo *)0x0);
-                                            axis_02.z = (float)puVar25;
-                                            axis_02.x = (float)(undefined4)uStack_7;
-                                            axis_02.y = (float)uStack_7._4_4_;
-                                            BoxShape3D::BoxShape3D_AlignWidth
-                                                      (pBStack_33,axis_02,(MethodInfo *)0x0);
-                                            TorusShape3D::TorusShape3D_set_TubeRadius
-                                                      ((TorusShape3D *)pBStack_33,(float)pGVar3,
-                                                       (MethodInfo *)0x0);
-                                            RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                                                      ((RightAngTriangle2D *)pBStack_33,(float)value
-                                                       ,(MethodInfo *)0x0);
-                                            TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                                      ((TriangPrismShape3D *)pBStack_33,
-                                                       (float)pGVar3,(MethodInfo *)0x0);
-                                            direction_01.z = fVar30;
-                                            direction_01.x = (float)(undefined4)uStack_8;
-                                            direction_01.y = (float)uStack_8._4_4_;
-                                            fVar31 = BoxShape3D::BoxShape3D_GetSizeAlongDirection
-                                                               (pBStack_33,direction_01,
-                                                                (MethodInfo *)0x0);
-                                            newCenter_01.y =
-                                                 (float)((ulonglong)uVar17 >> 0x20) +
-                                                 uStack_10._4_4_ * fVar31 * _UNK_?;
-                                            newCenter_01.x =
-                                                 (float)uVar17 +
-                                                 (float)uStack_10 * fVar31 * _UNK_?;
-                                            newCenter_01.z =
-                                                 (float)pVVar18 + fStack_9 * fVar31 * _UNK_?;
-                                            BoxShape3D::BoxShape3D_SetFaceCenter
-                                                      (pBStack_33,BoxFace__Enum_Right,newCenter_01,
-                                                       (MethodInfo *)0x0);
-                                            pGVar2 = (pGVar1->fields)._._data;
-                                            if (pGVar2 != (GizmoQuad3DBorderControllerData *)0x0) {
-                                              pBVar34 = (pGVar2->fields).BottomLeftBox;
-                                              if (pBVar34 != (BoxShape3D *)0x0) {
-                                                axis_03.z = (float)pGVar24;
-                                                axis_03.x = (float)(undefined4)uStack_12;
-                                                axis_03.y = (float)uStack_12._4_4_;
-                                                BoxShape3D::BoxShape3D_AlignHeight
-                                                          (pBVar34,axis_03,(MethodInfo *)0x0);
-                                                axis_04.z = (float)puVar25;
-                                                axis_04.x = (float)(undefined4)uStack_7;
-                                                axis_04.y = (float)uStack_7._4_4_;
-                                                BoxShape3D::BoxShape3D_AlignWidth
-                                                          (pBVar34,axis_04,(MethodInfo *)0x0);
-                                                TorusShape3D::TorusShape3D_set_TubeRadius
-                                                          ((TorusShape3D *)pBVar34,(float)pGVar3,
-                                                           (MethodInfo *)0x0);
-                                                RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                                                          ((RightAngTriangle2D *)pBVar34,
-                                                           (float)value,(MethodInfo *)0x0);
-                                                TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                                          ((TriangPrismShape3D *)pBVar34,
-                                                           (float)pGVar3,(MethodInfo *)0x0);
-                                                direction_02.z = fVar30;
-                                                direction_02.x = (float)(undefined4)uStack_8;
-                                                direction_02.y = (float)uStack_8._4_4_;
-                                                this_02 = pBVar34;
-                                                fVar30 = BoxShape3D::
-                                                         BoxShape3D_GetSizeAlongDirection
-                                                                   (pBVar34,direction_02,
-                                                                    (MethodInfo *)0x0);
-                                                VStack_6.asset =
-                                                     (VisualTreeAsset *)
-                                                     ((float)VStack_6.asset +
-                                                     fStack_9 * fVar30 * _UNK_?);
-                                                newCenter_02.y =
-                                                     (float)VStack_6.path +
-                                                     uStack_10._4_4_ * fVar30 * _UNK_?;
-                                                newCenter_02.x =
-                                                     (float)VStack_6.alias +
-                                                     (float)uStack_10 * fVar30 * _UNK_?;
-                                                newCenter_02.z = (float)VStack_6.asset;
-                                                BoxShape3D::BoxShape3D_SetFaceCenter
-                                                          (pBVar34,BoxFace__Enum_Left,newCenter_02,
-                                                           (MethodInfo *)0x0);
-                                                pGVar2 = (pGVar1->fields)._._data;
-                                                if ((pGVar2 != (GizmoQuad3DBorderControllerData *)
-                                                               0x0) &&
-                                                   (pBVar34 = (pGVar2->fields).TopBox,
-                                                   pBVar34 != (BoxShape3D *)0x0)) {
-                                                  axis_05.z = (float)pGVar24;
-                                                  axis_05.x = (float)(undefined4)uStack_12;
-                                                  axis_05.y = (float)uStack_12._4_4_;
+                  pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                            UIElements::VisualTreeAsset+UsingEntry]::
+                            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                                      ((VisualTreeAsset_UsingEntry *)&stack0xffffff40,this_02,3,
+                                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                                      );
+                  pGVar1 = (this->fields)._._data;
+                  VStack_5.alias = pVVar13->alias;
+                  VStack_5.path = pVVar13->path;
+                  VStack_5.asset = pVVar13->asset;
+                  if (((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+                      (pGVar21 = (pGVar1->fields).Border, pGVar21 != (GizmoQuad3DBorder *)0x0)) &&
+                     (pGVar2 = (pGVar21->fields)._planeSlider, pGVar2 != (GizmoPlaneSlider3D *)0x0))
+                  {
+                    VStack_5.asset = (VisualTreeAsset *)&UNK_?;
+                    pGVar22 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                        (pGVar2,(MethodInfo *)0x0);
+                    if (pGVar22 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                      fVar23 = (pGVar22->fields)._borderBoxHeight;
+                      pGVar2 = (pGVar21->fields)._planeSlider;
+                      if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
+                        uVar24 = CONCAT44(pGVar2,&UNK_?);
+                        pGVar22 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                            (pGVar2,(MethodInfo *)0x0);
+                        if (pGVar22 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                          pGVar1 = (this->fields)._._data;
+                          fVar23 = fVar23 * zoomFactor * (pGVar22->fields)._scale;
+                          if (((pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) &&
+                              (pGVar21 = (pGVar1->fields).Border, pGVar21 != (GizmoQuad3DBorder *)0x0)
+                              ) && (pGVar2 = (pGVar21->fields)._planeSlider,
+                                   pGVar2 != (GizmoPlaneSlider3D *)0x0)) {
+                            uVar25 = CONCAT44(pGVar2,&UNK_?);
+                            pGVar22 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                                (pGVar2,(MethodInfo *)0x0);
+                            if (pGVar22 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                              fVar26 = (pGVar22->fields)._borderBoxDepth;
+                              pGVar2 = (pGVar21->fields)._planeSlider;
+                              if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
+                                pGVar22 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                                    (pGVar2,(MethodInfo *)0x0);
+                                if (pGVar22 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                  pGVar1 = (this->fields)._._data;
+                                  fVar27 = (pGVar22->fields)._scale;
+                                  if (pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) {
+                                    this_01 = (pGVar1->fields).TopLeftBox;
+                                    if (this_01 != (BoxShape3D *)0x0) {
+                                      fVar28 = (float)uVar25;
+                                      uVar29 = CONCAT44(&UNK_?,fVar28);
+                                      axis_13.z = fVar10;
+                                      axis_13.x = (float)(int)uVar25;
+                                      axis_13.y = (float)(int)((ulonglong)uVar25 >> 0x20);
+                                      pBVar30 = this_01;
+                                      BoxShape3D::BoxShape3D_AlignHeight
+                                                (this_01,axis_13,(MethodInfo *)0x0);
+                                      axis_14.y = fVar28;
+                                      axis_14.x = (float)pBVar30;
+                                      axis_14.z = fVar6;
+                                      pBVar31 = pBVar30;
+                                      fVar6 = fVar28;
+                                      BoxShape3D::BoxShape3D_AlignWidth
+                                                (this_01,axis_14,(MethodInfo *)0x0);
+                                      TorusShape3D::TorusShape3D_set_TubeRadius
+                                                ((TorusShape3D *)this_01,
+                                                 fVar26 * zoomFactor * fVar27,(MethodInfo *)0x0);
+                                      RightAngTriangle2D::RightAngTriangle2D_set_XLength
+                                                ((RightAngTriangle2D *)this_01,fVar23,
+                                                 (MethodInfo *)0x0);
+                                      TriangPrismShape3D::TriangPrismShape3D_set_Width
+                                                ((TriangPrismShape3D *)this_01,4.2942276e-29,
+                                                 (MethodInfo *)0x0);
+                                      direction.z = fVar10;
+                                      direction.x = (float)(int)uVar24;
+                                      direction.y = (float)(int)((ulonglong)uVar24 >> 0x20);
+                                      fVar26 = BoxShape3D::BoxShape3D_GetSizeAlongDirection
+                                                         (this_01,direction,(MethodInfo *)0x0);
+                                      newCenter.y = (float)uVar15 -
+                                                    (float)uVar8 * fVar26 * _UNK_?;
+                                      newCenter.x = (float)uVar14 -
+                                                    (float)pSVar7 * fVar26 * _UNK_?;
+                                      newCenter.z = (float)pVVar16 - fVar9 * fVar26 * _UNK_?;
+                                      BoxShape3D::BoxShape3D_SetFaceCenter
+                                                (this_01,BoxFace__Enum_Left,newCenter,
+                                                 (MethodInfo *)0x0);
+                                      pGVar1 = (this->fields)._._data;
+                                      if (pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) {
+                                        pBVar32 = (pGVar1->fields).TopRightBox;
+                                        if (pBVar32 != (BoxShape3D *)0x0) {
+                                          axis.z = (float)pBVar31;
+                                          axis.x = (float)(int)uVar29;
+                                          axis.y = (float)(int)((ulonglong)uVar29 >> 0x20);
+                                          pBVar33 = pBVar32;
+                                          BoxShape3D::BoxShape3D_AlignHeight
+                                                    (pBVar32,axis,(MethodInfo *)0x0);
+                                          axis_00.y = fVar28;
+                                          axis_00.x = (float)pBVar30;
+                                          axis_00.z = fVar6;
+                                          BoxShape3D::BoxShape3D_AlignWidth
+                                                    (pBVar32,axis_00,(MethodInfo *)0x0);
+                                          TorusShape3D::TorusShape3D_set_TubeRadius
+                                                    ((TorusShape3D *)pBVar32,4.2942276e-29,
+                                                     (MethodInfo *)0x0);
+                                          RightAngTriangle2D::RightAngTriangle2D_set_XLength
+                                                    ((RightAngTriangle2D *)pBVar32,fVar23,
+                                                     (MethodInfo *)0x0);
+                                          TriangPrismShape3D::TriangPrismShape3D_set_Width
+                                                    ((TriangPrismShape3D *)pBVar32,4.2942276e-29,
+                                                     (MethodInfo *)0x0);
+                                          direction_00.z = fVar10;
+                                          direction_00.x = (float)(int)uVar24;
+                                          direction_00.y = (float)(int)((ulonglong)uVar24 >> 0x20);
+                                          fVar26 = fVar10;
+                                          fVar27 = BoxShape3D::BoxShape3D_GetSizeAlongDirection
+                                                             (pBVar33,direction_00,(MethodInfo *)0x0
+                                                             );
+                                          newCenter_00.y =
+                                               fVar18 - (float)uVar8 * fVar27 * _UNK_?;
+                                          newCenter_00.x =
+                                               (float)this_02 -
+                                               (float)pSVar7 * fVar27 * _UNK_?;
+                                          newCenter_00.z =
+                                               (float)pMVar20 - fVar9 * fVar27 * _UNK_?;
+                                          BoxShape3D::BoxShape3D_SetFaceCenter
+                                                    (pBVar33,BoxFace__Enum_Right,newCenter_00,
+                                                     (MethodInfo *)0x0);
+                                          pGVar1 = (this->fields)._._data;
+                                          if (pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) {
+                                            pBVar32 = (pGVar1->fields).BottomRightBox;
+                                            if (pBVar32 != (BoxShape3D *)0x0) {
+                                              axis_01.z = (float)pBVar31;
+                                              axis_01.x = (float)(int)uVar29;
+                                              axis_01.y = (float)(int)((ulonglong)uVar29 >> 0x20);
+                                              BoxShape3D::BoxShape3D_AlignHeight
+                                                        (pBVar32,axis_01,(MethodInfo *)0x0);
+                                              axis_02.y = fVar28;
+                                              axis_02.x = (float)pBVar30;
+                                              axis_02.z = fVar6;
+                                              BoxShape3D::BoxShape3D_AlignWidth
+                                                        (pBVar32,axis_02,(MethodInfo *)0x0);
+                                              TorusShape3D::TorusShape3D_set_TubeRadius
+                                                        ((TorusShape3D *)pBVar32,4.2942276e-29,
+                                                         (MethodInfo *)0x0);
+                                              RightAngTriangle2D::RightAngTriangle2D_set_XLength
+                                                        ((RightAngTriangle2D *)pBVar32,fVar23,
+                                                         (MethodInfo *)0x0);
+                                              TriangPrismShape3D::TriangPrismShape3D_set_Width
+                                                        ((TriangPrismShape3D *)pBVar32,4.2942276e-29
+                                                         ,(MethodInfo *)0x0);
+                                              direction_01.z = fVar10;
+                                              direction_01.x = (float)(int)uVar24;
+                                              direction_01.y =
+                                                   (float)(int)((ulonglong)uVar24 >> 0x20);
+                                              fVar18 = BoxShape3D::BoxShape3D_GetSizeAlongDirection
+                                                                 (pBVar32,direction_01,
+                                                                  (MethodInfo *)0x0);
+                                              newCenter_01.y =
+                                                   (float)uVar8 * fVar18 * _UNK_? +
+                                                   (float)((ulonglong)uVar17 >> 0x20);
+                                              newCenter_01.x =
+                                                   (float)pSVar7 * fVar18 * _UNK_? +
+                                                   (float)uVar17;
+                                              newCenter_01.z =
+                                                   fVar9 * fVar18 * _UNK_? + (float)puVar19;
+                                              BoxShape3D::BoxShape3D_SetFaceCenter
+                                                        (pBVar32,BoxFace__Enum_Right,newCenter_01,
+                                                         (MethodInfo *)0x0);
+                                              pGVar1 = (this->fields)._._data;
+                                              if (pGVar1 != (GizmoQuad3DBorderControllerData *)0x0)
+                                              {
+                                                pBVar34 = (pGVar1->fields).BottomLeftBox;
+                                                if (pBVar34 != (BoxShape3D *)0x0) {
+                                                  axis_03.z = (float)pBVar31;
+                                                  axis_03.x = (float)(int)uVar29;
+                                                  axis_03.y = (float)(int)((ulonglong)uVar29 >> 0x20
+                                                                          );
                                                   BoxShape3D::BoxShape3D_AlignHeight
-                                                            (pBVar34,axis_05,(MethodInfo *)0x0);
-                                                  axis_06.z = (float)puVar25;
-                                                  axis_06.x = (float)(undefined4)uStack_7;
-                                                  axis_06.y = (float)uStack_7._4_4_;
+                                                            (pBVar34,axis_03,(MethodInfo *)0x0);
+                                                  axis_04.y = fVar28;
+                                                  axis_04.x = (float)pBVar30;
+                                                  axis_04.z = fVar6;
                                                   BoxShape3D::BoxShape3D_AlignWidth
-                                                            (pBVar34,axis_06,(MethodInfo *)0x0);
-                                                  direction_03.z = (float)puVar25;
-                                                  direction_03.x = (float)(undefined4)uStack_7;
-                                                  direction_03.y = (float)uStack_7._4_4_;
-                                                  fVar30 = BoxShape3D::
-                                                           BoxShape3D_GetSizeAlongDirection
-                                                                     (this_00,direction_03,
-                                                                      (MethodInfo *)0x0);
+                                                            (pBVar34,axis_04,(MethodInfo *)0x0);
                                                   TorusShape3D::TorusShape3D_set_TubeRadius
-                                                            ((TorusShape3D *)pBVar34,
-                                                             (float)pMVar20 - (fVar30 + fVar30),
+                                                            ((TorusShape3D *)pBVar34,4.2942276e-29,
                                                              (MethodInfo *)0x0);
                                                   RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                                                            ((RightAngTriangle2D *)pBVar34,
-                                                             (float)value,(MethodInfo *)0x0);
+                                                            ((RightAngTriangle2D *)pBVar34,fVar23,
+                                                             (MethodInfo *)0x0);
                                                   TriangPrismShape3D::TriangPrismShape3D_set_Width
                                                             ((TriangPrismShape3D *)pBVar34,
-                                                             (float)pGVar3,(MethodInfo *)0x0);
-                                                  pVVar5 = BoxShape3D::BoxShape3D_GetFaceCenter
-                                                                     ((Vector3 *)&stack0xffffff74,
-                                                                      this_00,BoxFace__Enum_Right,
+                                                             4.2942276e-29,(MethodInfo *)0x0);
+                                                  direction_02.z = fVar10;
+                                                  direction_02.x = (float)(int)uVar24;
+                                                  direction_02.y =
+                                                       (float)(int)((ulonglong)uVar24 >> 0x20);
+                                                  this_03 = pBVar34;
+                                                  fVar10 = BoxShape3D::
+                                                           BoxShape3D_GetSizeAlongDirection
+                                                                     (pBVar34,direction_02,
                                                                       (MethodInfo *)0x0);
+                                                  VStack_5.asset =
+                                                       (VisualTreeAsset *)
+                                                       (fVar9 * fVar10 * _UNK_? +
+                                                       (float)VStack_5.asset);
+                                                  newCenter_02.y =
+                                                       (float)uVar8 * fVar10 * _UNK_? +
+                                                       (float)VStack_5.path;
+                                                  newCenter_02.x =
+                                                       (float)pSVar7 * fVar10 * _UNK_? +
+                                                       (float)VStack_5.alias;
+                                                  newCenter_02.z = (float)VStack_5.asset;
                                                   BoxShape3D::BoxShape3D_SetFaceCenter
-                                                            (pBVar34,BoxFace__Enum_Left,*pVVar5,
-                                                             (MethodInfo *)0x0);
-                                                  pGVar2 = (pGVar1->fields)._._data;
-                                                  if ((pGVar2 != (GizmoQuad3DBorderControllerData *)
+                                                            (pBVar34,BoxFace__Enum_Left,newCenter_02
+                                                             ,(MethodInfo *)0x0);
+                                                  pGVar1 = (this->fields)._._data;
+                                                  if ((pGVar1 != (GizmoQuad3DBorderControllerData *)
                                                                  0x0) &&
-                                                     (pBVar34 = (pGVar2->fields).RightBox,
+                                                     (pBVar34 = (pGVar1->fields).TopBox,
                                                      pBVar34 != (BoxShape3D *)0x0)) {
-                                                    axis_07.z = (float)pGVar24;
-                                                    axis_07.x = (float)(undefined4)uStack_12;
-                                                    axis_07.y = (float)uStack_12._4_4_;
+                                                    axis_05.z = (float)pBVar31;
+                                                    axis_05.x = (float)(int)uVar29;
+                                                    axis_05.y = (float)(int)((ulonglong)uVar29 >>
+                                                                            0x20);
                                                     BoxShape3D::BoxShape3D_AlignHeight
-                                                              (pBVar34,axis_07,(MethodInfo *)0x0);
-                                                    axis_08.z = fStack_11;
-                                                    axis_08.x = (float)(undefined4)uStack_8;
-                                                    axis_08.y = (float)uStack_8._4_4_;
+                                                              (pBVar34,axis_05,(MethodInfo *)0x0);
+                                                    axis_06.y = fVar28;
+                                                    axis_06.x = (float)pBVar30;
+                                                    axis_06.z = fVar6;
                                                     BoxShape3D::BoxShape3D_AlignWidth
-                                                              (pBVar34,axis_08,(MethodInfo *)0x0);
-                                                    direction_04.z = fStack_11;
-                                                    direction_04.x = (float)(undefined4)uStack_8;
-                                                    direction_04.y = (float)uStack_8._4_4_;
-                                                    fVar30 = BoxShape3D::
+                                                              (pBVar34,axis_06,(MethodInfo *)0x0);
+                                                    direction_03.y = fVar28;
+                                                    direction_03.x = (float)pBVar30;
+                                                    direction_03.z = fVar6;
+                                                    fVar9 = BoxShape3D::
                                                              BoxShape3D_GetSizeAlongDirection
-                                                                       (pBVar32,direction_04,
+                                                                       (this_01,direction_03,
                                                                         (MethodInfo *)0x0);
                                                     TorusShape3D::TorusShape3D_set_TubeRadius
                                                               ((TorusShape3D *)pBVar34,
-                                                               fVar16 - (fVar30 + fVar30),
+                                                               fVar11 - (fVar9 + fVar9),
                                                                (MethodInfo *)0x0);
                                                     RightAngTriangle2D::
                                                     RightAngTriangle2D_set_XLength
-                                                              ((RightAngTriangle2D *)pBVar34,
-                                                               (float)value,(MethodInfo *)0x0);
+                                                              ((RightAngTriangle2D *)pBVar34,fVar23,
+                                                               (MethodInfo *)0x0);
                                                     TriangPrismShape3D::TriangPrismShape3D_set_Width
                                                               ((TriangPrismShape3D *)pBVar34,
-                                                               (float)pGVar3,(MethodInfo *)0x0);
-                                                    pVVar5 = BoxShape3D::BoxShape3D_GetFaceCenter
-                                                                       ((Vector3 *)&stack0xffffff74,
-                                                                        pBVar32,BoxFace__Enum_Back,
+                                                               4.2942276e-29,(MethodInfo *)0x0);
+                                                    pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
+                                                                        ((Vector3 *)&stack0xffffff40
+                                                                         ,this_01,
+                                                  BoxFace__Enum_Right,(MethodInfo *)0x0);
+                                                  BoxShape3D::BoxShape3D_SetFaceCenter
+                                                            (pBVar34,BoxFace__Enum_Left,*pVVar4,
+                                                             (MethodInfo *)0x0);
+                                                  pGVar1 = (this->fields)._._data;
+                                                  if ((pGVar1 != (GizmoQuad3DBorderControllerData *)
+                                                                 0x0) &&
+                                                     (pBVar34 = (pGVar1->fields).RightBox,
+                                                     pBVar34 != (BoxShape3D *)0x0)) {
+                                                    axis_07.z = (float)pBVar31;
+                                                    axis_07.x = (float)(int)uVar29;
+                                                    axis_07.y = (float)(int)((ulonglong)uVar29 >>
+                                                                            0x20);
+                                                    BoxShape3D::BoxShape3D_AlignHeight
+                                                              (pBVar34,axis_07,(MethodInfo *)0x0);
+                                                    axis_08.z = fVar26;
+                                                    axis_08.x = (float)(int)uVar24;
+                                                    axis_08.y = (float)(int)((ulonglong)uVar24 >>
+                                                                            0x20);
+                                                    BoxShape3D::BoxShape3D_AlignWidth
+                                                              (pBVar34,axis_08,(MethodInfo *)0x0);
+                                                    direction_04.z = fVar26;
+                                                    direction_04.x = (float)(int)uVar24;
+                                                    direction_04.y =
+                                                         (float)(int)((ulonglong)uVar24 >> 0x20);
+                                                    fVar9 = BoxShape3D::
+                                                             BoxShape3D_GetSizeAlongDirection
+                                                                       (pBVar33,direction_04,
                                                                         (MethodInfo *)0x0);
-                                                    BoxShape3D::BoxShape3D_SetFaceCenter
-                                                              (pBVar34,BoxFace__Enum_Right,*pVVar5,
+                                                    TorusShape3D::TorusShape3D_set_TubeRadius
+                                                              ((TorusShape3D *)pBVar34,
+                                                               fVar12 - (fVar9 + fVar9),
                                                                (MethodInfo *)0x0);
-                                                    pGVar2 = (pGVar1->fields)._._data;
-                                                    if ((pGVar2 != (GizmoQuad3DBorderControllerData
+                                                    RightAngTriangle2D::
+                                                    RightAngTriangle2D_set_XLength
+                                                              ((RightAngTriangle2D *)pBVar34,fVar23,
+                                                               (MethodInfo *)0x0);
+                                                    TriangPrismShape3D::TriangPrismShape3D_set_Width
+                                                              ((TriangPrismShape3D *)pBVar34,
+                                                               4.2942276e-29,(MethodInfo *)0x0);
+                                                    pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
+                                                                        ((Vector3 *)&stack0xffffff40
+                                                                         ,pBVar33,BoxFace__Enum_Back
+                                                                         ,(MethodInfo *)0x0);
+                                                    BoxShape3D::BoxShape3D_SetFaceCenter
+                                                              (pBVar34,BoxFace__Enum_Right,*pVVar4,
+                                                               (MethodInfo *)0x0);
+                                                    pGVar1 = (this->fields)._._data;
+                                                    if ((pGVar1 != (GizmoQuad3DBorderControllerData
                                                                     *)0x0) &&
-                                                       (pBVar32 = (pGVar2->fields).BottomBox,
-                                                       pBVar32 != (BoxShape3D *)0x0)) {
-                                                      axis_09.z = (float)pGVar24;
-                                                      axis_09.x = (float)(undefined4)uStack_12;
-                                                      axis_09.y = (float)uStack_12._4_4_;
+                                                       (pBVar33 = (pGVar1->fields).BottomBox,
+                                                       pBVar33 != (BoxShape3D *)0x0)) {
+                                                      axis_09.z = (float)pBVar31;
+                                                      axis_09.x = (float)(int)uVar29;
+                                                      axis_09.y = (float)(int)((ulonglong)uVar29 >>
+                                                                              0x20);
                                                       BoxShape3D::BoxShape3D_AlignHeight
-                                                                (pBVar32,axis_09,(MethodInfo *)0x0);
-                                                      axis_10.z = (float)puVar25;
-                                                      axis_10.x = (float)(undefined4)uStack_7;
-                                                      axis_10.y = (float)uStack_7._4_4_;
+                                                                (pBVar33,axis_09,(MethodInfo *)0x0);
+                                                      axis_10.y = fVar28;
+                                                      axis_10.x = (float)pBVar30;
+                                                      axis_10.z = fVar6;
                                                       BoxShape3D::BoxShape3D_AlignWidth
-                                                                (pBVar32,axis_10,(MethodInfo *)0x0);
-                                                      direction_05.z = (float)puVar25;
-                                                      direction_05.x = (float)(undefined4)uStack_7;
-                                                      direction_05.y = (float)uStack_7._4_4_;
-                                                      fVar30 = BoxShape3D::
+                                                                (pBVar33,axis_10,(MethodInfo *)0x0);
+                                                      direction_05.y = fVar28;
+                                                      direction_05.x = (float)pBVar30;
+                                                      direction_05.z = fVar6;
+                                                      fVar6 = BoxShape3D::
                                                                BoxShape3D_GetSizeAlongDirection
-                                                                         (pBStack_33,direction_05,
+                                                                         (pBVar32,direction_05,
                                                                           (MethodInfo *)0x0);
                                                       TorusShape3D::TorusShape3D_set_TubeRadius
-                                                                ((TorusShape3D *)pBVar32,
-                                                                 (float)pMVar20 - (fVar30 + fVar30),
+                                                                ((TorusShape3D *)pBVar33,
+                                                                 fVar11 - (fVar6 + fVar6),
                                                                  (MethodInfo *)0x0);
                                                       RightAngTriangle2D::
                                                       RightAngTriangle2D_set_XLength
-                                                                ((RightAngTriangle2D *)pBVar32,
-                                                                 (float)value,(MethodInfo *)0x0);
+                                                                ((RightAngTriangle2D *)pBVar33,
+                                                                 fVar23,(MethodInfo *)0x0);
                                                       TriangPrismShape3D::
                                                       TriangPrismShape3D_set_Width
-                                                                ((TriangPrismShape3D *)pBVar32,
-                                                                 (float)pGVar3,(MethodInfo *)0x0);
-                                                      pVVar5 = BoxShape3D::BoxShape3D_GetFaceCenter
-                                                                         ((Vector3 *)
-                                                                          &stack0xffffff74,this_02,
-                                                                          BoxFace__Enum_Right,
-                                                                          (MethodInfo *)0x0);
+                                                                ((TriangPrismShape3D *)pBVar33,
+                                                                 4.2942276e-29,(MethodInfo *)0x0);
+                                                      pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
+                                                                          ((Vector3 *)
+                                                                           &stack0xffffff40,this_03,
+                                                                           BoxFace__Enum_Right,
+                                                                           (MethodInfo *)0x0);
                                                       BoxShape3D::BoxShape3D_SetFaceCenter
-                                                                (pBVar32,BoxFace__Enum_Left,*pVVar5,
-                                                                 (MethodInfo *)0x0);
-                                                      pGVar2 = (pGVar1->fields)._._data;
-                                                      if ((pGVar2 != (
+                                                                (pBVar33,BoxFace__Enum_Left,*pVVar4
+                                                                 ,(MethodInfo *)0x0);
+                                                      pGVar1 = (this->fields)._._data;
+                                                      if ((pGVar1 != (
                                                   GizmoQuad3DBorderControllerData *)0x0) &&
-                                                  (pBVar32 = (pGVar2->fields).LeftBox,
-                                                  pBVar32 != (BoxShape3D *)0x0)) {
-                                                    axis_11.z = (float)pGVar24;
-                                                    axis_11.x = (float)(undefined4)uStack_12;
-                                                    axis_11.y = (float)uStack_12._4_4_;
+                                                  (pBVar30 = (pGVar1->fields).LeftBox,
+                                                  pBVar30 != (BoxShape3D *)0x0)) {
+                                                    axis_11.z = (float)pBVar31;
+                                                    axis_11.x = (float)(int)uVar29;
+                                                    axis_11.y = (float)(int)((ulonglong)uVar29 >>
+                                                                            0x20);
                                                     BoxShape3D::BoxShape3D_AlignHeight
-                                                              (pBVar32,axis_11,(MethodInfo *)0x0);
-                                                    fVar30 = fStack_11;
-                                                    axis_12.z = fStack_11;
-                                                    axis_12.x = (float)(undefined4)uStack_8;
-                                                    axis_12.y = (float)uStack_8._4_4_;
+                                                              (pBVar30,axis_11,(MethodInfo *)0x0);
+                                                    axis_12.z = fVar26;
+                                                    axis_12.x = (float)(int)uVar24;
+                                                    axis_12.y = (float)(int)((ulonglong)uVar24 >>
+                                                                            0x20);
                                                     BoxShape3D::BoxShape3D_AlignWidth
-                                                              (pBVar32,axis_12,(MethodInfo *)0x0);
-                                                    direction_06.z = fVar30;
-                                                    direction_06.x = (float)(undefined4)uStack_8;
-                                                    direction_06.y = (float)uStack_8._4_4_;
-                                                    fVar30 = BoxShape3D::
+                                                              (pBVar30,axis_12,(MethodInfo *)0x0);
+                                                    direction_06.z = fVar26;
+                                                    direction_06.x = (float)(int)uVar24;
+                                                    direction_06.y =
+                                                         (float)(int)((ulonglong)uVar24 >> 0x20);
+                                                    fVar6 = BoxShape3D::
                                                              BoxShape3D_GetSizeAlongDirection
-                                                                       (this_00,direction_06,
+                                                                       (this_01,direction_06,
                                                                         (MethodInfo *)0x0);
                                                     TorusShape3D::TorusShape3D_set_TubeRadius
-                                                              ((TorusShape3D *)pBVar32,
-                                                               fVar16 - (fVar30 + fVar30),
+                                                              ((TorusShape3D *)pBVar30,
+                                                               fVar12 - (fVar6 + fVar6),
                                                                (MethodInfo *)0x0);
                                                     RightAngTriangle2D::
                                                     RightAngTriangle2D_set_XLength
-                                                              ((RightAngTriangle2D *)pBVar32,
-                                                               (float)value,(MethodInfo *)0x0);
+                                                              ((RightAngTriangle2D *)pBVar30,fVar23,
+                                                               (MethodInfo *)0x0);
                                                     TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                                              ((TriangPrismShape3D *)pBVar32,
-                                                               (float)pGVar3,(MethodInfo *)0x0);
-                                                    pVVar5 = BoxShape3D::BoxShape3D_GetFaceCenter
-                                                                       ((Vector3 *)&stack0xffffff74,
-                                                                        this_00,BoxFace__Enum_Back,
-                                                                        (MethodInfo *)0x0);
+                                                              ((TriangPrismShape3D *)pBVar30,
+                                                               4.2942276e-29,(MethodInfo *)0x0);
+                                                    pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
+                                                                        ((Vector3 *)&stack0xffffff40
+                                                                         ,this_01,BoxFace__Enum_Back
+                                                                         ,(MethodInfo *)0x0);
                                                     BoxShape3D::BoxShape3D_SetFaceCenter
-                                                              (pBVar32,BoxFace__Enum_Right,*pVVar5,
+                                                              (pBVar30,BoxFace__Enum_Right,*pVVar4,
                                                                (MethodInfo *)0x0);
                                                     return;
+                                                  }
                                                   }
                                                   }
                                                   }

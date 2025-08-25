@@ -56,14 +56,12 @@ code_?:
     }
     pSVar4->vector[uVar5].LastUseTime = fVar6;
     pUVar1 = (this->fields).onSubscriberReadyClick;
-    in_ECX = extraout_ECX;
   }
   if (pUVar1 == (UnityEvent *)0x0) {
     return;
   }
-  method = (MethodInfo *)0x0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Events__InvokableCall,in_ECX);
+    func_?(&TypeInfo__UnityEngine__Events__InvokableCall);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Count__
                    );
@@ -83,9 +81,7 @@ code_?:
   pIVar7 = pIRam00000008;
   if (pIRam00000008 == (InvokableCallList *)0x0) goto code_?;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-                   );
+    func_?();
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__Clear__
                    );
@@ -111,9 +107,6 @@ code_?:
               );
     pLVar11 = (List_1_System_Object_ *)(pIVar7->fields).m_ExecutingCalls;
     if (pLVar11 == (List_1_System_Object_ *)0x0) goto code_?;
-    method = 
-    MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-    ;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
     List_1_System_Object__AddRange
               (pLVar11,(IEnumerable_1_System_Object_ *)(pIVar7->fields).m_RuntimeCalls,
@@ -121,68 +114,79 @@ code_?:
               );
     (pIVar7->fields).m_NeedsUpdate = 0;
   }
-  this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (pIVar7->fields).m_ExecutingCalls;
+  RVar12 = (RegexCharClass_SingleRange)(pIVar7->fields).m_ExecutingCalls;
   iVar9 = 0;
-  pMVar12 = (MethodInfo *)0x0;
-  if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    while( true ) {
+  method = (MethodInfo *)RVar12;
+  if (RVar12 != (RegexCharClass_SingleRange)0x0) {
+code_?:
+    do {
       while( true ) {
-        while( true ) {
-          pMVar13 = method;
-          if ((this_01->fields)._size <= iVar9) {
-            return;
-          }
-          RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (this_01,iVar9,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                             );
-          if (((RVar14 == (RegexCharClass_SingleRange)0x0) ||
-              (*(byte *)(*(int *)RVar14 + 0xb8) <
-               (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment)) ||
-             (pMVar12 = method,
-             *(InvokableCall__Class **)
-              (*(int *)(*(int *)RVar14 + 100) + -4 +
-              (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
-             TypeInfo__UnityEngine__Events__InvokableCall)) break;
-          method = (MethodInfo *)0x0;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                    ((InvokableCall *)RVar14,(MethodInfo *)0x0);
-          iVar9 = iVar9 + 1;
-          pMVar12 = pMVar13;
+        if (*(int *)((int)RVar12 + 0xc) <= iVar9) {
+          return;
         }
-        mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-        RegexCharClass+SingleRange]::
-        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                  (this_01,iVar9,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                  );
-        method = (MethodInfo *)TypeInfo__UnityEngine__Events__InvokableCall;
-        this_00 = (InvokableCall *)func_?();
-        if (this_00 == (InvokableCall *)0x0) break;
+        RVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            RVar12,iVar9,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                           );
+        if (RVar13 == (RegexCharClass_SingleRange)0x0) break;
+        if ((*(byte *)(*(int *)RVar13 + 0xb8) <
+             (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment) ||
+           (*(InvokableCall__Class **)
+             (*(int *)(*(int *)RVar13 + 100) + -4 +
+             (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
+            TypeInfo__UnityEngine__Events__InvokableCall)) {
+          bVar14 = false;
+        }
+        else {
+          bVar14 = true;
+        }
+        this_00.First = 0;
+        this_00.Last = 0;
+        if (bVar14) {
+          this_00 = RVar13;
+        }
+        RVar12 = (RegexCharClass_SingleRange)method;
+        if (this_00 == (RegexCharClass_SingleRange)0x0) break;
         UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                  (this_00,(MethodInfo *)0x0);
+                  ((InvokableCall *)this_00,(MethodInfo *)0x0);
         iVar9 = iVar9 + 1;
+        RVar12 = this_00;
+        method = (MethodInfo *)this_00;
       }
-      RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      method = (MethodInfo *)
+               mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (this_01,iVar9,
+                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          RVar12,iVar9,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
                          );
-      if (pMVar12->return_type == (Il2CppType *)0x0) {
-        pIVar15 = (Il2CppType *)func_?(TypeInfo__System__Object,0);
-        pMVar12->return_type = pIVar15;
-        func_?(&pMVar12->return_type,pIVar15);
+      this_01 = (InvokableCall *)func_?();
+      if (this_01 == (InvokableCall *)0x0) {
+        RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            RVar12,iVar9,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                           );
+        if (iRam_? == 0) {
+          iRam_? = func_?(TypeInfo__System__Object);
+          func_?(0x14,iRam_?);
+        }
+        if (RVar12 == (RegexCharClass_SingleRange)0x0) break;
+        func_?(4,RVar12);
+        iVar9 = iVar9 + 1;
+        RVar12 = (RegexCharClass_SingleRange)method;
+        goto code_?;
       }
-      if (RVar14 == (RegexCharClass_SingleRange)0x0) break;
-      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                pMVar12->return_type;
-      func_?(4,RVar14);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                (this_01,(MethodInfo *)0x0);
       iVar9 = iVar9 + 1;
-    }
+    } while( true );
   }
 code_?:
   func_?();

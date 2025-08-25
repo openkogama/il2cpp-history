@@ -23,19 +23,29 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Destroy
     if (pAVar1 != (Avatar *)0x0) {
       pMVar2 = (pAVar1->fields).mvAvatar;
       if (pMVar2 != (MVAvatar *)0x0) {
-        if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment)
-           && ((MVAvatarLocal__Class *)
-               (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1]
-               == TypeInfo__MVAvatarLocal)) {
-          this_00 = (Component *)pMVar2[1].fields._._._.itemId;
+        if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
+           ((MVAvatarLocal__Class *)
+            (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+            TypeInfo__MVAvatarLocal)) {
+          bVar4 = false;
+        }
+        else {
+          bVar4 = true;
+        }
+        pMVar5 = (MVAvatar *)0x0;
+        if (bVar4) {
+          pMVar5 = pMVar2;
+        }
+        if (pMVar5 != (MVAvatar *)0x0) {
+          this_00 = (Component *)pMVar5[1].fields._._._.itemId;
           if (this_00 != (Component *)0x0) {
-            pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+            pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                (this_00,
                                 AvatarMotor_MethodInfo__UnityEngine__Component__GetComponent<AvatarMotor>__
                                );
-            if ((pOVar4 != (Object *)0x0) && ((SizeState *)pOVar4[0xe].monitor != (SizeState *)0x0))
+            if ((pOVar6 != (Object *)0x0) && ((SizeState *)pOVar6[0xe].monitor != (SizeState *)0x0))
             {
-              SizeState::SizeState_ScaleChanged((SizeState *)pOVar4[0xe].monitor,(MethodInfo *)0x0);
+              SizeState::SizeState_ScaleChanged((SizeState *)pOVar6[0xe].monitor,(MethodInfo *)0x0);
               goto code_?;
             }
           }
@@ -55,8 +65,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -302,11 +312,11 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier_Update
     dVar15 = (double)((fVar1 - (this->fields)._.sizeUnstableAfterSeconds) * fVar4);
     func_?();
     fVar1 = _UNK_? - (float)dVar15;
-    uStack_16 = CONCAT44((float)uVar7 * fVar3 + fVar13 * fVar1,
-                         (float)uVar6 * fVar3 + fVar12 * fVar1);
+    uStack_16 = CONCAT44(fVar1 * fVar13 + (float)uVar7 * fVar3,
+                         (float)uVar6 * fVar3 + fVar1 * fVar12);
     if (pMVar9 != (MVAvatar *)0x0) {
       (*(code *)(pMVar9->klass->vtable).set_Scale.method)
-                (pMVar9,uStack_16,fVar8 * fVar3 + fVar14 * fVar1,
+                (pMVar9,uStack_16,fVar1 * fVar14 + fVar8 * fVar3,
                  (pMVar9->klass->vtable).get_WorldPosition.methodPtr);
       return;
     }
@@ -345,7 +355,7 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier__Scale_b__2_0
     uStack_14 = CONCAT44(fVar7 + fVar13 * fVar10,fVar6 + fVar13 * (float)uVar8 * fVar5);
     if (pMVar4 != (MVAvatar *)0x0) {
       (*(code *)(pMVar4->klass->vtable).set_Scale.method)
-                (pMVar4,uStack_14,fVar13 * fVar11 + 3.466836e-29,
+                (pMVar4,uStack_14,fVar13 * fVar11 + 3.471911e-29,
                  (pMVar4->klass->vtable).get_WorldPosition.methodPtr);
       if (t != (this->fields)._.timeToSize) {
         return;
@@ -397,10 +407,10 @@ void Assembly-CSharp.dll::MouseModifier::MouseModifier__UnScale_b__3_0
     dVar12 = (double)(t * (this->fields)._.sineStrength);
     func_?(fVar5,fVar6,fVar11,fVar10);
     fVar13 = _UNK_? - (float)dVar12;
-    uStack_14 = CONCAT44(fVar5 + fVar10 * fVar13,fVar6 + (float)uVar7 * fVar9 * fVar13);
+    uStack_14 = CONCAT44(fVar5 + fVar13 * fVar10,fVar6 + fVar13 * (float)uVar7 * fVar9);
     if (pMVar4 != (MVAvatar *)0x0) {
       (*(code *)(pMVar4->klass->vtable).set_Scale.method)
-                (pMVar4,uStack_14,fVar11 * fVar13 + 3.4669866e-29,
+                (pMVar4,uStack_14,fVar13 * fVar11 + 3.4720614e-29,
                  (pMVar4->klass->vtable).get_WorldPosition.methodPtr);
       if (t == (this->fields)._.timeToSize) {
         MouseModifier_Destroy(this,(MethodInfo *)0x0);

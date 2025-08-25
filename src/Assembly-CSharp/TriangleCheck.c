@@ -100,7 +100,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle
   fVar11 = MathFunctions::MathFunctions_DotProduct
                      ((Vector3 *)&stack0xffffffbc,(Vector3 *)&stack0xffffff6c,(MethodInfo *)0x0);
   bVar23 = TriangleCheck_GetLowestRoot
-                    (fVar6,fVar11 + fVar11,3.3447147e-29 - _UNK_?,1.0,&distance,
+                    (fVar6,fVar11 + fVar11,3.3498684e-29 - _UNK_?,1.0,&distance,
                      (MethodInfo *)0x0);
   if (bVar23 != 0) {
     dStack_20 = (double)distance;
@@ -162,7 +162,7 @@ bool Assembly-CSharp.dll::TriangleCheck::TriangleCheck_CheckTriangle
                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                             ^ 0xADDR) * fVar30 + fVar31 * fVar31,
                      (fVar33 + fVar33) * fVar30 - (fVar31 + fVar31) * fVar32,
-                     (_UNK_? - 3.3447364e-29) * fVar30 + fVar32 * fVar32,(float)dStack_20,
+                     (_UNK_? - 3.34989e-29) * fVar30 + fVar32 * fVar32,(float)dStack_20,
                      &distance,(MethodInfo *)0x0);
   if (((bVar23 != 0) && (fVar30 = (fVar31 * distance - fVar32) / fVar30, _UNK_? <= fVar30)) &&
      (fVar30 <= _UNK_?)) {

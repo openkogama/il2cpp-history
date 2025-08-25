@@ -82,16 +82,15 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__18::
         fStack_3 = pVVar14->z;
         uStack_1 = uVar19;
         uStack_2 = uVar20;
-        unaff_ESI = (MVWorldObjectClient *)
-                    UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                              (StringLiteral_Player,(MethodInfo *)0x0);
+        iVar21 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                           (StringLiteral_Player,(MethodInfo *)0x0);
         fStack_8 = (pPVar5->fields).hitRadius;
         pMVar16 = (pPVar5->fields)._.owner;
         pLStack_7 = (List_1_VoxelHit_ *)(pPVar5->fields).maxRange;
+        unaff_ESI = (MVWorldObjectClient *)(1 << ((byte)iVar21 & 0x1f));
         if (pMVar16 != (MVPickupOwner *)0x0) {
           ignoreWoIds = (HashSet_1_System_Int32_ *)
                         (*(code *)(pMVar16->klass->vtable).get_IgnoreWOIDs.method)();
-          unaff_ESI = (MVWorldObjectClient *)((uint)unaff_ESI & 0x1f);
           ray.m_Origin.z = (float)pMStack_18;
           ray.m_Origin.x = (float)(undefined4)uStack_17;
           ray.m_Origin.y = (float)uStack_17._4_4_;
@@ -99,7 +98,7 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__18::
           ray.m_Direction.y = (float)uStack_2;
           ray.m_Direction.z = fStack_3;
           pLStack_7 = CollisionDetection::CollisionDetection_MVSphereCastAll
-                                (ray,fStack_8,(float)pLStack_7,ignoreWoIds,1 << (sbyte)unaff_ESI,
+                                (ray,fStack_8,(float)pLStack_7,ignoreWoIds,(int32_t)unaff_ESI,
                                  (MethodInfo *)0x0);
           fStack_8 = 0.0;
           x = (IBulletImpactVisualizer__Class *)this;
@@ -124,67 +123,67 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__18::
                    (this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
                                         (this_01,(MethodInfo *)0x0), this_02 == (MVLocalPlayer *)0x0
                    )) break;
-                bVar21 = MVPlayer::MVPlayer_IsOnSameTeam_1
+                bVar22 = MVPlayer::MVPlayer_IsOnSameTeam_1
                                    ((MVPlayer *)this_02,unaff_ESI,(MethodInfo *)0x0);
-                if (bVar21 == 0) {
+                if (bVar22 == 0) {
                   x = (IBulletImpactVisualizer__Class *)
                       MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
                                 (unaff_ESI,(MethodInfo *)0x0);
                   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                     func_?(TypeInfo__UnityEngine__Object);
                   }
-                  bVar21 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                  bVar22 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-                  if (bVar21 != 0) {
+                  if (bVar22 != 0) {
                     uStack_15 = CONCAT44((pPVar5->fields)._.owner,(undefined4)uStack_15);
-                    pIVar22 = FlamethrowerHitPackage::FlamethrowerHitPackage_Create
-                                        (&IStack_23,(MethodInfo *)0x0);
+                    pIVar23 = FlamethrowerHitPackage::FlamethrowerHitPackage_Create
+                                        (&IStack_24,(MethodInfo *)0x0);
                     pIVar6 = x;
                     if (x == (IBulletImpactVisualizer__Class *)0x0) break;
-                    uVar24._0_1_ = pIVar22->interactionType;
-                    uVar24._1_1_ = pIVar22->playerKilledByType;
-                    uVar24._2_2_ = *(undefined2 *)&pIVar22->field_0x12;
-                    func_?(7,x,uStack_15._4_4_,pIVar22->damage,(pIVar22->impulse).x,
-                                    (pIVar22->impulse).y,(pIVar22->impulse).z,uVar24,0);
+                    uVar25._0_1_ = pIVar23->interactionType;
+                    uVar25._1_1_ = pIVar23->playerKilledByType;
+                    uVar25._2_2_ = *(undefined2 *)&pIVar23->field_0x12;
+                    func_?(7,x,uStack_15._4_4_,pIVar23->damage,(pIVar23->impulse).x,
+                                    (pIVar23->impulse).y,(pIVar23->impulse).z,uVar25,0);
                     iVar4 = func_?(unaff_ESI,TypeInfo__IBulletImpactVisualizer);
                     if (iVar4 != 0) {
-                      puVar25 = (undefined4 *)
+                      puVar26 = (undefined4 *)
                                 func_?(&stack0xfffffef0,pLStack_7,fStack_8,
                                                 MethodInfo__System__Collections__Generic__List<VoxelHit>__get_Item_int_
                                                );
-                      pIVar26 = TypeInfo__IBulletImpactVisualizer;
-                      uVar24 = *puVar25;
-                      uVar27 = puVar25[1];
-                      uVar28 = puVar25[2];
-                      uVar29 = puVar25[3];
-                      uVar30 = puVar25[4];
-                      uVar31 = puVar25[5];
-                      uVar32 = puVar25[6];
-                      uVar33 = puVar25[7];
-                      uVar34 = puVar25[8];
-                      uVar35 = puVar25[9];
-                      uVar36 = puVar25[10];
-                      uVar37 = puVar25[0xb];
-                      IStack_23.impulse.x = (float)puVar25[0xc];
-                      IStack_23.impulse.y = (float)puVar25[0xd];
-                      IStack_23.impulse.z = (float)puVar25[0xe];
-                      IStack_23._16_4_ = puVar25[0xf];
-                      VStack_10._4_8_ = *(undefined8 *)(puVar25 + 0x10);
+                      pIVar27 = TypeInfo__IBulletImpactVisualizer;
+                      uVar25 = *puVar26;
+                      uVar28 = puVar26[1];
+                      uVar29 = puVar26[2];
+                      uVar30 = puVar26[3];
+                      uVar31 = puVar26[4];
+                      uVar32 = puVar26[5];
+                      uVar33 = puVar26[6];
+                      uVar34 = puVar26[7];
+                      uVar35 = puVar26[8];
+                      uVar36 = puVar26[9];
+                      uVar37 = puVar26[10];
+                      uVar38 = puVar26[0xb];
+                      IStack_24.impulse.x = (float)puVar26[0xc];
+                      IStack_24.impulse.y = (float)puVar26[0xd];
+                      IStack_24.impulse.z = (float)puVar26[0xe];
+                      IStack_24._16_4_ = puVar26[0xf];
+                      VStack_10._4_8_ = *(undefined8 *)(puVar26 + 0x10);
                       pMVar16 = (pPVar5->fields)._.owner;
                       if ((pMVar16 == (MVPickupOwner *)0x0) ||
-                         (pMVar38 = (pMVar16->fields)._.worldObjectParent,
-                         pMVar38 == (MVWorldObjectClient *)0x0)) break;
-                      uStack_15 = CONCAT44((pMVar38->fields)._.ownerActorNr,(undefined4)uStack_15);
+                         (pMVar39 = (pMVar16->fields)._.worldObjectParent,
+                         pMVar39 == (MVWorldObjectClient *)0x0)) break;
+                      uStack_15 = CONCAT44((pMVar39->fields)._.ownerActorNr,(undefined4)uStack_15);
                       iVar4 = func_?(unaff_ESI,TypeInfo__IBulletImpactVisualizer);
                       x = TypeInfo__IBulletImpactVisualizer;
-                      pIVar6 = pIVar26;
+                      pIVar6 = pIVar27;
                       if ((iVar4 == 0) ||
                          (iVar4 = func_?(unaff_ESI,TypeInfo__IBulletImpactVisualizer),
                          pIVar6 = x, iVar4 == 0)) goto code_?;
-                      func_?(0,TypeInfo__IBulletImpactVisualizer,iVar4,uVar24,uVar27,uVar28,
-                                      uVar29,uVar30,uVar31,uVar32,uVar33,uVar34,uVar35,uVar36,uVar37
-                                      ,IStack_23.impulse.x,IStack_23.impulse.y,IStack_23.impulse.z,
-                                      IStack_23._16_4_,VStack_10.y,VStack_10.z,(undefined4)uStack_17
+                      func_?(0,TypeInfo__IBulletImpactVisualizer,iVar4,uVar25,uVar28,uVar29,
+                                      uVar30,uVar31,uVar32,uVar33,uVar34,uVar35,uVar36,uVar37,uVar38
+                                      ,IStack_24.impulse.x,IStack_24.impulse.y,IStack_24.impulse.z,
+                                      IStack_24._16_4_,VStack_10.y,VStack_10.z,(undefined4)uStack_17
                                       ,uStack_17._4_4_,pMStack_18,uStack_1,
                                       CONCAT44(fStack_3,uStack_2),uStack_15._4_4_,0);
                     }
@@ -201,9 +200,9 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__18::
   func_?();
 code_?:
   func_?(unaff_ESI,pIVar6);
-  pcVar39 = (code *)swi(3);
-  bVar21 = (*pcVar39)();
-  return bVar21;
+  pcVar40 = (code *)swi(3);
+  bVar22 = (*pcVar40)();
+  return bVar22;
 }
 
 

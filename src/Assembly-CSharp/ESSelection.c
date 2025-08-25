@@ -70,7 +70,6 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
                (ESSelection *this,EditorStateMachine *e,MethodInfo *method)
 
 {
-  pEVar1 = (EditorStateMachine *)((ulonglong)in_stack_2 >> 0x20);
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
@@ -95,189 +94,201 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
     func_?(&StringLiteral_FromTranslateState);
     cRam_? = '\x01';
   }
+  this_04 = e;
   if (e != (EditorStateMachine *)0x0) {
-    pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-    if (pMVar3 == (MVWorldObjectClient *)0x0) {
-      bVar4 = false;
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    if (pMVar1 == (MVWorldObjectClient *)0x0) {
+      e = (EditorStateMachine *)((uint)e & 0xffffff);
     }
     else {
-      pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-      if (pMVar3 == (MVWorldObjectClient *)0x0) goto code_?;
-      bVar4 = false;
-      if (((pMVar3->fields).interactionFlags & 8) != 0) {
-        bVar4 = true;
+      pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                         (this_04,(MethodInfo *)0x0);
+      pEVar2 = e;
+      if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
+      e = (EditorStateMachine *)((uint)e & 0xffffff);
+      if (((pMVar1->fields).interactionFlags & 8) != 0) {
+        e = (EditorStateMachine *)CONCAT13(1,(int3)pEVar2);
       }
     }
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(e->fields)._.data;
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+              (this_04->fields)._.data;
     if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         (this_00,(Object *)StringLiteral_FromTranslateState,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      if (bVar5 != 0) {
-        bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
-        if (bVar5 != 0) {
-          EditorStateMachine::EditorStateMachine_DeSelectAll(e,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        bVar3 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot
+                          (this_04,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          EditorStateMachine::EditorStateMachine_DeSelectAll(this_04,(MethodInfo *)0x0);
           this_03 = (this->fields).gizmoController;
           if (this_03 != (GizmoController *)0x0) {
             GizmoController::GizmoController_Hide(this_03,(MethodInfo *)0x0);
-            pOVar6 = (Object *)func_?();
-            FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar6,(MethodInfo *)0x0);
+            e = (EditorStateMachine *)0x2f;
+            pOVar4 = (Object *)func_?(TypeInfo__EditorEvent,&e);
+            FSMEntity::FSMEntity_set_Event((FSMEntity *)this_04,pOVar4,(MethodInfo *)0x0);
             return;
           }
           goto code_?;
         }
-        if (bVar4) {
-          pEVar1 = e;
-          pMVar7 = EditorStateMachine::EditorStateMachine_get_ParentGroup(e,(MethodInfo *)0x0);
-          if ((pMVar7 == (MVGroup *)0x0) ||
-             (this_01 = (pMVar7->fields)._.gameObject, this_01 == (GameObject *)0x0))
+        if (e._3_1_ != '\0') {
+          pMVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroup(this_04,(MethodInfo *)0x0)
+          ;
+          if ((pMVar5 == (MVGroup *)0x0) ||
+             (this_01 = (pMVar5->fields)._.gameObject, this_01 == (GameObject *)0x0))
           goto code_?;
-          in_stack_8 = &UNK_?;
           t = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_01,(MethodInfo *)0x0);
           if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+            func_?(TypeInfo__SharedCubeFunctions);
           }
-          in_stack_9 = &UNK_?;
           SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively(t,0,(MethodInfo *)0x0);
-          EditorStateMachine::EditorStateMachine_ExitGroup(e,(MethodInfo *)0x0);
-          in_stack_10 = (EditorStateMachine *)0x0;
-          in_stack_11 = &UNK_?;
-          in_stack_12 = e;
-          bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            VStack_13.z = 6.5861e-44;
-            in_stack_14 = (Object *)func_?();
-            in_stack_15._0_2_ = 0;
-            in_stack_15._2_2_ = 0;
-            in_stack_12 = (EditorStateMachine *)&UNK_?;
-            in_stack_10 = e;
-            FSMEntity::FSMEntity_set_Event((FSMEntity *)e,in_stack_14,(MethodInfo *)0x0);
+          EditorStateMachine::EditorStateMachine_ExitGroup(this_04,(MethodInfo *)0x0);
+          bVar3 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot
+                            (this_04,(MethodInfo *)0x0);
+          if (bVar3 != 0) {
+            VStack_6.z = 6.5861e-44;
+            pOVar4 = (Object *)func_?(TypeInfo__EditorEvent,&VStack_6.z);
+            FSMEntity::FSMEntity_set_Event((FSMEntity *)this_04,pOVar4,(MethodInfo *)0x0);
           }
         }
       }
-      ppEVar16 = &(this->fields).editorStateMachine;
-      (this->fields).editorStateMachine = e;
-      func_?();
-      pEVar17 = (this->fields).editorStateMachine;
-      if (pEVar17 != (EditorStateMachine *)0x0) {
-        pSVar18 = (pEVar17->fields).selectionController;
-        this_04 = (EventHandler_1_Object_ *)
+      (this->fields).editorStateMachine = this_04;
+      func_?(&(this->fields).editorStateMachine,this_04);
+      pEVar2 = (this->fields).editorStateMachine;
+      if (pEVar2 != (EditorStateMachine *)0x0) {
+        pSVar7 = (pEVar2->fields).selectionController;
+        this_05 = (EventHandler_1_Object_ *)
                   func_?(TypeInfo__System__EventHandler<WorldObjectDestroyedEventArgs>);
-        VStack_13.z = (float)this_04;
+        VStack_6.z = (float)this_05;
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (this_04,(Object *)this,
+                  (this_05,(Object *)this,
                    MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_
                    ,(MethodInfo *)0x0);
-        if (pSVar18 != (SelectionController *)0x0) {
-          func_?(0,TypeInfo__ISelectionController,pSVar18,VStack_13.z);
-          bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
-          if ((bVar5 == 0) && (!bVar4)) {
-            this_02 = (e->fields).weCamera;
+        if (pSVar7 != (SelectionController *)0x0) {
+          func_?(0,TypeInfo__ISelectionController,pSVar7,VStack_6.z);
+          bVar3 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot
+                            (this_04,(MethodInfo *)0x0);
+          if ((bVar3 == 0) && (e._3_1_ == '\0')) {
+            this_02 = (this_04->fields).weCamera;
             if (this_02 == (MainCameraManager *)0x0) goto code_?;
             MainCameraManager::MainCameraManager_set_BlueModeEnabled(this_02,1,(MethodInfo *)0x0);
           }
-          func_?(&stack0xffffff5c,0,0x48);
-          bVar5 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                            ((VoxelHit *)&stack0xffffff5c,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+          func_?(auStack_8,0,0x48);
+          bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
+                            ((VoxelHit *)auStack_8,(HashSet_1_System_Int32_ *)0x0,-0x40005,
                              (MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            puVar19 = in_stack_8;
-            puVar20 = in_stack_9;
-            puVar21 = in_stack_11;
-            pEVar17 = in_stack_12;
-            pEVar22 = in_stack_10;
-            pOVar6 = in_stack_14;
-            uVar23 = in_stack_15;
+          if (bVar3 != 0) {
             if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__MVInputWrapper);
-              puVar19 = in_stack_8;
-              puVar20 = in_stack_9;
-              puVar21 = in_stack_11;
-              pEVar17 = in_stack_12;
-              pEVar22 = in_stack_10;
-              pOVar6 = in_stack_14;
-              uVar23 = in_stack_15;
             }
-            pVVar24 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                                (&VStack_13,(MethodInfo *)0x0);
-            VStack_25.y = pVVar24->x;
-            VStack_25.z = pVVar24->y;
-            fVar26 = pVVar24->z;
-            VStack_13._4_8_ = iStack_27;
-            in_stack_8 = puVar19;
-            in_stack_9 = puVar20;
-            in_stack_11 = puVar21;
-            in_stack_12 = pEVar17;
-            in_stack_10 = pEVar22;
-            in_stack_14 = pOVar6;
-            in_stack_15 = uVar23;
-            pMVar28 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            if (pMVar28 == (MVWorldObjectClientManager *)0x0) goto code_?;
-            pWVar29 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                                (pMVar28,0xADDR,(MethodInfo *)0x0);
-            pEVar30 = (ESSelection_PickResult_1_WorldObjectClientRef_ *)
+            pVVar9 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+                               (&VStack_6,(MethodInfo *)0x0);
+            VStack_10.y = pVVar9->x;
+            VStack_10.z = pVVar9->y;
+            e = (EditorStateMachine *)pVVar9->z;
+            fStack_11 = (float)auStack_8._0_4_;
+            pCStack_12 = (Collider *)auStack_8._4_4_;
+            pTStack_13 = (Transform *)auStack_8._8_4_;
+            fStack_14 = (float)auStack_8._12_4_;
+            fStack_15 = (float)auStack_8._16_4_;
+            fStack_16 = (float)auStack_8._20_4_;
+            iStack_17 = auStack_8._24_4_;
+            pCStack_18 = (Cube *)auStack_8._28_4_;
+            fStack_19 = fStack_20;
+            fStack_21 = fStack_22;
+            iStack_23 = iStack_24;
+            pCStack_25 = pCStack_26;
+            fStack_27 = fStack_28;
+            pCStack_29 = pCStack_30;
+            pTStack_31 = pTStack_32;
+            fStack_33 = fStack_34;
+            VStack_6.y = (float)(undefined4)iStack_35;
+            VStack_6.z = (float)iStack_35._4_4_;
+            pMVar36 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            if (pMVar36 == (MVWorldObjectClientManager *)0x0) goto code_?;
+            pWVar37 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                                (pMVar36,iStack_24,(MethodInfo *)0x0);
+            pEVar38 = (ESSelection_PickResult_1_WorldObjectClientRef_ *)
                       func_?(TypeInfo__ESSelection__PickResult<WorldObjectClientRef>);
-            func_?(pEVar30,VStack_25._4_8_,fVar26,pEVar1,puVar19,puVar20,puVar21,pEVar17,
-                            pEVar22,pOVar6,uVar23,iStack_31,uStack_32,&UNK_?,ppEVar16,e,
-                            pCStack_33,pTStack_34,uStack_35,VStack_13._4_8_,pWVar29,
+            func_?(pEVar38,VStack_10._4_8_,e,fStack_11,pCStack_12,pTStack_13,fStack_14,
+                            fStack_15,fStack_16,iStack_17,pCStack_18,fStack_19,fStack_21,iStack_23,
+                            pCStack_25,fStack_27,pCStack_29,pTStack_31,fStack_33,VStack_6._4_8_,
+                            pWVar37,
                             MethodInfo__ESSelection__PickResult<WorldObjectClientRef>__PickResult_UnityEngine__Vector3__VoxelHit__WorldObjectClientRef_
                            );
-            (this->fields).pickedTarget = pEVar30;
-            func_?(&(this->fields).pickedTarget,pEVar30);
-            pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                               (e,(MethodInfo *)0x0);
-            if (pMVar3 == (MVWorldObjectClient *)0x0) {
-              pWVar29 = MVWorldObjectClientManager::
+            (this->fields).pickedTarget = pEVar38;
+            func_?(&(this->fields).pickedTarget,pEVar38);
+            pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                               (this_04,(MethodInfo *)0x0);
+            if (pMVar1 == (MVWorldObjectClient *)0x0) {
+              pWVar37 = MVWorldObjectClientManager::
                         MVWorldObjectClientManager_GetWorldObjectClientRefNullRef((MethodInfo *)0x0)
               ;
-              (this->fields).selectedWorldObject = pWVar29;
-              func_?(&(this->fields).selectedWorldObject,pWVar29);
+              (this->fields).selectedWorldObject = pWVar37;
+              func_?(&(this->fields).selectedWorldObject,pWVar37);
             }
             else {
-              pMVar28 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-              pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                                 (e,(MethodInfo *)0x0);
-              if ((pMVar3 == (MVWorldObjectClient *)0x0) ||
-                 (pMVar28 == (MVWorldObjectClientManager *)0x0)) goto code_?;
-              pWVar29 = MVWorldObjectClientManager::
+              pMVar36 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+              pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                                 (this_04,(MethodInfo *)0x0);
+              if ((pMVar1 == (MVWorldObjectClient *)0x0) ||
+                 (pMVar36 == (MVWorldObjectClientManager *)0x0)) goto code_?;
+              pWVar37 = MVWorldObjectClientManager::
                         MVWorldObjectClientManager_GetWorldObjectClientRef
-                                  (pMVar28,(pMVar3->fields)._.id,(MethodInfo *)0x0);
-              (this->fields).selectedWorldObject = pWVar29;
-              func_?(&(this->fields).selectedWorldObject,pWVar29);
+                                  (pMVar36,(pMVar1->fields)._.id,(MethodInfo *)0x0);
+              (this->fields).selectedWorldObject = pWVar37;
+              func_?(&(this->fields).selectedWorldObject,pWVar37);
             }
           }
-          x = ESSelection_GetLinkHit(this,e,(VoxelHit *)&stack0xffffff5c,(MethodInfo *)0x0);
+          x = ESSelection_GetLinkHit(this,this_04,(VoxelHit *)auStack_8,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+          bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar5 == 0) {
-            pEVar36 = (ESSelection_PickResult_1_LinkObjectBase_ *)0x0;
+          if (bVar3 == 0) {
+            pEVar39 = (ESSelection_PickResult_1_LinkObjectBase_ *)0x0;
           }
           else {
             if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pVVar24 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                                (&VStack_25,(MethodInfo *)0x0);
-            pEVar37 = TypeInfo__ESSelection__PickResult<LinkObjectBase>;
-            VStack_13.y = pVVar24->x;
-            VStack_13.z = pVVar24->y;
-            fVar26 = pVVar24->z;
-            VStack_25._4_8_ = iStack_27;
-            pEVar36 = (ESSelection_PickResult_1_LinkObjectBase_ *)func_?();
-            func_?(pEVar36,VStack_13._4_8_,fVar26,pEVar37,in_stack_8,in_stack_9
-                            ,in_stack_11,in_stack_12,in_stack_10,in_stack_14
-                            ,in_stack_15,iStack_31,uStack_32,&UNK_?,ppEVar16,e,
-                            pCStack_33,pTStack_34,uStack_35,VStack_25._4_8_);
+            pVVar9 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+                               (&VStack_10,(MethodInfo *)0x0);
+            VStack_6.y = pVVar9->x;
+            VStack_6.z = pVVar9->y;
+            fVar40 = pVVar9->z;
+            fStack_27 = (float)auStack_8._0_4_;
+            pCStack_29 = (Collider *)auStack_8._4_4_;
+            pTStack_31 = (Transform *)auStack_8._8_4_;
+            fStack_33 = (float)auStack_8._12_4_;
+            fStack_19 = (float)auStack_8._16_4_;
+            fStack_21 = (float)auStack_8._20_4_;
+            iStack_23 = auStack_8._24_4_;
+            pCStack_25 = (Cube *)auStack_8._28_4_;
+            fStack_15 = fStack_20;
+            fStack_16 = fStack_22;
+            iStack_17 = iStack_24;
+            pCStack_18 = pCStack_26;
+            fStack_11 = fStack_28;
+            pCStack_12 = pCStack_30;
+            pTStack_13 = pTStack_32;
+            fStack_14 = fStack_34;
+            VStack_10.y = (float)(undefined4)iStack_35;
+            VStack_10.z = (float)iStack_35._4_4_;
+            pEVar39 = (ESSelection_PickResult_1_LinkObjectBase_ *)func_?();
+            func_?(pEVar39,VStack_6._4_8_,fVar40,fStack_27,pCStack_29,pTStack_31,fStack_33,
+                            fStack_19,fStack_21,iStack_23,pCStack_25,fStack_15,fStack_16,iStack_17,
+                            pCStack_18,fStack_11,pCStack_12,pTStack_13,fStack_14,VStack_10._4_8_,x,
+                            MethodInfo__ESSelection__PickResult<LinkObjectBase>__PickResult_UnityEngine__Vector3__VoxelHit__LinkObjectBase_
+                           );
           }
-          (this->fields).pickedLink = pEVar36;
-          func_?(&(this->fields).pickedLink);
+          (this->fields).pickedLink = pEVar39;
+          func_?(&(this->fields).pickedLink,pEVar39);
           return;
         }
       }
@@ -285,8 +296,8 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
   }
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  (*pcVar38)();
+  pcVar41 = (code *)swi(3);
+  (*pcVar41)();
   return;
 }
 
@@ -326,112 +337,100 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Execute
                (ESSelection *this,EditorStateMachine *e,MethodInfo *method)
 
 {
+  this_02 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVInputWrapper);
     func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
     ;
     cRam_? = '\x01';
   }
-  this_02 = this;
   pCVar1 = (this->fields).contextMenuController;
-  if (pCVar1 == (ContextMenuController *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  if ((pCVar1->fields).rightClickGizmoSelect == 0) {
-    this_00 = (this->fields).gizmoController;
-    if (this_00 == (GizmoController *)0x0) goto code_?;
-    bVar3 = GizmoController::GizmoController_get_IgnoreSelectionOnce(this_00,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVInputWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KogamaControls__Enum_DeleteObject,KeyState__Enum_Down,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
+  if (pCVar1 != (ContextMenuController *)0x0) {
+    if ((pCVar1->fields).rightClickGizmoSelect == 0) {
+      this_00 = (this->fields).gizmoController;
+      if (this_00 == (GizmoController *)0x0) goto code_?;
+      bVar2 = GizmoController::GizmoController_get_IgnoreSelectionOnce(this_00,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__MVInputWrapper);
         }
-        bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
-                          (KogamaControls__Enum_LeaveObject,(MethodInfo *)0x0);
-        if (bVar3 != 0) {
-          ESSelection_HandleEscapeSelection(this_02,e,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__MVInputWrapper);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MVInputWrapper);
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                          (KogamaControls__Enum_DeleteObject,KeyState__Enum_Down,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          ESSelection_HandleDeleteSelection(this,e,(MethodInfo *)0x0);
           return;
         }
-        fVar4 = 1.00893e-43;
-        puVar5 = &stack0xffffff90;
-        fVar6 = 0.0;
-        func_?();
-        bVar3 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                          ((VoxelHit *)&stack0xffffff90,(HashSet_1_System_Int32_ *)0x0,-0x40005,
-                           (MethodInfo *)0x0);
-        this = (ESSelection *)CONCAT31(this._1_3_,bVar3);
-        if (bVar3 != 0) {
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MVInputWrapper);
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+                          (KogamaControls__Enum_LeaveObject,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          ESSelection_HandleEscapeSelection(this,e,(MethodInfo *)0x0);
+          return;
+        }
+        func_?(&VStack_3,0,0x48);
+        this._0_1_ = EditModeObjectPicker::EditModeObjectPicker_Pick
+                               (&VStack_3,(HashSet_1_System_Int32_ *)0x0,-0x40005,(MethodInfo *)0x0
+                               );
+        if ((bool)this != 0) {
           this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
           if (this_03 == (MVWorldObjectClientManager *)0x0) goto code_?;
-          bVar7 = MVWorldObjectClientManager::MVWorldObjectClientManager_IsType
-                            (this_03,iStack_8,WorldObjectType__Enum_CubeModelPrototypeTerrain,
+          bVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_IsType
+                            (this_03,VStack_3.woId,WorldObjectType__Enum_CubeModelPrototypeTerrain,
                              (MethodInfo *)0x0);
-          if ((bVar7 != 0) || (iStack_8 == -1)) {
-            bVar3 = 0;
-            this = (ESSelection *)((uint)this & 0xffffff00);
+          if ((bVar2 != 0) || (VStack_3.woId == -1)) {
+            this._0_1_ = 0;
           }
         }
-        fVar9 = 0.0;
-        cVar10 = func_?();
-        e_00 = e;
-        uVar11 = (undefined4)iStack_12;
-        uVar13 = (undefined4)((ulonglong)iStack_12 >> 0x20);
-        if (cVar10 == '\0') {
-          if (bVar3 == 0) {
-            e = (EditorStateMachine *)((uint)e & 0xffffff00);
+        cVar4 = func_?(0);
+        if (cVar4 == '\0') {
+          if ((bool)this == 0) {
+            bVar2 = 0;
           }
           else {
-            bVar7 = ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnabled
-                              (iStack_8,(MethodInfo *)0x0);
-            e = (EditorStateMachine *)CONCAT31(e._1_3_,bVar7);
+            bVar2 = ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnabled
+                              (VStack_3.woId,(MethodInfo *)0x0);
           }
-          hit.point.y = fVar6;
-          hit.point.x = (float)puVar5;
-          hit.point.z = fVar4;
-          hit.normal.x = in_stack_14;
-          hit.normal.y = in_stack_15;
-          hit.normal.z = (float)in_stack_16;
-          hit.cubePos._0_4_ = uStack_17;
-          hit._28_4_ = iStack_18;
-          hit.face = uStack_19;
-          hit._36_4_ = iStack_8;
-          hit.woId = (int32_t)pCStack_20;
-          hit.cube = (Cube *)fStack_21;
-          hit.distance = (float)pCStack_22;
-          hit.collider = (Collider *)pTStack_23;
-          hit.transform = (Transform *)uStack_24;
-          hit._60_4_ = uVar11;
-          hit.interactionFlags._0_4_ = uVar13;
+          hit.point.y = VStack_3.point.z;
+          hit.point.x = VStack_3.point.y;
+          hit.point.z = VStack_3.normal.x;
+          hit.normal.x = VStack_3.normal.y;
+          hit.normal.y = VStack_3.normal.z;
+          hit.normal.z = (float)VStack_3.cubePos._0_4_;
+          hit.cubePos.x = VStack_3.cubePos.z;
+          hit.cubePos.y = VStack_3._30_2_;
+          hit._28_4_ = VStack_3.face;
+          hit.face = VStack_3._36_4_;
+          hit._36_4_ = VStack_3.woId;
+          hit.woId = (int32_t)VStack_3.cube;
+          hit.cube = (Cube *)VStack_3.distance;
+          hit.distance = (float)VStack_3.collider;
+          hit.collider = (Collider *)VStack_3.transform;
+          hit.transform = (Transform *)VStack_3._60_4_;
+          hit._60_4_ = (int)VStack_3.interactionFlags;
+          hit.interactionFlags._0_4_ = (int)((ulonglong)VStack_3.interactionFlags >> 0x20);
           hit.interactionFlags._4_4_ = 0;
           ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
-                    ((ESStateBase *)this_02,e_00,(bool)e,hit,in_stack_25);
+                    ((ESStateBase *)this_02,e,bVar2,hit,in_stack_5);
         }
         if ((this_02->fields).pickedTarget != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)
         {
           this_01 = (((this_02->fields).pickedTarget)->fields).data;
           if (this_01 == (WorldObjectClientRef *)0x0) goto code_?;
-          pOVar26 = WorldObjectClientRef`1[System::Object]::
-                    WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                              ((WorldObjectClientRef_1_System_Object_ *)this_01,
-                               MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                              );
-          if (pOVar26 == (Object *)0x0) {
+          pOVar6 = WorldObjectClientRef`1[System::Object]::
+                   WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                             ((WorldObjectClientRef_1_System_Object_ *)this_01,
+                              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                             );
+          if (pOVar6 == (Object *)0x0) {
             (this_02->fields).pickedTarget = (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0;
             func_?(&(this_02->fields).pickedTarget,0);
           }
@@ -439,166 +438,100 @@ code_?:
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
         }
-        bVar7 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                           (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-        if (bVar7 != 0) {
-          targetHit.point.y = (float)puVar5;
-          targetHit.point.x = fVar9;
-          targetHit.point.z = fVar6;
-          targetHit.normal.x = fVar4;
-          targetHit.normal.y = in_stack_14;
-          targetHit.normal.z = in_stack_15;
-          targetHit.cubePos.x = (int16_t)in_stack_16;
-          targetHit.cubePos.y = SUB42(in_stack_16,2);
-          targetHit._28_4_ = uStack_17;
-          targetHit.face = iStack_18;
-          targetHit._36_4_ = uStack_19;
-          targetHit.woId = iStack_8;
-          targetHit.cube = pCStack_20;
-          targetHit.distance = fStack_21;
-          targetHit.collider = pCStack_22;
-          targetHit.transform = pTStack_23;
-          targetHit._60_4_ = uStack_24;
-          targetHit.interactionFlags._0_4_ = uVar11;
-          targetHit.interactionFlags._4_4_ = uVar13;
-          ESSelection_HandleLeftClickDownSelection
-                    (this_02,e_00,targetHit,(bool)this,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          targetHit.point.y = VStack_3.point.y;
+          targetHit.point.x = VStack_3.point.x;
+          targetHit.point.z = VStack_3.point.z;
+          targetHit.normal.x = VStack_3.normal.x;
+          targetHit.normal.y = VStack_3.normal.y;
+          targetHit.normal.z = VStack_3.normal.z;
+          targetHit.cubePos.x = VStack_3.cubePos.x;
+          targetHit.cubePos.y = VStack_3.cubePos.y;
+          targetHit.cubePos.z = VStack_3.cubePos.z;
+          targetHit._30_2_ = VStack_3._30_2_;
+          targetHit.face = VStack_3.face;
+          targetHit.isCubeHit = VStack_3.isCubeHit;
+          targetHit._37_3_ = VStack_3._37_3_;
+          targetHit.woId = VStack_3.woId;
+          targetHit.cube = VStack_3.cube;
+          targetHit.distance = VStack_3.distance;
+          targetHit.collider = VStack_3.collider;
+          targetHit.transform = VStack_3.transform;
+          targetHit._60_4_ = VStack_3._60_4_;
+          targetHit.interactionFlags._0_4_ = (int)VStack_3.interactionFlags;
+          targetHit.interactionFlags._4_4_ = (int)((ulonglong)VStack_3.interactionFlags >> 0x20);
+          ESSelection_HandleLeftClickDownSelection(this_02,e,targetHit,(bool)this,(MethodInfo *)0x0)
+          ;
           return;
         }
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
         }
-        bVar7 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                           (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-        if (bVar7 == 0) {
-          if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
-                            (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-          if (bVar3 != 0) {
-            ESSelection_HandleLeftClickUpSelection(this_02,e_00,(MethodInfo *)0x0);
-            return;
-          }
-          if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          fVar9 = 0.0;
-          fVar6 = 8.40779e-45;
-          puVar27 = &UNK_?;
-          bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
-                            (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
-          if (bVar3 != 0) {
-            targetHit_00.point.y = fVar6;
-            targetHit_00.point.x = (float)puVar27;
-            targetHit_00.point.z = fVar9;
-            targetHit_00.normal.x = fVar4;
-            targetHit_00.normal.y = 0.0;
-            targetHit_00.normal.z = in_stack_15;
-            targetHit_00.cubePos.x = (int16_t)in_stack_16;
-            targetHit_00.cubePos.y = SUB42(in_stack_16,2);
-            targetHit_00._28_4_ = uStack_17;
-            targetHit_00.face = iStack_18;
-            targetHit_00._36_4_ = uStack_19;
-            targetHit_00.woId = iStack_8;
-            targetHit_00.cube = pCStack_20;
-            targetHit_00.distance = fStack_21;
-            targetHit_00.collider = pCStack_22;
-            targetHit_00.transform = pTStack_23;
-            targetHit_00._60_4_ = uStack_24;
-            targetHit_00.interactionFlags._0_4_ = uVar11;
-            targetHit_00.interactionFlags._4_4_ = uVar13;
-            ESSelection_HandleRightClickDownSelection
-                      (this_02,e_00,targetHit_00,(bool)this,(MethodInfo *)0x0);
-            return;
-          }
-          if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
-                            (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
-          if (bVar3 != 0) {
-            ESSelection_HandleRightClickUpSelection(this_02,e_00,(MethodInfo *)0x0);
-            return;
-          }
+        if (bVar2 != 0) {
+          ESSelection_HandleLeftClickDragSelection(this_02,e,(bool)this,(MethodInfo *)0x0);
+          return;
         }
-        else {
-          if (cRam_? == '\0') {
-            func_?();
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                           );
-            func_?(&TypeInfo__MVInputWrapper);
-            func_?(&TypeInfo__TranslateMode);
-            func_?(&StringLiteral_moveWithAvatar);
-            func_?(&StringLiteral_translateMode);
-            func_?(&StringLiteral_Mouse_ScrollWheel);
-            cRam_? = '\x01';
-          }
-          if ((bVar3 != 0) &&
-             ((this_02->fields).pickedTarget !=
-              (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) {
-            pEVar28 = (this_02->fields).pickedTarget;
-            uStack_29._0_4_ = (pEVar28->fields).mousePosition.x;
-            uStack_29._4_4_ = (pEVar28->fields).mousePosition.y;
-            fStack_30 = (pEVar28->fields).mousePosition.z;
-            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            pVVar31 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                                (&VStack_32,(MethodInfo *)0x0);
-            uVar33 = pVVar31->x;
-            uVar34 = pVVar31->y;
-            fStack_35 = fStack_30 - pVVar31->z;
-            uStack_36 = CONCAT44(uStack_29._4_4_ - (float)uVar34,(float)uStack_29 - (float)uVar33);
-            fStack_30 = fStack_35;
-            fVar37 = (float10)func_?(&uStack_36);
-            e = (EditorStateMachine *)(float)fVar37;
-            if ((float)e <= _UNK_?) {
-              if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__MVInputWrapper);
-              }
-              e = (EditorStateMachine *)
-                  MVInputWrapper::MVInputWrapper_GetAxisRawWithoutSensitivity
-                            (StringLiteral_Mouse_ScrollWheel,(MethodInfo *)0x0);
-              if ((float)e == _UNK_?) {
-                return;
-              }
-            }
-            if (e_00 != (EditorStateMachine *)0x0) {
-              pDVar38 = (e_00->fields)._.data;
-              this = (ESSelection *)0x0;
-              pOVar26 = (Object *)func_?(TypeInfo__TranslateMode,&this);
-              if (pDVar38 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__Add
-                          (pDVar38,(Object *)StringLiteral_translateMode,pOVar26,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                          );
-                pDVar38 = (e_00->fields)._.data;
-                e = (EditorStateMachine *)CONCAT13(1,e._0_3_);
-                pOVar26 = (Object *)func_?(TypeInfo__System__Boolean,(int)&e + 3);
-                if (pDVar38 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__Add
-                            (pDVar38,(Object *)StringLiteral_moveWithAvatar,pOVar26,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                            );
-                  FSMEntity::FSMEntity_PushState
-                            ((FSMEntity *)e_00,EditorEvent__Enum_ESTranslate,(MethodInfo *)0x0);
-                  return;
-                }
-              }
-            }
-            goto code_?;
-          }
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MVInputWrapper);
         }
-      }
-      else {
-        ESSelection_HandleDeleteSelection(this_02,e,(MethodInfo *)0x0);
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+                          (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          ESSelection_HandleLeftClickUpSelection(this_02,e,(MethodInfo *)0x0);
+          return;
+        }
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MVInputWrapper);
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+                          (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          targetHit_00.point.y = VStack_3.point.y;
+          targetHit_00.point.x = VStack_3.point.x;
+          targetHit_00.point.z = VStack_3.point.z;
+          targetHit_00.normal.x = VStack_3.normal.x;
+          targetHit_00.normal.y = VStack_3.normal.y;
+          targetHit_00.normal.z = VStack_3.normal.z;
+          targetHit_00.cubePos.x = VStack_3.cubePos.x;
+          targetHit_00.cubePos.y = VStack_3.cubePos.y;
+          targetHit_00.cubePos.z = VStack_3.cubePos.z;
+          targetHit_00._30_2_ = VStack_3._30_2_;
+          targetHit_00.face = VStack_3.face;
+          targetHit_00.isCubeHit = VStack_3.isCubeHit;
+          targetHit_00._37_3_ = VStack_3._37_3_;
+          targetHit_00.woId = VStack_3.woId;
+          targetHit_00.cube = VStack_3.cube;
+          targetHit_00.distance = VStack_3.distance;
+          targetHit_00.collider = VStack_3.collider;
+          targetHit_00.transform = VStack_3.transform;
+          targetHit_00._60_4_ = VStack_3._60_4_;
+          targetHit_00.interactionFlags._0_4_ = (int)VStack_3.interactionFlags;
+          targetHit_00.interactionFlags._4_4_ = (int)((ulonglong)VStack_3.interactionFlags >> 0x20)
+          ;
+          ESSelection_HandleRightClickDownSelection
+                    (this_02,e,targetHit_00,(bool)this,(MethodInfo *)0x0);
+          return;
+        }
+        if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__MVInputWrapper);
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+                          (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          ESSelection_HandleRightClickUpSelection(this_02,e,(MethodInfo *)0x0);
+        }
       }
     }
+    return;
   }
+code_?:
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1535,8 +1468,8 @@ bool Assembly-CSharp.dll::ESSelection::ESSelection_IsMouseUpValid
   uVar3 = pVVar1->x;
   uVar4 = pVVar1->y;
   fVar5 = mousePosition.z - pVVar1->z;
-  return (mousePosition.x - (float)uVar3) * (mousePosition.x - (float)uVar3) +
-         (mousePosition.y - (float)uVar4) * (mousePosition.y - (float)uVar4) + fVar5 * fVar5 <
+  return (mousePosition.y - (float)uVar4) * (mousePosition.y - (float)uVar4) +
+         (mousePosition.x - (float)uVar3) * (mousePosition.x - (float)uVar3) + fVar5 * fVar5 <
          _UNK_?;
 }
 

@@ -395,72 +395,161 @@ Assembly-CSharp.dll::RTG::GizmoHandle::GizmoHandle_GetHoverData
   pUStack_14 = _UNK_?;
   pUStack_15 = _UNK_?;
   uVar16 = hoverRay.m_Direction._4_8_;
-  if (((this->fields)._Is2DHoverable_k__BackingField != 0) &&
-     ((this->fields)._Is2DVisible_k__BackingField != 0)) {
-    pGVar17 = (this->fields)._gizmo;
-    if ((pGVar17 == (Gizmo *)0x0) ||
-       (this_00 = Gizmo::Gizmo_GetWorkCamera(pGVar17,(MethodInfo *)0x0), this_00 == (Camera *)0x0))
-    goto code_?;
-    pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                        ((Vector3 *)&LStack_19,this_00,hoverRay.m_Origin,(MethodInfo *)0x0);
-    VStack_20.x = pVVar18->x;
-    VStack_20.y = pVVar18->y;
-    VStack_20.z = pVVar18->z;
-    pLVar21 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields)._2DShapes;
-    fStack_22 = VStack_20.x;
-    fStack_23 = 0.0;
-    fStack_24 = 0.0;
-    fStack_25 = 0.0;
-    fStack_26 = VStack_20.x;
-    pUStack_27 = (UxmlObjectListAttributeDescription_1_System_Object_ *)VStack_20.y;
-    pUStack_28 = (UxmlObjectListAttributeDescription_1_System_Object_ *)VStack_20.y;
+  if (((this->fields)._Is2DHoverable_k__BackingField == 0) ||
+     ((this->fields)._Is2DVisible_k__BackingField == 0)) {
+code_?:
+    if (((this->fields)._Is3DHoverable_k__BackingField == 0) ||
+       ((this->fields)._Is3DVisible_k__BackingField == 0)) goto code_?;
+    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields)._3DShapes;
     _Stack_38.rgctx_data = (Il2CppRGCTXData *)0x0;
-    if (pLVar21 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    pUStack_18 = pUStack_14;
+    if (pLVar17 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
-    pLVar29 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar19 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                        (&LStack_19,pLVar21,
+                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                          *)&stack0xffffff38,pLVar17,
+                         MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape3D>__GetEnumerator__
+                        );
+    pMVar7 = (MethodInfo *)auStack_10;
+    uStack_20 = 0;
+    auStack_10._0_4_ = pLVar19->_list;
+    auStack_10._4_4_ = pLVar19->_index;
+    auStack_10._8_4_ = pLVar19->_version;
+    auStack_10._12_4_ = pLVar19->_current;
+    uStack_3 = 4;
+    fStack_21 = hoverRay.m_Origin.x;
+    fStack_22 = hoverRay.m_Origin.y;
+    fStack_23 = hoverRay.m_Origin.z;
+    fStack_24 = hoverRay.m_Direction.x;
+    pMStack_25 = pMVar7;
+    while (bVar26 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                   ::List_1_T_Enumerator_System_Object__MoveNext
+                             ((List_1_T_Enumerator_System_Object_ *)auStack_10,
+                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoHandleShape3D>__MoveNext__
+                             ), bVar26 != 0) {
+      _Var2.rgctx_data = (Il2CppRGCTXData *)auStack_10._12_4_;
+      if ((RegexCharClass_SingleRange)auStack_10._12_4_ == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
+      if ((*(char *)(auStack_10._12_4_ + 8) != '\0') && (*(char *)(auStack_10._12_4_ + 9) != '\0'))
+      {
+        if (*(int *)(auStack_10._12_4_ + 0xc) == 0) goto code_?;
+        cVar27 = func_?(7,*(int *)(auStack_10._12_4_ + 0xc),hoverRay.m_Origin.x,
+                                hoverRay.m_Origin.y,hoverRay.m_Origin.z,hoverRay.m_Direction.x,
+                                hoverRay.m_Direction.y,hoverRay.m_Direction.z,&pUStack_13);
+        if ((cVar27 != '\0') &&
+           (((RegexCharClass_SingleRange)_Stack_38.rgctx_data == (RegexCharClass_SingleRange)0x0 ||
+            ((float)pUStack_13 < (float)pUStack_14)))) {
+          pUStack_14 = pUStack_13;
+          _Stack_38.rgctx_data = _Var2.rgctx_data;
+          pUStack_18 = pUStack_13;
+        }
+      }
+    }
+    uStack_3 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pMVar7,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoHandleShape3D>__Dispose__
+               ,unaff_EDI);
+    uStack_3 = 0xffffffff;
+    if ((RegexCharClass_SingleRange)_Stack_38.rgctx_data == (RegexCharClass_SingleRange)0x0)
+    goto code_?;
+    pGVar28 = (GizmoHandleHoverData *)func_?();
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__RTG__IGizmoHandle);
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pGVar28,ExceptionArgument__Enum_obj,pMVar7);
+    if (this == (GizmoHandle *)0x0) goto code_?;
+    iVar29 = func_?(0,TypeInfo__RTG__IGizmoHandle,this);
+    (pGVar28->fields)._handleId = iVar29;
+    pGVar30 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,this);
+    (pGVar28->fields)._gizmo = pGVar30;
+    func_?(&(pGVar28->fields)._gizmo,pGVar30);
+    (pGVar28->fields)._handleDimension = 2;
+    (pGVar28->fields)._hoverRay.m_Origin.x = fStack_21;
+    (pGVar28->fields)._hoverRay.m_Origin.y = fStack_22;
+    (pGVar28->fields)._hoverRay.m_Origin.z = fStack_23;
+    (pGVar28->fields)._hoverRay.m_Direction.x = fStack_24;
+    (pGVar28->fields)._hoverRay.m_Direction.y = (float)(int)uVar16;
+    (pGVar28->fields)._hoverRay.m_Direction.z = (float)(int)((ulonglong)uVar16 >> 0x20);
+    (pGVar28->fields)._hoverEnter3D = (float)pUStack_14;
+    pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                        (&VStack_32,&(pGVar28->fields)._hoverRay,(float)pUStack_14,(MethodInfo *)0x0
+                        );
+    uVar16._0_4_ = pVVar31->x;
+    uVar16._4_4_ = pVVar31->y;
+    fVar33 = pVVar31->z;
+  }
+  else {
+    pGVar30 = (this->fields)._gizmo;
+    if ((pGVar30 == (Gizmo *)0x0) ||
+       (this_00 = Gizmo::Gizmo_GetWorkCamera(pGVar30,(MethodInfo *)0x0), this_00 == (Camera *)0x0))
+    goto code_?;
+    pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                        ((Vector3 *)&LStack_34,this_00,hoverRay.m_Origin,(MethodInfo *)0x0);
+    VStack_32.x = pVVar31->x;
+    VStack_32.y = pVVar31->y;
+    VStack_32.z = pVVar31->z;
+    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields)._2DShapes;
+    fStack_21 = VStack_32.x;
+    fStack_22 = 0.0;
+    fStack_23 = 0.0;
+    fStack_24 = 0.0;
+    fStack_35 = VStack_32.x;
+    pUStack_18 = (UxmlObjectListAttributeDescription_1_System_Object_ *)VStack_32.y;
+    pUStack_36 = (UxmlObjectListAttributeDescription_1_System_Object_ *)VStack_32.y;
+    _Stack_38.rgctx_data = (Il2CppRGCTXData *)0x0;
+    if (pLVar17 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
+    pLVar19 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                        (&LStack_34,pLVar17,
                          MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape2D>__GetEnumerator__
                         );
     unaff_EDI = (MethodInfo *)(auStack_10 + 0x10);
-    uStack_30 = 0;
-    auStack_10._16_4_ = pLVar29->_list;
-    pIStack_11 = (Il2CppType *)pLVar29->_index;
-    ppIStack_12 = (Il2CppType **)pLVar29->_version;
-    _Stack_94 = (_union_154)*(_union_154 *)&pLVar29->_current;
+    uStack_20 = 0;
+    auStack_10._16_4_ = pLVar19->_list;
+    pIStack_11 = (Il2CppType *)pLVar19->_index;
+    ppIStack_12 = (Il2CppType **)pLVar19->_version;
+    _Stack_94 = (_union_154)*(_union_154 *)&pLVar19->_current;
     uStack_3 = 1;
-    pMStack_31 = unaff_EDI;
+    pMStack_25 = unaff_EDI;
     while( true ) {
       pMVar2 = (MethodInfo *)(auStack_10 + 0x10);
-      bVar32 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-               List_1_T_Enumerator_System_Object__MoveNext
-                         ((List_1_T_Enumerator_System_Object_ *)pMVar2,
-                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoHandleShape2D>__MoveNext__
-                         );
+      bVar26 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)pMVar2,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoHandleShape2D>__MoveNext__
+                        );
       _Var2 = _Stack_94;
-      if (bVar32 == 0) break;
+      if (bVar26 == 0) break;
       if ((RegexCharClass_SingleRange)_Stack_94.rgctx_data == (RegexCharClass_SingleRange)0x0)
       goto code_?;
       if ((*(char *)(_Stack_94.rgctx_data + 2) != '\0') &&
          (*(char *)((int)_Stack_94.rgctx_data + 9) != '\0')) {
         if (_Stack_94.rgctx_data[3].rgctxDataDummy == (void *)0x0) goto code_?;
-        cVar33 = func_?(6,_Stack_94.rgctx_data[3].rgctxDataDummy);
-        if (cVar33 != '\0') {
+        cVar27 = func_?(6,_Stack_94.rgctx_data[3].rgctxDataDummy);
+        if (cVar27 != '\0') {
           if (((RegexCharClass_SingleRange)_Var2.rgctx_data == (RegexCharClass_SingleRange)0x0) ||
-             (pvVar34 = _Var2.rgctx_data[3].rgctxDataDummy, pvVar34 == (void *)0x0))
+             (pvVar37 = _Var2.rgctx_data[3].rgctxDataDummy, pvVar37 == (void *)0x0))
           goto code_?;
-          pfVar35 = (float *)func_?(&stack0xffffff38,7,pvVar34);
-          LStack_19._current =
-               (RegexCharClass_SingleRange)((pfVar35[1] + pfVar35[3] * _UNK_?) - VStack_20.y)
+          pfVar38 = (float *)func_?(&stack0xffffff38,7,pvVar37);
+          LStack_34._current =
+               (RegexCharClass_SingleRange)((pfVar38[1] + pfVar38[3] * _UNK_?) - VStack_32.y)
           ;
-          LStack_19._version = (int32_t)((*pfVar35 + pfVar35[2] * _UNK_?) - fStack_22);
-          fVar36 = (float10)func_?(&LStack_19._version,0);
-          pUStack_37 = (UxmlObjectListAttributeDescription_1_System_Object_ *)(float)fVar36;
+          LStack_34._version = (int32_t)((*pfVar38 + pfVar38[2] * _UNK_?) - fStack_21);
+          fVar39 = (float10)func_?(&LStack_34._version,0);
+          pUStack_40 = (UxmlObjectListAttributeDescription_1_System_Object_ *)(float)fVar39;
           if (((RegexCharClass_SingleRange)_Stack_38.rgctx_data == (RegexCharClass_SingleRange)0x0)
-             || ((float)pUStack_37 < (float)pUStack_15)) {
-            pUStack_15 = pUStack_37;
+             || ((float)pUStack_40 < (float)pUStack_15)) {
+            pUStack_15 = pUStack_40;
             _Stack_38.rgctx_data = _Var2.rgctx_data;
           }
         }
@@ -473,173 +562,63 @@ Assembly-CSharp.dll::RTG::GizmoHandle::GizmoHandle_GetHoverData
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoHandleShape2D>__Dispose__
                ,pMVar7);
     uStack_3 = 0xffffffff;
-    if ((RegexCharClass_SingleRange)_Stack_38.rgctx_data != (RegexCharClass_SingleRange)0x0) {
-      pGVar38 = (GizmoHandleHoverData *)func_?();
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__RTG__IGizmoHandle);
-        cRam_? = '\x01';
-      }
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)pGVar38,ExceptionArgument__Enum_obj,pMVar2);
-      if (this == (GizmoHandle *)0x0) goto code_?;
-      iVar39 = func_?(0,TypeInfo__RTG__IGizmoHandle,this);
-      (pGVar38->fields)._handleId = iVar39;
-      pGVar17 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,this);
-      (pGVar38->fields)._gizmo = pGVar17;
-      func_?(&(pGVar38->fields)._gizmo,pGVar17);
-      (pGVar38->fields)._handleDimension = 1;
-      VStack_20.z = 0.0;
-      (pGVar38->fields)._hoverRay.m_Origin.x = hoverRay.m_Origin.x;
-      (pGVar38->fields)._hoverRay.m_Origin.y = hoverRay.m_Origin.y;
-      (pGVar38->fields)._hoverRay.m_Origin.z = hoverRay.m_Origin.z;
-      (pGVar38->fields)._hoverRay.m_Direction.x = hoverRay.m_Direction.x;
-      (pGVar38->fields)._hoverRay.m_Direction.y = (float)(int)uVar16;
-      (pGVar38->fields)._hoverRay.m_Direction.z = (float)(int)((ulonglong)uVar16 >> 0x20);
-      (pGVar38->fields)._hoverPoint.x = fStack_22;
-      (pGVar38->fields)._hoverPoint.y = (float)pUStack_27;
-      (pGVar38->fields)._hoverPoint.z = 0.0;
-      if ((this->fields).CanHover != (GizmoHandleCanHoverHandler *)0x0) {
-        pUStack_27 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-                     func_?(TypeInfo__RTG__YesNoAnswer);
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor(pUStack_27,(MethodInfo *)0x0);
-        pGVar40 = (this->fields).CanHover;
-        if ((pGVar40 != (GizmoHandleCanHoverHandler *)0x0) &&
-           ((*(pGVar40->fields)._._.invoke_impl)
-                      ((pGVar40->fields)._._.method_code,(this->fields)._id,(this->fields)._gizmo,
-                       pGVar38,pUStack_27,(pGVar40->fields)._._.method),
-           pUStack_27 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)) {
-          pGVar41 = (GizmoHandleHoverData *)0x0;
-          if (*(char *)((int)&(pUStack_27->fields)._._defaultValue_k__BackingField + 1) == '\0') {
-            pGVar41 = pGVar38;
-          }
-          *unaff_FS_OFFSET = uStack_5;
-          return pGVar41;
-        }
-        goto code_?;
-      }
-      goto code_?;
+    if ((RegexCharClass_SingleRange)_Stack_38.rgctx_data == (RegexCharClass_SingleRange)0x0)
+    goto code_?;
+    pGVar28 = (GizmoHandleHoverData *)func_?();
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__RTG__IGizmoHandle);
+      cRam_? = '\x01';
+    }
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pGVar28,ExceptionArgument__Enum_obj,pMVar2);
+    if (this == (GizmoHandle *)0x0) goto code_?;
+    iVar29 = func_?(0,TypeInfo__RTG__IGizmoHandle,this);
+    (pGVar28->fields)._handleId = iVar29;
+    pGVar30 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,this);
+    (pGVar28->fields)._gizmo = pGVar30;
+    func_?(&(pGVar28->fields)._gizmo,pGVar30);
+    (pGVar28->fields)._handleDimension = 1;
+    VStack_32.z = 0.0;
+    (pGVar28->fields)._hoverRay.m_Origin.x = hoverRay.m_Origin.x;
+    (pGVar28->fields)._hoverRay.m_Origin.y = hoverRay.m_Origin.y;
+    (pGVar28->fields)._hoverRay.m_Origin.z = hoverRay.m_Origin.z;
+    (pGVar28->fields)._hoverRay.m_Direction.x = hoverRay.m_Direction.x;
+    (pGVar28->fields)._hoverRay.m_Direction.y = (float)(int)uVar16;
+    (pGVar28->fields)._hoverRay.m_Direction.z = (float)(int)((ulonglong)uVar16 >> 0x20);
+    fVar33 = 0.0;
+    uVar16 = CONCAT44(pUStack_18,fStack_21);
+  }
+  (pGVar28->fields)._hoverPoint.x = (float)(int)uVar16;
+  (pGVar28->fields)._hoverPoint.y = (float)(int)((ulonglong)uVar16 >> 0x20);
+  (pGVar28->fields)._hoverPoint.z = fVar33;
+  if ((this->fields).CanHover != (GizmoHandleCanHoverHandler *)0x0) {
+    pUStack_18 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+                 func_?(TypeInfo__RTG__YesNoAnswer);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(pUStack_18,(MethodInfo *)0x0);
+    pGVar41 = (this->fields).CanHover;
+    if ((pGVar41 == (GizmoHandleCanHoverHandler *)0x0) ||
+       ((*(pGVar41->fields)._._.invoke_impl)
+                  ((pGVar41->fields)._._.method_code,(this->fields)._id,(this->fields)._gizmo,pGVar28
+                   ,pUStack_18,(pGVar41->fields)._._.method),
+       pUStack_18 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)) {
+code_?:
+      uVar42 = func_?();
+      uVar42 = func_?(uVar42);
+      func_?(uVar42);
+      pcVar43 = (code *)swi(3);
+      pGVar28 = (GizmoHandleHoverData *)(*pcVar43)();
+      return pGVar28;
+    }
+    if (*(char *)((int)&(pUStack_18->fields)._._defaultValue_k__BackingField + 1) != '\0') {
+code_?:
+      *unaff_FS_OFFSET = uStack_5;
+      return (GizmoHandleHoverData *)0x0;
     }
   }
-  if (((this->fields)._Is3DHoverable_k__BackingField != 0) &&
-     ((this->fields)._Is3DVisible_k__BackingField != 0)) {
-    pLVar21 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields)._3DShapes;
-    _Stack_38.rgctx_data = (Il2CppRGCTXData *)0x0;
-    pUStack_27 = pUStack_14;
-    if (pLVar21 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar29 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                            *)&stack0xffffff38,pLVar21,
-                           MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape3D>__GetEnumerator__
-                          );
-      pMVar7 = (MethodInfo *)auStack_10;
-      uStack_30 = 0;
-      auStack_10._0_4_ = pLVar29->_list;
-      auStack_10._4_4_ = pLVar29->_index;
-      auStack_10._8_4_ = pLVar29->_version;
-      auStack_10._12_4_ = pLVar29->_current;
-      uStack_3 = 4;
-      fStack_22 = hoverRay.m_Origin.x;
-      fStack_23 = hoverRay.m_Origin.y;
-      fStack_24 = hoverRay.m_Origin.z;
-      fStack_25 = hoverRay.m_Direction.x;
-      pMStack_31 = pMVar7;
-      while (bVar32 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                      Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                ((List_1_T_Enumerator_System_Object_ *)auStack_10,
-                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoHandleShape3D>__MoveNext__
-                                ), bVar32 != 0) {
-        _Var2.rgctx_data = (Il2CppRGCTXData *)auStack_10._12_4_;
-        if ((RegexCharClass_SingleRange)auStack_10._12_4_ == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-        if ((*(char *)(auStack_10._12_4_ + 8) != '\0') && (*(char *)(auStack_10._12_4_ + 9) != '\0')
-           ) {
-          if (*(int *)(auStack_10._12_4_ + 0xc) == 0) goto code_?;
-          cVar33 = func_?(7,*(int *)(auStack_10._12_4_ + 0xc),hoverRay.m_Origin.x,
-                                   hoverRay.m_Origin.y,hoverRay.m_Origin.z,hoverRay.m_Direction.x,
-                                   hoverRay.m_Direction.y,hoverRay.m_Direction.z,&pUStack_13);
-          if ((cVar33 != '\0') &&
-             (((RegexCharClass_SingleRange)_Stack_38.rgctx_data == (RegexCharClass_SingleRange)0x0
-              || ((float)pUStack_13 < (float)pUStack_14)))) {
-            pUStack_14 = pUStack_13;
-            _Stack_38.rgctx_data = _Var2.rgctx_data;
-            pUStack_27 = pUStack_13;
-          }
-        }
-      }
-      uStack_3 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)pMVar7,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoHandleShape3D>__Dispose__
-                 ,unaff_EDI);
-      uStack_3 = 0xffffffff;
-      if ((RegexCharClass_SingleRange)_Stack_38.rgctx_data == (RegexCharClass_SingleRange)0x0)
-      goto code_?;
-      pGVar38 = (GizmoHandleHoverData *)func_?();
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__RTG__IGizmoHandle);
-        cRam_? = '\x01';
-      }
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)pGVar38,ExceptionArgument__Enum_obj,pMVar7);
-      if (this != (GizmoHandle *)0x0) {
-        iVar39 = func_?(0,TypeInfo__RTG__IGizmoHandle,this);
-        (pGVar38->fields)._handleId = iVar39;
-        pGVar17 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,this);
-        (pGVar38->fields)._gizmo = pGVar17;
-        func_?(&(pGVar38->fields)._gizmo,pGVar17);
-        (pGVar38->fields)._handleDimension = 2;
-        (pGVar38->fields)._hoverRay.m_Origin.x = fStack_22;
-        (pGVar38->fields)._hoverRay.m_Origin.y = fStack_23;
-        (pGVar38->fields)._hoverRay.m_Origin.z = fStack_24;
-        (pGVar38->fields)._hoverRay.m_Direction.x = fStack_25;
-        (pGVar38->fields)._hoverRay.m_Direction.y = (float)(int)uVar16;
-        (pGVar38->fields)._hoverRay.m_Direction.z = (float)(int)((ulonglong)uVar16 >> 0x20);
-        (pGVar38->fields)._hoverEnter3D = (float)pUStack_14;
-        pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                            (&VStack_20,&(pGVar38->fields)._hoverRay,(float)pUStack_14,
-                             (MethodInfo *)0x0);
-        fVar42 = pVVar18->y;
-        fVar43 = pVVar18->z;
-        (pGVar38->fields)._hoverPoint.x = pVVar18->x;
-        (pGVar38->fields)._hoverPoint.y = fVar42;
-        (pGVar38->fields)._hoverPoint.z = fVar43;
-        if ((this->fields).CanHover != (GizmoHandleCanHoverHandler *)0x0) {
-          pUStack_27 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-          UxmlObjectListAttributeDescription`1[System::Object]::
-          UxmlObjectListAttributeDescription_1_System_Object___ctor(pUStack_27,(MethodInfo *)0x0);
-          pGVar40 = (this->fields).CanHover;
-          if ((pGVar40 == (GizmoHandleCanHoverHandler *)0x0) ||
-             ((*(pGVar40->fields)._._.invoke_impl)
-                        ((pGVar40->fields)._._.method_code,(this->fields)._id,(this->fields)._gizmo,
-                         pGVar38,pUStack_27,(pGVar40->fields)._._.method),
-             pUStack_27 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0))
-          goto code_?;
-          if (*(char *)((int)&(pUStack_27->fields)._._defaultValue_k__BackingField + 1) != '\0')
-          goto code_?;
-        }
-code_?:
-        *unaff_FS_OFFSET = uStack_5;
-        return pGVar38;
-      }
-    }
-code_?:
-    uVar44 = func_?();
-    uVar44 = func_?(uVar44);
-    func_?(uVar44);
-    pcVar45 = (code *)swi(3);
-    pGVar38 = (GizmoHandleHoverData *)(*pcVar45)();
-    return pGVar38;
-  }
-code_?:
   *unaff_FS_OFFSET = uStack_5;
-  return (GizmoHandleHoverData *)0x0;
+  return pGVar28;
 }
 
 

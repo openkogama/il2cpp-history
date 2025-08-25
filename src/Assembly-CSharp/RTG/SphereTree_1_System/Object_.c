@@ -346,11 +346,11 @@ bool Assembly-CSharp.dll::RTG::SphereTree`1[System::Object]::SphereTree_1_System
           pSVar9 = (pSVar3->fields)._children;
           if (pSVar9 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
           if (pSVar9->max_length == 0) goto code_?;
-          pSVar2 = pSVar9->vector[0];
-          if (pSVar2 == (SphereTreeNode_1_System_Object_ *)0x0) break;
+          if (pSVar9->vector[0] == (SphereTreeNode_1_System_Object_ *)0x0) break;
           bVar8 = SphereMath::SphereMath_ContainsPoint
-                            (*pVVar6,(pSVar2->fields)._sphere._center,
-                             (pSVar2->fields)._sphere._radius,(SphereEpsilon)0x0,(MethodInfo *)0x0);
+                            (*pVVar6,(pSVar9->vector[0]->fields)._sphere._center,
+                             (pSVar9->vector[0]->fields)._sphere._radius,(SphereEpsilon)0x0,
+                             (MethodInfo *)0x0);
           if (bVar8 != 0) {
             pSVar9 = (pSVar3->fields)._children;
             if (pSVar9 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
@@ -375,12 +375,11 @@ bool Assembly-CSharp.dll::RTG::SphereTree`1[System::Object]::SphereTree_1_System
             pSVar9 = (pSVar3->fields)._children;
             if (pSVar9 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
             if (pSVar9->max_length < 2) goto code_?;
-            pSVar2 = pSVar9->vector[1];
-            if (pSVar2 == (SphereTreeNode_1_System_Object_ *)0x0) break;
+            if (pSVar9->vector[1] == (SphereTreeNode_1_System_Object_ *)0x0) break;
             bVar8 = SphereMath::SphereMath_ContainsPoint
-                              (*pVVar6,(pSVar2->fields)._sphere._center,
-                               (pSVar2->fields)._sphere._radius,(SphereEpsilon)0x0,(MethodInfo *)0x0
-                              );
+                              (*pVVar6,(pSVar9->vector[1]->fields)._sphere._center,
+                               (pSVar9->vector[1]->fields)._sphere._radius,(SphereEpsilon)0x0,
+                               (MethodInfo *)0x0);
             if (bVar8 != 0) {
               pSVar9 = (pSVar3->fields)._children;
               if (pSVar9 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
@@ -485,8 +484,7 @@ bool Assembly-CSharp.dll::RTG::SphereTree`1[System::Object]::SphereTree_1_System
           pSVar13 = (pSVar5->fields)._children;
           if (pSVar13 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
           if (pSVar13->max_length == 0) goto code_?;
-          pSVar4 = pSVar13->vector[0];
-          if (pSVar4 == (SphereTreeNode_1_System_Object_ *)0x0) break;
+          if (pSVar13->vector[0] == (SphereTreeNode_1_System_Object_ *)0x0) break;
           ray_02.m_Origin.y = ray.m_Origin.y;
           ray_02.m_Origin.x = ray.m_Origin.x;
           ray_02.m_Origin.z = ray.m_Origin.z;
@@ -494,9 +492,9 @@ bool Assembly-CSharp.dll::RTG::SphereTree`1[System::Object]::SphereTree_1_System
           ray_02.m_Direction.y = fVar11;
           ray_02.m_Direction.z = fVar10;
           bVar12 = SphereMath::SphereMath_Raycast
-                             (ray_02,(pSVar4->fields)._sphere._center,
-                              (pSVar4->fields)._sphere._radius,(SphereEpsilon)0x0,(MethodInfo *)0x0)
-          ;
+                             (ray_02,(pSVar13->vector[0]->fields)._sphere._center,
+                              (pSVar13->vector[0]->fields)._sphere._radius,(SphereEpsilon)0x0,
+                              (MethodInfo *)0x0);
           if (bVar12 != 0) {
             pSVar13 = (pSVar5->fields)._children;
             if (pSVar13 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
@@ -521,8 +519,8 @@ bool Assembly-CSharp.dll::RTG::SphereTree`1[System::Object]::SphereTree_1_System
              ray_03.m_Direction.y = ray.m_Direction.y, ray_03.m_Direction.z = ray.m_Direction.z,
              bVar12 = SphereMath::SphereMath_Raycast
                                 (ray_03,(pSVar13->vector[1]->fields)._sphere._center,
-                                 (pSVar13->vector[1]->fields)._sphere._radius,(SphereEpsilon)0x0,
-                                 (MethodInfo *)0x0), bVar12 != 0)) {
+                                 (((pSVar5->fields)._children)->vector[1]->fields)._sphere._radius,
+                                 (SphereEpsilon)0x0,(MethodInfo *)0x0), bVar12 != 0)) {
             pSVar13 = (pSVar5->fields)._children;
             if (pSVar13 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
             if (pSVar13->max_length < 2) goto code_?;

@@ -620,35 +620,34 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
       iVar11 = *piVar5;
       (this->fields).prevTicks = uStack_2;
       iVar12 = *(int *)((int)&(this->fields).prevIntervalTicks + 4);
-      dVar13 = (double)fVar9;
-      lVar14 = func_?();
-      if (lVar14 <= CONCAT44((uVar3 - iVar12) - (uint)(uVar4 < (uint)iVar10),uVar4 - (int)iVar11))
-      {
+      uVar7 = SUB84((double)fVar9,0);
+      lVar13 = func_?();
+      if (lVar13 <= CONCAT44((uVar3 - iVar12) - (uint)(uVar4 < (uint)iVar10),uVar4 - (int)iVar11)) {
         mscorlib.dll::System::Environment::Environment_get_TickCount((MethodInfo *)0x0);
-        uVar15 = (this->fields).currentFalsePositives;
-        uVar16 = (undefined4)uStack_2;
+        uVar14 = (this->fields).currentFalsePositives;
+        uVar15 = (undefined4)uStack_2;
         func_?();
-        if (_UNK_? < (float)((uint)(float)dVar13 & _UNK_?)) {
-          bVar17 = uVar15 + 1;
-          (this->fields).currentFalsePositives = bVar17;
-          if (bVar17 <= (this->fields).maxFalsePositives) {
+        if (_UNK_? < (float)(uVar7 & _UNK_?)) {
+          bVar16 = uVar14 + 1;
+          (this->fields).currentFalsePositives = bVar16;
+          if (bVar16 <= (this->fields).maxFalsePositives) {
             (this->fields).currentCooldownShots = 0;
             SpeedHackDetector_ResetStartTicks(this,(MethodInfo *)0x0);
-            *(undefined4 *)&(this->fields).prevIntervalTicks = uVar16;
+            *(undefined4 *)&(this->fields).prevIntervalTicks = uVar15;
             *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
             return;
           }
           func_?(8,this);
         }
-        else if (((uVar15 != 0) && (0 < (this->fields).coolDown)) &&
+        else if (((uVar14 != 0) && (0 < (this->fields).coolDown)) &&
                 (iVar12 = (this->fields).currentCooldownShots + 1,
                 (this->fields).currentCooldownShots = iVar12, (this->fields).coolDown <= iVar12)) {
-          *(undefined4 *)&(this->fields).prevIntervalTicks = uVar16;
+          *(undefined4 *)&(this->fields).prevIntervalTicks = uVar15;
           (this->fields).currentFalsePositives = 0;
           *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
           return;
         }
-        *(undefined4 *)&(this->fields).prevIntervalTicks = uVar16;
+        *(undefined4 *)&(this->fields).prevIntervalTicks = uVar15;
         *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
         return;
       }

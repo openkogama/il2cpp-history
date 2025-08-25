@@ -9,17 +9,18 @@ AvatarLimbManagerLocal_AvatarHeadRotationCalculator_CalculateHeadRotation
           MethodInfo *method)
 
 {
-  pAVar1 = this;
+  this_00 = this;
+  (this->fields).shouldLean = 1;
   (__return_storage_ptr__->YawRotation).x = 0.0;
   (__return_storage_ptr__->YawRotation).y = 0.0;
   (__return_storage_ptr__->YawRotation).z = 0.0;
   (__return_storage_ptr__->YawRotation).w = 0.0;
-  (this->fields).shouldLean = 1;
   (__return_storage_ptr__->PitchRotation).x = 0.0;
   (__return_storage_ptr__->PitchRotation).y = 0.0;
   (__return_storage_ptr__->PitchRotation).z = 0.0;
   (__return_storage_ptr__->PitchRotation).w = 0.0;
   *(undefined4 *)&__return_storage_ptr__->ShouldLean = 0;
+  fVar1 = localLookDirection.y;
   pAVar2 = (AvatarLimbManagerLocal_AvatarHeadRotationCalculator *)
            MathFunctions::MathFunctions_SignedYawFromLocalDirection
                      (localLookDirection,(MethodInfo *)0x0);
@@ -41,30 +42,22 @@ AvatarLimbManagerLocal_AvatarHeadRotationCalculator_CalculateHeadRotation
   pQVar3 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
                      ((Quaternion *)&stack0xffffffec,(float)this,
                       TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  MVGroundState::MVGroundState_GetGradientAngle(localLookDirection,(MethodInfo *)pQVar3->z);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pVVar4 = &TypeInfo__UnityEngine__Vector3->static_fields->rightVector;
-  fVar5 = pVVar4->x;
-  pQVar3 = (Quaternion *)&stack0xffffffdc;
-  fVar6 = 0.0;
-  puVar7 = &UNK_?;
-  pQVar8 = MathFunctions::MathFunctions_QuaternionFromAngleAndAxis
-                     (pQVar3,0.0,*pVVar4,(MethodInfo *)0x0);
-  __return_storage_ptr__->ShouldLean = (pAVar1->fields).shouldLean;
-  (__return_storage_ptr__->YawRotation).x = (float)puVar7;
-  (__return_storage_ptr__->YawRotation).y = (float)pQVar3;
-  (__return_storage_ptr__->YawRotation).z = fVar6;
-  (__return_storage_ptr__->YawRotation).w = fVar5;
-  fVar5 = pQVar8->y;
-  fVar6 = pQVar8->z;
-  fVar9 = pQVar8->w;
-  (__return_storage_ptr__->PitchRotation).x = pQVar8->x;
-  (__return_storage_ptr__->PitchRotation).y = fVar5;
-  (__return_storage_ptr__->PitchRotation).z = fVar6;
-  (__return_storage_ptr__->PitchRotation).w = fVar9;
+  method_00 = (MethodInfo *)pQVar3->z;
+  fVar4 = pQVar3->w;
+  pQVar3 = AvatarLimbManagerLocal_AvatarHeadRotationCalculator_GetClampedPitchRotation
+                     ((Quaternion *)&stack0xffffffdc,this_00,localLookDirection,method_00);
+  __return_storage_ptr__->ShouldLean = (this_00->fields).shouldLean;
+  (__return_storage_ptr__->YawRotation).x = fVar1;
+  (__return_storage_ptr__->YawRotation).y = localLookDirection.z;
+  (__return_storage_ptr__->YawRotation).z = (float)method_00;
+  (__return_storage_ptr__->YawRotation).w = fVar4;
+  fVar1 = pQVar3->y;
+  fVar4 = pQVar3->z;
+  fVar5 = pQVar3->w;
+  (__return_storage_ptr__->PitchRotation).x = pQVar3->x;
+  (__return_storage_ptr__->PitchRotation).y = fVar1;
+  (__return_storage_ptr__->PitchRotation).z = fVar4;
+  (__return_storage_ptr__->PitchRotation).w = fVar5;
   return __return_storage_ptr__;
 }
 

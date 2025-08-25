@@ -71,10 +71,10 @@ AttributeSettingsFactory::AttributeSettingsFactory_KogamaSettingValueFactoryAttr
         KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase__ctor
                   ((KogamaSettingBoolBase *)kogamaSettingBasePrototype,pSVar5,*pbVar7,parent,
                    (MethodInfo *)0x0);
-        (((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.data = _Var1;
+        (((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.data = _Var1;
         *(KogamaSettingsCollectionBase **)
-         &(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
-        return (KogamaSettingValueWrapperBase *)(Single__Class *)kogamaSettingBasePrototype;
+         &(((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
+        return (KogamaSettingValueWrapperBase *)(Int32__Class *)kogamaSettingBasePrototype;
       }
 code_?:
       func_?((int)((ulonglong)uVar6 >> 0x20),(int)uVar6);
@@ -203,11 +203,11 @@ code_?:
             KogamaSettingEnumBase__ctor
                       ((KogamaSettingEnumBase *)kogamaSettingBasePrototype,pSVar5,*piVar12,
                        (int32_t)piVar9,(int32_t)piVar10,parent,(MethodInfo *)0x0);
-            (((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.data.dummy = pMVar13;
-            func_?(&(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg,pMVar13);
+            (((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.data.dummy = pMVar13;
+            func_?(&(((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg,pMVar13);
             *(KogamaSettingsCollectionBase **)
-             &(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
-            return (KogamaSettingValueWrapperBase *)(Single__Class *)kogamaSettingBasePrototype;
+             &(((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
+            return (KogamaSettingValueWrapperBase *)(Int32__Class *)kogamaSettingBasePrototype;
           }
           goto code_?;
         }
@@ -228,7 +228,6 @@ code_?:
                            MethodInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingsFactory__KogamaSettingValueFactoryAttributeSettings_System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
                           );
   func_?(this_01,uVar2);
-  *extraout_EDX_01 = *extraout_EDX_01 + '\x01';
   pcVar14 = (code *)swi(1);
   pKVar15 = (KogamaSettingValueWrapperBase *)(*pcVar14)();
   return pKVar15;

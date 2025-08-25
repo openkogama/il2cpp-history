@@ -157,7 +157,7 @@ bool Assembly-CSharp.dll::RTG::InputDevicePlaneDragSession3D::
   }
   ppMVar10 = (MethodInfo **)func_?(pIVar2,TypeInfo__RTG__IInputDevice,6);
 code_?:
-  pfVar11 = (float *)(*(code *)*ppMVar10)(&fStack_12,pIVar2,pCStack_3,ppMVar10[1]);
+  pfVar11 = (float *)(*(code *)*ppMVar10)(auStack_12,pIVar2,pCStack_3,ppMVar10[1]);
   RStack_1.m_Origin.x = *pfVar11;
   RStack_1.m_Origin.y = pfVar11[1];
   RStack_1.m_Origin.z = pfVar11[2];
@@ -166,50 +166,49 @@ code_?:
   RStack_1.m_Direction.z = pfVar11[5];
   uVar13 = *(undefined8 *)(pfVar11 + 4);
   fVar14 = pfVar11[1];
-  fStack_15 = pfVar11[3];
-  uVar16 = (this->fields)._plane.m_Normal.x;
-  uVar17 = (this->fields)._plane.m_Normal.y;
-  fVar18 = (this->fields)._plane.m_Normal.z;
-  uStack_19._0_4_ = (float)uVar13;
-  uStack_19._4_4_ = (float)((ulonglong)uVar13 >> 0x20);
-  fStack_12 = fStack_15 * (float)uVar16 + (float)uStack_19 * (float)uVar17 + uStack_19._4_4_ * fVar18;
-  uVar20 = (this->fields)._plane.m_Normal.x;
-  uVar21 = (this->fields)._plane.m_Normal.y;
-  uStack_22 = (uint)fVar14 ^
+  uVar15 = (this->fields)._plane.m_Normal.x;
+  uVar16 = (this->fields)._plane.m_Normal.y;
+  fVar17 = (this->fields)._plane.m_Normal.z;
+  uStack_18._0_4_ = (float)uVar13;
+  uStack_18._4_4_ = (float)((ulonglong)uVar13 >> 0x20);
+  pCStack_3 = (Camera *)
+               ((float)uStack_18 * (float)uVar16 + pfVar11[3] * (float)uVar15 +
+               uStack_18._4_4_ * fVar17);
+  uVar19 = (this->fields)._plane.m_Normal.x;
+  uVar20 = (this->fields)._plane.m_Normal.y;
+  uStack_21 = (uint)fVar14 ^
               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
-  VStack_23.x = (float)((uint)(fVar14 * (float)uVar21 + *pfVar11 * (float)uVar20 + pfVar11[2] * fVar18
+  VStack_22.x = (float)((uint)(fVar14 * (float)uVar20 + *pfVar11 * (float)uVar19 + pfVar11[2] * fVar17
                               ) ^
                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) -
                 (this->fields)._plane.m_Distance;
-  VStack_23.z = (float)((uint)fVar14 ^
+  VStack_22.z = (float)((uint)fVar14 ^
                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-  VStack_23.y = (float)((uint)fVar14 ^
+  VStack_22.y = (float)((uint)fVar14 ^
                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-  fStack_24 = fStack_15;
-  fStack_25 = fStack_15;
-  uStack_19 = uVar13;
+  uStack_18 = uVar13;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Mathf);
     cRam_? = '\x01';
   }
-  fVar18 = (float)((uint)fStack_12 & _UNK_?);
-  if (fVar18 <= 0.0) {
-    fVar18 = 0.0;
+  fVar17 = (float)((uint)pCStack_3 & _UNK_?);
+  if (fVar17 <= 0.0) {
+    fVar17 = 0.0;
   }
-  fVar26 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
-  fVar14 = fVar18 * _UNK_?;
-  if (fVar18 * _UNK_? <= fVar26) {
-    fVar14 = fVar26;
+  fVar23 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+  fVar14 = fVar17 * _UNK_?;
+  if (fVar17 * _UNK_? <= fVar23) {
+    fVar14 = fVar23;
   }
-  if ((fVar14 <= (float)((uint)(0.0 - fStack_12) & _UNK_?)) &&
-     (0.0 < VStack_23.x / fStack_12)) {
-    pVVar27 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                        (&VStack_23,&RStack_1,VStack_23.x / fStack_12,(MethodInfo *)0x0);
-    fVar14 = pVVar27->y;
-    fVar18 = pVVar27->z;
-    (this->fields)._dragPoint.x = pVVar27->x;
+  if ((fVar14 <= (float)((uint)(0.0 - (float)pCStack_3) & _UNK_?)) &&
+     (0.0 < VStack_22.x / (float)pCStack_3)) {
+    pVVar24 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                        (&VStack_22,&RStack_1,VStack_22.x / (float)pCStack_3,(MethodInfo *)0x0);
+    fVar14 = pVVar24->y;
+    fVar17 = pVVar24->z;
+    (this->fields)._dragPoint.x = pVVar24->x;
     (this->fields)._dragPoint.y = fVar14;
-    (this->fields)._dragPoint.z = fVar18;
+    (this->fields)._dragPoint.z = fVar17;
     return 1;
   }
   return 0;

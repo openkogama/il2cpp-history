@@ -403,11 +403,12 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                             ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
           bVar5 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
                             ((this->fields).insideInventory,(MethodInfo *)0x0);
+          this._3_1_ = 0x10;
           bVar6 = 0;
           if (0 < iVar3) {
-            bVar6 = bVar5 & bVar4 & 0x10 & bVar1;
+            bVar6 = this._3_1_;
           }
-          return bVar6;
+          return bVar5 & bVar6 & (bVar4 ^ 1) & bVar1;
         }
       }
     }

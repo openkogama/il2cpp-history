@@ -160,7 +160,7 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal:
   fVar6 = (this->fields).yawRotation.z;
   fVar7 = (this->fields).yawRotation.w;
   fVar8 = (fVar4 * (this->fields).yawRotation.x + fVar1 * fVar7 + fVar3 * fVar5) - fVar2 * fVar6;
-  fVar9 = (fVar2 * fVar7 + fVar5 * fVar4 + fVar6 * fVar1) - fVar3 * (this->fields).yawRotation.x;
+  fVar9 = (fVar5 * fVar4 + fVar2 * fVar7 + fVar6 * fVar1) - fVar3 * (this->fields).yawRotation.x;
   fVar10 = (fVar6 * fVar4 + fVar3 * fVar7 + fVar2 * (this->fields).yawRotation.x) -
           fVar5 * (this->fields).pitchRotation.x;
   fVar2 = ((fVar4 * fVar7 - (this->fields).yawRotation.x * (this->fields).pitchRotation.x) -

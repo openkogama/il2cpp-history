@@ -1672,7 +1672,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_StartTransitionCa
                       Transform_set_localRotation
                                 (pTVar3,(this_00->fields).prevCameraRotation,(MethodInfo *)0x0);
                       (this_00->fields).time = (float)&UNK_?;
-                      (this_00->fields).superSoft = 0x6a;
+                      (this_00->fields).superSoft = 0xea;
                       (this_00->fields).transitionPercentage = 0.0;
                       return;
                     }
@@ -1951,21 +1951,22 @@ float Assembly-CSharp.dll::MainCameraManager::MainCameraManager_get_FieldOfView
                 (MainCameraManager *this,MethodInfo *method)
 
 {
-  pCStack_1 = (Camera *)&stack0xfffffffc;
+  pcStack_1 = (code *)&stack0xfffffffc;
   pCVar2 = (this->fields).mainCamera;
   if (pCVar2 != (Camera *)0x0) {
     if (pcRam_? == (code *)0x0) {
       pcRam_? = (code *)func_?();
     }
-    pCStack_1 = pCVar2;
-    fVar3 = (float10)(*pcRam_?)();
-    return (float)fVar3;
+    pCStack_3 = pCVar2;
+    pcStack_1 = pcRam_?;
+    fVar4 = (float10)(*pcRam_?)();
+    return (float)fVar4;
   }
-  uVar4 = func_?(auStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar6)();
-  return (float)fVar3;
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar7)();
+  return (float)fVar4;
 }
 
 

@@ -6,11 +6,11 @@ int32_t Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_GetPercentage
 
 {
   if (0 < totalEarnings) {
+    fVar1 = ((float)earnings / (float)totalEarnings) * _UNK_?;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    fVar1 = ((float)earnings / (float)totalEarnings) * _UNK_?;
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -1768,21 +1768,20 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateEarningsText
             in_stack_8 = &UNK_?;
             bVar9 = GameEarningsMenu_IsPercentageWhole
                               (this,boostersEarnings,totalEarnings,(MethodInfo *)0x0);
-            if (bVar9 != 0) goto code_?;
-          }
-          else {
+            if (bVar9 != 0) {
 code_?:
-            if (iVar7 < 2) {
               in_stack_8 = &UNK_?;
               bVar9 = GameEarningsMenu_IsPercentageWhole
                                 (this,tier1Earnings,totalEarnings,(MethodInfo *)0x0);
-              if (bVar9 == 0) goto code_?;
+              if (bVar9 != 0) goto code_?;
             }
-            if (iVar7 < 3) {
-              in_stack_8 = &UNK_?;
-              GameEarningsMenu_IsPercentageWhole(this,tier2Earnings,totalEarnings,(MethodInfo *)0x0)
-              ;
-            }
+          }
+          else {
+            if (iVar7 < 2) goto code_?;
+            if (2 < iVar7) goto code_?;
+code_?:
+            in_stack_8 = &UNK_?;
+            GameEarningsMenu_IsPercentageWhole(this,tier2Earnings,totalEarnings,(MethodInfo *)0x0);
           }
 code_?:
           iVar7 = iVar7 + 1;

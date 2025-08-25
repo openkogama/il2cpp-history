@@ -517,7 +517,8 @@ void Assembly-CSharp.dll::VehicleSeatManager::VehicleSeatManager_Init
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  IStack_6.m_value = 0;
+  RStack_6.First = 0;
+  RStack_6.Last = 0;
   if ((isDeadRuntimeVariable == (MVRuntimeDataVariable *)0x0) ||
      (pOVar7 = MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value
                          (isDeadRuntimeVariable,(MethodInfo *)0x0), pOVar7 == (Object *)0x0))
@@ -544,7 +545,6 @@ code_?:
     func_?();
     iVar10 = 0;
     pLVar11 = (this->fields).seats;
-    unaff_EDI = (RegexCharClass_SingleRange)this;
     if (pLVar11 != (List_1_VehicleSeatBase_ *)0x0) {
       while (iVar10 < (pLVar11->fields)._size) {
         pLVar12 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
@@ -602,9 +602,9 @@ code_?:
         func_?();
         pTVar14 = (this->fields).triggerBoxEvents;
         pUVar15 = (this->fields).useInteractor;
-        this_03 = (EventHandler_1_Object_ *)func_?();
+        pEVar16 = (EventHandler_1_Object_ *)func_?();
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (this_03,(Object *)pUVar15,
+                  (pEVar16,(Object *)pUVar15,
                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar14 != (TriggerBoxEvents *)0x0) {
@@ -612,39 +612,39 @@ code_?:
             func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
             cRam_? = '\x01';
           }
-          pEVar16 = (pTVar14->fields).TriggerEnter;
+          pEVar17 = (pTVar14->fields).TriggerEnter;
           goto code_?;
         }
       }
     }
     goto code_?;
   }
-  pMVar17 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+  pMVar18 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
   if (pMVar9->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-    pMVar17 = pMVar9;
+    pMVar18 = pMVar9;
   }
-  if (pMVar17 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-  (isDeadRuntimeVariable->fields).OnChange = pMVar17;
-  pMVar17 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+  if (pMVar18 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+  (isDeadRuntimeVariable->fields).OnChange = pMVar18;
+  pMVar18 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
   if (pMVar9->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-    pMVar17 = pMVar9;
+    pMVar18 = pMVar9;
   }
-  if (pMVar17 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+  if (pMVar18 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
   goto code_?;
-  while (pEVar18 = (EventHandler_1_TriggerEventArgs_ *)func_?(),
-        bVar19 = pEVar18 != pEVar16, pEVar16 = pEVar18, bVar19) {
+  while (pEVar19 = (EventHandler_1_TriggerEventArgs_ *)func_?(),
+        bVar20 = pEVar19 != pEVar17, pEVar17 = pEVar19, bVar20) {
 code_?:
-    pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pEVar16,(Delegate *)this_03,(MethodInfo *)0x0);
-    if ((pDVar20 != (Delegate *)0x0) && (iVar10 = func_?(), iVar10 == 0))
+    pDVar21 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pEVar17,(Delegate *)pEVar16,(MethodInfo *)0x0);
+    if ((pDVar21 != (Delegate *)0x0) && (iVar10 = func_?(), iVar10 == 0))
     goto code_?;
   }
   pTVar14 = (this->fields).triggerBoxEvents;
   pUVar15 = (this->fields).useInteractor;
-  unaff_EDI = (RegexCharClass_SingleRange)
-              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+  pEVar16 = (EventHandler_1_Object_ *)
+            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
   mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-            ((EventHandler_1_Object_ *)unaff_EDI,(Object *)pUVar15,
+            (pEVar16,(Object *)pUVar15,
              MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
              ,(MethodInfo *)0x0);
   if (pTVar14 == (TriggerBoxEvents *)0x0) {
@@ -656,90 +656,97 @@ code_?:
       func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
       cRam_? = '\x01';
     }
-    pEVar16 = (pTVar14->fields).TriggerExit;
+    pEVar17 = (pTVar14->fields).TriggerExit;
     do {
-      pDVar20 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pEVar16,(Delegate *)unaff_EDI,(MethodInfo *)0x0);
-      if ((pDVar20 != (Delegate *)0x0) && (iVar10 = func_?(), iVar10 == 0))
+      pDVar21 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pEVar17,(Delegate *)pEVar16,(MethodInfo *)0x0);
+      if ((pDVar21 != (Delegate *)0x0) && (iVar10 = func_?(), iVar10 == 0))
       goto code_?;
-      pEVar18 = (EventHandler_1_TriggerEventArgs_ *)func_?();
-      bVar19 = pEVar18 != pEVar16;
-      pEVar16 = pEVar18;
-    } while (bVar19);
+      pEVar19 = (EventHandler_1_TriggerEventArgs_ *)func_?();
+      bVar20 = pEVar19 != pEVar17;
+      pEVar17 = pEVar19;
+    } while (bVar20);
     if ((wo == (MVVehicleBase *)0x0) ||
        (pLVar12 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                   MVGroup::MVGroup_get_Children((MVGroup *)wo,(MethodInfo *)0x0),
        pLVar12 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
     goto code_?;
-    pLVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar22 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                           *)&stack0xffffffcc,pLVar12,
                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                         );
-    method_00 = (MethodInfo *)pLVar21->_version;
+    vehicleUser = (MVAvatar *)pLVar22->_version;
+    RVar13 = pLVar22->_current;
     uStack_1 = 1;
-    unaff_EDI = pLVar21->_current;
     while( true ) {
       do {
-        bVar22 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar23 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
                           ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb8,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
                           );
-        if (bVar22 == 0) {
+        if (bVar23 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffb8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
-                     ,method_00);
+                     ,(MethodInfo *)vehicleUser);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-      } while ((((unaff_EDI == (RegexCharClass_SingleRange)0x0) ||
-                (*(byte *)(*(int *)unaff_EDI + 0xb8) < (TypeInfo__MVAvatar->_1).naturalAligment)) ||
+      } while ((((RVar13 == (RegexCharClass_SingleRange)0x0) ||
+                (*(byte *)(*(int *)RVar13 + 0xb8) < (TypeInfo__MVAvatar->_1).naturalAligment)) ||
                (*(MVAvatar__Class **)
-                 (*(int *)(*(int *)unaff_EDI + 100) + -4 +
+                 (*(int *)(*(int *)RVar13 + 100) + -4 +
                  (uint)(TypeInfo__MVAvatar->_1).naturalAligment * 4) != TypeInfo__MVAvatar)) ||
-              (unaff_EDI == (RegexCharClass_SingleRange)0x0));
-      RVar13 = unaff_EDI;
+              (RVar13 == (RegexCharClass_SingleRange)0x0));
       iVar10 = func_?();
-      if ((iVar10 == 0) ||
-         (pMVar23 = (MVAvatar *)func_?(unaff_EDI,TypeInfo__MVAvatar),
-         pMVar23 == (MVAvatar *)0x0)) break;
-      IStack_6.m_value = MVAvatar::MVAvatar_get_SeatID(pMVar23,(MethodInfo *)0x0);
-      if (IStack_6.m_value == -1) {
-        unaff_EDI = RVar13;
+      if (iVar10 == 0) break;
+      vehicleUser = (MVAvatar *)&UNK_?;
+      RVar24 = RVar13;
+      this_03 = (MVAvatar *)func_?();
+      if (this_03 == (MVAvatar *)0x0) break;
+      RStack_6 = (RegexCharClass_SingleRange)
+                  MVAvatar::MVAvatar_get_SeatID(this_03,(MethodInfo *)0x0);
+      if (RStack_6 == (RegexCharClass_SingleRange)0xffffffff) {
+        RVar13 = RVar24;
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
-          unaff_EDI = RVar13;
+          RVar13 = RVar24;
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_Found_avatar_child_with_seatID__,(MethodInfo *)0x0);
       }
       else {
-        pSVar24 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
-        pSVar24 = mscorlib.dll::System::String::String_Concat_3
-                            (StringLiteral_Found_avatar_child_with_seat_ID_,pSVar24,
+        pSVar25 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&RStack_6,(MethodInfo *)0x0)
+        ;
+        pSVar25 = mscorlib.dll::System::String::String_Concat_3
+                            (StringLiteral_Found_avatar_child_with_seat_ID_,pSVar25,
                              (MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)pSVar24,(MethodInfo *)0x0);
-        method_00 = (MethodInfo *)&UNK_?;
-        RVar13 = unaff_EDI;
-        pMVar23 = (MVAvatar *)func_?();
-        if (pMVar23 == (MVAvatar *)0x0) break;
-        VehicleSeatManager_SetToSeatTransform(this,pMVar23,IStack_6.m_value,(MethodInfo *)0x0);
-        unaff_EDI = RVar13;
+                  ((Object *)pSVar25,(MethodInfo *)0x0);
+        if (RVar13 == (RegexCharClass_SingleRange)0x0) {
+          vehicleUser = (MVAvatar *)0x0;
+        }
+        else {
+          vehicleUser = (MVAvatar *)func_?();
+          if (vehicleUser == (MVAvatar *)0x0) break;
+        }
+        RVar13 = RStack_6;
+        VehicleSeatManager_SetToSeatTransform(this,vehicleUser,(int32_t)RStack_6,(MethodInfo *)0x0)
+        ;
       }
     }
   }
-  uVar25 = func_?(unaff_EDI,TypeInfo__MVAvatar);
-  func_?(uVar25);
+  func_?();
+  func_?();
 code_?:
   func_?();
 code_?:

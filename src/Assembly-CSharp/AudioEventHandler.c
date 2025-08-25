@@ -18,33 +18,34 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_AddTranslateSound
   pMVar1 = 
   MethodInfo__System__Collections__Generic__List<TranslateSoundData>__Add_TranslateSoundData_;
   this = TypeInfo__AudioEventHandler->static_fields->translateSoundDatas;
+  fStack_2 = worldPos.x;
+  fStack_3 = worldPos.y;
   if (this != (List_1_TranslateSoundData_ *)0x0) {
-    piVar2 = &(this->fields)._version;
-    *piVar2 = *piVar2 + 1;
-    pTVar3 = (this->fields)._items;
-    if (pTVar3 != (TranslateSoundData__Array *)0x0) {
-      uVar4 = (this->fields)._size;
-      fStack_5 = worldPos.x;
-      fStack_6 = worldPos.y;
-      if (pTVar3->max_length <= uVar4) {
+    piVar4 = &(this->fields)._version;
+    *piVar4 = *piVar4 + 1;
+    pTVar5 = (this->fields)._items;
+    if (pTVar5 != (TranslateSoundData__Array *)0x0) {
+      uVar6 = (this->fields)._size;
+      if (pTVar5->max_length <= uVar6) {
         item.moveToGridPos = moveToGridPos;
         item.moveValue = moveValue;
         item._5_3_ = 0;
-        item.worldPos.x = fStack_5;
-        item.worldPos.y = fStack_6;
+        item.worldPos.x = fStack_2;
+        item.worldPos.y = fStack_3;
         item.worldPos.z = worldPos.z;
         mscorlib.dll::System::Collections::Generic::List`1[TranslateSoundData]::
         List_1_TranslateSoundData__AddWithResize(this,item,pMVar1->klass->rgctx_data[0xe].method);
         return;
       }
-      (this->fields)._size = uVar4 + 1;
-      if (uVar4 < pTVar3->max_length) {
-        pTVar7 = pTVar3->vector + uVar4;
-        pTVar7->moveValue = moveValue;
-        *(uint *)&pTVar7->moveToGridPos = (uint)moveToGridPos;
-        (pTVar7->worldPos).x = fStack_5;
-        (pTVar7->worldPos).y = fStack_6;
-        pTVar3->vector[uVar4].worldPos.z = worldPos.z;
+      (this->fields)._size = uVar6 + 1;
+      uStack_7 = (uint)moveToGridPos;
+      if (uVar6 < pTVar5->max_length) {
+        pTVar8 = pTVar5->vector + uVar6;
+        pTVar8->moveValue = moveValue;
+        *(uint *)&pTVar8->moveToGridPos = uStack_7;
+        (pTVar8->worldPos).x = fStack_2;
+        (pTVar8->worldPos).y = fStack_3;
+        pTVar5->vector[uVar6].worldPos.z = worldPos.z;
         return;
       }
       goto code_?;
@@ -53,8 +54,8 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_AddTranslateSound
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -244,7 +245,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x7fb8);
+    func_?(0x1b74);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -262,13 +263,14 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     if (this == (AudioBuild *)0x0) {
 code_?:
       uVar2 = func_?();
-      puVar3 = (ushort *)
-               (CONCAT31((int3)((ulonglong)uVar2 >> 0x28),*(undefined1 *)((uint)uVar2 & 0xffffff63))
-               & 0xffffff63);
-      *puVar3 = *puVar3 + (ushort)(0 < (short)-(*puVar3 & 3)) * -(*puVar3 & 3);
-      cRam_? = cRam_? + (char)((uint)unaff_EBX >> 8) + '\x01';
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      bVar3 = (byte)((ulonglong)uVar2 >> 0x20) &
+              *(byte *)CONCAT31((int3)((ulonglong)uVar2 >> 8),(char)uVar2 + -0x4f);
+      pbVar4 = (byte *)(CONCAT31((int3)((ulonglong)uVar2 >> 0x28),bVar3) + -0x26efdd4f);
+      bVar5 = *pbVar4;
+      *pbVar4 = *pbVar4 + bVar3;
+      cRam_? = cRam_? + unaff_BL + -1 + CARRY1(bVar5,bVar3);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
     randMax = 1.1;

@@ -180,7 +180,7 @@ Assembly-CSharp.dll::RTG::QuaternionEx::QuaternionEx_GetRelativeRotation
   fVar6 = pQVar1->w;
   fVar7 = pQVar1->x;
   fVar8 = pQVar1->x;
-  __return_storage_ptr__->x = (to.x * fVar6 + to.w * fVar3 + to.z * fVar4) - to.y * fVar5;
+  __return_storage_ptr__->x = (to.w * fVar3 + to.x * fVar6 + to.z * fVar4) - to.y * fVar5;
   __return_storage_ptr__->y = (to.y * fVar6 + to.w * fVar4 + to.x * fVar5) - to.z * fVar7;
   __return_storage_ptr__->z = (to.w * fVar5 + to.z * fVar6 + to.y * fVar8) - to.x * fVar4;
   __return_storage_ptr__->w = ((to.w * fVar6 - to.x * fVar3) - to.y * fVar4) - to.z * fVar5;
@@ -194,7 +194,7 @@ float Assembly-CSharp.dll::RTG::QuaternionEx::QuaternionEx_Length
                 (Quaternion quat,MethodInfo *method)
 
 {
-  dVar1 = (double)(quat.x * quat.x + quat.y * quat.y + quat.z * quat.z + quat.w * quat.w);
+  dVar1 = (double)(quat.y * quat.y + quat.x * quat.x + quat.z * quat.z + quat.w * quat.w);
   if (0.0 <= dVar1) {
     return (float)SQRT(dVar1);
   }

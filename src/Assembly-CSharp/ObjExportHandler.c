@@ -400,13 +400,13 @@ code_?:
           pRVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
                               ((Ray *)&stack0xffffff10,this_00,pos,(MethodInfo *)0x0);
           fStack_15 = 0.0;
+          fStack_13 = _UNK_?;
           fStack_16 = (pRVar14->m_Origin).x;
           pTStack_17 = (Transform *)(pRVar14->m_Origin).y;
           fStack_18 = (pRVar14->m_Origin).z;
           fStack_19 = (pRVar14->m_Direction).x;
           uStack_20._0_4_ = (pRVar14->m_Direction).y;
           uStack_20._4_4_ = (pRVar14->m_Direction).z;
-          fStack_13 = _UNK_?;
           this_01 = CollisionDetection::CollisionDetection_MVHitAll
                               (*pRVar14,INFINITY,ignoreWoIds,layerMask,(MethodInfo *)0x0);
           if (this_01 != (List_1_VoxelHit_ *)0x0) {
@@ -538,8 +538,8 @@ void Assembly-CSharp.dll::ObjExportHandler::ObjExportHandler_Update
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff84;
-  puVar5 = &stack0xffffff84;
+  puStack_4 = &stack0xffffff38;
+  puVar5 = &stack0xffffff38;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Application);
     func_?(&TypeInfo__System__Boolean);
@@ -560,8 +560,9 @@ void Assembly-CSharp.dll::ObjExportHandler::ObjExportHandler_Update
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  func_?(&puStack_6,0,0x48);
-  BStack_7.m_value = 0;
+  func_?(&stack0xffffff8c,0,0x48);
+  BStack_6.m_value = 0;
+  IStack_7.m_value = 0;
   IStack_8.m_value = 0;
   if ((TypeInfo__ObjExportHandler->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ObjExportHandler);
@@ -578,24 +579,24 @@ code_?:
     func_?();
   }
   TypeInfo__ObjExportHandler->static_fields->picking = 0;
-  BStack_7.m_value =
+  BStack_6.m_value =
        ObjExportHandler_Pick
-                 ((VoxelHit *)&puStack_6,TypeInfo__ObjExportHandler->static_fields->ignoreIds,
+                 ((VoxelHit *)&stack0xffffff8c,TypeInfo__ObjExportHandler->static_fields->ignoreIds,
                   -0x40005,(MethodInfo *)0x0);
-  if ((BStack_7.m_value != 0) && (in_stack_10 == -1)) {
-    BStack_7.m_value = 0;
+  if ((BStack_6.m_value != 0) && (iStack_10 == -1)) {
+    BStack_6.m_value = 0;
   }
   if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pSVar11 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_7,(MethodInfo *)0x0);
+  pSVar11 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_6,(MethodInfo *)0x0);
   pSVar11 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_WoPickSuccess__,pSVar11,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar11,(MethodInfo *)0x0);
-  if (BStack_7.m_value == 0) goto code_?;
+  if (BStack_6.m_value == 0) goto code_?;
   this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((((this_01 == (MVWorldObjectClientManager *)0x0) ||
        (pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
@@ -616,8 +617,8 @@ code_?:
     func_?();
   }
   else {
-    for (; IStack_8.m_value < (int)pOVar13->max_length; IStack_8.m_value = IStack_8.m_value + 1) {
-      if (pOVar13->max_length <= (uint)IStack_8.m_value) {
+    for (; IStack_7.m_value < (int)pOVar13->max_length; IStack_7.m_value = IStack_7.m_value + 1) {
+      if (pOVar13->max_length <= (uint)IStack_7.m_value) {
         func_?();
 code_?:
         func_?();
@@ -635,7 +636,7 @@ code_?:
         func_?();
         goto code_?;
       }
-      mf = (MeshFilter *)pOVar13->vector[IStack_8.m_value];
+      mf = (MeshFilter *)pOVar13->vector[IStack_7.m_value];
       pSVar14 = (String__Array *)func_?();
       if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -649,17 +650,17 @@ code_?:
       if (pSVar14->max_length < 2) goto code_?;
       pSVar14->vector[1] = ::StringLiteral_____;
       func_?();
-      if (pOVar13->max_length <= (uint)IStack_8.m_value) goto code_?;
-      if (((Component *)pOVar13->vector[IStack_8.m_value] == (Component *)0x0) ||
+      if (pOVar13->max_length <= (uint)IStack_7.m_value) goto code_?;
+      if (((Component *)pOVar13->vector[IStack_7.m_value] == (Component *)0x0) ||
          (pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pOVar13->vector[IStack_8.m_value],(MethodInfo *)0x0),
+                             ((Component *)pOVar13->vector[IStack_7.m_value],(MethodInfo *)0x0),
          pGVar15 == (GameObject *)0x0)) goto code_?;
       pSVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                          ((Object_1 *)pGVar15,(MethodInfo *)0x0);
       if (pSVar14->max_length < 3) goto code_?;
       pSVar14->vector[2] = pSVar11;
       func_?();
-      pSVar11 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
+      pSVar11 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_7,(MethodInfo *)0x0);
       if (pSVar14->max_length < 4) goto code_?;
       pSVar14->vector[3] = pSVar11;
       func_?();
@@ -668,10 +669,10 @@ code_?:
       func_?();
       pSVar11 = mscorlib.dll::System::String::String_Concat_6(pSVar14,(MethodInfo *)0x0);
       ObjExporterScript::ObjExporterScript_MeshToFile(mf,pSVar11,0,(MethodInfo *)0x0);
-      if (pOVar13->max_length <= (uint)IStack_8.m_value) goto code_?;
-      if (((Component *)pOVar13->vector[IStack_8.m_value] == (Component *)0x0) ||
+      if (pOVar13->max_length <= (uint)IStack_7.m_value) goto code_?;
+      if (((Component *)pOVar13->vector[IStack_7.m_value] == (Component *)0x0) ||
          (pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pOVar13->vector[IStack_8.m_value],(MethodInfo *)0x0),
+                             ((Component *)pOVar13->vector[IStack_7.m_value],(MethodInfo *)0x0),
          pGVar15 == (GameObject *)0x0)) goto code_?;
       pSVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                          ((Object_1 *)pGVar15,(MethodInfo *)0x0);
@@ -688,8 +689,8 @@ code_?:
     if (pSVar14->max_length == 0) goto code_?;
     pSVar14->vector[0] = StringLiteral_Exported__;
     func_?();
-    pSVar11 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&stack0xffffffe0,(MethodInfo *)0x0);
+    IStack_8.m_value = pOVar13->max_length;
+    pSVar11 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
     if (pSVar14->max_length < 2) goto code_?;
     pSVar14->vector[1] = pSVar11;
     func_?();

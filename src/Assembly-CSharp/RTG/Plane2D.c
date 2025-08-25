@@ -5,7 +5,7 @@ float Assembly-CSharp.dll::RTG::Plane2D::Plane2D_GetDistanceToPoint
                 (Plane2D *this,Vector2 point,MethodInfo *method)
 
 {
-  return ((this->fields)._normal.x * point.x + (this->fields)._normal.y * point.y) -
+  return (point.y * (this->fields)._normal.y + point.x * (this->fields)._normal.x) -
          (this->fields)._distance;
 }
 

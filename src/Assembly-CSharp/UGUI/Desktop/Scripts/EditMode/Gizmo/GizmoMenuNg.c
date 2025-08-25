@@ -1319,7 +1319,7 @@ code_?:
                                                   pMVar6 = (unaff_EBX->fields).worldObjectClient;
                                                   if (pMVar6 != (MVWorldObjectClient *)0x0) {
                                                     bVar17 = (byte)((uint)pMVar6 >> 8);
-                                                    bVar18 = 0x73;
+                                                    bVar18 = 0xa4;
                                                     bVar9 = MVWorldObjectClient::
                                                             MVWorldObjectClient_HasInteractionFlag
                                                                       (pMVar6,
@@ -1610,23 +1610,20 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
     pQVar2 = (Quaternion *)
              (*(code *)(pMVar1->klass->vtable).get_Rotation.method)
-                       (&stack0xffffffd0,pMVar1,(pMVar1->klass->vtable).set_Rotation.methodPtr);
+                       (&stack0xffffffdc,pMVar1,(pMVar1->klass->vtable).set_Rotation.methodPtr);
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_ToEulerRad
-                       (&VStack_4,*pQVar2,(MethodInfo *)0x0);
-    uStack_5._0_4_ = pVVar3->x;
-    uStack_5._4_4_ = pVVar3->y;
-    fStack_6 = pVVar3->z * _UNK_?;
-    euler.y = (float)uStack_5._4_4_ * _UNK_?;
-    euler.x = (float)(undefined4)uStack_5 * _UNK_?;
-    euler.z = fStack_6;
+                       ((Vector3 *)&stack0xffffffe0,*pQVar2,(MethodInfo *)0x0);
+    uVar4 = pVVar3->x;
+    uVar5 = pVVar3->y;
+    euler.y = (float)uVar5 * _UNK_?;
+    euler.x = (float)uVar4 * _UNK_?;
+    euler.z = pVVar3->z * _UNK_?;
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive
-                       ((Vector3 *)&stack0xffffffd4,euler,(MethodInfo *)0x0);
-    uVar7._0_4_ = pVVar3->x;
-    uVar7._4_4_ = pVVar3->y;
-    fStack_6 = pVVar3->z;
+                       ((Vector3 *)&stack0xffffffe0,euler,(MethodInfo *)0x0);
+    uVar6 = pVVar3->x;
+    uVar7 = pVVar3->y;
     pTVar8 = (this->fields).xRotationText;
-    uStack_5 = uVar7 & 0xffffffff;
-    VStack_4.z = (float)&UNK_?;
+    IStack_9.m_value = uVar6;
     IStack_9.m_value = func_?();
     pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
     pSVar11 = ::StringLiteral__;
@@ -1637,7 +1634,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::
       (*(code *)(pTVar8->klass->vtable).set_text.method)
                 (pTVar8,pSVar11,(pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar8 = (this->fields).yRotationText;
-      IStack_9.m_value = func_?(uStack_5._4_4_,0);
+      IStack_9.m_value = func_?(uVar7,0);
       pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
       pSVar11 = ::StringLiteral__;
       if (pSVar10 != (String *)0x0) {
@@ -1645,10 +1642,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::
       }
       if (pTVar8 != (Text *)0x0) {
         (*(code *)(pTVar8->klass->vtable).set_text.method)
-                  (pTVar8,pSVar11,(pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
+                  (pTVar8,pSVar11,(pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr
+                  );
         pTVar8 = (this->fields).zRotationText;
-        IStack_9.m_value = func_?(fStack_6,0);
+        IStack_9.m_value = func_?(&UNK_?,0);
         pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
         pSVar11 = ::StringLiteral__;
         if (pSVar10 != (String *)0x0) {

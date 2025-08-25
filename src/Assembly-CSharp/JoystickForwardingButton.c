@@ -75,7 +75,7 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnP
     func_?(TypeInfo__ResolutionManager);
   }
   VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fVar1 = VVar2.x * fVar1;
+  fVar1 = fVar1 * VVar2.x;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Mathf);
     cRam_? = '\x01';

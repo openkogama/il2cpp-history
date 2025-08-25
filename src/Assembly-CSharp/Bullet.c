@@ -1108,7 +1108,7 @@ Assembly-CSharp.dll::Bullet::Bullet_UpdateBulletState(Bullet *this,MethodInfo *m
     ray.m_Direction.y = (float)uVar15;
     ray.m_Direction.z = fVar5;
     bVar16 = Bullet+CollisionBullet::Bullet_CollisionBullet_DoBulletCollision
-                       (ray,&(this->fields).voxelHit,fVar13 * fVar4,(pBVar2->fields).ignoreWoIDs,
+                       (ray,&(this->fields).voxelHit,fVar4 * fVar13,(pBVar2->fields).ignoreWoIDs,
                         (MethodInfo *)0x0);
     if (bVar16 != 0) {
       BVar1 = Bullet_CollisionBullet_State__Enum_Hit;

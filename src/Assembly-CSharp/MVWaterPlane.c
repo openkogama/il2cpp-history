@@ -375,67 +375,60 @@ void Assembly-CSharp.dll::MVWaterPlane::MVWaterPlane__ctor
        (pRVar3 = (pOVar2->fields).meshRenderers, pRVar3 != (Renderer__Array *)0x0)) {
       if (pRVar3->max_length == 0) goto code_?;
       this_00 = pRVar3->vector[0];
-      pRVar3 = (((this->fields)._._.component)->fields).meshRenderers;
-      if (pRVar3 != (Renderer__Array *)0x0) {
-        if (pRVar3->max_length == 0) goto code_?;
-        if (pRVar3->vector[0] != (Renderer *)0x0) {
-          source = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                             (pRVar3->vector[0],(MethodInfo *)0x0);
-          this_02 = (Material *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-                    (this_02,source,(MethodInfo *)0x0);
-          if (this_00 != (Renderer *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                      (this_00,this_02,(MethodInfo *)0x0);
-            pOVar2 = (this->fields)._._.component;
-            if ((pOVar2 != (ObjectPrefab *)0x0) &&
-               (pRVar3 = (pOVar2->fields).meshRenderers, pRVar3 != (Renderer__Array *)0x0)) {
-              if (pRVar3->max_length == 0) goto code_?;
-              if (pRVar3->vector[0] != (Renderer *)0x0) {
-                pBVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
-                                    ((Bounds *)&stack0xffffffcc,pRVar3->vector[0],(MethodInfo *)0x0)
-                ;
-                fVar5 = (pBVar4->m_Center).y;
-                fVar6 = (pBVar4->m_Center).z;
-                fVar7 = (pBVar4->m_Extents).x;
-                fVar8 = (pBVar4->m_Extents).y;
-                fVar9 = (pBVar4->m_Extents).z;
-                (this->fields).localBounds.m_Center.x = (pBVar4->m_Center).x;
-                (this->fields).localBounds.m_Center.y = fVar5;
-                (this->fields).localBounds.m_Center.z = fVar6;
-                (this->fields).localBounds.m_Extents.x = fVar7;
-                (this->fields).localBounds.m_Extents.y = fVar8;
-                (this->fields).localBounds.m_Extents.z = fVar9;
-                fVar5 = (this->fields).localBounds.m_Center.z;
-                uVar10 = (this->fields).localBounds.m_Center.x;
-                uVar11 = (this->fields).localBounds.m_Center.y;
-                this_01 = (this->fields)._._.gameObject;
-                if (this_01 != (GameObject *)0x0) {
-                  this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_get_transform(this_01,(MethodInfo *)0x0);
-                  if (this_03 != (Transform *)0x0) {
-                    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_position
-                                        ((Vector3 *)&stack0xffffffd8,this_03,(MethodInfo *)0x0);
-                    uVar13 = pVVar12->x;
-                    uVar14 = pVVar12->y;
-                    fVar6 = pVVar12->z;
-                    (this->fields).localBounds.m_Center.x = (float)uVar10 - (float)uVar13;
-                    (this->fields).localBounds.m_Center.y = (float)uVar11 - (float)uVar14;
-                    (this->fields).localBounds.m_Center.z = fVar5 - fVar6;
-                    pWVar15 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager
-                                        ((MethodInfo *)0x0);
-                    (this->fields).waterManager = pWVar15;
-                    func_?(&(this->fields).waterManager,pWVar15);
-                    piVar16 = &(this->fields)._._.interactionFlags;
-                    *(uint *)piVar16 = (uint)*piVar16 | 0x8000;
-                    uVar17 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-                    piVar16 = &(this->fields)._._.interactionFlags;
-                    *(uint *)piVar16 = (uint)*piVar16 & 0xffffdfff;
-                    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar17;
-                    return;
-                  }
-                }
+      this_01 = ((((this->fields)._._.component)->fields).meshRenderers)->vector[0];
+      if (this_01 != (Renderer *)0x0) {
+        source = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                           (this_01,(MethodInfo *)0x0);
+        this_03 = (Material *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
+                  (this_03,source,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+                  (this_00,this_03,(MethodInfo *)0x0);
+        pOVar2 = (this->fields)._._.component;
+        if ((pOVar2 != (ObjectPrefab *)0x0) &&
+           (pRVar3 = (pOVar2->fields).meshRenderers, pRVar3 != (Renderer__Array *)0x0)) {
+          if (pRVar3->max_length == 0) goto code_?;
+          if (pRVar3->vector[0] != (Renderer *)0x0) {
+            pBVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
+                                ((Bounds *)&stack0xffffffcc,pRVar3->vector[0],(MethodInfo *)0x0);
+            fVar5 = (pBVar4->m_Center).y;
+            fVar6 = (pBVar4->m_Center).z;
+            fVar7 = (pBVar4->m_Extents).x;
+            fVar8 = (pBVar4->m_Extents).y;
+            fVar9 = (pBVar4->m_Extents).z;
+            (this->fields).localBounds.m_Center.x = (pBVar4->m_Center).x;
+            (this->fields).localBounds.m_Center.y = fVar5;
+            (this->fields).localBounds.m_Center.z = fVar6;
+            (this->fields).localBounds.m_Extents.x = fVar7;
+            (this->fields).localBounds.m_Extents.y = fVar8;
+            (this->fields).localBounds.m_Extents.z = fVar9;
+            fVar5 = (this->fields).localBounds.m_Center.z;
+            uVar10 = (this->fields).localBounds.m_Center.x;
+            uVar11 = (this->fields).localBounds.m_Center.y;
+            this_02 = (this->fields)._._.gameObject;
+            if (this_02 != (GameObject *)0x0) {
+              this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(this_02,(MethodInfo *)0x0);
+              if (this_04 != (Transform *)0x0) {
+                pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                    ((Vector3 *)&stack0xffffffd8,this_04,(MethodInfo *)0x0);
+                uVar13 = pVVar12->x;
+                uVar14 = pVVar12->y;
+                fVar6 = pVVar12->z;
+                (this->fields).localBounds.m_Center.x = (float)uVar10 - (float)uVar13;
+                (this->fields).localBounds.m_Center.y = (float)uVar11 - (float)uVar14;
+                (this->fields).localBounds.m_Center.z = fVar5 - fVar6;
+                pWVar15 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager
+                                    ((MethodInfo *)0x0);
+                (this->fields).waterManager = pWVar15;
+                func_?(&(this->fields).waterManager,pWVar15);
+                piVar16 = &(this->fields)._._.interactionFlags;
+                *(uint *)piVar16 = (uint)*piVar16 | 0x8000;
+                uVar17 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+                piVar16 = &(this->fields)._._.interactionFlags;
+                *(uint *)piVar16 = (uint)*piVar16 & 0xffffdfff;
+                *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar17;
+                return;
               }
             }
           }

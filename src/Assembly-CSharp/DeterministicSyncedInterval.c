@@ -97,7 +97,7 @@ void Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInterv
     (this->fields).nextTickThres = iVar5 + iVar3;
     return;
   }
-  (this->fields).nextTickThres = range + (iVar5 - iVar6) + iVar3;
+  (this->fields).nextTickThres = (iVar5 - iVar6) + range + iVar3;
   return;
 }
 

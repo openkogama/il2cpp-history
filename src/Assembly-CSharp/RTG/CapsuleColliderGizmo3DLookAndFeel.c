@@ -261,10 +261,6 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3DLookAndFeel::
     }
     pGVar5 = (this->fields)._tickLookAndFeel;
     pGVar8 = (GizmoCap2DLookAndFeel *)func_?();
-    fVar7 = _UNK_?;
-    fVar4 = _UNK_?;
-    fVar3 = _UNK_?;
-    fVar2 = _UNK_?;
     (pGVar8->fields)._fillMode = 2;
     (pGVar8->fields)._scale = 1.0;
     (pGVar8->fields)._circleRadius = 12.0;
@@ -272,10 +268,13 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3DLookAndFeel::
     (pGVar8->fields)._quadHeight = 25.0;
     (pGVar8->fields)._arrowBaseRadius = 5.0;
     (pGVar8->fields)._arrowHeight = 20.0;
-    (pGVar8->fields)._color.r = fVar2;
-    (pGVar8->fields)._color.g = fVar3;
-    (pGVar8->fields)._color.b = fVar4;
-    (pGVar8->fields)._color.a = fVar7;
+    fVar4 = _UNK_?;
+    fVar3 = _UNK_?;
+    fVar2 = _UNK_?;
+    (pGVar8->fields)._color.r = _UNK_?;
+    (pGVar8->fields)._color.g = fVar2;
+    (pGVar8->fields)._color.b = fVar3;
+    (pGVar8->fields)._color.a = fVar4;
     pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
                        ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
     fVar2 = pCVar1->g;

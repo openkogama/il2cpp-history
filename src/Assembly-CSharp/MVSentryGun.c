@@ -7,61 +7,60 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_ApplyDamage
 
 {
   uVar1 = (this->fields).beamType;
-  if (wo == (MVWorldObjectClient *)0x0) goto code_?;
-  puVar2 = (undefined8 *)
-           (*(code *)(wo->klass->vtable).GetTargetPosition.method)
-                     (auStack_3 + 8,wo,(wo->klass->vtable).DrawTransformGizmo.methodPtr);
-  auStack_4._8_8_ = *puVar2;
-  auStack_4._16_4_ = *(undefined4 *)(puVar2 + 1);
-  this_00 = (this->fields)._._.gameObject;
-  if (this_00 == (GameObject *)0x0) goto code_?;
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                      (this_00,(MethodInfo *)0x0);
-  if (this_01 == (Transform *)0x0) goto code_?;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                     ((Vector3 *)&IStack_6.impulse.y,this_01,(MethodInfo *)0x0);
-  uVar7 = pVVar5->x;
-  uVar8 = pVVar5->y;
-  auStack_3._16_4_ = (float)auStack_4._16_4_ - pVVar5->z;
-  auStack_3._12_4_ = (float)auStack_4._12_4_ - (float)uVar8;
-  auStack_3._8_4_ = (float)auStack_4._8_4_ - (float)uVar7;
-  auStack_4._16_4_ = auStack_3._16_4_;
-  puVar2 = (undefined8 *)func_?(&IStack_6.impulse.y,auStack_3 + 8,0);
-  auStack_3._8_8_ = *puVar2;
-  auStack_3._16_4_ = *(undefined4 *)(puVar2 + 1);
-  auStack_4._16_4_ = (this->fields).pushBackStrength;
-  auStack_4._8_4_ = (float)auStack_3._8_4_ * (float)auStack_4._16_4_;
-  auStack_4._12_4_ = (float)auStack_3._12_4_ * (float)auStack_4._16_4_;
-  auStack_4._16_4_ = (float)auStack_3._16_4_ * (float)auStack_4._16_4_;
-  if (uVar1 == 0) {
-    pIVar9 = &IStack_6;
-code_?:
-    impulse_00.y = (float)auStack_4._12_4_;
-    impulse_00.x = (float)auStack_4._8_4_;
-    impulse_00.z = (float)auStack_4._16_4_;
-    pIVar9 = SentryTowerFirePackage::SentryTowerFirePackage_Create
-                       (pIVar9,impulse_00,(MethodInfo *)0x0);
-  }
-  else {
-    if (uVar1 != 1) {
-      pIVar9 = (InteractionData *)auStack_4;
-      goto code_?;
+  if (wo != (MVWorldObjectClient *)0x0) {
+    puVar2 = (undefined8 *)
+             (*(code *)(wo->klass->vtable).GetTargetPosition.method)
+                       (&uStack_3,wo,(wo->klass->vtable).DrawTransformGizmo.methodPtr);
+    uStack_4 = *puVar2;
+    fStack_5 = *(float *)(puVar2 + 1);
+    this_00 = (this->fields)._._.gameObject;
+    if (this_00 != (GameObject *)0x0) {
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_00,(MethodInfo *)0x0);
+      if (this_01 != (Transform *)0x0) {
+        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           ((Vector3 *)&IStack_7.impulse.y,this_01,(MethodInfo *)0x0);
+        uVar8 = pVVar6->x;
+        uVar9 = pVVar6->y;
+        fStack_10 = fStack_5 - pVVar6->z;
+        uStack_3 = CONCAT44(uStack_4._4_4_ - (float)uVar9,(float)uStack_4 - (float)uVar8);
+        fStack_5 = fStack_10;
+        puVar2 = (undefined8 *)func_?(&IStack_7.impulse.y,&uStack_3,0);
+        uVar11 = *puVar2;
+        fStack_10 = *(float *)(puVar2 + 1);
+        fStack_5 = (this->fields).pushBackStrength;
+        uStack_3._0_4_ = (float)uVar11;
+        uStack_3._4_4_ = (float)((ulonglong)uVar11 >> 0x20);
+        fVar12 = (float)uStack_3 * fStack_5;
+        fVar13 = uStack_3._4_4_ * fStack_5;
+        fStack_5 = fStack_10 * fStack_5;
+        uStack_4 = CONCAT44(fVar13,fVar12);
+        uStack_3 = uVar11;
+        if ((uVar1 == 0) || (uVar1 != 1)) {
+          impulse_00.y = fVar13;
+          impulse_00.x = fVar12;
+          impulse_00.z = fStack_5;
+          pIVar14 = SentryTowerFirePackage::SentryTowerFirePackage_Create
+                             (&IStack_7,impulse_00,(MethodInfo *)0x0);
+        }
+        else {
+          impulse.y = fVar13;
+          impulse.x = fVar12;
+          impulse.z = fStack_5;
+          pIVar14 = SentryTowerIcePackage::SentryTowerIcePackage_Create
+                             (&IStack_7,impulse,(MethodInfo *)0x0);
+        }
+        if (interactionDataHandlerBase != (InteractionDataHandlerBase *)0x0) {
+          InteractionDataHandlerBase::InteractionDataHandlerBase_HandleInteraction
+                    (interactionDataHandlerBase,*pIVar14,1,(MethodInfo *)0x0);
+          return;
+        }
+      }
     }
-    impulse.y = (float)auStack_4._12_4_;
-    impulse.x = (float)auStack_4._8_4_;
-    impulse.z = (float)auStack_4._16_4_;
-    pIVar9 = SentryTowerIcePackage::SentryTowerIcePackage_Create
-                       ((InteractionData *)auStack_3,impulse,(MethodInfo *)0x0);
   }
-  if (interactionDataHandlerBase != (InteractionDataHandlerBase *)0x0) {
-    InteractionDataHandlerBase::InteractionDataHandlerBase_HandleInteraction
-              (interactionDataHandlerBase,*pIVar9,1,(MethodInfo *)0x0);
-    return;
-  }
-code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -289,23 +288,24 @@ code_?:
           if (bVar7 != 0) goto code_?;
           pLVar10 = pMVar8[1].fields.objectLinkRefs;
           pGVar11 = (this->fields)._._.gameObject;
-          if (((pGVar11 != (GameObject *)0x0) &&
-              (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar11,(MethodInfo *)0x0),
-              pTVar12 != (Transform *)0x0)) &&
-             (pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)&stack0xffffffc4,pTVar12,(MethodInfo *)0x0),
-             pLVar10 != (List_1_MV_WorldObject_ObjectLink_ *)0x0)) {
-            uVar5._4_4_ = (int32_t)pLVar10;
-            uVar5._0_4_ = (Object *)&stack0xffffffb8;
-            pMVar6 = (MethodInfo *)&UNK_?;
-            UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_ClosestPointOnBounds
-                      ((Vector3 *)&stack0xffffffb8,(Collider *)pLVar10,*pVVar13,(MethodInfo *)0x0);
-            pGVar11 = (this->fields)._._.gameObject;
-            if (pGVar11 != (GameObject *)0x0) {
-              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(pGVar11,(MethodInfo *)0x0);
-              if (pTVar12 != (Transform *)0x0) goto code_?;
+          if ((pGVar11 != (GameObject *)0x0) &&
+             (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar11,(MethodInfo *)0x0),
+             pTVar12 != (Transform *)0x0)) {
+            pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffc4,pTVar12,(MethodInfo *)0x0);
+            if (pLVar10 != (List_1_MV_WorldObject_ObjectLink_ *)0x0) {
+              uVar5._4_4_ = (int32_t)pLVar10;
+              uVar5._0_4_ = (Object *)&stack0xffffffb8;
+              pMVar6 = (MethodInfo *)&UNK_?;
+              UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_ClosestPointOnBounds
+                        ((Vector3 *)&stack0xffffffb8,(Collider *)pLVar10,*pVVar13,(MethodInfo *)0x0);
+              pGVar11 = (this->fields)._._.gameObject;
+              if (pGVar11 != (GameObject *)0x0) {
+                pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                          GameObject_get_transform(pGVar11,(MethodInfo *)0x0);
+                if (pTVar12 != (Transform *)0x0) goto code_?;
+              }
             }
           }
         }

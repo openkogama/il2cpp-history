@@ -21,21 +21,21 @@ Assembly-CSharp.dll::RTG::CameraFocus::CameraFocus_CalculateFocusData
     func_?(TypeInfo__RTG__CameraEx);
   }
   if (camera != (Camera *)0x0) {
-    fStack_5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
+    fStack_5 = fStack_4 * _UNK_?;
+    fStack_4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
                           (camera,(MethodInfo *)0x0);
-    dVar6 = (double)(fStack_5 * _UNK_? * _UNK_?);
+    dVar6 = (double)(fStack_4 * _UNK_? * _UNK_?);
     func_?();
     if (focusSettings != (CameraFocusSettings *)0x0) {
-      fStack_5 = (fStack_4 * _UNK_?) / (float)dVar6 +
-                  (focusSettings->fields)._focusDistanceAdd;
-      fStack_4 = fStack_5;
+      fStack_4 = fStack_5 / (float)dVar6 + (focusSettings->fields)._focusDistanceAdd;
+      fStack_5 = fStack_4;
       fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
                             (camera,(MethodInfo *)0x0);
       if (fStack_5 < fStack_7) {
         fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
                           (camera,(MethodInfo *)0x0);
-        fStack_5 = fStack_4 + (fVar8 - fStack_4);
-        fStack_4 = fStack_5;
+        fStack_4 = fStack_4 + (fVar8 - fStack_4);
+        fStack_5 = fStack_4;
       }
       this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)camera,(MethodInfo *)0x0);

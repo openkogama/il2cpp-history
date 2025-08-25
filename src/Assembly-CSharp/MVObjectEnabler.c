@@ -321,7 +321,8 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects
       RStack_13 = pLVar11->_current;
       LStack_12._version = 0;
       uStack_1 = 1;
-      while( true ) {
+code_?:
+      do {
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
                           ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc4,
@@ -350,41 +351,51 @@ void Assembly-CSharp.dll::MVObjectEnabler::MVObjectEnabler_ShowObjects
         if ((pMVar15 == (MVWorldObject *)0x0) || (pMVar14 == (MVWorldObjectClientManager *)0x0))
         break;
         pMVar16 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMVar14,(pMVar15->fields).groupId,(MethodInfo *)0x0);
-        if (((pMVar16 == (MVWorldObject *)0x0) ||
-            ((pMVar16->klass->_1).naturalAligment < (TypeInfo__MVMovable->_1).naturalAligment)) ||
-           ((MVMovable__Class *)
-            (pMVar16->klass->_1).typeHierarchy[(TypeInfo__MVMovable->_1).naturalAligment - 1] !=
-            TypeInfo__MVMovable)) {
-          RStack_13 = (RegexCharClass_SingleRange)TypeInfo__MVCubeModelBase;
-          pMVar17 = (MVCubeModelBase *)func_?();
-          if (pMVar17 == (MVCubeModelBase *)0x0) {
-            in_stack_7 = _visible;
-            func_?(0x50);
-            in_stack_18 = pMVar15;
+                            (pMVar14,(pMVar15->fields).groupId,(MethodInfo *)0x0);
+        if (pMVar16 != (MVWorldObject *)0x0) {
+          if (((pMVar16->klass->_1).naturalAligment < (TypeInfo__MVMovable->_1).naturalAligment) ||
+             ((MVMovable__Class *)
+              (pMVar16->klass->_1).typeHierarchy[(TypeInfo__MVMovable->_1).naturalAligment - 1] !=
+              TypeInfo__MVMovable)) {
+            bVar17 = false;
           }
           else {
-            in_stack_7 = (MVWorldObject *)0x0;
-            in_stack_18 = _visible;
-            MVCubeModelBase::MVCubeModelBase_ObjectLinkChanged(pMVar17,visible,(MethodInfo *)0x0);
+            bVar17 = true;
+          }
+          pMVar18 = (MVWorldObject *)0x0;
+          if (bVar17) {
+            pMVar18 = pMVar16;
+          }
+          if (pMVar18 != (MVWorldObject *)0x0) {
+            func_?();
+            RStack_13 = (RegexCharClass_SingleRange)TypeInfo__MVCubeModelBase;
+            iVar19 = func_?();
+            if (iVar19 == 0) break;
+            this_01 = (MVNetworkGame *)&UNK_?;
+            pMVar20 = (MVCubeModelBase *)func_?();
+            MVCubeModelBase::MVCubeModelBase_ObjectLinkChanged
+                      (pMVar20,(bool)in_stack_21,(MethodInfo *)in_stack_7);
+            goto code_?;
           }
         }
-        else {
-          func_?();
-          RStack_13 = (RegexCharClass_SingleRange)TypeInfo__MVCubeModelBase;
-          iVar19 = func_?();
-          if (iVar19 == 0) break;
-          this_01 = (MVNetworkGame *)&UNK_?;
-          pMVar17 = (MVCubeModelBase *)func_?();
-          MVCubeModelBase::MVCubeModelBase_ObjectLinkChanged
-                    (pMVar17,(bool)in_stack_18,(MethodInfo *)in_stack_7);
+        RStack_13 = (RegexCharClass_SingleRange)TypeInfo__MVCubeModelBase;
+        pMVar20 = (MVCubeModelBase *)func_?();
+        if (pMVar20 == (MVCubeModelBase *)0x0) {
+          in_stack_7 = _visible;
+          func_?(0x50);
+          in_stack_21 = pMVar15;
         }
-      }
+        else {
+          in_stack_7 = (MVWorldObject *)0x0;
+          in_stack_21 = _visible;
+          MVCubeModelBase::MVCubeModelBase_ObjectLinkChanged(pMVar20,visible,(MethodInfo *)0x0);
+        }
+      } while( true );
     }
   }
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

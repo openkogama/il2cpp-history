@@ -417,29 +417,27 @@ code_?:
   else {
     if ((this->fields).transformReportingHasStopped == 0) {
       pNVar3 = (this->fields).nextPackage;
-      if (pNVar3 != (NetworkTransformPackage *)0x0) {
-        ppNVar10 = &(this->fields).nextPackage;
-        do {
-          ppNVar11 = &(this->fields).currentPackage;
-          if (delayedTime < (pNVar3->fields).timestamp) goto code_?;
-          pQVar2 = (this->fields).transformQueue;
-          if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
-          if ((pQVar2->fields)._size < 1) goto code_?;
-          *ppNVar11 = *ppNVar10;
-          func_?(ppNVar11,*ppNVar10);
-          pQVar2 = (this->fields).transformQueue;
-          if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
-          pNVar3 = (NetworkTransformPackage *)
-                    mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                    Queue_1_System_Object__Dequeue
-                              ((Queue_1_System_Object_ *)pQVar2,
-                               MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Dequeue__
-                              );
-          *ppNVar10 = pNVar3;
-          func_?(ppNVar10,pNVar3);
-          pNVar3 = *ppNVar10;
-        } while (pNVar3 != (NetworkTransformPackage *)0x0);
-      }
+      ppNVar10 = &(this->fields).nextPackage;
+      do {
+        ppNVar11 = &(this->fields).currentPackage;
+        if (delayedTime < (pNVar3->fields).timestamp) goto code_?;
+        pQVar2 = (this->fields).transformQueue;
+        if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
+        if ((pQVar2->fields)._size < 1) goto code_?;
+        *ppNVar11 = *ppNVar10;
+        func_?(ppNVar11,*ppNVar10);
+        pQVar2 = (this->fields).transformQueue;
+        if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
+        pNVar3 = (NetworkTransformPackage *)
+                  mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                  Queue_1_System_Object__Dequeue
+                            ((Queue_1_System_Object_ *)pQVar2,
+                             MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Dequeue__
+                            );
+        *ppNVar10 = pNVar3;
+        func_?(ppNVar10,pNVar3);
+        pNVar3 = *ppNVar10;
+      } while (pNVar3 != (NetworkTransformPackage *)0x0);
       goto code_?;
     }
 code_?:

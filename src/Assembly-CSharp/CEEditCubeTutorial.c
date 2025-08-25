@@ -43,7 +43,7 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0xab24);
+    func_?(0x46e0);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).resettingBookkeeping;
@@ -61,77 +61,81 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
         CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
                   (this_00,1,(MethodInfo *)0x0);
         pEVar3 = (this->fields).cubeModelWrapper;
-        if ((pEVar3 != (EditableCubeModelWrapper *)0x0) &&
-           (pMVar4 = (pEVar3->fields).cubeModelBase, pMVar4 != (MVCubeModelInstance *)0x0)) {
-          pCVar5 = MVCubeModelBase::MVCubeModelBase_GetCube
-                             ((MVCubeModelBase *)pMVar4,(this->fields).zeroPos,(MethodInfo *)0x0);
-          if ((pCVar5 != (Cube *)0x0) &&
-             (pBVar6 = (pCVar5->fields)._.faceMaterials, pBVar6 != (Byte__Array *)0x0)) {
-            if (pBVar6->max_length == 0) {
-              func_?();
-            }
-            else {
-              pEVar3 = (this->fields).cubeModelWrapper;
-              if ((pEVar3 != (EditableCubeModelWrapper *)0x0) &&
-                 (pMVar4 = (pEVar3->fields).cubeModelBase, pMVar4 != (MVCubeModelInstance *)0x0))
-              {
-                MVCubeModelBase::MVCubeModelBase_RemoveCube
-                          ((MVCubeModelBase *)pMVar4,(this->fields).zeroPos,(MethodInfo *)0x0);
-                x = -1;
-                do {
-                  y = -1;
-                  do {
-                    z = -1;
-                    do {
-                      pEVar3 = (this->fields).cubeModelWrapper;
-                      if (pEVar3 == (EditableCubeModelWrapper *)0x0) goto code_?;
-                      this_01 = (pEVar3->fields).cubeModelBase;
-                      uVar7 = 0;
-                      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                ((IntVector *)&stack0xffffffec,x,y,z,(MethodInfo *)0x0);
-                      if (this_01 == (MVCubeModelInstance *)0x0) goto code_?;
-                      pos_00.y = 0;
-                      pos_00.z = 0;
-                      pos_00.x = uVar7;
-                      MVCubeModelBase::MVCubeModelBase_RemoveCube
-                                ((MVCubeModelBase *)this_01,pos_00,(MethodInfo *)0x0);
-                      material = (uint8_t)pMVar4;
-                      z = z + 1;
-                    } while (z < 2);
-                    y = y + 1;
-                  } while (y < 2);
-                  x = x + 1;
-                } while (x < 2);
+        if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
+          pMVar4 = (pEVar3->fields).cubeModelBase;
+          if (pMVar4 != (MVCubeModelInstance *)0x0) {
+            pCVar5 = MVCubeModelBase::MVCubeModelBase_GetCube
+                               ((MVCubeModelBase *)pMVar4,(this->fields).zeroPos,(MethodInfo *)0x0)
+            ;
+            if ((pCVar5 != (Cube *)0x0) &&
+               (pBVar6 = (pCVar5->fields)._.faceMaterials, pBVar6 != (Byte__Array *)0x0)) {
+              if (pBVar6->max_length == 0) {
+                func_?();
+              }
+              else {
                 pEVar3 = (this->fields).cubeModelWrapper;
-                if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-                  pMVar4 = (pEVar3->fields).cubeModelBase;
-                  iVar8 = (this->fields).zeroPos.x;
-                  uVar9 = (this->fields).zeroPos.y;
-                  iVar10 = (this->fields).zeroPos.z;
-                  if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  corners = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                            CubeBase_get_IdentityCorners((MethodInfo *)0x0);
-                  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor ==
-                      0) {
-                    func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-                  }
-                  pBVar6 = MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
-                            CubeDataPacker_CornersToByteArray(corners,(MethodInfo *)0x0);
-                  if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?(TypeInfo__Cube);
-                  }
-                  faceMaterials = Cube::Cube_CreateMaterialArray(material,(MethodInfo *)0x0);
-                  pCVar5 = (Cube *)func_?(TypeInfo__Cube);
-                  Cube::Cube__ctor(pCVar5,pBVar6,faceMaterials,(MethodInfo *)0x0);
-                  if (pMVar4 != (MVCubeModelInstance *)0x0) {
-                    pos.y = uVar9;
-                    pos.x = iVar8;
-                    pos.z = iVar10;
-                    MVCubeModelBase::MVCubeModelBase_AddCube
-                              ((MVCubeModelBase *)pMVar4,pos,(CubeBase *)pCVar5,(MethodInfo *)0x0);
-                    return 1;
+                if ((pEVar3 != (EditableCubeModelWrapper *)0x0) &&
+                   (pMVar4 = (pEVar3->fields).cubeModelBase, pMVar4 != (MVCubeModelInstance *)0x0)
+                   ) {
+                  MVCubeModelBase::MVCubeModelBase_RemoveCube
+                            ((MVCubeModelBase *)pMVar4,(this->fields).zeroPos,(MethodInfo *)0x0);
+                  x = -1;
+                  do {
+                    y = -1;
+                    do {
+                      z = -1;
+                      do {
+                        pEVar3 = (this->fields).cubeModelWrapper;
+                        if (pEVar3 == (EditableCubeModelWrapper *)0x0) goto code_?;
+                        this_01 = (pEVar3->fields).cubeModelBase;
+                        uVar7 = 0;
+                        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+                                  ((IntVector *)&stack0xffffffec,x,y,z,(MethodInfo *)0x0);
+                        if (this_01 == (MVCubeModelInstance *)0x0) goto code_?;
+                        pos_00.y = 0;
+                        pos_00.z = 0;
+                        pos_00.x = uVar7;
+                        MVCubeModelBase::MVCubeModelBase_RemoveCube
+                                  ((MVCubeModelBase *)this_01,pos_00,(MethodInfo *)0x0);
+                        material = (uint8_t)pMVar4;
+                        z = z + 1;
+                      } while (z < 2);
+                      y = y + 1;
+                    } while (y < 2);
+                    x = x + 1;
+                  } while (x < 2);
+                  pEVar3 = (this->fields).cubeModelWrapper;
+                  if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
+                    pMVar4 = (pEVar3->fields).cubeModelBase;
+                    iVar8 = (this->fields).zeroPos.x;
+                    uVar9 = (this->fields).zeroPos.y;
+                    iVar10 = (this->fields).zeroPos.z;
+                    if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+                      func_?();
+                    }
+                    corners = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                              CubeBase_get_IdentityCorners((MethodInfo *)0x0);
+                    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor
+                        == 0) {
+                      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+                    }
+                    pBVar6 = MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
+                              CubeDataPacker_CornersToByteArray(corners,(MethodInfo *)0x0);
+                    if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+                      func_?(TypeInfo__Cube);
+                    }
+                    faceMaterials = Cube::Cube_CreateMaterialArray(material,(MethodInfo *)0x0);
+                    pCVar5 = (Cube *)func_?(TypeInfo__Cube);
+                    Cube::Cube__ctor(pCVar5,pBVar6,faceMaterials,(MethodInfo *)0x0);
+                    if (pMVar4 != (MVCubeModelInstance *)0x0) {
+                      pos.y = uVar9;
+                      pos.x = iVar8;
+                      pos.z = iVar10;
+                      MVCubeModelBase::MVCubeModelBase_AddCube
+                                ((MVCubeModelBase *)pMVar4,pos,(CubeBase *)pCVar5,(MethodInfo *)0x0
+                                );
+                      return 1;
+                    }
                   }
                 }
               }

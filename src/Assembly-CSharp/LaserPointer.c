@@ -121,31 +121,32 @@ code_?:
     goto code_?;
   }
 code_?:
-  bVar9 = 0;
-  uVar10 = func_?();
-  sVar11 = (short)&stack0xfffffffc;
-  sVar12 = (short)unaff_EDI;
-  pbVar13 = (byte *)segment(in_SS,sVar11 + sVar12);
-  bVar14 = (byte)((ushort)unaff_BX >> 8);
-  bVar15 = CARRY1(*pbVar13,bVar14) || CARRY1(*pbVar13 + bVar14,bVar9);
-  uRam_? = uVar10;
-  *pbVar13 = *pbVar13 + bVar14 + bVar9;
-  pbVar13 = (byte *)segment(in_SS,sVar11 + (short)unaff_ESI);
-  bVar9 = *pbVar13 + (byte)uVar10;
-  bVar16 = CARRY1(*pbVar13,(byte)uVar10) || CARRY1(bVar9,bVar15);
-  *pbVar13 = bVar9 + bVar15;
-  pbVar13 = (byte *)segment(in_DS,unaff_BX + (short)unaff_ESI);
-  bVar9 = *pbVar13 + (byte)unaff_BX;
-  bVar15 = CARRY1(*pbVar13,(byte)unaff_BX) || CARRY1(bVar9,bVar16);
-  *pbVar13 = bVar9 + bVar16;
-  pbVar13 = (byte *)segment(in_SS,sVar11 + sVar12);
-  bVar9 = *pbVar13;
-  bVar17 = *pbVar13;
-  *pbVar13 = bVar17 + bVar14 + bVar15;
-  pcVar18 = (char *)segment(in_SS,sVar11 + sVar12);
-  *pcVar18 = *pcVar18 + bVar14 + (CARRY1(bVar9,bVar14) || CARRY1(bVar17 + bVar14,bVar15));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  cVar9 = '\0';
+  iVar10 = func_?();
+  piVar11 = (int *)(iVar10 + -0x46ecef99);
+  bVar12 = (byte)extraout_ECX & 0x1f;
+  iVar10 = *piVar11;
+  *piVar11 = *piVar11 >> bVar12;
+  bVar13 = (extraout_ECX & 0x1f) == 0;
+  bVar14 = bVar13 * cVar9 | !bVar13 * ((iVar10 >> bVar12 - 1 & 1U) != 0);
+  sVar15 = (short)&stack0xfffffffc;
+  sVar16 = (short)unaff_EDI;
+  pbVar17 = (byte *)segment(in_SS,sVar15 + sVar16 + -0x47);
+  bVar18 = (byte)(extraout_ECX >> 8);
+  bVar12 = *pbVar17 + bVar18;
+  bVar13 = CARRY1(*pbVar17,bVar18) || CARRY1(bVar12,bVar14);
+  *pbVar17 = bVar12 + bVar14;
+  pbVar17 = (byte *)segment(in_SS,sVar15 + (short)unaff_ESI);
+  bVar19 = CARRY1(*pbVar17,unaff_BH) || CARRY1(*pbVar17 + unaff_BH,bVar13);
+  *pbVar17 = *pbVar17 + unaff_BH + bVar13;
+  pbVar17 = (byte *)segment(in_SS,sVar15 + sVar16 + -0x47);
+  bVar12 = *pbVar17;
+  bVar18 = *pbVar17;
+  *pbVar17 = bVar18 + 0x10 + bVar19;
+  pcVar20 = (char *)segment(in_SS,sVar15 + sVar16 + -0x47);
+  *pcVar20 = *pcVar20 + '\x10' + (0xef < bVar12 || CARRY1(bVar18 + 0x10,bVar19));
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -491,9 +492,9 @@ code_?:
     uVar12 = (pVVar11->upVector).x;
     uVar13 = (pVVar11->upVector).y;
     if (pTVar1 == (Transform *)0x0) goto code_?;
-    value.y = (float)ppVVar4 + (float)uVar13 + fVar10 * _UNK_?;
-    value.x = (float)puVar3 + (float)uVar12 + fVar9 * _UNK_?;
-    value.z = fVar5 + (pVVar11->upVector).z + fVar8 * _UNK_?;
+    value.y = fVar10 * _UNK_? + (float)ppVVar4 + (float)uVar13;
+    value.x = fVar9 * _UNK_? + (float)puVar3 + (float)uVar12;
+    value.z = fVar8 * _UNK_? + fVar5 + (pVVar11->upVector).z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (pTVar1,value,(MethodInfo *)0x0);
   }
@@ -702,9 +703,9 @@ code_?:
                 fVar10 = pQVar37->y;
                 fVar36 = pQVar37->z;
                 fVar40 = pQVar37->w;
-                this = (LaserPointer *)
-                       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                                 ((MethodInfo *)0x0);
+                fVar41 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                                   ((MethodInfo *)0x0);
+                this = (LaserPointer *)(fVar41 * _UNK_?);
                 a.y = fVar10;
                 a.x = fVar5;
                 a.z = fVar36;
@@ -714,7 +715,7 @@ code_?:
                 b.z = fVar38;
                 b.w = fVar39;
                 pQVar37 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                                    ((Quaternion *)&stack0xffffffcc,a,b,(float)this * _UNK_?,
+                                    ((Quaternion *)&stack0xffffffcc,a,b,(float)this,
                                      (MethodInfo *)0x0);
                 fVar5 = pQVar37->x;
                 fVar8 = pQVar37->y;
@@ -733,11 +734,11 @@ code_?:
                                     ((Vector3 *)&stack0xffffffe0,rotation,
                                      TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                                      (MethodInfo *)0x0);
-                uVar41._0_4_ = pVVar2->x;
-                uVar41._4_4_ = pVVar2->y;
+                uVar42._0_4_ = pVVar2->x;
+                uVar42._4_4_ = pVVar2->y;
                 fVar8 = pVVar2->z;
-                fVar42 = (float10)func_?();
-                fVar5 = (float)fVar42;
+                fVar43 = (float10)func_?();
+                fVar5 = (float)fVar43;
                 fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                    ((MethodInfo *)0x0);
                 pLVar29 = (LaserPointer *)(fVar9 * _UNK_?);
@@ -748,8 +749,8 @@ code_?:
                   pLVar29 = _UNK_?;
                 }
                 fVar5 = (_UNK_? - fVar5) * (float)pLVar29 + fVar5;
-                (this_00->fields).relativeTargetPosition.x = (float)uVar41 * fVar5;
-                (this_00->fields).relativeTargetPosition.y = SUB84(uVar41,4) * fVar5;
+                (this_00->fields).relativeTargetPosition.x = (float)uVar42 * fVar5;
+                (this_00->fields).relativeTargetPosition.y = SUB84(uVar42,4) * fVar5;
                 (this_00->fields).relativeTargetPosition.z = fVar8 * fVar5;
                 return;
               }
@@ -761,8 +762,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar43 = (code *)swi(3);
-  (*pcVar43)();
+  pcVar44 = (code *)swi(3);
+  (*pcVar44)();
   return;
 }
 
@@ -1522,36 +1523,34 @@ void Assembly-CSharp.dll::LaserPointer::LaserPointer__ctor(LaserPointer *this,Me
   fVar1 = _UNK_?;
   fVar2 = _UNK_?;
   fVar3 = _UNK_?;
-  uVar4 = _UNK_?;
+  fVar4 = _UNK_?;
   uVar5 = _UNK_?;
-  (this->fields).beamObjectColor.r = _UNK_?;
+  (this->fields).offset.x = (float)_UNK_?;
+  fVar6 = _UNK_?;
+  fVar7 = _UNK_?;
+  fVar8 = _UNK_?;
+  fVar9 = _UNK_?;
+  (this->fields).offset.y = (float)uVar5;
+  (this->fields).offset.z = 0.5;
+  (this->fields).beamObjectColor.r = fVar4;
   (this->fields).beamObjectColor.g = fVar3;
   (this->fields).beamObjectColor.b = fVar2;
   (this->fields).beamObjectColor.a = fVar1;
   fVar1 = _UNK_?;
   fVar2 = _UNK_?;
   fVar3 = _UNK_?;
-  (this->fields).beamDeleteColor.r = _UNK_?;
-  (this->fields).beamDeleteColor.g = fVar3;
-  (this->fields).beamDeleteColor.b = fVar2;
-  (this->fields).beamDeleteColor.a = fVar1;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields).beamEditColor.r = _UNK_?;
+  fVar4 = _UNK_?;
+  (this->fields).beamDeleteColor.r = fVar9;
+  (this->fields).beamDeleteColor.g = fVar8;
+  (this->fields).beamDeleteColor.b = fVar7;
+  (this->fields).beamDeleteColor.a = fVar6;
+  (this->fields).beamEditColor.r = fVar4;
   (this->fields).beamEditColor.g = fVar3;
   (this->fields).beamEditColor.b = fVar2;
   (this->fields).beamEditColor.a = fVar1;
-  fVar6 = _UNK_?;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields).offset.x = (float)uVar5;
-  (this->fields).offset.y = (float)uVar4;
-  (this->fields).offset.z = 0.5;
-  (this->fields).beamColor.r = fVar3;
-  (this->fields).beamColor.g = fVar2;
-  (this->fields).beamColor.b = fVar1;
+  (this->fields).beamColor.r = fVar9;
+  (this->fields).beamColor.g = fVar8;
+  (this->fields).beamColor.b = fVar7;
   (this->fields).beamColor.a = fVar6;
   this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(

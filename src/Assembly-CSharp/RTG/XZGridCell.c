@@ -35,7 +35,7 @@ Assembly-CSharp.dll::RTG::XZGridCell::XZGridCell_FromPoint
   }
   ppMVar8 = (MethodInfo **)func_?(parentGrid,TypeInfo__RTG__IXZGrid,1);
 code_?:
-  pfVar9 = (float *)(*(code *)*ppMVar8)(&stack0xfffffec8,parentGrid,ppMVar8[1]);
+  pfVar9 = (float *)(*(code *)*ppMVar8)(&stack0xfffffed0,parentGrid,ppMVar8[1]);
   MStack_1.m00 = *pfVar9;
   MStack_1.m10 = pfVar9[1];
   MStack_1.m20 = pfVar9[2];
@@ -53,7 +53,7 @@ code_?:
   MStack_1.m23 = pfVar9[0xe];
   MStack_1.m33 = pfVar9[0xf];
   pMVar10 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                      ((Matrix4x4 *)&stack0xfffffec8,&MStack_1,(MethodInfo *)0x0);
+                     ((Matrix4x4 *)&stack0xfffffed0,&MStack_1,(MethodInfo *)0x0);
   MStack_2.m00 = pMVar10->m00;
   MStack_2.m10 = pMVar10->m10;
   MStack_2.m20 = pMVar10->m20;
@@ -71,7 +71,7 @@ code_?:
   MStack_2.m23 = pMVar10->m23;
   MStack_2.m33 = pMVar10->m33;
   pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                      (&VStack_12,&MStack_2,point,(MethodInfo *)0x0);
+                     (&VStack_12,&MStack_2,point,(MethodInfo *)0x0);
   VStack_13.x = pVVar11->x;
   VStack_13.y = pVVar11->y;
   fStack_14 = VStack_13.x / cellSizeX;
@@ -104,37 +104,23 @@ code_?:
   pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
   uStack_20._0_4_ = (pVVar19->rightVector).x;
   uStack_20._4_4_ = (pVVar19->rightVector).y;
-  fStack_21 = (pVVar19->rightVector).z;
-  fVar22 = (float)(int)fVar16;
-  fStack_23 = (float)(undefined4)uStack_20 * fVar22 * cellSizeX;
-  uStack_24._4_4_ = (float)uStack_20._4_4_ * fVar22 * cellSizeX;
-  fStack_14 = fStack_21 * fVar22 * cellSizeX;
-  uStack_25 = 0;
-  uStack_26 = 0;
-  uStack_27 = 0;
-  uVar28 = 0;
-  uVar29 = 0;
-  uVar30 = 0;
+  fVar21 = (float)(int)fVar16;
+  uStack_22._4_4_ = (float)(undefined4)uStack_20 * fVar21 * cellSizeX;
+  fStack_23 = (float)uStack_20._4_4_ * fVar21 * cellSizeX;
+  fStack_14 = (pVVar19->rightVector).z * fVar21 * cellSizeX;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
-    uVar28 = uStack_25;
-    uVar29 = uStack_26;
-    uVar30 = uStack_27;
   }
-  uStack_27 = uVar30;
-  uStack_26 = uVar29;
-  uStack_25 = uVar28;
   pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
   uStack_20._0_4_ = (pVVar19->forwardVector).x;
   uStack_20._4_4_ = (pVVar19->forwardVector).y;
-  fStack_21 = (pVVar19->forwardVector).z;
-  fVar22 = (float)(int)fVar18;
-  fStack_23 = fStack_23 + (float)(undefined4)uStack_20 * fVar22 * cellSizeZ;
-  uStack_24._4_4_ = uStack_24._4_4_ + (float)uStack_20._4_4_ * fVar22 * cellSizeZ;
-  fStack_14 = fStack_14 + fStack_21 * fVar22 * cellSizeZ;
-  VStack_13.y = uStack_24._4_4_;
-  VStack_13.x = fStack_23;
+  fVar21 = (float)(int)fVar18;
+  uStack_22._4_4_ = uStack_22._4_4_ + (float)(undefined4)uStack_20 * fVar21 * cellSizeZ;
+  fStack_23 = fStack_23 + (float)uStack_20._4_4_ * fVar21 * cellSizeZ;
+  fStack_14 = fStack_14 + (pVVar19->forwardVector).z * fVar21 * cellSizeZ;
+  VStack_13.y = fStack_23;
+  VStack_13.x = uStack_22._4_4_;
   VStack_13.z = fStack_14;
   if (cRam_? == '\0') {
     func_?();
@@ -143,10 +129,9 @@ code_?:
   pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
   uStack_20._0_4_ = (pVVar19->rightVector).x;
   uStack_20._4_4_ = (pVVar19->rightVector).y;
-  fStack_21 = (pVVar19->rightVector).z;
-  fStack_23 = fStack_23 + (float)(undefined4)uStack_20 * cellSizeX;
-  uStack_24._4_4_ = uStack_24._4_4_ + (float)uStack_20._4_4_ * cellSizeX;
-  fStack_14 = fStack_14 + fStack_21 * cellSizeX;
+  uStack_22._4_4_ = uStack_22._4_4_ + (float)(undefined4)uStack_20 * cellSizeX;
+  fStack_23 = fStack_23 + (float)uStack_20._4_4_ * cellSizeX;
+  fStack_14 = fStack_14 + (pVVar19->rightVector).z * cellSizeX;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -154,39 +139,41 @@ code_?:
   pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
   uStack_20._0_4_ = (pVVar19->forwardVector).x;
   uStack_20._4_4_ = (pVVar19->forwardVector).y;
-  fStack_21 = (pVVar19->forwardVector).z;
-  fStack_23 = fStack_23 + (float)(undefined4)uStack_20 * cellSizeZ;
-  uStack_24._4_4_ = uStack_24._4_4_ + (float)uStack_20._4_4_ * cellSizeZ;
-  VStack_12.z = fStack_14 + fStack_21 * cellSizeZ;
+  fStack_24 = (float)(undefined4)uStack_20 * cellSizeZ + uStack_22._4_4_;
+  VStack_12.z = (pVVar19->forwardVector).z * cellSizeZ + fStack_14;
+  uStack_25 = 0;
+  uStack_26 = 0;
+  uStack_27 = 0;
   point_00.z = VStack_13.z;
   point_00.x = VStack_13.x;
   point_00.y = VStack_13.y;
+  fStack_14 = (float)uStack_20._4_4_ * cellSizeZ + fStack_23;
   pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                      (&VStack_13,&MStack_1,point_00,(MethodInfo *)0x0);
-  uStack_20._0_4_ = pVVar11->x;
-  uStack_20._4_4_ = pVVar11->y;
-  fStack_14 = pVVar11->z;
-  point_01.y = uStack_24._4_4_;
-  point_01.x = fStack_23;
+                     (&VStack_13,&MStack_1,point_00,(MethodInfo *)0x0);
+  uStack_22._0_4_ = pVVar11->x;
+  uStack_22._4_4_ = pVVar11->y;
+  fStack_23 = pVVar11->z;
+  point_01.y = fStack_14;
+  point_01.x = fStack_24;
   point_01.z = VStack_12.z;
   pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                      (&VStack_12,&MStack_1,point_01,(MethodInfo *)0x0);
-  uStack_24._0_4_ = pVVar11->x;
-  uStack_24._4_4_ = pVVar11->y;
-  fVar22 = pVVar11->z;
+                     (&VStack_12,&MStack_1,point_01,(MethodInfo *)0x0);
+  uStack_20._0_4_ = pVVar11->x;
+  uStack_20._4_4_ = pVVar11->y;
+  fVar21 = pVVar11->z;
   method_00 = TypeInfo__RTG__XZGridCell;
   pXVar4 = (XZGridCell *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)pXVar4,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (pXVar4->fields)._xIndex = (int)dStack_17;
-  (pXVar4->fields)._min.x = (float)(undefined4)uStack_20;
-  (pXVar4->fields)._min.y = (float)uStack_20._4_4_;
+  (pXVar4->fields)._min.x = (float)(undefined4)uStack_22;
+  (pXVar4->fields)._min.y = uStack_22._4_4_;
   (pXVar4->fields)._zIndex = (int)dStack_15;
-  (pXVar4->fields)._min.z = fStack_14;
+  (pXVar4->fields)._min.z = fStack_23;
   (pXVar4->fields)._parentGrid = parentGrid;
-  (pXVar4->fields)._max.x = (float)(undefined4)uStack_24;
-  (pXVar4->fields)._max.y = uStack_24._4_4_;
-  (pXVar4->fields)._max.z = fVar22;
+  (pXVar4->fields)._max.x = (float)(undefined4)uStack_20;
+  (pXVar4->fields)._max.y = (float)uStack_20._4_4_;
+  (pXVar4->fields)._max.z = fVar21;
   func_?();
   return pXVar4;
 }
@@ -313,7 +300,7 @@ Vector3 * Assembly-CSharp.dll::RTG::XZGridCell::XZGridCell_get_Center
   uVar4 = (this->fields)._max.y;
   fVar5 = ((this->fields)._max.z + (this->fields)._min.z) * _UNK_?;
   fVar6 = ((float)uVar4 + (float)uVar2) * _UNK_?;
-  __return_storage_ptr__->x = ((float)uVar3 + (float)uVar1) * _UNK_?;
+  __return_storage_ptr__->x = ((float)uVar1 + (float)uVar3) * _UNK_?;
   __return_storage_ptr__->y = fVar6;
   __return_storage_ptr__->z = fVar5;
   return __return_storage_ptr__;

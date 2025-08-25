@@ -729,7 +729,7 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_OnIsDeadChange
               func_?();
             }
             position_00.y = (float)uVar20 + fVar12;
-            position_00.x = (float)uVar19 + fVar11;
+            position_00.x = fVar11 + (float)uVar19;
             position_00.z = fVar13 + fVar6;
             SharedWorldObjectGameplayFunctions+Explosion::
             SharedWorldObjectGameplayFunctions_Explosion_Explode
@@ -749,7 +749,7 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_OnIsDeadChange
           uVar21 = pVVar14->x;
           uVar22 = pVVar14->y;
           fVar13 = pVVar14->z;
-          fVar23 = (float)uVar21 + fVar11;
+          fVar23 = fVar11 + (float)uVar21;
           this_00 = (ExplosionEvent *)
                     func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
           worldPosition.y = (float)uVar22 + fVar12;

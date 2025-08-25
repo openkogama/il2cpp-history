@@ -295,7 +295,7 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_3
     cRam_? = '\x01';
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._Name_k__BackingField = name;
   func_?(&(this->fields)._Name_k__BackingField,name);
   (this->fields)._Description_k__BackingField = description;

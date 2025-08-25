@@ -150,26 +150,25 @@ int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMostAligned
     }
     uVar1 = 0xffffffff;
     uVar2 = 0;
+    fVar3 = _UNK_?;
     if (checkSameDirection == 0) {
-      fVar3 = _UNK_?;
       for (; (int)uVar2 < (int)vectors->max_length; uVar2 = uVar2 + 1) {
         if (vectors->max_length <= uVar2) goto code_?;
         uVar4 = vectors->vector[uVar2].x;
         uVar5 = vectors->vector[uVar2].y;
-        fVar6 = (float)((uint)(dir.x * (float)uVar4 + dir.y * (float)uVar5 +
+        fVar6 = (float)((uint)(dir.y * (float)uVar5 + dir.x * (float)uVar4 +
                                dir.z * vectors->vector[uVar2].z) & _UNK_?);
         uVar7 = uVar2;
         if (fVar6 <= fVar3) {
           uVar7 = uVar1;
           fVar6 = fVar3;
         }
-        fVar3 = fVar6;
         uVar1 = uVar7;
+        fVar3 = fVar6;
       }
     }
     else {
       pVVar8 = vectors->vector;
-      fVar3 = _UNK_?;
       for (; (int)uVar2 < (int)vectors->max_length; uVar2 = uVar2 + 1) {
         if (vectors->max_length <= uVar2) goto code_?;
         uVar9 = pVVar8->x;
@@ -298,7 +297,7 @@ Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetPointCloudCenter
         if (apiStack_20[0] != (int *)0x0) {
           func_?(0,TypeInfo__System__IDisposable,apiStack_20[0]);
         }
-        fVar23 = (fStack_12 + fStack_18) * _UNK_?;
+        fVar23 = (fStack_18 + fStack_12) * _UNK_?;
         fVar25 = (fStack_10 + fStack_16) * _UNK_?;
         __return_storage_ptr__->x = (fStack_8 + fStack_14) * _UNK_?;
         __return_storage_ptr__->y = fVar25;
@@ -359,12 +358,12 @@ code_?:
       uStack_39 = uVar38;
       uStack_37 = uVar35;
       fStack_40 = fStack_36;
+      fStack_19 = fStack_36;
       fStack_9 = fStack_8;
       fStack_11 = fStack_10;
       fStack_13 = fStack_12;
       fStack_15 = fStack_14;
       fStack_17 = fStack_16;
-      fStack_19 = fStack_36;
       fVar23 = fStack_36;
       if (fStack_18 < fStack_36) {
         fStack_19 = fStack_18;
@@ -411,7 +410,7 @@ bool Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_IsAligned
                (Vector3 vector,Vector3 other,bool checkSameDirection,MethodInfo *method)
 
 {
-  fVar1 = other.x * vector.x + vector.y * other.y + vector.z * other.z;
+  fVar1 = vector.x * other.x + vector.y * other.y + vector.z * other.z;
   if (checkSameDirection == 0) {
     return (float)((uint)((float)((uint)fVar1 & _UNK_?) - _UNK_?) & _UNK_?) <
            _UNK_?;
@@ -477,7 +476,7 @@ bool Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_PointsSameDir
                (Vector3 vector,Vector3 other,MethodInfo *method)
 
 {
-  return _UNK_? < vector.x * other.x + other.y * vector.y + vector.z * other.z;
+  return _UNK_? < vector.x * other.x + vector.y * other.y + vector.z * other.z;
 }
 
 
@@ -527,7 +526,7 @@ float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_SignedAngle
                      ((Vector3 *)&stack0xffffffd4,value,pMVar2);
   uVar5 = pVVar1->x;
   uVar6 = pVVar1->y;
-  fVar3 = (float)uVar6 * (float)pMVar2 + fVar4 * (float)uVar5 + pVVar1->z * fVar3;
+  fVar3 = (float)uVar6 * (float)pMVar2 + (float)uVar5 * fVar4 + pVVar1->z * fVar3;
   if (_UNK_? - fVar3 < _UNK_?) {
     return 0.0;
   }
@@ -544,7 +543,7 @@ float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_SignedAngle
     pMVar2 = (MethodInfo *)pVVar1->z;
     fVar3 = MathEx::MathEx_SafeAcos(cosine,pMVar2);
     to.z = fVar3 * _UNK_?;
-    if (axis.y * cosine + axis.x * 4.4041916e-29 + axis.z * (float)pMVar2 < 0.0) {
+    if (axis.y * cosine + axis.x * 4.4075572e-29 + axis.z * (float)pMVar2 < 0.0) {
       to.z = (float)((uint)to.z ^
                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     }

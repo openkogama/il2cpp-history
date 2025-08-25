@@ -914,8 +914,10 @@ Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_AvatarLocal
                 ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,(Object **)&this,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                 );
-      if (((this != (MVLocalPlayer *)0x0) &&
-          ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this->klass->_1).naturalAligment)) &&
+      if (this == (MVLocalPlayer *)0x0) {
+        return (MVAvatarLocal *)0x0;
+      }
+      if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this->klass->_1).naturalAligment) &&
          ((MVAvatarLocal__Class *)
           (this->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
           TypeInfo__MVAvatarLocal)) {

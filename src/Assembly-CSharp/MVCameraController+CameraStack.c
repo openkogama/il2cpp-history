@@ -741,7 +741,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::
           if (index != iVar2) {
             return;
           }
-          if (index < 1) {
+          if (index == 0) {
             return;
           }
           pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)

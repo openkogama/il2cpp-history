@@ -47,9 +47,10 @@ Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_CalcBaseCornerPoints
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar12,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-  VStack_2.x = baseCenter.x + fStack_6 * fVar8 + (float)(undefined *)uStack_9 * fVar11;
-  VStack_2.y = baseCenter.y + fStack_7 * fVar8 + (float)uStack_9._4_4_ * fVar11;
-  VStack_2.z = baseCenter.z + (float)pMStack_5 * fVar8 + fStack_10 * fVar11;
+  fVar13 = (float)(undefined *)uStack_9;
+  VStack_2.x = (float)(undefined *)uStack_9 * fVar11 + baseCenter.x + fStack_6 * fVar8;
+  VStack_2.y = (float)uStack_9._4_4_ * fVar11 + baseCenter.y + fStack_7 * fVar8;
+  VStack_2.z = fStack_10 * fVar11 + baseCenter.z + (float)pMStack_5 * fVar8;
   if (pLVar12 != (List_1_UnityEngine_Vector3_ *)0x0) {
     pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
@@ -60,7 +61,7 @@ Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_CalcBaseCornerPoints
     uStack_9._4_4_ = pLVar12;
     func_?();
     VStack_2.z = (baseCenter.z + (float)pMStack_5 * fVar8) - fStack_10 * fVar11;
-    fStack_10 = (baseCenter.x + fStack_6 * fVar8) - (float)(undefined *)uStack_9 * fVar11;
+    fStack_10 = (baseCenter.x + fStack_6 * fVar8) - fVar13 * fVar11;
     fStack_6 = (baseCenter.y + fStack_7 * fVar8) - (float)uStack_9._4_4_ * fVar11;
     pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
@@ -69,7 +70,7 @@ Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_CalcBaseCornerPoints
     uStack_9._4_4_ = pLVar12;
     func_?();
     VStack_2.z = (baseCenter.z - (float)pMStack_5 * fVar8) - fStack_10 * fVar11;
-    fStack_10 = (baseCenter.x - fStack_6 * fVar8) - (float)(undefined *)uStack_9 * fVar11;
+    fStack_10 = (baseCenter.x - fStack_6 * fVar8) - fVar13 * fVar11;
     fStack_6 = (baseCenter.y - fStack_7 * fVar8) - (float)uStack_9._4_4_ * fVar11;
     pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
@@ -77,9 +78,9 @@ Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_CalcBaseCornerPoints
     fStack_7 = VStack_2.z;
     uStack_9._4_4_ = pLVar12;
     func_?();
-    VStack_2.z = (baseCenter.z - (float)pMStack_5 * fVar8) + fStack_10 * fVar11;
-    fStack_10 = (baseCenter.x - fStack_6 * fVar8) + (float)(undefined *)uStack_9 * fVar11;
-    fStack_6 = (baseCenter.y - fStack_7 * fVar8) + (float)uStack_9._4_4_ * fVar11;
+    VStack_2.z = fStack_10 * fVar11 + (baseCenter.z - (float)pMStack_5 * fVar8);
+    fStack_10 = fVar13 * fVar11 + (baseCenter.x - fStack_6 * fVar8);
+    fStack_6 = (float)uStack_9._4_4_ * fVar11 + (baseCenter.y - fStack_7 * fVar8);
     pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
     uStack_9 = CONCAT44(pLVar12,&UNK_?);
@@ -88,8 +89,8 @@ Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_CalcBaseCornerPoints
     return pLVar12;
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pLVar12 = (List_1_UnityEngine_Vector3_ *)(*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  pLVar12 = (List_1_UnityEngine_Vector3_ *)(*pcVar14)();
   return pLVar12;
 }
 
@@ -347,8 +348,8 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_ContainsPoint
           VStack_5.x = pVVar4->x;
           VStack_5.y = pVVar4->y;
           VStack_5.z = pVVar4->z;
-          fVar2 = fStack_30 + VStack_5.y * baseDepth;
-          fVar3 = fStack_31 + VStack_5.z * baseDepth;
+          fVar2 = VStack_5.z * baseDepth + fStack_31;
+          fVar3 = VStack_5.y * baseDepth + fStack_30;
           fVar14 = 0.0;
           a_02.y = fVar25;
           a_02.x = fVar24;
@@ -356,12 +357,12 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_ContainsPoint
           b_02.y = fStack_30;
           b_02.x = fVar33;
           b_02.z = fVar1;
-          c_02.y = fVar2;
-          c_02.x = fVar33 + VStack_5.x * baseDepth;
-          c_02.z = fVar3;
+          c_02.y = fVar3;
+          c_02.x = VStack_5.x * baseDepth + fVar33;
+          c_02.z = fVar2;
           UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor_2
                     ((Plane *)&stack0xffffffb0,a_02,b_02,c_02,(MethodInfo *)0x0);
-          if (fVar2 * (float)uVar6 + fVar3 * (float)uVar7 + fVar14 * fVar8 + 0.0 <=
+          if (fVar3 * (float)uVar6 + fVar2 * (float)uVar7 + fVar14 * fVar8 + 0.0 <=
               epsilon._ptContainEps) {
             return 1;
           }
@@ -535,12 +536,12 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_Raycast
       fVar4 = fVar5;
     }
     ray.m_Direction.z = fVar4;
-    baseDepth = 0.0;
-    height = 0.0;
+    baseWidth = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
     pVVar30 = &TypeInfo__UnityEngine__Vector3->static_fields->forwardVector;
     uVar34 = pVVar30->x;
     uVar35 = pVVar30->y;
-    baseWidth = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
+    baseDepth = 0.0;
+    height = 0.0;
     ray.m_Direction.y = 0.0;
     ray.m_Origin.y = (float)uVar34;
     ray.m_Origin.z = (float)uVar35;
@@ -794,42 +795,42 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_Raycast
   c_02.y = fVar3;
   c_02.x = fVar1;
   c_02.z = fVar2 + (pVVar12->rightVector).z * baseWidth;
-  fVar20 = fVar4;
-  fVar21 = fVar6;
+  fVar21 = fVar4;
+  fVar63 = fVar6;
   UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor_2
             ((Plane *)&stack0xffffff60,a_02,b_02,c_02,(MethodInfo *)0x0);
+  fVar20 = ray.m_Direction.y;
   fVar19 = ray.m_Direction.x;
   fVar18 = ray.m_Origin.z;
   fVar15 = ray.m_Origin.y;
   fVar2 = ray.m_Origin.x;
-  ray.m_Direction.z = (float)&stack0xffffffdc;
   ray.m_Origin.x = ray.m_Origin.y;
   ray.m_Origin.y = ray.m_Origin.z;
   ray.m_Origin.z = ray.m_Direction.x;
   ray.m_Direction.x = ray.m_Direction.y;
+  ray.m_Direction.y = ray.m_Direction.z;
   ray_00.m_Origin.y = fVar15;
   ray_00.m_Origin.x = fVar2;
   ray_00.m_Origin.z = fVar18;
   ray_00.m_Direction.x = fVar19;
-  ray_00.m_Direction.y = ray.m_Direction.y;
+  ray_00.m_Direction.y = fVar20;
   ray_00.m_Direction.z = ray.m_Direction.z;
-  ray.m_Direction.y = ray.m_Direction.z;
+  ray.m_Direction.z = (float)&stack0xffffffdc;
   bVar22 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                     ((Plane *)&stack0xffffff60,ray_00,(float *)ray.m_Direction.z,(MethodInfo *)0x0)
-  ;
+                     ((Plane *)&stack0xffffff60,ray_00,(float *)&stack0xffffffdc,(MethodInfo *)0x0);
   if (bVar22 != 0) {
     pVVar30 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                        ((Vector3 *)&stack0xffffffe0,&ray,fVar21,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffe0,&ray,fVar63,(MethodInfo *)0x0);
     fVar18 = pVVar30->x;
-    fVar63 = pVVar30->y;
+    fVar20 = pVVar30->y;
     fVar2 = pVVar30->z;
     fVar15 = fVar18;
-    fVar19 = fVar63;
+    fVar19 = fVar20;
     baseDepth = fVar6;
     if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
       fVar15 = fVar18;
-      fVar19 = fVar63;
+      fVar19 = fVar20;
       baseDepth = fVar6;
     }
     ray.m_Direction.z = fVar2;
@@ -847,7 +848,7 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_Raycast
     p1.z = fVar16;
     p2.y = fVar3;
     p2.x = fVar1;
-    p2.z = fVar20;
+    p2.z = fVar21;
     bVar22 = TriangleMath::TriangleMath_Contains3DPoint
                        (point,0,p0,p1,p2,(TriangleEpsilon)ZEXT812(0),(MethodInfo *)0x0);
     if (bVar22 != 0) {
@@ -917,17 +918,17 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_Raycast
                      ((Plane *)&stack0xffffff60,ray_01,(float *)&stack0xffffffdc,(MethodInfo *)0x0);
   if (bVar22 != 0) {
     pVVar30 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                        ((Vector3 *)&stack0xffffff80,&ray,fVar21,(MethodInfo *)0x0);
-    fVar20 = pVVar30->x;
-    fVar21 = pVVar30->y;
+                        ((Vector3 *)&stack0xffffff80,&ray,fVar63,(MethodInfo *)0x0);
+    fVar21 = pVVar30->x;
+    fVar63 = pVVar30->y;
     fVar4 = pVVar30->z;
     if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     p0_00.y = (float)puVar55;
     p0_00.x = (float)pfVar38;
-    point_00.y = fVar21;
-    point_00.x = fVar20;
+    point_00.y = fVar63;
+    point_00.x = fVar21;
     point_00.z = fVar4;
     p0_00.z = (float)this_01;
     p1_00.y = fVar6;

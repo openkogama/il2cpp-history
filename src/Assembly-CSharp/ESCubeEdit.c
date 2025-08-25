@@ -677,12 +677,7 @@ code_?:
                 ((Object_1 *)pGVar1,(MethodInfo *)0x0);
     }
     pOVar7 = (Object *)(this->fields).constraint;
-    if (((pOVar7 == (Object *)0x0) ||
-        ((pOVar7->klass->_1).naturalAligment <
-         (TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment)) ||
-       ((pOVar7->klass->_1).typeHierarchy
-        [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] !=
-        (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
+    if (pOVar7 == (Object *)0x0) {
 code_?:
       (this->fields).constraint = (IModelingConstraint *)0x0;
       func_?(&(this->fields).constraint,0);
@@ -728,7 +723,22 @@ code_?:
       }
       goto code_?;
     }
-    object_00 = pOVar7;
+    if (((pOVar7->klass->_1).naturalAligment <
+         (TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment) ||
+       ((pOVar7->klass->_1).typeHierarchy
+        [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
+      bVar13 = false;
+    }
+    else {
+      bVar13 = true;
+    }
+    pOVar14 = (Object *)0x0;
+    if (bVar13) {
+      pOVar14 = pOVar7;
+    }
+    if (pOVar14 == (Object *)0x0) goto code_?;
+    pOVar7 = pOVar14;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__Action<CubeModelChangedEventArgs>);
       func_?(&
@@ -736,37 +746,37 @@ code_?:
                      );
       cRam_? = '\x01';
     }
-    pOVar13 = pOVar7[0xc].klass;
-    if (pOVar13 == (Object__Class *)0x0) goto code_?;
-    pDVar14 = (Delegate *)pOVar13[1]._0.byval_arg.data.typeHandle;
+    pOVar15 = pOVar14[0xc].klass;
+    if (pOVar15 == (Object__Class *)0x0) goto code_?;
+    pDVar16 = (Delegate *)pOVar15[1]._0.byval_arg.data.typeHandle;
     this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
     DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_03,object_00,
+              (this_03,pOVar7,
                MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_
                ,(MethodInfo *)0x0);
-    pDVar14 = mscorlib.dll::System::Delegate::Delegate_Remove
-                        (pDVar14,(Delegate *)this_03,(MethodInfo *)0x0);
-    if (pDVar14 == (Delegate *)0x0) {
-      pOVar13[1]._0.byval_arg.data.dummy = (void *)0x0;
+    pDVar16 = mscorlib.dll::System::Delegate::Delegate_Remove
+                        (pDVar16,(Delegate *)this_03,(MethodInfo *)0x0);
+    if (pDVar16 == (Delegate *)0x0) {
+      pOVar15[1]._0.byval_arg.data.dummy = (void *)0x0;
       e = (EditorStateMachine *)0x0;
 code_?:
       func_?();
       goto code_?;
     }
-    pvVar15 = (void *)func_?();
-    if (pvVar15 == (void *)0x0) goto code_?;
-    pOVar13[1]._0.byval_arg.data.dummy = pvVar15;
+    pvVar17 = (void *)func_?();
+    if (pvVar17 == (void *)0x0) goto code_?;
+    pOVar15[1]._0.byval_arg.data.dummy = pvVar17;
     e = (EditorStateMachine *)func_?();
     if (e != (EditorStateMachine *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

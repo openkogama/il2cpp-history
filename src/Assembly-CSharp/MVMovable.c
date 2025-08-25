@@ -497,20 +497,19 @@ void Assembly-CSharp.dll::MVMovable::MVMovable_Move
     }
     if ((this_02->fields).pausedMovement == 0) {
       pMVar19 = (this_02->fields)._CubeModel_k__BackingField;
-      fVar11 = ((fStack_21 * VStack_29.z - fStack_38 * fStack_39) - (float)uStack_20 * VStack_29.x)
+      fVar11 = ((VStack_29.z * fStack_21 - fStack_38 * fStack_39) - (float)uStack_20 * VStack_29.x)
                - VStack_29.y * uStack_20._4_4_;
-      fVar40 = (fStack_39 * VStack_29.x + VStack_29.z * uStack_20._4_4_ + fStack_21 * VStack_29.y) -
+      fVar40 = (fStack_39 * VStack_29.x + VStack_29.z * uStack_20._4_4_ + VStack_29.y * fStack_21) -
                fStack_38 * (float)uStack_20;
-      fVar15 = VStack_29.x * uStack_20._4_4_;
-      VStack_29.x = (fStack_38 * uStack_20._4_4_ +
-                    VStack_29.z * (float)uStack_20 + fStack_21 * VStack_29.x) -
-                    fStack_39 * VStack_29.y;
-      fStack_38 = ((float)uStack_20 * VStack_29.y + VStack_29.z * fStack_39 + fStack_21 * fStack_38)
-                  - fVar15;
+      fVar15 = (fStack_38 * uStack_20._4_4_ +
+               VStack_29.z * (float)uStack_20 + VStack_29.x * fStack_21) - fStack_39 * VStack_29.y;
+      fStack_38 = ((float)uStack_20 * VStack_29.y + VStack_29.z * fStack_39 + fStack_38 * fStack_21)
+                  - VStack_29.x * uStack_20._4_4_;
+      VStack_29.x = fVar15;
       VStack_29.y = fVar40;
       VStack_29.z = fVar11;
       if (pMVar19 == (MVCubeModelInstance *)0x0) goto code_?;
-      value.y = VStack_29.x;
+      value.y = fVar15;
       value.x = fStack_38;
       value.z = fVar40;
       value.w = fVar11;
@@ -1063,7 +1062,7 @@ code_?:
           pSVar41 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
           method_00.m_Index = 3;
           func_?(3,pSVar41);
-          uVar26 = 0x4103402f7;
+          uVar26 = 0x410343fa7;
           pSVar41 = StringLiteral__to_move__If_this_is_a_new_movab;
           func_?();
           pMStack_21 = (MVMovable *)
@@ -1351,49 +1350,51 @@ void Assembly-CSharp.dll::MVMovable::MVMovable_SetOrgRotation
   euler.x = (float)uVar2 * _UNK_?;
   euler.z = pVVar1->z * _UNK_?;
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive
-                     ((Vector3 *)&stack0xffffffd8,euler,(MethodInfo *)0x0);
+                     ((Vector3 *)&stack0xffffffe4,euler,(MethodInfo *)0x0);
   uVar4._0_4_ = pVVar1->x;
   uVar4._4_4_ = pVVar1->y;
   fVar5 = pVVar1->z;
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+    puVar6 = &UNK_?;
     func_?();
+    uVar4 = CONCAT44(puVar6,(undefined4)uVar4);
   }
   vec.z = fVar5;
   vec.x = (float)(int)uVar4;
   vec.y = (float)(int)((ulonglong)uVar4 >> 0x20);
-  pSVar6 = Extensions::Extensions_ToSerializeString(vec,(MethodInfo *)0x0);
+  pSVar7 = Extensions::Extensions_ToSerializeString(vec,(MethodInfo *)0x0);
   if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__set_Item
-              (this_00,(Object *)StringLiteral_Rotation,(Object *)pSVar6,
+              (this_00,(Object *)StringLiteral_Rotation,(Object *)pSVar7,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
               );
     if (syncServer == 0) {
       return;
     }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    pSVar6 = StringLiteral_Rotation;
+    pSVar7 = StringLiteral_Rotation;
     worldObjectID = (this->fields)._._._._.id;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    if (pSVar6 != (String *)0x0) {
-      pSVar6 = (String *)(*(code *)(pSVar6->klass->vtable).ToString.method)();
-      pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_BlueprintData_,pSVar6,(MethodInfo *)0x0);
+    if (pSVar7 != (String *)0x0) {
+      pSVar7 = (String *)(*(code *)(pSVar7->klass->vtable).ToString.method)();
+      pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_BlueprintData_,pSVar7,(MethodInfo *)0x0);
       value = (Object *)func_?();
       if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
         MVNetworkGame+OperationRequests::
         MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
-                  (this_01,worldObjectID,pSVar6,value,(MethodInfo *)0x0);
+                  (this_01,worldObjectID,pSVar7,value,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

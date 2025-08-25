@@ -359,8 +359,8 @@ code_?:
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar23 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar20,StringLiteral_RecoilStrength,*pfVar23,fStack_22,4.053718e-29,(MethodInfo *)0x0
-              );
+              (pSVar20,StringLiteral_RecoilStrength,*pfVar23,fStack_22,4.0574303e-29,
+               (MethodInfo *)0x0);
     pSVar26 = (this->fields).RecoilStrengthInputSlider;
     pDVar27 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
     ;
@@ -429,7 +429,7 @@ code_?:
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar23 = (float *)func_?();
     SettingsSlider::SettingsSlider_Initialize
-              (pSVar20,StringLiteral_AttackCooldown,*pfVar23,4.053704e-29,(float)pDVar2,
+              (pSVar20,StringLiteral_AttackCooldown,*pfVar23,4.0574162e-29,(float)pDVar2,
                (MethodInfo *)0x0);
     pSVar26 = (this->fields).attackCooldownInputSlider;
     pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).itemData
@@ -688,12 +688,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Melee
   }
   bVar1 = mscorlib.dll::System::String::String_op_Equality
                     ((this->fields).editingColorKey,StringLiteral_TrailColor,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pIVar2 = (this->fields).hitEffectColorImage;
-  }
-  else {
-    pIVar2 = (this->fields).trailColorImage;
-  }
+  pIVar2 = (&(this->fields).trailColorImage)[bVar1 ^ 1];
   pSVar3 = (this->fields).colorR;
   if (pSVar3 != (SettingsSlider *)0x0) {
     pEVar4 = (Extensions__Class *)SettingsSlider::SettingsSlider_get_Value(pSVar3,(MethodInfo *)0x0)

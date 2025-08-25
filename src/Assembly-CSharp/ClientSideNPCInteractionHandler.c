@@ -29,27 +29,29 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
   if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__InteractionData);
   }
+  this_00 = this;
   cVar1 = (*(code *)(this->klass->vtable).CanHandle.method)
-                    (this,interaction._16_4_,_interactionIsLocal,
+                    (this,interaction._16_4_ & 0xff,_interactionIsLocal,
                      (this->klass->vtable).HandleInteraction.methodPtr);
   if (cVar1 == '\0') {
     return 0;
   }
   bVar2 = InteractionDataHandlerBase::InteractionDataHandlerBase_IsFriendlyFire
-                    ((InteractionDataHandlerBase *)this,interactor,(MethodInfo *)0x0);
+                    ((InteractionDataHandlerBase *)this_00,interactor,(MethodInfo *)0x0);
   if (bVar2 == 0) {
-    pHVar3 = (HashSet_1_System_ByteEnum_ *)(this->fields).unableToDamageNPCs;
+    pHVar3 = (HashSet_1_System_ByteEnum_ *)(this_00->fields).unableToDamageNPCs;
     if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__InteractionData);
     }
+    this = (ClientSideNPCInteractionHandler *)CONCAT31(this._1_3_,interaction.interactionType);
     if (pHVar3 == (HashSet_1_System_ByteEnum_ *)0x0) goto code_?;
     bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
             HashSet_1_System_ByteEnum__Contains
-                      (pHVar3,interaction._16_4_,
+                      (pHVar3,(ByteEnum__Enum)this,
                        MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::InteractionPackageType>__Contains_MV__WorldObject__InteractionPackageType_
                       );
     if (bVar2 == 0) {
-      pMVar4 = (this->fields)._._.worldObjectParent;
+      pMVar4 = (this_00->fields)._._.worldObjectParent;
       pDVar5 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                 *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
@@ -58,7 +60,8 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
                 (pDVar5,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      pOVar6 = (Object *)func_?(TypeInfo__System__Byte);
+      this = (ClientSideNPCInteractionHandler *)((uint)this & 0xffffff);
+      pOVar6 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
       if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__InteractionData);
       }
@@ -73,10 +76,10 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
                     ), pMVar4 != (MVWorldObjectClient *)0x0)) {
         MVWorldObjectClient::MVWorldObjectClient_SendPackage
                   (pMVar4,(Dictionary_2_System_Object_System_Object_ *)pDVar5,(MethodInfo *)0x0);
-        this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                             ((MethodInfo *)0x0);
-        if (this_00 != (MainCameraManager *)0x0) {
-          MainCameraManager::MainCameraManager_PlayPlingSound(this_00,(MethodInfo *)0x0);
+        if (this_01 != (MainCameraManager *)0x0) {
+          MainCameraManager::MainCameraManager_PlayPlingSound(this_01,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?(&TypeInfo__MVGameControllerBase);
             cRam_? = '\x01';
@@ -92,20 +95,21 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
       goto code_?;
     }
   }
-  pHVar3 = (HashSet_1_System_ByteEnum_ *)(this->fields).friendlyInteractions;
+  pHVar3 = (HashSet_1_System_ByteEnum_ *)(this_00->fields).friendlyInteractions;
   if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__InteractionData);
   }
+  this = (ClientSideNPCInteractionHandler *)CONCAT31(this._1_3_,interaction.interactionType);
   if (pHVar3 != (HashSet_1_System_ByteEnum_ *)0x0) {
     bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
             HashSet_1_System_ByteEnum__Contains
-                      (pHVar3,interaction._16_4_,
+                      (pHVar3,(ByteEnum__Enum)this,
                        MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::InteractionPackageType>__Contains_MV__WorldObject__InteractionPackageType_
                       );
     if (bVar2 == 0) {
       return 1;
     }
-    pMVar4 = (this->fields)._._.worldObjectParent;
+    pMVar4 = (this_00->fields)._._.worldObjectParent;
     pDVar5 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
               *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
@@ -114,7 +118,8 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
               (pDVar5,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    pOVar6 = (Object *)func_?(TypeInfo__System__Byte);
+    this = (ClientSideNPCInteractionHandler *)((uint)this & 0xffffff);
+    pOVar6 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
     if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__InteractionData);
     }

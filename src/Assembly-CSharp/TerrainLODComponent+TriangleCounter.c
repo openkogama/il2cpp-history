@@ -95,7 +95,7 @@ int32_t Assembly-CSharp.dll::TerrainLODComponent+TriangleCounter::
   if (pHVar6 != (HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
     pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::IntVector]::
              HashSet_1_MV_WorldObject_IntVector__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff8c,pHVar6,
+                       ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff88,pHVar6,
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
                        );
     method_00 = (MethodInfo *)pHVar7->_index;
@@ -105,7 +105,7 @@ int32_t Assembly-CSharp.dll::TerrainLODComponent+TriangleCounter::
     while( true ) {
       bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[MV::WorldObject
               ::IntVector]::HashSet_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext
-                        ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffffb4,
+                        ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffffb0,
                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                         );
       if (bVar9 == 0) break;
@@ -140,7 +140,7 @@ int32_t Assembly-CSharp.dll::TerrainLODComponent+TriangleCounter::
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffb4,
+              ((Object *)&stack0xffffffb0,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__
                ,in_stack_10);
@@ -148,7 +148,7 @@ int32_t Assembly-CSharp.dll::TerrainLODComponent+TriangleCounter::
     if (pMVar5 != (MethodInfo *)0x0) {
       pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::
                List_1_MV_WorldObject_IntVector__GetEnumerator
-                         ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff8c,
+                         ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff88,
                           (List_1_MV_WorldObject_IntVector_ *)pMVar5,
                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                          );
@@ -160,13 +160,13 @@ int32_t Assembly-CSharp.dll::TerrainLODComponent+TriangleCounter::
         ;
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[MV::WorldObject::
                 IntVector]::List_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext
-                          ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffffa0,
+                          ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff9c,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                           );
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffa0,
+                    ((Object *)&stack0xffffff9c,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__
                      ,method_00);

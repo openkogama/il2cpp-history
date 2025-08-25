@@ -419,20 +419,17 @@ void Assembly-CSharp.dll::DamageIndicator+IndicatorArrow::DamageIndicator_Indica
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (arrowBase != (DamageArrow *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)arrowBase,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      parent = (Object_1__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                         (this_00,(MethodInfo *)0x0);
-      pOVar1 = TypeInfo__UnityEngine__Object;
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)arrowBase,(MethodInfo *)0x0);
+    if (pTVar1 != (Transform *)0x0) {
+      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                         (pTVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
-        parent = pOVar1;
       }
       pDVar2 = (DamageArrow *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                         ((Object *)arrowBase,(Transform *)parent,0,
+                         ((Object *)arrowBase,pTVar1,0,
                           DamageArrow_MethodInfo__UnityEngine__Object__Instantiate<DamageArrow>_DamageArrow__UnityEngine__Transform__bool_
                          );
       (this->fields).arrow = pDVar2;
@@ -442,10 +439,10 @@ void Assembly-CSharp.dll::DamageIndicator+IndicatorArrow::DamageIndicator_Indica
         firstArrow_00 = firstArrow;
       }
       if (numberOfArrows != 1) {
-        this_01 = (DamageIndicator_IndicatorArrow *)func_?();
+        this_00 = (DamageIndicator_IndicatorArrow *)func_?();
         DamageIndicator_IndicatorArrow__ctor_1
-                  (this_01,(int32_t)arrowBase,arrowBase,firstArrow_00,(MethodInfo *)0x0);
-        (this->fields).nextArrow = this_01;
+                  (this_00,(int32_t)arrowBase,arrowBase,firstArrow_00,(MethodInfo *)0x0);
+        (this->fields).nextArrow = this_00;
         func_?();
         return;
       }

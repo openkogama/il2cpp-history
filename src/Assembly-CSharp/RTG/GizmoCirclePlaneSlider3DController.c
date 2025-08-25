@@ -8,43 +8,30 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider3DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
-    pCVar2 = (pGVar1->fields).Circle;
-    pGVar3 = (pGVar1->fields).Slider;
-    if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
-      if ((pGVar3->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar4 = (pGVar3->fields)._settings;
-        if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar4 = (pGVar3->fields)._sharedSettings;
-      }
-      if (pCVar2 != (CircleShape3D *)0x0) {
-        SphereShape3D::SphereShape3D_set_RadiusEps
-                  ((SphereShape3D *)pCVar2,
-                   zoomFactor * (pGVar4->fields)._areaHoverEps * _UNK_?,(MethodInfo *)0x0);
-        pGVar1 = (this->fields)._._data;
-        if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
-          pCVar2 = (pGVar1->fields).Circle;
-          pGVar3 = (((this->fields)._._data)->fields).Slider;
-          if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
-            if ((pGVar3->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-              pGVar4 = (pGVar3->fields)._settings;
-              if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-            }
-            else {
-              pGVar4 = (pGVar3->fields)._sharedSettings;
-            }
-            if (pCVar2 != (CircleShape3D *)0x0) {
-              CircleShape3D::CircleShape3D_set_ExtrudeEps
-                        (pCVar2,zoomFactor * (pGVar4->fields)._extrudeHoverEps,(MethodInfo *)0x0);
-              return;
-            }
-          }
+    pGVar2 = (pGVar1->fields).Slider;
+    pCVar3 = (pGVar1->fields).Circle;
+    if (((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+        (pGVar4 = (&(pGVar2->fields)._settings)
+                  [(pGVar2->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0],
+        pGVar4 != (GizmoPlaneSlider3DSettings *)0x0)) && (pCVar3 != (CircleShape3D *)0x0)) {
+      SphereShape3D::SphereShape3D_set_RadiusEps
+                ((SphereShape3D *)pCVar3,zoomFactor * (pGVar4->fields)._areaHoverEps * _UNK_?
+                 ,(MethodInfo *)0x0);
+      pGVar1 = (this->fields)._._data;
+      if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
+        pCVar3 = (pGVar1->fields).Circle;
+        pGVar2 = (((this->fields)._._data)->fields).Slider;
+        if (((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+            (pGVar4 = (&(pGVar2->fields)._settings)
+                      [(pGVar2->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0],
+            pGVar4 != (GizmoPlaneSlider3DSettings *)0x0)) && (pCVar3 != (CircleShape3D *)0x0)) {
+          CircleShape3D::CircleShape3D_set_ExtrudeEps
+                    (pCVar3,zoomFactor * (pGVar4->fields)._extrudeHoverEps,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();

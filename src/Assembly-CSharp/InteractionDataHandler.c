@@ -30,17 +30,28 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleI
       func_?(&TypeInfo__MVAvatarRemote);
       cRam_? = '\x01';
     }
-    this_00 = (MVAvatar *)(this->fields)._._.worldObjectParent;
-    if ((((this_00 != (MVAvatar *)0x0) &&
-         ((TypeInfo__MVAvatarRemote->_1).naturalAligment <= (this_00->klass->_1).naturalAligment))
-        && ((MVAvatarRemote__Class *)
-            (this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1]
-            == TypeInfo__MVAvatarRemote)) &&
-       (bVar1 = MVAvatar::MVAvatar_IsInMode(this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0),
-       bVar1 != 0)) {
-      return 1;
+    pMVar2 = (MVAvatar *)(this->fields)._._.worldObjectParent;
+    if (pMVar2 != (MVAvatar *)0x0) {
+      if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
+         ((MVAvatarRemote__Class *)
+          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatarRemote)) {
+        bVar3 = false;
+      }
+      else {
+        bVar3 = true;
+      }
+      this_00 = (MVAvatar *)0x0;
+      if (bVar3) {
+        this_00 = pMVar2;
+      }
+      if ((this_00 != (MVAvatar *)0x0) &&
+         (bVar1 = MVAvatar::MVAvatar_IsInMode
+                            (this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0), bVar1 != 0)) {
+        return 1;
+      }
     }
-    pMVar2 = (this->fields)._._.worldObjectParent;
+    pMVar4 = (this->fields)._._.worldObjectParent;
     this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)func_?(
                                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
@@ -51,7 +62,7 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleI
               (this_01,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    in_stack_3 = 0;
+    in_stack_5 = 0;
     key = (Object *)func_?(TypeInfo__System__Byte,&stack0x00000023);
     if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__InteractionData);
@@ -65,25 +76,25 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleI
                             ((Dictionary_2_System_Object_System_Object_ *)this_01,key,
                              (Object *)value,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                            ), pMVar2 != (MVWorldObjectClient *)0x0)) {
+                            ), pMVar4 != (MVWorldObjectClient *)0x0)) {
       MVWorldObjectClient::MVWorldObjectClient_SendPackage
-                (pMVar2,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+                (pMVar4,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
       return 1;
     }
   }
   else {
-    pMVar2 = (this->fields)._._.worldObjectParent;
-    if (pMVar2 != (MVWorldObjectClient *)0x0) {
-      (*(code *)(pMVar2->klass->vtable).ReceiveInteractionPackage.method)
-                (pMVar2,interaction.damage,interaction.impulse.x,interaction.impulse.y,
+    pMVar4 = (this->fields)._._.worldObjectParent;
+    if (pMVar4 != (MVWorldObjectClient *)0x0) {
+      (*(code *)(pMVar4->klass->vtable).ReceiveInteractionPackage.method)
+                (pMVar4,interaction.damage,interaction.impulse.x,interaction.impulse.y,
                  interaction.impulse.z,interaction._16_4_,0,
-                 (pMVar2->klass->vtable).HandleInput.methodPtr);
+                 (pMVar4->klass->vtable).HandleInput.methodPtr);
       return 1;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  bVar1 = (*pcVar6)();
   return bVar1;
 }
 
@@ -98,14 +109,24 @@ bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_IsDead
     func_?(&TypeInfo__MVAvatarRemote);
     cRam_? = '\x01';
   }
-  this_00 = (MVAvatar *)(this->fields)._._.worldObjectParent;
-  if (this_00 != (MVAvatar *)0x0) {
-    if (((TypeInfo__MVAvatarRemote->_1).naturalAligment <= (this_00->klass->_1).naturalAligment) &&
+  pMVar1 = (MVAvatar *)(this->fields)._._.worldObjectParent;
+  if (pMVar1 != (MVAvatar *)0x0) {
+    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
        ((MVAvatarRemote__Class *)
-        (this_00->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] ==
+        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
         TypeInfo__MVAvatarRemote)) {
-      bVar1 = MVAvatar::MVAvatar_IsInMode(this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0);
-      return bVar1;
+      bVar2 = false;
+    }
+    else {
+      bVar2 = true;
+    }
+    this_00 = (MVAvatar *)0x0;
+    if (bVar2) {
+      this_00 = pMVar1;
+    }
+    if (this_00 != (MVAvatar *)0x0) {
+      bVar3 = MVAvatar::MVAvatar_IsInMode(this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0);
+      return bVar3;
     }
   }
   return 0;

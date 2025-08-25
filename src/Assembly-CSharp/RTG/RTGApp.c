@@ -670,8 +670,7 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_Start(RTGApp *this,MethodInfo *met
   pOVar4 = Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                      (MethodInfo__RTG__Singleton<RTG::RTCameraViewports>__get_Get__);
   pDVar9 = (Delegate *)
-            func_?(TypeInfo__RTG__RTCameraViewports__CameraAddedHandler,ppIVar15,pDVar11,
-                            pOVar4);
+            func_?(TypeInfo__RTG__RTCameraViewports__CameraAddedHandler,ppIVar15,pOVar4);
   pMVar5 = MethodInfo__RTG__RTGApp__OnViewportsCameraAdded_UnityEngine__Camera_;
   pIVar17 = MethodInfo__RTG__RTGApp__OnViewportsCameraAdded_UnityEngine__Camera_->
            virtualMethodPointer;
@@ -715,16 +714,15 @@ code_?:
                 TypeInfo__RTG__RTCameraViewports__CameraAddedHandler;
       if (pDVar11 == (Delegate *)0x0) goto code_?;
     }
-    ppcVar18 = &(pOVar14->_0).name;
-    pOVar16 = (Object__Class *)func_?(ppcVar18,pDVar11);
+    pDVar18 = &pDVar11->fields;
+    pOVar16 = (Object__Class *)func_?(pDVar18,pDVar11,pOVar14);
     bVar13 = pOVar16 != pOVar14;
     pOVar14 = pOVar16;
   } while (bVar13);
   pOVar4 = Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                      (MethodInfo__RTG__Singleton<RTG::RTCameraViewports>__get_Get__);
   pDVar9 = (Delegate *)
-            func_?(TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler,ppcVar18,pDVar11,
-                            pOVar4);
+            func_?(TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler,pDVar18,pOVar4);
   pMVar5 = MethodInfo__RTG__RTGApp__OnViewportCameraRemoved_UnityEngine__Camera_;
   pIVar17 = MethodInfo__RTG__RTGApp__OnViewportCameraRemoved_UnityEngine__Camera_->
            virtualMethodPointer;
@@ -767,7 +765,7 @@ code_?:
                   TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler;
         if (pDVar19 == (Delegate *)0x0) goto code_?;
       }
-      pDVar10 = (Delegate *)func_?(&(pDVar11->fields).invoke_impl,pDVar19);
+      pDVar10 = (Delegate *)func_?(&(pDVar19->fields).invoke_impl,pDVar19,pDVar11);
       bVar13 = pDVar10 != pDVar11;
       pDVar11 = pDVar10;
     } while (bVar13);

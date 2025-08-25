@@ -499,10 +499,10 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::
       pDVar3 = (this_00->fields).logicEvents;
       if (pDVar3 != (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0) {
         bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                          ((Dictionary_2_System_Int32_System_Single_ *)pDVar3,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__ContainsKey_int_
-                          );
+                 Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
+                           ((Dictionary_2_System_Int32_System_Single_ *)pDVar3,key,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__ContainsKey_int_
+                           );
         if (bVar4 != 0) {
           pDVar3 = (this_00->fields).logicEvents;
           if (pDVar3 == (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)0x0)
@@ -597,63 +597,64 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicObjectManagerClientWrapper::
             DStack_8._version = 0;
 code_?:
             bVar4 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                    UInt32,System::Object]::
-                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                              (&DStack_6,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
-                              );
+                     Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                     UInt32,System::Object]::
+                     Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                               (&DStack_6,
+                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
+                               );
             pOVar9 = DStack_6._currentValue;
             if (bVar4 != 0) {
               if (DStack_6._currentValue == (Object *)0x0) goto code_?;
               pOStack_10 = (DStack_6._currentValue)->klass;
               uVar11 = 0;
-              uVar12._0_1_ = (pOStack_10->_1).rank;
-              uVar12._1_1_ = (pOStack_10->_1).minimumAlignment;
-              uStack_13 = (uint)uVar12;
-              pOVar14 = DStack_6._currentValue;
-              if (uVar12 != 0) {
+              sVar12._0_1_ = (pOStack_10->_1).rank;
+              sVar12._1_1_ = (pOStack_10->_1).minimumAlignment;
+              pOVar13 = DStack_6._currentValue;
+              if (sVar12 != 0) {
                 do {
                   if (pOStack_10->interfaceOffsets[uVar11].interfaceType ==
                       (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-                    ppMVar15 = &(&((DStack_6._currentValue)->klass->vtable).GetHashCode)
+                    ppMVar14 = &(&((DStack_6._currentValue)->klass->vtable).GetHashCode)
                                 [(DStack_6._currentValue)->klass->interfaceOffsets[uVar11].offset].
                                 method;
                     goto code_?;
                   }
                   uVar11 = uVar11 + 1;
-                } while (uVar11 < uVar12);
+                  uVar15._0_1_ = ((DStack_6._currentValue)->klass->_1).rank;
+                  uVar15._1_1_ = ((DStack_6._currentValue)->klass->_1).minimumAlignment;
+                } while (uVar11 < uVar15);
               }
-              ppMVar15 = (MethodInfo **)
+              ppMVar14 = (MethodInfo **)
                          func_?(DStack_6._currentValue,TypeInfo__IInputSignalReceiver,2);
 code_?:
-              uVar16 = (*(code *)*ppMVar15)(pOVar9,ppMVar15[1]);
-              uVar12 = 0;
+              uVar16 = (*(code *)*ppMVar14)(pOVar9,ppMVar14[1]);
+              uVar11 = 0;
               pMStack_17 = (MethodInfo *)CONCAT31(pMStack_17._1_3_,uVar16);
-              pOStack_10 = pOVar9->klass;
-              uStack_13 = 0;
-              sVar18._0_1_ = (pOStack_10->_1).rank;
-              sVar18._1_1_ = (pOStack_10->_1).minimumAlignment;
-              if (sVar18 != 0) {
+              pOVar18 = pOVar9->klass;
+              pOStack_10 = (Object__Class *)0x0;
+              sVar19._0_1_ = (pOVar18->_1).rank;
+              sVar19._1_1_ = (pOVar18->_1).minimumAlignment;
+              if (sVar19 != 0) {
                 do {
-                  if (pOStack_10->interfaceOffsets[uVar12].interfaceType ==
+                  if (pOVar18->interfaceOffsets[uVar11].interfaceType ==
                       (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-                    pOVar19 = pOVar14->klass;
-                    iVar20 = pOVar19->interfaceOffsets[uVar12].offset;
+                    pOVar18 = pOVar13->klass;
+                    iVar20 = pOVar18->interfaceOffsets[uVar11].offset;
                     method_00 = pMStack_17;
-                    (*(code *)(&(pOVar19->vtable).Equals)[iVar20].method)
-                              (pOVar14,pMStack_17,(&(pOVar19->vtable).Finalize)[iVar20].methodPtr);
+                    (*(code *)(&(pOVar18->vtable).Equals)[iVar20].method)
+                              (pOVar13,pMStack_17,(&(pOVar18->vtable).Finalize)[iVar20].methodPtr);
                     goto code_?;
                   }
-                  uVar12 = uVar12 + 1;
-                  uVar11._0_1_ = (pOVar14->klass->_1).rank;
-                  uVar11._1_1_ = (pOVar14->klass->_1).minimumAlignment;
-                  pOVar9 = pOVar14;
-                } while (uVar12 < uVar11);
+                  uVar11 = uVar11 + 1;
+                  uVar21._0_1_ = (pOVar13->klass->_1).rank;
+                  uVar21._1_1_ = (pOVar13->klass->_1).minimumAlignment;
+                  pOVar9 = pOVar13;
+                } while (uVar11 < uVar21);
               }
-              puVar21 = (undefined4 *)func_?(pOVar9,TypeInfo__IInputSignalReceiver,0);
+              puVar22 = (undefined4 *)func_?(pOVar9,TypeInfo__IInputSignalReceiver,0);
               method_00 = pMStack_17;
-              (*(code *)*puVar21)(pOVar9,pMStack_17,puVar21[1]);
+              (*(code *)*puVar22)(pOVar9,pMStack_17,puVar22[1]);
               goto code_?;
             }
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -683,8 +684,8 @@ code_?:
           }
 code_?:
           func_?();
-          pcVar22 = (code *)swi(3);
-          (*pcVar22)();
+          pcVar23 = (code *)swi(3);
+          (*pcVar23)();
           return;
         }
       }
@@ -692,8 +693,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

@@ -877,8 +877,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_InitStandAl
     func_?();
   }
   TypeInfo__BrowserComm->static_fields->enableBrowserRequest = developmentMode ^ 1;
-  pSStack_1 = (String__Array *)
-              UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
   iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&StringLiteral_KoGaMa);
@@ -886,80 +885,73 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_InitStandAl
   }
   pSVar3 = StringLiteral_KoGaMa;
   if (pcRam_? == (code *)0x0) {
-    uStack_4 = 10;
-    uStack_5 = 10;
-    uStack_6 = 0;
-    uStack_7 = 2;
-    uStack_8 = 8;
-    uStack_9 = 0;
-    pcRam_? = (code *)func_?(&puStack_10);
+    pcRam_? = (code *)func_?(&stack0xffffffd4);
   }
-  uVar11 = func_?(0);
-  uVar12 = func_?(pSVar3);
-  pSStack_13 = (String *)(*pcRam_?)(uVar11,uVar12);
-  func_?(uVar11);
-  func_?(uVar12);
-  pSVar14 = pSStack_1;
-  iVar15 = iVar2 * (int)pSStack_1;
+  uVar4 = func_?(0);
+  uVar5 = func_?(pSVar3);
+  uVar6 = (*pcRam_?)(uVar4,uVar5);
+  func_?(uVar4);
+  func_?(uVar5);
   if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&stack0xffffffb4);
+    pcRam_? = (code *)func_?(&stack0xffffffd4);
   }
-  (*pcRam_?)(pSStack_13,0,0,0,pSVar14,iVar2,iVar15 == 0);
+  (*pcRam_?)(uVar6,0,0,0,iVar1,iVar2,iVar2 * iVar1 == 0);
   if (developmentMode != 0) {
     (*(code *)(this->klass->vtable).StartGame.method)
               (this,(this->klass->vtable).InitWebGL.methodPtr);
     return;
   }
-  pSStack_1 = mscorlib.dll::System::Environment::Environment_GetCommandLineArgs((MethodInfo *)0x0);
-  uVar16 = 0;
+  pSVar7 = mscorlib.dll::System::Environment::Environment_GetCommandLineArgs((MethodInfo *)0x0);
+  uVar8 = 0;
   _developmentMode = ::StringLiteral__;
-  if (pSStack_1 != (String__Array *)0x0) {
-    ppSVar17 = pSStack_1->vector;
-    while ((int)uVar16 < (int)pSStack_1->max_length) {
-      if (pSStack_1->max_length <= uVar16) {
+  if (pSVar7 != (String__Array *)0x0) {
+    ppSVar9 = pSVar7->vector;
+    while ((int)uVar8 < (int)pSVar7->max_length) {
+      if (pSVar7->max_length <= uVar8) {
 code_?:
         func_?();
         goto code_?;
       }
-      pSStack_13 = *ppSVar17;
-      pSVar14 = (String__Array *)func_?(TypeInfo__System__String,1);
-      pSVar3 = StringLiteral_kogamaPackage_;
-      if (pSVar14 == (String__Array *)0x0) goto code_?;
-      if (pSVar14->max_length == 0) goto code_?;
-      pSVar14->vector[0] = StringLiteral_kogamaPackage_;
-      func_?(pSVar14->vector,pSVar3);
-      if (pSStack_13 == (String *)0x0) goto code_?;
-      pSVar14 = mscorlib.dll::System::String::String_Split_4
-                         (pSStack_13,pSVar14,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
-      if (pSVar14 == (String__Array *)0x0) goto code_?;
-      if (pSVar14->max_length == 2) {
+      pSVar3 = *ppSVar9;
+      pSVar10 = (String__Array *)func_?(TypeInfo__System__String,1);
+      pSVar11 = StringLiteral_kogamaPackage_;
+      if (pSVar10 == (String__Array *)0x0) goto code_?;
+      if (pSVar10->max_length == 0) goto code_?;
+      pSVar10->vector[0] = StringLiteral_kogamaPackage_;
+      func_?(pSVar10->vector,pSVar11);
+      if (pSVar3 == (String *)0x0) goto code_?;
+      pSVar10 = mscorlib.dll::System::String::String_Split_4
+                         (pSVar3,pSVar10,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+      if (pSVar10 == (String__Array *)0x0) goto code_?;
+      if (pSVar10->max_length == 2) {
         _developmentMode =
              mscorlib.dll::System::String::String_Concat_3
-                       (_developmentMode,pSVar14->vector[1],(MethodInfo *)0x0);
-        uVar16 = uVar16 + 1;
-        ppSVar17 = ppSVar17 + 1;
+                       (_developmentMode,pSVar10->vector[1],(MethodInfo *)0x0);
+        uVar8 = uVar8 + 1;
+        ppSVar9 = ppSVar9 + 1;
       }
       else {
-        uVar16 = uVar16 + 1;
-        ppSVar17 = ppSVar17 + 1;
+        uVar8 = uVar8 + 1;
+        ppSVar9 = ppSVar9 + 1;
       }
     }
     pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_combined_,_developmentMode,(MethodInfo *)0x0);
+                        (StringLiteral_combined_,_developmentMode,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0)
+    ;
     if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Convert);
     }
-    pBVar18 = mscorlib.dll::System::Convert::Convert_FromBase64String
-                       (_developmentMode,(MethodInfo *)0x0);
-    pEVar19 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
-    if (pEVar19 != (Encoding *)0x0) {
+    pBVar12 = mscorlib.dll::System::Convert::Convert_FromBase64String
+                        (_developmentMode,(MethodInfo *)0x0);
+    pEVar13 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+    if (pEVar13 != (Encoding *)0x0) {
       pSVar3 = (String *)
-               (*(code *)(pEVar19->klass->vtable).GetString.method)
-                         (pEVar19,pBVar18,(pEVar19->klass->vtable).GetString_1.methodPtr);
+                (*(code *)(pEVar13->klass->vtable).GetString.method)
+                          (pEVar13,pBVar12,(pEVar13->klass->vtable).GetString_1.methodPtr);
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar3,(MethodInfo *)0x0);
       this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
@@ -985,8 +977,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -1808,7 +1800,7 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_SetPosition
   if (pcRam_? == (code *)0x0) {
     uStack_2 = 10;
     uStack_3 = 10;
-    uStack_4 = 0;
+    pcStack_4 = (code *)0x0;
     uStack_5 = 2;
     uStack_6 = 8;
     uStack_7 = 0;
@@ -1820,13 +1812,13 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_SetPosition
   func_?(uVar9);
   func_?(uVar10);
   if (pcRam_? == (code *)0x0) {
-    pcStack_12 = pcRam_?;
-    uStack_13 = 0;
-    uStack_14 = 10;
-    uStack_15 = 0xc;
-    uStack_16 = 2;
-    uStack_17 = 0x1c;
-    pcRam_? = (code *)func_?(&puStack_18);
+    pcStack_4 = pcRam_?;
+    uStack_7 = 0;
+    uStack_2 = 10;
+    uStack_3 = 0xc;
+    uStack_5 = 2;
+    uStack_6 = 0x1c;
+    pcRam_? = (code *)func_?(&puStack_8);
   }
   (*pcRam_?)(uStack_11,0,x,y,resX,resY,resX * resY == 0);
   return;

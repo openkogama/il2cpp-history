@@ -166,14 +166,14 @@ void Assembly-CSharp.dll::DamageIndicator::DamageIndicator_ShowDamage
       bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                         ((GameObject *)this_00,(MethodInfo *)0x0);
       if (bVar5 == 0) {
-        fVar6 = (this->fields).durationPerPointOfDamage;
         pDVar3 = (this->fields).directionArrow;
         if (pDVar3 == (DamageIndicator_IndicatorArrow *)0x0) goto code_?;
-        pTVar7 = (Transform *)pMVar4[1].fields.ownerActorNr;
-        (pDVar3->fields).damageOrigin = pTVar7;
-        func_?(&(pDVar3->fields).damageOrigin,pTVar7);
+        pTVar6 = (Transform *)pMVar4[1].fields.ownerActorNr;
+        fVar7 = (this->fields).durationPerPointOfDamage;
+        (pDVar3->fields).damageOrigin = pTVar6;
+        func_?(&(pDVar3->fields).damageOrigin,pTVar6);
         this_01 = (pDVar3->fields).arrow;
-        (pDVar3->fields).timer = fVar6 * damageAmount;
+        (pDVar3->fields).timer = damageAmount * fVar7;
         if (this_01 == (DamageArrow *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)this_01,1,(MethodInfo *)0x0);
@@ -184,11 +184,11 @@ void Assembly-CSharp.dll::DamageIndicator::DamageIndicator_ShowDamage
   if ((undefined1)damageType != PlayerKilledByType__Enum_Environmental) {
     fVar8 = damageAmount * (this->fields).durationPerPointOfDamage;
     this_02 = (this->fields).damageOverlay;
-    fVar6 = (this->fields).damageOverlayTimer;
-    if (fVar6 <= fVar8) {
-      fVar6 = fVar8;
+    fVar7 = (this->fields).damageOverlayTimer;
+    if (fVar7 <= fVar8) {
+      fVar7 = fVar8;
     }
-    (this->fields).damageOverlayTimer = fVar6;
+    (this->fields).damageOverlayTimer = fVar7;
     if (this_02 == (Image *)0x0) {
 code_?:
       func_?();
@@ -258,17 +258,16 @@ void Assembly-CSharp.dll::DamageIndicator::DamageIndicator_Update
                              (this_02,(this->fields).damageOverlayTimer /
                                       (this->fields).timeNormalizationFactor,(MethodInfo *)0x0);
         pIVar4 = (this->fields).damageOverlay;
-        fStack_6 = (this->fields).initialAlpha;
+        fStack_5 = fStack_5 * (this->fields).initialAlpha;
         if (pIVar4 != (Image *)0x0) {
-          puVar7 = (undefined4 *)
+          puVar6 = (undefined4 *)
                    (*(code *)(pIVar4->klass->vtable).get_color.method)
-                             (&uStack_8,pIVar4,(pIVar4->klass->vtable).set_color.methodPtr);
-          uStack_8 = *puVar7;
-          uStack_9 = puVar7[1];
-          uStack_10 = puVar7[2];
-          fStack_6 = fStack_6 * fStack_5;
+                             (&uStack_7,pIVar4,(pIVar4->klass->vtable).set_color.methodPtr);
+          uStack_7 = *puVar6;
+          uStack_8 = puVar6[1];
+          uStack_9 = puVar6[2];
           (*(code *)(pIVar4->klass->vtable).set_color.method)
-                    (pIVar4,uStack_8,uStack_9,uStack_10,fStack_6,
+                    (pIVar4,uStack_7,uStack_8,uStack_9,fStack_5,
                      (pIVar4->klass->vtable).get_raycastTarget.methodPtr);
           fVar1 = (this->fields).damageOverlayTimer;
           fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
@@ -281,8 +280,8 @@ void Assembly-CSharp.dll::DamageIndicator::DamageIndicator_Update
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

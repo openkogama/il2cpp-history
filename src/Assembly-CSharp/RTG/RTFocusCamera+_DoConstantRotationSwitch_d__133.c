@@ -60,8 +60,8 @@ code_?:
         if (pTVar2 != (Transform *)0x0) {
           pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                              ((Quaternion *)&stack0xffffffd4,pTVar2,(MethodInfo *)0x0);
-          fVar4 = (float)((uint)((this->fields).targetRotation.x * pQVar3->x +
-                                  (this->fields).targetRotation.y * pQVar3->y +
+          fVar4 = (float)((uint)((this->fields).targetRotation.y * pQVar3->y +
+                                  (this->fields).targetRotation.x * pQVar3->x +
                                   (this->fields).targetRotation.z * pQVar3->z +
                                  (this->fields).targetRotation.w * pQVar3->w) & _UNK_?);
           if (_UNK_? <= fVar4) {

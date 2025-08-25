@@ -955,7 +955,7 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         }
         fStack_33 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                               (-1.0,1.0,(MethodInfo *)0x0);
-        pPStack_34 = (PickupItemCustomGun__Class *)
+        pPStack_34 = (PickupItemEditable_EditableItemConfiguration__Class *)
                      UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                                (-1.0,1.0,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
@@ -993,7 +993,8 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
             TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration))
         goto code_?;
         fStack_33 = fStack_33 * (float)(unaff_EDI->_0).parent;
-        fStack_37 = fStack_33 * (float)uStack_26 + (float)uStack_35;
+        pPStack_37 = (PickupItemCustomGun__Class *)(fStack_33 * (float)uStack_26 + (float)uStack_35)
+        ;
         fStack_38 = fStack_33 * uStack_26._4_4_ + uStack_35._4_4_;
         fStack_33 = fStack_33 * fStack_27 + fStack_36;
         if (cRam_? == '\0') {
@@ -1016,25 +1017,25 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
             TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration))
         goto code_?;
         fVar39 = (float)pPStack_34 * (float)(unaff_EDI->_0).parent;
-        fStack_40 = fStack_37 + fVar39 * (float)uStack_28;
-        fStack_41 = fStack_38 + fVar39 * uStack_28._4_4_;
+        fStack_40 = fVar39 * (float)uStack_28 + (float)pPStack_37;
+        pMStack_41 = (MVPickupOwner *)(fVar39 * uStack_28._4_4_ + fStack_38);
         fStack_42 = fStack_33 + fVar39 * fStack_29;
         fStack_17 = fStack_42 + fStack_17;
         pTVar43 = (this->fields).staticMuzzlePoint;
-        uStack_16 = CONCAT44(fStack_41 + uStack_16._4_4_,fStack_40 + (float)uStack_16);
-        fStack_37 = fStack_40;
-        fStack_38 = fStack_41;
+        uStack_16 = CONCAT44((float)pMStack_41 + uStack_16._4_4_,fStack_40 + (float)uStack_16);
+        pMStack_44 = pMStack_41;
+        fStack_38 = fStack_40;
         fStack_33 = fStack_42;
         if (pTVar43 == (Transform *)0x0) break;
         pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                             ((Vector3 *)&stack0xfffffec8,pTVar43,(MethodInfo *)0x0);
-        pPStack_34 = (PickupItemCustomGun__Class *)pVVar8->z;
+        pPStack_37 = (PickupItemCustomGun__Class *)pVVar8->z;
         pTVar43 = (this->fields)._.weaponHandle;
         fVar2 = fStack_1;
         if (pTVar43 == (Transform *)0x0) break;
         pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                             ((Vector3 *)&stack0xfffffeb8,pTVar43,(MethodInfo *)0x0);
-        pPStack_44 = (PickupItemEditable_EditableItemConfiguration__Class *)pVVar8->z;
+        pPStack_37 = (PickupItemCustomGun__Class *)((float)pPStack_37 - pVVar8->z);
         pTVar43 = (this->fields).staticMuzzlePoint;
         fVar2 = fStack_1;
         if (pTVar43 == (Transform *)0x0) break;
@@ -1042,9 +1043,9 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
                             (&VStack_19,pTVar43,(MethodInfo *)0x0);
         unaff_EDI = (PickupItemCustomGun__Class *)
                     Bullet::Bullet_CreateBullet
-                              (PoolEnums__Enum_CustomGunBullet,*pVVar8,
-                               (float)pPStack_34 - (float)pPStack_44,(MethodInfo *)0x0);
-        pPStack_34 = unaff_EDI;
+                              (PoolEnums__Enum_CustomGunBullet,*pVVar8,(float)pPStack_37,
+                               (MethodInfo *)0x0);
+        pPStack_37 = unaff_EDI;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -1053,12 +1054,12 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         uStack_10 = CONCAT44(pPVar45,(undefined4)uStack_10);
         fVar2 = fStack_1;
         if (pPVar45 == (PickupItemEditable_EditableItemConfiguration *)0x0) break;
-        pPStack_44 = pPVar45->klass;
+        pPStack_34 = pPVar45->klass;
         pPVar32 = TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration;
-        if (((pPStack_44->_1).naturalAligment <
+        if (((pPStack_34->_1).naturalAligment <
              (TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration->_1).
              naturalAligment) ||
-           ((pPStack_44->_1).typeHierarchy
+           ((pPStack_34->_1).typeHierarchy
             [(TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration->_1).
              naturalAligment - 1] !=
             (Il2CppClass *)
@@ -1079,12 +1080,12 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         uStack_10 = CONCAT44(pPVar45,(undefined4)uStack_10);
         fVar2 = fStack_1;
         if (pPVar45 == (PickupItemEditable_EditableItemConfiguration *)0x0) break;
-        pPStack_44 = pPVar45->klass;
+        pPStack_34 = pPVar45->klass;
         pPVar32 = TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration;
-        if (((pPStack_44->_1).naturalAligment <
+        if (((pPStack_34->_1).naturalAligment <
              (TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration->_1).
              naturalAligment) ||
-           ((pPStack_44->_1).typeHierarchy
+           ((pPStack_34->_1).typeHierarchy
             [(TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration->_1).
              naturalAligment - 1] !=
             (Il2CppClass *)
@@ -1105,18 +1106,18 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         uStack_10 = CONCAT44(pPVar45,(undefined4)uStack_10);
         fVar2 = fStack_1;
         if (pPVar45 == (PickupItemEditable_EditableItemConfiguration *)0x0) break;
-        pPStack_44 = pPVar45->klass;
+        pPStack_34 = pPVar45->klass;
         pPVar32 = TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration;
-        if (((pPStack_44->_1).naturalAligment <
+        if (((pPStack_34->_1).naturalAligment <
              (TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration->_1).
              naturalAligment) ||
-           ((pPStack_44->_1).typeHierarchy
+           ((pPStack_34->_1).typeHierarchy
             [(TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration->_1).
              naturalAligment - 1] !=
             (Il2CppClass *)
             TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration))
         goto code_?;
-        pPStack_44 = (PickupItemEditable_EditableItemConfiguration__Class *)
+        pPStack_34 = (PickupItemEditable_EditableItemConfiguration__Class *)
                      (this->fields)._._Configuration_k__BackingField[2].fields.hitSoundEffectVolume;
         if (cRam_? == '\0') {
           func_?(&
@@ -1147,7 +1148,7 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         trailColor.b = fVar47;
         trailColor.a = fVar48;
         Bullet::Bullet_SetBulletAndTrailSettings
-                  ((Bullet *)unaff_EDI,bulletColor,trailColor,(float)pPStack_44,
+                  ((Bullet *)unaff_EDI,bulletColor,trailColor,(float)pPStack_34,
                    (float)(this_00->fields)._.cubeModelParent,(MethodInfo *)0x0);
         a = (PickupItemCustomGun__Class *)(unaff_EDI->_0).byval_arg.data.typeHandle;
         this_00 = (PickupItemCustomGun *)func_?(TypeInfo__Bullet__OnHitDelegate);
@@ -1157,9 +1158,9 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         VStack_30.z = (float)&UNK_?;
         pDVar49 = mscorlib.dll::System::Delegate::Delegate_Combine
                             ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-        unaff_EDI = pPStack_34;
+        unaff_EDI = pPStack_37;
         if (pDVar49 == (Delegate *)0x0) {
-          (pPStack_34->_0).byval_arg.data.dummy = (Object *)0x0;
+          (pPStack_37->_0).byval_arg.data.dummy = (Object *)0x0;
         }
         else {
           pDVar50 = (Delegate *)0x0;
@@ -1167,12 +1168,12 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
             pDVar50 = pDVar49;
           }
           if (pDVar50 == (Delegate *)0x0) goto code_?;
-          (pPStack_34->_0).byval_arg.data.dummy = pDVar50;
+          (pPStack_37->_0).byval_arg.data.dummy = pDVar50;
           pDVar50 = (Delegate *)0x0;
           if ((Bullet_OnHitDelegate__Class *)pDVar49->klass == TypeInfo__Bullet__OnHitDelegate) {
             pDVar50 = pDVar49;
           }
-          a = pPStack_34;
+          a = pPStack_37;
           if (pDVar50 == (Delegate *)0x0) goto code_?;
         }
         func_?();
@@ -1185,9 +1186,9 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
                      ,(MethodInfo *)0x0);
           pDVar49 = mscorlib.dll::System::Delegate::Delegate_Combine
                               ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-          unaff_EDI = pPStack_34;
+          unaff_EDI = pPStack_37;
           if (pDVar49 == (Delegate *)0x0) {
-            *(void **)&(pPStack_34->_0).byval_arg.attrs = (void *)0x0;
+            *(void **)&(pPStack_37->_0).byval_arg.attrs = (void *)0x0;
           }
           else {
             pDVar50 = (Delegate *)0x0;
@@ -1195,12 +1196,12 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
               pDVar50 = pDVar49;
             }
             if (pDVar50 == (Delegate *)0x0) goto code_?;
-            *(Delegate **)&(pPStack_34->_0).byval_arg.attrs = pDVar50;
+            *(Delegate **)&(pPStack_37->_0).byval_arg.attrs = pDVar50;
             pDVar50 = (Delegate *)0x0;
             if ((Bullet_OnHitDelegate__Class *)pDVar49->klass == TypeInfo__Bullet__OnHitDelegate) {
               pDVar50 = pDVar49;
             }
-            a = pPStack_34;
+            a = pPStack_37;
             if (pDVar50 == (Delegate *)0x0) goto code_?;
           }
           func_?();
@@ -1211,7 +1212,7 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         if (pMVar7 == (MVPickupOwner *)0x0) break;
         uVar51 = (pMVar7->fields).lookOrigin.x;
         uVar52 = (pMVar7->fields).lookOrigin.y;
-        func_?(&fStack_1,uVar51,uVar52,(pMVar7->fields).lookOrigin.z,fStack_40,fStack_41,
+        func_?(&fStack_1,uVar51,uVar52,(pMVar7->fields).lookOrigin.z,fStack_40,pMStack_41,
                         fStack_42,0);
         pPVar15 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         fVar2 = fStack_1;
@@ -1230,31 +1231,29 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
           uStack_55._0_4_ = (pMVar7->fields).lookOrigin.x;
           uStack_55._4_4_ = (pMVar7->fields).lookOrigin.y;
           fStack_18 = (pMVar7->fields).lookOrigin.z;
-          fVar2 = fStack_37 * ((float)(undefined4)uStack_53 - (float)(undefined4)uStack_55) +
-                   fStack_38 * ((float)uStack_53._4_4_ - (float)uStack_55._4_4_) +
-                   fStack_33 * (fStack_54 - fStack_18);
+          fVar2 = fStack_38 * ((float)(undefined4)uStack_53 - (float)(undefined4)uStack_55) +
+                   ((float)uStack_53._4_4_ - (float)uStack_55._4_4_) * (float)pMStack_44 +
+                   (fStack_54 - fStack_18) * fStack_33;
+          fStack_1 = fVar2 * fStack_38 + fStack_1;
+          fStack_3 = fVar2 * (float)pMStack_44 + fStack_3;
           fStack_4 = fVar2 * fStack_33 + fStack_4;
-          fStack_1 = fVar2 * fStack_37 + fStack_1;
-          fStack_3 = fVar2 * fStack_38 + fStack_3;
           VStack_9.z = fStack_4;
         }
-        pPStack_44 = (PickupItemEditable_EditableItemConfiguration__Class *)
-                     (this->fields)._._._.owner;
+        pMStack_44 = (this->fields)._._._.owner;
         pPVar15 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         fVar2 = fStack_1;
         if ((pPVar15 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) ||
-           (pPStack_44 == (PickupItemEditable_EditableItemConfiguration__Class *)0x0)) break;
+           (pMStack_44 == (MVPickupOwner *)0x0)) break;
         fStack_38 = MVPickupOwner::MVPickupOwner_GetAbsolutProjectileSpeed
-                              ((MVPickupOwner *)pPStack_44,(pPVar15->fields).projectileSpeed,
-                               (MethodInfo *)0x0);
+                              (pMStack_44,(pPVar15->fields).projectileSpeed,(MethodInfo *)0x0);
         pPVar15 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         fVar2 = fStack_1;
         if (pPVar15 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) break;
-        fStack_33 = (pPVar15->fields)._.range;
+        pPStack_34 = (PickupItemEditable_EditableItemConfiguration__Class *)
+                     (pPVar15->fields)._.range;
         pMVar7 = (this->fields)._._._.owner;
         if (pMVar7 == (MVPickupOwner *)0x0) break;
-        pPStack_44 = (PickupItemEditable_EditableItemConfiguration__Class *)
-                     func_?(7,pMVar7);
+        pMStack_44 = (MVPickupOwner *)func_?(7,pMVar7);
         pPVar15 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
         fVar2 = fStack_1;
         if (pPVar15 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) break;
@@ -1264,8 +1263,8 @@ Vector3 * Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         lineOfFire.m_Direction.x = (float)uStack_5;
         lineOfFire.m_Direction.y = (float)(int)uStack_6;
         lineOfFire.m_Direction.z = (float)((ulonglong)uStack_6 >> 0x20);
-        Bullet::Bullet_Fire((Bullet *)unaff_EDI,fStack_38,fStack_33,lineOfFire,
-                            (HashSet_1_System_Int32_ *)pPStack_44,
+        Bullet::Bullet_Fire((Bullet *)unaff_EDI,fStack_38,(float)pPStack_34,lineOfFire,
+                            (HashSet_1_System_Int32_ *)pMStack_44,
                             (pPVar15->fields).thirdPersonCamera,(MethodInfo *)0x0);
         fStack_25 = (float)((int)fStack_25 + 1);
       }
@@ -1712,123 +1711,133 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   PickupItemEditable::PickupItemEditable_InterruptFire((PickupItemEditable *)this,(MethodInfo *)0x0)
   ;
   pMVar1 = (this->fields)._._._.owner;
-  if (pMVar1 != (MVPickupOwner *)0x0) {
-    pMVar2 = (pMVar1->fields)._.worldObjectParent;
-    if ((((pMVar2 == (MVWorldObjectClient *)0x0) ||
-         (pMVar3 = pMVar2->klass,
-         (pMVar3->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment)) ||
-        ((MVAvatar__Class *)(pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1]
-         != TypeInfo__MVAvatar)) ||
-       (((pMVar3->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment ||
-        ((MVAvatarLocal__Class *)
-         (pMVar3->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-         TypeInfo__MVAvatarLocal)))) {
-      return;
+  if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
+  pMVar2 = (pMVar1->fields)._.worldObjectParent;
+  if (pMVar2 != (MVWorldObjectClient *)0x0) {
+    if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) ||
+       ((MVAvatar__Class *)
+        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
+        TypeInfo__MVAvatar)) {
+      bVar3 = false;
     }
-    pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-    if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-      if ((float)(int)(pPVar4->fields).movementSpeedWhileHeld != _UNK_?) {
-        this_00 = (AvatarMotor *)pMVar2[1].fields.gameObject;
-        if (this_00 == (AvatarMotor *)0x0) goto code_?;
-        AvatarMotor::AvatarMotor_set_WalkSpeedBase(this_00,8.0,(MethodInfo *)0x0);
-      }
-      pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        if ((pPVar4->fields).chargeEnabled == 0) {
-          return;
+    else {
+      bVar3 = true;
+    }
+    pMVar4 = (MVWorldObjectClient *)0x0;
+    if (bVar3) {
+      pMVar4 = pMVar2;
+    }
+    if (((pMVar4 != (MVWorldObjectClient *)0x0) &&
+        ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (pMVar4->klass->_1).naturalAligment)) &&
+       ((MVAvatarLocal__Class *)
+        (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] ==
+        TypeInfo__MVAvatarLocal)) {
+      pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+        if ((float)(int)(pPVar5->fields).movementSpeedWhileHeld != _UNK_?) {
+          this_00 = (AvatarMotor *)pMVar4[1].fields.gameObject;
+          if (this_00 == (AvatarMotor *)0x0) goto code_?;
+          AvatarMotor::AvatarMotor_set_WalkSpeedBase(this_00,8.0,(MethodInfo *)0x0);
         }
-        if ((this->fields).chargeRoutine != (IEnumerator *)0x0) {
-          Coroutines::Coroutines_Stop((this->fields).chargeRoutine,(MethodInfo *)0x0);
-          (this->fields).chargeRoutine = (IEnumerator *)0x0;
-          func_?();
-        }
-        auVar5._4_8_ = 0;
-        auVar5._0_4_ = this;
-        auVar6 = auVar5 << 0x20;
-        pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-        if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-          if ((pPVar4->fields).chargeZoomEnabled != 0) {
-            pMVar7 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                ((MethodInfo *)0x0);
-            if (pMVar7 == (MainCameraManager *)0x0) goto code_?;
-            this_01 = (pMVar7->fields).mainCamera;
-            AVar8 = (ACTkByte4)(this->fields).initialFOV.currentCryptoKey;
-            AVar9 = (this->fields).initialFOV.hiddenValue;
-            pBVar10 = (this->fields).initialFOV.hiddenValueOld;
-            fVar11 = (this->fields).initialFOV.fakeValue;
-            uVar12 = (this->fields).initialFOV.hiddenValueOld;
-            uVar13 = (this->fields).initialFOV.fakeValue;
-            auVar14._4_4_ = uVar13;
-            auVar14._0_4_ = uVar12;
-            auVar14._8_4_ = auVar6._8_4_;
-            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-                cctor_finished_or_no_cctor == 0) {
-              func_?();
-              pBVar10 = auVar14._0_4_;
-              fVar11 = auVar14._4_4_;
-            }
-            value.hiddenValue = AVar9;
-            value.currentCryptoKey._0_1_ = AVar8.b1;
-            value.currentCryptoKey._1_1_ = AVar8.b2;
-            value.currentCryptoKey._2_1_ = AVar8.b3;
-            value.currentCryptoKey._3_1_ = AVar8.b4;
-            value.hiddenValueOld = pBVar10;
-            value.fakeValue = fVar11;
-            value.inited = (this->fields).initialFOV.inited;
-            value._17_3_ = *(undefined3 *)&(this->fields).initialFOV.field_0x11;
-            fVar11 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                     ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-            if (this_01 == (Camera *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
-                      (this_01,fVar11,(MethodInfo *)0x0);
-            Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-            ObscuredFloat_op_Implicit_1((this->fields).initialMouseSensitivity,(MethodInfo *)0x0);
-            if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
+        pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+          if ((pPVar5->fields).chargeEnabled == 0) {
+            return;
+          }
+          if ((this->fields).chargeRoutine != (IEnumerator *)0x0) {
+            Coroutines::Coroutines_Stop((this->fields).chargeRoutine,(MethodInfo *)0x0);
+            (this->fields).chargeRoutine = (IEnumerator *)0x0;
             func_?();
           }
-          pPVar4 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-          if (pPVar4 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-            if ((pPVar4->fields).chargeParticlesEnabled != 0) {
-              this_02 = (this->fields).chargeParticles;
-              if (this_02 == (ParticleSystem *)0x0) goto code_?;
-              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-              ParticleSystem_Stop_2(this_02,(MethodInfo *)0x0);
-            }
-            this_03 = (this->fields).chargeAudioPlayer;
-            if (this_03 != (CustomItemAudioPlayer *)0x0) {
-              CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(this_03,(MethodInfo *)0x0);
+          auVar6._4_8_ = 0;
+          auVar6._0_4_ = this;
+          auVar7 = auVar6 << 0x20;
+          pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+          if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+            if ((pPVar5->fields).chargeZoomEnabled != 0) {
+              pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                  ((MethodInfo *)0x0);
+              if (pMVar8 == (MainCameraManager *)0x0) goto code_?;
+              this_01 = (pMVar8->fields).mainCamera;
+              AVar9 = (ACTkByte4)(this->fields).initialFOV.currentCryptoKey;
+              AVar10 = (this->fields).initialFOV.hiddenValue;
+              pBVar11 = (this->fields).initialFOV.hiddenValueOld;
+              fVar12 = (this->fields).initialFOV.fakeValue;
+              uVar13 = (this->fields).initialFOV.hiddenValueOld;
+              uVar14 = (this->fields).initialFOV.fakeValue;
+              auVar15._4_4_ = uVar14;
+              auVar15._0_4_ = uVar13;
+              auVar15._8_4_ = auVar7._8_4_;
               if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
                   cctor_finished_or_no_cctor == 0) {
                 func_?();
+                pBVar11 = auVar15._0_4_;
+                fVar12 = auVar15._4_4_;
               }
-              pOVar15 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                        ObscuredFloat::ObscuredFloat_op_Implicit
-                                  ((ObscuredFloat *)&stack0xffffffe8,0.0,(MethodInfo *)0x0);
-              AVar8 = pOVar15->hiddenValue;
-              pBVar10 = pOVar15->hiddenValueOld;
-              fVar11 = pOVar15->fakeValue;
-              bVar16 = pOVar15->inited;
-              uVar17 = *(undefined3 *)&pOVar15->field_0x11;
-              (this->fields).currentCharge.currentCryptoKey = pOVar15->currentCryptoKey;
-              (this->fields).currentCharge.hiddenValue = AVar8;
-              (this->fields).currentCharge.hiddenValueOld = pBVar10;
-              (this->fields).currentCharge.fakeValue = fVar11;
-              ((auVar5._0_4_)->fields).currentCharge.inited = bVar16;
-              *(undefined3 *)&((auVar5._0_4_)->fields).currentCharge.field_0x11 = uVar17;
+              value.hiddenValue = AVar10;
+              value.currentCryptoKey._0_1_ = AVar9.b1;
+              value.currentCryptoKey._1_1_ = AVar9.b2;
+              value.currentCryptoKey._2_1_ = AVar9.b3;
+              value.currentCryptoKey._3_1_ = AVar9.b4;
+              value.hiddenValueOld = pBVar11;
+              value.fakeValue = fVar12;
+              value.inited = (this->fields).initialFOV.inited;
+              value._17_3_ = *(undefined3 *)&(this->fields).initialFOV.field_0x11;
+              fVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                       ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+              if (this_01 == (Camera *)0x0) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
+                        (this_01,fVar12,(MethodInfo *)0x0);
+              Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+              ObscuredFloat_op_Implicit_1((this->fields).initialMouseSensitivity,(MethodInfo *)0x0);
+              if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
               func_?();
-              return;
+            }
+            pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+            if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+              if ((pPVar5->fields).chargeParticlesEnabled != 0) {
+                this_02 = (this->fields).chargeParticles;
+                if (this_02 == (ParticleSystem *)0x0) goto code_?;
+                UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+                ParticleSystem_Stop_2(this_02,(MethodInfo *)0x0);
+              }
+              this_03 = (this->fields).chargeAudioPlayer;
+              if (this_03 != (CustomItemAudioPlayer *)0x0) {
+                CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(this_03,(MethodInfo *)0x0);
+                if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+                    cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                pOVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                          ObscuredFloat::ObscuredFloat_op_Implicit
+                                    ((ObscuredFloat *)&stack0xffffffe8,0.0,(MethodInfo *)0x0);
+                AVar9 = pOVar16->hiddenValue;
+                pBVar11 = pOVar16->hiddenValueOld;
+                fVar12 = pOVar16->fakeValue;
+                bVar17 = pOVar16->inited;
+                uVar18 = *(undefined3 *)&pOVar16->field_0x11;
+                (this->fields).currentCharge.currentCryptoKey = pOVar16->currentCryptoKey;
+                (this->fields).currentCharge.hiddenValue = AVar9;
+                (this->fields).currentCharge.hiddenValueOld = pBVar11;
+                (this->fields).currentCharge.fakeValue = fVar12;
+                ((auVar6._0_4_)->fields).currentCharge.inited = bVar17;
+                *(undefined3 *)&((auVar6._0_4_)->fields).currentCharge.field_0x11 = uVar18;
+                func_?();
+                return;
+              }
             }
           }
         }
       }
+code_?:
+      func_?();
+      pcVar19 = (code *)swi(3);
+      (*pcVar19)();
+      return;
     }
   }
-code_?:
-  func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
   return;
 }
 
@@ -2760,35 +2769,49 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   pMVar1 = (this->fields)._._._.owner;
   if (pMVar1 != (MVPickupOwner *)0x0) {
     pMVar2 = (pMVar1->fields)._.worldObjectParent;
-    if (((pMVar2 == (MVWorldObjectClient *)0x0) ||
-        ((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)) ||
-       ((MVAvatarLocal__Class *)
-        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarLocal)) {
-      return;
-    }
-    pGVar3 = pMVar2[1].fields.gameObject;
-    if (pGVar3 != (GameObject *)0x0) {
-      pGVar4 = pGVar3[4].klass;
-      pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        if ((float)pGVar4 == (float)(int)(pPVar5->fields).movementSpeedWhileHeld) {
-          return;
+    if (pMVar2 != (MVWorldObjectClient *)0x0) {
+      if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
+         ((MVAvatarLocal__Class *)
+          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatarLocal)) {
+        bVar3 = false;
+      }
+      else {
+        bVar3 = true;
+      }
+      pMVar4 = (MVWorldObjectClient *)0x0;
+      if (bVar3) {
+        pMVar4 = pMVar2;
+      }
+      if (pMVar4 != (MVWorldObjectClient *)0x0) {
+        pGVar5 = pMVar4[1].fields.gameObject;
+        if (pGVar5 != (GameObject *)0x0) {
+          pGVar6 = pGVar5[4].klass;
+          pPVar7 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+          if (pPVar7 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+            if ((float)pGVar6 == (float)(int)(pPVar7->fields).movementSpeedWhileHeld) {
+              return;
+            }
+            this_00 = (AvatarMotor *)pMVar4[1].fields.gameObject;
+            pPVar7 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+            if ((pPVar7 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+               (this_00 != (AvatarMotor *)0x0)) {
+              AvatarMotor::AvatarMotor_set_WalkSpeedBase
+                        (this_00,(float)(int)(pPVar7->fields).movementSpeedWhileHeld,
+                         (MethodInfo *)0x0);
+              return;
+            }
+          }
         }
-        this_00 = (AvatarMotor *)pMVar2[1].fields.gameObject;
-        pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-        if ((pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-           (this_00 != (AvatarMotor *)0x0)) {
-          AvatarMotor::AvatarMotor_set_WalkSpeedBase
-                    (this_00,(float)(int)(pPVar5->fields).movementSpeedWhileHeld,(MethodInfo *)0x0);
-          return;
-        }
+        goto code_?;
       }
     }
+    return;
   }
+code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -3472,41 +3495,55 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   PickupItemEditable::PickupItemEditable_OnStateChanged
             ((PickupItemEditable *)this,newState,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarLocal);
+    func_?();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
   if (pMVar1 != (MVPickupOwner *)0x0) {
     pMVar2 = (pMVar1->fields)._.worldObjectParent;
-    if (((pMVar2 == (MVWorldObjectClient *)0x0) ||
-        ((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)) ||
-       ((MVAvatarLocal__Class *)
-        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarLocal)) {
-      return;
-    }
-    pGVar3 = pMVar2[1].fields.gameObject;
-    if (pGVar3 != (GameObject *)0x0) {
-      pGVar4 = pGVar3[4].klass;
-      pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-        if ((float)pGVar4 == (float)(int)(pPVar5->fields).movementSpeedWhileHeld) {
-          return;
+    if (pMVar2 != (MVWorldObjectClient *)0x0) {
+      if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
+         ((MVAvatarLocal__Class *)
+          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+          TypeInfo__MVAvatarLocal)) {
+        bVar3 = false;
+      }
+      else {
+        bVar3 = true;
+      }
+      pMVar4 = (MVWorldObjectClient *)0x0;
+      if (bVar3) {
+        pMVar4 = pMVar2;
+      }
+      if (pMVar4 != (MVWorldObjectClient *)0x0) {
+        pGVar5 = pMVar4[1].fields.gameObject;
+        if (pGVar5 != (GameObject *)0x0) {
+          pGVar6 = pGVar5[4].klass;
+          pPVar7 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+          if (pPVar7 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+            if ((float)pGVar6 == (float)(int)(pPVar7->fields).movementSpeedWhileHeld) {
+              return;
+            }
+            this_00 = (AvatarMotor *)pMVar4[1].fields.gameObject;
+            pPVar7 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+            if ((pPVar7 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
+               (this_00 != (AvatarMotor *)0x0)) {
+              AvatarMotor::AvatarMotor_set_WalkSpeedBase
+                        (this_00,(float)(int)(pPVar7->fields).movementSpeedWhileHeld,
+                         (MethodInfo *)0x0);
+              return;
+            }
+          }
         }
-        this_00 = (AvatarMotor *)pMVar2[1].fields.gameObject;
-        pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-        if ((pPVar5 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
-           (this_00 != (AvatarMotor *)0x0)) {
-          AvatarMotor::AvatarMotor_set_WalkSpeedBase
-                    (this_00,(float)(int)(pPVar5->fields).movementSpeedWhileHeld,(MethodInfo *)0x0);
-          return;
-        }
+        goto code_?;
       }
     }
+    return;
   }
+code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -3526,40 +3563,37 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
                     (pCVar1,(pPVar2->fields)._.fireSoundEffect,(MethodInfo *)0x0);
   if (bVar3 == 0) {
     if (isLocal == 0) {
-      fStack_4 = 0.0;
-      uVar5._0_4_ = 0.0;
-      uVar5._4_4_ = 0.0;
+      uVar4._0_4_ = 0.0;
+      uVar4._4_4_ = 0.0;
     }
     else {
-      pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      if ((pCVar6 == (Camera *)0x0) ||
-         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pCVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      if ((pCVar5 == (Camera *)0x0) ||
+         (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pCVar5,(MethodInfo *)0x0), pTVar6 == (Transform *)0x0))
       goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                ((Vector3 *)&stack0xffffffd8,pTVar7,(MethodInfo *)0x0);
-      pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      if ((pCVar6 == (Camera *)0x0) ||
-         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pCVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+                ((Vector3 *)&stack0xffffffd0,pTVar6,(MethodInfo *)0x0);
+      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      if ((pCVar5 == (Camera *)0x0) ||
+         (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pCVar5,(MethodInfo *)0x0), pTVar6 == (Transform *)0x0))
       goto code_?;
-      __return_storage_ptr__ = (Vector3 *)&stack0xffffffb0;
-      puVar8 = &UNK_?;
-      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                          (__return_storage_ptr__,pTVar7,(MethodInfo *)0x0);
-      uVar10 = pVVar9->x;
-      uVar11 = pVVar9->y;
-      fStack_4 = pVVar9->z + (float)pTVar7;
-      uVar5._4_4_ = (float)__return_storage_ptr__ + (float)uVar11;
-      uVar5._0_4_ = (float)uVar10 + (float)puVar8;
+      uVar7 = ZEXT48(pTVar6);
+      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                          ((Vector3 *)&stack0xffffffc0,pTVar6,(MethodInfo *)0x0);
+      uVar9 = pVVar8->x;
+      uVar10 = pVVar8->y;
+      uVar4._4_4_ = (float)(uVar7 >> 0x20) + (float)uVar10;
+      uVar4._0_4_ = (float)uVar9 + (float)uVar7;
     }
     pCVar1 = (this->fields)._.fireAudioPlayer;
     pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
     if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
        (pCVar1 != (CustomItemAudioPlayer *)0x0)) {
-      position.z = fStack_4;
-      position.x = (float)uVar5;
-      position.y = SUB84(uVar5,4);
+      position.z = (float)this;
+      position.x = (float)uVar4;
+      position.y = SUB84(uVar4,4);
       CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClip
                 (pCVar1,(pPVar2->fields)._.fireSoundEffect,1,position,(MethodInfo *)0x0);
       return;
@@ -3568,16 +3602,16 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   }
   pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-  iVar12 = (pPVar2->fields).fireMode;
+  iVar11 = (pPVar2->fields).fireMode;
   pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  if (iVar12 == 2) {
+  if (iVar11 == 2) {
     if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-    fStack_4 = (pPVar2->fields).burstCooldownBetweenShots;
+    fVar12 = (pPVar2->fields).burstCooldownBetweenShots;
 code_?:
     pCVar1 = (this->fields)._.fireAudioPlayer;
     if (pCVar1 == (CustomItemAudioPlayer *)0x0) goto code_?;
     bVar3 = CustomItemAudioPlayer::CustomItemAudioPlayer_get_IsPlaying(pCVar1,(MethodInfo *)0x0);
-    if (((bVar3 == 0) && (fStack_4 <= _UNK_?)) && ((this->fields)._._.isFiring != 0)) {
+    if (((bVar3 == 0) && (fVar12 <= _UNK_?)) && ((this->fields)._._.isFiring != 0)) {
       pCVar1 = (this->fields)._.fireAudioPlayer;
       pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if ((pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) &&
@@ -3589,14 +3623,14 @@ code_?:
       }
       goto code_?;
     }
-    if (fStack_4 <= _UNK_?) {
+    if (fVar12 <= _UNK_?) {
       return;
     }
   }
   else {
     if (pPVar2 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
-    fStack_4 = (pPVar2->fields)._.attackCooldown;
-    if (iVar12 != 0) goto code_?;
+    fVar12 = (pPVar2->fields)._.attackCooldown;
+    if (iVar11 != 0) goto code_?;
   }
   pCVar1 = (this->fields)._.fireAudioPlayer;
   pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);

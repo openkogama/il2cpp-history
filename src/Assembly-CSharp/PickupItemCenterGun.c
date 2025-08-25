@@ -236,7 +236,7 @@ code_?:
                         uVar21 = pVVar2->x;
                         uVar22 = pVVar2->y;
                         fVar8 = (float)uVar20 + (float)uVar21;
-                        fVar9 = (float)uVar22 + (float)(uVar20 >> 0x20);
+                        fVar9 = (float)(uVar20 >> 0x20) + (float)uVar22;
                         fVar7 = pVVar2->z + fVar7;
                         goto code_?;
                       }

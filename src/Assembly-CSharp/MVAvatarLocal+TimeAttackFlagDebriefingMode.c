@@ -497,30 +497,32 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
             if (pMVar2 == (MVAvatarLocal *)0x0) goto code_?;
             puVar20 = (undefined8 *)
                       (*(code *)(pMVar2->klass->vtable).get_Position.method)
-                                (auStack_21,pMVar2,(pMVar2->klass->vtable).set_Position.methodPtr);
-            fStack_22 = *(float *)(puVar20 + 1);
-            fStack_23 = (float)*puVar20;
-            uStack_24 = (undefined4)((ulonglong)*puVar20 >> 0x20);
-            VStack_5.x = VStack_5.x - fStack_23;
-            VStack_5.z = VStack_5.z - fStack_22;
+                                (&stack0xffffffd0,pMVar2,
+                                 (pMVar2->klass->vtable).set_Position.methodPtr);
+            VStack_17.z = *(float *)(puVar20 + 1);
+            VStack_17.x = (float)*puVar20;
+            VStack_17.y = (float)((ulonglong)*puVar20 >> 0x20);
+            VStack_5.x = VStack_5.x - VStack_17.x;
+            VStack_5.z = VStack_5.z - VStack_17.z;
             VStack_5.y = 0.0;
-            fVar25 = VStack_5.x * VStack_5.x + 0.0 + VStack_5.z * VStack_5.z;
-            if (fVar25 < _UNK_?) {
+            fVar21 = VStack_5.x * VStack_5.x + 0.0 + VStack_5.z * VStack_5.z;
+            if (fVar21 < _UNK_?) {
               direction_01.y = 0.0;
               direction_01.x = VStack_5.x;
               direction_01.z = VStack_5.z;
               pVVar16 = (Vector3__StaticFields *)
                         MVAvatarLocal_TimeAttackFlagDebriefingMode_RotateDirection
-                                  ((Vector3 *)&stack0xffffffac,this,direction_01,100.0,
+                                  ((Vector3 *)&stack0xffffffd0,this,direction_01,100.0,
                                    (MethodInfo *)0x0);
             }
-            else if (_UNK_? < fVar25) {
+            else if (_UNK_? < fVar21) {
               direction_00.y = 0.0;
               direction_00.x = VStack_5.x;
               direction_00.z = VStack_5.z;
               pVVar16 = (Vector3__StaticFields *)
                         MVAvatarLocal_TimeAttackFlagDebriefingMode_RotateDirection
-                                  (&VStack_26,this,direction_00,20.0,(MethodInfo *)0x0);
+                                  ((Vector3 *)&stack0xffffffd0,this,direction_00,20.0,
+                                   (MethodInfo *)0x0);
             }
             else {
               direction.y = 0.0;
@@ -528,39 +530,40 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
               direction.z = VStack_5.z;
               pVVar16 = (Vector3__StaticFields *)
                         MVAvatarLocal_TimeAttackFlagDebriefingMode_RotateDirection
-                                  (&VStack_5,this,direction,80.0,(MethodInfo *)0x0);
+                                  ((Vector3 *)&stack0xffffffd0,this,direction,80.0,(MethodInfo *)0x0
+                                  );
             }
           }
-          uVar27 = (pVVar16->zeroVector).x;
-          uVar28 = (pVVar16->zeroVector).y;
-          fVar25 = (pVVar16->zeroVector).z;
-          pIVar29 = (this->fields).avatarInputController;
-          uStack_24 = uVar27;
-          fStack_22 = (float)uVar28;
+          uVar22 = (pVVar16->zeroVector).x;
+          uVar23 = (pVVar16->zeroVector).y;
+          fVar21 = (pVVar16->zeroVector).z;
+          pIVar24 = (this->fields).avatarInputController;
+          VStack_17.y = (float)uVar22;
+          VStack_17.z = (float)uVar23;
           if (movementMap != (IInputToPlayerMovement *)0x0) {
-            uVar30 = func_?(1,TypeInfo__IInputToPlayerMovement,movementMap);
-            uStack_31 = CONCAT31(uStack_31._1_3_,uVar30);
+            uVar25 = func_?(1,TypeInfo__IInputToPlayerMovement,movementMap);
+            uStack_26 = CONCAT31(uStack_26._1_3_,uVar25);
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
             }
             pVVar16 = TypeInfo__UnityEngine__Vector3->static_fields;
-            uVar32 = (pVVar16->zeroVector).x;
-            uVar33 = (pVVar16->zeroVector).y;
-            fStack_34 = (pVVar16->zeroVector).z;
+            uVar27 = (pVVar16->zeroVector).x;
+            uVar28 = (pVVar16->zeroVector).y;
+            fStack_29 = (pVVar16->zeroVector).z;
             pMVar2 = (this->fields)._.mvAvatar;
-            VStack_5.y = (float)uVar32;
-            VStack_5.z = (float)uVar33;
+            VStack_5.y = (float)uVar27;
+            VStack_5.z = (float)uVar28;
             if (pMVar2 != (MVAvatarLocal *)0x0) {
               bVar10 = MVAvatarLocal::MVAvatarLocal_get_InFirstPersonGunMode
                                  (pMVar2,(MethodInfo *)0x0);
               this = (MVAvatarLocal_TimeAttackFlagDebriefingMode *)
                      CONCAT31((int3)((uint)fVar6 >> 8),bVar10);
               pMVar2 = (pMVar1->fields)._.mvAvatar;
-              if ((pMVar2 != (MVAvatarLocal *)0x0) && (pIVar29 != (IAvatarInputController *)0x0)) {
-                func_?(0,TypeInfo__IAvatarInputController,pIVar29,
-                                CONCAT44(fStack_22,uStack_24),fVar25,uStack_31,0,
-                                CONCAT44(VStack_5.z,VStack_5.y),fStack_34,this,
+              if ((pMVar2 != (MVAvatarLocal *)0x0) && (pIVar24 != (IAvatarInputController *)0x0)) {
+                func_?(0,TypeInfo__IAvatarInputController,pIVar24,
+                                CONCAT44(VStack_17.z,VStack_17.y),fVar21,uStack_26,0,
+                                CONCAT44(VStack_5.z,VStack_5.y),fStack_29,this,
                                 (pMVar2->fields)._ForceRotateAvatarToFiringDirection_k__BackingField
                                );
                 pMVar2 = (pMVar1->fields)._.mvAvatar;
@@ -574,11 +577,11 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
                   }
                   pMVar2 = (pMVar1->fields)._.mvAvatar;
                   if (((pMVar2 != (MVAvatarLocal *)0x0) &&
-                      (pMVar35 = (pMVar2->fields)._.body, pMVar35 != (MVBody *)0x0)) &&
-                     (pBVar36 = MVBody::MVBody_get_Animation(pMVar35,(MethodInfo *)0x0),
-                     pBVar36 != (BoneAnimation *)0x0)) {
+                      (pMVar30 = (pMVar2->fields)._.body, pMVar30 != (MVBody *)0x0)) &&
+                     (pBVar31 = MVBody::MVBody_get_Animation(pMVar30,(MethodInfo *)0x0),
+                     pBVar31 != (BoneAnimation *)0x0)) {
                     bVar10 = BoneAnimation::BoneAnimation_IsPlaying
-                                       (pBVar36,StringLiteral_Jump,(MethodInfo *)0x0);
+                                       (pBVar31,StringLiteral_Jump,(MethodInfo *)0x0);
                     if (bVar10 != 0) {
                       return;
                     }
@@ -592,11 +595,11 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
                                   (pMVar2,StringLiteral_Jump,(MethodInfo *)0x0);
                         pMVar2 = (pMVar1->fields)._.mvAvatar;
                         if (((pMVar2 != (MVAvatarLocal *)0x0) &&
-                            (pMVar35 = (pMVar2->fields)._.body, pMVar35 != (MVBody *)0x0)) &&
-                           (pBVar36 = MVBody::MVBody_get_Animation(pMVar35,(MethodInfo *)0x0),
-                           pBVar36 != (BoneAnimation *)0x0)) {
+                            (pMVar30 = (pMVar2->fields)._.body, pMVar30 != (MVBody *)0x0)) &&
+                           (pBVar31 = MVBody::MVBody_get_Animation(pMVar30,(MethodInfo *)0x0),
+                           pBVar31 != (BoneAnimation *)0x0)) {
                           BoneAnimation::BoneAnimation_Play
-                                    (pBVar36,StringLiteral_Jump,(MethodInfo *)0x0);
+                                    (pBVar31,StringLiteral_Jump,(MethodInfo *)0x0);
                           return;
                         }
                       }
@@ -612,8 +615,8 @@ void Assembly-CSharp.dll::MVAvatarLocal+TimeAttackFlagDebriefingMode::
   }
 code_?:
   func_?();
-  pcVar37 = (code *)swi(3);
-  (*pcVar37)();
+  pcVar32 = (code *)swi(3);
+  (*pcVar32)();
   return;
 }
 

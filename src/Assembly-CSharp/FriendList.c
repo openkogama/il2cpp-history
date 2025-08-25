@@ -579,7 +579,7 @@ void Assembly-CSharp.dll::FriendList::FriendList_OnPlayersLoaded
      (pMVar8 = (pMVar7->fields).game, pMVar8 != (MVNetworkGame *)0x0)) {
     DStack_9._currentValue = (Object *)(pMVar8->fields).playerContainer;
     if ((Il2CppClass *)DStack_9._currentValue != (Il2CppClass *)0x0) {
-      source = (Delegate *)(((Il2CppClass *)DStack_9._currentValue)->this_arg).data.typeHandle;
+      source = (Action *)(((Il2CppClass *)DStack_9._currentValue)->this_arg).data.typeHandle;
       unaff_ESI = (Il2CppClass *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
@@ -587,10 +587,10 @@ void Assembly-CSharp.dll::FriendList::FriendList_OnPlayersLoaded
                  MethodInfo__FriendList__OnPlayersLoaded__,(MethodInfo *)0x0);
       DStack_6._version =
            (int32_t)mscorlib.dll::System::Delegate::Delegate_Remove
-                              (source,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+                              ((Delegate *)source,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
       DStack_6._currentValue = (Object *)0x0;
       if ((Action__Class *)DStack_6._version == (Action__Class *)0x0) {
-        (((Il2CppType *)((int)DStack_9._currentValue + 0x18))->data).dummy = (void *)0x0;
+        (((Il2CppType *)((int)DStack_9._currentValue + 0x18))->data).dummy = (Action *)0x0;
       }
       else {
         if ((Action__Class *)(((Action__Class *)DStack_6._version)->_0).image ==

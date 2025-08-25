@@ -1482,21 +1482,32 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::
     func_?(&TypeInfo__MVMovingPlatformNode);
     cRam_? = '\x01';
   }
-  if (((sender != (Object *)0x0) &&
-      ((TypeInfo__MVMovingPlatformNode->_1).naturalAligment <= (sender->klass->_1).naturalAligment))
-     && ((MVMovingPlatformNode__Class *)
-         (sender->klass->_1).typeHierarchy[(TypeInfo__MVMovingPlatformNode->_1).naturalAligment - 1]
-         == TypeInfo__MVMovingPlatformNode)) {
-    this_00 = (this->fields).platform;
-    if (this_00 == (MVMovingPlatform *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+  if (sender != (Object *)0x0) {
+    if (((sender->klass->_1).naturalAligment < (TypeInfo__MVMovingPlatformNode->_1).naturalAligment)
+       || ((MVMovingPlatformNode__Class *)
+           (sender->klass->_1).typeHierarchy
+           [(TypeInfo__MVMovingPlatformNode->_1).naturalAligment - 1] !=
+           TypeInfo__MVMovingPlatformNode)) {
+      bVar1 = false;
     }
-    if (((this_00->fields).start == (MVMovingPlatformNode *)sender) ||
-       ((this_00->fields).end == (MVMovingPlatformNode *)sender)) {
-      MVMovingPlatform::MVMovingPlatform_RecalculateMovement(this_00,(MethodInfo *)0x0);
+    else {
+      bVar1 = true;
+    }
+    pMVar2 = (MVMovingPlatformNode *)0x0;
+    if (bVar1) {
+      pMVar2 = (MVMovingPlatformNode *)sender;
+    }
+    if (pMVar2 != (MVMovingPlatformNode *)0x0) {
+      this_00 = (this->fields).platform;
+      if (this_00 == (MVMovingPlatform *)0x0) {
+        func_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      if (((this_00->fields).start == pMVar2) || ((this_00->fields).end == pMVar2)) {
+        MVMovingPlatform::MVMovingPlatform_RecalculateMovement(this_00,(MethodInfo *)0x0);
+      }
     }
   }
   MVMovingPlatformGroup_UpdateLine(this,(MethodInfo *)0x0);

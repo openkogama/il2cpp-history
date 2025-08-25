@@ -140,40 +140,39 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
   }
   bVar1 = this->hiddenValue;
   bVar2 = obj.currentCryptoKey;
-  bVar3 = obj.hiddenValue;
-  if (this->currentCryptoKey == bVar2) {
-    return bVar1 == bVar3;
-  }
-  bVar4 = this->currentCryptoKey;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
-    cRam_? = '\x01';
-  }
-  if (bVar4 == 0) {
+  if (this->currentCryptoKey != bVar2) {
+    bVar3 = this->currentCryptoKey;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     }
-    bVar4 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields->cryptoKey;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+      cRam_? = '\x01';
+    }
+    if (bVar3 == 0) {
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+      }
+      bVar3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields->cryptoKey
+      ;
+    }
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+      cRam_? = '\x01';
+    }
+    if (bVar2 == 0) {
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
+      }
+      bVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields->cryptoKey
+      ;
+    }
+    return (byte)(bVar1 ^ bVar3) == (byte)(bVar2 ^ obj.hiddenValue);
   }
-  bVar1 = bVar1 ^ bVar4;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
-    cRam_? = '\x01';
-  }
-  if (bVar2 != 0) {
-    return bVar1 == (bVar2 ^ bVar3);
-  }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
-  }
-  return bVar1 == (byte)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields
-                         ->cryptoKey ^ bVar3);
+  return bVar1 == obj.hiddenValue;
 }
 
 

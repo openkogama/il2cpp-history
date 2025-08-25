@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Add
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                    );
-    func_?(0xc618);
+    func_?(0x61d4);
     cRam_? = '\x01';
     puVar7 = puStack_6;
   }
@@ -125,7 +125,7 @@ code_?:
             }
             iVar32 = iVar28;
             if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-              uVar29 = 0x1037;
+              uVar29 = 0x1038;
               func_?(TypeInfo__MV__WorldObject__IntVector);
             }
             in_stack_9 = (MethodInfo **)CONCAT22(uVar29,iVar28);
@@ -214,101 +214,101 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Add
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
-  if (from != (ICubeModel *)0x0) {
-    iVar4 = func_?(1,TypeInfo__MV__WorldObject__ICubeModel,from,fromPos._0_4_,fromPos.z);
-    if ((iVar4 != 0) && (*(PlayableBehaviour **)(iVar4 + 0x10) != (PlayableBehaviour *)0x0)) {
-      pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
-               PlayableBehaviour_Clone(*(PlayableBehaviour **)(iVar4 + 0x10),(MethodInfo *)0x0);
-      pBStack_6 = TypeInfo__System__Byte;
-      if (pOVar5 == (Object *)0x0) {
-        from = (ICubeModel *)0x0;
+  if (((from != (ICubeModel *)0x0) &&
+      (iVar4 = func_?(1,TypeInfo__MV__WorldObject__ICubeModel,from,fromPos._0_4_,fromPos.z)
+      , iVar4 != 0)) && (*(PlayableBehaviour **)(iVar4 + 0x10) != (PlayableBehaviour *)0x0)) {
+    unaff_ESI = (MethodInfo *)
+                UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+                PlayableBehaviour_Clone(*(PlayableBehaviour **)(iVar4 + 0x10),(MethodInfo *)0x0);
+    pBStack_5 = TypeInfo__System__Byte;
+    if (unaff_ESI == (MethodInfo *)0x0) {
+      from = (ICubeModel *)0x0;
+    }
+    else {
+      from = (ICubeModel *)func_?(unaff_ESI,TypeInfo__System__Byte);
+      if (from == (ICubeModel *)0x0) goto code_?;
+    }
+    puVar6 = (undefined8 *)
+             func_?(auStack_7,0,TypeInfo__MV__WorldObject__ICubeModel,pIVar1);
+    fStack_8 = (float)*puVar6;
+    if (to != (ICubeModel *)0x0) {
+      puVar6 = (undefined8 *)func_?(auStack_7,0,TypeInfo__MV__WorldObject__ICubeModel,to);
+      uStack_9 = (undefined2)((uint)*(undefined4 *)(puVar6 + 1) >> 0x10);
+      unaff_ESI = (MethodInfo *)(int)(fStack_8 / (float)*puVar6);
+      pMStack_10 = unaff_ESI;
+      if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__IntVector);
       }
-      else {
-        from = (ICubeModel *)func_?(pOVar5,TypeInfo__System__Byte);
-        if (from == (ICubeModel *)0x0) {
-          func_?(pOVar5,pBStack_6);
-          pBVar7 = (Byte__Array__Class *)0x0;
-code_?:
-          func_?(pOVar5,pBVar7);
-          goto code_?;
-        }
-      }
-      puVar8 = (undefined8 *)
-               func_?(auStack_9,0,TypeInfo__MV__WorldObject__ICubeModel,pIVar1);
-      fStack_10 = (float)*puVar8;
-      if (to != (ICubeModel *)0x0) {
-        puVar8 = (undefined8 *)
-                 func_?(auStack_9,0,TypeInfo__MV__WorldObject__ICubeModel,to);
-        uStack_11 = (undefined2)((uint)*(undefined4 *)(puVar8 + 1) >> 0x10);
-        method_00 = (MethodInfo *)(int)(fStack_10 / (float)*puVar8);
-        pMStack_12 = method_00;
-        if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MV__WorldObject__IntVector);
-        }
-        IVar13.z = fromPos.x;
-        IVar13._0_4_ = &fromPos;
-        IVar13 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply_1
-                          (IVar13,CONCAT22(uVar2,fromPos.z),method_00);
-        pBStack_6 = (Byte__Array__Class *)*IVar13._0_4_;
-        uStack_14 = *(undefined2 *)(IVar13._0_4_ + 1);
-        uStack_15 = (undefined2)((uint)pBStack_6 >> 0x10);
-        fStack_10 = 0.0;
-        if (0 < (int)method_00) {
+      IVar11.z = fromPos.x;
+      IVar11._0_4_ = &fromPos;
+      IVar11 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply_1
+                        (IVar11,CONCAT22(uVar2,fromPos.z),unaff_ESI);
+      pBStack_5 = (Byte__Array__Class *)*IVar11._0_4_;
+      uStack_12 = *(undefined2 *)(IVar11._0_4_ + 1);
+      uStack_13 = (undefined2)((uint)pBStack_5 >> 0x10);
+      fStack_8 = 0.0;
+      if (0 < (int)unaff_ESI) {
+        do {
+          iVar4 = 0;
+          uStack_14 = (int)&(pBStack_5->_0).image + (int)fStack_8 & 0xffff;
           do {
-            iVar4 = 0;
-            uStack_16 = (int)&(pBStack_6->_0).image + (int)fStack_10 & 0xffff;
+            iVar15 = 0;
+            iStack_16 = iVar4 + CONCAT22(uStack_12,uStack_13);
             do {
-              iVar17 = 0;
-              iStack_18 = iVar4 + CONCAT22(uStack_14,uStack_15);
-              do {
-                in_stack_19 = (undefined2)((uint)iVar4 >> 0x10);
-                fromPos.z = (int16_t)iVar4;
-                IStack_20.x = 0;
-                IStack_20.y = 0;
-                IStack_20.z = 0;
-                MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                          (&IStack_20,uStack_16,iStack_18,CONCAT22(uStack_11,uStack_14) + iVar17,
-                           (MethodInfo *)0x0);
-                if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__MV__WorldObject__CubeBase);
+              in_stack_17 = (undefined2)((uint)iVar4 >> 0x10);
+              fromPos.z = (int16_t)iVar4;
+              IStack_18.x = 0;
+              IStack_18.y = 0;
+              IStack_18.z = 0;
+              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+                        (&IStack_18,uStack_14,iStack_16,CONCAT22(uStack_9,uStack_12) + iVar15,
+                         (MethodInfo *)0x0);
+              if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__MV__WorldObject__CubeBase);
+              }
+              pBStack_19 = MVWorldObject.dll::MV::WorldObject::CubeBase::
+                           CubeBase_get_IdentityByteCorners((MethodInfo *)0x0);
+              if (from == (ICubeModel *)0x0) goto code_?;
+              unaff_ESI = (MethodInfo *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+                          PlayableBehaviour_Clone((PlayableBehaviour *)from,(MethodInfo *)0x0);
+              pCStack_20 = (CubeBase *)func_?(TypeInfo__MV__WorldObject__CubeBase);
+              pBVar21 = TypeInfo__System__Byte;
+              if (unaff_ESI == (MethodInfo *)0x0) {
+                faceMaterials = (Byte__Array *)0x0;
+              }
+              else {
+                faceMaterials = (Byte__Array *)func_?(unaff_ESI,TypeInfo__System__Byte);
+                if (faceMaterials == (Byte__Array *)0x0) {
+                  func_?(unaff_ESI,pBVar21);
+                  goto code_?;
                 }
-                pBStack_21 = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                             CubeBase_get_IdentityByteCorners((MethodInfo *)0x0);
-                if (from == (ICubeModel *)0x0) goto code_?;
-                pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
-                         PlayableBehaviour_Clone((PlayableBehaviour *)from,(MethodInfo *)0x0);
-                pCStack_22 = (CubeBase *)func_?(TypeInfo__MV__WorldObject__CubeBase);
-                pBVar7 = TypeInfo__System__Byte;
-                if (pOVar5 == (Object *)0x0) {
-                  faceMaterials = (Byte__Array *)0x0;
-                }
-                else {
-                  faceMaterials = (Byte__Array *)func_?(pOVar5,TypeInfo__System__Byte);
-                  if (faceMaterials == (Byte__Array *)0x0) goto code_?;
-                }
-                pCVar23 = pCStack_22;
-                MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor
-                          (pCStack_22,pBStack_21,faceMaterials,(MethodInfo *)0x0);
-                uStack_14 = SUB42(pCVar23,0);
-                uStack_11 = (undefined2)((uint)pCVar23 >> 0x10);
-                func_?(2,TypeInfo__MV__WorldObject__ICubeModel,to,IStack_20._0_4_,
-                                IStack_20.z);
-                iVar4 = CONCAT22(in_stack_19,fromPos.z);
-                iVar17 = iVar17 + 1;
-              } while (iVar17 < (int)pMStack_12);
-              iVar4 = CONCAT22(in_stack_19,fromPos.z) + 1;
-            } while (iVar4 < (int)pMStack_12);
-            fStack_10 = (float)((int)fStack_10 + 1);
-          } while ((int)fStack_10 < (int)pMStack_12);
-        }
-        return;
+              }
+              pCVar22 = pCStack_20;
+              MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor
+                        (pCStack_20,pBStack_19,faceMaterials,(MethodInfo *)0x0);
+              uStack_12 = SUB42(pCVar22,0);
+              uStack_9 = (undefined2)((uint)pCVar22 >> 0x10);
+              func_?(2,TypeInfo__MV__WorldObject__ICubeModel,to,IStack_18._0_4_,IStack_18.z
+                             );
+              iVar4 = CONCAT22(in_stack_17,fromPos.z);
+              iVar15 = iVar15 + 1;
+              unaff_ESI = pMStack_10;
+            } while (iVar15 < (int)pMStack_10);
+            iVar4 = CONCAT22(in_stack_17,fromPos.z) + 1;
+          } while (iVar4 < (int)pMStack_10);
+          fStack_8 = (float)((int)fStack_8 + 1);
+        } while ((int)fStack_8 < (int)pMStack_10);
       }
+      return;
     }
   }
 code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+code_?:
+  func_?(unaff_ESI,pBStack_5);
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -604,9 +604,9 @@ Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_GetValid
 
 {
   if (cRam_? == '\0') {
-    func_?(0xd434);
-    func_?(0xe17c);
-    func_?(0xe13c);
+    func_?(0xdd04);
+    func_?(0x7d38);
+    func_?(0x7cf8);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MoveCubeFromCoarseToFine::ValidPos>__get_Item_int_
                    );
@@ -660,7 +660,7 @@ code_?:
             uStack_6._2_2_ = IStack_1.y;
             iStack_12 = IStack_1.z;
             if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-              uVar11 = 0x1037;
+              uVar11 = 0x1038;
               func_?(TypeInfo__MV__WorldObject__IntVector);
             }
             method_00 = (MethodInfo *)CONCAT22(uVar11,uStack_13);
@@ -786,8 +786,10 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
     }
   }
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  *(char *)(uVar3 + 0xc2103827) = *(char *)(uVar3 + 0xc2103827) + extraout_CH;
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 
 
@@ -799,7 +801,7 @@ void Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_Mov
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    func_?(0xc618);
+    func_?(0x61d4);
     cRam_? = '\x01';
   }
   if (from != (ICubeModel *)0x0) {

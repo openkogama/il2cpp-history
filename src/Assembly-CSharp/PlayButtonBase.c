@@ -129,6 +129,7 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_UpdateButton
                         (pGVar7,0,(MethodInfo *)0x0);
             }
             pIStack9 = this->klass[1]._0.image;
+            pPStack10 = this;
             (*(code *)(this->klass->vtable).OnCountDownEnd.method)();
             return;
           }
@@ -136,17 +137,16 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_UpdateButton
         }
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                  ((MethodInfo *)(pMVar5->fields).respawnTime);
-        puVar10 = &UNK_?;
+        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        puVar11 = &UNK_?;
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        puVar11 = &UNK_?;
-        fVar4 = MVLocalPlayer::MVLocalPlayer_get_RespawnDuration(pMVar5,(MethodInfo *)0x0);
-        pIVar6 = (this->fields).countdownFill;
-        if (pIVar6 == (Image *)0x0) goto code_?;
+        fVar4 = (float)puVar11 - fVar4;
+        fVar12 = MVLocalPlayer::MVLocalPlayer_get_RespawnDuration(pMVar5,(MethodInfo *)0x0);
+        this = (PlayButtonBase *)0x0;
+        if (pIRam00000010 == (Image *)0x0) goto code_?;
         UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                  (pIVar6,((float)puVar11 - (float)puVar10) / fVar4,(MethodInfo *)0x0);
+                  (pIRam00000010,fVar4 / fVar12,(MethodInfo *)0x0);
       }
       pIVar6 = (this->fields).countdownFill;
       if ((pIVar6 != (Image *)0x0) &&
@@ -172,8 +172,8 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_UpdateButton
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

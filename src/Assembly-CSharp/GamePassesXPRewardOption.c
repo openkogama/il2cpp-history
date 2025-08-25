@@ -283,12 +283,11 @@ void Assembly-CSharp.dll::GamePassesXPRewardOption::GamePassesXPRewardOption_Upd
   iVar1 = SubscriberRewardDataManager::SubscriberRewardDataManager_GetBaseXpAmount
                     ((MethodInfo *)0x0);
   pTVar2 = (this->fields).bonusXPAmountText;
-  fVar3 = (float)iVar1 / _UNK_?;
+  fVar3 = (float)iVar1 / _UNK_? + _UNK_?;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  fVar3 = fVar3 + _UNK_?;
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }

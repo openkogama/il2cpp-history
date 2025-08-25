@@ -7,30 +7,29 @@ Assembly-CSharp.dll::TargetRotation::TargetRotation_GetLerpRotation
           MethodInfo *method)
 
 {
-  puVar1 = (undefined8 *)func_?(&stack0xffffffd4,&from,0);
-  a = (float)*puVar1;
-  a_00 = (float)((ulonglong)*puVar1 >> 0x20);
-  fVar2 = (this->fields).eulerAngles.x;
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar4 = (this->fields).lerpSpeedX;
-  fVar5 = (this->fields).eulerAngles.y;
-  fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
-                    (a,fVar2,fVar4 * fVar3,(MethodInfo *)0x0);
+  puVar1 = (undefined8 *)func_?(&stack0xffffffdc,&from,0);
+  fVar2 = (float)*puVar1;
+  a = (float)((ulonglong)*puVar1 >> 0x20);
+  fVar3 = (this->fields).eulerAngles.x;
+  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
-                    (a_00,fVar5,fVar6 * (this->fields).lerpSpeedY,(MethodInfo *)0x0);
-  euler.y = fVar4 * _UNK_?;
-  euler.x = fVar2 * _UNK_?;
+                    (fVar2,fVar3,fVar4 * (this->fields).lerpSpeedX,(MethodInfo *)0x0);
+  fVar3 = (this->fields).eulerAngles.y;
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_LerpAngle
+                    (a,fVar3,fVar2 * (this->fields).lerpSpeedY,(MethodInfo *)0x0);
+  euler.y = fVar3 * _UNK_?;
+  euler.x = fVar4 * _UNK_?;
   euler.z = 0.0;
-  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                     ((Quaternion *)&stack0xffffffd0,euler,(MethodInfo *)0x0);
-  fVar2 = pQVar7->y;
-  fVar4 = pQVar7->z;
-  fVar5 = pQVar7->w;
-  __return_storage_ptr__->x = pQVar7->x;
-  __return_storage_ptr__->y = fVar2;
+  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+                     ((Quaternion *)&puStack_6,euler,(MethodInfo *)0x0);
+  fVar3 = pQVar5->y;
+  fVar4 = pQVar5->z;
+  fVar2 = pQVar5->w;
+  __return_storage_ptr__->x = pQVar5->x;
+  __return_storage_ptr__->y = fVar3;
   __return_storage_ptr__->z = fVar4;
-  __return_storage_ptr__->w = fVar5;
+  __return_storage_ptr__->w = fVar2;
   return __return_storage_ptr__;
 }
 

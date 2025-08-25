@@ -68,51 +68,55 @@ void Assembly-CSharp.dll::OutputSignalTransmitter::OutputSignalTransmitter_Send
                              (pMVar4,(int32_t)pMVar6->klass,(MethodInfo *)0x0),
          pMVar5 == (MVWorldObject *)0x0)) break;
       iVar8 = func_?();
-      if ((iVar8 == 0) || (piVar9 = (int *)func_?(), piVar9 == (int *)0x0))
-      goto code_?;
-      iVar8 = *piVar9;
+      if (iVar8 == 0) goto code_?;
+      piVar9 = (int *)func_?();
+      if (piVar9 == (int *)0x0) goto code_?;
       uVar10 = 0;
-      if (*(ushort *)(iVar8 + 0xb6) != 0) {
+      uVar11 = *(ushort *)(*piVar9 + 0xb6);
+      if (uVar11 != 0) {
         do {
-          if (*(ILogicWorldObject__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) ==
+          if (*(ILogicWorldObject__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
               TypeInfo__ILogicWorldObject) {
-            puVar11 = (undefined4 *)
-                     (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
+            puVar12 = (undefined4 *)
+                     (*piVar9 +
+                     (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar10 = uVar10 + 1;
-        } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
+        } while (uVar10 < uVar11);
       }
-      puVar11 = (undefined4 *)func_?();
+      puVar12 = (undefined4 *)func_?();
 code_?:
-      piVar9 = (int *)(*(code *)*puVar11)();
+      piVar9 = (int *)(*(code *)*puVar12)();
       if (piVar9 == (int *)0x0) break;
       iVar8 = *piVar9;
-      uVar10 = 0;
+      uVar11 = 0;
       if (*(ushort *)(iVar8 + 0xb6) != 0) {
         do {
-          if (*(IInputSignalReceiver__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) ==
+          if (*(IInputSignalReceiver__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar11 * 8) ==
               TypeInfo__IInputSignalReceiver) {
-            puVar11 = (undefined4 *)
-                     (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
+            puVar12 = (undefined4 *)
+                     (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar11 * 8) + 0x18) * 8);
             goto code_?;
           }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
+          uVar11 = uVar11 + 1;
+        } while (uVar11 < *(ushort *)(iVar8 + 0xb6));
       }
-      puVar11 = (undefined4 *)func_?();
+      puVar12 = (undefined4 *)func_?();
 code_?:
-      iVar8 = puVar11[1];
+      iVar8 = puVar12[1];
       method_00 = (MethodInfo *)&UNK_?;
-      (*(code *)*puVar11)();
+      (*(code *)*puVar12)();
       *(bool *)(iVar8 + 0x14) = isHot;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+code_?:
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

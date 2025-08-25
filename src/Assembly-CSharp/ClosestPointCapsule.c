@@ -86,7 +86,7 @@ Vector3 * Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_GetClose
                                          ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
                       uVar14 = pVVar5->y;
                       __return_storage_ptr__->x = fVar6 + (float)uVar14 * (float)uVar10 * fVar12;
-                      __return_storage_ptr__->y = (float)uVar14 * fVar13 + (float)puVar4;
+                      __return_storage_ptr__->y = (float)puVar4 + (float)uVar14 * fVar13;
                       __return_storage_ptr__->z = fVar7 + (float)uVar14 * fVar11;
                       return __return_storage_ptr__;
                     }

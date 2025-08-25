@@ -48,8 +48,10 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_Initialize
   func_?(&(this->fields).chatAnchor,chatAnchor);
   pAVar1 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
            OnSayChatIndicatorVisibilityChange;
-  this_00 = (Action_2_Int32_Boolean_ *)func_?(TypeInfo__System__Action<int,_bool>);
-  mscorlib.dll::System::Action`2[Int32,Boolean]::Action_2_Int32_Boolean___ctor
+  this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)
+            func_?(TypeInfo__System__Action<int,_bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::
+  UnityAction_2_System_Boolean_System_Boolean___ctor
             (this_00,(Object *)this,
              MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
              (MethodInfo *)0x0);
@@ -168,8 +170,10 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnDestroy
   }
   pAVar1 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
            OnSayChatIndicatorVisibilityChange;
-  this_00 = (Action_2_Int32_Boolean_ *)func_?(TypeInfo__System__Action<int,_bool>);
-  mscorlib.dll::System::Action`2[Int32,Boolean]::Action_2_Int32_Boolean___ctor
+  this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)
+            func_?(TypeInfo__System__Action<int,_bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::
+  UnityAction_2_System_Boolean_System_Boolean___ctor
             (this_00,(Object *)this,
              MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
              (MethodInfo *)0x0);

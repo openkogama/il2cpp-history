@@ -57,10 +57,7 @@ void Assembly-CSharp.dll::AvatarInputController::AvatarInputController_HandleInp
   }
   fVar3 = (float10)func_?(&VStack_2,0);
   fStack_4 = (float)fVar3;
-  QStack_5.x = 0.0;
-  QStack_5.y = 0.0;
-  QStack_5.z = 0.0;
-  QStack_5.w = 0.0;
+  fVar5 = 0.0;
   if (0.0 < fStack_4) {
     pCVar6 = TypeInfo__AvatarInputController->static_fields->mainCamera;
     if ((pCVar6 == (Camera *)0x0) ||
@@ -68,14 +65,15 @@ void Assembly-CSharp.dll::AvatarInputController::AvatarInputController_HandleInp
                            ((Component *)pCVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
     goto code_?;
     pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                        ((Quaternion *)&stack0xffffff90,pTVar7,(MethodInfo *)0x0);
-    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        (&VStack_10,*pQVar8,VVar1,(MethodInfo *)0x0);
-    uVar11._0_4_ = pVVar9->x;
-    uVar11._4_4_ = pVVar9->y;
-    fStack_12 = pVVar9->z;
+                       (&QStack_9,pTVar7,(MethodInfo *)0x0);
+    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                        ((Vector3 *)&QStack_9,*pQVar8,VVar1,(MethodInfo *)0x0);
+    fVar5 = 0.0;
+    uVar11._0_4_ = pVVar10->x;
+    uVar11._4_4_ = pVVar10->y;
+    fStack_12 = pVVar10->z;
     uStack_13 = uVar11 & 0xffffffff;
-    puVar14 = (undefined8 *)func_?(auStack_15,&uStack_13);
+    puVar14 = (undefined8 *)func_?(&QStack_9,&uStack_13);
     moveDirection._0_8_ = *puVar14;
     moveDirection.z = *(float *)(puVar14 + 1);
     VStack_2._0_8_ = moveDirection._0_8_;
@@ -85,10 +83,10 @@ void Assembly-CSharp.dll::AvatarInputController::AvatarInputController_HandleInp
   (this->fields).direction.y = moveDirection.y;
   (this->fields).direction.z = moveDirection.z;
   if (((didShoot != 0) &&
-      (velocity.x * velocity.x + velocity.y * velocity.y + velocity.z * velocity.z < _UNK_?))
+      (velocity.y * velocity.y + velocity.x * velocity.x + velocity.z * velocity.z < _UNK_?))
      || ((inGunMode != 0 || forceRotateToCamDirection != 0 &&
          (_UNK_? <
-          velocity.x * velocity.x + velocity.y * velocity.y + velocity.z * velocity.z)))) {
+          velocity.y * velocity.y + velocity.x * velocity.x + velocity.z * velocity.z)))) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__AvatarInputController);
       cRam_? = '\x01';
@@ -99,47 +97,47 @@ void Assembly-CSharp.dll::AvatarInputController::AvatarInputController_HandleInp
                            ((Component *)pCVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0)) {
 code_?:
       func_?();
-      pcVar16 = (code *)swi(3);
-      (*pcVar16)();
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
       return;
     }
     pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                        ((Quaternion *)&stack0xffffff90,pTVar7,(MethodInfo *)0x0);
-    VStack_10.x = pQVar8->x;
-    VStack_10.y = pQVar8->y;
-    VStack_10.z = pQVar8->z;
-    fStack_17 = pQVar8->w;
-    iVar18 = func_?(auStack_15,&VStack_10,0);
-    fStack_12 = 0.0;
-    VVar1.y = *(float *)(iVar18 + 4) * _UNK_?;
-    VVar1.x = QStack_5.x;
+                       (&QStack_9,pTVar7,(MethodInfo *)0x0);
+    fStack_16 = pQVar8->x;
+    uStack_13._0_4_ = pQVar8->y;
+    uStack_13._4_4_ = pQVar8->z;
+    fStack_12 = pQVar8->w;
+    iVar17 = func_?(&QStack_9,&fStack_16,0);
+    uStack_13 = uStack_13 & 0xffffffff;
+    VVar1.y = *(float *)(iVar17 + 4) * _UNK_?;
+    VVar1.x = fVar5;
     VVar1.z = 0.0;
     pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                        (&QStack_5,VVar1,(MethodInfo *)0x0);
+                       ((Quaternion *)&stack0xffffffb0,VVar1,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uStack_13._0_4_ = (pVVar19->zeroVector).x;
-    uStack_13._4_4_ = (pVVar19->zeroVector).y;
-    fStack_12 = (pVVar19->zeroVector).z;
+    pVVar18 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_13._0_4_ = (pVVar18->zeroVector).x;
+    uStack_13._4_4_ = (pVVar18->zeroVector).y;
+    fStack_12 = (pVVar18->zeroVector).z;
     if ((VStack_2.y - (float)uStack_13._4_4_) * (VStack_2.y - (float)uStack_13._4_4_) +
         (VStack_2.x - (float)(undefined4)uStack_13) * (VStack_2.x - (float)(undefined4)uStack_13)
         + (VStack_2.z - fStack_12) * (VStack_2.z - fStack_12) < _UNK_?)
     goto code_?;
     pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                        ((Quaternion *)&stack0xffffff90,(this->fields).direction,(MethodInfo *)0x0);
+                       ((Quaternion *)&stack0xffffffb0,(this->fields).direction,(MethodInfo *)0x0);
   }
-  fVar20 = pQVar8->y;
-  fVar21 = pQVar8->z;
-  fVar22 = pQVar8->w;
+  fVar5 = pQVar8->y;
+  fVar19 = pQVar8->z;
+  fVar20 = pQVar8->w;
   (this->fields).rotation.x = pQVar8->x;
-  (this->fields).rotation.y = fVar20;
-  (this->fields).rotation.z = fVar21;
-  (this->fields).rotation.w = fVar22;
+  (this->fields).rotation.y = fVar5;
+  (this->fields).rotation.z = fVar19;
+  (this->fields).rotation.w = fVar20;
 code_?:
   (this->fields).jump = jump;
   return;

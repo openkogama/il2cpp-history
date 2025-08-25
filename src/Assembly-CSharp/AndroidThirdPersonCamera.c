@@ -663,7 +663,7 @@ code_?:
       fVar22 = fVar22 * (_UNK_? / fVar15);
       fVar17 = fVar22 * 0.0;
       uVar21._0_4_ = fVar22 * (float)uStack_1;
-      uVar21._4_4_ = fVar22 * uStack_1._4_4_;
+      uVar21._4_4_ = uStack_1._4_4_ * fVar22;
       fStack_19 = fVar17;
     }
     this_01 = (this->fields).axisBias;

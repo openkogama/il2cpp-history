@@ -60,8 +60,8 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_ContainsPoint
                MethodInfo *method)
 
 {
-  return (point.x - sphereCenter.x) * (point.x - sphereCenter.x) +
-         (point.y - sphereCenter.y) * (point.y - sphereCenter.y) +
+  return (point.y - sphereCenter.y) * (point.y - sphereCenter.y) +
+         (point.x - sphereCenter.x) * (point.x - sphereCenter.x) +
          (point.z - sphereCenter.z) * (point.z - sphereCenter.z) <=
          (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius);
 }
@@ -79,11 +79,11 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_Raycast
   fVar3 = ray.m_Origin.x - sphereCenter.x;
   fVar4 = ray.m_Origin.y - sphereCenter.y;
   fVar5 = ray.m_Origin.z - sphereCenter.z;
-  fVar6 = ray.m_Direction.x * fVar3 + ray.m_Direction.y * fVar4 + ray.m_Direction.z * fVar5;
+  fVar6 = ray.m_Direction.y * fVar4 + ray.m_Direction.x * fVar3 + ray.m_Direction.z * fVar5;
   bVar7 = MathEx::MathEx_SolveQuadratic
                     (ray.m_Direction.x * ray.m_Direction.x + ray.m_Direction.y * ray.m_Direction.y +
                      ray.m_Direction.z * ray.m_Direction.z,fVar6 + fVar6,
-                     (fVar3 * fVar3 + fVar4 * fVar4 + fVar5 * fVar5) -
+                     (fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5) -
                      (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius),
                      &fStack_1,&fStack_2,(MethodInfo *)0x0);
   if ((bVar7 != 0) && ((0.0 <= fStack_1 || (0.0 <= fStack_2)))) {
@@ -106,11 +106,11 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_Raycast_1
   fVar3 = ray.m_Origin.x - sphereCenter.x;
   fVar4 = ray.m_Origin.y - sphereCenter.y;
   fVar5 = ray.m_Origin.z - sphereCenter.z;
-  fVar6 = ray.m_Direction.x * fVar3 + ray.m_Direction.y * fVar4 + ray.m_Direction.z * fVar5;
+  fVar6 = fVar3 * ray.m_Direction.x + fVar4 * ray.m_Direction.y + fVar5 * ray.m_Direction.z;
   bVar7 = MathEx::MathEx_SolveQuadratic
                     (ray.m_Direction.x * ray.m_Direction.x + ray.m_Direction.y * ray.m_Direction.y +
                      ray.m_Direction.z * ray.m_Direction.z,fVar6 + fVar6,
-                     (fVar3 * fVar3 + fVar4 * fVar4 + fVar5 * fVar5) -
+                     (fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5) -
                      (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius),
                      &fStack_1,&fStack_2,(MethodInfo *)0x0);
   if ((bVar7 != 0) && ((0.0 <= fStack_1 || (fStack_1 = fStack_2, 0.0 <= fStack_2)))) {
@@ -133,11 +133,11 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_Raycast_2
   fVar1 = ray.m_Origin.x - sphereCenter.x;
   fVar2 = ray.m_Origin.y - sphereCenter.y;
   fVar3 = ray.m_Origin.z - sphereCenter.z;
-  fVar4 = ray.m_Direction.x * fVar1 + ray.m_Direction.y * fVar2 + ray.m_Direction.z * fVar3;
+  fVar4 = ray.m_Direction.y * fVar2 + ray.m_Direction.x * fVar1 + ray.m_Direction.z * fVar3;
   bVar5 = MathEx::MathEx_SolveQuadratic
                     (ray.m_Direction.x * ray.m_Direction.x + ray.m_Direction.y * ray.m_Direction.y +
                      ray.m_Direction.z * ray.m_Direction.z,fVar4 + fVar4,
-                     (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3) -
+                     (fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3) -
                      (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius),t0,t1
                      ,(MethodInfo *)0x0);
   if ((bVar5 != 0) && ((0.0 < *t0 || *t0 == 0.0 || (0.0 < *t1 || *t1 == 0.0)))) {

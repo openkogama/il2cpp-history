@@ -5,12 +5,14 @@ Vector3 * Assembly-CSharp.dll::SizeState::SizeState_FindValidMoveLocation
                     (Vector3 *__return_storage_ptr__,SizeState *this,float scale,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff48;
-  puVar5 = &stack0xffffff48;
+  puStack_1 = &stack0xfffffffc;
+  uStack_2 = 0xffffffff;
+  puStack_3 = &DAT_?;
+  uStack_4 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_4;
+  puStack_5 = &stack0xffffff10;
+  puVar6 = &stack0xfffffffc;
+  puVar7 = &stack0xffffff10;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&
@@ -28,79 +30,81 @@ Vector3 * Assembly-CSharp.dll::SizeState::SizeState_FindValidMoveLocation
     func_?(&TypeInfo__SizeState);
     func_?(&StringLiteral_no_position_found_);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    puVar6 = puStack_1;
+    puVar7 = puStack_5;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current.Quadrant = 0;
+  puStack_5 = puVar7;
+  puStack_1 = puVar6;
+  LStack_8._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  LStack_8._index = 0;
+  LStack_8._version = 0;
+  LStack_8._current.Quadrant = 0;
   __return_storage_ptr__->x = 0.0;
   __return_storage_ptr__->y = 0.0;
-  pMVar7 = (this->fields).controllerLocal;
-  LStack_6._current.FirstAxisSign = 0;
-  LStack_6._current.SecondAxisSign = 0;
-  fStack_8 = scale * _UNK_?;
+  pMVar9 = (this->fields).controllerLocal;
+  LStack_8._current.FirstAxisSign = 0;
+  LStack_8._current.SecondAxisSign = 0;
+  fStack_10 = scale * _UNK_?;
   __return_storage_ptr__->z = 0.0;
-  fStack_9 = (this->fields).currentSize;
-  if (pMVar7 != (MvCharacterController *)0x0) {
-    pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pMVar7,(MethodInfo *)0x0);
-    if (pTVar10 != (Transform *)0x0) {
-      pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         (&VStack_12,pTVar10,(MethodInfo *)0x0);
-      fVar13 = pVVar11->y;
-      fVar14 = pVVar11->z;
-      __return_storage_ptr__->x = pVVar11->x;
-      __return_storage_ptr__->y = fVar13;
-      __return_storage_ptr__->z = fVar14;
+  fStack_11 = (this->fields).currentSize;
+  if (pMVar9 != (MvCharacterController *)0x0) {
+    pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pMVar9,(MethodInfo *)0x0);
+    if (pTVar12 != (Transform *)0x0) {
+      pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         (aVStack_14,pTVar12,(MethodInfo *)0x0);
+      fVar15 = pVVar13->y;
+      fVar16 = pVVar13->z;
+      __return_storage_ptr__->x = pVVar13->x;
+      __return_storage_ptr__->y = fVar15;
+      __return_storage_ptr__->z = fVar16;
       do {
-        if (scale <= fStack_9) {
+        if (scale <= fStack_11) {
 code_?:
-          *unaff_FS_OFFSET = uStack_3;
+          *unaff_FS_OFFSET = uStack_4;
           return __return_storage_ptr__;
         }
-        fStack_15 = fStack_9 + fStack_8;
-        uStack_16 = 0;
-        fStack_9 = fStack_15;
+        fStack_17 = fStack_11 + fStack_10;
+        uStack_18 = 0;
+        fStack_11 = fStack_17;
         if ((TypeInfo__SizeState->_1).cctor_finished_or_no_cctor == 0) {
-          in_stack_17 = (MethodInfo *)&UNK_?;
+          VStack_19.x = (float)TypeInfo__SizeState;
+          in_stack_20 = (MethodInfo *)&UNK_?;
           func_?();
         }
         this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                   TypeInfo__SizeState->static_fields->relativePositions;
         if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) break;
-        pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                           ((List_1_T_Enumerator_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_
-                             *)&stack0xffffff54,this_00,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
-                           );
-        uStack_19 = 0;
-        LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar18->_list;
-        LStack_6._index = pLVar18->_index;
-        LStack_6._version = pLVar18->_version;
-        LStack_6._current.Quadrant = (int32_t)(pLVar18->_current).alias;
-        LStack_6._current.FirstAxisSign = (int32_t)(pLVar18->_current).path;
-        LStack_6._current.SecondAxisSign = (int32_t)(pLVar18->_current).asset;
-        uStack_1 = 1;
-        pLStack_20 = &LStack_6;
+        pLVar21 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                  VisualTreeAsset+UsingEntry]::
+                  List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
+                            (&LStack_22,this_00,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
+                            );
+        uStack_23 = 0;
+        LStack_8._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar21->_list;
+        LStack_8._index = pLVar21->_index;
+        LStack_8._version = pLVar21->_version;
+        LStack_8._current.Quadrant = (int32_t)(pLVar21->_current).alias;
+        LStack_8._current.FirstAxisSign = (int32_t)(pLVar21->_current).path;
+        LStack_8._current.SecondAxisSign = (int32_t)(pLVar21->_current).asset;
+        uStack_2 = 1;
+        pLStack_24 = &LStack_8;
         do {
-          bVar21 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
+          bVar25 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
                   PlaneIdHelper+PlaneQuadrantInfo]::
                   List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                            (&LStack_6,
+                            (&LStack_8,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
                             );
-          if (bVar21 == 0) {
-            uStack_1 = 0xffffffff;
+          if (bVar25 == 0) {
+            uStack_2 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&LStack_6,
+                      ((Object *)&LStack_8,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                       ,in_stack_22);
-            uStack_1 = 0xffffffff;
+                       ,in_stack_26);
+            uStack_2 = 0xffffffff;
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Debug);
             }
@@ -108,60 +112,65 @@ code_?:
                       ((Object *)StringLiteral_no_position_found_,(MethodInfo *)0x0);
             goto code_?;
           }
-          fStack_23 = (float)LStack_6._current.SecondAxisSign * fStack_9;
-          fStack_24 = (float)LStack_6._current.FirstAxisSign * fStack_9;
-          fStack_25 = (float)LStack_6._current.Quadrant * fStack_9;
-          relativeTestPos.y = fStack_24;
-          relativeTestPos.x = fStack_25;
-          relativeTestPos.z = fStack_23;
-          fStack_26 = fStack_23;
-          bVar21 = SizeState_GetIsValidScaledRelativePosition
-                            (this,relativeTestPos,fStack_9,(MethodInfo *)0x0);
-        } while (bVar21 == 0);
-        pMVar7 = (this->fields).controllerLocal;
-        if (pMVar7 == (MvCharacterController *)0x0) break;
-        pTStack_27 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)pMVar7,(MethodInfo *)0x0);
-        if (pTStack_27 == (Transform *)0x0) break;
-        pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           (&VStack_28,pTStack_27,(MethodInfo *)0x0);
-        uStack_29._0_4_ = pVVar11->x;
-        uStack_29._4_4_ = pVVar11->y;
-        fStack_30 = pVVar11->z;
-        VStack_12.z = fStack_30 + fStack_26;
-        value.y = (float)uStack_29._4_4_ + fStack_24;
-        value.x = (float)(undefined4)uStack_29 + fStack_25;
-        value.z = VStack_12.z;
+          fStack_27 = (float)LStack_8._current.SecondAxisSign * fStack_11;
+          fStack_28 = (float)LStack_8._current.FirstAxisSign * fStack_11;
+          LStack_22._list =
+               (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+               ((float)LStack_8._current.Quadrant * fStack_11);
+          LStack_22._index = 0;
+          LStack_22._version = 0;
+          LStack_22._current.alias = (String *)0x0;
+          relativeTestPos.y = fStack_28;
+          relativeTestPos.x = (float)LStack_22._list;
+          relativeTestPos.z = fStack_27;
+          fStack_29 = fStack_27;
+          bVar25 = SizeState_GetIsValidScaledRelativePosition
+                            (this,relativeTestPos,fStack_11,(MethodInfo *)0x0);
+        } while (bVar25 == 0);
+        pMVar9 = (this->fields).controllerLocal;
+        if (pMVar9 == (MvCharacterController *)0x0) break;
+        pTStack_30 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pMVar9,(MethodInfo *)0x0);
+        if (pTStack_30 == (Transform *)0x0) break;
+        pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           (&VStack_31,pTStack_30,(MethodInfo *)0x0);
+        uStack_32._0_4_ = pVVar13->x;
+        uStack_32._4_4_ = pVVar13->y;
+        fStack_33 = pVVar13->z;
+        aVStack_14[0].z = fStack_33 + fStack_29;
+        value.y = (float)uStack_32._4_4_ + fStack_28;
+        value.x = (float)LStack_22._list + (float)(undefined4)uStack_32;
+        value.z = aVStack_14[0].z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTStack_27,value,(MethodInfo *)0x0);
-        pMVar7 = (this->fields).controllerLocal;
-        if (pMVar7 == (MvCharacterController *)0x0) break;
-        pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pMVar7,(MethodInfo *)0x0);
-        if (pTVar10 == (Transform *)0x0) break;
-        pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           (&VStack_31,pTVar10,(MethodInfo *)0x0);
-        uStack_16 = 1;
-        uStack_1 = 0xffffffff;
-        fVar13 = pVVar11->y;
-        fVar14 = pVVar11->z;
-        __return_storage_ptr__->x = pVVar11->x;
-        __return_storage_ptr__->y = fVar13;
-        __return_storage_ptr__->z = fVar14;
+                  (pTStack_30,value,(MethodInfo *)0x0);
+        pMVar9 = (this->fields).controllerLocal;
+        if (pMVar9 == (MvCharacterController *)0x0) break;
+        pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pMVar9,(MethodInfo *)0x0);
+        if (pTVar12 == (Transform *)0x0) break;
+        pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           (&VStack_19,pTVar12,(MethodInfo *)0x0);
+        uStack_18 = 1;
+        uStack_2 = 0xffffffff;
+        fVar15 = pVVar13->y;
+        fVar16 = pVVar13->z;
+        __return_storage_ptr__->x = pVVar13->x;
+        __return_storage_ptr__->y = fVar15;
+        __return_storage_ptr__->z = fVar16;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                   ,in_stack_17);
-        uStack_1 = 0xffffffff;
+                   ,in_stack_20);
+        uStack_2 = 0xffffffff;
       } while( true );
     }
   }
-  uVar32 = func_?();
-  func_?(uVar32);
-  pcVar33 = (code *)swi(3);
-  pVVar11 = (Vector3 *)(*pcVar33)();
-  return pVVar11;
+  uVar34 = func_?();
+  func_?(uVar34);
+  pcVar35 = (code *)swi(3);
+  pVVar13 = (Vector3 *)(*pcVar35)();
+  return pVVar13;
 }
 
 
@@ -204,7 +213,7 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledPosition
         radius.y = fVar7 * scale;
         radius.x = fVar5 * scale;
         radius.z = fVar6 * scale;
-        position_00.z = position.z + fVar4 * scale;
+        position_00.z = fVar4 * scale + position.z;
         position_00.x = position.x + (float)uVar2 * scale;
         position_00.y = position.y + (float)uVar3 * scale;
         bVar8 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckBool
@@ -252,15 +261,14 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledRelativePosition
         uStack_6._0_4_ = (pMVar1->fields).centerBase.x;
         uStack_6._4_4_ = (pMVar1->fields).centerBase.y;
         fStack_7 = (pMVar1->fields).centerBase.z;
-        fVar2 = fStack_7 * scale;
+        fVar2 = (float)uStack_6._4_4_ * scale;
         pMVar1 = (this->fields).controllerLocal;
         if (pMVar1 != (MvCharacterController *)0x0) {
           VStack_5.x = (pMVar1->fields).radiusBase.x * scale;
           VStack_5.y = (pMVar1->fields).radiusBase.y * scale;
           VStack_5.z = (pMVar1->fields).radiusBase.z * scale;
-          fStack_7 = fStack_3 + fVar2;
-          uStack_6 = CONCAT44(fStack_9 + (float)uStack_6._4_4_ * scale,
-                               fVar8 + (float)(undefined4)uStack_6 * scale);
+          fStack_7 = fStack_7 * scale + fStack_3;
+          uStack_6 = CONCAT44(fStack_9 + fVar2,fVar8 + (float)(undefined4)uStack_6 * scale);
           fStack_3 = fVar2;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Quaternion);
@@ -370,8 +378,8 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
                   fVar9 = unique0x0000a404 *
                            (fVar8 + (fVar6 - hitData.positionTouchingHit.x) * (fVar9 / fVar10)) +
                            (float)puStack_4 * fVar17 + pVVar3->z * fVar18 +
-                           (float)((uint)((float)uVar19 * (fVar15 - in_stack_21) +
-                                          (float)uVar20 * (fVar16 - hitData.positionTouchingHit.x) +
+                           (float)((uint)((float)uVar20 * (fVar16 - hitData.positionTouchingHit.x) +
+                                          (float)uVar19 * (fVar15 - in_stack_21) +
                                          pVVar3->z *
                                          ((fVar14 + fVar13) - hitData.positionTouchingHit.y)) ^
                                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
@@ -392,12 +400,12 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
                                             ((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
                         uVar22 = pVVar3->x;
                         uVar23 = pVVar3->y;
-                        stack0xffffffd4 = (float)uVar23 + fVar6;
-                        puStack_4 = (undefined *)((float)uVar22 + 3.341635e-29);
+                        stack0xffffffd4 = fVar6 + (float)uVar23;
+                        puStack_4 = (undefined *)((float)uVar22 + 3.346787e-29);
                         if (pTVar2 != (Transform *)0x0) {
-                          value.y = (float)uVar23 + fVar6;
-                          value.x = (float)uVar22 + 3.341635e-29;
-                          value.z = pVVar3->z + fVar9;
+                          value.y = fVar6 + (float)uVar23;
+                          value.x = (float)uVar22 + 3.346787e-29;
+                          value.z = fVar9 + pVVar3->z;
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                     (pTVar2,value,(MethodInfo *)0x0);
                           return;
@@ -577,7 +585,7 @@ code_?:
     if ((pSVar1->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
       pEVar15 = (pSVar1->fields).CameraScaleEvent;
       this_01 = (SizeState *)func_?();
-      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.3418727e-29,(MethodInfo *)0x0);
+      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.3470246e-29,(MethodInfo *)0x0);
       (*(pEVar15->fields)._._.invoke_impl)();
     }
     (pSVar1->fields).currentSize = (float)this_01;

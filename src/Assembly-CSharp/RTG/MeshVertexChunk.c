@@ -98,11 +98,8 @@ Vector3 * Assembly-CSharp.dll::RTG::MeshVertexChunk::MeshVertexChunk_GetWorldVer
       fVar11 = pVVar20->z;
       if (camera == (Camera *)0x0) break;
       in_stack_19 = (MethodInfo *)(auStack_13 + 0xc);
-      position.z = pVVar20->z;
-      position.x = (float)(undefined4)uStack_22;
-      position.y = (float)uStack_22._4_4_;
       pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                         ((Vector3 *)in_stack_19,camera,position,(MethodInfo *)0x0);
+                         ((Vector3 *)in_stack_19,camera,*pVVar20,(MethodInfo *)0x0);
       uStack_23._0_4_ = pVVar20->x;
       uStack_23._4_4_ = pVVar20->y;
       fVar10 = ((float)(undefined4)uStack_23 - screenPoint.x) *

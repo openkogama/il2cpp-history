@@ -89,7 +89,7 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
                MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_
               );
     _wasTempUnlocked = (this->fields).PopupContentXPPrefab;
-    wasPurchased = 0x34;
+    wasPurchased = 0xf4;
     pCVar3 = (Component *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)_wasTempUnlocked,
@@ -618,89 +618,86 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
     return;
   }
   if (0 < iVar3) {
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar1 = (this->fields).interpolateColorStartTime;
-    pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).popupContentList;
-    pIVar6 = (this->fields).Background;
-    fVar7 = (this->fields).colorInterpolationDuration;
-    if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-       (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+    pIVar5 = (this->fields).Background;
+    fVar1 = (fVar1 - (this->fields).interpolateColorStartTime) /
+            (this->fields).colorInterpolationDuration;
+    if ((pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+       (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar5,(this->fields).currentContentBeingShowed + -1,
+                          (pLVar4,(this->fields).currentContentBeingShowed + -1,
                            MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                          ), RVar8 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-    fVar9 = *(float *)((int)RVar8 + 0x14);
-    fVar10 = *(float *)((int)RVar8 + 0x18);
-    fVar11 = *(float *)((int)RVar8 + 0x1c);
-    pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          ), RVar6 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+    fVar7 = *(float *)((int)RVar6 + 0x14);
+    fVar8 = *(float *)((int)RVar6 + 0x18);
+    fVar9 = *(float *)((int)RVar6 + 0x1c);
+    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).popupContentList;
-    if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-       (pMVar12 = 
+    if ((pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+       (pMVar10 = 
         MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_,
-       RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+       RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar5,(this->fields).currentContentBeingShowed,
+                         (pLVar4,(this->fields).currentContentBeingShowed,
                           MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                         ), RVar8 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-    fVar7 = (fVar4 - fVar1) / fVar7;
-    if (fVar7 < 0.0) {
-      fVar7 = 0.0;
+                         ), RVar6 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+    if (fVar1 < 0.0) {
+      fVar1 = 0.0;
     }
-    else if (_UNK_? < fVar7) {
-      fVar7 = _UNK_?;
+    else if (_UNK_? < fVar1) {
+      fVar1 = _UNK_?;
     }
-    if (pIVar6 == (Image *)0x0) goto code_?;
-    (*(code *)(pIVar6->klass->vtable).set_color.method)
-              (pIVar6,(*(float *)((int)RVar8 + 0x10) - (float)pMVar12) * fVar7 + (float)pMVar12,
-               (*(float *)((int)RVar8 + 0x14) - fVar9) * fVar7 + fVar9,
-               (*(float *)((int)RVar8 + 0x18) - fVar10) * fVar7 + fVar10,
-               (*(float *)((int)RVar8 + 0x1c) - fVar11) * fVar7 + fVar11,
-               (pIVar6->klass->vtable).get_raycastTarget.methodPtr);
+    if (pIVar5 == (Image *)0x0) goto code_?;
+    (*(code *)(pIVar5->klass->vtable).set_color.method)
+              (pIVar5,(*(float *)((int)RVar6 + 0x10) - (float)pMVar10) * fVar1 + (float)pMVar10,
+               (*(float *)((int)RVar6 + 0x14) - fVar7) * fVar1 + fVar7,
+               (*(float *)((int)RVar6 + 0x18) - fVar8) * fVar1 + fVar8,
+               (*(float *)((int)RVar6 + 0x1c) - fVar9) * fVar1 + fVar9,
+               (pIVar5->klass->vtable).get_raycastTarget.methodPtr);
   }
-  pAVar13 = (this->fields).bounceEffect;
+  pAVar11 = (this->fields).bounceEffect;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if (pAVar13 != (AnimationCurve *)0x0) {
+  if (pAVar11 != (AnimationCurve *)0x0) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (pAVar13,(fVar1 - (this->fields).bounceEffectStartTime) /
+                      (pAVar11,(fVar1 - (this->fields).bounceEffectStartTime) /
                               (this->fields).bounceEffectDuration,(MethodInfo *)0x0);
-    pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).popupContentList;
-    if (((pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-        (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+    if (((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+        (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           (pLVar5,(this->fields).currentContentBeingShowed,
+                           (pLVar4,(this->fields).currentContentBeingShowed,
                             MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                           ), RVar8 != (RegexCharClass_SingleRange)0x0)) &&
-       (*(Transform **)((int)RVar8 + 0x2c) != (Transform *)0x0)) {
+                           ), RVar6 != (RegexCharClass_SingleRange)0x0)) &&
+       (*(Transform **)((int)RVar6 + 0x2c) != (Transform *)0x0)) {
       value.y = fVar1;
       value.x = fVar1;
       value.z = 1.0;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (*(Transform **)((int)RVar8 + 0x2c),value,(MethodInfo *)0x0);
-      pAVar13 = (this->fields).fadeEffect;
+                (*(Transform **)((int)RVar6 + 0x2c),value,(MethodInfo *)0x0);
+      pAVar11 = (this->fields).fadeEffect;
       fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      if (pAVar13 != (AnimationCurve *)0x0) {
+      if (pAVar11 != (AnimationCurve *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                  (pAVar13,(fVar1 - (this->fields).fadeEffectStartTime) / (this->fields).fadeDuration
+                  (pAVar11,(fVar1 - (this->fields).fadeEffectStartTime) / (this->fields).fadeDuration
                    ,(MethodInfo *)0x0);
-        pMVar12 = 
-        MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_;
-        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).popupContentList;
-        if (((pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-            (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        if (((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+            (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                      RegularExpressions::RegexCharClass+SingleRange]::
                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (pLVar5,(this->fields).currentContentBeingShowed,
+                               (pLVar4,(this->fields).currentContentBeingShowed,
                                 MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__get_Item_int_
-                               ), RVar8 != (RegexCharClass_SingleRange)0x0)) &&
-           (*(CanvasGroup **)((int)RVar8 + 0x30) != (CanvasGroup *)0x0)) {
+                               ), RVar6 != (RegexCharClass_SingleRange)0x0)) &&
+           (*(CanvasGroup **)((int)RVar6 + 0x30) != (CanvasGroup *)0x0)) {
           UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (*(CanvasGroup **)((int)RVar8 + 0x30),(float)pMVar12,(MethodInfo *)0x0);
+                    (*(CanvasGroup **)((int)RVar6 + 0x30),(float)pLVar4,(MethodInfo *)0x0);
           return;
         }
       }
@@ -708,8 +705,8 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

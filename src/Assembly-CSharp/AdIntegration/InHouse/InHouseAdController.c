@@ -12,46 +12,66 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::InHouseAd
   }
   pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   if (pIVar1 != (IAdManager *)0x0) {
-    if (((TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment <=
-         (pIVar1->klass->_1).naturalAligment) &&
+    if (((pIVar1->klass->_1).naturalAligment <
+         (TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment) ||
        ((pIVar1->klass->_1).typeHierarchy
-        [(TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment - 1] ==
+        [(TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__AdIntegration__InHouse__InHouseAdManager)) {
-      pIVar1[1].monitor = (MonitorData *)this;
-      func_?(&pIVar1[1].monitor,this);
-      pMVar2 = pIVar1[1].monitor;
-      pMVar3 = pIVar1[4].monitor;
-      if (pMVar2 != (MonitorData *)0x0) {
-        bVar4 = cRam_? == '\0';
-        pMVar2[0x28] = *(MonitorData *)&pIVar1[4].klass;
-        *(MonitorData **)(pMVar2 + 0x2c) = pMVar3;
-        if (bVar4) {
+      bVar2 = false;
+    }
+    else {
+      bVar2 = true;
+    }
+    pIVar3 = (IAdManager *)0x0;
+    if (bVar2) {
+      pIVar3 = pIVar1;
+    }
+    if (pIVar3 != (IAdManager *)0x0) {
+      pIVar3[1].monitor = (MonitorData *)this;
+      func_?(&pIVar3[1].monitor,this);
+      pMVar4 = pIVar3[1].monitor;
+      pMVar5 = pIVar3[4].monitor;
+      if (pMVar4 != (MonitorData *)0x0) {
+        bVar2 = cRam_? == '\0';
+        pMVar4[0x28] = *(MonitorData *)&pIVar3[4].klass;
+        *(MonitorData **)(pMVar4 + 0x2c) = pMVar5;
+        if (bVar2) {
           func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
-        x = (Object_1 *)pIVar1[1].monitor;
+        x = (Object_1 *)pIVar3[1].monitor;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+        bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-        *(bool *)&pIVar1[1].klass = bVar5;
+        *(bool *)&pIVar3[1].klass = bVar6;
         return;
       }
       func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
   }
-  this_00 = (WebAdManager *)
-            MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-  if (this_00 != (WebAdManager *)0x0) {
-    if (((TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager->_1).naturalAligment <=
-         (this_00->klass->_1).naturalAligment) &&
-       ((this_00->klass->_1).typeHierarchy
-        [(TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager->_1).naturalAligment - 1] ==
+  pWVar8 = (WebAdManager *)
+           MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+  if (pWVar8 != (WebAdManager *)0x0) {
+    if (((pWVar8->klass->_1).naturalAligment <
+         (TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager->_1).naturalAligment) ||
+       ((pWVar8->klass->_1).typeHierarchy
+        [(TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager->_1).naturalAligment - 1] !=
         (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager)) {
+      bVar2 = false;
+    }
+    else {
+      bVar2 = true;
+    }
+    this_00 = (WebAdManager *)0x0;
+    if (bVar2) {
+      this_00 = pWVar8;
+    }
+    if (this_00 != (WebAdManager *)0x0) {
       Assets::Scripts::AdIntegration::Web::WebAdManager::WebAdManager_InitializeInHouse
                 (this_00,this,(MethodInfo *)0x0);
     }
@@ -170,12 +190,7 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::
   func_?(&(this->fields).generalPromotionAd,pGVar1);
   _uStack_c = 0;
   bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    pPStack_3 = (this->fields).registeredLooksData;
-  }
-  else {
-    pPStack_3 = (this->fields).touristLooksData;
-  }
+  pPStack_3 = (&(this->fields).touristLooksData)[bVar2 ^ 1];
   func_?(&pPStack_3,pPStack_3);
   pGVar1 = (this->fields).generalPromotionAd;
   uStack_4 = (uint5)(uint)timeout;

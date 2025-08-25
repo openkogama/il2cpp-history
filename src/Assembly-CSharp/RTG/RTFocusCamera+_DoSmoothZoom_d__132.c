@@ -28,22 +28,19 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothZoom>d__132::
      (this_01 = (this_00->fields)._targetCamera, this_01 != (Camera *)0x0)) {
     bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
                       (this_01,(MethodInfo *)0x0);
-    fVar4 = fRam0000002c;
-    if (bVar3 != 0) {
-      fVar4 = fRam00000028;
+    method_00 = *(MethodInfo **)((bVar3 ^ 1) * 4 + 0x28);
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime(method_00);
+    fVar4 = fVar4 * (float)method_00;
+    if (fVar4 < 0.0) {
+      fVar4 = 0.0;
     }
-    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar5 = fVar5 * fVar4;
-    if (fVar5 < 0.0) {
-      fVar5 = 0.0;
+    else if (_UNK_? < fVar4) {
+      fVar4 = _UNK_?;
     }
-    else if (_UNK_? < fVar5) {
-      fVar5 = _UNK_?;
-    }
-    fVar2 = (0.0 - fVar2) * fVar5 + fVar2;
+    fVar2 = (0.0 - fVar2) * fVar4 + fVar2;
     (this->fields)._zoomAmount_5__2 = fVar2;
     if (cRam_? == '\0') {
-      ppMStack6 = &TypeInfo__UnityEngine__Mathf;
+      ppMStack5 = &TypeInfo__UnityEngine__Mathf;
       func_?();
       cRam_? = '\x01';
     }
@@ -51,24 +48,25 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothZoom>d__132::
     if ((float)((uint)fVar2 & _UNK_?) <= 0.0) {
       fVar4 = 0.0;
     }
-    fVar7 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
-    fVar5 = fVar4 * _UNK_?;
-    if (fVar4 * _UNK_? <= fVar7) {
-      fVar5 = fVar7;
+    fVar6 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+    fVar7 = fVar4 * _UNK_?;
+    if (fVar4 * _UNK_? <= fVar6) {
+      fVar7 = fVar6;
     }
-    if ((float)((uint)(0.0 - fVar2) & _UNK_?) < fVar5) {
+    if ((float)((uint)(0.0 - fVar2) & _UNK_?) < fVar7) {
       return 0;
     }
+    ppOStack8 = &(this->fields).__2__current;
     (this->fields).__2__current = (Object *)0x0;
-    ppMStack6 = (Mathf__Class **)0x0;
+    ppMStack5 = (Mathf__Class **)0x0;
     func_?();
     (this->fields).__1__state = 1;
     return 1;
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar3 = (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  bVar3 = (*pcVar9)();
   return bVar3;
 }
 

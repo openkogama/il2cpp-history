@@ -214,11 +214,11 @@ code_?:
         for (uVar7 = 0; (int)uVar7 < (int)pBVar5->max_length; uVar7 = uVar7 + 1) {
           if ((pBVar5->max_length <= uVar7) || (pBVar6->max_length <= uVar7)) {
             func_?();
-            pOVar2 = extraout_ECX;
-            obj = extraout_EDX;
+            obj = extraout_ECX;
+            pOVar2 = extraout_EDX;
             goto code_?;
           }
-          if (*(uint8_t *)((int)pBVar6 + (int)pBVar5 + uVar7 + (0x10 - (int)pBVar6)) !=
+          if (*(uint8_t *)((int)pBVar6 + (int)pBVar5 + ((uVar7 + 0x10) - (int)pBVar6)) !=
               pBVar6->vector[uVar7]) {
             return 0;
           }

@@ -11,11 +11,11 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_AddToLOD
     cRam_? = '\x01';
   }
   pMVar1 = MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__Add_MVTerrainLOD_;
+  pRVar2 = (this->fields).prototypeCubeModel;
   this_00 = (List_1_TranslateSoundData_ *)(this->fields).LODBookkeeping;
-  if ((this->fields).prototypeCubeModel != (RuntimePrototypeCubeModel *)0x0) {
-    fVar2 = (float)(((this->fields).prototypeCubeModel)->fields).chunkSize * (this->fields).scale;
-    fVar3 = fVar2 * (float)(int)localPos.x;
-    uStack_4 = (uint)(ushort)localPos.z;
+  if (pRVar2 != (RuntimePrototypeCubeModel *)0x0) {
+    fVar3 = (float)(pRVar2->fields).chunkSize * (this->fields).scale;
+    fVar4 = (float)(int)localPos.x * fVar3;
     if (this_00 != (List_1_TranslateSoundData_ *)0x0) {
       piVar5 = &(this_00->fields)._version;
       *piVar5 = *piVar5 + 1;
@@ -25,22 +25,23 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_AddToLOD
         if (pTVar6->max_length <= uVar7) {
           item._6_2_ = 0;
           item._0_6_ = localPos;
-          item.worldPos.x = fVar3;
-          item.worldPos.y = fVar2 * (float)(int)localPos.y;
-          item.worldPos.z = fVar2 * (float)(int)localPos.z;
+          item.worldPos.x = fVar4;
+          item.worldPos.y = (float)(int)localPos.y * fVar3;
+          item.worldPos.z = (float)(int)localPos.z * fVar3;
           mscorlib.dll::System::Collections::Generic::List`1[TranslateSoundData]::
           List_1_TranslateSoundData__AddWithResize
                     (this_00,item,pMVar1->klass->rgctx_data[0xe].method);
           return;
         }
         (this_00->fields)._size = uVar7 + 1;
+        uStack_8 = (uint)(ushort)localPos.z;
         if (uVar7 < pTVar6->max_length) {
-          pTVar8 = pTVar6->vector + uVar7;
-          pTVar8->moveValue = localPos._0_4_;
-          *(uint *)&pTVar8->moveToGridPos = uStack_4;
-          (pTVar8->worldPos).x = fVar3;
-          (pTVar8->worldPos).y = fVar2 * (float)(int)localPos.y;
-          pTVar6->vector[uVar7].worldPos.z = fVar2 * (float)(int)localPos.z;
+          pTVar9 = pTVar6->vector + uVar7;
+          pTVar9->moveValue = localPos._0_4_;
+          *(uint *)&pTVar9->moveToGridPos = uStack_8;
+          (pTVar9->worldPos).x = fVar4;
+          (pTVar9->worldPos).y = (float)(int)localPos.y * fVar3;
+          pTVar6->vector[uVar7].worldPos.z = (float)(int)localPos.z * fVar3;
           return;
         }
         goto code_?;
@@ -50,8 +51,8 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_AddToLOD
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -113,7 +114,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
                    );
-    func_?(0x3c24);
+    func_?(0xd7e0);
     func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }
@@ -141,11 +142,11 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
   uStack_10._4_4_ = pVVar8->y;
   fStack_11 = pVVar8->z;
   fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar12 = fVar12 * _UNK_?;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  fVar12 = fVar12 * _UNK_?;
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -391,8 +392,8 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
             (this_01,
              MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
             );
-  pMVar4 = (MethodInfo *)&value->fields;
   (value->fields).enabledChunks = this_01;
+  pMVar4 = (MethodInfo *)&value->fields;
   func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,pMVar4);

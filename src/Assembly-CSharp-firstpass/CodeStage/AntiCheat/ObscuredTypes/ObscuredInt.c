@@ -216,7 +216,7 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       obj.currentCryptoKey =
            TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->static_fields->cryptoKey;
     }
-    return (uVar1 ^ uVar2) == (obj.currentCryptoKey ^ obj.hiddenValue);
+    return (uVar1 ^ uVar2) == (obj.hiddenValue ^ obj.currentCryptoKey);
   }
   return uVar1 == obj.hiddenValue;
 }

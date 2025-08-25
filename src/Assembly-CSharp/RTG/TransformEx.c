@@ -578,14 +578,16 @@ void Assembly-CSharp.dll::RTG::TransformEx::TransformEx_ScaleFromPivot
 {
   if (transform != (Transform *)0x0) {
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
-    uVar3 = pVVar1->x;
-    uVar4 = pVVar1->y;
-    fVar5 = pVVar1->z;
-    VStack_6.x = scaleFactor.x * (float)uVar3;
-    VStack_6.y = 0.0;
-    VStack_6.z = 0.0;
-    uStack_7 = 0;
+                       (&VStack_2,transform,(MethodInfo *)0x0);
+    VStack_3.x = pVVar1->x;
+    VStack_3.y = pVVar1->y;
+    VStack_3.z = pVVar1->z;
+    VStack_4.x = scaleFactor.x * VStack_3.x;
+    VStack_4.y = 0.0;
+    VStack_4.z = 0.0;
+    uStack_5 = 0;
+    fStack_6 = scaleFactor.y * VStack_3.y;
+    fStack_7 = scaleFactor.z * VStack_3.z;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
@@ -594,59 +596,64 @@ void Assembly-CSharp.dll::RTG::TransformEx::TransformEx_ScaleFromPivot
               (transform,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,(MethodInfo *)0x0)
     ;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
-    fVar8 = pVVar1->x;
+                       (&VStack_2,transform,(MethodInfo *)0x0);
+    fStack_8 = pVVar1->x;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
-    VStack_6.x = VStack_6.x / fVar8;
-    fVar8 = pVVar1->y;
+                       (&VStack_2,transform,(MethodInfo *)0x0);
+    VStack_4.x = VStack_4.x / fStack_8;
+    fStack_6 = fStack_6 / pVVar1->y;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
-    pTVar9 = (Transform *)((scaleFactor.z * fVar5) / pVVar1->z);
-    value.y = (scaleFactor.y * (float)uVar4) / fVar8;
-    value.x = VStack_6.x;
-    value.z = (float)pTVar9;
+                       (&VStack_2,transform,(MethodInfo *)0x0);
+    VStack_2.z = fStack_7 / pVVar1->z;
+    value.y = fStack_6;
+    value.x = VStack_4.x;
+    value.z = VStack_2.z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (pTVar9,value,(MethodInfo *)0x0);
+              (transform,value,(MethodInfo *)0x0);
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
-    uVar10 = pVVar1->x;
-    uVar11 = pVVar1->y;
-    fVar5 = pVVar1->z;
+                       (&VStack_2,transform,(MethodInfo *)0x0);
+    this = pVVar1->x;
+    method_00 = pVVar1->y;
+    fVar9 = pVVar1->z;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
-    __return_storage_ptr__ = pVVar1->x;
-    this = pVVar1->y;
+                       (&VStack_2,(Transform *)this,(MethodInfo *)method_00);
+    fVar10 = pVVar1->x;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                       ((Vector3 *)__return_storage_ptr__,(Transform *)this,(MethodInfo *)pVVar1->z)
-    ;
-    fVar12 = 0.0;
-    fStack_2 = pVVar1->x;
-    puStack_13 = (undefined *)pVVar1->y;
-    fVar8 = pVVar1->z;
-    pVVar1 = &VStack_6;
-    pTVar9 = transform;
+                       (&VStack_3,transform,(MethodInfo *)0x0);
+    fVar11 = 0.0;
+    VStack_2.x = pVVar1->x;
+    VStack_2.y = pVVar1->y;
+    VStack_2.z = pVVar1->z;
+    pVVar1 = &VStack_4;
+    puVar12 = &UNK_?;
+    pTVar13 = transform;
     pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        (pVVar1,transform,(MethodInfo *)0x0);
-    uVar15 = pVVar14->x;
-    uVar16 = pVVar14->y;
-    fVar17 = (float)uVar15 - pivot.x;
-    fVar18 = (float)uVar16 - pivot.y;
-    fVar19 = pVVar14->z - pivot.z;
-    fVar20 = ((float)uVar10 * fVar17 + (float)uVar11 * fVar18 + fVar5 * fVar19) * scaleFactor.x;
-    fVar21 = ((float)pVVar1 * fVar17 + (float)pTVar9 * fVar18 + fVar12 * fVar19) * scaleFactor.y;
-    fVar18 = (fStack_2 * fVar17 + (float)puStack_13 * fVar18 + fVar8 * fVar19) * scaleFactor.z;
-    value_00.y = (float)puStack_13 * fVar18 +
-                 pivot.y + (float)uVar11 * fVar20 + (float)pTVar9 * fVar21;
-    value_00.x = fStack_2 * fVar18 + pivot.x + (float)uVar10 * fVar20 + (float)pVVar1 * fVar21;
-    value_00.z = fVar8 * fVar18 + pivot.z + fVar5 * fVar20 + fVar12 * fVar21;
+                       (pVVar1,transform,(MethodInfo *)0x0);
+    VStack_3.x = pVVar14->x;
+    VStack_3.y = pVVar14->y;
+    VStack_3.z = pVVar14->z;
+    fStack_8 = VStack_3.x - pivot.x;
+    fStack_7 = VStack_3.y - pivot.y;
+    fStack_6 = VStack_3.z - pivot.z;
+    fVar15 = ((float)pTVar13 * fStack_8 + fVar11 * fStack_7 + fVar9 * fStack_6) * scaleFactor.x;
+    fStack_16 = pivot.x + (float)pTVar13 * fVar15;
+    fStack_17 = pivot.y + fVar11 * fVar15;
+    fStack_18 = pivot.z + fVar9 * fVar15;
+    fVar9 = (fVar10 * fStack_8 + (float)puVar12 * fStack_7 + (float)pVVar1 * fStack_6) *
+            scaleFactor.y;
+    fVar15 = (VStack_2.y * fStack_7 + VStack_2.x * fStack_8 + VStack_2.z * fStack_6) *
+            scaleFactor.z;
+    VStack_2.z = VStack_2.z * fVar15 + (float)pVVar1 * fVar9 + fStack_18;
+    value_00.y = VStack_2.y * fVar15 + (float)puVar12 * fVar9 + fStack_17;
+    value_00.x = VStack_2.x * fVar15 + fVar10 * fVar9 + fStack_16;
+    value_00.z = VStack_2.z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (transform,value_00,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

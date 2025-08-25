@@ -667,14 +667,9 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Update
                        ((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
     fVar2 = (this->fields).interpolateToggleMaskStartPositionX;
     uVar6 = pVVar5->y;
-    if (fVar1 < 0.0) {
-      fVar3 = 0.0;
-    }
-    else {
-      fVar3 = _UNK_?;
-      if (fVar1 <= _UNK_?) {
-        fVar3 = fVar1;
-      }
+    fVar3 = 0.0;
+    if ((0.0 <= fVar1) && (fVar3 = _UNK_?, fVar1 <= _UNK_?)) {
+      fVar3 = fVar1;
     }
     pTVar4 = (Transform *)(this->fields).toggleOffMaskTransform;
     if (pTVar4 != (Transform *)0x0) {

@@ -9,8 +9,8 @@ bool Assembly-CSharp.dll::RTG::PlaneMath::PlaneMath_Raycast2D
   *t = 0.0;
   fVar1 = rayDir.x * planeNormal.x + rayDir.y * planeNormal.y;
   if (_UNK_? <= (float)((uint)fVar1 & _UNK_?)) {
-    fVar1 = ((rayOrigin.y - ptOnPlane.y) * planeNormal.y +
-            planeNormal.x * (rayOrigin.x - ptOnPlane.x)) /
+    fVar1 = (planeNormal.x * (rayOrigin.x - ptOnPlane.x) +
+            planeNormal.y * (rayOrigin.y - ptOnPlane.y)) /
             (float)((uint)fVar1 ^
                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     *t = fVar1;

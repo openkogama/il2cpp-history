@@ -1207,22 +1207,23 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_HandleDeserializedWorldData
     }
     break;
   case KogamaDataType__Enum_WorldObjects:
-    this_00 = (this->fields)._.worldObjectClientManager;
-    if ((this_00 != (MVWorldObjectClientManagerNetwork *)0x0) &&
+    unaff_EDI = (this->fields)._.worldObjectClientManager;
+    if ((unaff_EDI != (MVWorldObjectClientManagerNetwork *)0x0) &&
        (pMVar1 = (this->fields)._.worldInventory, pMVar1 != (MVWorldInventory *)0x0)) {
-      this_01 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
-                          (data,(this_00->fields)._.worldObjects,(pMVar1->fields).runtimePrototypes,
-                           (MethodInfo *)0x0);
-      if (this_01 == (MVWorldObjectClient *)0x0) {
+      unaff_ESI = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
+                            (data,(unaff_EDI->fields)._.worldObjects,
+                             (pMVar1->fields).runtimePrototypes,(MethodInfo *)0x0);
+      if (unaff_ESI == (MVWorldObjectClient *)0x0) {
 code_?:
         MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_AddToWorldObjects
-                  (this_00,this_01,(MethodInfo *)0x0);
+                  (unaff_EDI,unaff_ESI,(MethodInfo *)0x0);
         return;
       }
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar2 != (MVNetworkGame *)0x0) {
-        pOVar3 = (Object *)(this_01->fields)._.id;
+        pOVar3 = (Object *)(unaff_ESI->fields)._.id;
         pTVar4 = (pMVar2->fields).transformNetworkManager;
+        unaff_EBX = 0;
         if (pTVar4 != (TransformNetworkManager *)0x0) {
           if (cRam_? == '\0') {
             func_?();
@@ -1235,7 +1236,8 @@ code_?:
                               MVNetworkObject_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_MVNetworkObject>_System__Collections__Generic__IReadOnlyDictionary<int,_MVNetworkObject>__int_
                              );
           if (pOVar3 == (Object *)0x0) {
-            MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(this_01,0,(MethodInfo *)0x0);
+            MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(unaff_ESI,0,(MethodInfo *)0x0)
+            ;
           }
           goto code_?;
         }
@@ -1251,8 +1253,11 @@ code_?:
     return;
   }
   func_?();
+  *(char *)(unaff_EBX + -0x36) =
+       *(char *)(unaff_EBX + -0x36) + extraout_CH +
+       (unaff_ESI->klass < (MVWorldObjectClient__Class *)unaff_EDI->klass);
   pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  (*pcVar5)(0x68c9c510);
   return;
 }
 

@@ -114,9 +114,6 @@ void Assembly-CSharp.dll::RTG::TorusShape3D::TorusShape3D_RenderWire
   fStack_1 = 0.0;
   fStack_2 = 0.0;
   fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  fStack_5 = 0.0;
-  fStack_6 = 0.0;
   if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__Singleton<RTG::MeshPool>);
   }
@@ -124,317 +121,319 @@ void Assembly-CSharp.dll::RTG::TorusShape3D::TorusShape3D_RenderWire
             Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                       (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
   if (this_00 != (MeshPool *)0x0) {
-    pMStack_7 = MeshPool::MeshPool_get_UnitWireCircleXY(this_00,(MethodInfo *)0x0);
-    pTVar8 = (this->fields)._wireRenderDesc;
-    if (pTVar8 != (TorusShape3D_WireRenderDescriptor *)0x0) {
-      if (((pTVar8->fields)._numTubeSlices == 0) || (((pTVar8->fields)._wireFlags & 1) == 0)) {
+    pMStack_4 = MeshPool::MeshPool_get_UnitWireCircleXY(this_00,(MethodInfo *)0x0);
+    pTVar5 = (this->fields)._wireRenderDesc;
+    if (pTVar5 != (TorusShape3D_WireRenderDescriptor *)0x0) {
+      if (((pTVar5->fields)._numTubeSlices == 0) || (((pTVar5->fields)._wireFlags & 1) == 0)) {
 code_?:
-        pTVar8 = (this->fields)._wireRenderDesc;
-        if (pTVar8 != (TorusShape3D_WireRenderDescriptor *)0x0) {
-          if (((pTVar8->fields)._numAxialSlices == 0) || (((pTVar8->fields)._wireFlags & 2) == 0)) {
+        pTVar5 = (this->fields)._wireRenderDesc;
+        if (pTVar5 != (TorusShape3D_WireRenderDescriptor *)0x0) {
+          if (((pTVar5->fields)._numAxialSlices == 0) || (((pTVar5->fields)._wireFlags & 2) == 0)) {
             return;
           }
-          VStack_9.x = (this->fields)._rotation.x;
-          VStack_9.y = (this->fields)._rotation.y;
-          VStack_9.z = (this->fields)._rotation.z;
-          fStack_10 = (this->fields)._rotation.w;
-          fStack_11 = 0.0;
+          VStack_6.x = (this->fields)._rotation.x;
+          VStack_6.y = (this->fields)._rotation.y;
+          VStack_6.z = (this->fields)._rotation.z;
+          fStack_7 = (this->fields)._rotation.w;
+          fStack_8 = 0.0;
           euler.y = 0.0;
           euler.z = 0.0;
           euler.x = (float)_UNK_?;
-          pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                   Quaternion_Internal_FromEulerRad(&QStack_13,euler,(MethodInfo *)0x0);
-          fVar14 = pQVar12->y;
-          fVar15 = pQVar12->z;
-          VStack_16.y = pQVar12->w;
-          fStack_17 = fStack_10;
-          fStack_18 = fStack_10;
-          fStack_19 = fStack_10;
-          fStack_20 = fStack_10;
-          VStack_21.x = (VStack_16.y * VStack_9.x + pQVar12->x * fStack_10 + fVar15 * VStack_9.y) -
-                         fVar14 * VStack_9.z;
-          VStack_21.y = (VStack_9.y * VStack_16.y + fVar14 * fStack_10 + VStack_9.z * pQVar12->x) -
-                         fVar15 * VStack_9.x;
-          VStack_21.z = (VStack_9.z * VStack_16.y + fVar15 * fStack_10 + fVar14 * VStack_9.x) -
-                         VStack_9.y * pQVar12->x;
-          fStack_22 = ((VStack_16.y * fStack_10 - VStack_9.x * pQVar12->x) - fVar14 * VStack_9.y) -
-                      VStack_9.z * fVar15;
-          pTVar8 = (this->fields)._wireRenderDesc;
-          VStack_16.x = fStack_22;
-          VStack_16.z = VStack_16.y;
-          fStack_23 = VStack_16.y;
-          fStack_24 = VStack_21.x;
-          if (pTVar8 != (TorusShape3D_WireRenderDescriptor *)0x0) {
-            iVar25 = 0;
-            fVar14 = _UNK_? / (float)(pTVar8->fields)._numAxialSlices;
-            uStack_26 = CONCAT44(fVar14,(float)uStack_26);
+          pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                   Quaternion_Internal_FromEulerRad(&QStack_10,euler,(MethodInfo *)0x0);
+          fVar11 = pQVar9->y;
+          fVar12 = pQVar9->z;
+          VStack_13.y = pQVar9->w;
+          fStack_14 = fStack_7;
+          fStack_15 = fStack_7;
+          fStack_16 = fStack_7;
+          fStack_17 = fStack_7;
+          VStack_18.x = (VStack_13.y * VStack_6.x + pQVar9->x * fStack_7 + fVar12 * VStack_6.y) -
+                         fVar11 * VStack_6.z;
+          VStack_18.y = (VStack_6.y * VStack_13.y + fVar11 * fStack_7 + VStack_6.z * pQVar9->x) -
+                         fVar12 * VStack_6.x;
+          VStack_18.z = (VStack_6.z * VStack_13.y + fVar12 * fStack_7 + fVar11 * VStack_6.x) -
+                         VStack_6.y * pQVar9->x;
+          fStack_19 = ((VStack_13.y * fStack_7 - VStack_6.x * pQVar9->x) - fVar11 * VStack_6.y) -
+                      VStack_6.z * fVar12;
+          pTVar5 = (this->fields)._wireRenderDesc;
+          VStack_13.x = fStack_19;
+          VStack_13.z = VStack_13.y;
+          fStack_20 = VStack_13.y;
+          fStack_21 = VStack_18.x;
+          if (pTVar5 != (TorusShape3D_WireRenderDescriptor *)0x0) {
+            iVar22 = 0;
+            fVar11 = _UNK_? / (float)(pTVar5->fields)._numAxialSlices;
+            uStack_23 = CONCAT44(fVar11,(float)uStack_23);
             do {
-              if ((pTVar8->fields)._numAxialSlices <= iVar25) {
+              if ((pTVar5->fields)._numAxialSlices <= iVar22) {
                 return;
               }
-              fStack_24 = (float)iVar25 * fVar14 * _UNK_?;
-              dVar27 = (double)fStack_24;
+              fStack_21 = (float)iVar22 * fVar11 * _UNK_?;
+              dVar24 = (double)fStack_21;
               func_?();
-              fStack_28 = (this->fields)._coreRadius - (float)dVar27 * (this->fields)._tubeRadius;
-              dVar27 = (double)fStack_24;
+              fStack_25 = (this->fields)._coreRadius - (float)dVar24 * (this->fields)._tubeRadius;
+              dVar24 = (double)fStack_21;
               func_?();
-              fStack_29 = (this->fields)._center.z;
-              fStack_6 = 1.0;
-              fStack_24 = (float)dVar27 * (this->fields)._tubeRadius;
-              fStack_4 = fStack_28;
-              fStack_5 = fStack_28;
-              uStack_30._0_4_ = (this->fields)._center.x;
-              uStack_30._4_4_ = (this->fields)._center.y;
-              fStack_17 = (this->fields)._rotation.x;
-              fStack_18 = (this->fields)._rotation.y;
-              fStack_19 = (this->fields)._rotation.z;
-              fStack_20 = (this->fields)._rotation.w;
+              fStack_26 = (this->fields)._center.z;
+              fStack_3 = 1.0;
+              fStack_21 = (float)dVar24 * (this->fields)._tubeRadius;
+              fStack_1 = fStack_25;
+              fStack_2 = fStack_25;
+              uStack_27._0_4_ = (this->fields)._center.x;
+              uStack_27._4_4_ = (this->fields)._center.y;
+              fStack_14 = (this->fields)._rotation.x;
+              fStack_15 = (this->fields)._rotation.y;
+              fStack_16 = (this->fields)._rotation.z;
+              fStack_17 = (this->fields)._rotation.w;
               if (cRam_? == '\0') {
                 func_?(&TypeInfo__UnityEngine__Vector3);
                 cRam_? = '\x01';
               }
-              rotation_03.y = fStack_18;
-              rotation_03.x = fStack_17;
-              rotation_03.z = fStack_19;
-              rotation_03.w = fStack_20;
-              pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                                 (&VStack_9,rotation_03,
+              rotation_03.y = fStack_15;
+              rotation_03.x = fStack_14;
+              rotation_03.z = fStack_16;
+              rotation_03.w = fStack_17;
+              pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                                 (&VStack_6,rotation_03,
                                   TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                                   (MethodInfo *)0x0);
-              uStack_32._0_4_ = pVVar31->x;
-              uStack_32._4_4_ = pVVar31->y;
-              fStack_33 = pVVar31->z;
-              fStack_11 = fStack_33 * fStack_24 + fStack_29;
-              pos_00.y = (float)uStack_32._4_4_ * fStack_24 + uStack_30._4_4_;
-              pos_00.x = (float)(undefined4)uStack_32 * fStack_24 + (float)uStack_30;
-              pos_00.z = fStack_11;
-              q.y = VStack_21.y;
-              q.x = VStack_21.x;
-              q.z = VStack_21.z;
-              q.w = fStack_22;
-              s_00.y = fStack_5;
-              s_00.x = fStack_4;
-              s_00.z = fStack_6;
-              pMVar34 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                                 (&MStack_35,pos_00,q,s_00,(MethodInfo *)0x0);
-              fStack_17 = pMVar34->m00;
-              fStack_18 = pMVar34->m10;
-              fStack_19 = pMVar34->m20;
-              fStack_20 = pMVar34->m30;
-              fStack_36 = pMVar34->m01;
-              fStack_37 = pMVar34->m11;
-              fStack_38 = pMVar34->m21;
-              fStack_39 = pMVar34->m31;
-              fStack_40 = pMVar34->m02;
-              fStack_41 = pMVar34->m12;
-              fStack_42 = pMVar34->m22;
-              fStack_43 = pMVar34->m32;
-              VStack_16.x = pMVar34->m03;
-              VStack_16.y = pMVar34->m13;
-              VStack_16.z = pMVar34->m23;
-              fStack_23 = pMVar34->m33;
+              uStack_29._0_4_ = pVVar28->x;
+              uStack_29._4_4_ = pVVar28->y;
+              fStack_30 = pVVar28->z;
+              fStack_8 = fStack_30 * fStack_21 + fStack_26;
+              pos_00.y = (float)uStack_29._4_4_ * fStack_21 + uStack_27._4_4_;
+              pos_00.x = (float)(undefined4)uStack_29 * fStack_21 + (float)uStack_27;
+              pos_00.z = fStack_8;
+              q.y = VStack_18.y;
+              q.x = VStack_18.x;
+              q.z = VStack_18.z;
+              q.w = fStack_19;
+              s_00.y = fStack_2;
+              s_00.x = fStack_1;
+              s_00.z = fStack_3;
+              pMVar31 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                                 (&MStack_32,pos_00,q,s_00,(MethodInfo *)0x0);
+              fStack_14 = pMVar31->m00;
+              fStack_15 = pMVar31->m10;
+              fStack_16 = pMVar31->m20;
+              fStack_17 = pMVar31->m30;
+              fStack_33 = pMVar31->m01;
+              fStack_34 = pMVar31->m11;
+              fStack_35 = pMVar31->m21;
+              fStack_36 = pMVar31->m31;
+              fStack_37 = pMVar31->m02;
+              fStack_38 = pMVar31->m12;
+              fStack_39 = pMVar31->m22;
+              fStack_40 = pMVar31->m32;
+              VStack_13.x = pMVar31->m03;
+              VStack_13.y = pMVar31->m13;
+              VStack_13.z = pMVar31->m23;
+              fStack_20 = pMVar31->m33;
               if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Graphics);
               }
-              matrix_00.m10 = fStack_18;
-              matrix_00.m00 = fStack_17;
-              matrix_00.m20 = fStack_19;
-              matrix_00.m30 = fStack_20;
-              matrix_00.m01 = fStack_36;
-              matrix_00.m11 = fStack_37;
-              matrix_00.m21 = fStack_38;
-              matrix_00.m31 = fStack_39;
-              matrix_00.m02 = fStack_40;
-              matrix_00.m12 = fStack_41;
-              matrix_00.m22 = fStack_42;
-              matrix_00.m32 = fStack_43;
-              matrix_00.m03 = VStack_16.x;
-              matrix_00.m13 = VStack_16.y;
-              matrix_00.m23 = VStack_16.z;
-              matrix_00.m33 = fStack_23;
+              matrix_00.m10 = fStack_15;
+              matrix_00.m00 = fStack_14;
+              matrix_00.m20 = fStack_16;
+              matrix_00.m30 = fStack_17;
+              matrix_00.m01 = fStack_33;
+              matrix_00.m11 = fStack_34;
+              matrix_00.m21 = fStack_35;
+              matrix_00.m31 = fStack_36;
+              matrix_00.m02 = fStack_37;
+              matrix_00.m12 = fStack_38;
+              matrix_00.m22 = fStack_39;
+              matrix_00.m32 = fStack_40;
+              matrix_00.m03 = VStack_13.x;
+              matrix_00.m13 = VStack_13.y;
+              matrix_00.m23 = VStack_13.z;
+              matrix_00.m33 = fStack_20;
               UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                        (pMStack_7,matrix_00,(MethodInfo *)0x0);
-              pTVar8 = (this->fields)._wireRenderDesc;
-              iVar25 = iVar25 + 1;
-              fVar14 = uStack_26._4_4_;
-            } while (pTVar8 != (TorusShape3D_WireRenderDescriptor *)0x0);
+                        (pMStack_4,matrix_00,(MethodInfo *)0x0);
+              pTVar5 = (this->fields)._wireRenderDesc;
+              iVar22 = iVar22 + 1;
+              fVar11 = uStack_23._4_4_;
+            } while (pTVar5 != (TorusShape3D_WireRenderDescriptor *)0x0);
           }
         }
       }
       else {
-        fStack_1 = (this->fields)._tubeRadius;
-        fStack_3 = 1.0;
-        fStack_2 = fStack_1;
-        if (pTVar8 != (TorusShape3D_WireRenderDescriptor *)0x0) {
-          iVar25 = 0;
-          fStack_24 = _UNK_? / (float)(pTVar8->fields)._numTubeSlices;
+        fVar11 = (this->fields)._tubeRadius;
+        uStack_27 = CONCAT44(fVar11,fVar11);
+        fStack_26 = 1.0;
+        if (pTVar5 != (TorusShape3D_WireRenderDescriptor *)0x0) {
+          iVar22 = 0;
+          fStack_21 = _UNK_? / (float)(pTVar5->fields)._numTubeSlices;
           do {
-            if ((pTVar8->fields)._numTubeSlices <= iVar25) goto code_?;
-            fVar14 = (float)iVar25 * fStack_24 * _UNK_?;
-            dVar27 = (double)fVar14;
-            uStack_26._4_4_ = fVar14;
+            if ((pTVar5->fields)._numTubeSlices <= iVar22) goto code_?;
+            fStack_41 = (float)iVar22 * fStack_21 * _UNK_?;
+            dVar24 = (double)fStack_41;
             func_?();
-            fStack_44 = (float)dVar27;
-            dVar27 = (double)uStack_26._4_4_;
+            fStack_42 = (float)dVar24;
+            dVar24 = (double)fStack_41;
             func_?();
-            fStack_45 = (this->fields)._center.z;
-            fStack_28 = (float)dVar27;
-            uStack_46._0_4_ = (this->fields)._center.x;
-            uStack_46._4_4_ = (this->fields)._center.y;
-            fStack_47 = (this->fields)._rotation.x;
-            fStack_48 = (this->fields)._rotation.y;
-            uStack_26._0_4_ = (this->fields)._rotation.z;
-            uStack_26._4_4_ = (this->fields)._rotation.w;
+            fStack_43 = (this->fields)._center.z;
+            fStack_41 = (float)dVar24;
+            uStack_44._0_4_ = (this->fields)._center.x;
+            uStack_44._4_4_ = (this->fields)._center.y;
+            fStack_45 = (this->fields)._rotation.x;
+            fStack_46 = (this->fields)._rotation.y;
+            uStack_23._0_4_ = (this->fields)._rotation.z;
+            uStack_23._4_4_ = (this->fields)._rotation.w;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
             }
-            rotation.y = fStack_48;
-            rotation.x = fStack_47;
-            rotation.z = (float)uStack_26;
-            rotation.w = uStack_26._4_4_;
-            pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                               (&VStack_49,rotation,
+            rotation.y = fStack_46;
+            rotation.x = fStack_45;
+            rotation.z = (float)uStack_23;
+            rotation.w = uStack_23._4_4_;
+            pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                               (&VStack_47,rotation,
                                 TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
                                 (MethodInfo *)0x0);
-            uStack_50._0_4_ = pVVar31->x;
-            uStack_50._4_4_ = pVVar31->y;
-            fStack_51 = pVVar31->z;
-            fVar14 = (this->fields)._coreRadius;
-            uStack_26._4_4_ = (float)uStack_46 + (float)(undefined4)uStack_50 * fStack_44 * fVar14;
-            fStack_52 = uStack_46._4_4_ + (float)uStack_50._4_4_ * fStack_44 * fVar14;
-            fStack_44 = fStack_45 + fStack_51 * fStack_44 * fVar14;
-            fStack_40 = (this->fields)._rotation.x;
-            fStack_41 = (this->fields)._rotation.y;
-            fStack_42 = (this->fields)._rotation.z;
-            fStack_43 = (this->fields)._rotation.w;
+            uStack_48._0_4_ = pVVar28->x;
+            uStack_48._4_4_ = pVVar28->y;
+            fStack_49 = pVVar28->z;
+            fVar12 = (float)uStack_48._4_4_ * fStack_42;
+            fVar50 = fStack_49 * fStack_42;
+            fVar11 = (this->fields)._coreRadius;
+            fStack_42 = (float)uStack_44 + (float)(undefined4)uStack_48 * fStack_42 * fVar11;
+            uStack_23._4_4_ = uStack_44._4_4_ + fVar12 * fVar11;
+            fStack_25 = fStack_43 + fVar50 * fVar11;
+            fStack_37 = (this->fields)._rotation.x;
+            fStack_38 = (this->fields)._rotation.y;
+            fStack_39 = (this->fields)._rotation.z;
+            fStack_40 = (this->fields)._rotation.w;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
             }
-            rotation_00.y = fStack_41;
-            rotation_00.x = fStack_40;
-            rotation_00.z = fStack_42;
-            rotation_00.w = fStack_43;
-            pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                               (&VStack_53,rotation_00,
+            rotation_00.y = fStack_38;
+            rotation_00.x = fStack_37;
+            rotation_00.z = fStack_39;
+            rotation_00.w = fStack_40;
+            pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                               (&VStack_51,rotation_00,
                                 TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                                 (MethodInfo *)0x0);
-            uStack_54._0_4_ = pVVar31->x;
-            uStack_54._4_4_ = pVVar31->y;
-            fStack_55 = pVVar31->z;
-            fVar14 = (this->fields)._coreRadius;
-            fVar15 = uStack_26._4_4_ + (float)(undefined4)uStack_54 * fStack_28 * fVar14;
-            fStack_52 = fStack_52 + (float)uStack_54._4_4_ * fStack_28 * fVar14;
-            fStack_33 = fStack_44 + fStack_55 * fStack_28 * fVar14;
-            uStack_56._0_4_ = (this->fields)._center.x;
-            uStack_56._4_4_ = (this->fields)._center.y;
-            fStack_57 = (this->fields)._center.z;
-            uStack_26._4_4_ = fVar15 - (float)(undefined4)uStack_56;
-            uStack_32 = CONCAT44(fStack_52,fVar15);
-            fStack_52 = fStack_52 - (float)uStack_56._4_4_;
-            fStack_44 = fStack_33 - fStack_57;
-            fStack_40 = (this->fields)._rotation.x;
-            fStack_41 = (this->fields)._rotation.y;
-            fStack_42 = (this->fields)._rotation.z;
-            fStack_43 = (this->fields)._rotation.w;
+            uStack_52._0_4_ = pVVar28->x;
+            uStack_52._4_4_ = pVVar28->y;
+            fStack_53 = pVVar28->z;
+            fVar11 = (this->fields)._coreRadius;
+            fVar12 = (float)(undefined4)uStack_52 * fStack_41 * fVar11 + fStack_42;
+            uStack_23._4_4_ = (float)uStack_52._4_4_ * fStack_41 * fVar11 + uStack_23._4_4_;
+            fStack_30 = fStack_53 * fStack_41 * fVar11 + fStack_25;
+            uStack_54._0_4_ = (this->fields)._center.x;
+            uStack_54._4_4_ = (this->fields)._center.y;
+            fStack_55 = (this->fields)._center.z;
+            fStack_42 = fVar12 - (float)(undefined4)uStack_54;
+            uStack_29 = CONCAT44(uStack_23._4_4_,fVar12);
+            fStack_25 = uStack_23._4_4_ - (float)uStack_54._4_4_;
+            uStack_23._4_4_ = fStack_30 - fStack_55;
+            fStack_37 = (this->fields)._rotation.x;
+            fStack_38 = (this->fields)._rotation.y;
+            fStack_39 = (this->fields)._rotation.z;
+            fStack_40 = (this->fields)._rotation.w;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
             }
-            rotation_01.y = fStack_41;
-            rotation_01.x = fStack_40;
-            rotation_01.z = fStack_42;
-            rotation_01.w = fStack_43;
-            pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                               (&VStack_21,rotation_01,
+            rotation_01.y = fStack_38;
+            rotation_01.x = fStack_37;
+            rotation_01.z = fStack_39;
+            rotation_01.w = fStack_40;
+            pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                               (&VStack_18,rotation_01,
                                 TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                                 (MethodInfo *)0x0);
-            uStack_30._0_4_ = pVVar31->x;
-            uStack_30._4_4_ = pVVar31->y;
-            fStack_29 = pVVar31->z;
-            fStack_11 = uStack_30._4_4_ * uStack_26._4_4_ - (float)uStack_30 * fStack_52;
-            value.y = (float)uStack_30 * fStack_44 - fStack_29 * uStack_26._4_4_;
-            value.x = fStack_29 * fStack_52 - uStack_30._4_4_ * fStack_44;
-            value.z = fStack_11;
-            pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                               (&VStack_16,value,(MethodInfo *)0x0);
-            uStack_26._0_4_ = pVVar31->x;
-            uStack_26._4_4_ = pVVar31->y;
-            fStack_28 = pVVar31->z;
-            fStack_40 = (this->fields)._rotation.x;
-            fStack_41 = (this->fields)._rotation.y;
-            fStack_42 = (this->fields)._rotation.z;
-            fStack_43 = (this->fields)._rotation.w;
+            uStack_56._0_4_ = pVVar28->x;
+            uStack_56._4_4_ = pVVar28->y;
+            fStack_57 = pVVar28->z;
+            fStack_8 = fStack_42 * (float)uStack_56._4_4_ -
+                        fStack_25 * (float)(undefined4)uStack_56;
+            value.y = uStack_23._4_4_ * (float)(undefined4)uStack_56 - fStack_42 * fStack_57;
+            value.x = fStack_25 * fStack_57 - uStack_23._4_4_ * (float)uStack_56._4_4_;
+            value.z = fStack_8;
+            pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                               (&VStack_13,value,(MethodInfo *)0x0);
+            uStack_23._0_4_ = pVVar28->x;
+            uStack_23._4_4_ = pVVar28->y;
+            fStack_25 = pVVar28->z;
+            fStack_37 = (this->fields)._rotation.x;
+            fStack_38 = (this->fields)._rotation.y;
+            fStack_39 = (this->fields)._rotation.z;
+            fStack_40 = (this->fields)._rotation.w;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
             }
-            rotation_02.y = fStack_41;
-            rotation_02.x = fStack_40;
-            rotation_02.z = fStack_42;
-            rotation_02.w = fStack_43;
-            pVVar31 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                               (&VStack_9,rotation_02,
+            rotation_02.y = fStack_38;
+            rotation_02.x = fStack_37;
+            rotation_02.z = fStack_39;
+            rotation_02.w = fStack_40;
+            pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                               (&VStack_6,rotation_02,
                                 TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                                 (MethodInfo *)0x0);
-            forward.z = fStack_28;
-            forward.x = (float)uStack_26;
-            forward.y = uStack_26._4_4_;
-            pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                               (&QStack_13,forward,*pVVar31,(MethodInfo *)0x0);
-            pos.z = fStack_33;
-            pos.x = (float)(undefined4)uStack_32;
-            pos.y = (float)uStack_32._4_4_;
-            s.y = fStack_2;
-            s.x = fStack_1;
-            s.z = fStack_3;
-            pMVar34 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                               (&MStack_35,pos,*pQVar12,s,(MethodInfo *)0x0);
-            fStack_40 = pMVar34->m00;
-            fStack_41 = pMVar34->m10;
-            fStack_42 = pMVar34->m20;
-            fStack_43 = pMVar34->m30;
-            fStack_47 = pMVar34->m01;
-            fStack_48 = pMVar34->m11;
-            uStack_26._0_4_ = pMVar34->m21;
-            uStack_26._4_4_ = pMVar34->m31;
-            fStack_36 = pMVar34->m02;
-            fStack_37 = pMVar34->m12;
-            fStack_38 = pMVar34->m22;
-            fStack_39 = pMVar34->m32;
-            fStack_17 = pMVar34->m03;
-            fStack_18 = pMVar34->m13;
-            fStack_19 = pMVar34->m23;
-            fStack_20 = pMVar34->m33;
-            fVar14 = pMVar34->m21;
-            fVar15 = pMVar34->m31;
+            forward.z = fStack_25;
+            forward.x = (float)uStack_23;
+            forward.y = uStack_23._4_4_;
+            pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                               (&QStack_10,forward,*pVVar28,(MethodInfo *)0x0);
+            pos.z = fStack_30;
+            pos.x = (float)(undefined4)uStack_29;
+            pos.y = (float)uStack_29._4_4_;
+            s.z = fStack_26;
+            s.x = (float)uStack_27;
+            s.y = uStack_27._4_4_;
+            pMVar31 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                               (&MStack_32,pos,*pQVar9,s,(MethodInfo *)0x0);
+            fStack_37 = pMVar31->m00;
+            fStack_38 = pMVar31->m10;
+            fStack_39 = pMVar31->m20;
+            fStack_40 = pMVar31->m30;
+            fStack_45 = pMVar31->m01;
+            fStack_46 = pMVar31->m11;
+            uStack_23._0_4_ = pMVar31->m21;
+            uStack_23._4_4_ = pMVar31->m31;
+            fStack_33 = pMVar31->m02;
+            fStack_34 = pMVar31->m12;
+            fStack_35 = pMVar31->m22;
+            fStack_36 = pMVar31->m32;
+            fStack_14 = pMVar31->m03;
+            fStack_15 = pMVar31->m13;
+            fStack_16 = pMVar31->m23;
+            fStack_17 = pMVar31->m33;
+            fVar11 = pMVar31->m21;
+            fVar12 = pMVar31->m31;
             if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Graphics);
-              fVar14 = (float)uStack_26;
-              fVar15 = uStack_26._4_4_;
+              fVar11 = (float)uStack_23;
+              fVar12 = uStack_23._4_4_;
             }
-            matrix.m10 = fStack_41;
-            matrix.m00 = fStack_40;
-            matrix.m20 = fStack_42;
-            matrix.m30 = fStack_43;
-            matrix.m01 = fStack_47;
-            matrix.m11 = fStack_48;
-            matrix.m21 = fVar14;
-            matrix.m31 = fVar15;
-            matrix.m02 = fStack_36;
-            matrix.m12 = fStack_37;
-            matrix.m22 = fStack_38;
-            matrix.m32 = fStack_39;
-            matrix.m03 = fStack_17;
-            matrix.m13 = fStack_18;
-            matrix.m23 = fStack_19;
-            matrix.m33 = fStack_20;
+            matrix.m10 = fStack_38;
+            matrix.m00 = fStack_37;
+            matrix.m20 = fStack_39;
+            matrix.m30 = fStack_40;
+            matrix.m01 = fStack_45;
+            matrix.m11 = fStack_46;
+            matrix.m21 = fVar11;
+            matrix.m31 = fVar12;
+            matrix.m02 = fStack_33;
+            matrix.m12 = fStack_34;
+            matrix.m22 = fStack_35;
+            matrix.m32 = fStack_36;
+            matrix.m03 = fStack_14;
+            matrix.m13 = fStack_15;
+            matrix.m23 = fStack_16;
+            matrix.m33 = fStack_17;
             UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                      (pMStack_7,matrix,(MethodInfo *)0x0);
-            pTVar8 = (this->fields)._wireRenderDesc;
-            iVar25 = iVar25 + 1;
-          } while (pTVar8 != (TorusShape3D_WireRenderDescriptor *)0x0);
+                      (pMStack_4,matrix,(MethodInfo *)0x0);
+            pTVar5 = (this->fields)._wireRenderDesc;
+            iVar22 = iVar22 + 1;
+          } while (pTVar5 != (TorusShape3D_WireRenderDescriptor *)0x0);
         }
       }
     }

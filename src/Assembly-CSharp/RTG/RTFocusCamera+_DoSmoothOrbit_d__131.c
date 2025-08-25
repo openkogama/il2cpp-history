@@ -45,7 +45,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothOrbit>d__131::
     else if (_UNK_? < fVar9) {
       fVar9 = _UNK_?;
     }
-    fVar4 = (4.3669177e-29 - fVar4) * fVar9 + fVar4;
+    fVar4 = (4.3703843e-29 - fVar4) * fVar9 + fVar4;
     fVar5 = (fVar6 - fVar5) * fVar9 + fVar5;
     (this->fields)._rotationAmount_5__2.x = fVar4;
     (this->fields)._rotationAmount_5__2.y = fVar5;

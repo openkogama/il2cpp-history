@@ -498,7 +498,7 @@ void Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_HandleDeseria
                     (returnData,(this->fields).worldObjects,(this->fields).prototypes,
                      (MethodInfo *)0x0);
   if ((value != (MVWorldObjectClient *)0x0) &&
-     (this_00 = (this->fields).worldObjects,
+     (this_00 = (this->fields).worldObjects, this = (KoGaMaPackageClient *)returnData,
      this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
@@ -508,15 +508,15 @@ void Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_HandleDeseria
               );
     return;
   }
-  uVar1 = func_?();
-  iVar2 = (int)((ulonglong)uVar1 >> 0x20);
-  iVar3 = CONCAT31((int3)((ulonglong)uVar1 >> 8),*(undefined1 *)(unaff_EBX + ((uint)uVar1 & 0xff)));
-  puVar4 = (uint *)(iVar3 + -0x17 + iVar2);
-  *puVar4 = *puVar4 | (uint)&dataType;
-  puVar4 = (uint *)(iVar3 + 0x3e + iVar2);
-  *puVar4 = *puVar4 | (uint)&dataType;
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  cVar1 = '\0';
+  func_?();
+  LOCK();
+  *unaff_EBX = this;
+  UNLOCK();
+  pcVar2 = (char *)(unaff_FS_OFFSET + extraout_ECX + -0x11ef9bcd);
+  *pcVar2 = *pcVar2 + (char)unaff_EBX + cVar1;
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -675,7 +675,6 @@ code_?:
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* MVWorldObjectClient WorldObjectFactory(Dictionary`2[System.Object,System.Object],
    Dictionary`2[System.Int32,MVWorldObjectClient],
    Dictionary`2[System.Int32,RuntimePrototypeCubeModel]) */
@@ -796,36 +795,32 @@ Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
     cRam_? = '\x01';
   }
   pOVar1 = (Object *)func_?();
-  bVar2 = 0;
-  if (worldObjectData == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-           UIElements::TextureId]::
-           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                      worldObjectData,pOVar1,
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-  bVar2 = 0;
-  if (TVar3.m_Index == 0) goto code_?;
-  pIVar4 = (TypeInfo__System__Int32->_0).element_class;
-  bVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar4;
-  if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != pIVar4) {
+  if ((worldObjectData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
+     (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                         worldObjectData,pOVar1,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        ), TVar2.m_Index == 0)) goto code_?;
+  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class
+     ) {
 code_?:
     func_?();
     goto code_?;
   }
-  puVar5 = (undefined4 *)func_?();
-  switch(*puVar5) {
+  puVar3 = (undefined4 *)func_?();
+  switch(*puVar3) {
   case 0:
     pOVar1 = (Object *)func_?();
-    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                        worldObjectData,pOVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                       );
-    if (bVar6 == 0) {
+    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       worldObjectData,pOVar1,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
+    if (bVar4 == 0) {
       unaff_ESI.m_Index =
            (int32_t)MVWorldObject.dll::MV::WorldObject::HashtableFunctions::
                     HashtableFunctions_PrettyString(worldObjectData,(MethodInfo *)0x0);
@@ -846,44 +841,37 @@ code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(pOVar1,(MethodInfo *)0x0);
     }
     pOVar1 = (Object *)func_?();
-    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                        worldObjectData,pOVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    bVar2 = 0;
-    if (TVar3.m_Index != 0) {
-      pIVar4 = (TypeInfo__System__Int32->_0).element_class;
-      bVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar4;
-      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) != pIVar4) goto code_?;
-      piVar7 = (int *)func_?();
-      unaff_ESI.m_Index = *piVar7;
-      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      bVar2 = 0;
-      if (pMVar8 != (MVNetworkGame *)0x0) {
-        pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
-        bVar2 = 0;
-        if (pMVar9 != (MVLocalPlayer *)0x0) {
-          if ((String *)unaff_ESI.m_Index == (String *)(pMVar9->fields)._._ActorNr_k__BackingField)
-          {
-            this_01 = (MVAvatarLocal *)func_?();
-            MVAvatarLocal::MVAvatarLocal__ctor
-                      (this_01,worldObjectData,worldObjects,(MethodInfo *)0x0);
-            return (MVWorldObjectClient *)this_01;
-          }
-          if ((String *)unaff_ESI.m_Index != (String *)0xffffffff) {
-            this = (MVAvatarRemote *)func_?();
-            MVAvatarRemote::MVAvatarRemote__ctor
-                      (this,worldObjectData,worldObjects,(MethodInfo *)0x0);
-            return (MVWorldObjectClient *)this;
-          }
-          this_00 = (MVPreviewAvatar *)func_?();
-          MVPreviewAvatar::MVPreviewAvatar__ctor
-                    (this_00,worldObjectData,worldObjects,(MethodInfo *)0x0);
-          return (MVWorldObjectClient *)this_00;
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       worldObjectData,pOVar1,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+          (TypeInfo__System__Int32->_0).element_class) goto code_?;
+      piVar5 = (int *)func_?();
+      unaff_ESI.m_Index = *piVar5;
+      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar6 != (MVNetworkGame *)0x0) &&
+         (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+         pMVar7 != (MVLocalPlayer *)0x0)) {
+        if ((String *)unaff_ESI.m_Index == (String *)(pMVar7->fields)._._ActorNr_k__BackingField) {
+          this_01 = (MVAvatarLocal *)func_?();
+          MVAvatarLocal::MVAvatarLocal__ctor(this_01,worldObjectData,worldObjects,(MethodInfo *)0x0)
+          ;
+          return (MVWorldObjectClient *)this_01;
         }
+        if ((String *)unaff_ESI.m_Index != (String *)0xffffffff) {
+          this = (MVAvatarRemote *)func_?();
+          MVAvatarRemote::MVAvatarRemote__ctor(this,worldObjectData,worldObjects,(MethodInfo *)0x0);
+          return (MVWorldObjectClient *)this;
+        }
+        this_00 = (MVPreviewAvatar *)func_?();
+        MVPreviewAvatar::MVPreviewAvatar__ctor
+                  (this_00,worldObjectData,worldObjects,(MethodInfo *)0x0);
+        return (MVWorldObjectClient *)this_00;
       }
     }
     break;
@@ -917,14 +905,14 @@ code_?:
   case 0x24:
   case 0x3a:
 code_?:
-    pSVar10 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
-    pSVar10 = mscorlib.dll::System::String::String_Concat_3
-                        (StringLiteral_WOCM_trying_to_create_unknown_ty,pSVar10,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::String::String_Concat_3
+                        (StringLiteral_WOCM_trying_to_create_unknown_ty,pSVar8,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)pSVar10,(MethodInfo *)0x0);
+              ((Object *)pSVar8,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)0x0;
   case 7:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -932,10 +920,10 @@ code_?:
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Attempt_to_create_abstract_Spawn,(MethodInfo *)0x0);
-    pMVar11 = (MVSpawnPointBlue *)func_?();
-    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar11,worldObjectData,worldObjects,(MethodInfo *)0x0)
+    pMVar9 = (MVSpawnPointBlue *)func_?();
+    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar9,worldObjectData,worldObjects,(MethodInfo *)0x0)
     ;
-    return (MVWorldObjectClient *)pMVar11;
+    return (MVWorldObjectClient *)pMVar9;
   case 8:
     this_05 = (MVCubeModelPrototypeTerrain *)func_?();
     MVCubeModelPrototypeTerrain::MVCubeModelPrototypeTerrain__ctor
@@ -1030,10 +1018,10 @@ code_?:
               (this_26,worldObjectData,worldObjects,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)this_26;
   case 0x2a:
-    pMVar11 = (MVSpawnPointBlue *)func_?();
-    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar11,worldObjectData,worldObjects,(MethodInfo *)0x0)
+    pMVar9 = (MVSpawnPointBlue *)func_?();
+    MVSpawnPointBlue::MVSpawnPointBlue__ctor(pMVar9,worldObjectData,worldObjects,(MethodInfo *)0x0)
     ;
-    return (MVWorldObjectClient *)pMVar11;
+    return (MVWorldObjectClient *)pMVar9;
   case 0x2b:
     this_27 = (MVObjectEnabler *)func_?();
     MVObjectEnabler::MVObjectEnabler__ctor(this_27,worldObjectData,worldObjects,(MethodInfo *)0x0);
@@ -1051,21 +1039,14 @@ code_?:
                            worldObjectData,pOVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-    bVar2 = 0;
     if (unaff_ESI.m_Index == 0) break;
-    bVar2 = *(byte *)(*(int *)unaff_ESI.m_Index + 0xb8) <
-             (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
-             ).naturalAligment;
-    if ((!(bool)bVar2) &&
-       (pDVar12 = *(Dictionary_2_System_Object_System_Object___Class **)
-                  (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
-                  (uint)(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment * 4),
-       bVar2 = pDVar12 < 
-                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-       pDVar12 == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
-       ) {
+    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment <= *(byte *)(*(int *)unaff_ESI.m_Index + 0xb8)) &&
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
+         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+               _1).naturalAligment * 4) ==
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
       unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -1074,35 +1055,28 @@ code_?:
                             );
       unaff_EBX = mscorlib.dll::System::Enum::Enum_ToString
                             ((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
-      bVar2 = 0;
       if (unaff_ESI.m_Index != 0) {
-        bVar2 = 1;
         if ((*(byte *)(*(int *)unaff_ESI.m_Index + 0xb8) <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
-           (pDVar12 = *(Dictionary_2_System_Object_System_Object___Class **)
-                      (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
-                      (uint)(
-                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                            ->_1).naturalAligment * 4),
-           bVar2 = pDVar12 < 
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-           , pDVar12 != 
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+           (*(Dictionary_2_System_Object_System_Object___Class **)
+             (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
+             (uint)(
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).naturalAligment * 4) !=
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
         goto code_?;
-        TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (unaff_ESI.m_Index,(Object *)unaff_EBX,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        bVar2 = 0;
-        if (TVar3.m_Index != 0) {
-          pIVar4 = (TypeInfo__MV__WorldObject__BlueprintType->_0).element_class;
-          bVar2 = *(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) < pIVar4;
-          if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) == pIVar4) {
-            puVar13 = (undefined1 *)func_?();
-            switch(*puVar13) {
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (unaff_ESI.m_Index,(Object *)unaff_EBX,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if (TVar2.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+              (TypeInfo__MV__WorldObject__BlueprintType->_0).element_class) {
+            puVar10 = (undefined1 *)func_?();
+            switch(*puVar10) {
             case 7:
               this_29 = (MVMovable *)func_?();
               MVMovable::MVMovable__ctor(this_29,worldObjectData,worldObjects,(MethodInfo *)0x0);
@@ -1138,16 +1112,16 @@ code_?:
             case 0xe:
               goto code_?;
             default:
-              pSVar10 = mscorlib.dll::System::Enum::Enum_ToString
+              pSVar8 = mscorlib.dll::System::Enum::Enum_ToString
                                   ((Enum *)&stack0xffffffec,(MethodInfo *)0x0);
-              pSVar10 = mscorlib.dll::System::String::String_Concat_3
-                                  (StringLiteral_WOCM_trying_to_create_unknown_bl,pSVar10,
+              pSVar8 = mscorlib.dll::System::String::String_Concat_3
+                                  (StringLiteral_WOCM_trying_to_create_unknown_bl,pSVar8,
                                    (MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                        ((Object *)pSVar10,(MethodInfo *)0x0);
+                        ((Object *)pSVar8,(MethodInfo *)0x0);
               return (MVWorldObjectClient *)0x0;
             }
           }
@@ -1240,7 +1214,7 @@ code_?:
     MVCountingCube::MVCountingCube__ctor(this_54,worldObjectData,worldObjects,(MethodInfo *)0x0);
     return (MVWorldObjectClient *)this_54;
   default:
-    switch(*puVar5) {
+    switch(*puVar3) {
     case 0x76:
       this_55 = (MVVehicleEnergy *)func_?();
       WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVehicleEnergy__ctor
@@ -1259,11 +1233,11 @@ code_?:
       MVGamePoint::MVGamePoint__ctor(this_57,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_57;
     case 0x83:
-      pMVar14 = (MVWorldObjectClient *)func_?();
+      pMVar11 = (MVWorldObjectClient *)func_?();
       MVGamePassProgressionDataObject::MVGamePassProgressionDataObject__ctor
-                ((MVGamePassProgressionDataObject *)pMVar14,worldObjectData,worldObjects,
+                ((MVGamePassProgressionDataObject *)pMVar11,worldObjectData,worldObjects,
                  (MethodInfo *)0x0);
-      return pMVar14;
+      return pMVar11;
     case 0x85:
       goto code_?;
     case 0x86:
@@ -1320,20 +1294,20 @@ code_?:
                 (this_70,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_70;
     case 0x9a:
-      pMVar15 = (MVCostumeBaseBlueprint *)func_?();
+      pMVar12 = (MVCostumeBaseBlueprint *)func_?();
       Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBaseBlueprint::
-      MVCostumeBaseBlueprint__ctor(pMVar15,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)pMVar15;
+      MVCostumeBaseBlueprint__ctor(pMVar12,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)pMVar12;
     case 0x9b:
       this_71 = (MVCostumeBase *)func_?();
       Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBase::MVCostumeBase__ctor
                 (this_71,worldObjectData,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_71;
     case 0x9c:
-      pMVar15 = (MVCostumeBaseBlueprint *)func_?();
+      pMVar12 = (MVCostumeBaseBlueprint *)func_?();
       Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBaseBlueprint::
-      MVCostumeBaseBlueprint__ctor(pMVar15,worldObjectData,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)pMVar15;
+      MVCostumeBaseBlueprint__ctor(pMVar12,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)pMVar12;
     case 0x9d:
       this_72 = (MVCustomGunBase *)func_?();
       Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBase::MVCustomGunBase__ctor
@@ -1405,316 +1379,350 @@ code_?:
 code_?:
   func_?();
 code_?:
-  uVar16 = func_?();
-  pbVar17 = (byte *)((ulonglong)uVar16 >> 0x20);
-  uVar18 = (undefined2)((ulonglong)uVar16 >> 0x10);
-  bVar19 = (byte)uVar16;
-  iVar20 = CONCAT22(uVar18,CONCAT11(0x11,bVar19));
-  pbVar21 = (byte *)((int)&worldObjectData->klass + unaff_FS_OFFSET);
-  bVar22 = *pbVar21;
-  bVar23 = *pbVar21;
-  *pbVar21 = bVar23 + 0x11 + bVar2;
-  uVar24 = (uint)(0xee < bVar22 || CARRY1(bVar23 + 0x11,bVar2));
-  puVar13 = &stack0xffffffe4 + *(uint *)(pbVar17 + iVar20 + 0x4f);
-  uVar25 = (uint)(CARRY4((uint)&stack0xffffffe4,*(uint *)(pbVar17 + iVar20 + 0x4f)) ||
-                CARRY4((uint)puVar13,uVar24));
-  puVar26 = puVar13 + *(uint *)(pbVar17 + iVar20 + 0x74) + uVar24;
-  uVar24 = (uint)(CARRY4((uint)(puVar13 + uVar24),*(uint *)(pbVar17 + iVar20 + 0x74)) ||
-                 CARRY4((uint)puVar26,uVar25));
-  iVar27 = *(int *)(pbVar17 + iVar20 + 0x2f) + uVar25;
-  bVar28 = pbVar17[iVar20 + 0x2f] & 0x11 &
-           pbVar17[(CONCAT22(uVar18,CONCAT11(pbVar17[iVar20 + 0x2f],bVar19)) & 0xffff11ff) + 0x2f];
-  bVar28 = bVar28 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar28,bVar19)) + -0x67];
-  iVar20 = CONCAT22(uVar18,CONCAT11(bVar28,bVar19));
-  uVar25 = (uint)CARRY4((uint)(puVar26 + uVar24 + iVar27),*(uint *)(pbVar17 + iVar20 + -0x21));
-  puVar13 = puVar26 + *(uint *)(pbVar17 + iVar20 + -0x21) + uVar24 + iVar27 +
-            *(uint *)(pbVar17 + iVar20 + 7);
-  bVar29 = CARRY4((uint)(puVar26 + *(uint *)(pbVar17 + iVar20 + -0x21) + uVar24 + iVar27),
-                  *(uint *)(pbVar17 + iVar20 + 7)) || CARRY4((uint)puVar13,uVar25);
-  bVar22 = bVar19 + 100 + bVar29;
-  bVar30 = (byte)((uint)extraout_ECX >> 8);
-  *(byte *)&worldObjectData->klass =
-       *(char *)&worldObjectData->klass + bVar30 + (0x9b < bVar19 || CARRY1(bVar19 + 100,bVar29));
-  bVar28 = bVar28 & pbVar17[CONCAT31((int3)((uint)iVar20 >> 8),bVar22) + 0x2f];
-  bVar28 = bVar28 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar28,bVar22)) + 0x2f];
-  bVar28 = bVar28 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar28,bVar22)) + 0x2c];
-  bVar2 = bVar22 + 100;
-  *(byte *)&worldObjectData->klass = *(char *)&worldObjectData->klass + bVar30 + (0x9b < bVar22);
-  bVar28 = bVar28 & pbVar17[CONCAT31((int3)(CONCAT22(uVar18,CONCAT11(bVar28,bVar22)) >> 8),bVar2) +
-                            0x2f];
-  bVar28 = bVar28 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar28,bVar2)) + 0x2f];
-  bVar28 = bVar28 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar28,bVar2)) + 0x51];
-  bVar23 = bVar22 - 0x38;
-  *(byte *)&worldObjectData->klass = *(char *)&worldObjectData->klass + bVar30 + (0x9b < bVar2);
-  bVar28 = bVar28 & pbVar17[CONCAT31((int3)(CONCAT22(uVar18,CONCAT11(bVar28,bVar2)) >> 8),bVar23) +
-                            0x76];
-  ppMVar31 = &unaff_EBX[-0x3fef9bf].monitor;
-  bVar32 = (byte)unaff_EBX;
-  bVar29 = CARRY1(*(byte *)ppMVar31,bVar32) || CARRY1(*(char *)ppMVar31 + bVar32,0x9b < bVar23);
-  *(byte *)ppMVar31 = *(char *)ppMVar31 + bVar32 + (0x9b < bVar23);
-  bVar33 = 0x9b < (byte)(bVar22 + 0x2c) || CARRY1(bVar22 + 0x90,bVar29);
-  bVar22 = bVar22 + 0x90 + bVar29;
-  bVar29 = CARRY1(bVar30,bVar28) || CARRY1(bVar30 + bVar28,bVar33);
-  bVar34 = (byte)extraout_ECX;
-  bVar30 = bVar30 + bVar28 + bVar33;
-  pcVar35 = (char *)CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar30,bVar34));
-  bVar2 = bVar22 + 100;
-  bVar33 = 0x9b < bVar22 || CARRY1(bVar2,bVar29);
-  uVar36 = CONCAT31((int3)(CONCAT22(uVar18,CONCAT11(bVar28,bVar23)) >> 8),bVar2 + bVar29);
-  bVar23 = *pbVar17;
-  bVar2 = *pbVar17;
-  *pbVar17 = bVar2 + bVar34 + bVar33;
-  uVar24 = (uint)(CARRY1(bVar23,bVar34) || CARRY1(bVar2 + bVar34,bVar33));
-  uVar37 = uVar36 + 0x152f1064;
-  bVar29 = 0xead0ef9b < uVar36 || CARRY4(uVar37,uVar24);
-  uVar37 = uVar37 + uVar24;
-  pbVar21 = &stack0x00000060 + (int)pbVar17 + unaff_FS_OFFSET;
-  bVar28 = (byte)((ulonglong)uVar16 >> 0x20);
-  bVar33 = CARRY1(*pbVar21,bVar28) || CARRY1(*pbVar21 + bVar28,bVar29);
-  *pbVar21 = *pbVar21 + bVar28 + bVar29;
-  pbVar21 = (byte *)(pcVar35 + 0x15);
-  bVar38 = (byte)((uint)unaff_EBX >> 8);
-  bVar29 = CARRY1(*pbVar21,bVar38) || CARRY1(*pbVar21 + bVar38,bVar33);
-  *pbVar21 = *pbVar21 + bVar38 + bVar33;
-  pbVar21 = (byte *)(unaff_ESI.m_Index + unaff_FS_OFFSET + -0x3cef9beb);
-  bVar2 = *pbVar21;
-  bVar23 = *pbVar21;
-  *pbVar21 = bVar23 + bVar32 + bVar29;
-  uVar24 = (uint)(CARRY1(bVar2,bVar32) || CARRY1(bVar23 + bVar32,bVar29));
-  uVar36 = uVar37 + 0x15e81064;
-  iVar27 = uVar36 + uVar24;
-  pcVar39 = (char *)((int)&worldObjectData->klass + unaff_FS_OFFSET);
-  *pcVar39 = *pcVar39 + bVar30 + (0xea17ef9b < uVar37 || CARRY4(uVar36,uVar24));
-  uVar18 = (undefined2)((uint)iVar27 >> 0x10);
-  bVar22 = (byte)iVar27;
-  bVar19 = (byte)((uint)iVar27 >> 8) & pbVar17[iVar27 + 0x2f];
-  bVar19 = bVar19 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar19,bVar22)) + 0xd];
-  *(undefined2 *)(puVar13 + (uVar25 - 4)) = in_SS;
-  bVar23 = (byte)((ulonglong)uVar16 >> 0x28);
-  *(char *)(unaff_FS_OFFSET + 0x2f106416) = *(char *)(unaff_FS_OFFSET + 0x2f106416) + bVar23;
-  bVar19 = bVar19 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar19,bVar22)) + 0x2f];
-  bVar19 = bVar19 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar19,bVar22)) + 0x2f];
-  bVar19 = bVar19 & pbVar17[CONCAT22(uVar18,CONCAT11(bVar19,bVar22)) + 0x5a];
-  iVar27 = CONCAT22(uVar18,CONCAT11(bVar19,bVar22));
-  *(undefined2 *)(puVar13 + (uVar25 - 8)) = in_SS;
-  pbVar21 = (byte *)((int)&(worldObjectData->fields)._freeList + unaff_FS_OFFSET + 2);
-  bVar2 = *pbVar21;
-  *pbVar21 = *pbVar21 + bVar38;
-  pbVar21 = (byte *)((int)&((String *)(unaff_ESI.m_Index + 0x16c91060))->monitor + (int)pbVar17) +
-            unaff_FS_OFFSET;
-  bVar29 = CARRY1(*pbVar21,bVar19) || CARRY1(*pbVar21 + bVar19,CARRY1(bVar2,bVar38));
-  *pbVar21 = *pbVar21 + bVar19 + CARRY1(bVar2,bVar38);
-  bVar33 = CARRY1(bVar23,bVar30) || CARRY1(bVar23 + bVar30,bVar29);
-  bVar40 = bVar23 + bVar30 + bVar29;
-  pbVar41 = (byte *)CONCAT22((short)((ulonglong)uVar16 >> 0x30),CONCAT11(bVar40,bVar28));
-  *(undefined2 *)(puVar13 + (uVar25 - 0xc)) = in_SS;
-  pbVar21 = (byte *)((int)&unaff_EBX->klass + unaff_FS_OFFSET);
-  bVar29 = CARRY1(*pbVar21,bVar28) || CARRY1(*pbVar21 + bVar28,bVar33);
-  *pbVar21 = *pbVar21 + bVar28 + bVar33;
-  pbVar21 = (byte *)(unaff_FS_OFFSET + iVar27);
-  bVar33 = CARRY1(*pbVar21,bVar38) || CARRY1(*pbVar21 + bVar38,bVar29);
-  *pbVar21 = *pbVar21 + bVar38 + bVar29;
-  uVar42 = *(undefined2 *)(puVar13 + (uVar25 - 8));
-  pbVar21 = (byte *)((int)&method + unaff_FS_OFFSET + 3);
-  bVar29 = CARRY1(*pbVar21,bVar32) || CARRY1(*pbVar21 + bVar32,bVar33);
-  *pbVar21 = *pbVar21 + bVar32 + bVar33;
-  pbVar21 = pbVar41 + unaff_FS_OFFSET + -0x6ef9be9;
-  bVar2 = *pbVar21;
-  bVar23 = *pbVar21;
-  *pbVar21 = bVar23 + bVar22 + bVar29;
-  puVar43 = (uint *)(pbVar41 + iVar27 + 0x1e);
-  uVar24 = (uint)(CARRY1(bVar2,bVar22) || CARRY1(bVar23 + bVar22,bVar29));
-  bVar29 = (undefined1 *)*puVar43 < puVar13 + (uVar25 - 4) ||
-           *puVar43 - (int)(puVar13 + (uVar25 - 4)) < uVar24;
-  *puVar43 = (*puVar43 - (int)(puVar13 + (uVar25 - 4))) - uVar24;
-  bVar2 = bVar19 - pbVar41[iVar27 + 0x43];
-  bVar33 = bVar19 < pbVar41[iVar27 + 0x43] || bVar2 < bVar29;
-  bVar2 = bVar2 - bVar29;
-  bVar23 = bVar2 - pbVar41[CONCAT22(uVar18,CONCAT11(bVar2,bVar22)) + 0x68];
-  bVar29 = bVar2 < pbVar41[CONCAT22(uVar18,CONCAT11(bVar2,bVar22)) + 0x68] || bVar23 < bVar33;
-  bVar23 = bVar23 - bVar33;
-  bVar2 = bVar23 - pbVar41[CONCAT22(uVar18,CONCAT11(bVar23,bVar22)) + -0x73];
-  bVar33 = bVar23 < pbVar41[CONCAT22(uVar18,CONCAT11(bVar23,bVar22)) + -0x73] || bVar2 < bVar29;
-  bVar2 = bVar2 - bVar29;
-  bVar23 = bVar2 - pbVar41[CONCAT22(uVar18,CONCAT11(bVar2,bVar22)) + -0x4e];
-  bVar29 = bVar2 < pbVar41[CONCAT22(uVar18,CONCAT11(bVar2,bVar22)) + -0x4e] || bVar23 < bVar33;
-  bVar23 = bVar23 - bVar33;
-  bVar2 = bVar23 - pbVar41[CONCAT22(uVar18,CONCAT11(bVar23,bVar22)) + -0x29];
-  bVar33 = bVar23 < pbVar41[CONCAT22(uVar18,CONCAT11(bVar23,bVar22)) + -0x29] || bVar2 < bVar29;
-  bVar2 = bVar2 - bVar29;
-  bVar23 = bVar2 - pbVar41[CONCAT22(uVar18,CONCAT11(bVar2,bVar22)) + -4];
-  bVar29 = bVar2 < pbVar41[CONCAT22(uVar18,CONCAT11(bVar2,bVar22)) + -4] || bVar23 < bVar33;
-  bVar23 = bVar23 - bVar33;
-  bVar2 = bVar23 - pbVar41[CONCAT22(uVar18,CONCAT11(bVar23,bVar22)) + 0x21];
-  bVar19 = bVar2 - bVar29;
-  iVar44 = CONCAT22(uVar18,CONCAT11(bVar19,bVar22));
-  puVar26 = (undefined1 *)
-           (uint)(bVar23 < pbVar41[CONCAT22(uVar18,CONCAT11(bVar23,bVar22)) + 0x21] ||
-                 bVar2 < bVar29);
-  puVar45 = puVar13 + ((uVar25 - 4) - *(uint *)(pbVar41 + iVar44 + 0x46));
-  iVar27 = -(int)puVar26;
-  puVar13 = (undefined1 *)
-            (uint)(puVar13 + (uVar25 - 4) < *(undefined1 **)(pbVar41 + iVar44 + 0x46) ||
-                  puVar45 < puVar26);
-  puVar26 = puVar45 + (iVar27 - *(uint *)(pbVar41 + iVar44 + 0x6b));
-  iVar20 = -(int)puVar13;
-  puVar13 = (undefined1 *)
-            (uint)(puVar45 + iVar27 < *(undefined1 **)(pbVar41 + iVar44 + 0x6b) || puVar26 < puVar13);
-  puVar45 = puVar26 + (iVar20 - *(uint *)(pbVar41 + iVar44 + -0x70));
-  iVar46 = -*(int *)(pbVar41 + iVar44 + 0x2f) - (int)puVar13;
-  iVar27 = -(uint)(puVar26 + iVar20 < *(undefined1 **)(pbVar41 + iVar44 + -0x70) || puVar45 < puVar13)
-  ;
-  bVar19 = bVar19 & pbVar41[iVar44 + -0x4b];
-  iVar44 = CONCAT22(uVar18,CONCAT11(bVar19,bVar22));
-  uVar24 = (uint)(puVar45 + iVar27 + iVar46 < *(undefined1 **)(pbVar41 + iVar44 + -0x26));
-  uVar25 = (int)(puVar45 + ((iVar27 + iVar46) - *(uint *)(pbVar41 + iVar44 + -0x26))) -
-          *(uint *)(pbVar41 + iVar44 + -1);
-  iVar20 = -uVar24;
-  uVar24 = (uint)(puVar45 + ((iVar27 + iVar46) - *(uint *)(pbVar41 + iVar44 + -0x26)) <
-                  *(undefined1 **)(pbVar41 + iVar44 + -1) || uVar25 < uVar24);
-  uVar37 = (uVar25 + iVar20) - *(uint *)(pbVar41 + iVar44 + 0x24);
-  bVar29 = (undefined1 *)(uVar25 + iVar20) < *(undefined1 **)(pbVar41 + iVar44 + 0x24) ||
-           uVar37 < uVar24;
-  iVar20 = -uVar24;
-  bVar33 = bVar22 < 100 || (byte)(bVar22 + 0x9c) < bVar29;
-  bVar22 = (bVar22 + 0x9c) - bVar29;
-  iVar27 = CONCAT31((int3)((uint)iVar44 >> 8),bVar22);
-  pbVar21 = (byte *)(pcVar35 + 0x1c);
-  bVar29 = CARRY1(*pbVar21,bVar34) || CARRY1(*pbVar21 + bVar34,bVar33);
-  *pbVar21 = *pbVar21 + bVar34 + bVar33;
-  pbVar21 = (byte *)((int)&(((String *)(unaff_ESI.m_Index + 0x10))->fields)._firstChar +
-                    unaff_FS_OFFSET);
-  bVar33 = CARRY1(*pbVar21,bVar30) || CARRY1(*pbVar21 + bVar30,bVar29);
-  *pbVar21 = *pbVar21 + bVar30 + bVar29;
-  pbVar21 = (byte *)((int)unaff_EBX + unaff_FS_OFFSET + -0x62ef9be4);
-  bVar29 = CARRY1(*pbVar21,bVar28) || CARRY1(*pbVar21 + bVar28,bVar33);
-  *pbVar21 = *pbVar21 + bVar28 + bVar33;
-  pbVar21 = pbVar41 + iVar27 + -0x3e;
-  bVar33 = *pbVar21 < bVar19 || (byte)(*pbVar21 - bVar19) < bVar29;
-  *pbVar21 = (*pbVar21 - bVar19) - bVar29;
-  pbVar21 = pbVar41 + iVar27 + -0x19;
-  bVar29 = *pbVar21 < bVar19 || (byte)(*pbVar21 - bVar19) < bVar33;
-  *pbVar21 = (*pbVar21 - bVar19) - bVar33;
-  pbVar21 = pbVar41 + iVar27 + 0xc;
-  bVar2 = *pbVar21;
-  bVar23 = *pbVar21;
-  *pbVar21 = (bVar23 - bVar19) - bVar29;
-  puVar43 = (uint *)(pbVar41 + iVar27 + 0x31);
-  uVar24 = (uint)(bVar2 < bVar19 || (byte)(bVar23 - bVar19) < bVar29);
-  puVar13 = (undefined1 *)*puVar43;
-  uVar25 = *puVar43 - (uVar37 + iVar20);
-  *puVar43 = uVar25 - uVar24;
-  puVar43 = (uint *)(pbVar41 + iVar27 + 0x56);
-  uVar24 = (uint)(puVar13 < (undefined1 *)(uVar37 + iVar20) || uVar25 < uVar24);
-  puVar13 = (undefined1 *)*puVar43;
-  uVar25 = *puVar43 - (uVar37 + iVar20);
-  *puVar43 = uVar25 - uVar24;
-  puVar43 = (uint *)(pbVar41 + iVar27 + 0x7b);
-  uVar24 = (uint)(puVar13 < (undefined1 *)(uVar37 + iVar20) || uVar25 < uVar24);
-  puVar13 = (undefined1 *)*puVar43;
-  uVar25 = *puVar43 - (uVar37 + iVar20);
-  *puVar43 = uVar25 - uVar24;
-  puVar43 = (uint *)(pbVar41 + iVar27 + -4);
-  uVar24 = (uint)(puVar13 < (undefined1 *)(uVar37 + iVar20) || uVar25 < uVar24);
-  uVar25 = *puVar43 - (uVar37 + iVar20);
-  bVar29 = (undefined1 *)*puVar43 < (undefined1 *)(uVar37 + iVar20) || uVar25 < uVar24;
-  *puVar43 = uVar25 - uVar24;
-  bVar2 = bVar19 - pbVar41[iVar27 + -0x2e];
-  bVar33 = bVar19 < pbVar41[iVar27 + -0x2e] || bVar2 < bVar29;
-  bVar2 = bVar2 - bVar29;
-  bVar29 = bVar22 < 100 || (byte)(bVar22 + 0x9c) < bVar33;
-  bVar19 = (bVar22 + 0x9c) - bVar33;
-  bVar33 = CARRY1(bVar38,bVar40) || CARRY1(bVar38 + bVar40,bVar29);
-  uVar47 = (undefined2)((uint)unaff_EBX >> 0x10);
-  bVar38 = bVar38 + bVar40 + bVar29;
-  iVar46 = CONCAT22(uVar47,CONCAT11(bVar38,bVar32));
-  bVar23 = bVar19 + 0x9c;
-  cVar48 = bVar23 - bVar33;
-  *(byte *)&worldObjectData->klass =
-       *(char *)&worldObjectData->klass + bVar30 + (bVar19 < 100 || bVar23 < bVar33);
-  uVar24 = CONCAT22(uVar18,CONCAT11(bVar2 & pbVar41[CONCAT31((int3)(CONCAT22(uVar18,CONCAT11(bVar2
-                                                  ,bVar22)) >> 8),cVar48) + 0x1c],cVar48));
-  iVar27 = uVar24 + 0xe2beef9c;
-  pbVar21 = (byte *)((int)&(((String *)(unaff_ESI.m_Index + 0x10))->fields)._firstChar +
-                    unaff_FS_OFFSET + 1);
-  bVar2 = (byte)((uint)iVar27 >> 8);
-  bVar29 = CARRY1(*pbVar21,bVar2) || CARRY1(*pbVar21 + bVar2,uVar24 < 0x1d411064);
-  *pbVar21 = *pbVar21 + bVar2 + (uVar24 < 0x1d411064);
-  pbVar21 = (byte *)(unaff_FS_OFFSET + iVar46);
-  bVar33 = CARRY1(*pbVar21,bVar2) || CARRY1(*pbVar21 + bVar2,bVar29);
-  *pbVar21 = *pbVar21 + bVar2 + bVar29;
-  *(undefined2 *)(uVar37 + iVar20 + -4) = in_DS;
-  pbVar21 = (byte *)(unaff_FS_OFFSET + uVar24 + 0xe2beefba);
-  bVar29 = CARRY1(*pbVar21,bVar34) || CARRY1(*pbVar21 + bVar34,bVar33);
-  *pbVar21 = *pbVar21 + bVar34 + bVar33;
-  pbVar21 = &stack0x0000001a + unaff_FS_OFFSET;
-  bVar33 = CARRY1(*pbVar21,bVar30) || CARRY1(*pbVar21 + bVar30,bVar29);
-  *pbVar21 = *pbVar21 + bVar30 + bVar29;
-  pbVar21 = pbVar41 + unaff_FS_OFFSET + -0x48ef9be2;
-  bVar29 = CARRY1(*pbVar21,bVar28) || CARRY1(*pbVar21 + bVar28,bVar33);
-  *pbVar21 = *pbVar21 + bVar28 + bVar33;
-  *(undefined2 *)(uVar37 + iVar20 + -8) = in_DS;
-  bVar33 = CARRY1(bVar2,bVar32) || CARRY1(bVar2 + bVar32,bVar29);
-  uVar18 = (undefined2)((uint)iVar27 >> 0x10);
-  bVar22 = (byte)iVar27;
-  bVar19 = bVar2 + bVar32 + bVar29;
-  iVar27 = CONCAT22(uVar18,CONCAT11(bVar19,bVar22));
-  *(undefined2 *)(uVar37 + iVar20 + -0xc) = in_DS;
-  pbVar21 = (byte *)(pcVar35 + unaff_FS_OFFSET);
-  bVar29 = CARRY1(*pbVar21,bVar22) || CARRY1(*pbVar21 + bVar22,bVar33);
-  *pbVar21 = *pbVar21 + bVar22 + bVar33;
-  pbVar21 = (byte *)((int)&((String *)unaff_ESI.m_Index)->klass + unaff_FS_OFFSET);
-  bVar33 = CARRY1(*pbVar21,bVar19) || CARRY1(*pbVar21 + bVar19,bVar29);
-  *pbVar21 = *pbVar21 + bVar19 + bVar29;
-  pbVar21 = (byte *)(unaff_FS_OFFSET + iVar46 + 0x1f);
-  bVar29 = CARRY1(*pbVar21,bVar34) || CARRY1(*pbVar21 + bVar34,bVar33);
-  *pbVar21 = *pbVar21 + bVar34 + bVar33;
-  pbVar21 = (byte *)(unaff_FS_OFFSET + iVar27 + 0x1f);
-  bVar33 = CARRY1(*pbVar21,bVar40) || CARRY1(*pbVar21 + bVar40,bVar29);
-  *pbVar21 = *pbVar21 + bVar40 + bVar29;
-  pbVar21 = &stack0xba10641b + unaff_FS_OFFSET;
-  bVar29 = CARRY1(*pbVar21,bVar28) || CARRY1(*pbVar21 + bVar28,bVar33);
-  *pbVar21 = *pbVar21 + bVar28 + bVar33;
-  bVar33 = CARRY1(bVar38,bVar32) || CARRY1(bVar38 + bVar32,bVar29);
-  pbVar49 = (byte *)CONCAT22(uVar47,CONCAT11(bVar38 + bVar32 + bVar29,bVar32));
-  pbVar21 = (byte *)(unaff_FS_OFFSET + iVar27);
-  bVar2 = *pbVar21;
-  bVar23 = *pbVar21;
-  *pbVar21 = bVar23 + bVar22 + bVar33;
-  pcVar35[unaff_FS_OFFSET] =
-       pcVar35[unaff_FS_OFFSET] + bVar30 + (CARRY1(bVar2,bVar22) || CARRY1(bVar23 + bVar22,bVar33))
-  ;
-  pbVar41[iVar27 + 0x4e] = pbVar41[iVar27 + 0x4e] & bVar19;
-  pbVar41[iVar27 + 0x73] = pbVar41[iVar27 + 0x73] & bVar19;
-  pbVar41[iVar27 + -0x68] = pbVar41[iVar27 + -0x68] & bVar19;
-  pbVar41[iVar27 + -0x43] = pbVar41[iVar27 + -0x43] & bVar19;
-  pbVar41[iVar27 + -0x1e] = pbVar41[iVar27 + -0x1e] & bVar19;
-  pbVar41[iVar27 + 7] = pbVar41[iVar27 + 7] & bVar19;
-  *(uint *)(pbVar41 + iVar27 + 0x2c) = *(uint *)(pbVar41 + iVar27 + 0x2c) & uVar37 + iVar20 + 4;
-  *(uint *)(pbVar41 + iVar27 + 0x51) = *(uint *)(pbVar41 + iVar27 + 0x51) & uVar37 + iVar20 + 4;
-  *(uint *)(pbVar41 + iVar27 + 0x76) = *(uint *)(pbVar41 + iVar27 + 0x76) & uVar37 + iVar20 + 4;
-  *(uint *)(pbVar41 + iVar27 + -0x65) = *(uint *)(pbVar41 + iVar27 + -0x65) & uVar37 + iVar20 + 4;
-  *(uint *)(pbVar41 + iVar27 + -0x40) = *(uint *)(pbVar41 + iVar27 + -0x40) & uVar37 + iVar20 + 4;
-  *(uint *)(pbVar41 + iVar27 + -0x1b) = *(uint *)(pbVar41 + iVar27 + -0x1b) & uVar37 + iVar20 + 4;
-  *(uint *)(pbVar41 + iVar27 + 10) = *(uint *)(pbVar41 + iVar27 + 10) & uVar37 + iVar20 + 4;
-  iVar27 = CONCAT22(uVar18,CONCAT11(bVar19 & pbVar41[iVar27],bVar22));
-  *(int *)pbVar41 = *(int *)pbVar41 + iVar27;
-  iVar27 = CONCAT31((int3)((uint)iVar27 >> 8),
-                    bVar22 + *pbVar41 + *pbVar41 + *pbVar41 + *pbVar41 + *pbVar49 + '\x02') +
+  uVar13 = func_?();
+  bVar14 = (byte)uVar13;
+  bVar15 = (byte)unaff_EBX;
+  bVar16 = (char)((uint)unaff_EBX >> 8) * '\x02' + (bVar14 < 100);
+  ppDVar17 = &worldObjectData[0x194a5ac].fields._keys;
+  bVar18 = (byte)((ulonglong)uVar13 >> 8);
+  bVar19 = CARRY1(*(byte *)ppDVar17,bVar18) || CARRY1(*(char *)ppDVar17 + bVar18,bVar14 < 100);
+  *(byte *)ppDVar17 = *(char *)ppDVar17 + bVar18 + (bVar14 < 100);
+  bVar20 = bVar16 + bVar15;
+  bVar21 = CARRY1(bVar16,bVar15) || CARRY1(bVar20,bVar19);
+  iVar22 = CONCAT22((short)((uint)unaff_EBX >> 0x10),CONCAT11(bVar20 + bVar19,bVar15)) + -1;
+  bVar15 = (byte)iVar22;
+  bVar16 = (byte)((uint)iVar22 >> 8);
+  bVar20 = bVar16 + bVar15;
+  bVar19 = CARRY1(bVar16,bVar15) || CARRY1(bVar20,bVar21);
+  iVar22 = CONCAT22((short)((uint)iVar22 >> 0x10),CONCAT11(bVar20 + bVar21,bVar15)) + -1;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + extraout_ECX + 0x3d);
+  bVar15 = *pbVar23;
+  bVar16 = (byte)extraout_ECX;
+  bVar20 = *pbVar23;
+  *pbVar23 = bVar20 + bVar16 + bVar19;
+  pcVar24 = (char *)((int)worldObjectData + unaff_FS_OFFSET + -0x48ef9bc3);
+  *pcVar24 = *pcVar24 + bVar16 + (CARRY1(bVar15,bVar16) || CARRY1(bVar20 + bVar16,bVar19));
+  bVar19 = (uint)uVar13 < 0x4bdf1064;
+  bVar15 = (byte)iVar22;
+  bVar25 = (byte)((uint)iVar22 >> 8);
+  bVar20 = bVar25 + bVar15;
+  bVar21 = CARRY1(bVar25,bVar15) || CARRY1(bVar20,bVar19);
+  iVar22 = CONCAT22((short)((uint)iVar22 >> 0x10),CONCAT11(bVar20 + bVar19,bVar15)) + -1;
+  bVar15 = (byte)iVar22;
+  bVar26 = (byte)((uint)iVar22 >> 8);
+  bVar20 = bVar26 + bVar15;
+  iVar22 = CONCAT22((short)((uint)iVar22 >> 0x10),CONCAT11(bVar20 + bVar21,bVar15)) + -1;
+  bVar25 = (byte)iVar22;
+  bVar18 = bVar18 + bVar25 + (CARRY1(bVar26,bVar15) || CARRY1(bVar20,bVar21));
+  uVar27 = CONCAT22((short)((ulonglong)uVar13 >> 0x10),CONCAT11(bVar18,bVar14));
+  bVar15 = (byte)((uint)iVar22 >> 8);
+  bVar20 = bVar15 + bVar25;
+  bVar19 = CARRY1(bVar15,bVar25) || CARRY1(bVar20,uVar27 < 0x4bdf1064);
+  iVar22 = CONCAT22((short)((uint)iVar22 >> 0x10),CONCAT11(bVar20 + (uVar27 < 0x4bdf1064),bVar25)) +
+           -1;
+  bVar15 = (byte)iVar22;
+  bVar25 = (byte)((uint)iVar22 >> 8);
+  bVar20 = bVar25 + bVar15;
+  bVar21 = CARRY1(bVar25,bVar15) || CARRY1(bVar20,bVar19);
+  iVar22 = CONCAT22((short)((uint)iVar22 >> 0x10),CONCAT11(bVar20 + bVar19,bVar15)) + -1;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + extraout_ECX);
+  bVar19 = CARRY1(*pbVar23,bVar14) || CARRY1(*pbVar23 + bVar14,bVar21);
+  *pbVar23 = *pbVar23 + bVar14 + bVar21;
+  bVar15 = (byte)iVar22;
+  bVar25 = (byte)((uint)iVar22 >> 8);
+  bVar20 = bVar25 + bVar15;
+  bVar21 = CARRY1(bVar25,bVar15) || CARRY1(bVar20,bVar19);
+  iVar22 = CONCAT22((short)((uint)iVar22 >> 0x10),CONCAT11(bVar20 + bVar19,bVar15));
+  iVar28 = iVar22 + -1;
+  pbVar23 = (byte *)((int)&((String *)unaff_ESI.m_Index)->klass + unaff_FS_OFFSET);
+  bVar19 = CARRY1(*pbVar23,bVar18) || CARRY1(*pbVar23 + bVar18,bVar21);
+  *pbVar23 = *pbVar23 + bVar18 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar22 + 0x3d);
+  bVar21 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,bVar19);
+  *pbVar23 = *pbVar23 + bVar16 + bVar19;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + uVar27 + 0x3e);
+  bVar29 = (byte)((ulonglong)uVar13 >> 0x28);
+  bVar19 = CARRY1(*pbVar23,bVar29) || CARRY1(*pbVar23 + bVar29,bVar21);
+  *pbVar23 = *pbVar23 + bVar29 + bVar21;
+  pbVar23 = &stack0xba10643a + unaff_FS_OFFSET;
+  bVar26 = (byte)((ulonglong)uVar13 >> 0x20);
+  bVar21 = CARRY1(*pbVar23,bVar26) || CARRY1(*pbVar23 + bVar26,bVar19);
+  *pbVar23 = *pbVar23 + bVar26 + bVar19;
+  bVar30 = (byte)iVar28;
+  bVar15 = (byte)((uint)iVar28 >> 8);
+  bVar20 = bVar15 + bVar30;
+  bVar19 = CARRY1(bVar15,bVar30) || CARRY1(bVar20,bVar21);
+  iVar28 = CONCAT22((short)((uint)iVar28 >> 0x10),CONCAT11(bVar20 + bVar21,bVar30));
+  pbVar23 = (byte *)(unaff_FS_OFFSET + (int)worldObjectData * 2);
+  bVar20 = *pbVar23;
+  bVar15 = *pbVar23;
+  *pbVar23 = bVar15 + bVar14 + bVar19;
+  bVar25 = (byte)((uint)extraout_ECX >> 8);
+  *(char *)(unaff_FS_OFFSET + extraout_ECX) =
+       *(char *)(unaff_FS_OFFSET + extraout_ECX) + bVar25 +
+       (CARRY1(bVar20,bVar14) || CARRY1(bVar15 + bVar14,bVar19));
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  uVar27 = CONCAT31((int3)(uVar27 >> 8),bVar14 + in_AF * -6) & 0xffffff0f;
+  bVar15 = (byte)uVar27;
+  iVar22 = CONCAT22((short)(uVar27 >> 0x10),CONCAT11(bVar18 - in_AF,bVar15));
+  pbVar23 = &(((String *)(unaff_ESI.m_Index + 0x30))->fields).field_0x7 + unaff_FS_OFFSET;
+  bVar19 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,in_AF);
+  *pbVar23 = *pbVar23 + bVar16 + in_AF;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar28 + 0x3f);
+  bVar21 = CARRY1(*pbVar23,bVar29) || CARRY1(*pbVar23 + bVar29,bVar19);
+  *pbVar23 = *pbVar23 + bVar29 + bVar19;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar22 + -0x20ef9bc1);
+  bVar19 = CARRY1(*pbVar23,bVar30) || CARRY1(*pbVar23 + bVar30,bVar21);
+  *pbVar23 = *pbVar23 + bVar30 + bVar21;
+  iVar28 = iVar28 + -1;
+  bVar14 = (byte)iVar28;
+  bVar30 = (byte)((uint)iVar28 >> 8);
+  bVar20 = bVar30 + bVar14;
+  iVar28 = CONCAT22((short)((uint)iVar28 >> 0x10),CONCAT11(bVar20 + bVar19,bVar14)) + -1;
+  bVar31 = (byte)((uint)iVar28 >> 8);
+  (&stack0xe510643b)[unaff_FS_OFFSET] =
+       (&stack0xe510643b)[unaff_FS_OFFSET] + bVar31 +
+       (CARRY1(bVar30,bVar14) || CARRY1(bVar20,bVar19));
+  bVar20 = 9 < bVar15 | in_AF;
+  uVar27 = CONCAT31((int3)((uint)iVar22 >> 8),bVar15 + bVar20 * -6) & 0xffffff0f;
+  iVar22 = CONCAT22((short)(uVar27 >> 0x10),CONCAT11((bVar18 - in_AF) - bVar20,(char)uVar27));
+  bVar15 = (byte)iVar28;
+  bVar19 = CARRY1(bVar31,bVar15) || CARRY1(bVar31 + bVar15,bVar20);
+  iVar28 = CONCAT22((short)((uint)iVar28 >> 0x10),CONCAT11(bVar31 + bVar15 + bVar20,bVar15)) + -1;
+  bVar15 = (byte)iVar28;
+  bVar14 = (byte)((uint)iVar28 >> 8);
+  bVar20 = bVar14 + bVar15;
+  bVar21 = CARRY1(bVar14,bVar15) || CARRY1(bVar20,bVar19);
+  iVar28 = CONCAT22((short)((uint)iVar28 >> 0x10),CONCAT11(bVar20 + bVar19,bVar15)) + -1;
+  bVar14 = (byte)iVar28;
+  bVar15 = (byte)((uint)iVar28 >> 8);
+  bVar20 = bVar15 + bVar14;
+  bVar19 = CARRY1(bVar15,bVar14) || CARRY1(bVar20,bVar21);
+  iVar32 = CONCAT22((short)((uint)iVar28 >> 0x10),CONCAT11(bVar20 + bVar21,bVar14));
+  iVar28 = iVar32 + -1;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + (int)((ulonglong)uVar13 >> 0x20));
+  bVar21 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,bVar19);
+  *pbVar23 = *pbVar23 + bVar16 + bVar19;
+  pbVar23 = (byte *)((int)&worldObjectData->klass + unaff_FS_OFFSET);
+  bVar19 = CARRY1(*pbVar23,bVar25) || CARRY1(*pbVar23 + bVar25,bVar21);
+  *pbVar23 = *pbVar23 + bVar25 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar22 * 3 + 0x6a);
+  bVar21 = CARRY1(*pbVar23,bVar26) || CARRY1(*pbVar23 + bVar26,bVar19);
+  *pbVar23 = *pbVar23 + bVar26 + bVar19;
+  pbVar23 = (byte *)(extraout_ECX + 0x40);
+  bVar15 = (byte)((uint)iVar28 >> 8);
+  bVar20 = *pbVar23 + bVar15;
+  bVar19 = CARRY1(*pbVar23,bVar15) || CARRY1(bVar20,bVar21);
+  *pbVar23 = bVar20 + bVar21;
+  pbVar23 = (byte *)((int)&((String *)(unaff_ESI.m_Index + -0x3cef9bc0))->klass + unaff_FS_OFFSET);
+  bVar15 = (byte)iVar28;
+  bVar20 = *pbVar23 + bVar15;
+  bVar21 = CARRY1(*pbVar23,bVar15) || CARRY1(bVar20,bVar19);
+  *pbVar23 = bVar20 + bVar19;
+  iVar22 = iVar22 + 3;
+  bVar15 = (byte)iVar22;
+  bVar20 = bVar15 + bVar25;
+  bVar19 = CARRY1(bVar15,bVar25) || CARRY1(bVar20,bVar21);
+  iVar22 = CONCAT31((int3)((uint)iVar22 >> 8),bVar20 + bVar21);
+  iVar28 = iVar22 + 1;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + 0x32106441);
+  bVar21 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,bVar19);
+  *pbVar23 = *pbVar23 + bVar16 + bVar19;
+  iVar33 = extraout_ECX + 1;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + extraout_ECX + -0x31ef9bbc);
+  bVar16 = (byte)((uint)iVar33 >> 8);
+  bVar19 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,bVar21);
+  *pbVar23 = *pbVar23 + bVar16 + bVar21;
+  bVar21 = CARRY1(bVar14,bVar29) || CARRY1(bVar14 + bVar29,bVar19);
+  iVar34 = CONCAT31((int3)((uint)iVar32 >> 8),bVar14 + bVar29 + bVar19) + 1;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar28);
+  bVar30 = (byte)iVar34;
+  bVar19 = CARRY1(*pbVar23,bVar30) || CARRY1(*pbVar23 + bVar30,bVar21);
+  *pbVar23 = *pbVar23 + bVar30 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + 0x62106444);
+  bVar15 = (byte)((uint)iVar34 >> 8);
+  bVar21 = CARRY1(*pbVar23,bVar15) || CARRY1(*pbVar23 + bVar15,bVar19);
+  *pbVar23 = *pbVar23 + bVar15 + bVar19;
+  pbVar23 = (byte *)((int)worldObjectData + unaff_FS_OFFSET + -0x53ef9bbc);
+  bVar14 = (byte)iVar28;
+  bVar19 = CARRY1(*pbVar23,bVar14) || CARRY1(*pbVar23 + bVar14,bVar21);
+  *pbVar23 = *pbVar23 + bVar14 + bVar21;
+  bVar20 = (byte)iVar33 + bVar26;
+  bVar21 = CARRY1((byte)iVar33,bVar26) || CARRY1(bVar20,bVar19);
+  bVar20 = bVar20 + bVar19;
+  bVar19 = CARRY1(bVar29,bVar29) || CARRY1(bVar29 * '\x02',bVar21);
+  bVar25 = bVar29 * '\x02' + bVar21;
+  iVar32 = CONCAT22((short)((ulonglong)uVar13 >> 0x30),CONCAT11(bVar25,bVar26));
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar34);
+  bVar21 = CARRY1(*pbVar23,bVar30) || CARRY1(*pbVar23 + bVar30,bVar19);
+  *pbVar23 = *pbVar23 + bVar30 + bVar19;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar22 + 0x46);
+  bVar19 = CARRY1(*pbVar23,bVar14) || CARRY1(*pbVar23 + bVar14,bVar21);
+  *pbVar23 = *pbVar23 + bVar14 + bVar21;
+  bVar21 = CARRY1(bVar15,bVar30) || CARRY1(bVar15 + bVar30,bVar19);
+  bVar31 = bVar15 + bVar30 + bVar19;
+  iVar34 = CONCAT22((short)((uint)iVar34 >> 0x10),CONCAT11(bVar31,bVar30));
+  pbVar23 = &stack0x00000042 + unaff_FS_OFFSET;
+  bVar15 = (byte)((uint)iVar28 >> 8);
+  bVar19 = CARRY1(*pbVar23,bVar15) || CARRY1(*pbVar23 + bVar15,bVar21);
+  *pbVar23 = *pbVar23 + bVar15 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar32 + -0x50ef9bbb);
+  bVar21 = CARRY1(*pbVar23,bVar20) || CARRY1(*pbVar23 + bVar20,bVar19);
+  *pbVar23 = *pbVar23 + bVar20 + bVar19;
+  bVar19 = CARRY1(bVar15,bVar26) || CARRY1(bVar15 + bVar26,bVar21);
+  uVar35 = (undefined2)((uint)iVar28 >> 0x10);
+  bVar18 = bVar15 + bVar26 + bVar21;
+  bVar29 = (byte)((uint)(iVar34 + -1) >> 8);
+  bVar15 = bVar20 + bVar29;
+  bVar21 = CARRY1(bVar20,bVar29) || CARRY1(bVar15,bVar19);
+  bVar15 = bVar15 + bVar19;
+  pbVar23 = (byte *)((int)&((String *)unaff_ESI.m_Index)->klass + unaff_FS_OFFSET);
+  bVar29 = (byte)(iVar34 + -1);
+  bVar20 = *pbVar23 + bVar29;
+  bVar19 = CARRY1(*pbVar23,bVar29) || CARRY1(bVar20,bVar21);
+  *pbVar23 = bVar20 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar34 + 0x45);
+  bVar21 = CARRY1(*pbVar23,bVar14) || CARRY1(*pbVar23 + bVar14,bVar19);
+  *pbVar23 = *pbVar23 + bVar14 + bVar19;
+  pbVar23 = &stack0x00000042 + unaff_FS_OFFSET;
+  bVar19 = CARRY1(*pbVar23,bVar15) || CARRY1(*pbVar23 + bVar15,bVar21);
+  *pbVar23 = *pbVar23 + bVar15 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar32 + 0x42);
+  bVar21 = CARRY1(*pbVar23,bVar25) || CARRY1(*pbVar23 + bVar25,bVar19);
+  *pbVar23 = *pbVar23 + bVar25 + bVar19;
+  pbVar23 = (byte *)((int)worldObjectData + unaff_FS_OFFSET + -0x43ef9bbe);
+  bVar19 = CARRY1(*pbVar23,bVar26) || CARRY1(*pbVar23 + bVar26,bVar21);
+  *pbVar23 = *pbVar23 + bVar26 + bVar21;
+  bVar21 = CARRY1(bVar15,bVar18) || CARRY1(bVar15 + bVar18,bVar19);
+  bVar20 = bVar15 + bVar18 + bVar19;
+  iVar32 = iVar32 + 2;
+  pbVar23 = (byte *)((int)&((String *)unaff_ESI.m_Index)->klass + unaff_FS_OFFSET + 1);
+  bVar19 = CARRY1(*pbVar23,bVar14) || CARRY1(*pbVar23 + bVar14,bVar21);
+  *pbVar23 = *pbVar23 + bVar14 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar34);
+  bVar21 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,bVar19);
+  *pbVar23 = *pbVar23 + bVar16 + bVar19;
+  pbVar23 = &stack0x4682104d + unaff_FS_OFFSET + CONCAT22(uVar35,CONCAT11(bVar18,bVar14)) * 2;
+  bVar19 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,bVar21);
+  *pbVar23 = *pbVar23 + bVar16 + bVar21;
+  pbVar23 = (byte *)((int)worldObjectData + unaff_FS_OFFSET + -0x20ef9bba);
+  bVar21 = CARRY1(*pbVar23,bVar18) || CARRY1(*pbVar23 + bVar18,bVar19);
+  *pbVar23 = *pbVar23 + bVar18 + bVar19;
+  bVar19 = CARRY1(bVar18,bVar20) || CARRY1(bVar18 + bVar20,bVar21);
+  bVar26 = (byte)((uint)iVar32 >> 8);
+  bVar36 = CARRY1(bVar20,bVar26) || CARRY1(bVar20 + bVar26,bVar19);
+  bVar16 = bVar20 + bVar26 + bVar19;
+  iVar33 = CONCAT31((int3)((uint)iVar33 >> 8),bVar16);
+  pbVar23 = (byte *)((int)&((String *)unaff_ESI.m_Index)->klass + unaff_FS_OFFSET + 3);
+  bVar25 = (byte)iVar32;
+  bVar19 = CARRY1(*pbVar23,bVar25) || CARRY1(*pbVar23 + bVar25,bVar36);
+  *pbVar23 = *pbVar23 + bVar25 + bVar36;
+  bVar36 = CARRY1(bVar30,bVar25) || CARRY1(bVar30 + bVar25,bVar19);
+  bVar29 = bVar30 + bVar25 + bVar19;
+  bVar19 = CARRY1(bVar14,bVar31) || CARRY1(bVar14 + bVar31,bVar36);
+  iVar22 = CONCAT31((int3)(CONCAT22(uVar35,CONCAT11(bVar18 + bVar20 + bVar21,bVar14)) >> 8),
+                    bVar14 + bVar31 + bVar36);
+  pbVar23 = (byte *)(unaff_FS_OFFSET + 0x42106448);
+  bVar21 = CARRY1(*pbVar23,bVar29) || CARRY1(*pbVar23 + bVar29,bVar19);
+  *pbVar23 = *pbVar23 + bVar29 + bVar19;
+  pbVar23 = (byte *)((int)&worldObjectData[1].fields._freeCount + unaff_FS_OFFSET + 3);
+  bVar15 = (byte)((uint)(iVar22 + -1) >> 8);
+  bVar20 = *pbVar23 + bVar15;
+  bVar19 = CARRY1(*pbVar23,bVar15) || CARRY1(bVar20,bVar21);
+  *pbVar23 = bVar20 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar22 + 0x48b11063 + iVar33 * 2);
+  bVar21 = CARRY1(*pbVar23,bVar16) || CARRY1(*pbVar23 + bVar16,bVar19);
+  *pbVar23 = *pbVar23 + bVar16 + bVar19;
+  bVar19 = CARRY1(bVar26,bVar25) || CARRY1(bVar26 + bVar25,bVar21);
+  uVar35 = (undefined2)((uint)iVar32 >> 0x10);
+  bVar16 = bVar26 + bVar25 + bVar21;
+  bVar21 = CARRY1(bVar29,bVar31) || CARRY1(bVar29 + bVar31,bVar19);
+  bVar26 = bVar29 + bVar31 + bVar19;
+  iVar34 = CONCAT31((int3)((uint)iVar34 >> 8),bVar26);
+  iVar28 = iVar22 + -3;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar28);
+  bVar15 = (byte)((uint)iVar28 >> 8);
+  bVar19 = CARRY1(*pbVar23,bVar15) || CARRY1(*pbVar23 + bVar15,bVar21);
+  *pbVar23 = *pbVar23 + bVar15 + bVar21;
+  pbVar23 = &stack0x00000049 + unaff_FS_OFFSET;
+  bVar14 = (byte)iVar28;
+  bVar21 = CARRY1(*pbVar23,bVar14) || CARRY1(*pbVar23 + bVar14,bVar19);
+  *pbVar23 = *pbVar23 + bVar14 + bVar19;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + CONCAT22(uVar35,CONCAT11(bVar16,bVar25)) + 0x49);
+  bVar18 = (byte)((uint)(iVar33 + -1) >> 8);
+  bVar20 = *pbVar23 + bVar18;
+  bVar19 = CARRY1(*pbVar23,bVar18) || CARRY1(bVar20,bVar21);
+  *pbVar23 = bVar20 + bVar21;
+  pbVar23 = (byte *)((int)worldObjectData + unaff_FS_OFFSET + -0x4bef9bb4);
+  bVar18 = (byte)(iVar33 + -1);
+  bVar20 = *pbVar23 + bVar18;
+  bVar21 = CARRY1(*pbVar23,bVar18) || CARRY1(bVar20,bVar19);
+  *pbVar23 = bVar20 + bVar19;
+  bVar18 = (byte)(iVar33 + -2);
+  bVar20 = bVar18 + bVar26;
+  bVar19 = CARRY1(bVar18,bVar26) || CARRY1(bVar20,bVar21);
+  bVar36 = CARRY1(bVar16,bVar31) || CARRY1(bVar16 + bVar31,bVar19);
+  iVar32 = CONCAT22(uVar35,CONCAT11(bVar16 + bVar31 + bVar19,bVar25));
+  pcVar24 = (char *)(CONCAT31((int3)((uint)(iVar33 + -2) >> 8),bVar20 + bVar21) + -2);
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar34);
+  bVar19 = CARRY1(*pbVar23,bVar15) || CARRY1(*pbVar23 + bVar15,bVar36);
+  *pbVar23 = *pbVar23 + bVar15 + bVar36;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar22 + 0x47);
+  bVar18 = (byte)pcVar24;
+  bVar21 = CARRY1(*pbVar23,bVar18) || CARRY1(*pbVar23 + bVar18,bVar19);
+  *pbVar23 = *pbVar23 + bVar18 + bVar19;
+  pbVar23 = &stack0x0000004a + unaff_FS_OFFSET;
+  bVar16 = (byte)((uint)pcVar24 >> 8);
+  bVar20 = *pbVar23 + bVar16;
+  bVar19 = CARRY1(*pbVar23,bVar16) || CARRY1(bVar20,bVar21);
+  *pbVar23 = bVar20 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar32 + -0x48ef9bb7);
+  bVar20 = *pbVar23 + (bVar25 - 1);
+  bVar21 = CARRY1(*pbVar23,bVar25 - 1) || CARRY1(bVar20,bVar19);
+  *pbVar23 = bVar20 + bVar19;
+  bVar19 = CARRY1(bVar15,bVar26) || CARRY1(bVar15 + bVar26,bVar21);
+  bVar20 = bVar15 + bVar26 + bVar21;
+  iVar22 = CONCAT22((short)((uint)iVar28 >> 0x10),CONCAT11(bVar20,bVar14));
+  pbVar37 = (byte *)(iVar32 + -3);
+  pbVar23 = (byte *)(pcVar24 + unaff_FS_OFFSET);
+  bVar21 = CARRY1(*pbVar23,bVar14) || CARRY1(*pbVar23 + bVar14,bVar19);
+  *pbVar23 = *pbVar23 + bVar14 + bVar19;
+  pbVar23 = (byte *)((int)&((String *)unaff_ESI.m_Index)->klass + unaff_FS_OFFSET + 3);
+  bVar19 = CARRY1(*pbVar23,bVar20) || CARRY1(*pbVar23 + bVar20,bVar21);
+  *pbVar23 = *pbVar23 + bVar20 + bVar21;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar34 + 0x49);
+  bVar21 = CARRY1(*pbVar23,bVar18) || CARRY1(*pbVar23 + bVar18,bVar19);
+  *pbVar23 = *pbVar23 + bVar18 + bVar19;
+  pbVar23 = (byte *)(unaff_FS_OFFSET + iVar22 + 0x4b);
+  bVar15 = (byte)((uint)pbVar37 >> 8);
+  bVar20 = *pbVar23 + bVar15;
+  bVar19 = CARRY1(*pbVar23,bVar15) || CARRY1(bVar20,bVar21);
+  *pbVar23 = bVar20 + bVar21;
+  pbVar23 = &stack0xba10644b + unaff_FS_OFFSET;
+  bVar20 = *pbVar23;
+  bVar16 = (byte)pbVar37;
+  bVar15 = *pbVar23;
+  *pbVar23 = bVar15 + bVar16 + bVar19;
+  pbVar38 = (byte *)(iVar34 + -3);
+  *(char *)(unaff_FS_OFFSET + iVar22) =
+       *(char *)(unaff_FS_OFFSET + iVar22) + bVar14 +
+       (CARRY1(bVar20,bVar16) || CARRY1(bVar15 + bVar16,bVar19));
+  *(int *)pbVar37 = *(int *)pbVar37 + iVar22;
+  iVar22 = CONCAT31((int3)((uint)iVar22 >> 8),
+                    bVar14 + *pbVar37 + *pbVar37 + *pbVar37 + *pbVar37 + *pbVar38 + '\x02') +
            0x2080706;
-  uVar24 = CONCAT31((int3)((uint)pcVar35 >> 8),bVar34 + *pcVar35);
-  pbVar17 = (byte *)(uVar24 | *(uint *)(&UNK_? + uVar24));
-  piVar7 = (int *)CONCAT31((int3)((uint)pbVar41 >> 8),bVar28 + *pbVar49);
-  pbVar21 = (byte *)CONCAT31((int3)((uint)iVar27 >> 8),
-                             ((char)iVar27 + *pbVar41 + *pbVar41 + *pbVar41 | *pbVar41) + 0x15 +
-                             CARRY1(bVar28,*pbVar49) + (char)*piVar7);
-  *(undefined2 *)(uVar37 + iVar20) = uVar42;
-  *piVar7 = (*piVar7 - CONCAT31((int3)((uint)pbVar49 >> 8),bVar32 + *pbVar21)) -
-             (uint)CARRY1(bVar32,*pbVar21);
-  *pbVar17 = *pbVar17 & (byte)((uint)iVar27 >> 8);
-  pcVar50 = (code *)swi(3);
-  pMVar14 = (MVWorldObjectClient *)(*pcVar50)();
-  return pMVar14;
+  uVar27 = CONCAT31((int3)((uint)pcVar24 >> 8),bVar18 + *pcVar24);
+  pbVar39 = (byte *)(uVar27 | *(uint *)(&UNK_? + uVar27));
+  piVar5 = (int *)CONCAT31((int3)((uint)pbVar37 >> 8),bVar16 + *pbVar38);
+  pbVar23 = (byte *)CONCAT31((int3)((uint)iVar22 >> 8),
+                             ((char)iVar22 + *pbVar37 + *pbVar37 + *pbVar37 | *pbVar37) + 0x15 +
+                             CARRY1(bVar16,*pbVar38) + (char)*piVar5);
+  *piVar5 = (*piVar5 - CONCAT31((int3)((uint)pbVar38 >> 8),(byte)pbVar38 + *pbVar23)) -
+            (uint)CARRY1((byte)pbVar38,*pbVar23);
+  *pbVar39 = *pbVar39 & (byte)((uint)iVar22 >> 8);
+  pcVar40 = (code *)swi(3);
+  pMVar11 = (MVWorldObjectClient *)(*pcVar40)();
+  return pMVar11;
 code_?:
   pOVar1 = (Object *)func_?();
   unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
@@ -1724,33 +1732,26 @@ code_?:
                          worldObjectData,pOVar1,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-  pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  bVar2 = 0;
-  if (pMVar8 != (MVNetworkGame *)0x0) {
-    pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
-    bVar2 = 0;
-    if (pMVar9 != (MVLocalPlayer *)0x0) {
-      unaff_EBX = (String *)(pMVar9->fields)._._ActorNr_k__BackingField;
-      bVar2 = 0;
-      if (unaff_ESI.m_Index != 0) {
-        pIVar4 = (TypeInfo__System__Int32->_0).element_class;
-        bVar2 = *(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) < pIVar4;
-        if (*(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) == pIVar4) {
-          piVar7 = (int *)func_?();
-          if ((String *)*piVar7 != unaff_EBX) {
-            this_58 = (MVBuildModeAvatarRemote *)func_?();
-            MVBuildModeAvatarRemote::MVBuildModeAvatarRemote__ctor
-                      (this_58,worldObjectData,worldObjects,(MethodInfo *)0x0);
-            return (MVWorldObjectClient *)this_58;
-          }
-          this_59 = (MVBuildModeAvatarLocal *)func_?();
-          MVBuildModeAvatarLocal::MVBuildModeAvatarLocal__ctor
-                    (this_59,worldObjectData,worldObjects,(MethodInfo *)0x0);
-          return (MVWorldObjectClient *)this_59;
-        }
-        goto code_?;
+  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (((pMVar6 != (MVNetworkGame *)0x0) &&
+      (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+      pMVar7 != (MVLocalPlayer *)0x0)) &&
+     (unaff_EBX = (String *)(pMVar7->fields)._._ActorNr_k__BackingField, unaff_ESI.m_Index != 0)) {
+    if (*(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      piVar5 = (int *)func_?();
+      if ((String *)*piVar5 != unaff_EBX) {
+        this_58 = (MVBuildModeAvatarRemote *)func_?();
+        MVBuildModeAvatarRemote::MVBuildModeAvatarRemote__ctor
+                  (this_58,worldObjectData,worldObjects,(MethodInfo *)0x0);
+        return (MVWorldObjectClient *)this_58;
       }
+      this_59 = (MVBuildModeAvatarLocal *)func_?();
+      MVBuildModeAvatarLocal::MVBuildModeAvatarLocal__ctor
+                (this_59,worldObjectData,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_59;
     }
+    goto code_?;
   }
   goto code_?;
 }

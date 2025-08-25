@@ -622,23 +622,27 @@ ObscuredULong_op_Decrement
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredULong);
   }
   uVar1 = ObscuredULong_InternalDecrypt((ObscuredULong *)&stack0x00000008,(MethodInfo *)0x0);
-  uVar2 = ObscuredULong_Encrypt_1
-                    (uVar1 - 1,CONCAT44((undefined4)input.currentCryptoKey,in_stack_3),
+  iVar2 = (int)uVar1 + -1;
+  iVar3 = (int)(uVar1 >> 0x20) - (uint)((int)uVar1 == 0);
+  uVar1 = ObscuredULong_Encrypt_1
+                    (CONCAT44(iVar3,iVar2),
+                     CONCAT44((undefined4)input.currentCryptoKey,in_stack_4),
                      (MethodInfo *)0x0);
-  input.currentCryptoKey._4_4_ = (undefined4)uVar2;
-  input.hiddenValue._0_4_ = (undefined4)(uVar2 >> 0x20);
-  bVar4 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
+  input.currentCryptoKey._4_4_ = (undefined4)uVar1;
+  input.hiddenValue._0_4_ = (undefined4)(uVar1 >> 0x20);
+  bVar5 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
                     ((MethodInfo *)0x0);
-  uVar2 = CONCAT44((undefined4)input.fakeValue,input.hiddenValue._4_4_);
-  if (bVar4 != 0) {
-    uVar2 = uVar1 - 1;
+  if (bVar5 != 0) {
+    input.hiddenValue._4_4_ = iVar2;
+    input.fakeValue._0_4_ = iVar3;
   }
-  *(undefined4 *)&__return_storage_ptr__->currentCryptoKey = in_stack_3;
+  *(undefined4 *)&__return_storage_ptr__->currentCryptoKey = in_stack_4;
   *(undefined4 *)((int)&__return_storage_ptr__->currentCryptoKey + 4) =
        (undefined4)input.currentCryptoKey;
   *(undefined4 *)&__return_storage_ptr__->hiddenValue = input.currentCryptoKey._4_4_;
   *(undefined4 *)((int)&__return_storage_ptr__->hiddenValue + 4) = (undefined4)input.hiddenValue;
-  __return_storage_ptr__->fakeValue = uVar2;
+  *(int *)&__return_storage_ptr__->fakeValue = input.hiddenValue._4_4_;
+  *(int *)((int)&__return_storage_ptr__->fakeValue + 4) = (int)input.fakeValue;
   *(undefined4 *)&__return_storage_ptr__->inited = input.fakeValue._4_4_;
   __return_storage_ptr__->field_0x1c = input.inited;
   *(undefined3 *)&__return_storage_ptr__->field_0x1d = input._25_3_;

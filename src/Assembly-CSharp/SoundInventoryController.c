@@ -147,6 +147,7 @@ void Assembly-CSharp.dll::SoundInventoryController::SoundInventoryController_Ini
                (SoundInventoryController *this,int32_t woID,GameObject *root,MethodInfo *method)
 
 {
+  this_05 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_
@@ -209,9 +210,11 @@ void Assembly-CSharp.dll::SoundInventoryController::SoundInventoryController_Ini
                     MethodInfo__System__Collections__Generic__List<StreamedAudioClipInfo>__get_Item_int_
                    );
     func_?(&TypeInfo__System__Collections__Generic__List<SoundTabInfo>);
-    func_?(&
-                    InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController__UnityEngine__Transform__bool_
-                   );
+    in_stack_1 =
+         &
+         InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController__UnityEngine__Transform__bool_
+    ;
+    func_?();
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&MethodInfo__SoundInventoryController__PageTurned_int_);
     func_?(&MethodInfo__SoundInventoryController__TabSelected_int_);
@@ -237,34 +240,36 @@ code_?:
               (this_00,woID,root,MVWorldObjectDocumentationType__Enum_SoundEmitter,(MethodInfo *)0x0
               );
     (this->fields).selectedTab = 1;
-    this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (((this_04 == (MVWorldObjectClientManager *)0x0) ||
-        (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (this_04,woID,(MethodInfo *)0x0), pMVar1 == (MVWorldObject *)0x0)) ||
-       (pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 (pMVar1->fields).data,
-       pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
-    goto code_?;
+    this_06 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    unaff_ESI = (SoundInventoryController *)woID;
+    if (((this_06 == (MVWorldObjectClientManager *)0x0) ||
+        (pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                            (this_06,woID,(MethodInfo *)0x0),
+        unaff_ESI = (SoundInventoryController *)woID, pMVar2 == (MVWorldObject *)0x0)) ||
+       (unaff_ESI = (SoundInventoryController *)(pMVar2->fields).data,
+       unaff_ESI == (SoundInventoryController *)0x0)) goto code_?;
     bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      (pDVar2,(Object *)StringLiteral_url,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_ESI,
+                       (Object *)StringLiteral_url,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
     if (bVar3 == 0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDVar2,(Object *)StringLiteral_url,
+                ((Dictionary_2_System_Object_System_Object_ *)unaff_ESI,(Object *)StringLiteral_url,
                  (Object *)::StringLiteral__,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
     }
     SoundInventoryController_DebugPrintSound
-              ((Dictionary_2_System_Object_System_Object_ *)pDVar2,(MethodInfo *)0x0);
+              ((Dictionary_2_System_Object_System_Object_ *)unaff_ESI,(MethodInfo *)0x0);
     TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (pDVar2,(Object *)StringLiteral_url,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_ESI,
+                       (Object *)StringLiteral_url,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
     if (TVar4.m_Index != 0) {
@@ -288,326 +293,346 @@ code_?:
     func_?();
     pSVar6 = (this->fields).audioUrls;
     if (pSVar6 == (StreamedAudioClipList *)0x0) goto code_?;
-    (this->fields).urls = (pSVar6->fields).urls;
-    func_?();
-    pIVar7 = (this->fields).inventoryControllerPrefab;
+    pLVar7 = (pSVar6->fields).urls;
+    (this->fields).urls = pLVar7;
+    func_?(&(this->fields).urls,pLVar7);
+    unaff_ESI = (SoundInventoryController *)(this->fields).inventoryControllerPrefab;
     parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    pIVar7 = (InventoryController *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                        ((Object *)pIVar7,parent,0,
-                         InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController__UnityEngine__Transform__bool_
-                        );
-    (this->fields).inventoryController = pIVar7;
-    func_?();
-    pIVar7 = (this->fields).inventoryController;
-    if (pIVar7 == (InventoryController *)0x0) goto code_?;
-    pUVar8 = (pIVar7->fields).OnPageTurned;
-    pUVar9 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    pIVar8 = (InventoryController *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                       ((Object *)unaff_ESI,parent,0,
+                        InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController__UnityEngine__Transform__bool_
+                       );
+    (this->fields).inventoryController = pIVar8;
+    func_?(&(this->fields).inventoryController,pIVar8);
+    pIVar8 = (this->fields).inventoryController;
+    if (pIVar8 == (InventoryController *)0x0) goto code_?;
+    pUVar9 = (pIVar8->fields).OnPageTurned;
+    pUVar10 = (UnityAction_1_System_Int32Enum_ *)
+              func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar9,(Object *)this,MethodInfo__SoundInventoryController__PageTurned_int_,
+              (pUVar10,(Object *)this,MethodInfo__SoundInventoryController__PageTurned_int_,
                (MethodInfo *)0x0);
-    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pUVar8,(Delegate *)pUVar9,(MethodInfo *)0x0);
-    if (pDVar10 == (Delegate *)0x0) {
-      iRam_? = 0;
+    unaff_ESI = (SoundInventoryController *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pUVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
+    if (unaff_ESI == (SoundInventoryController *)0x0) {
+      (pIVar8->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
-      func_?();
-      pIVar7 = (this->fields).inventoryController;
-      if (pIVar7 != (InventoryController *)0x0) {
-        pUVar8 = (pIVar7->fields).OnTabSelected;
-        pUVar9 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      func_?(&(pIVar8->fields).OnPageTurned);
+      pIVar8 = (this->fields).inventoryController;
+      if (pIVar8 != (InventoryController *)0x0) {
+        pUVar9 = (pIVar8->fields).OnTabSelected;
+        pUVar10 = (UnityAction_1_System_Int32Enum_ *)
+                  func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
-                  (pUVar9,(Object *)this,MethodInfo__SoundInventoryController__TabSelected_int_,
+                  (pUVar10,(Object *)this,MethodInfo__SoundInventoryController__TabSelected_int_,
                    (MethodInfo *)0x0);
-        pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pUVar8,(Delegate *)pUVar9,(MethodInfo *)0x0);
-        if (pDVar10 == (Delegate *)0x0) {
-          iRam_? = 0;
+        unaff_ESI = (SoundInventoryController *)
+                    mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pUVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
+        if (unaff_ESI == (SoundInventoryController *)0x0) {
+          (pIVar8->fields).OnTabSelected = (UnityAction_1_System_Int32_ *)0x0;
         }
         else {
-          iVar11 = func_?();
-          if (iVar11 == 0) goto code_?;
-          iRam_? = iVar11;
-          iVar11 = func_?();
+          pUVar9 = (UnityAction_1_System_Int32_ *)func_?(unaff_ESI);
+          if (pUVar9 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+          (pIVar8->fields).OnTabSelected = pUVar9;
+          iVar11 = func_?(unaff_ESI);
           if (iVar11 == 0) goto code_?;
         }
-        func_?();
-        pIVar7 = (this->fields).inventoryController;
-        if (pIVar7 != (InventoryController *)0x0) {
+        func_?(&(pIVar8->fields).OnTabSelected);
+        pIVar8 = (this->fields).inventoryController;
+        if (pIVar8 != (InventoryController *)0x0) {
           InventoryController::InventoryController_Initialize
-                    (pIVar7,(this->fields).numberOfSlotsPrPage,(MethodInfo *)0x0);
-          pLVar12 = (this->fields).urls;
-          index = (undefined1 *)0x0;
-          if (pLVar12 != (List_1_StreamedAudioClipInfo_ *)0x0) {
+                    (pIVar8,(this->fields).numberOfSlotsPrPage,(MethodInfo *)0x0);
+          pLVar7 = (this->fields).urls;
+          this = (SoundInventoryController *)0x0;
+          unaff_ESI = (SoundInventoryController *)0x0;
+          if (pLVar7 != (List_1_StreamedAudioClipInfo_ *)0x0) {
             while( true ) {
-              if ((pLVar12->fields)._size <= (int)index) {
-                SoundInventoryController_UpdateContent(this,(MethodInfo *)0x0);
+              if ((pLVar7->fields)._size <= (int)this) {
+                SoundInventoryController_UpdateContent(this_05,(MethodInfo *)0x0);
                 return;
               }
-              pOVar13 = (Object *)func_?();
+              woID = func_?(TypeInfo__SoundInventoryController____c__DisplayClass13_0);
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        (pOVar13,ExceptionArgument__Enum_obj,unaff_EDI);
-              unaff_EDI = (MethodInfo *)(this->fields).urls;
-              if ((unaff_EDI == (MethodInfo *)0x0) ||
-                 (RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                       *)unaff_EDI,(int32_t)index,
-                                      MethodInfo__System__Collections__Generic__List<StreamedAudioClipInfo>__get_Item_int_
-                                     ), RVar14 == (RegexCharClass_SingleRange)0x0)) break;
-              pMVar15 = *(MethodInfo **)((int)RVar14 + 0x10);
-              pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        (this->fields).urls;
-              if ((pLVar16 ==
-                   (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-                 ((RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                        ((Object *)woID,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1)
+              ;
+              in_stack_1 = (MethodInfo **)(this_05->fields).urls;
+              unaff_ESI = this;
+              if (((SoundInventoryController *)in_stack_1 == (SoundInventoryController *)0x0)
+                 || (RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                              RegularExpressions::RegexCharClass+SingleRange]::
+                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                          *)in_stack_1,(int32_t)this,
+                                         MethodInfo__System__Collections__Generic__List<StreamedAudioClipInfo>__get_Item_int_
+                                        ), unaff_ESI = this,
+                    RVar12 == (RegexCharClass_SingleRange)0x0)) break;
+              name = *(SoundInventoryController **)((int)RVar12 + 0x10);
+              method_00 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_TextureId___Array
+                           *)(this_05->fields).urls;
+              unaff_ESI = name;
+              if ((method_00 ==
+                   (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_TextureId___Array
+                    *)0x0) ||
+                 ((RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar16,0xADDR,
+                                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                        *)method_00,(int32_t)this,
                                        MethodInfo__System__Collections__Generic__List<StreamedAudioClipInfo>__get_Item_int_
-                                      ), RVar14 == (RegexCharClass_SingleRange)0x0 ||
-                  (pOVar13 == (Object *)0x0)))) break;
-              pOVar13[1].klass = *(Object__Class **)((int)RVar14 + 0xc);
-              func_?();
-              pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       (this->fields).categoryToNameCombinations;
-              if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+                                      ), RVar12 == (RegexCharClass_SingleRange)0x0 ||
+                  (pOVar13 = *(Object__Class **)((int)RVar12 + 0xc), (Object *)woID == (Object *)0x0)
+                  ))) break;
+              ((Object *)(woID + 8))->klass = pOVar13;
+              func_?((Object *)(woID + 8),pOVar13);
+              pDVar14 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (this_05->fields).categoryToNameCombinations;
+              if (pDVar14 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
               break;
               bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Object,UnityEngine::UIElements::TextureId]::
                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                (pDVar2,(Object *)pMVar15,
+                                (pDVar14,(Object *)name,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_
                                 );
               if (bVar3 == 0) {
                 this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)(this->fields).categoryToNameCombinations;
+                           *)(this_05->fields).categoryToNameCombinations;
                 if (this_01 ==
                     (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                      *)0x0) break;
-                iVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                iVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
                          UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                          Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                                    (this_01,
                                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Count__
                                    );
-                unaff_EDI = pMVar15;
+                in_stack_1 = (MethodInfo **)name;
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                 Int32]::Dictionary_2_System_Object_System_Int32__Add
-                          ((Dictionary_2_System_Object_System_Int32_ *)this_01,(Object *)pMVar15,
-                           iVar17 + 1,
+                          ((Dictionary_2_System_Object_System_Int32_ *)this_01,(Object *)name,
+                           iVar15 + 1,
                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_
                           );
               }
-              pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       (this->fields).categoryToNameCombinations;
-              if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+              pDVar14 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (this_05->fields).categoryToNameCombinations;
+              if (pDVar14 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
               break;
               TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Object,UnityEngine::UIElements::TextureId]::
                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                (pDVar2,(Object *)pMVar15,
+                                (pDVar14,(Object *)name,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
                                 );
-              pDVar18 = (this->fields).tabs;
-              pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       (this->fields).categoryToNameCombinations;
-              if ((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-                 (TVar5 = TVar4,
-                 key = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                 (pDVar2,(Object *)pMVar15,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                                 ), pDVar18 == (Dictionary_2_System_Int32_TabState_ *)0x0)) break;
+              pDVar16 = (this_05->fields).tabs;
+              pDVar14 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (this_05->fields).categoryToNameCombinations;
+              if ((pDVar14 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+                 (TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Object,UnityEngine::UIElements::TextureId]::
+                           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                     (pDVar14,(Object *)name,
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
+                                     ), pDVar16 == (Dictionary_2_System_Int32_TabState_ *)0x0))
+              break;
               bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
                       ::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                                ((Dictionary_2_System_Int32_System_Single_ *)pDVar18,key.m_Index,
+                                ((Dictionary_2_System_Int32_System_Single_ *)pDVar16,TVar5.m_Index,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__ContainsKey_int_
                                 );
               if (bVar3 == 0) {
-                iVar17 = (this->fields).numberOfSlotsPrPage;
-                this_05 = (TabState *)func_?();
+                woID = (int32_t)TypeInfo__TabState;
+                iVar15 = (this_05->fields).numberOfSlotsPrPage;
+                this = (SoundInventoryController *)&UNK_?;
+                unaff_ESI = (SoundInventoryController *)func_?();
                 TabState::TabState__ctor
-                          (this_05,TVar4.m_Index,(String *)pDVar2,iVar17,(MethodInfo *)0x0);
-                pDVar18 = (this->fields).tabs;
-                if (((pDVar18 == (Dictionary_2_System_Int32_TabState_ *)0x0) ||
+                          ((TabState *)unaff_ESI,TVar4.m_Index,(String *)name,iVar15,
+                           (MethodInfo *)0x0);
+                pDVar16 = (this_05->fields).tabs;
+                if (((pDVar16 == (Dictionary_2_System_Int32_TabState_ *)0x0) ||
                     (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                      Object]::Dictionary_2_System_Int32_System_Object__Add
-                               ((Dictionary_2_System_Int32_System_Object_ *)pDVar18,TVar4.m_Index,
-                                (Object *)this_05,
+                               ((Dictionary_2_System_Int32_System_Object_ *)pDVar16,TVar4.m_Index,
+                                (Object *)unaff_ESI,
                                 MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_
-                               ), this_05 == (TabState *)0x0)) ||
-                   (pIVar7 = (this->fields).inventoryController,
-                   pIVar7 == (InventoryController *)0x0)) break;
-                TVar5.m_Index = 0;
-                unaff_EDI = (MethodInfo *)&UNK_?;
+                               ), unaff_ESI == (SoundInventoryController *)0x0)) ||
+                   (pIVar8 = (this_05->fields).inventoryController,
+                   pIVar8 == (InventoryController *)0x0)) break;
+                method_00 = (((MulticastDelegate__Fields *)&(unaff_ESI->fields)._)->_).invoke_impl;
+                in_stack_1 = (MethodInfo **)&UNK_?;
                 InventoryController::InventoryController_AddTab
-                          (pIVar7,TVar4.m_Index,(this_05->fields).name,(MethodInfo *)0x0);
+                          (pIVar8,TVar4.m_Index,(String *)method_00,(MethodInfo *)0x0);
               }
-              pDVar19 = (this->fields).soundTabInfos;
-              if (pDVar19 == (Dictionary_2_System_Int32_List_1_SoundTabInfo_ *)0x0) break;
+              pDVar17 = (this_05->fields).soundTabInfos;
+              if (pDVar17 == (Dictionary_2_System_Int32_List_1_SoundTabInfo_ *)0x0) break;
               bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
                       ::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                                ((Dictionary_2_System_Int32_System_Single_ *)pDVar19,TVar4.m_Index,
+                                ((Dictionary_2_System_Int32_System_Single_ *)pDVar17,TVar4.m_Index,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<SoundTabInfo>_>__ContainsKey_int_
                                 );
               if (bVar3 == 0) {
-                pDVar19 = (this->fields).soundTabInfos;
-                this_06 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                          func_?();
+                unaff_ESI = (SoundInventoryController *)(this_05->fields).soundTabInfos;
+                method_00 = (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_TextureId___Array
+                             *)func_?(
+                                              TypeInfo__System__Collections__Generic__List<SoundTabInfo>
+                                              );
                 mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
                 __Il2CppFullySharedGenericType]::
                 LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                          (this_06,
+                          ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                           method_00,
                            MethodInfo__System__Collections__Generic__List<SoundTabInfo>__List__);
-                if (pDVar19 == (Dictionary_2_System_Int32_List_1_SoundTabInfo_ *)0x0) break;
-                unaff_EDI = (MethodInfo *)&UNK_?;
-                TVar5.m_Index =
-                     (int32_t)
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<SoundTabInfo>_>__Add_int__System__Collections__Generic__List<SoundTabInfo>_
-                ;
+                if (unaff_ESI == (SoundInventoryController *)0x0) break;
+                in_stack_1 = (MethodInfo **)&UNK_?;
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Object]::Dictionary_2_System_Int32_System_Object__Add
-                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar19,TVar4.m_Index,
-                           (Object *)this_06,
+                          ((Dictionary_2_System_Int32_System_Object_ *)unaff_ESI,TVar4.m_Index,
+                           (Object *)method_00,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<SoundTabInfo>_>__Add_int__System__Collections__Generic__List<SoundTabInfo>_
                           );
               }
-              pDVar19 = (this->fields).soundTabInfos;
-              if (pDVar19 == (Dictionary_2_System_Int32_List_1_SoundTabInfo_ *)0x0) break;
-              pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              pDVar17 = (this_05->fields).soundTabInfos;
+              if (pDVar17 == (Dictionary_2_System_Int32_List_1_SoundTabInfo_ *)0x0) break;
+              pOVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar19,TVar4.m_Index,
+                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,TVar4.m_Index,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<SoundTabInfo>_>__get_Item_int_
                                   );
-              object = TypeInfo__System__Func<SoundTabInfo,_bool>;
-              this_07 = (Func_2_Object_Boolean_ *)func_?();
+              unaff_ESI = (SoundInventoryController *)
+                          func_?(TypeInfo__System__Func<SoundTabInfo,_bool>);
               mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                        (this_07,(Object *)object,
+                        ((Func_2_Object_Boolean_ *)unaff_ESI,(Object *)woID,
                          MethodInfo__SoundInventoryController____c__DisplayClass13_0___Initialize_b__0_SoundTabInfo_
                          ,(MethodInfo *)0x0);
               bVar3 = System.Core.dll::System::Linq::Enumerable::Enumerable_All
-                                ((IEnumerable_1_System_Object_ *)pOVar13,this_07,
+                                ((IEnumerable_1_System_Object_ *)pOVar18,
+                                 (Func_2_Object_Boolean_ *)unaff_ESI,
                                  bool_MethodInfo__System__Linq__Enumerable__All<SoundTabInfo>_System__Collections__Generic__IEnumerable<SoundTabInfo>__System__Func<SoundTabInfo,_bool>_
                                 );
               if (bVar3 != 0) {
-                pDVar19 = (this->fields).soundTabInfos;
-                if (pDVar19 == (Dictionary_2_System_Int32_List_1_SoundTabInfo_ *)0x0) break;
-                pMVar15 = (MethodInfo *)
+                pDVar17 = (this_05->fields).soundTabInfos;
+                if (pDVar17 == (Dictionary_2_System_Int32_List_1_SoundTabInfo_ *)0x0) break;
+                this_07 = (List_1_System_Object_ *)
                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar19,
+                                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,
                                      TVar5.m_Index,
                                      MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<SoundTabInfo>_>__get_Item_int_
                                     );
-                pSVar20 = TypeInfo__SoundTabInfo;
-                pOVar13 = (Object *)func_?();
-                unaff_EDI = (MethodInfo *)&UNK_?;
+                pOVar18 = (Object *)func_?(TypeInfo__SoundTabInfo);
+                in_stack_1 = (MethodInfo **)&UNK_?;
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          (pOVar13,ExceptionArgument__Enum_obj,pMVar15);
-                if (pOVar13 == (Object *)0x0) break;
-                pOVar13[1].klass = (Object__Class *)(pSVar20->_0).name;
-                func_?();
-                pOVar13[1].monitor = (MonitorData *)pDVar2;
-                func_?(&pOVar13[1].monitor);
-                pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this->fields).urls;
-                if ((pLVar16 ==
+                          (pOVar18,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+                pOVar13 = *(Object__Class **)(woID + 8);
+                unaff_ESI = (SoundInventoryController *)TVar5.m_Index;
+                if (pOVar18 == (Object *)0x0) break;
+                pOVar18[1].klass = pOVar13;
+                func_?(pOVar18 + 1,pOVar13);
+                pOVar18[1].monitor = (MonitorData *)name;
+                func_?(&pOVar18[1].monitor,name);
+                this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          (this_05->fields).urls;
+                if ((this_02 ==
                      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-                   (RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   (RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                              RegularExpressions::RegexCharClass+SingleRange]::
                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                       (pLVar16,(int32_t)(pOVar13 + 1),
+                                       (this_02,(int32_t)this,
                                         MethodInfo__System__Collections__Generic__List<StreamedAudioClipInfo>__get_Item_int_
-                                       ), RVar14 == (RegexCharClass_SingleRange)0x0)) break;
-                pOVar13[2].klass = *(Object__Class **)((int)RVar14 + 8);
-                func_?();
-                if (pLVar16 ==
-                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+                                       ), RVar12 == (RegexCharClass_SingleRange)0x0)) break;
+                pOVar13 = *(Object__Class **)((int)RVar12 + 8);
+                pOVar18[2].klass = pOVar13;
+                func_?(pOVar18 + 2,pOVar13);
+                if (this_07 == (List_1_System_Object_ *)0x0) break;
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                 List_1_System_Object__Add
-                          ((List_1_System_Object_ *)pLVar16,pOVar13,
+                          (this_07,pOVar18,
                            MethodInfo__System__Collections__Generic__List<SoundTabInfo>__Add_SoundTabInfo_
                           );
               }
-              this_02 = (Dictionary_2_System_Int32_System_Single_ *)(this->fields).categorysAmount;
-              if (this_02 == (Dictionary_2_System_Int32_System_Single_ *)0x0) break;
+              this_03 = (Dictionary_2_System_Int32_System_Single_ *)
+                        (this_05->fields).categorysAmount;
+              unaff_ESI = (SoundInventoryController *)TVar5.m_Index;
+              if (this_03 == (Dictionary_2_System_Int32_System_Single_ *)0x0) break;
               bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
                       ::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                                (this_02,TVar5.m_Index,
+                                (this_03,TVar5.m_Index,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_int>__ContainsKey_int_
                                 );
-              this_03 = (Dictionary_2_System_Int32_System_Object_ *)(this->fields).categorysAmount;
+              this_04 = (Dictionary_2_System_Int32_System_Object_ *)
+                        (this_05->fields).categorysAmount;
               if (bVar3 == 0) {
-                if (this_03 == (Dictionary_2_System_Int32_System_Object_ *)0x0) break;
+                if (this_04 == (Dictionary_2_System_Int32_System_Object_ *)0x0) break;
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Int32]::Dictionary_2_System_Int32_System_Int32__Add
-                          ((Dictionary_2_System_Int32_System_Int32_ *)this_03,TVar5.m_Index,1,
+                          ((Dictionary_2_System_Int32_System_Int32_ *)this_04,TVar5.m_Index,1,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_
                           );
               }
               else {
-                if (this_03 == (Dictionary_2_System_Int32_System_Object_ *)0x0) break;
-                pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                if (this_04 == (Dictionary_2_System_Int32_System_Object_ *)0x0) break;
+                pOVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                    (this_03,TVar5.m_Index,
+                                    (this_04,TVar5.m_Index,
                                      MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
                                     );
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Int32]::Dictionary_2_System_Int32_System_Int32__set_Item
-                          ((Dictionary_2_System_Int32_System_Int32_ *)this_03,TVar5.m_Index,
-                           (int32_t)((int)&pOVar13->klass + 1),
+                          ((Dictionary_2_System_Int32_System_Int32_ *)this_04,TVar5.m_Index,
+                           (int32_t)((int)&pOVar18->klass + 1),
                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__set_Item_int__int_
                           );
               }
-              pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       (this->fields).categoryToNameCombinations;
-              pDVar18 = (this->fields).tabs;
-              if (((pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+              pDVar14 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (this_05->fields).categoryToNameCombinations;
+              unaff_ESI = (SoundInventoryController *)(this_05->fields).tabs;
+              if (((pDVar14 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
                   || (TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                               Object,UnityEngine::UIElements::TextureId]::
                               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                        (pDVar2,TVar5.m_Index,
+                                        (pDVar14,(Object *)name,
                                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                                        ), pDVar18 == (Dictionary_2_System_Int32_TabState_ *)0x0))
-                 || (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                               Int32,System::Object]::
-                               Dictionary_2_System_Int32_System_Object__get_Item
-                                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar18,
-                                          TVar4.m_Index,
-                                          MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
-                                         ), pOVar13 == (Object *)0x0)) break;
-              pOVar13[2].klass = (Object__Class *)((int)&((pOVar13[2].klass)->_0).image + 1);
-              index = (undefined1 *)((int)&((MethodInfo *)TVar5.m_Index)->methodPointer + 1);
-              pLVar12 = (this->fields).urls;
-              if (pLVar12 == (List_1_StreamedAudioClipInfo_ *)0x0) break;
+                                        ), unaff_ESI == (SoundInventoryController *)0x0)) ||
+                 (pOVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                      ((Dictionary_2_System_Int32_System_Object_ *)unaff_ESI,
+                                       TVar4.m_Index,
+                                       MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
+                                      ), pOVar18 == (Object *)0x0)) break;
+              pOVar18[2].klass = (Object__Class *)((int)&((pOVar18[2].klass)->_0).image + 1);
+              this = (SoundInventoryController *)((int)&this->klass + 1);
+              pLVar7 = (this_05->fields).urls;
+              unaff_ESI = this;
+              if (pLVar7 == (List_1_StreamedAudioClipInfo_ *)0x0) break;
             }
           }
         }
       }
       goto code_?;
     }
-    iVar11 = func_?();
-    if (iVar11 == 0) goto code_?;
-    iRam_? = iVar11;
-    iVar11 = func_?();
+    pUVar9 = (UnityAction_1_System_Int32_ *)func_?(unaff_ESI);
+    if (pUVar9 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+    (pIVar8->fields).OnPageTurned = pUVar9;
+    iVar11 = func_?(unaff_ESI);
     if (iVar11 != 0) goto code_?;
   }
 code_?:
-  func_?();
+  func_?(unaff_ESI);
 code_?:
-  func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  func_?(unaff_ESI);
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

@@ -40,43 +40,43 @@ void Assembly-CSharp.dll::GamePassesShopContentCuller::GamePassesShopContentCull
                    );
     cRam_? = '\x01';
   }
-  iVar1 = amoutOfElements + previousStartElement;
-  do {
-    if (iVar1 <= previousStartElement) {
-      return;
-    }
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
-                     );
-      cRam_? = '\x01';
-    }
-    if (-1 < previousStartElement) {
-      pLVar2 = (this->fields).gamePassShopContentList;
-      if (pLVar2 == (List_1_IGamePassShopContent_ *)0x0) {
+  if (previousStartElement < previousStartElement + amoutOfElements) {
+    iVar1 = previousStartElement + amoutOfElements;
+    do {
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Count__
+                       );
+        cRam_? = '\x01';
+      }
+      if (-1 < previousStartElement) {
+        pLVar2 = (this->fields).gamePassShopContentList;
+        if (pLVar2 == (List_1_IGamePassShopContent_ *)0x0) {
 code_?:
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+          func_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        if ((previousStartElement < (pLVar2->fields)._size) &&
+           ((previousStartElement < newStartElement ||
+            ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement)))
+           ) {
+          RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             (this->fields).gamePassShopContentList,previousStartElement,
+                             MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
+                            );
+          if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          func_?(1,TypeInfo__IGamePassShopContent,RVar4);
+        }
       }
-      if ((previousStartElement < (pLVar2->fields)._size) &&
-         ((previousStartElement < newStartElement ||
-          ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement))))
-      {
-        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           (this->fields).gamePassShopContentList,previousStartElement,
-                           MethodInfo__System__Collections__Generic__List<IGamePassShopContent>__get_Item_int_
-                          );
-        if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        func_?(1,TypeInfo__IGamePassShopContent,RVar4);
-      }
-    }
-    previousStartElement = previousStartElement + 1;
-  } while( true );
+      previousStartElement = previousStartElement + 1;
+    } while (previousStartElement < iVar1);
+  }
+  return;
 }
 
 

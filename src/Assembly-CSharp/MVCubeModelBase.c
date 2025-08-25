@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0xac24);
+    func_?(0x47e0);
     func_?(&TypeInfo__Cube);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
@@ -1453,7 +1453,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0xac24);
+    func_?(0x47e0);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
                    );
@@ -1635,7 +1635,7 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ctor_b__28_0
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0x7fb8);
+    func_?(0x1b74);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -2074,50 +2074,50 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_get_MeshFilters
             return pMVar6;
           }
           if (piVar8 == (int *)0x0) break;
+          iVar10 = *piVar8;
           uVar11 = 0;
-          uVar12 = *(ushort *)(*piVar8 + 0xb6);
-          if (uVar12 != 0) {
+          if (*(ushort *)(iVar10 + 0xb6) != 0) {
             do {
-              if (*(IEnumerator__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar11 * 8) ==
+              if (*(IEnumerator__Class **)(*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) ==
                   TypeInfo__System__Collections__IEnumerator) {
-                puVar13 = (undefined4 *)
-                         (*piVar8 +
-                         (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar11 * 8) + 0x19) * 8);
+                puVar12 = (undefined4 *)
+                         (iVar10 + (*(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) + 0x19) *
+                                  8);
                 goto code_?;
               }
               uVar11 = uVar11 + 1;
-            } while (uVar11 < uVar12);
+            } while (uVar11 < *(ushort *)(iVar10 + 0xb6));
           }
-          puVar13 = (undefined4 *)
+          puVar12 = (undefined4 *)
                    func_?(piVar8,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-          piVar14 = (int *)(*(code *)*puVar13)(piVar8,puVar13[1]);
-          uVar15 = CONCAT44(TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-                            ,piVar14);
-          if (piVar14 == (int *)0x0) break;
-          if (*(Il2CppClass **)(*piVar14 + 0x20) !=
+          piVar13 = (int *)(*(code *)*puVar12)(piVar8,puVar12[1]);
+          uVar14 = CONCAT44(TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+                            ,piVar13);
+          if (piVar13 == (int *)0x0) break;
+          if (*(Il2CppClass **)(*piVar13 + 0x20) !=
               (
               TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
               ->_0).element_class) goto code_?;
-          iVar10 = func_?(piVar14);
+          iVar10 = func_?(piVar13);
           if (pMVar6 == (MeshFilter__Array *)0x0) break;
           if (pMVar6->max_length <= uStack_7) {
             func_?();
             break;
           }
-          pMStack_16 = (MeshFilter *)((ulonglong)*(undefined8 *)(iVar10 + 0x20) >> 0x20);
-          pMVar6->vector[uStack_7] = pMStack_16;
-          func_?(pMVar6->vector + uStack_7,pMStack_16);
+          pMStack_15 = (MeshFilter *)((ulonglong)*(undefined8 *)(iVar10 + 0x20) >> 0x20);
+          pMVar6->vector[uStack_7] = pMStack_15;
+          func_?(pMVar6->vector + uStack_7,pMStack_15);
           uStack_7 = uStack_7 + 1;
         }
       }
     }
   }
-  uVar15 = func_?();
+  uVar14 = func_?();
 code_?:
-  func_?(uVar15);
-  pcVar17 = (code *)swi(3);
-  pMVar6 = (MeshFilter__Array *)(*pcVar17)();
+  func_?(uVar14);
+  pcVar16 = (code *)swi(3);
+  pMVar6 = (MeshFilter__Array *)(*pcVar16)();
   return pMVar6;
 }
 

@@ -44,9 +44,10 @@ void Assembly-CSharp.dll::KillLimitWinningCondition::KillLimitWinningCondition_I
       pLVar4 = MVTeamManager::MVTeamManager_GetTeamList(this_01,(MethodInfo *)0x0);
       if (pLVar4 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
         if ((pLVar4->fields)._size < 2) {
+          IStack_5.m_value = (int32_t)&UNK_?;
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-          pGVar5 = (pMVar2->fields).gameStatCounterManager;
+          lobbyState = (RectTransform *)(pMVar2->fields).gameStatCounterManager;
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
           pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
@@ -55,42 +56,44 @@ void Assembly-CSharp.dll::KillLimitWinningCondition::KillLimitWinningCondition_I
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
           pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-          if ((pMVar6 == (MVLocalPlayer *)0x0) || (pGVar5 == (GameStatCounterManager *)0x0))
+          if ((pMVar6 == (MVLocalPlayer *)0x0) ||
+             ((GameStatCounterManager *)lobbyState == (GameStatCounterManager *)0x0))
           goto code_?;
-          iVar7 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
-                            (pGVar5,GameStatCounterType__Enum_Kill,team,
-                             (pMVar6->fields)._._ActorNr_k__BackingField,(MethodInfo *)0x0);
+          IStack_5.m_value =
+               MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
+                         ((GameStatCounterManager *)lobbyState,GameStatCounterType__Enum_Kill,team,
+                          (pMVar6->fields)._._ActorNr_k__BackingField,(MethodInfo *)0x0);
         }
         else {
+          IStack_5.m_value = (int32_t)&UNK_?;
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-          pGVar5 = (pMVar2->fields).gameStatCounterManager;
+          this_02 = (pMVar2->fields).gameStatCounterManager;
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
           pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-          if ((pMVar6 == (MVLocalPlayer *)0x0) || (pGVar5 == (GameStatCounterManager *)0x0))
+          if ((pMVar6 == (MVLocalPlayer *)0x0) || (this_02 == (GameStatCounterManager *)0x0))
           goto code_?;
-          iVar7 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetTeamCount
-                            (pGVar5,GameStatCounterType__Enum_Kill,
-                             (pMVar6->fields)._._Team_k__BackingField,(MethodInfo *)0x0);
+          lobbyState = (RectTransform *)(pMVar6->fields)._._Team_k__BackingField;
+          IStack_5.m_value =
+               MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetTeamCount
+                         (this_02,GameStatCounterType__Enum_Kill,(MVTeam__Enum)lobbyState,
+                          (MethodInfo *)0x0);
         }
-        iVar8 = (this->fields).killLimit;
-        pTVar9 = (this->fields).progress;
-        str0 = mscorlib.dll::System::Int32::Int32_ToString
-                         ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+        pTVar7 = (this->fields).progress;
+        value = (float)IStack_5.m_value / (float)(this->fields).killLimit;
+        str0 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_5,(MethodInfo *)0x0);
         str2 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&(this->fields).killLimit,(MethodInfo *)0x0);
         mscorlib.dll::System::String::String_Concat_4(str0,::StringLiteral__,str2,(MethodInfo *)0x0)
         ;
-        if (pTVar9 != (Text *)0x0) {
-          (*(code *)(pTVar9->klass->vtable).set_text.method)();
-          this_02 = (ProgressBarAndroid *)(this->fields).progressBar;
-          if (this_02 != (ProgressBarAndroid *)0x0) {
-            ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                      (this_02,(float)iVar7 / (float)iVar8,(MethodInfo *)0x0);
+        if (pTVar7 != (Text *)0x0) {
+          (*(code *)(pTVar7->klass->vtable).set_text.method)();
+          this_03 = (ProgressBarAndroid *)(this->fields).progressBar;
+          if (this_03 != (ProgressBarAndroid *)0x0) {
+            ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_03,value,(MethodInfo *)0x0);
             WinningConditionBase::WinningConditionBase_InitializeGameUI
-                      ((WinningConditionBase *)this,(RectTransform *)&UNK_?,(MethodInfo *)0x0
-                      );
+                      ((WinningConditionBase *)this,lobbyState,(MethodInfo *)0x0);
             return;
           }
         }
@@ -99,8 +102,8 @@ void Assembly-CSharp.dll::KillLimitWinningCondition::KillLimitWinningCondition_I
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

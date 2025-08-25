@@ -186,8 +186,8 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
   }
   if (pCVar7 == (CellCursor *)0x0) goto code_?;
   CellCursor::CellCursor_set_Active(pCVar7,1,(MethodInfo *)0x0);
-  in_stack_8 = (selectedCube->fields).iLocalPos.z;
-  uVar9 = (selectedCube->fields).iLocalPos.x;
+  pIStack_8 = *(IntVector__Class **)&(selectedCube->fields).iLocalPos;
+  in_stack_9 = (selectedCube->fields).iLocalPos.z;
   switch((selectedCube->fields).pickedFace) {
   case 0:
     y = 1;
@@ -199,63 +199,59 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     x = 0;
     y = 0;
     z = -1;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
     goto code_?;
   case 3:
     x = 0;
     y = 0;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
     z = 1;
     goto code_?;
   case 4:
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
     x = -1;
     y = 0;
     goto code_?;
   case 5:
-    y = 0;
-    uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
     x = 1;
+    y = 0;
     goto code_?;
   default:
     y = 0;
   }
   x = 0;
-  uStack_10._4_4_ = (undefined *)((uint)uStack_10._6_2_ << 0x10);
 code_?:
   z = 0;
 code_?:
   uStack_10._0_2_ = 0;
   uStack_10._2_2_ = 0;
+  uStack_10._4_4_ = (undefined *)((uint)uStack_10._4_4_ & 0xffff0000);
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
             ((IntVector *)&uStack_10,x,y,z,(MethodInfo *)0x0);
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    pIStack_11 = TypeInfo__MV__WorldObject__IntVector;
+    pIStack_8 = TypeInfo__MV__WorldObject__IntVector;
     uStack_10._4_4_ = &UNK_?;
     func_?();
   }
-  IVar12.z = uVar9;
-  IVar12._0_4_ = auStack_13;
-  i2.y = in_stack_14;
-  i2.x = in_stack_8;
+  IVar11.z = (int16_t)pIStack_8;
+  IVar11._0_4_ = auStack_12;
+  i2.y = in_stack_13;
+  i2.x = in_stack_9;
   i2.z = (int16_t)(undefined4)uStack_10;
-  IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                    (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
-  pIVar15 = IVar12._0_4_;
-  uStack_10._0_2_ = pIVar15->x;
-  uStack_10._2_2_ = pIVar15->y;
-  in_stack_8 = pIVar15->z;
+  IVar11 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+                    (IVar11,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
+  pIVar14 = IVar11._0_4_;
+  uStack_10._0_2_ = pIVar14->x;
+  uStack_10._2_2_ = pIVar14->y;
+  in_stack_9 = pIVar14->z;
   if (targetCubeModel != (MVCubeModelBase *)0x0) {
     pCVar7 = (this->fields).sprayCursor;
-    pIStack_11 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
+    pIStack_8 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
     if ((pCVar7 != (CellCursor *)0x0) &&
-       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*pIVar15,(MethodInfo *)0x0),
+       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*pIVar14,(MethodInfo *)0x0),
        this_00 != (CellCursorCubeLineMesh *)0x0)) {
-      position.z = in_stack_8;
+      position.z = in_stack_9;
       position.x = (int16_t)uStack_10;
       position.y = uStack_10._2_2_;
       CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-                (this_00,position,(GameObject *)pIStack_11,(MethodInfo *)0x0);
+                (this_00,position,(GameObject *)pIStack_8,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
       if ((pGVar3 != (GameEventManager *)0x0) &&
@@ -273,8 +269,7 @@ code_?:
   }
 code_?:
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  return;
 }
 
 

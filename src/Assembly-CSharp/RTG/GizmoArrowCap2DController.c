@@ -52,20 +52,19 @@ void Assembly-CSharp.dll::RTG::GizmoArrowCap2DController::
         pGVar2 = (pGVar1->fields).Cap;
         uVar4 = func_?(&sliderDirection);
         pGVar1 = (this->fields)._._data;
-        if ((pGVar1 != (GizmoCap2DControllerData *)0x0) &&
-           (pGVar5 = (pGVar1->fields).Cap, pGVar5 != (GizmoCap2D *)0x0)) {
-          if ((pGVar5->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
-            pGVar6 = (pGVar5->fields)._lookAndFeel;
-            if (pGVar6 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-          }
-          else {
-            pGVar6 = (pGVar5->fields)._sharedLookAndFeel;
-          }
-          fVar7 = (pGVar6->fields)._arrowHeight * (pGVar6->fields)._scale;
+        if (((pGVar1 != (GizmoCap2DControllerData *)0x0) &&
+            (pGVar5 = (pGVar1->fields).Cap, pGVar5 != (GizmoCap2D *)0x0)) &&
+           (pGVar6 = (&(pGVar5->fields)._lookAndFeel)
+                     [(pGVar5->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0],
+           pGVar6 != (GizmoCap2DLookAndFeel *)0x0)) {
+          fVar7 = (pGVar6->fields)._arrowHeight *
+                  ((&(pGVar5->fields)._lookAndFeel)
+                   [(pGVar5->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0]->fields).
+                  _scale;
           if ((pGVar2 != (GizmoCap2D *)0x0) &&
              (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
-            value.y = sliderEndPt.y + (float)((ulonglong)uVar4 >> 0x20) * fVar7;
-            value.x = sliderEndPt.x + (float)uVar4 * fVar7;
+            value.y = (float)((ulonglong)uVar4 >> 0x20) * fVar7 + sliderEndPt.y;
+            value.x = (float)uVar4 * fVar7 + sliderEndPt.x;
             GizmoTransform::GizmoTransform_set_Position2D(pGVar3,value,(MethodInfo *)0x0);
             return;
           }
@@ -73,7 +72,6 @@ void Assembly-CSharp.dll::RTG::GizmoArrowCap2DController::
       }
     }
   }
-code_?:
   func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
@@ -90,16 +88,14 @@ float Assembly-CSharp.dll::RTG::GizmoArrowCap2DController::
 {
   puStack_1 = &stack0xfffffffc;
   pGVar2 = (this->fields)._._data;
-  if ((pGVar2 != (GizmoCap2DControllerData *)0x0) &&
-     (pGVar3 = (pGVar2->fields).Cap, pGVar3 != (GizmoCap2D *)0x0)) {
-    if ((pGVar3->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
-      pGVar4 = (pGVar3->fields)._sharedLookAndFeel;
-      return (pGVar4->fields)._scale * (pGVar4->fields)._arrowHeight;
-    }
-    pGVar4 = (pGVar3->fields)._lookAndFeel;
-    if (pGVar4 != (GizmoCap2DLookAndFeel *)0x0) {
-      return (pGVar4->fields)._scale * (pGVar4->fields)._arrowHeight;
-    }
+  if (((pGVar2 != (GizmoCap2DControllerData *)0x0) &&
+      (pGVar3 = (pGVar2->fields).Cap, pGVar3 != (GizmoCap2D *)0x0)) &&
+     (pGVar4 = (&(pGVar3->fields)._lookAndFeel)
+               [(pGVar3->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0],
+     pGVar4 != (GizmoCap2DLookAndFeel *)0x0)) {
+    return ((&(pGVar3->fields)._lookAndFeel)
+            [(pGVar3->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0]->fields)._scale *
+           (pGVar4->fields)._arrowHeight;
   }
   uVar5 = func_?(auStack_6);
   func_?(uVar5);
@@ -151,49 +147,53 @@ void Assembly-CSharp.dll::RTG::GizmoArrowCap2DController::GizmoArrowCap2DControl
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCap2DControllerData *)0x0) {
-    pTVar2 = (TriangPrismShape3D *)(pGVar1->fields).Arrow;
-    pGVar3 = (pGVar1->fields).Cap;
-    if (pGVar3 != (GizmoCap2D *)0x0) {
-      if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
-        pGVar4 = (pGVar3->fields)._lookAndFeel;
-        if (pGVar4 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-      }
-      else {
-        pGVar4 = (pGVar3->fields)._sharedLookAndFeel;
-      }
-      if (pTVar2 != (TriangPrismShape3D *)0x0) {
+    pGVar2 = (pGVar1->fields).Cap;
+    pTVar3 = (TriangPrismShape3D *)(((this->fields)._._data)->fields).Arrow;
+    if ((pGVar2 != (GizmoCap2D *)0x0) &&
+       (pGVar4 = (&(pGVar2->fields)._lookAndFeel)
+                 [(pGVar2->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0],
+       pGVar4 != (GizmoCap2DLookAndFeel *)0x0)) {
+      if (pTVar3 != (TriangPrismShape3D *)0x0) {
         TriangPrismShape3D::TriangPrismShape3D_set_Height
-                  (pTVar2,(pGVar4->fields)._arrowHeight * (pGVar4->fields)._scale,(MethodInfo *)0x0)
-        ;
+                  (pTVar3,(pGVar4->fields)._arrowHeight *
+                          ((&(pGVar2->fields)._lookAndFeel)
+                           [(pGVar2->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0]->
+                          fields)._scale,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._._data;
         if (pGVar1 != (GizmoCap2DControllerData *)0x0) {
-          pTVar2 = (TriangPrismShape3D *)(pGVar1->fields).Arrow;
-          if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
-            pGVar4 = (pGVar3->fields)._lookAndFeel;
-            if (pGVar4 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-          }
-          else {
-            pGVar4 = (pGVar3->fields)._sharedLookAndFeel;
-          }
-          if (pTVar2 != (TriangPrismShape3D *)0x0) {
-            TriangPrismShape3D::TriangPrismShape3D_set_Width
-                      (pTVar2,(pGVar4->fields)._arrowBaseRadius * (pGVar4->fields)._scale,
-                       (MethodInfo *)0x0);
-            pGVar1 = (this->fields)._._data;
-            if (((pGVar1 != (GizmoCap2DControllerData *)0x0) &&
-                (pGVar5 = (pGVar3->fields)._transform, pGVar5 != (GizmoTransform *)0x0)) &&
-               (pCVar6 = (pGVar1->fields).Arrow, pCVar6 != (ConeShape2D *)0x0)) {
-              ConeShape2D::ConeShape2D_set_RotationDegrees
-                        (pCVar6,(pGVar5->fields)._rotation2DDegrees,(MethodInfo *)0x0);
+          pTVar3 = (TriangPrismShape3D *)(pGVar1->fields).Arrow;
+          pGVar4 = (&(pGVar2->fields)._lookAndFeel)
+                   [(pGVar2->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0];
+          if (pGVar4 != (GizmoCap2DLookAndFeel *)0x0) {
+            ppGVar5 = &(pGVar2->fields)._sharedLookAndFeel;
+            if ((pGVar2->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+              ppGVar5 = &(pGVar2->fields)._lookAndFeel;
+            }
+            if ((*ppGVar5 != (GizmoCap2DLookAndFeel *)0x0) && (pTVar3 != (TriangPrismShape3D *)0x0))
+            {
+              TriangPrismShape3D::TriangPrismShape3D_set_Width
+                        (pTVar3,(pGVar4->fields)._arrowBaseRadius * ((*ppGVar5)->fields)._scale,
+                         (MethodInfo *)0x0);
               pGVar1 = (this->fields)._._data;
-              if ((pGVar1 != (GizmoCap2DControllerData *)0x0) &&
-                 (pGVar5 = (pGVar3->fields)._transform, pGVar5 != (GizmoTransform *)0x0)) {
-                fVar7 = (pGVar5->fields)._position2D.y;
-                pCVar6 = (pGVar1->fields).Arrow;
-                if (pCVar6 != (ConeShape2D *)0x0) {
-                  (pCVar6->fields)._baseCenter.x = (pGVar5->fields)._position2D.x;
-                  (pCVar6->fields)._baseCenter.y = fVar7;
-                  return;
+              if (pGVar1 != (GizmoCap2DControllerData *)0x0) {
+                pGVar6 = (pGVar2->fields)._transform;
+                pCVar7 = (pGVar1->fields).Arrow;
+                if ((pGVar6 != (GizmoTransform *)0x0) && (pCVar7 != (ConeShape2D *)0x0)) {
+                  ConeShape2D::ConeShape2D_set_RotationDegrees
+                            (pCVar7,(pGVar6->fields)._rotation2DDegrees,(MethodInfo *)0x0);
+                  pGVar1 = (this->fields)._._data;
+                  if (pGVar1 != (GizmoCap2DControllerData *)0x0) {
+                    pGVar6 = (pGVar2->fields)._transform;
+                    pCVar7 = (pGVar1->fields).Arrow;
+                    if (pGVar6 != (GizmoTransform *)0x0) {
+                      fVar8 = (pGVar6->fields)._position2D.y;
+                      if (pCVar7 != (ConeShape2D *)0x0) {
+                        (pCVar7->fields)._baseCenter.x = (pGVar6->fields)._position2D.x;
+                        (pCVar7->fields)._baseCenter.y = fVar8;
+                        return;
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -202,10 +202,9 @@ void Assembly-CSharp.dll::RTG::GizmoArrowCap2DController::GizmoArrowCap2DControl
       }
     }
   }
-code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

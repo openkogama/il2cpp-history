@@ -84,12 +84,8 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_OnGizmoPreUp
   this_00 = this;
   pSVar1 = (this->fields)._._sceneGizmo;
   if (pSVar1 != (SceneGizmo *)0x0) {
-    if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-      pSVar2 = (pSVar1->fields)._lookAndFeel;
-    }
-    else {
-      pSVar2 = (pSVar1->fields)._sharedLookAndFeel;
-    }
+    pSVar2 = (&(pSVar1->fields)._lookAndFeel)
+             [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0];
     pAVar3 = (this->fields)._axisDesc;
     if ((pAVar3 != (AxisDescriptor *)0x0) && (pSVar2 != (SceneGizmoLookAndFeel *)0x0)) {
       pGVar4 = (this->fields)._._cap;
@@ -162,18 +158,13 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_Render
   }
   pSVar1 = (this->fields)._._sceneGizmo;
   if (pSVar1 != (SceneGizmo *)0x0) {
-    if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-      pSStack_2 = (pSVar1->fields)._lookAndFeel;
-      pSVar1 = (this->fields)._._sceneGizmo;
-    }
-    else {
-      pSStack_2 = (pSVar1->fields)._sharedLookAndFeel;
-    }
-    pGVar3 = (this->fields)._._cap;
-    pRStack_4 = (pSVar1->fields)._sceneGizmoCamera;
-    if (pGVar3 != (GizmoCap3D *)0x0) {
-      (*(code *)(pGVar3->klass->vtable).Render_1.method)
-                (pGVar3,camera,(pGVar3->klass->vtable).OnVisibilityStateChanged.methodPtr);
+    pSStack_2 = (&(pSVar1->fields)._lookAndFeel)
+                 [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0];
+    pRStack_3 = (pSVar1->fields)._sceneGizmoCamera;
+    pGVar4 = (this->fields)._._cap;
+    if (pGVar4 != (GizmoCap3D *)0x0) {
+      (*(code *)(pGVar4->klass->vtable).Render_1.method)
+                (pGVar4,camera,(pGVar4->klass->vtable).OnVisibilityStateChanged.methodPtr);
       this_00 = (RegexParser *)(this->fields)._axisDesc;
       if (this_00 != (RegexParser *)0x0) {
         bVar5 = System.dll::System::Text::RegularExpressions::RegexParser::RegexParser_EmptyStack
@@ -251,21 +242,21 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_Render
                       pVVar14 = GizmoTransform::GizmoTransform_GetAxis3D
                                           (&VStack_15,this_01,(this->fields)._axisDesc,
                                            (MethodInfo *)0x0);
-                      pRVar16 = pRStack_4;
+                      pRVar16 = pRStack_3;
                       uStack_17._0_4_ = pVVar14->x;
                       uStack_17._4_4_ = pVVar14->y;
                       fStack_18 = pVVar14->z;
                       uStack_19 = CONCAT44(fStack_18,(float)uStack_19);
                       uStack_20 = uStack_17;
-                      if (pRStack_4 != (RTSceneGizmoCamera *)0x0) {
-                        pCStack_21 = (pRStack_4->fields)._camera;
-                        pGVar3 = (this->fields)._._cap;
-                        if (pGVar3 != (GizmoCap3D *)0x0) {
+                      if (pRStack_3 != (RTSceneGizmoCamera *)0x0) {
+                        pCStack_21 = (pRStack_3->fields)._camera;
+                        pGVar4 = (this->fields)._._cap;
+                        if (pGVar4 != (GizmoCap3D *)0x0) {
                           pVVar14 = GizmoCap3D::GizmoCap3D_get_Position
-                                              (&VStack_15,pGVar3,(MethodInfo *)0x0);
+                                              (&VStack_15,pGVar4,(MethodInfo *)0x0);
                           VStack_22.x = pVVar14->x;
                           VStack_22.y = pVVar14->y;
-                          pRStack_4 = (RTSceneGizmoCamera *)pVVar14->z;
+                          pRStack_3 = (RTSceneGizmoCamera *)pVVar14->z;
                           if (cRam_? == '\0') {
                             func_?(&TypeInfo__RTG__CameraEx);
                             cRam_? = '\x01';
@@ -286,7 +277,7 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_Render
                           if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
                             func_?(TypeInfo__RTG__CameraEx);
                           }
-                          worldPos.z = (float)pRStack_4;
+                          worldPos.z = (float)pRStack_3;
                           worldPos.x = VStack_22.x;
                           worldPos.y = VStack_22.y;
                           pCStack_21 = (Camera *)
@@ -298,11 +289,11 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_Render
                           uVar23._0_4_ = pVVar14->x;
                           uVar23._4_4_ = pVVar14->y;
                           VStack_22.z = pVVar14->z;
-                          pGVar3 = (this->fields)._._cap;
+                          pGVar4 = (this->fields)._._cap;
                           VStack_15._4_8_ = uVar23;
-                          if (pGVar3 != (GizmoCap3D *)0x0) {
+                          if (pGVar4 != (GizmoCap3D *)0x0) {
                             pVVar14 = GizmoCap3D::GizmoCap3D_get_Position
-                                                (&VStack_10,pGVar3,(MethodInfo *)0x0);
+                                                (&VStack_10,pGVar4,(MethodInfo *)0x0);
                             uVar24 = pVVar14->x;
                             uVar25 = pVVar14->y;
                             pCStack_21 = (Camera *)pVVar14->z;
@@ -343,13 +334,13 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_Render
                                 fStack_30 = (float)uStack_20 - (float)uVar32;
                                 pCStack_21 = (Camera *)(uStack_20._4_4_ - (float)uVar33);
                                 fStack_29 = (float)uVar32;
-                                pRStack_4 = (RTSceneGizmoCamera *)fStack_30;
+                                pRStack_3 = (RTSceneGizmoCamera *)fStack_30;
                                 pTStack_12 = (Texture2D *)pCStack_21;
                                 fVar34 = (float10)func_?(&fStack_30,0);
                                 pCStack_21 = (Camera *)(float)fVar34;
                                 if (_UNK_? < (float)pCStack_21) {
-                                  pRStack_4 = (RTSceneGizmoCamera *)
-                                               ((float)pRStack_4 / (float)pCStack_21);
+                                  pRStack_3 = (RTSceneGizmoCamera *)
+                                               ((float)pRStack_3 / (float)pCStack_21);
                                   pTStack_12 = (Texture2D *)((float)pTStack_12 / (float)pCStack_21);
                                 }
                                 else {
@@ -357,7 +348,7 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_Render
                                     func_?(&TypeInfo__UnityEngine__Vector2);
                                     cRam_? = '\x01';
                                   }
-                                  pRStack_4 = (RTSceneGizmoCamera *)
+                                  pRStack_3 = (RTSceneGizmoCamera *)
                                                (TypeInfo__UnityEngine__Vector2->static_fields->
                                                zeroVector).x;
                                   pTStack_12 = (Texture2D *)
@@ -392,7 +383,7 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_Render
                                                       static_fields->_invBaseScreenSize,
                                                       (MethodInfo *)0x0);
                                   uStack_19._4_4_ = VVar36.y;
-                                  fVar26 = (float)uStack_19 * (float)pRStack_4 * (float)pCStack_21;
+                                  fVar26 = (float)uStack_19 * (float)pRStack_3 * (float)pCStack_21;
                                   pCStack_21 = (Camera *)
                                                (uStack_20._4_4_ +
                                                uStack_19._4_4_ * (float)pTStack_12 *
@@ -545,12 +536,8 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_UpdateColor
 {
   pSVar1 = (this->fields)._._sceneGizmo;
   if (pSVar1 != (SceneGizmo *)0x0) {
-    if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-      pSVar2 = (pSVar1->fields)._lookAndFeel;
-    }
-    else {
-      pSVar2 = (pSVar1->fields)._sharedLookAndFeel;
-    }
+    pSVar2 = (&(pSVar1->fields)._lookAndFeel)
+             [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0];
     pAVar3 = (this->fields)._axisDesc;
     if ((pAVar3 != (AxisDescriptor *)0x0) && (pSVar2 != (SceneGizmoLookAndFeel *)0x0)) {
       uVar4 = (pAVar3->fields)._index;
@@ -768,102 +755,87 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_UpdateTransf
           uVar12 = ZEXT48(camera);
           fVar13 = GizmoCap3D::GizmoCap3D_GetZoomFactor(pGVar11,camera,(MethodInfo *)0x0);
           pSVar1 = (this->fields)._._sceneGizmo;
-          if (pSVar1 != (SceneGizmo *)0x0) {
-            if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-              pSVar14 = (pSVar1->fields)._lookAndFeel;
-              if (pSVar14 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
-            }
-            else {
-              pSVar14 = (pSVar1->fields)._sharedLookAndFeel;
-            }
-            pGVar15 = (pSVar14->fields)._midCapLookAndFeel;
-            if (pGVar15 != (GizmoCap3DLookAndFeel *)0x0) {
-              pSVar1 = (this->fields)._._sceneGizmo;
-              if ((pGVar15->fields)._capType == 2) {
-                if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-                  pSVar14 = (pSVar1->fields)._lookAndFeel;
-                  if (pSVar14 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
-                }
-                else {
-                  pSVar14 = (pSVar1->fields)._sharedLookAndFeel;
-                }
-                if (cRam_? == '\0') {
-                  ppSStack_10 = &TypeInfo__RTG__SceneGizmoLookAndFeel;
-                  uStack_4 = CONCAT44(&UNK_?,(undefined4)uStack_4);
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                fVar16 = (pSVar14->fields)._screenSize;
-                VStack_9.z = fVar16;
-                if ((TypeInfo__RTG__SceneGizmoLookAndFeel->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__RTG__SceneGizmoLookAndFeel);
-                }
-                fVar16 = VStack_9.z * _UNK_? *
-                         TypeInfo__RTG__SceneGizmoLookAndFeel->static_fields->_invBaseScreenSize;
-              }
-              else {
-                if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-                  pSVar14 = (pSVar1->fields)._lookAndFeel;
-                  if (pSVar14 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
-                }
-                else {
-                  pSVar14 = (pSVar1->fields)._sharedLookAndFeel;
-                }
-                if (cRam_? == '\0') {
-                  ppSStack_10 = &TypeInfo__RTG__SceneGizmoLookAndFeel;
-                  uStack_4 = CONCAT44(&UNK_?,(undefined4)uStack_4);
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                fVar16 = (pSVar14->fields)._screenSize;
-                VStack_9.z = fVar16;
-                if ((TypeInfo__RTG__SceneGizmoLookAndFeel->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__RTG__SceneGizmoLookAndFeel);
-                }
-                fVar16 = VStack_9.z * _UNK_? *
-                         TypeInfo__RTG__SceneGizmoLookAndFeel->static_fields->_invBaseScreenSize;
-                fVar16 = fVar16 + fVar16;
-              }
-              pVVar3 = Vector3Ex::Vector3Ex_FromValue
-                                  ((Vector3 *)&fStack_17,fVar16 * fVar13,(MethodInfo *)0x0);
-              VStack_9.y = pVVar3->x;
-              VStack_9.z = pVVar3->y;
-              fVar13 = pVVar3->z;
+          if (((pSVar1 != (SceneGizmo *)0x0) &&
+              (pSVar14 = (&(pSVar1->fields)._lookAndFeel)
+                        [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0],
+              pSVar14 != (SceneGizmoLookAndFeel *)0x0)) &&
+             (pGVar15 = (pSVar14->fields)._midCapLookAndFeel, pGVar15 != (GizmoCap3DLookAndFeel *)0x0))
+          {
+            if ((pGVar15->fields)._capType == 2) {
+              pSVar14 = (&(pSVar1->fields)._lookAndFeel)
+                       [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0];
               if (cRam_? == '\0') {
-                func_?(&TypeInfo__UnityEngine__Quaternion);
+                ppSStack_10 = &TypeInfo__RTG__SceneGizmoLookAndFeel;
+                uStack_4 = CONCAT44(&UNK_?,(undefined4)uStack_4);
+                func_?();
                 cRam_? = '\x01';
               }
-              boxFace = (this->fields)._midAxisBoxFace;
-              pQVar18 = TypeInfo__UnityEngine__Quaternion->static_fields;
-              fVar16 = (pQVar18->identityQuaternion).x;
-              fStack_17 = (pQVar18->identityQuaternion).y;
-              puStack_19 = (undefined *)(pQVar18->identityQuaternion).z;
-              fVar20 = (pQVar18->identityQuaternion).w;
-              if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__RTG__BoxMath);
+              fVar16 = (pSVar14->fields)._screenSize;
+              VStack_9.z = fVar16;
+              if ((TypeInfo__RTG__SceneGizmoLookAndFeel->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__RTG__SceneGizmoLookAndFeel);
               }
-              VVar6.z = fVar5;
-              VVar6.x = (float)(undefined4)uStack_4;
-              VVar6.y = (float)uStack_4._4_4_;
-              boxSize.z = fVar13;
-              boxSize.x = VStack_9.y;
-              boxSize.y = VStack_9.z;
-              boxRotation.y = fStack_17;
-              boxRotation.x = fVar16;
-              boxRotation.z = (float)puStack_19;
-              boxRotation.w = fVar20;
-              pVVar3 = BoxMath::BoxMath_CalcBoxFaceCenter
-                                  ((Vector3 *)&fStack_17,VVar6,boxSize,boxRotation,boxFace,
-                                   (MethodInfo *)0x0);
-              pGVar11 = (this->fields)._._cap;
-              if (pGVar11 != (GizmoCap3D *)0x0) {
-                sliderDirection.z = (float)ppSStack_10;
-                sliderDirection.x = (float)(int)uVar12;
-                sliderDirection.y = (float)(int)(uVar12 >> 0x20);
-                GizmoCap3D::GizmoCap3D_CapSlider3DInvert
-                          (pGVar11,sliderDirection,*pVVar3,(MethodInfo *)0x0);
-                return;
+              fVar16 = VStack_9.z * _UNK_? *
+                       TypeInfo__RTG__SceneGizmoLookAndFeel->static_fields->_invBaseScreenSize;
+            }
+            else {
+              pSVar14 = (&(pSVar1->fields)._lookAndFeel)
+                       [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0];
+              if (pSVar14 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
+              if (cRam_? == '\0') {
+                ppSStack_10 = &TypeInfo__RTG__SceneGizmoLookAndFeel;
+                uStack_4 = CONCAT44(&UNK_?,(undefined4)uStack_4);
+                func_?();
+                cRam_? = '\x01';
               }
+              fVar16 = (pSVar14->fields)._screenSize;
+              VStack_9.z = fVar16;
+              if ((TypeInfo__RTG__SceneGizmoLookAndFeel->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__RTG__SceneGizmoLookAndFeel);
+              }
+              fVar16 = VStack_9.z * _UNK_? *
+                       TypeInfo__RTG__SceneGizmoLookAndFeel->static_fields->_invBaseScreenSize;
+              fVar16 = fVar16 + fVar16;
+            }
+            pVVar3 = Vector3Ex::Vector3Ex_FromValue
+                                ((Vector3 *)&fStack_17,fVar16 * fVar13,(MethodInfo *)0x0);
+            VStack_9.y = pVVar3->x;
+            VStack_9.z = pVVar3->y;
+            fVar13 = pVVar3->z;
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__UnityEngine__Quaternion);
+              cRam_? = '\x01';
+            }
+            boxFace = (this->fields)._midAxisBoxFace;
+            pQVar18 = TypeInfo__UnityEngine__Quaternion->static_fields;
+            fVar16 = (pQVar18->identityQuaternion).x;
+            fStack_17 = (pQVar18->identityQuaternion).y;
+            puStack_19 = (undefined *)(pQVar18->identityQuaternion).z;
+            fVar20 = (pQVar18->identityQuaternion).w;
+            if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__RTG__BoxMath);
+            }
+            VVar6.z = fVar5;
+            VVar6.x = (float)(undefined4)uStack_4;
+            VVar6.y = (float)uStack_4._4_4_;
+            boxSize.z = fVar13;
+            boxSize.x = VStack_9.y;
+            boxSize.y = VStack_9.z;
+            boxRotation.y = fStack_17;
+            boxRotation.x = fVar16;
+            boxRotation.z = (float)puStack_19;
+            boxRotation.w = fVar20;
+            pVVar3 = BoxMath::BoxMath_CalcBoxFaceCenter
+                                ((Vector3 *)&fStack_17,VVar6,boxSize,boxRotation,boxFace,
+                                 (MethodInfo *)0x0);
+            pGVar11 = (this->fields)._._cap;
+            if (pGVar11 != (GizmoCap3D *)0x0) {
+              sliderDirection.z = (float)ppSStack_10;
+              sliderDirection.x = (float)(int)uVar12;
+              sliderDirection.y = (float)(int)(uVar12 >> 0x20);
+              GizmoCap3D::GizmoCap3D_CapSlider3DInvert
+                        (pGVar11,sliderDirection,*pVVar3,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -964,13 +936,10 @@ code_?:
                     Gizmo::Gizmo_add_PreHandlePicked(pGVar2,value_00,(MethodInfo *)0x0);
                     pSVar7 = (this->fields)._._sceneGizmo;
                     if (pSVar7 != (SceneGizmo *)0x0) {
-                      if ((pSVar7->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-                        pSVar8 = (pSVar7->fields)._lookAndFeel;
-                      }
-                      else {
-                        pSVar8 = (pSVar7->fields)._sharedLookAndFeel;
-                      }
                       pAVar4 = (this->fields)._axisDesc;
+                      pSVar8 = (&(pSVar7->fields)._lookAndFeel)
+                               [(pSVar7->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0]
+                      ;
                       if ((pAVar4 != (AxisDescriptor *)0x0) &&
                          (pSVar8 != (SceneGizmoLookAndFeel *)0x0)) {
                         pGVar3 = (this->fields)._._cap;

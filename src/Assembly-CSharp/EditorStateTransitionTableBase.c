@@ -51,14 +51,14 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::
                        (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__GetEnumerator__
                        );
-    uStack_9 = 0;
+    pDStack_9 = &DStack_6;
+    uStack_10 = 0;
     DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
     DStack_6._version = pDVar7->_version;
     DStack_6._index = pDVar7->_index;
     DStack_6._current.key = (Object *)(pDVar7->_current).key;
     DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
@@ -78,7 +78,6 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::
       }
       unaff_EDI = (MethodInfo *)DStack_6._current.value;
       if ((MethodInfo *)DStack_6._current.value == (MethodInfo *)0x0) break;
-      pEVar12 = TypeInfo__ESStateBase;
       if ((((byte)*(code *)((int)(DStack_6._current.value)->klass + 0xb8) <
             (TypeInfo__ESStateBase->_1).naturalAligment) ||
           (*(ESStateBase__Class **)
@@ -86,29 +85,31 @@ void Assembly-CSharp.dll::EditorStateTransitionTableBase::
             (uint)(TypeInfo__ESStateBase->_1).naturalAligment * 4) != TypeInfo__ESStateBase)) ||
          ((MethodInfo *)DStack_6._current.value == (MethodInfo *)0x0)) goto code_?;
       if (DStack_6._current.key == (Object *)0x0) break;
+      pEVar12 = TypeInfo__EditorEvent;
       pOVar13 = DStack_6._current.key;
-      pEVar14 = TypeInfo__EditorEvent;
       if (((DStack_6._current.key)->klass->_0).element_class !=
           (TypeInfo__EditorEvent->_0).element_class) goto code_?;
-      puVar15 = (undefined4 *)func_?(DStack_6._current.key);
-      pEVar12 = TypeInfo__ESStateBase;
-      if (((byte)*(code *)((int)((Object *)unaff_EDI)->klass + 0xb8) <
-           (TypeInfo__ESStateBase->_1).naturalAligment) ||
-         (*(ESStateBase__Class **)
-           (*(int *)((int)((Object *)unaff_EDI)->klass + 100) + -4 +
-           (uint)(TypeInfo__ESStateBase->_1).naturalAligment * 4) != TypeInfo__ESStateBase))
-      goto code_?;
-      *(InvokerMethod *)((int)unaff_EDI + 8) = (InvokerMethod)*puVar15;
+      puVar14 = (undefined4 *)func_?(DStack_6._current.key);
+      pEVar15 = TypeInfo__ESStateBase;
+      if ((((byte)*(code *)((int)((Object *)unaff_EDI)->klass + 0xb8) <
+            (TypeInfo__ESStateBase->_1).naturalAligment) ||
+          (*(ESStateBase__Class **)
+            (*(int *)((int)((Object *)unaff_EDI)->klass + 100) + -4 +
+            (uint)(TypeInfo__ESStateBase->_1).naturalAligment * 4) != TypeInfo__ESStateBase)) ||
+         (unaff_EDI == (MethodInfo *)0x0)) goto code_?;
+      *(InvokerMethod *)((int)unaff_EDI + 8) = (InvokerMethod)*puVar14;
     }
   }
   func_?();
-  pEVar12 = extraout_EDX;
+  pEVar15 = extraout_EDX;
 code_?:
-  func_?(unaff_EDI,pEVar12);
-  pOVar13 = extraout_ECX;
-  pEVar14 = extraout_EDX_00;
+  func_?(unaff_EDI,pEVar15);
+  pEVar12 = extraout_ECX;
+  pOVar13 = extraout_EDX_00;
 code_?:
-  func_?(pOVar13,pEVar14);
+  func_?(pOVar13,pEVar12);
+code_?:
+  func_?(unaff_EDI,TypeInfo__ESStateBase);
   pcVar16 = (code *)swi(3);
   (*pcVar16)();
   return;

@@ -508,7 +508,7 @@ void Assembly-CSharp.dll::AdvancedGhostMotor::AdvancedGhostMotor_Move
                        ((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
     uVar3 = pVVar2->x;
     uVar4 = pVVar2->y;
-    value.y = (float)uVar4 + velocity.y * fVar1;
+    value.y = velocity.y * fVar1 + (float)uVar4;
     value.x = (float)uVar3 + velocity.x * fVar1;
     value.z = pVVar2->z + velocity.z * fVar1;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position

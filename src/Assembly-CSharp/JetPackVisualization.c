@@ -507,9 +507,9 @@ void Assembly-CSharp.dll::JetPackVisualization::JetPackVisualization_JetPackRoll
       VStack_7.z = pQVar2->z;
       fStack_9 = pQVar2->w;
       fStack_11 = (fStack_9 * fVar4 + VStack_7.x * fVar17 + fVar18 * fVar5) - fVar3 * fVar6;
-      value.y = (fVar3 * fVar17 + fVar5 * fStack_9 + fVar6 * pQVar2->x) - fVar18 * fVar4;
+      value.y = (fVar5 * fStack_9 + fVar3 * fVar17 + fVar6 * pQVar2->x) - fVar18 * fVar4;
       value.x = fStack_11;
-      value.z = (fVar18 * fVar17 + fVar6 * fStack_9 + fVar3 * fVar4) - fVar5 * pQVar2->x;
+      value.z = (fVar6 * fStack_9 + fVar18 * fVar17 + fVar3 * fVar4) - fVar5 * pQVar2->x;
       value.w = ((fStack_9 * fVar17 - fVar4 * VStack_7.x) - fVar3 * fVar5) - fVar6 * fVar18;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
                 (pTVar1,value,(MethodInfo *)0x0);

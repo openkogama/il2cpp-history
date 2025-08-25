@@ -24,8 +24,8 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_Dupli
     bStack_8 = 0;
     mscorlib.dll::System::Runtime::InteropServices::SafeHandle::SafeHandle_DangerousAddRef
               ((SafeHandle *)ExistingTokenHandle,&bStack_8,(MethodInfo *)0x0);
-    pvStack_9 = (void *)0x0;
     ppvStack_7 = &pvStack_9;
+    pvStack_9 = (void *)0x0;
     iVar10 = (*pcRam_?)((ExistingTokenHandle->fields)._._.handle,ImpersonationLevel);
     func_?();
     if (bStack_8 != 0) {

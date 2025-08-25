@@ -62,51 +62,63 @@ Assembly-CSharp.dll::FlagWinningCondition::FlagWinningCondition_GetClosestFlags
     while( true ) {
       do {
         do {
-          index = index + -1;
-          if (index < 0) {
-            return (List_1_MVWorldObjectClient_ *)this_03;
+          do {
+            index = index + -1;
+            if (index < 0) {
+              return (List_1_MVWorldObjectClient_ *)this_03;
+            }
+            RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                    RegularExpressions::RegexCharClass+SingleRange]::
+                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                              (this_03,index,
+                               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                              );
+          } while (RVar1 == (RegexCharClass_SingleRange)0x0);
+          if ((*(byte *)(*(int *)RVar1 + 0xb8) < (TypeInfo__MVFlag->_1).naturalAligment) ||
+             (*(MVFlag__Class **)
+               (*(int *)(*(int *)RVar1 + 100) + -4 +
+               (uint)(TypeInfo__MVFlag->_1).naturalAligment * 4) != TypeInfo__MVFlag)) {
+            bVar2 = false;
           }
-          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_03,index,
-                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                            );
-        } while (((RVar1 == (RegexCharClass_SingleRange)0x0) ||
-                 (*(byte *)(*(int *)RVar1 + 0xb8) < (TypeInfo__MVFlag->_1).naturalAligment)) ||
-                (*(MVFlag__Class **)
-                  (*(int *)(*(int *)RVar1 + 100) + -4 +
-                  (uint)(TypeInfo__MVFlag->_1).naturalAligment * 4) != TypeInfo__MVFlag));
-        if (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)((int)RVar1 + 0x58) ==
-            (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+          else {
+            bVar2 = true;
+          }
+          RVar3.First = 0;
+          RVar3.Last = 0;
+          if (bVar2) {
+            RVar3 = RVar1;
+          }
+        } while (RVar3 == (RegexCharClass_SingleRange)0x0);
+        if (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)((int)RVar3 + 0x58)
+            == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
         goto code_?;
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
-                            ((int)RVar1 + 0x58),(Object *)StringLiteral_team,
+                            ((int)RVar3 + 0x58),(Object *)StringLiteral_team,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
-      } while (bVar2 == 0);
+      } while (bVar4 == 0);
       this_00 = *(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
-                 ((int)RVar1 + 0x58);
+                 ((int)RVar3 + 0x58);
       if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) break;
-      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         (this_00,(Object *)StringLiteral_team,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (((pMVar4 == (MVNetworkGame *)0x0) ||
-          (this_01 = (pMVar4->fields).teamManager, this_01 == (MVTeamManager *)0x0)) ||
-         (iVar5 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0),
-         TVar3.m_Index == 0)) break;
-      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (((pMVar6 == (MVNetworkGame *)0x0) ||
+          (this_01 = (pMVar6->fields).teamManager, this_01 == (MVTeamManager *)0x0)) ||
+         (iVar7 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0),
+         TVar5.m_Index == 0)) break;
+      if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
           (TypeInfo__MV__WorldObject__MVTeam->_0).element_class) goto code_?;
-      puVar6 = (undefined4 *)func_?();
-      if (((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*puVar6 != this_00) ||
-         (iVar5 < 2)) {
+      puVar8 = (undefined4 *)func_?();
+      if (((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*puVar8 != this_00) ||
+         (iVar7 < 2)) {
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__RemoveAt
                   ((List_1_System_Object_ *)this_03,index,
@@ -119,9 +131,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  pLVar8 = (List_1_MVWorldObjectClient_ *)(*pcVar7)();
-  return pLVar8;
+  pcVar9 = (code *)swi(3);
+  pLVar10 = (List_1_MVWorldObjectClient_ *)(*pcVar9)();
+  return pLVar10;
 }
 
 

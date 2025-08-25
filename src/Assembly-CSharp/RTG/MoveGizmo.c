@@ -34,16 +34,13 @@ float Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_GetZoomFactor
     func_?(&TypeInfo__RTG__CameraEx);
     cRam_? = '\x01';
   }
-  if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-    pMVar1 = (this->fields)._lookAndFeel3D;
-    if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+  iVar1 = 0x88;
+  if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+    iVar1 = 0x9c;
   }
-  else {
-    pMVar1 = (this->fields)._sharedLookAndFeel3D;
-  }
-  pGVar2 = (pMVar1->fields)._midCapLookAndFeel;
-  if (pGVar2 != (GizmoCap3DLookAndFeel *)0x0) {
-    if ((pGVar2->fields)._useZoomFactor == 0) {
+  iVar1 = *(int *)((int)&this->klass + iVar1);
+  if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x18), iVar1 != 0)) {
+    if (*(char *)(iVar1 + 0x18) == '\0') {
       return 1.0;
     }
     this_00 = (this->fields)._._gizmo;
@@ -52,15 +49,14 @@ float Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_GetZoomFactor
       if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__CameraEx);
       }
-      fVar3 = CameraEx::CameraEx_EstimateZoomFactor(camera,position,(MethodInfo *)0x0);
-      return fVar3;
+      fVar2 = CameraEx::CameraEx_EstimateZoomFactor(camera,position,(MethodInfo *)0x0);
+      return fVar2;
     }
   }
-code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  pcVar3 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar3)();
+  return (float)fVar4;
 }
 
 
@@ -74,30 +70,26 @@ float Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_GetZoomFactor_1
     func_?();
     cRam_? = '\x01';
   }
-  if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-    pMVar1 = (this->fields)._lookAndFeel3D;
-    if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+  iVar1 = 0x88;
+  if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+    iVar1 = 0x9c;
   }
-  else {
-    pMVar1 = (this->fields)._sharedLookAndFeel3D;
-  }
-  pGVar2 = (pMVar1->fields)._midCapLookAndFeel;
-  if (pGVar2 != (GizmoCap3DLookAndFeel *)0x0) {
-    if ((pGVar2->fields)._useZoomFactor != 0) {
+  iVar1 = *(int *)((int)&this->klass + iVar1);
+  if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x18), iVar1 != 0)) {
+    if (*(char *)(iVar1 + 0x18) != '\0') {
       if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      fVar3 = CameraEx::CameraEx_EstimateZoomFactor(camera,position,(MethodInfo *)0x0);
-      return fVar3;
+      fVar2 = CameraEx::CameraEx_EstimateZoomFactor(camera,position,(MethodInfo *)0x0);
+      return fVar2;
     }
     return 1.0;
   }
-code_?:
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  fVar5 = (float10)(*pcVar4)();
+  return (float)fVar5;
 }
 
 
@@ -854,7 +846,7 @@ void Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_OnGizmoDragUpdate
     fVar8 = pVVar4->z;
     (this->fields)._postVSnapPosRestore.x = (float)uVar6 + (float)uStack_2;
     (this->fields)._postVSnapPosRestore.y = uStack_2._4_4_ + (float)uVar7;
-    (this->fields)._postVSnapPosRestore.z = fVar8 + fStack_1;
+    (this->fields)._postVSnapPosRestore.z = fStack_1 + fVar8;
   }
   return;
 }
@@ -1010,259 +1002,230 @@ void Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_OnGizmoUpdateBegin
                (MoveGizmo *this,MethodInfo *method)
 
 {
+  this_04 = this;
   UniversalGizmo::UniversalGizmo_Update2DGizmoPosition((UniversalGizmo *)this,(MethodInfo *)0x0);
+  iVar1 = 0x88;
   if (((this->fields)._is2DModeEnabled == 0) && ((this->fields)._isVertexSnapEnabled == 0)) {
-    pGVar1 = (this->fields)._midCap;
-    if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-      pMVar2 = (this->fields)._lookAndFeel3D;
-      if (pMVar2 != (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+    pGVar2 = (this->fields)._midCap;
+    iVar3 = 0x88;
+    if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+      iVar3 = 0x9c;
     }
-    else {
-      pMVar2 = (this->fields)._sharedLookAndFeel3D;
-code_?:
-      if (pGVar1 != (GizmoCap3D *)0x0) {
-        GizmoCap::GizmoCap_SetVisible
-                  ((GizmoCap *)pGVar1,(pMVar2->fields)._isMidCapVisible,(MethodInfo *)0x0);
-        goto code_?;
-      }
+    iVar3 = *(int *)((int)&this->klass + iVar3);
+    if ((iVar3 != 0) && (pGVar2 != (GizmoCap3D *)0x0)) {
+      GizmoCap::GizmoCap_SetVisible((GizmoCap *)pGVar2,*(bool *)(iVar3 + 0x14),(MethodInfo *)0x0);
+      goto code_?;
     }
   }
   else {
 code_?:
     if ((this->fields)._useSnapEnableHotkey == 0) {
 code_?:
+      iVar3 = 0x78;
       if ((this->fields)._use2DModeEnableHotkey != 0) {
-        if ((this->fields)._sharedHotkeys == (MoveGizmoHotkeys *)0x0) {
-          pMVar3 = (this->fields)._hotkeys;
-          if (pMVar3 == (MoveGizmoHotkeys *)0x0) goto code_?;
+        iVar4 = 0x78;
+        if ((this->fields)._sharedHotkeys != (MoveGizmoHotkeys *)0x0) {
+          iVar4 = 0x8c;
         }
-        else {
-          pMVar3 = (this->fields)._sharedHotkeys;
-        }
-        pHVar4 = (pMVar3->fields)._enable2DMode;
-        if (pHVar4 == (Hotkeys *)0x0) goto code_?;
-        bVar5 = Hotkeys::Hotkeys_IsActive(pHVar4,1,(MethodInfo *)0x0);
-        MoveGizmo_Set2DModeEnabled(this,bVar5,(MethodInfo *)0x0);
+        iVar4 = *(int *)((int)&this->klass + iVar4);
+        if ((iVar4 == 0) || (pHVar5 = *(Hotkeys **)(iVar4 + 0x14), pHVar5 == (Hotkeys *)0x0))
+        goto code_?;
+        bVar6 = Hotkeys::Hotkeys_IsActive(pHVar5,1,(MethodInfo *)0x0);
+        MoveGizmo_Set2DModeEnabled(this,bVar6,(MethodInfo *)0x0);
       }
       if ((this->fields)._is2DModeEnabled == 0) {
-        bVar5 = (this->fields)._isVertexSnapEnabled;
-        if (bVar5 == 0) {
-          pGVar6 = (this->fields)._._gizmo;
-          if ((pGVar6 == (Gizmo *)0x0) ||
-             (pGVar7 = (pGVar6->fields)._transform, pGVar7 == (GizmoTransform *)0x0))
+        bVar6 = (this->fields)._isVertexSnapEnabled;
+        if (bVar6 == 0) {
+          pGVar7 = (this->fields)._._gizmo;
+          if ((pGVar7 == (Gizmo *)0x0) ||
+             (pGVar8 = (pGVar7->fields)._transform, pGVar8 == (GizmoTransform *)0x0))
           goto code_?;
-          fVar8 = (pGVar7->fields)._position3D.y;
-          fVar9 = (pGVar7->fields)._position3D.z;
-          (this->fields)._postVSnapPosRestore.x = (pGVar7->fields)._position3D.x;
-          (this->fields)._postVSnapPosRestore.y = fVar8;
-          (this->fields)._postVSnapPosRestore.z = fVar9;
+          fVar9 = (pGVar8->fields)._position3D.y;
+          fVar10 = (pGVar8->fields)._position3D.z;
+          (this->fields)._postVSnapPosRestore.x = (pGVar8->fields)._position3D.x;
+          (this->fields)._postVSnapPosRestore.y = fVar9;
+          (this->fields)._postVSnapPosRestore.z = fVar10;
+          this._3_1_ = 0;
+          bVar6 = this._3_1_;
         }
-        if ((this->fields)._useVertSnapEnableHotkey == 0) {
+        this._3_1_ = bVar6;
+        if ((this_04->fields)._useVertSnapEnableHotkey == 0) {
 code_?:
-          if ((bVar5 != 0) && ((this->fields)._isVertexSnapEnabled == 0)) {
-            pGVar6 = (this->fields)._._gizmo;
-            if ((pGVar6 == (Gizmo *)0x0) ||
-               (pGVar7 = (pGVar6->fields)._transform, pGVar7 == (GizmoTransform *)0x0))
+          if ((this._3_1_ != 0) && ((this_04->fields)._isVertexSnapEnabled == 0)) {
+            pGVar7 = (this_04->fields)._._gizmo;
+            if ((pGVar7 == (Gizmo *)0x0) ||
+               (pGVar8 = (pGVar7->fields)._transform, pGVar8 == (GizmoTransform *)0x0))
             goto code_?;
             GizmoTransform::GizmoTransform_set_Position3D
-                      (pGVar7,(this->fields)._postVSnapPosRestore,(MethodInfo *)0x0);
+                      (pGVar8,(this_04->fields)._postVSnapPosRestore,(MethodInfo *)0x0);
           }
-          pGVar10 = (this->fields)._pXSlider;
-          if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-            pMVar2 = (this->fields)._lookAndFeel3D;
-            if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+          pGVar11 = (this_04->fields)._pXSlider;
+          iVar3 = 0x88;
+          if ((this_04->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+            iVar3 = 0x9c;
           }
-          else {
-            pMVar2 = (this->fields)._sharedLookAndFeel3D;
-          }
-          pBVar11 = (pMVar2->fields)._sglSliderVis;
-          if (pBVar11 != (Boolean__Array *)0x0) {
-            if (pBVar11->max_length == 0) goto code_?;
-            if (pGVar10 != (GizmoLineSlider3D *)0x0) {
-              (pGVar10->fields)._._isVisible = pBVar11->vector[0] != 0;
-              (*(code *)(pGVar10->klass->vtable).OnVisibilityStateChanged.method)(pGVar10);
-              pGVar10 = (this->fields)._pXSlider;
-              if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-                pMVar2 = (this->fields)._lookAndFeel3D;
-                if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+          iVar3 = *(int *)((int)&this_04->klass + iVar3);
+          if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x20), iVar3 != 0)) {
+            if (*(int *)(iVar3 + 0xc) == 0) goto code_?;
+            if (pGVar11 != (GizmoLineSlider3D *)0x0) {
+              (pGVar11->fields)._._isVisible = *(char *)(iVar3 + 0x10) != '\0';
+              (*(code *)(pGVar11->klass->vtable).OnVisibilityStateChanged.method)(pGVar11);
+              pGVar11 = (this_04->fields)._pXSlider;
+              iVar3 = 0x88;
+              if ((this_04->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+                iVar3 = 0x9c;
               }
-              else {
-                pMVar2 = (this->fields)._sharedLookAndFeel3D;
-              }
-              pBVar11 = (pMVar2->fields)._sglSliderCapVis;
-              if (pBVar11 != (Boolean__Array *)0x0) {
-                if (pBVar11->max_length == 0) goto code_?;
-                if (pGVar10 != (GizmoLineSlider3D *)0x0) {
+              iVar3 = *(int *)((int)&this_04->klass + iVar3);
+              if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x24), iVar3 != 0)) {
+                if (*(int *)(iVar3 + 0xc) == 0) goto code_?;
+                if (pGVar11 != (GizmoLineSlider3D *)0x0) {
                   GizmoLineSlider3D::GizmoLineSlider3D_Set3DCapVisible
-                            (pGVar10,pBVar11->vector[0] != 0,(MethodInfo *)0x0);
-                  pGVar10 = (this->fields)._pYSlider;
-                  if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-                    pMVar2 = (this->fields)._lookAndFeel3D;
-                    if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                            (pGVar11,*(char *)(iVar3 + 0x10) != '\0',(MethodInfo *)0x0);
+                  pGVar11 = (this_04->fields)._pYSlider;
+                  iVar3 = 0x88;
+                  if ((this_04->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+                    iVar3 = 0x9c;
                   }
-                  else {
-                    pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                  }
-                  pBVar11 = (pMVar2->fields)._sglSliderVis;
-                  if (pBVar11 != (Boolean__Array *)0x0) {
-                    if (pBVar11->max_length < 2) goto code_?;
-                    if (pGVar10 != (GizmoLineSlider3D *)0x0) {
-                      (pGVar10->fields)._._isVisible = pBVar11->vector[1] != 0;
-                      (*(code *)(pGVar10->klass->vtable).OnVisibilityStateChanged.method)(pGVar10);
-                      pGVar10 = (this->fields)._pYSlider;
-                      if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-                        pMVar2 = (this->fields)._lookAndFeel3D;
-                        if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                  iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                  if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x20), iVar3 != 0)) {
+                    if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
+                    if (pGVar11 != (GizmoLineSlider3D *)0x0) {
+                      (pGVar11->fields)._._isVisible = *(char *)(iVar3 + 0x11) != '\0';
+                      (*(code *)(pGVar11->klass->vtable).OnVisibilityStateChanged.method)(pGVar11);
+                      pGVar11 = (this_04->fields)._pYSlider;
+                      iVar3 = 0x88;
+                      if ((this_04->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+                        iVar3 = 0x9c;
                       }
-                      else {
-                        pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                      }
-                      pBVar11 = (pMVar2->fields)._sglSliderCapVis;
-                      if (pBVar11 != (Boolean__Array *)0x0) {
-                        if (pBVar11->max_length < 2) goto code_?;
-                        if (pGVar10 != (GizmoLineSlider3D *)0x0) {
+                      iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                      if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x24), iVar3 != 0)) {
+                        if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
+                        if (pGVar11 != (GizmoLineSlider3D *)0x0) {
                           GizmoLineSlider3D::GizmoLineSlider3D_Set3DCapVisible
-                                    (pGVar10,pBVar11->vector[1] != 0,(MethodInfo *)0x0);
-                          pGVar10 = (this->fields)._pZSlider;
-                          if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0)
-                          {
-                            pMVar2 = (this->fields)._lookAndFeel3D;
-                            if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                                    (pGVar11,*(char *)(iVar3 + 0x11) != '\0',(MethodInfo *)0x0);
+                          pGVar11 = (this_04->fields)._pZSlider;
+                          iVar3 = 0x88;
+                          if ((this_04->fields)._sharedLookAndFeel3D !=
+                              (MoveGizmoLookAndFeel3D *)0x0) {
+                            iVar3 = 0x9c;
                           }
-                          else {
-                            pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                          }
-                          pBVar11 = (pMVar2->fields)._sglSliderVis;
-                          if (pBVar11 != (Boolean__Array *)0x0) {
-                            if (pBVar11->max_length < 3) goto code_?;
-                            if (pGVar10 != (GizmoLineSlider3D *)0x0) {
-                              (pGVar10->fields)._._isVisible = pBVar11->vector[2] != 0;
-                              (*(code *)(pGVar10->klass->vtable).OnVisibilityStateChanged.method)
-                                        (pGVar10);
-                              pGVar10 = (this->fields)._pZSlider;
-                              if ((this->fields)._sharedLookAndFeel3D ==
+                          iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                          if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x20), iVar3 != 0)) {
+                            if (*(uint *)(iVar3 + 0xc) < 3) goto code_?;
+                            if (pGVar11 != (GizmoLineSlider3D *)0x0) {
+                              (pGVar11->fields)._._isVisible = *(char *)(iVar3 + 0x12) != '\0';
+                              (*(code *)(pGVar11->klass->vtable).OnVisibilityStateChanged.method)
+                                        (pGVar11);
+                              pGVar11 = (this_04->fields)._pZSlider;
+                              iVar3 = 0x88;
+                              if ((this_04->fields)._sharedLookAndFeel3D !=
                                   (MoveGizmoLookAndFeel3D *)0x0) {
-                                pMVar2 = (this->fields)._lookAndFeel3D;
-                                if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                                iVar3 = 0x9c;
                               }
-                              else {
-                                pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                              }
-                              pBVar11 = (pMVar2->fields)._sglSliderCapVis;
-                              if (pBVar11 != (Boolean__Array *)0x0) {
-                                if (pBVar11->max_length < 3) goto code_?;
-                                if (pGVar10 != (GizmoLineSlider3D *)0x0) {
+                              iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                              if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x24), iVar3 != 0))
+                              {
+                                if (*(uint *)(iVar3 + 0xc) < 3) goto code_?;
+                                if (pGVar11 != (GizmoLineSlider3D *)0x0) {
                                   GizmoLineSlider3D::GizmoLineSlider3D_Set3DCapVisible
-                                            (pGVar10,pBVar11->vector[2] != 0,(MethodInfo *)0x0);
-                                  pGVar10 = (this->fields)._nXSlider;
-                                  if ((this->fields)._sharedLookAndFeel3D ==
+                                            (pGVar11,*(char *)(iVar3 + 0x12) != '\0',
+                                             (MethodInfo *)0x0);
+                                  pGVar11 = (this_04->fields)._nXSlider;
+                                  iVar3 = 0x88;
+                                  if ((this_04->fields)._sharedLookAndFeel3D !=
                                       (MoveGizmoLookAndFeel3D *)0x0) {
-                                    pMVar2 = (this->fields)._lookAndFeel3D;
-                                    if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0)
-                                    goto code_?;
+                                    iVar3 = 0x9c;
                                   }
-                                  else {
-                                    pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                                  }
-                                  pBVar11 = (pMVar2->fields)._sglSliderVis;
-                                  if (pBVar11 != (Boolean__Array *)0x0) {
-                                    if (pBVar11->max_length < 4) goto code_?;
-                                    if (pGVar10 != (GizmoLineSlider3D *)0x0) {
-                                      (pGVar10->fields)._._isVisible = pBVar11->vector[3] != 0;
-                                      (*(code *)(pGVar10->klass->vtable).OnVisibilityStateChanged.
-                                                method)(pGVar10);
-                                      pGVar10 = (this->fields)._nXSlider;
-                                      if ((this->fields)._sharedLookAndFeel3D ==
+                                  iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                                  if ((iVar3 != 0) &&
+                                     (iVar3 = *(int *)(iVar3 + 0x20), iVar3 != 0)) {
+                                    if (*(uint *)(iVar3 + 0xc) < 4) goto code_?;
+                                    if (pGVar11 != (GizmoLineSlider3D *)0x0) {
+                                      (pGVar11->fields)._._isVisible =
+                                           *(char *)(iVar3 + 0x13) != '\0';
+                                      (*(code *)(pGVar11->klass->vtable).OnVisibilityStateChanged.
+                                                method)(pGVar11);
+                                      pGVar11 = (this_04->fields)._nXSlider;
+                                      iVar3 = 0x88;
+                                      if ((this_04->fields)._sharedLookAndFeel3D !=
                                           (MoveGizmoLookAndFeel3D *)0x0) {
-                                        pMVar2 = (this->fields)._lookAndFeel3D;
-                                        if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0)
-                                        goto code_?;
+                                        iVar3 = 0x9c;
                                       }
-                                      else {
-                                        pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                                      }
-                                      pBVar11 = (pMVar2->fields)._sglSliderCapVis;
-                                      if (pBVar11 != (Boolean__Array *)0x0) {
-                                        if (pBVar11->max_length < 4) goto code_?;
-                                        if (pGVar10 != (GizmoLineSlider3D *)0x0) {
+                                      iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                                      if ((iVar3 != 0) &&
+                                         (iVar3 = *(int *)(iVar3 + 0x24), iVar3 != 0)) {
+                                        if (*(uint *)(iVar3 + 0xc) < 4) goto code_?;
+                                        if (pGVar11 != (GizmoLineSlider3D *)0x0) {
                                           GizmoLineSlider3D::GizmoLineSlider3D_Set3DCapVisible
-                                                    (pGVar10,pBVar11->vector[3] != 0,(MethodInfo *)0x0
-                                                    );
-                                          pGVar10 = (this->fields)._nYSlider;
-                                          if ((this->fields)._sharedLookAndFeel3D ==
+                                                    (pGVar11,*(char *)(iVar3 + 0x13) != '\0',
+                                                     (MethodInfo *)0x0);
+                                          pGVar11 = (this_04->fields)._nYSlider;
+                                          iVar3 = 0x88;
+                                          if ((this_04->fields)._sharedLookAndFeel3D !=
                                               (MoveGizmoLookAndFeel3D *)0x0) {
-                                            pMVar2 = (this->fields)._lookAndFeel3D;
-                                            if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0)
-                                            goto code_?;
+                                            iVar3 = 0x9c;
                                           }
-                                          else {
-                                            pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                                          }
-                                          pBVar11 = (pMVar2->fields)._sglSliderVis;
-                                          if (pBVar11 != (Boolean__Array *)0x0) {
-                                            if (pBVar11->max_length < 5) goto code_?;
-                                            if (pGVar10 != (GizmoLineSlider3D *)0x0) {
-                                              (pGVar10->fields)._._isVisible = pBVar11->vector[4] != 0
-                                              ;
-                                              (*(code *)(pGVar10->klass->vtable).
-                                                        OnVisibilityStateChanged.method)(pGVar10);
-                                              pGVar10 = (this->fields)._nYSlider;
-                                              if ((this->fields)._sharedLookAndFeel3D ==
+                                          iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                                          if ((iVar3 != 0) &&
+                                             (iVar3 = *(int *)(iVar3 + 0x20), iVar3 != 0)) {
+                                            if (*(uint *)(iVar3 + 0xc) < 5) goto code_?;
+                                            if (pGVar11 != (GizmoLineSlider3D *)0x0) {
+                                              (pGVar11->fields)._._isVisible =
+                                                   *(char *)(iVar3 + 0x14) != '\0';
+                                              (*(code *)(pGVar11->klass->vtable).
+                                                        OnVisibilityStateChanged.method)(pGVar11);
+                                              pGVar11 = (this_04->fields)._nYSlider;
+                                              iVar3 = 0x88;
+                                              if ((this_04->fields)._sharedLookAndFeel3D !=
                                                   (MoveGizmoLookAndFeel3D *)0x0) {
-                                                pMVar2 = (this->fields)._lookAndFeel3D;
-                                                if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0)
+                                                iVar3 = 0x9c;
+                                              }
+                                              iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                                              if ((iVar3 != 0) &&
+                                                 (iVar3 = *(int *)(iVar3 + 0x24), iVar3 != 0)) {
+                                                if (*(uint *)(iVar3 + 0xc) < 5)
                                                 goto code_?;
-                                              }
-                                              else {
-                                                pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                                              }
-                                              pBVar11 = (pMVar2->fields)._sglSliderCapVis;
-                                              if (pBVar11 != (Boolean__Array *)0x0) {
-                                                if (pBVar11->max_length < 5) goto code_?;
-                                                if (pGVar10 != (GizmoLineSlider3D *)0x0) {
+                                                if (pGVar11 != (GizmoLineSlider3D *)0x0) {
                                                   GizmoLineSlider3D::
                                                   GizmoLineSlider3D_Set3DCapVisible
-                                                            (pGVar10,pBVar11->vector[4] != 0,
-                                                             (MethodInfo *)0x0);
-                                                  pGVar10 = (this->fields)._nZSlider;
-                                                  if ((this->fields)._sharedLookAndFeel3D ==
+                                                            (pGVar11,*(char *)(iVar3 + 0x14) != '\0'
+                                                             ,(MethodInfo *)0x0);
+                                                  pGVar11 = (this_04->fields)._nZSlider;
+                                                  iVar3 = 0x88;
+                                                  if ((this_04->fields)._sharedLookAndFeel3D !=
                                                       (MoveGizmoLookAndFeel3D *)0x0) {
-                                                    pMVar2 = (this->fields)._lookAndFeel3D;
-                                                    if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0)
-                                                    goto code_?;
+                                                    iVar3 = 0x9c;
                                                   }
-                                                  else {
-                                                    pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                                                  }
-                                                  pBVar11 = (pMVar2->fields)._sglSliderVis;
-                                                  if (pBVar11 != (Boolean__Array *)0x0) {
-                                                    if (pBVar11->max_length < 6)
+                                                  iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                                                  if ((iVar3 != 0) &&
+                                                     (iVar3 = *(int *)(iVar3 + 0x20), iVar3 != 0)
+                                                     ) {
+                                                    if (*(uint *)(iVar3 + 0xc) < 6)
                                                     goto code_?;
-                                                    if (pGVar10 != (GizmoLineSlider3D *)0x0) {
-                                                      (pGVar10->fields)._._isVisible =
-                                                           pBVar11->vector[5] != 0;
-                                                      (*(code *)(pGVar10->klass->vtable).
+                                                    if (pGVar11 != (GizmoLineSlider3D *)0x0) {
+                                                      (pGVar11->fields)._._isVisible =
+                                                           *(char *)(iVar3 + 0x15) != '\0';
+                                                      (*(code *)(pGVar11->klass->vtable).
                                                                 OnVisibilityStateChanged.method)
-                                                                (pGVar10);
-                                                      pGVar10 = (this->fields)._nZSlider;
-                                                      if ((this->fields)._sharedLookAndFeel3D ==
+                                                                (pGVar11);
+                                                      pGVar11 = (this_04->fields)._nZSlider;
+                                                      iVar3 = 0x88;
+                                                      if ((this_04->fields)._sharedLookAndFeel3D !=
                                                           (MoveGizmoLookAndFeel3D *)0x0) {
-                                                        pMVar2 = (this->fields)._lookAndFeel3D;
-                                                        if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0
-                                                           ) goto code_?;
+                                                        iVar3 = 0x9c;
                                                       }
-                                                      else {
-                                                        pMVar2 = (this->fields).
-                                                                  _sharedLookAndFeel3D;
-                                                      }
-                                                      pBVar11 = (pMVar2->fields)._sglSliderCapVis;
-                                                      if (pBVar11 != (Boolean__Array *)0x0) {
-                                                        if (pBVar11->max_length < 6)
+                                                      iVar3 = *(int *)((int)&this_04->klass +
+                                                                       iVar3);
+                                                      if ((iVar3 != 0) &&
+                                                         (iVar3 = *(int *)(iVar3 + 0x24),
+                                                         iVar3 != 0)) {
+                                                        if (*(uint *)(iVar3 + 0xc) < 6)
                                                         goto code_?;
-                                                        if (pGVar10 != (GizmoLineSlider3D *)0x0) {
+                                                        if (pGVar11 != (GizmoLineSlider3D *)0x0) {
                                                           GizmoLineSlider3D::
                                                           GizmoLineSlider3D_Set3DCapVisible
-                                                                    (pGVar10,pBVar11->vector[5] != 0,
+                                                                    (pGVar11,*(char *)(iVar3 + 0x15)
+                                                                            != '\0',
                                                                      (MethodInfo *)0x0);
                                                           goto code_?;
                                                         }
@@ -1291,42 +1254,39 @@ code_?:
           }
         }
         else {
-          if ((this->fields)._sharedHotkeys == (MoveGizmoHotkeys *)0x0) {
-            pMVar3 = (this->fields)._hotkeys;
-            if (pMVar3 == (MoveGizmoHotkeys *)0x0) goto code_?;
+          if ((this_04->fields)._sharedHotkeys != (MoveGizmoHotkeys *)0x0) {
+            iVar3 = 0x8c;
           }
-          else {
-            pMVar3 = (this->fields)._sharedHotkeys;
-          }
-          pHVar4 = (pMVar3->fields)._enableVertexSnapping;
-          if (pHVar4 != (Hotkeys *)0x0) {
-            bVar12 = Hotkeys::Hotkeys_IsActive(pHVar4,1,(MethodInfo *)0x0);
-            if ((((this->fields)._isVertexSnapEnabled == bVar12) ||
-                ((this->fields)._is2DModeEnabled != 0)) || ((this->fields)._._isEnabled == 0))
+          iVar3 = *(int *)((int)&this_04->klass + iVar3);
+          if ((iVar3 != 0) && (pHVar5 = *(Hotkeys **)(iVar3 + 0x1c), pHVar5 != (Hotkeys *)0x0)) {
+            bVar6 = Hotkeys::Hotkeys_IsActive(pHVar5,1,(MethodInfo *)0x0);
+            if (((this_04->fields)._isVertexSnapEnabled == bVar6) ||
+               (((this_04->fields)._is2DModeEnabled != 0 || ((this_04->fields)._._isEnabled == 0))))
             goto code_?;
-            this_02 = (DataTable *)(this->fields)._._gizmo;
+            this_02 = (DataTable *)(this_04->fields)._._gizmo;
             if (this_02 != (DataTable *)0x0) {
-              bVar13 = System.Data.dll::System::Data::DataTable::DataTable_get_CaseSensitive
+              this._3_1_ = 0x10;
+              bVar12 = System.Data.dll::System::Data::DataTable::DataTable_get_CaseSensitive
                                  (this_02,(MethodInfo *)0x0);
-              if (bVar13 != 0) goto code_?;
-              this_03 = (this->fields)._vertSnapCap;
-              if (bVar12 == 0) {
+              if (bVar12 != 0) goto code_?;
+              this_03 = (this_04->fields)._vertSnapCap;
+              if (bVar6 == 0) {
                 if (this_03 != (GizmoCap2D *)0x0) {
                   GizmoCap::GizmoCap_SetVisible((GizmoCap *)this_03,0,(MethodInfo *)0x0);
 code_?:
-                  (this->fields)._isVertexSnapEnabled = bVar12;
+                  (this_04->fields)._isVertexSnapEnabled = bVar6;
                   goto code_?;
                 }
               }
               else if (this_03 != (GizmoCap2D *)0x0) {
                 GizmoCap::GizmoCap_SetVisible((GizmoCap *)this_03,1,(MethodInfo *)0x0);
-                pGVar1 = (this->fields)._midCap;
-                if (pGVar1 != (GizmoCap3D *)0x0) {
-                  GizmoCap::GizmoCap_SetVisible((GizmoCap *)pGVar1,0,(MethodInfo *)0x0);
-                  pGVar14 = (this->fields)._dblSliders;
-                  if (pGVar14 != (GizmoPlaneSlider3DCollection *)0x0) {
+                pGVar2 = (this_04->fields)._midCap;
+                if (pGVar2 != (GizmoCap3D *)0x0) {
+                  GizmoCap::GizmoCap_SetVisible((GizmoCap *)pGVar2,0,(MethodInfo *)0x0);
+                  pGVar13 = (this_04->fields)._dblSliders;
+                  if (pGVar13 != (GizmoPlaneSlider3DCollection *)0x0) {
                     GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_SetVisible
-                              (pGVar14,0,1,(MethodInfo *)0x0);
+                              (pGVar13,0,1,(MethodInfo *)0x0);
                     goto code_?;
                   }
                 }
@@ -1337,71 +1297,62 @@ code_?:
       }
       else {
 code_?:
-        if ((this->fields)._isVertexSnapEnabled == 0) {
-          if ((this->fields)._is2DModeEnabled == 0) {
-            pGVar15 = (this->fields)._xySlider;
-            if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-              pMVar2 = (this->fields)._lookAndFeel3D;
-              if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+        if ((this_04->fields)._isVertexSnapEnabled == 0) {
+          if ((this_04->fields)._is2DModeEnabled == 0) {
+            pGVar14 = (this_04->fields)._xySlider;
+            iVar3 = 0x88;
+            if ((this_04->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+              iVar3 = 0x9c;
             }
-            else {
-              pMVar2 = (this->fields)._sharedLookAndFeel3D;
-            }
-            pBVar11 = (pMVar2->fields)._dblSliderVis;
-            if (pBVar11 != (Boolean__Array *)0x0) {
-              if (pBVar11->max_length == 0) goto code_?;
-              if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
-                (pGVar15->fields)._._isVisible = pBVar11->vector[0] != 0;
-                (*(code *)(pGVar15->klass->vtable).OnVisibilityStateChanged.method)(pGVar15);
-                pGVar15 = (this->fields)._xySlider;
-                if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
+            iVar3 = *(int *)((int)&this_04->klass + iVar3);
+            if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x28), iVar3 != 0)) {
+              if (*(int *)(iVar3 + 0xc) == 0) goto code_?;
+              if (pGVar14 != (GizmoPlaneSlider3D *)0x0) {
+                (pGVar14->fields)._._isVisible = *(char *)(iVar3 + 0x10) != '\0';
+                (*(code *)(pGVar14->klass->vtable).OnVisibilityStateChanged.method)(pGVar14);
+                pGVar14 = (this_04->fields)._xySlider;
+                if (pGVar14 != (GizmoPlaneSlider3D *)0x0) {
                   GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderVisible
-                            ((this->fields)._xySlider,(pGVar15->fields)._._isVisible,
+                            ((this_04->fields)._xySlider,(pGVar14->fields)._._isVisible,
                              (MethodInfo *)0x0);
-                  pGVar15 = (this->fields)._yzSlider;
-                  if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-                    pMVar2 = (this->fields)._lookAndFeel3D;
-                    if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                  pGVar14 = (this_04->fields)._yzSlider;
+                  iVar3 = 0x88;
+                  if ((this_04->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+                    iVar3 = 0x9c;
                   }
-                  else {
-                    pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                  }
-                  pBVar11 = (pMVar2->fields)._dblSliderVis;
-                  if (pBVar11 != (Boolean__Array *)0x0) {
-                    if (pBVar11->max_length < 2) goto code_?;
-                    if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
-                      (pGVar15->fields)._._isVisible = pBVar11->vector[1] != 0;
-                      (*(code *)(pGVar15->klass->vtable).OnVisibilityStateChanged.method)(pGVar15);
-                      pGVar15 = (this->fields)._yzSlider;
-                      if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
+                  iVar3 = *(int *)((int)&this_04->klass + iVar3);
+                  if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x28), iVar3 != 0)) {
+                    if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
+                    if (pGVar14 != (GizmoPlaneSlider3D *)0x0) {
+                      (pGVar14->fields)._._isVisible = *(char *)(iVar3 + 0x11) != '\0';
+                      (*(code *)(pGVar14->klass->vtable).OnVisibilityStateChanged.method)(pGVar14);
+                      pGVar14 = (this_04->fields)._yzSlider;
+                      if (pGVar14 != (GizmoPlaneSlider3D *)0x0) {
                         GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderVisible
-                                  ((this->fields)._yzSlider,(pGVar15->fields)._._isVisible,
+                                  ((this_04->fields)._yzSlider,(pGVar14->fields)._._isVisible,
                                    (MethodInfo *)0x0);
-                        pGVar15 = (this->fields)._zxSlider;
-                        if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-                          pMVar2 = (this->fields)._lookAndFeel3D;
-                          if (pMVar2 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                        pGVar14 = (this_04->fields)._zxSlider;
+                        if ((this_04->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0)
+                        {
+                          iVar1 = 0x9c;
                         }
-                        else {
-                          pMVar2 = (this->fields)._sharedLookAndFeel3D;
-                        }
-                        pBVar11 = (pMVar2->fields)._dblSliderVis;
-                        if (pBVar11 != (Boolean__Array *)0x0) {
-                          if (pBVar11->max_length < 3) goto code_?;
-                          if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
-                            (pGVar15->fields)._._isVisible = pBVar11->vector[2] != 0;
-                            (*(code *)(pGVar15->klass->vtable).OnVisibilityStateChanged.method)
-                                      (pGVar15);
-                            pGVar15 = (this->fields)._zxSlider;
-                            if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
+                        iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                        if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x28), iVar1 != 0)) {
+                          if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
+                          if (pGVar14 != (GizmoPlaneSlider3D *)0x0) {
+                            (pGVar14->fields)._._isVisible = *(char *)(iVar1 + 0x12) != '\0';
+                            (*(code *)(pGVar14->klass->vtable).OnVisibilityStateChanged.method)
+                                      (pGVar14);
+                            pGVar14 = (this_04->fields)._zxSlider;
+                            if (pGVar14 != (GizmoPlaneSlider3D *)0x0) {
                               GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderVisible
-                                        ((this->fields)._zxSlider,(pGVar15->fields)._._isVisible,
+                                        ((this_04->fields)._zxSlider,(pGVar14->fields)._._isVisible,
                                          (MethodInfo *)0x0);
-                              pGVar6 = (this->fields)._._gizmo;
-                              if (pGVar6 != (Gizmo *)0x0) {
-                                camera = Gizmo::Gizmo_get_FocusCamera(pGVar6,(MethodInfo *)0x0);
+                              pGVar7 = (this_04->fields)._._gizmo;
+                              if (pGVar7 != (Gizmo *)0x0) {
+                                camera = Gizmo::Gizmo_get_FocusCamera(pGVar7,(MethodInfo *)0x0);
                                 UniversalGizmo::UniversalGizmo_PlaceMvDblSlidersInSliderPlanes
-                                          ((UniversalGizmo *)this,camera,(MethodInfo *)0x0);
+                                          ((UniversalGizmo *)this_04,camera,(MethodInfo *)0x0);
                                 return;
                               }
                             }
@@ -1415,176 +1366,151 @@ code_?:
             }
           }
           else {
-            if ((this->fields)._isVertexSnapEnabled != 0) goto code_?;
-            if ((this->fields)._is2DModeEnabled == 0) {
+            if ((this_04->fields)._isVertexSnapEnabled != 0) goto code_?;
+            if ((this_04->fields)._is2DModeEnabled == 0) {
               return;
             }
-            pGVar16 = (this->fields)._p2DModeXSlider;
-            if ((this->fields)._sharedLookAndFeel2D == (MoveGizmoLookAndFeel2D *)0x0) {
-              pMVar17 = (this->fields)._lookAndFeel2D;
-              if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0) goto code_?;
+            pGVar15 = (this_04->fields)._p2DModeXSlider;
+            iVar3 = 0x84;
+            iVar1 = 0x84;
+            if ((this_04->fields)._sharedLookAndFeel2D != (MoveGizmoLookAndFeel2D *)0x0) {
+              iVar1 = 0x98;
             }
-            else {
-              pMVar17 = (this->fields)._sharedLookAndFeel2D;
-            }
-            pBVar11 = (pMVar17->fields)._sglSliderVis;
-            if (pBVar11 != (Boolean__Array *)0x0) {
-              if (pBVar11->max_length == 0) goto code_?;
-              if (pGVar16 != (GizmoLineSlider2D *)0x0) {
-                (pGVar16->fields)._._isVisible = pBVar11->vector[0] != 0;
-                (*(code *)(pGVar16->klass->vtable).OnVisibilityStateChanged.method)(pGVar16);
-                pGVar16 = (this->fields)._p2DModeXSlider;
-                if ((this->fields)._sharedLookAndFeel2D == (MoveGizmoLookAndFeel2D *)0x0) {
-                  pMVar17 = (this->fields)._lookAndFeel2D;
-                  if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0) goto code_?;
+            iVar1 = *(int *)((int)&this_04->klass + iVar1);
+            if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x20), iVar1 != 0)) {
+              if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
+              if (pGVar15 != (GizmoLineSlider2D *)0x0) {
+                (pGVar15->fields)._._isVisible = *(char *)(iVar1 + 0x10) != '\0';
+                (*(code *)(pGVar15->klass->vtable).OnVisibilityStateChanged.method)(pGVar15);
+                pGVar15 = (this_04->fields)._p2DModeXSlider;
+                iVar1 = 0x84;
+                if ((this_04->fields)._sharedLookAndFeel2D != (MoveGizmoLookAndFeel2D *)0x0) {
+                  iVar1 = 0x98;
                 }
-                else {
-                  pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                }
-                pBVar11 = (pMVar17->fields)._sglSliderCapVis;
-                if (pBVar11 != (Boolean__Array *)0x0) {
-                  if (pBVar11->max_length == 0) goto code_?;
-                  if (pGVar16 != (GizmoLineSlider2D *)0x0) {
+                iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x24), iVar1 != 0)) {
+                  if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
+                  if (pGVar15 != (GizmoLineSlider2D *)0x0) {
                     GizmoLineSlider2D::GizmoLineSlider2D_Set2DCapVisible
-                              (pGVar16,pBVar11->vector[0] != 0,(MethodInfo *)0x0);
-                    pGVar16 = (this->fields)._p2DModeYSlider;
-                    if ((this->fields)._sharedLookAndFeel2D == (MoveGizmoLookAndFeel2D *)0x0) {
-                      pMVar17 = (this->fields)._lookAndFeel2D;
-                      if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0) goto code_?;
+                              (pGVar15,*(char *)(iVar1 + 0x10) != '\0',(MethodInfo *)0x0);
+                    pGVar15 = (this_04->fields)._p2DModeYSlider;
+                    iVar1 = 0x84;
+                    if ((this_04->fields)._sharedLookAndFeel2D != (MoveGizmoLookAndFeel2D *)0x0) {
+                      iVar1 = 0x98;
                     }
-                    else {
-                      pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                    }
-                    pBVar11 = (pMVar17->fields)._sglSliderVis;
-                    if (pBVar11 != (Boolean__Array *)0x0) {
-                      if (pBVar11->max_length < 2) goto code_?;
-                      if (pGVar16 != (GizmoLineSlider2D *)0x0) {
-                        (pGVar16->fields)._._isVisible = pBVar11->vector[1] != 0;
-                        (*(code *)(pGVar16->klass->vtable).OnVisibilityStateChanged.method)(pGVar16)
+                    iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                    if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x20), iVar1 != 0)) {
+                      if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
+                      if (pGVar15 != (GizmoLineSlider2D *)0x0) {
+                        (pGVar15->fields)._._isVisible = *(char *)(iVar1 + 0x11) != '\0';
+                        (*(code *)(pGVar15->klass->vtable).OnVisibilityStateChanged.method)(pGVar15)
                         ;
-                        pGVar16 = (this->fields)._p2DModeYSlider;
-                        if ((this->fields)._sharedLookAndFeel2D == (MoveGizmoLookAndFeel2D *)0x0) {
-                          pMVar17 = (this->fields)._lookAndFeel2D;
-                          if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0) goto code_?;
+                        pGVar15 = (this_04->fields)._p2DModeYSlider;
+                        iVar1 = 0x84;
+                        if ((this_04->fields)._sharedLookAndFeel2D != (MoveGizmoLookAndFeel2D *)0x0)
+                        {
+                          iVar1 = 0x98;
                         }
-                        else {
-                          pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                        }
-                        pBVar11 = (pMVar17->fields)._sglSliderCapVis;
-                        if (pBVar11 != (Boolean__Array *)0x0) {
-                          if (pBVar11->max_length < 2) goto code_?;
-                          if (pGVar16 != (GizmoLineSlider2D *)0x0) {
+                        iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                        if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x24), iVar1 != 0)) {
+                          if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
+                          if (pGVar15 != (GizmoLineSlider2D *)0x0) {
                             GizmoLineSlider2D::GizmoLineSlider2D_Set2DCapVisible
-                                      (pGVar16,pBVar11->vector[1] != 0,(MethodInfo *)0x0);
-                            pGVar16 = (this->fields)._n2DModeXSlider;
-                            if ((this->fields)._sharedLookAndFeel2D == (MoveGizmoLookAndFeel2D *)0x0
-                               ) {
-                              pMVar17 = (this->fields)._lookAndFeel2D;
-                              if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0) goto code_?;
+                                      (pGVar15,*(char *)(iVar1 + 0x11) != '\0',(MethodInfo *)0x0);
+                            pGVar15 = (this_04->fields)._n2DModeXSlider;
+                            iVar1 = 0x84;
+                            if ((this_04->fields)._sharedLookAndFeel2D !=
+                                (MoveGizmoLookAndFeel2D *)0x0) {
+                              iVar1 = 0x98;
                             }
-                            else {
-                              pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                            }
-                            pBVar11 = (pMVar17->fields)._sglSliderVis;
-                            if (pBVar11 != (Boolean__Array *)0x0) {
-                              if (pBVar11->max_length < 3) goto code_?;
-                              if (pGVar16 != (GizmoLineSlider2D *)0x0) {
-                                (pGVar16->fields)._._isVisible = pBVar11->vector[2] != 0;
-                                (*(code *)(pGVar16->klass->vtable).OnVisibilityStateChanged.method)
-                                          (pGVar16);
-                                pGVar16 = (this->fields)._n2DModeXSlider;
-                                if ((this->fields)._sharedLookAndFeel2D ==
+                            iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                            if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x20), iVar1 != 0)) {
+                              if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
+                              if (pGVar15 != (GizmoLineSlider2D *)0x0) {
+                                (pGVar15->fields)._._isVisible = *(char *)(iVar1 + 0x12) != '\0';
+                                (*(code *)(pGVar15->klass->vtable).OnVisibilityStateChanged.method)
+                                          (pGVar15);
+                                pGVar15 = (this_04->fields)._n2DModeXSlider;
+                                iVar1 = 0x84;
+                                if ((this_04->fields)._sharedLookAndFeel2D !=
                                     (MoveGizmoLookAndFeel2D *)0x0) {
-                                  pMVar17 = (this->fields)._lookAndFeel2D;
-                                  if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0)
-                                  goto code_?;
+                                  iVar1 = 0x98;
                                 }
-                                else {
-                                  pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                                }
-                                pBVar11 = (pMVar17->fields)._sglSliderCapVis;
-                                if (pBVar11 != (Boolean__Array *)0x0) {
-                                  if (pBVar11->max_length < 3) goto code_?;
-                                  if (pGVar16 != (GizmoLineSlider2D *)0x0) {
+                                iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                                if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + 0x24), iVar1 != 0)
+                                   ) {
+                                  if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
+                                  if (pGVar15 != (GizmoLineSlider2D *)0x0) {
                                     GizmoLineSlider2D::GizmoLineSlider2D_Set2DCapVisible
-                                              (pGVar16,pBVar11->vector[2] != 0,(MethodInfo *)0x0);
-                                    pGVar16 = (this->fields)._n2DModeYSlider;
-                                    if ((this->fields)._sharedLookAndFeel2D ==
+                                              (pGVar15,*(char *)(iVar1 + 0x12) != '\0',
+                                               (MethodInfo *)0x0);
+                                    pGVar15 = (this_04->fields)._n2DModeYSlider;
+                                    iVar1 = 0x84;
+                                    if ((this_04->fields)._sharedLookAndFeel2D !=
                                         (MoveGizmoLookAndFeel2D *)0x0) {
-                                      pMVar17 = (this->fields)._lookAndFeel2D;
-                                      if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0)
-                                      goto code_?;
+                                      iVar1 = 0x98;
                                     }
-                                    else {
-                                      pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                                    }
-                                    pBVar11 = (pMVar17->fields)._sglSliderVis;
-                                    if (pBVar11 != (Boolean__Array *)0x0) {
-                                      if (pBVar11->max_length < 4) goto code_?;
-                                      if (pGVar16 != (GizmoLineSlider2D *)0x0) {
-                                        (pGVar16->fields)._._isVisible = pBVar11->vector[3] != 0;
-                                        (*(code *)(pGVar16->klass->vtable).OnVisibilityStateChanged.
-                                                  method)(pGVar16);
-                                        pGVar16 = (this->fields)._n2DModeYSlider;
-                                        if ((this->fields)._sharedLookAndFeel2D ==
+                                    iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                                    if ((iVar1 != 0) &&
+                                       (iVar1 = *(int *)(iVar1 + 0x20), iVar1 != 0)) {
+                                      if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
+                                      if (pGVar15 != (GizmoLineSlider2D *)0x0) {
+                                        (pGVar15->fields)._._isVisible =
+                                             *(char *)(iVar1 + 0x13) != '\0';
+                                        (*(code *)(pGVar15->klass->vtable).OnVisibilityStateChanged.
+                                                  method)(pGVar15);
+                                        pGVar15 = (this_04->fields)._n2DModeYSlider;
+                                        iVar1 = 0x84;
+                                        if ((this_04->fields)._sharedLookAndFeel2D !=
                                             (MoveGizmoLookAndFeel2D *)0x0) {
-                                          pMVar17 = (this->fields)._lookAndFeel2D;
-                                          if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0)
-                                          goto code_?;
+                                          iVar1 = 0x98;
                                         }
-                                        else {
-                                          pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                                        }
-                                        pBVar11 = (pMVar17->fields)._sglSliderCapVis;
-                                        if (pBVar11 != (Boolean__Array *)0x0) {
-                                          if (pBVar11->max_length < 4) goto code_?;
-                                          if (pGVar16 != (GizmoLineSlider2D *)0x0) {
+                                        iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                                        if ((iVar1 != 0) &&
+                                           (iVar1 = *(int *)(iVar1 + 0x24), iVar1 != 0)) {
+                                          if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
+                                          if (pGVar15 != (GizmoLineSlider2D *)0x0) {
                                             GizmoLineSlider2D::GizmoLineSlider2D_Set2DCapVisible
-                                                      (pGVar16,pBVar11->vector[3] != 0,
+                                                      (pGVar15,*(char *)(iVar1 + 0x13) != '\0',
                                                        (MethodInfo *)0x0);
-                                            pGVar18 = (this->fields)._2DModeDblSlider;
-                                            if (pGVar18 != (GizmoPlaneSlider2D *)0x0) {
-                                              bVar5 = (pGVar18->fields)._._isVisible;
-                                              if ((this->fields)._sharedLookAndFeel2D ==
+                                            pGVar16 = (this_04->fields)._2DModeDblSlider;
+                                            if (pGVar16 != (GizmoPlaneSlider2D *)0x0) {
+                                              bVar6 = (pGVar16->fields)._._isVisible;
+                                              iVar1 = 0x84;
+                                              if ((this_04->fields)._sharedLookAndFeel2D !=
                                                   (MoveGizmoLookAndFeel2D *)0x0) {
-                                                pMVar17 = (this->fields)._lookAndFeel2D;
-                                                if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0)
-                                                goto code_?;
+                                                iVar1 = 0x98;
                                               }
-                                              else {
-                                                pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                                              }
-                                              (pGVar18->fields)._._isVisible =
-                                                   (pMVar17->fields)._isDblSliderVisible;
-                                              (*(code *)(pGVar18->klass->vtable).
-                                                        OnVisibilityStateChanged.method)(pGVar18);
-                                              pGVar18 = (this->fields)._2DModeDblSlider;
-                                              if ((this->fields)._sharedLookAndFeel2D ==
-                                                  (MoveGizmoLookAndFeel2D *)0x0) {
-                                                pMVar17 = (this->fields)._lookAndFeel2D;
-                                                if (pMVar17 == (MoveGizmoLookAndFeel2D *)0x0)
-                                                goto code_?;
-                                              }
-                                              else {
-                                                pMVar17 = (this->fields)._sharedLookAndFeel2D;
-                                              }
-                                              if (pGVar18 != (GizmoPlaneSlider2D *)0x0) {
-                                                GizmoPlaneSlider2D::
-                                                GizmoPlaneSlider2D_SetBorderVisible
-                                                          (pGVar18,(pMVar17->fields).
-                                                                  _isDblSliderVisible,
-                                                           (MethodInfo *)0x0);
-                                                if (bVar5 != 0) {
-                                                  return;
+                                              iVar1 = *(int *)((int)&this_04->klass + iVar1);
+                                              if (iVar1 != 0) {
+                                                (pGVar16->fields)._._isVisible =
+                                                     *(bool *)(iVar1 + 0x1c);
+                                                (*(code *)(pGVar16->klass->vtable).
+                                                          OnVisibilityStateChanged.method)(pGVar16);
+                                                pGVar16 = (this_04->fields)._2DModeDblSlider;
+                                                if ((this_04->fields)._sharedLookAndFeel2D !=
+                                                    (MoveGizmoLookAndFeel2D *)0x0) {
+                                                  iVar3 = 0x98;
                                                 }
-                                                pGVar18 = (this->fields)._2DModeDblSlider;
-                                                if (pGVar18 != (GizmoPlaneSlider2D *)0x0) {
-                                                  if ((pGVar18->fields)._._isVisible == 0) {
+                                                iVar1 = *(int *)((int)&this_04->klass + iVar3);
+                                                if ((iVar1 != 0) &&
+                                                   (pGVar16 != (GizmoPlaneSlider2D *)0x0)) {
+                                                  GizmoPlaneSlider2D::
+                                                  GizmoPlaneSlider2D_SetBorderVisible
+                                                            (pGVar16,*(bool *)(iVar1 + 0x1c),
+                                                             (MethodInfo *)0x0);
+                                                  if (bVar6 != 0) {
                                                     return;
                                                   }
-                                                  MoveGizmo_Update2DModeHandlePositions
-                                                            (this,(MethodInfo *)0x0);
-                                                  return;
+                                                  pGVar16 = (this_04->fields)._2DModeDblSlider;
+                                                  if (pGVar16 != (GizmoPlaneSlider2D *)0x0) {
+                                                    if ((pGVar16->fields)._._isVisible == 0) {
+                                                      return;
+                                                    }
+                                                    MoveGizmo_Update2DModeHandlePositions
+                                                              (this_04,(MethodInfo *)0x0);
+                                                    return;
+                                                  }
                                                 }
                                               }
                                             }
@@ -1608,26 +1534,26 @@ code_?:
         }
         else {
 code_?:
-          pGVar19 = (this->fields)._vertexSnapDrag;
-          if (pGVar19 != (GizmoObjectVertexSnapDrag3D *)0x0) {
-            cVar20 = (*(code *)(pGVar19->klass->vtable).get_IsActive_1.method)(pGVar19);
-            if (cVar20 != '\0') {
+          pGVar17 = (this_04->fields)._vertexSnapDrag;
+          if (pGVar17 != (GizmoObjectVertexSnapDrag3D *)0x0) {
+            cVar18 = (*(code *)(pGVar17->klass->vtable).get_IsActive_1.method)(pGVar17);
+            if (cVar18 != '\0') {
               return;
             }
-            pGVar19 = (this->fields)._vertexSnapDrag;
-            if (pGVar19 != (GizmoObjectVertexSnapDrag3D *)0x0) {
-              bVar5 = GizmoObjectVertexSnapDrag3D::GizmoObjectVertexSnapDrag3D_SelectSnapPivotPoint
-                                 (pGVar19,(this->fields)._._gizmo,(MethodInfo *)0x0);
-              if (bVar5 == 0) {
+            pGVar17 = (this_04->fields)._vertexSnapDrag;
+            if (pGVar17 != (GizmoObjectVertexSnapDrag3D *)0x0) {
+              bVar6 = GizmoObjectVertexSnapDrag3D::GizmoObjectVertexSnapDrag3D_SelectSnapPivotPoint
+                                 (pGVar17,(this_04->fields)._._gizmo,(MethodInfo *)0x0);
+              if (bVar6 == 0) {
                 return;
               }
-              pGVar6 = (this->fields)._._gizmo;
-              if (((pGVar6 != (Gizmo *)0x0) &&
-                  (pGVar19 = (this->fields)._vertexSnapDrag,
-                  pGVar19 != (GizmoObjectVertexSnapDrag3D *)0x0)) &&
-                 (pGVar7 = (pGVar6->fields)._transform, pGVar7 != (GizmoTransform *)0x0)) {
+              pGVar7 = (this_04->fields)._._gizmo;
+              if (((pGVar7 != (Gizmo *)0x0) &&
+                  (pGVar17 = (this_04->fields)._vertexSnapDrag,
+                  pGVar17 != (GizmoObjectVertexSnapDrag3D *)0x0)) &&
+                 (pGVar8 = (pGVar7->fields)._transform, pGVar8 != (GizmoTransform *)0x0)) {
                 GizmoTransform::GizmoTransform_set_Position3D
-                          (pGVar7,(pGVar19->fields)._snapPivot,(MethodInfo *)0x0);
+                          (pGVar8,(pGVar17->fields)._snapPivot,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -1636,31 +1562,28 @@ code_?:
       }
     }
     else {
-      if ((this->fields)._sharedHotkeys == (MoveGizmoHotkeys *)0x0) {
-        pMVar3 = (this->fields)._hotkeys;
-        if (pMVar3 == (MoveGizmoHotkeys *)0x0) goto code_?;
+      iVar3 = 0x78;
+      if ((this->fields)._sharedHotkeys != (MoveGizmoHotkeys *)0x0) {
+        iVar3 = 0x8c;
       }
-      else {
-        pMVar3 = (this->fields)._sharedHotkeys;
-      }
-      pHVar4 = (pMVar3->fields)._enableSnapping;
-      if (pHVar4 != (Hotkeys *)0x0) {
-        bVar5 = Hotkeys::Hotkeys_IsActive(pHVar4,1,(MethodInfo *)0x0);
+      iVar3 = *(int *)((int)&this->klass + iVar3);
+      if ((iVar3 != 0) && (pHVar5 = *(Hotkeys **)(iVar3 + 0x18), pHVar5 != (Hotkeys *)0x0)) {
+        bVar6 = Hotkeys::Hotkeys_IsActive(pHVar5,1,(MethodInfo *)0x0);
         this_00 = (this->fields)._axesSliders;
         if (this_00 != (GizmoLineSlider3DCollection *)0x0) {
           GizmoLineSlider3DCollection::GizmoLineSlider3DCollection_SetSnapEnabled
-                    (this_00,bVar5,(MethodInfo *)0x0);
+                    (this_00,bVar6,(MethodInfo *)0x0);
           this_01 = (this->fields)._2DModeSliders;
           if (this_01 != (GizmoLineSlider2DCollection *)0x0) {
             GizmoLineSlider2DCollection::GizmoLineSlider2DCollection_SetSnapEnabled
-                      (this_01,bVar5,(MethodInfo *)0x0);
-            pGVar14 = (this->fields)._dblSliders;
-            if (pGVar14 != (GizmoPlaneSlider3DCollection *)0x0) {
+                      (this_01,bVar6,(MethodInfo *)0x0);
+            pGVar13 = (this->fields)._dblSliders;
+            if (pGVar13 != (GizmoPlaneSlider3DCollection *)0x0) {
               GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_SetSnapEnabled
-                        (pGVar14,bVar5,(MethodInfo *)0x0);
-              pGVar18 = (this->fields)._2DModeDblSlider;
-              if (pGVar18 != (GizmoPlaneSlider2D *)0x0) {
-                (*(code *)(pGVar18->klass->vtable).SetSnapEnabled_1.method)();
+                        (pGVar13,bVar6,(MethodInfo *)0x0);
+              pGVar16 = (this->fields)._2DModeDblSlider;
+              if (pGVar16 != (GizmoPlaneSlider2D *)0x0) {
+                (*(code *)(pGVar16->klass->vtable).SetSnapEnabled_1.method)();
                 goto code_?;
               }
             }
@@ -1673,8 +1596,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -2005,109 +1928,122 @@ void Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_SetupSharedLookAndFeel
                (MoveGizmo *this,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-    pMVar1 = (this->fields)._lookAndFeel3D;
-    if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+  iVar1 = 0x88;
+  if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+    iVar1 = 0x9c;
   }
-  else {
-    pMVar1 = (this->fields)._sharedLookAndFeel3D;
-  }
-  pGVar2 = (pMVar1->fields)._sglSlidersLookAndFeel;
-  pGVar3 = (this->fields)._pXSlider;
-  if (pGVar2 == (GizmoLineSlider3DLookAndFeel__Array *)0x0) goto code_?;
-  if (pGVar2->max_length != 0) {
-    if (pGVar3 == (GizmoLineSlider3D *)0x0) goto code_?;
-    GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
-              (pGVar3,pGVar2->vector[0],(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-      pMVar1 = (this->fields)._lookAndFeel3D;
-      if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
-    }
-    else {
-      pMVar1 = (this->fields)._sharedLookAndFeel3D;
-    }
-    pGVar2 = (pMVar1->fields)._sglSlidersLookAndFeel;
-    pGVar3 = (this->fields)._pYSlider;
-    if (pGVar2 == (GizmoLineSlider3DLookAndFeel__Array *)0x0) goto code_?;
-    if (1 < pGVar2->max_length) {
-      if (pGVar3 == (GizmoLineSlider3D *)0x0) goto code_?;
-      GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
-                (pGVar3,pGVar2->vector[1],(MethodInfo *)0x0);
-      if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-        pMVar1 = (this->fields)._lookAndFeel3D;
-        if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
-      }
-      else {
-        pMVar1 = (this->fields)._sharedLookAndFeel3D;
-      }
-      pGVar2 = (pMVar1->fields)._sglSlidersLookAndFeel;
-      pGVar3 = (this->fields)._pZSlider;
-      if (pGVar2 == (GizmoLineSlider3DLookAndFeel__Array *)0x0) goto code_?;
-      if (2 < pGVar2->max_length) {
-        if (pGVar3 == (GizmoLineSlider3D *)0x0) goto code_?;
+  iVar1 = *(int *)((int)&this->klass + iVar1);
+  if (iVar1 != 0) {
+    iVar1 = *(int *)(iVar1 + 0x2c);
+    pGVar2 = (this->fields)._pXSlider;
+    if (iVar1 != 0) {
+      if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
+      if (pGVar2 != (GizmoLineSlider3D *)0x0) {
         GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
-                  (pGVar3,pGVar2->vector[2],(MethodInfo *)0x0);
-        if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-          pMVar1 = (this->fields)._lookAndFeel3D;
-          if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                  (pGVar2,*(GizmoLineSlider3DLookAndFeel **)(iVar1 + 0x10),(MethodInfo *)0x0);
+        iVar1 = 0x88;
+        if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+          iVar1 = 0x9c;
         }
-        else {
-          pMVar1 = (this->fields)._sharedLookAndFeel3D;
-        }
-        pGVar3 = (this->fields)._nXSlider;
-        pGVar2 = (pMVar1->fields)._sglSlidersLookAndFeel;
-        if (pGVar2 == (GizmoLineSlider3DLookAndFeel__Array *)0x0) goto code_?;
-        if (3 < pGVar2->max_length) {
-          if (pGVar3 == (GizmoLineSlider3D *)0x0) goto code_?;
-          GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
-                    (pGVar3,pGVar2->vector[3],(MethodInfo *)0x0);
-          if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-            pMVar1 = (this->fields)._lookAndFeel3D;
-            if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
-          }
-          else {
-            pMVar1 = (this->fields)._sharedLookAndFeel3D;
-          }
-          pGVar3 = (this->fields)._nYSlider;
-          pGVar2 = (pMVar1->fields)._sglSlidersLookAndFeel;
-          if (pGVar2 == (GizmoLineSlider3DLookAndFeel__Array *)0x0) goto code_?;
-          if (4 < pGVar2->max_length) {
-            if (pGVar3 == (GizmoLineSlider3D *)0x0) goto code_?;
-            GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
-                      (pGVar3,pGVar2->vector[4],(MethodInfo *)0x0);
-            if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-              pMVar1 = (this->fields)._lookAndFeel3D;
-              if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
-            }
-            else {
-              pMVar1 = (this->fields)._sharedLookAndFeel3D;
-            }
-            pGVar3 = (this->fields)._nZSlider;
-            pGVar2 = (pMVar1->fields)._sglSlidersLookAndFeel;
-            if (pGVar2 == (GizmoLineSlider3DLookAndFeel__Array *)0x0) goto code_?;
-            if (5 < pGVar2->max_length) {
-              if (pGVar3 == (GizmoLineSlider3D *)0x0) goto code_?;
+        iVar1 = *(int *)((int)&this->klass + iVar1);
+        if (iVar1 != 0) {
+          iVar1 = *(int *)(iVar1 + 0x2c);
+          pGVar2 = (this->fields)._pYSlider;
+          if (iVar1 != 0) {
+            if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
+            if (pGVar2 != (GizmoLineSlider3D *)0x0) {
               GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
-                        (pGVar3,pGVar2->vector[5],(MethodInfo *)0x0);
-              if ((this->fields)._sharedLookAndFeel3D == (MoveGizmoLookAndFeel3D *)0x0) {
-                pMVar1 = (this->fields)._lookAndFeel3D;
-                if (pMVar1 == (MoveGizmoLookAndFeel3D *)0x0) goto code_?;
+                        (pGVar2,*(GizmoLineSlider3DLookAndFeel **)(iVar1 + 0x14),(MethodInfo *)0x0);
+              iVar1 = 0x88;
+              if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+                iVar1 = 0x9c;
               }
-              else {
-                pMVar1 = (this->fields)._sharedLookAndFeel3D;
-              }
-              pGVar4 = (pMVar1->fields)._dblSlidersLookAndFeel;
-              pGVar5 = (this->fields)._xySlider;
-              if (pGVar4 == (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) goto code_?;
-              if (pGVar4->max_length != 0) {
-                if (pGVar5 != (GizmoPlaneSlider3D *)0x0) {
-                  pGStack6 = pGVar4->vector[0];
-                  (pGVar5->fields)._sharedLookAndFeel = pGStack6;
-                  ppGStack7 = &(pGVar5->fields)._sharedLookAndFeel;
-                  func_?();
-                  return;
+              iVar1 = *(int *)((int)&this->klass + iVar1);
+              if (iVar1 != 0) {
+                iVar1 = *(int *)(iVar1 + 0x2c);
+                pGVar2 = (this->fields)._pZSlider;
+                if (iVar1 != 0) {
+                  if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
+                  if (pGVar2 != (GizmoLineSlider3D *)0x0) {
+                    GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
+                              (pGVar2,*(GizmoLineSlider3DLookAndFeel **)(iVar1 + 0x18),
+                               (MethodInfo *)0x0);
+                    iVar1 = 0x88;
+                    if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0) {
+                      iVar1 = 0x9c;
+                    }
+                    iVar1 = *(int *)((int)&this->klass + iVar1);
+                    if (iVar1 != 0) {
+                      pGVar2 = (this->fields)._nXSlider;
+                      iVar1 = *(int *)(iVar1 + 0x2c);
+                      if (iVar1 != 0) {
+                        if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
+                        if (pGVar2 != (GizmoLineSlider3D *)0x0) {
+                          GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
+                                    (pGVar2,*(GizmoLineSlider3DLookAndFeel **)(iVar1 + 0x1c),
+                                     (MethodInfo *)0x0);
+                          iVar1 = 0x88;
+                          if ((this->fields)._sharedLookAndFeel3D != (MoveGizmoLookAndFeel3D *)0x0)
+                          {
+                            iVar1 = 0x9c;
+                          }
+                          iVar1 = *(int *)((int)&this->klass + iVar1);
+                          if (iVar1 != 0) {
+                            pGVar2 = (this->fields)._nYSlider;
+                            iVar1 = *(int *)(iVar1 + 0x2c);
+                            if (iVar1 != 0) {
+                              if (*(uint *)(iVar1 + 0xc) < 5) goto code_?;
+                              if (pGVar2 != (GizmoLineSlider3D *)0x0) {
+                                GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
+                                          (pGVar2,*(GizmoLineSlider3DLookAndFeel **)(iVar1 + 0x20),
+                                           (MethodInfo *)0x0);
+                                iVar1 = 0x88;
+                                if ((this->fields)._sharedLookAndFeel3D !=
+                                    (MoveGizmoLookAndFeel3D *)0x0) {
+                                  iVar1 = 0x9c;
+                                }
+                                iVar1 = *(int *)((int)&this->klass + iVar1);
+                                if (iVar1 != 0) {
+                                  pGVar2 = (this->fields)._nZSlider;
+                                  iVar1 = *(int *)(iVar1 + 0x2c);
+                                  if (iVar1 != 0) {
+                                    if (*(uint *)(iVar1 + 0xc) < 6) goto code_?;
+                                    if (pGVar2 != (GizmoLineSlider3D *)0x0) {
+                                      GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
+                                                (pGVar2,*(GizmoLineSlider3DLookAndFeel **)
+                                                         (iVar1 + 0x24),(MethodInfo *)0x0);
+                                      iVar1 = 0x88;
+                                      if ((this->fields)._sharedLookAndFeel3D !=
+                                          (MoveGizmoLookAndFeel3D *)0x0) {
+                                        iVar1 = 0x9c;
+                                      }
+                                      iVar1 = *(int *)((int)&this->klass + iVar1);
+                                      if (iVar1 != 0) {
+                                        iVar1 = *(int *)(iVar1 + 0x30);
+                                        pGVar3 = (this->fields)._xySlider;
+                                        if (iVar1 != 0) {
+                                          if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
+                                          if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
+                                            pGStack4 =
+                                                 *(GizmoPlaneSlider3DLookAndFeel **)(iVar1 + 0x10);
+                                            (pGVar3->fields)._sharedLookAndFeel = pGStack4;
+                                            ppGStack5 = &(pGVar3->fields)._sharedLookAndFeel;
+                                            func_?();
+                                            return;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
-                goto code_?;
               }
             }
           }
@@ -2118,8 +2054,8 @@ void Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_SetupSharedLookAndFeel
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -2130,149 +2066,153 @@ void Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_SetupSharedSettings
                (MoveGizmo *this,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
+  iVar1 = 0x80;
+  iVar2 = 0x80;
+  if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+    iVar2 = 0x94;
   }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
+  pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+  if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+    ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
+              (pSVar3,(this->fields)._pXSlider,0,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+    iVar2 = 0x80;
+    if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+      iVar2 = 0x94;
+    }
+    pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+    if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+      ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
+                (pSVar3,(this->fields)._pYSlider,1,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+      iVar2 = 0x80;
+      if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+        iVar2 = 0x94;
+      }
+      pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+      if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+        ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
+                  (pSVar3,(this->fields)._pZSlider,2,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+        iVar2 = 0x80;
+        if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+          iVar2 = 0x94;
+        }
+        pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+        if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+          ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
+                    (pSVar3,(this->fields)._nXSlider,0,AxisSign__Enum_Negative,(MethodInfo *)0x0);
+          iVar2 = 0x80;
+          if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+            iVar2 = 0x94;
+          }
+          pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+          if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+            ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
+                      (pSVar3,(this->fields)._nYSlider,1,AxisSign__Enum_Negative,(MethodInfo *)0x0);
+            iVar2 = 0x80;
+            if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+              iVar2 = 0x94;
+            }
+            pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+            if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+              ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
+                        (pSVar3,(this->fields)._nZSlider,2,AxisSign__Enum_Negative,(MethodInfo *)0x0
+                        );
+              iVar2 = 0x80;
+              if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+                iVar2 = 0x94;
+              }
+              pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+              if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+                ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectDblSliderSettings
+                          (pSVar3,(this->fields)._xySlider,PlaneId__Enum_XY,(MethodInfo *)0x0);
+                iVar2 = 0x80;
+                if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+                  iVar2 = 0x94;
+                }
+                pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+                if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+                  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectDblSliderSettings
+                            (pSVar3,(this->fields)._yzSlider,PlaneId__Enum_YZ,(MethodInfo *)0x0);
+                  iVar2 = 0x80;
+                  if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+                    iVar2 = 0x94;
+                  }
+                  pSVar3 = *(ScaleGizmoSettings3D **)((int)&this->klass + iVar2);
+                  if (pSVar3 != (ScaleGizmoSettings3D *)0x0) {
+                    ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectDblSliderSettings
+                              (pSVar3,(this->fields)._zxSlider,PlaneId__Enum_ZX,(MethodInfo *)0x0);
+                    iVar4 = 0x7c;
+                    iVar2 = 0x7c;
+                    if ((this->fields)._sharedSettings2D != (MoveGizmoSettings2D *)0x0) {
+                      iVar2 = 0x90;
+                    }
+                    pMVar5 = *(MoveGizmoSettings2D **)((int)&this->klass + iVar2);
+                    if (pMVar5 != (MoveGizmoSettings2D *)0x0) {
+                      MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
+                                (pMVar5,(this->fields)._p2DModeXSlider,0,AxisSign__Enum_Positive,
+                                 (MethodInfo *)0x0);
+                      iVar2 = 0x7c;
+                      if ((this->fields)._sharedSettings2D != (MoveGizmoSettings2D *)0x0) {
+                        iVar2 = 0x90;
+                      }
+                      pMVar5 = *(MoveGizmoSettings2D **)((int)&this->klass + iVar2);
+                      if (pMVar5 != (MoveGizmoSettings2D *)0x0) {
+                        MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
+                                  (pMVar5,(this->fields)._p2DModeYSlider,1,AxisSign__Enum_Positive,
+                                   (MethodInfo *)0x0);
+                        iVar2 = 0x7c;
+                        if ((this->fields)._sharedSettings2D != (MoveGizmoSettings2D *)0x0) {
+                          iVar2 = 0x90;
+                        }
+                        pMVar5 = *(MoveGizmoSettings2D **)((int)&this->klass + iVar2);
+                        if (pMVar5 != (MoveGizmoSettings2D *)0x0) {
+                          MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
+                                    (pMVar5,(this->fields)._n2DModeXSlider,0,AxisSign__Enum_Negative
+                                     ,(MethodInfo *)0x0);
+                          iVar2 = 0x7c;
+                          if ((this->fields)._sharedSettings2D != (MoveGizmoSettings2D *)0x0) {
+                            iVar2 = 0x90;
+                          }
+                          pMVar5 = *(MoveGizmoSettings2D **)((int)&this->klass + iVar2);
+                          if (pMVar5 != (MoveGizmoSettings2D *)0x0) {
+                            MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
+                                      (pMVar5,(this->fields)._n2DModeYSlider,1,
+                                       AxisSign__Enum_Negative,(MethodInfo *)0x0);
+                            if ((this->fields)._sharedSettings2D != (MoveGizmoSettings2D *)0x0) {
+                              iVar4 = 0x90;
+                            }
+                            pMVar5 = *(MoveGizmoSettings2D **)((int)&this->klass + iVar4);
+                            if (pMVar5 != (MoveGizmoSettings2D *)0x0) {
+                              MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectDblSliderSettings
+                                        (pMVar5,(this->fields)._2DModeDblSlider,(MethodInfo *)0x0);
+                              this_00 = (this->fields)._vertexSnapDrag;
+                              if ((this->fields)._sharedSettings3D != (MoveGizmoSettings3D *)0x0) {
+                                iVar1 = 0x94;
+                              }
+                              iVar2 = *(int *)((int)&this->klass + iVar1);
+                              if ((iVar2 != 0) && (this_00 != (GizmoObjectVertexSnapDrag3D *)0x0)) {
+                                GizmoObjectVertexSnapDrag3D::
+                                GizmoObjectVertexSnapDrag3D_set_Settings
+                                          (this_00,*(GizmoObjectVertexSnapSettings **)(iVar2 + 0x14)
+                                           ,(MethodInfo *)0x0);
+                                return;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
-            (pSVar1,(this->fields)._pXSlider,0,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
-            (pSVar1,(this->fields)._pYSlider,1,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
-            (pSVar1,(this->fields)._pZSlider,2,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
-            (pSVar1,(this->fields)._nXSlider,0,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
-            (pSVar1,(this->fields)._nYSlider,1,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectSliderSettings
-            (pSVar1,(this->fields)._nZSlider,2,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectDblSliderSettings
-            (pSVar1,(this->fields)._xySlider,PlaneId__Enum_XY,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectDblSliderSettings
-            (pSVar1,(this->fields)._yzSlider,PlaneId__Enum_YZ,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._settings3D;
-    if (pSVar1 == (ScaleGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pSVar1 = (ScaleGizmoSettings3D *)(this->fields)._sharedSettings3D;
-  }
-  ScaleGizmoSettings3D::ScaleGizmoSettings3D_ConnectDblSliderSettings
-            (pSVar1,(this->fields)._zxSlider,PlaneId__Enum_ZX,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings2D == (MoveGizmoSettings2D *)0x0) {
-    pMVar2 = (this->fields)._settings2D;
-    if (pMVar2 == (MoveGizmoSettings2D *)0x0) goto code_?;
-  }
-  else {
-    pMVar2 = (this->fields)._sharedSettings2D;
-  }
-  MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
-            (pMVar2,(this->fields)._p2DModeXSlider,0,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings2D == (MoveGizmoSettings2D *)0x0) {
-    pMVar2 = (this->fields)._settings2D;
-    if (pMVar2 == (MoveGizmoSettings2D *)0x0) goto code_?;
-  }
-  else {
-    pMVar2 = (this->fields)._sharedSettings2D;
-  }
-  MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
-            (pMVar2,(this->fields)._p2DModeYSlider,1,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings2D == (MoveGizmoSettings2D *)0x0) {
-    pMVar2 = (this->fields)._settings2D;
-    if (pMVar2 == (MoveGizmoSettings2D *)0x0) goto code_?;
-  }
-  else {
-    pMVar2 = (this->fields)._sharedSettings2D;
-  }
-  MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
-            (pMVar2,(this->fields)._n2DModeXSlider,0,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings2D == (MoveGizmoSettings2D *)0x0) {
-    pMVar2 = (this->fields)._settings2D;
-    if (pMVar2 == (MoveGizmoSettings2D *)0x0) goto code_?;
-  }
-  else {
-    pMVar2 = (this->fields)._sharedSettings2D;
-  }
-  MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectSliderSettings
-            (pMVar2,(this->fields)._n2DModeYSlider,1,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-  if ((this->fields)._sharedSettings2D == (MoveGizmoSettings2D *)0x0) {
-    pMVar2 = (this->fields)._settings2D;
-    if (pMVar2 == (MoveGizmoSettings2D *)0x0) goto code_?;
-  }
-  else {
-    pMVar2 = (this->fields)._sharedSettings2D;
-  }
-  MoveGizmoSettings2D::MoveGizmoSettings2D_ConnectDblSliderSettings
-            (pMVar2,(this->fields)._2DModeDblSlider,(MethodInfo *)0x0);
-  this_00 = (this->fields)._vertexSnapDrag;
-  if ((this->fields)._sharedSettings3D == (MoveGizmoSettings3D *)0x0) {
-    pMVar3 = (this->fields)._settings3D;
-    if (pMVar3 == (MoveGizmoSettings3D *)0x0) goto code_?;
-  }
-  else {
-    pMVar3 = (this->fields)._sharedSettings3D;
-  }
-  if (this_00 != (GizmoObjectVertexSnapDrag3D *)0x0) {
-    GizmoObjectVertexSnapDrag3D::GizmoObjectVertexSnapDrag3D_set_Settings
-              (this_00,(pMVar3->fields)._vertexSnapSettings,(MethodInfo *)0x0);
-    return;
-  }
-code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -2283,77 +2223,84 @@ void Assembly-CSharp.dll::RTG::MoveGizmo::MoveGizmo_Update2DModeHandlePositions
                (MoveGizmo *this,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel2D == (MoveGizmoLookAndFeel2D *)0x0) {
-    pMVar1 = (this->fields)._lookAndFeel2D;
-    if (pMVar1 == (MoveGizmoLookAndFeel2D *)0x0) goto code_?;
+  iVar1 = 0x84;
+  if ((this->fields)._sharedLookAndFeel2D != (MoveGizmoLookAndFeel2D *)0x0) {
+    iVar1 = 0x98;
   }
-  else {
-    pMVar1 = (this->fields)._sharedLookAndFeel2D;
-  }
-  if ((pMVar1->fields)._isDblSliderVisible == 0) {
-    pGVar2 = (this->fields)._._gizmo;
-    if ((pGVar2 != (Gizmo *)0x0) &&
-       (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
-      pVVar4 = &(pGVar3->fields)._position2D;
-      value_00 = *pVVar4;
-      value = *pVVar4;
-      VVar5 = *pVVar4;
+  iVar1 = *(int *)((int)&this->klass + iVar1);
+  if (iVar1 != 0) {
+    if (*(char *)(iVar1 + 0x1c) == '\0') {
+      pGVar2 = (this->fields)._._gizmo;
+      if ((pGVar2 != (Gizmo *)0x0) &&
+         (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
+        pVVar4 = &(pGVar3->fields)._position2D;
+        value_00 = *pVVar4;
+        value = *pVVar4;
+        VVar5 = *pVVar4;
+        pGVar6 = (this->fields)._p2DModeXSlider;
+        if (pGVar6 != (GizmoLineSlider2D *)0x0) {
+          GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,*pVVar4,(MethodInfo *)0x0);
+          pGVar6 = (this->fields)._p2DModeYSlider;
+          if (pGVar6 != (GizmoLineSlider2D *)0x0) {
+            GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,VVar5,(MethodInfo *)0x0);
+            pGVar6 = (this->fields)._n2DModeXSlider;
+            if (pGVar6 != (GizmoLineSlider2D *)0x0) {
+              GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,value,(MethodInfo *)0x0)
+              ;
+              pGVar6 = (this->fields)._n2DModeYSlider;
+              if (pGVar6 != (GizmoLineSlider2D *)0x0) {
+                GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition
+                          (pGVar6,value_00,(MethodInfo *)0x0);
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
+      pGVar7 = (this->fields)._2DModeDblSlider;
       pGVar6 = (this->fields)._p2DModeXSlider;
-      if (pGVar6 != (GizmoLineSlider2D *)0x0) {
-        GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,*pVVar4,(MethodInfo *)0x0);
-        pGVar6 = (this->fields)._p2DModeYSlider;
+      if (pGVar7 != (GizmoPlaneSlider2D *)0x0) {
+        VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
+                          (pGVar7,Shape2DExtentPoint__Enum_Right,(MethodInfo *)0x0);
         if (pGVar6 != (GizmoLineSlider2D *)0x0) {
           GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,VVar5,(MethodInfo *)0x0);
-          pGVar6 = (this->fields)._n2DModeXSlider;
-          if (pGVar6 != (GizmoLineSlider2D *)0x0) {
-            GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,value,(MethodInfo *)0x0);
-            pGVar6 = (this->fields)._n2DModeYSlider;
+          pGVar7 = (this->fields)._2DModeDblSlider;
+          pGVar6 = (this->fields)._p2DModeYSlider;
+          if (pGVar7 != (GizmoPlaneSlider2D *)0x0) {
+            VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
+                              (pGVar7,Shape2DExtentPoint__Enum_Top,(MethodInfo *)0x0);
             if (pGVar6 != (GizmoLineSlider2D *)0x0) {
-              GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition
-                        (pGVar6,value_00,(MethodInfo *)0x0);
-              return;
+              GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,VVar5,(MethodInfo *)0x0)
+              ;
+              pGVar7 = (this->fields)._2DModeDblSlider;
+              pGVar6 = (this->fields)._n2DModeXSlider;
+              if (pGVar7 != (GizmoPlaneSlider2D *)0x0) {
+                VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
+                                  (pGVar7,Shape2DExtentPoint__Enum_Left,(MethodInfo *)0x0);
+                if (pGVar6 != (GizmoLineSlider2D *)0x0) {
+                  GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition
+                            (pGVar6,VVar5,(MethodInfo *)0x0);
+                  pGVar7 = (this->fields)._2DModeDblSlider;
+                  pGVar6 = (this->fields)._n2DModeYSlider;
+                  if (pGVar7 != (GizmoPlaneSlider2D *)0x0) {
+                    VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
+                                      (pGVar7,Shape2DExtentPoint__Enum_Bottom,(MethodInfo *)0x0);
+                    if (pGVar6 != (GizmoLineSlider2D *)0x0) {
+                      GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition
+                                (pGVar6,VVar5,(MethodInfo *)0x0);
+                      return;
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   }
-  else {
-    pGVar7 = (this->fields)._2DModeDblSlider;
-    pGVar6 = (this->fields)._p2DModeXSlider;
-    if ((pGVar7 != (GizmoPlaneSlider2D *)0x0) &&
-       (VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
-                          (pGVar7,Shape2DExtentPoint__Enum_Right,(MethodInfo *)0x0),
-       pGVar6 != (GizmoLineSlider2D *)0x0)) {
-      GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,VVar5,(MethodInfo *)0x0);
-      pGVar7 = (this->fields)._2DModeDblSlider;
-      pGVar6 = (this->fields)._p2DModeYSlider;
-      if ((pGVar7 != (GizmoPlaneSlider2D *)0x0) &&
-         (VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
-                            (pGVar7,Shape2DExtentPoint__Enum_Top,(MethodInfo *)0x0),
-         pGVar6 != (GizmoLineSlider2D *)0x0)) {
-        GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,VVar5,(MethodInfo *)0x0);
-        pGVar7 = (this->fields)._2DModeDblSlider;
-        pGVar6 = (this->fields)._n2DModeXSlider;
-        if ((pGVar7 != (GizmoPlaneSlider2D *)0x0) &&
-           (VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
-                              (pGVar7,Shape2DExtentPoint__Enum_Left,(MethodInfo *)0x0),
-           pGVar6 != (GizmoLineSlider2D *)0x0)) {
-          GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,VVar5,(MethodInfo *)0x0);
-          pGVar7 = (this->fields)._2DModeDblSlider;
-          pGVar6 = (this->fields)._n2DModeYSlider;
-          if ((pGVar7 != (GizmoPlaneSlider2D *)0x0) &&
-             (VVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealExtentPoint
-                                (pGVar7,Shape2DExtentPoint__Enum_Bottom,(MethodInfo *)0x0),
-             pGVar6 != (GizmoLineSlider2D *)0x0)) {
-            GizmoLineSlider2D::GizmoLineSlider2D_set_StartPosition(pGVar6,VVar5,(MethodInfo *)0x0);
-            return;
-          }
-        }
-      }
-    }
-  }
-code_?:
   func_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();

@@ -549,7 +549,7 @@ void Assembly-CSharp.dll::SelfElevator::SelfElevator__ctor(SelfElevator *this,Me
               }
               bVar3 = SelfElevator_IsProcessElevated(this,(MethodInfo *)0x0);
               if ((TypeInfo__SelfElevator->_1).cctor_finished_or_no_cctor == 0) {
-                bVar3 = 0x40;
+                bVar3 = 0x20;
                 func_?();
               }
               if (cRam_? == '\0') {

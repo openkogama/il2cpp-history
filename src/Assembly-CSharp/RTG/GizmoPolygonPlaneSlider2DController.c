@@ -8,73 +8,72 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoPolygonPlaneSlider2DController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if ((pGVar1 == (GizmoPlaneSlider2DControllerData *)0x0) ||
-     (pPVar2 = (pGVar1->fields).Polygon, pPVar2 == (PolygonShape2D *)0x0)) {
-    VStack_3.y = (float)&stack0xfffffffc;
-    pfStack_4 = &fStack_5;
-    pfStack_4 = (float *)func_?();
-    func_?();
-    pcVar6 = (code *)swi(3);
-    VVar7 = (Vector2)(*pcVar6)();
-    return VVar7;
-  }
-  pfVar8 = (float *)(*(code *)(pPVar2->klass->vtable).GetEncapsulatingRect.method)
-                              (&fStack_9,pPVar2,pPVar2->klass[1]._0.image);
-  fVar10 = _UNK_?;
-  fVar11 = *pfVar8;
-  fVar12 = pfVar8[1];
-  fVar13 = pfVar8[2];
-  fVar14 = pfVar8[3];
-  fStack_9 = fVar11;
-  puStack_15 = (undefined *)fVar12;
-  pfStack_4 = (float *)fVar13;
-  fStack_5 = fVar14;
-  switch(extentPt) {
-  case Shape2DExtentPoint__Enum_Left:
-    VVar7 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRight((MethodInfo *)0x0);
-    VStack_3.x = VVar7.x;
-    VStack_3.y = VVar7.y;
-    fVar16 = VStack_3.x * (float)pfStack_4;
-    VStack_3.y = VStack_3.y * (float)pfStack_4;
-    break;
-  case Shape2DExtentPoint__Enum_Top:
-    VVar7 = RightAngTriangle2D::RightAngTriangle2D_get_ModelUp((MethodInfo *)0x0);
-    VStack_3.x = VVar7.x;
-    VStack_3.y = VVar7.y;
-    fVar16 = VStack_3.x * fStack_5;
-    VStack_3.y = VStack_3.y * fStack_5;
-    goto code_?;
-  case Shape2DExtentPoint__Enum_Right:
-    VVar7 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRight((MethodInfo *)0x0);
-    VStack_3.x = VVar7.x;
-    VStack_3.y = VVar7.y;
-    fVar16 = VStack_3.x * (float)pfStack_4;
-    VStack_3.y = VStack_3.y * (float)pfStack_4;
-code_?:
-    extentPt = (Shape2DExtentPoint__Enum)(fVar14 * fVar10 + fVar12);
-    this = (GizmoPolygonPlaneSlider2DController *)(fVar13 * fVar10 + fVar11);
-    VStack_3.y = (float)extentPt + VStack_3.y * _UNK_?;
-    VStack_3.x = (float)this + fVar16 * _UNK_?;
-    return VStack_3;
-  case Shape2DExtentPoint__Enum_Bottom:
-    VVar7 = RightAngTriangle2D::RightAngTriangle2D_get_ModelUp((MethodInfo *)0x0);
-    VStack_3.x = VVar7.x;
-    VStack_3.y = VVar7.y;
-    fVar16 = VStack_3.x * fStack_5;
-    VStack_3.y = VStack_3.y * fStack_5;
-    break;
-  default:
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector2);
-      cRam_? = '\x01';
+  if ((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
+     (pPVar2 = (pGVar1->fields).Polygon, pPVar2 != (PolygonShape2D *)0x0)) {
+    pfVar3 = (float *)(*(code *)(pPVar2->klass->vtable).GetEncapsulatingRect.method)
+                                (&fStack_4,pPVar2,pPVar2->klass[1]._0.image);
+    fVar5 = _UNK_?;
+    fVar6 = *pfVar3;
+    fVar7 = pfVar3[1];
+    fVar8 = pfVar3[2];
+    fVar9 = pfVar3[3];
+    fStack_4 = fVar6;
+    puStack_10 = (undefined *)fVar7;
+    pfStack_11 = (float *)fVar8;
+    fStack_12 = fVar9;
+    switch(extentPt) {
+    case Shape2DExtentPoint__Enum_Left:
+      VVar13 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRight((MethodInfo *)0x0);
+      VStack_14.x = VVar13.x;
+      VStack_14.y = VVar13.y;
+      fVar15 = VStack_14.x * (float)pfStack_11;
+      VStack_14.y = VStack_14.y * (float)pfStack_11;
+      break;
+    case Shape2DExtentPoint__Enum_Top:
+      fVar8 = fVar8 * _UNK_?;
+      fVar9 = fVar9 * _UNK_?;
+      VVar13 = RightAngTriangle2D::RightAngTriangle2D_get_ModelUp((MethodInfo *)0x0);
+      VStack_14.x = VVar13.x;
+      VStack_14.y = VVar13.y;
+      VStack_14.y = fVar9 + fVar7 + VStack_14.y * fStack_12 * _UNK_?;
+      VStack_14.x = fVar8 + fVar6 + VStack_14.x * fStack_12 * _UNK_?;
+      return VStack_14;
+    case Shape2DExtentPoint__Enum_Right:
+      fVar8 = fVar8 * _UNK_?;
+      fVar9 = fVar9 * _UNK_?;
+      VVar13 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRight((MethodInfo *)0x0);
+      VStack_14.x = VVar13.x;
+      VStack_14.y = VVar13.y;
+      VStack_14.y = VStack_14.y * (float)pfStack_11 * _UNK_? + fVar9 + fVar7;
+      VStack_14.x = VStack_14.x * (float)pfStack_11 * _UNK_? + fVar8 + fVar6;
+      return VStack_14;
+    case Shape2DExtentPoint__Enum_Bottom:
+      VVar13 = RightAngTriangle2D::RightAngTriangle2D_get_ModelUp((MethodInfo *)0x0);
+      VStack_14.x = VVar13.x;
+      VStack_14.y = VVar13.y;
+      fVar15 = VStack_14.x * fStack_12;
+      VStack_14.y = VStack_14.y * fStack_12;
+      break;
+    default:
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Vector2);
+        cRam_? = '\x01';
+      }
+      return TypeInfo__UnityEngine__Vector2->static_fields->zeroVector;
     }
-    return TypeInfo__UnityEngine__Vector2->static_fields->zeroVector;
+    extentPt = (Shape2DExtentPoint__Enum)(fVar9 * fVar5 + fVar7);
+    this = (GizmoPolygonPlaneSlider2DController *)(fVar8 * fVar5 + fVar6);
+    VStack_14.y = (float)extentPt - VStack_14.y * _UNK_?;
+    VStack_14.x = (float)this - fVar15 * _UNK_?;
+    return VStack_14;
   }
-  extentPt = (Shape2DExtentPoint__Enum)(fVar14 * fVar10 + fVar12);
-  this = (GizmoPolygonPlaneSlider2DController *)(fVar13 * fVar10 + fVar11);
-  VStack_3.y = (float)extentPt - VStack_3.y * _UNK_?;
-  VStack_3.x = (float)this - fVar16 * _UNK_?;
-  return VStack_3;
+  VStack_14.y = (float)&stack0xfffffffc;
+  pfStack_11 = &fStack_12;
+  pfStack_11 = (float *)func_?();
+  func_?();
+  pcVar16 = (code *)swi(3);
+  VVar13 = (Vector2)(*pcVar16)();
+  return VVar13;
 }
 
 
@@ -88,23 +87,16 @@ void Assembly-CSharp.dll::RTG::GizmoPolygonPlaneSlider2DController::
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
     this_00 = (pGVar1->fields).Polygon;
-    pGVar2 = (((this->fields)._._data)->fields).Slider;
-    if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
-      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
-        pGVar3 = (pGVar2->fields)._settings;
-        if (pGVar3 == (GizmoPlaneSlider2DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedSettings;
-      }
-      if (this_00 != (PolygonShape2D *)0x0) {
-        SphereShape3D::SphereShape3D_set_RadiusEps
-                  ((SphereShape3D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
-        return;
-      }
+    pGVar2 = (pGVar1->fields).Slider;
+    if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
+        (pGVar3 = (&(pGVar2->fields)._settings)
+                  [(pGVar2->fields)._sharedSettings != (GizmoPlaneSlider2DSettings *)0x0],
+        pGVar3 != (GizmoPlaneSlider2DSettings *)0x0)) && (this_00 != (PolygonShape2D *)0x0)) {
+      SphereShape3D::SphereShape3D_set_RadiusEps
+                ((SphereShape3D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   uVar4 = func_?(&stack0xfffffff0);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
@@ -181,37 +173,31 @@ void Assembly-CSharp.dll::RTG::GizmoPolygonPlaneSlider2DController::
       func_?();
       cRam_? = '\x01';
     }
-    pIVar4 = (pGVar2->fields)._controllers;
-    pGVar5 = (pGVar2->fields)._planeSlider;
-    if (pGVar5 != (GizmoPlaneSlider2D *)0x0) {
-      if ((pGVar5->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
-        pGVar6 = (pGVar5->fields)._lookAndFeel;
-        if (pGVar6 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
+    pGVar4 = (pGVar2->fields)._planeSlider;
+    pIVar5 = (pGVar2->fields)._controllers;
+    if (((pGVar4 != (GizmoPlaneSlider2D *)0x0) &&
+        (pGVar6 = (&(pGVar4->fields)._lookAndFeel)
+                  [(pGVar4->fields)._sharedLookAndFeel != (GizmoPlaneSlider2DLookAndFeel *)0x0],
+        pGVar6 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
+       (pIVar5 != (IGizmoPolygon2DBorderController__Array *)0x0)) {
+      uVar7 = (pGVar6->fields)._polygonBorderType;
+      if (pIVar5->max_length <= uVar7) {
+        pIStack_3 = (IGizmoPolygon2DBorderController *)0x0;
+        pIStack_8 = (IGizmoPolygon2DBorderController__Class *)func_?();
+        func_?();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
       }
-      else {
-        pGVar6 = (pGVar5->fields)._sharedLookAndFeel;
-      }
-      if (pIVar4 != (IGizmoPolygon2DBorderController__Array *)0x0) {
-        uVar7 = (pGVar6->fields)._polygonBorderType;
-        if (pIVar4->max_length <= uVar7) {
-          pIStack_3 = (IGizmoPolygon2DBorderController *)0x0;
-          pIStack_8 = (IGizmoPolygon2DBorderController__Class *)func_?();
-          func_?();
-          pcVar9 = (code *)swi(3);
-          (*pcVar9)();
-          return;
-        }
-        pIStack_3 = pIVar4->vector[uVar7];
-        if (pIStack_3 != (IGizmoPolygon2DBorderController *)0x0) {
-          pIStack_8 = TypeInfo__RTG__IGizmoPolygon2DBorderController;
-          puStack_10 = (undefined *)0x2;
-          func_?();
-          return;
-        }
+      pIStack_3 = pIVar5->vector[uVar7];
+      if (pIStack_3 != (IGizmoPolygon2DBorderController *)0x0) {
+        pIStack_8 = TypeInfo__RTG__IGizmoPolygon2DBorderController;
+        puStack_10 = (undefined *)0x2;
+        func_?();
+        return;
       }
     }
   }
-code_?:
   pIStack_3 = (IGizmoPolygon2DBorderController *)&stack0xfffffffc;
   uVar11 = func_?(&puStack_10);
   func_?(uVar11);

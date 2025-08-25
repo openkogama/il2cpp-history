@@ -120,26 +120,36 @@ bool Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::
   if (this_00 != (MVNetworkGame *)0x0) {
     this_01 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(this_00,(MethodInfo *)0x0);
     if (this_01 != (MVWorldObjectClientManager *)0x0) {
-      this_02 = (MVAvatarSpawnRoleCreator *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_01,spawnRoleId,(MethodInfo *)0x0);
-      if (this_02 != (MVAvatarSpawnRoleCreator *)0x0) {
-        if (((TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment <=
-             (this_02->klass->_1).naturalAligment) &&
+      pMVar1 = (MVAvatarSpawnRoleCreator *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_01,spawnRoleId,(MethodInfo *)0x0);
+      if (pMVar1 != (MVAvatarSpawnRoleCreator *)0x0) {
+        if (((pMVar1->klass->_1).naturalAligment <
+             (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) ||
            ((MVAvatarSpawnRoleCreator__Class *)
-            (this_02->klass->_1).typeHierarchy
-            [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] ==
+            (pMVar1->klass->_1).typeHierarchy
+            [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
             TypeInfo__MVAvatarSpawnRoleCreator)) {
+          bVar2 = false;
+        }
+        else {
+          bVar2 = true;
+        }
+        this_02 = (MVAvatarSpawnRoleCreator *)0x0;
+        if (bVar2) {
+          this_02 = pMVar1;
+        }
+        if (this_02 != (MVAvatarSpawnRoleCreator *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-          if (pPVar1 != (PlayerPlanetData *)0x0) {
-            bVar2 = (pPVar1->fields).gamePassTier;
-            GVar3 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
+          pPVar3 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+          if (pPVar3 != (PlayerPlanetData *)0x0) {
+            bVar4 = (pPVar3->fields).gamePassTier;
+            GVar5 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
                               (this_02,(MethodInfo *)0x0);
-            return (byte)GVar3 <= bVar2;
+            return (byte)GVar5 <= bVar4;
           }
           goto code_?;
         }
@@ -149,9 +159,9 @@ bool Assembly-CSharp.dll::PMOWaitForPlayModeAvatar::
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -599,10 +609,10 @@ code_?:
   else {
     this_00 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(pMVar1,(MethodInfo *)0x0);
     if (this_00 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    unaff_ESI = (MVAvatarSpawnRoleCreator *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_00,spawnRoleId,(MethodInfo *)0x0);
-    if (unaff_ESI == (MVAvatarSpawnRoleCreator *)0x0) {
+    pMVar3 = (MVAvatarSpawnRoleCreator *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                        (this_00,spawnRoleId,(MethodInfo *)0x0);
+    if (pMVar3 == (MVAvatarSpawnRoleCreator *)0x0) {
 code_?:
       PMOWaitForPlayModeAvatar_SpawnAsDefaultPlayModeSpawnRole(this,(MethodInfo *)0x0);
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
@@ -613,11 +623,11 @@ code_?:
            ((pMVar2->klass->_1).typeHierarchy
             [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-        uVar3 = pMVar2[1].klass;
-        iVar4 = pMVar2[1].fields._.checkpointWOID;
+        uVar4 = pMVar2[1].klass;
+        iVar5 = pMVar2[1].fields._.checkpointWOID;
         pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (pMVar2 != (MVLocalPlayer *)0x0) {
-          iVar5 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar2,(MethodInfo *)0x0);
+          iVar6 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar2,(MethodInfo *)0x0);
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
           unaff_ESI = (MVAvatarSpawnRoleCreator *)TypeInfo__MVLocalPlayerBuilder;
           if (pMVar2 != (MVLocalPlayer *)0x0) {
@@ -626,9 +636,9 @@ code_?:
                ((pMVar2->klass->_1).typeHierarchy
                 [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] ==
                 (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
-              pMVar2[1].klass = (MVLocalPlayer__Class *)uVar3;
-              pMVar2[1].monitor = (MonitorData *)iVar5;
-              pMVar2[1].fields._.checkpointWOID = iVar4;
+              pMVar2[1].klass = (MVLocalPlayer__Class *)uVar4;
+              pMVar2[1].monitor = (MonitorData *)iVar6;
+              pMVar2[1].fields._.checkpointWOID = iVar5;
               return;
             }
             goto code_?;
@@ -637,22 +647,32 @@ code_?:
       }
       goto code_?;
     }
-    if (((unaff_ESI->klass->_1).naturalAligment <
+    if (((pMVar3->klass->_1).naturalAligment <
          (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) ||
        ((MVAvatarSpawnRoleCreator__Class *)
-        (unaff_ESI->klass->_1).typeHierarchy
+        (pMVar3->klass->_1).typeHierarchy
         [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarSpawnRoleCreator)) goto code_?;
+        TypeInfo__MVAvatarSpawnRoleCreator)) {
+      bVar7 = false;
+    }
+    else {
+      bVar7 = true;
+    }
+    unaff_ESI = (MVAvatarSpawnRoleCreator *)0x0;
+    if (bVar7) {
+      unaff_ESI = pMVar3;
+    }
+    if (unaff_ESI == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
     }
-    pPVar6 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-    if (pPVar6 == (PlayerPlanetData *)0x0) goto code_?;
-    bVar7 = (pPVar6->fields).gamePassTier;
-    GVar8 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
+    pPVar8 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
+    if (pPVar8 == (PlayerPlanetData *)0x0) goto code_?;
+    bVar9 = (pPVar8->fields).gamePassTier;
+    GVar10 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Tier
                        (unaff_ESI,(MethodInfo *)0x0);
-    if (bVar7 < (byte)GVar8) goto code_?;
+    if (bVar9 < (byte)GVar10) goto code_?;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
@@ -661,14 +681,14 @@ code_?:
     unaff_ESI = (MVAvatarSpawnRoleCreator *)
                 MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if (unaff_ESI == (MVAvatarSpawnRoleCreator *)0x0) goto code_?;
-    pIVar9 = ((Il2CppClass_0 *)&unaff_ESI->klass)->image;
-    pMVar10 = TypeInfo__MVLocalPlayerBuilder;
-    if ((*(byte *)&pIVar9[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
+    pIVar11 = ((Il2CppClass_0 *)&unaff_ESI->klass)->image;
+    pMVar12 = TypeInfo__MVLocalPlayerBuilder;
+    if ((*(byte *)&pIVar11[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
        (*(MVLocalPlayerBuilder__Class **)
-         ((pIVar9[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4
+         ((pIVar11[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4
          ) != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-    uVar11 = (unaff_ESI->fields)._._._.interactionDataHandlerBase;
-    pMVar12 = (unaff_ESI->fields)._._._.group;
+    uVar13 = (unaff_ESI->fields)._._._.interactionDataHandlerBase;
+    pMVar14 = (unaff_ESI->fields)._._._.group;
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     unaff_ESI = (MVAvatarSpawnRoleCreator *)TypeInfo__MVLocalPlayerBuilder;
     if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
@@ -676,19 +696,19 @@ code_?:
          (pMVar2->klass->_1).naturalAligment) &&
        ((pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1]
         == (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
-      pMVar2[1].klass = (MVLocalPlayer__Class *)uVar11;
+      pMVar2[1].klass = (MVLocalPlayer__Class *)uVar13;
       pMVar2[1].monitor = (MonitorData *)spawnRoleId;
-      pMVar2[1].fields._.checkpointWOID = (int32_t)pMVar12;
+      pMVar2[1].fields._.checkpointWOID = (int32_t)pMVar14;
       return;
     }
   }
 code_?:
   func_?(pMVar2,unaff_ESI);
-  pMVar10 = extraout_EDX_00;
+  pMVar12 = extraout_EDX_00;
 code_?:
-  func_?(unaff_ESI,pMVar10);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?(unaff_ESI,pMVar12);
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

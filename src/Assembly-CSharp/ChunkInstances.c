@@ -309,7 +309,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_Remove
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstancesChanged);
-    func_?(0x11dc);
+    func_?(0x1aac);
     cRam_? = '\x01';
   }
   pEVar1 = (this->fields).Changed;
@@ -473,7 +473,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_SetTransparent
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff20;
+  uStack_4._4_4_ = &stack0xffffff20;
   puVar5 = &stack0xffffff20;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstancesChanged);
@@ -502,9 +502,9 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_SetTransparent
                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                    );
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    puVar5 = uStack_4._4_4_;
   }
-  puStack_4 = puVar5;
+  uStack_4._4_4_ = puVar5;
   LStack_6._list = (List_1_MV_WorldObject_IntVector_ *)0x0;
   LStack_6._index = 0;
   LStack_6._version = 0;
@@ -544,7 +544,8 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_SetTransparent
                           ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)auStack_18,this_00,
                            MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                           );
-      uStack_19 = 0;
+      pLStack_19 = &LStack_6;
+      uStack_20 = 0;
       LStack_6._list = pLVar17->_list;
       LStack_6._index = pLVar17->_index;
       LStack_6._version = pLVar17->_version;
@@ -552,7 +553,6 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_SetTransparent
       LStack_6._current.y = (pLVar17->_current).y;
       LStack_6._16_4_ = *(undefined4 *)&(pLVar17->_current).z;
       uStack_1 = 1;
-      pLStack_20 = &LStack_6;
       while( true ) {
         do {
           bVar21 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[MV::WorldObject::
@@ -571,47 +571,47 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_SetTransparent
             return;
           }
           pDVar11 = (this->fields).chunkInstances;
-          uStack_23._0_2_ = LStack_6._current.x;
-          uStack_23._2_2_ = LStack_6._current.y;
-          iStack_24 = LStack_6._current.z;
-          uStack_25 = LStack_6._18_2_;
+          uStack_4._0_2_ = LStack_6._current.x;
+          uStack_4._2_2_ = LStack_6._current.y;
+          iStack_23 = LStack_6._current.z;
+          uStack_24 = LStack_6._18_2_;
           pMVar16 = (MeshRenderer *)uStack_15;
           if (pDVar11 == (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_
                          *)0x0) goto code_?;
           key_00.z = LStack_6._current.z;
           key_00.x = LStack_6._current.x;
           key_00.y = LStack_6._current.y;
-          pCVar26 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+          pCVar25 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
                     IntVector,ChunkInstances+ChunkInstanceVariables]::
                     Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__get_Item
                               ((ChunkInstances_ChunkInstanceVariables *)&stack0xffffff2c,pDVar11,
                                key_00,
                                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Item_MV__WorldObject__IntVector_
                               );
-          auStack_18._0_4_ = pCVar26->gameObject;
-          auStack_18._4_4_ = pCVar26->collider;
-          auStack_18._8_4_ = pCVar26->renderer;
-          auStack_18._12_4_ = pCVar26->filter;
-          uVar27._0_2_ = (pCVar26->guid)._b;
-          uVar27._2_2_ = (pCVar26->guid)._c;
-          uVar28._0_1_ = (pCVar26->guid)._d;
-          uVar28._1_1_ = (pCVar26->guid)._e;
-          uVar28._2_1_ = (pCVar26->guid)._f;
-          uVar28._3_1_ = (pCVar26->guid)._g;
-          uVar29._0_1_ = (pCVar26->guid)._h;
-          uVar29._1_1_ = (pCVar26->guid)._i;
-          uVar29._2_1_ = (pCVar26->guid)._j;
-          uVar29._3_1_ = (pCVar26->guid)._k;
-          in_stack_22 = *(MethodInfo **)&(pCVar26->guid)._h;
-        } while (pCVar26->transparent == t);
-        uStack_23._4_4_ = (this->fields).chunkInstances;
+          auStack_18._0_4_ = pCVar25->gameObject;
+          auStack_18._4_4_ = pCVar25->collider;
+          auStack_18._8_4_ = pCVar25->renderer;
+          auStack_18._12_4_ = pCVar25->filter;
+          uVar26._0_2_ = (pCVar25->guid)._b;
+          uVar26._2_2_ = (pCVar25->guid)._c;
+          uVar27._0_1_ = (pCVar25->guid)._d;
+          uVar27._1_1_ = (pCVar25->guid)._e;
+          uVar27._2_1_ = (pCVar25->guid)._f;
+          uVar27._3_1_ = (pCVar25->guid)._g;
+          uVar28._0_1_ = (pCVar25->guid)._h;
+          uVar28._1_1_ = (pCVar25->guid)._i;
+          uVar28._2_1_ = (pCVar25->guid)._j;
+          uVar28._3_1_ = (pCVar25->guid)._k;
+          in_stack_22 = *(MethodInfo **)&(pCVar25->guid)._h;
+        } while (pCVar25->transparent == t);
+        pDStack_29 = (this->fields).chunkInstances;
         pLStack_13 = (List_1_MV_WorldObject_IntVector_ *)0x0;
         uStack_15 = 0;
         uStack_12 = 0;
-        iStack_7 = (pCVar26->guid)._a;
-        uStack_8 = uVar27;
-        uStack_9 = uVar28;
-        uStack_10 = uVar29;
+        iStack_7 = (pCVar25->guid)._a;
+        uStack_8 = uVar26;
+        uStack_9 = uVar27;
+        uStack_10 = uVar28;
         pBStack_14 = (BoxCollider *)auStack_18._4_4_;
         func_?();
         pLStack_13 = (List_1_MV_WorldObject_IntVector_ *)auStack_18._0_4_;
@@ -622,12 +622,12 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_SetTransparent
         func_?();
         uStack_12 = CONCAT31(uStack_12._1_3_,t);
         pMVar16 = (MeshRenderer *)uStack_15;
-        if (uStack_23._4_4_ ==
+        if (pDStack_29 ==
             (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0)
         break;
-        key.z = (int16_t)_iStack_18;
-        key.x = (int16_t)uStack_23;
-        key.y = uStack_23._2_2_;
+        key.z = (int16_t)_iStack_20;
+        key.x = (int16_t)uStack_4;
+        key.y = uStack_4._2_2_;
         value.guid._b = (undefined2)uStack_8;
         value.guid._c = uStack_8._2_2_;
         value.guid._a = iStack_7;
@@ -647,20 +647,19 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_SetTransparent
         mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
         IntVector,ChunkInstances+ChunkInstanceVariables]::
         Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables__set_Item
-                  (uStack_23._4_4_,key,value,
+                  (pDStack_29,key,value,
                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__set_Item_MV__WorldObject__IntVector__ChunkInstances__ChunkInstanceVariables_
                   );
         pEVar30 = (this->fields).Changed;
         if (pEVar30 != (EventHandler_1_ChunkInstancesChanged_ *)0x0) {
-          uStack_23._4_4_ =
-               (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
-               ((t ^ 1) + 3);
+          pDStack_29 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_
+                        *)((t ^ 1) + 3);
           pCStack_31 = (ChunkInstancesChanged *)func_?();
-          chunkPos.z = (int16_t)_iStack_18;
-          chunkPos.x = (int16_t)uStack_23;
-          chunkPos.y = uStack_23._2_2_;
+          chunkPos.z = (int16_t)_iStack_20;
+          chunkPos.x = (int16_t)uStack_4;
+          chunkPos.y = uStack_4._2_2_;
           ChunkInstancesChanged::ChunkInstancesChanged__ctor
-                    (pCStack_31,(ChunkInstancesChanged_ChangeType__Enum)uStack_23._4_4_,chunkPos,
+                    (pCStack_31,(ChunkInstancesChanged_ChangeType__Enum)pDStack_29,chunkPos,
                      (MethodInfo *)0x0);
           in_stack_22 = (MethodInfo *)this;
           (*(pEVar30->fields)._._.invoke_impl)();

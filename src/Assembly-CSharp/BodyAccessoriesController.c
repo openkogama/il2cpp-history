@@ -834,9 +834,10 @@ Vector3 * Assembly-CSharp.dll::BodyAccessoriesController::BodyAccessoriesControl
   if ((TypeInfo__BodyAccessoriesController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BodyAccessoriesController);
   }
+  AVar1 = slot;
   this_00 = TypeInfo__BodyAccessoriesController->static_fields->slotBoneNameMap;
   if (this_00 != (Dictionary_2_MV_Common_AccessorySlotType_System_String_ *)0x0) {
-    pSVar1 = (String *)
+    pSVar2 = (String *)
              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,slot,
@@ -844,25 +845,25 @@ Vector3 * Assembly-CSharp.dll::BodyAccessoriesController::BodyAccessoriesControl
                        );
     this_01 = (this->fields).bodyData;
     if (this_01 != (BodyData *)0x0) {
-      this_02 = BodyData::BodyData_GetPartBone_1(this_01,pSVar1,(MethodInfo *)0x0);
+      this_02 = BodyData::BodyData_GetPartBone_1(this_01,pSVar2,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        VStack_2.y = (float)TypeInfo__UnityEngine__Object;
-        VStack_2.x = (float)&UNK_?;
+        VStack_3.z = (float)TypeInfo__UnityEngine__Object;
+        VStack_3.y = (float)&UNK_?;
         func_?();
       }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                         ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        fStack_4 = (float)slot;
-        arg1 = (Object *)func_?(TypeInfo__MV__Common__AccessorySlotType,&fStack_4);
-        pSVar1 = mscorlib.dll::System::String::String_Format_1
-                           (StringLiteral_Accessory__Failed_to_get_bone__0,(Object *)pSVar1,arg1,
+      if (bVar4 != 0) {
+        slot = AVar1;
+        arg1 = (Object *)func_?(TypeInfo__MV__Common__AccessorySlotType,&slot);
+        pSVar2 = mscorlib.dll::System::String::String_Format_1
+                           (StringLiteral_Accessory__Failed_to_get_bone__0,(Object *)pSVar2,arg1,
                             (MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)pSVar1,(MethodInfo *)0x0);
+                  ((Object *)pSVar2,(MethodInfo *)0x0);
       }
       if (this_02 != (Transform *)0x0) {
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
@@ -871,38 +872,36 @@ Vector3 * Assembly-CSharp.dll::BodyAccessoriesController::BodyAccessoriesControl
         uStack_7._4_4_ = pVVar5->y;
         fStack_8 = pVVar5->z;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                           (&VStack_2,this_02,(MethodInfo *)0x0);
-        uVar9 = pVVar5->x;
-        uVar10 = pVVar5->y;
-        VStack_6.x = (float)uStack_7 + (float)uVar9 * offset.x;
-        VStack_6.y = 0.0;
-        VStack_6.z = 0.0;
-        uStack_11 = 0;
-        fStack_12 = uStack_7._4_4_ + (float)uVar10 * offset.x;
-        fStack_4 = fStack_8 + pVVar5->z * offset.x;
+                           (&VStack_3,this_02,(MethodInfo *)0x0);
+        VStack_6.x = pVVar5->x;
+        VStack_6.y = pVVar5->y;
+        VStack_6.z = pVVar5->z;
+        slot = (AccessorySlotType__Enum)((float)uStack_7 + VStack_6.x * offset.x);
+        fStack_9 = uStack_7._4_4_ + VStack_6.y * offset.x;
+        fStack_10 = fStack_8 + VStack_6.z * offset.x;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                           (&VStack_2,this_02,(MethodInfo *)0x0);
+                           (&VStack_3,this_02,(MethodInfo *)0x0);
         uStack_7._0_4_ = pVVar5->x;
         uStack_7._4_4_ = pVVar5->y;
         fStack_8 = pVVar5->z;
-        VStack_6.x = VStack_6.x + (float)uStack_7 * offset.y;
-        fStack_12 = fStack_12 + uStack_7._4_4_ * offset.y;
-        fStack_4 = fStack_4 + fStack_8 * offset.y;
+        slot = (AccessorySlotType__Enum)((float)uStack_7 * offset.y + (float)slot);
+        fStack_9 = uStack_7._4_4_ * offset.y + fStack_9;
+        fStack_10 = fStack_8 * offset.y + fStack_10;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                           (&VStack_2,this_02,(MethodInfo *)0x0);
-        uVar13 = pVVar5->x;
-        uVar14 = pVVar5->y;
-        fVar15 = pVVar5->z;
-        __return_storage_ptr__->x = VStack_6.x + (float)uVar13 * offset.z;
-        __return_storage_ptr__->y = fStack_12 + (float)uVar14 * offset.z;
-        __return_storage_ptr__->z = fStack_4 + fVar15 * offset.z;
+                           (&VStack_3,this_02,(MethodInfo *)0x0);
+        uVar11 = pVVar5->x;
+        uVar12 = pVVar5->y;
+        fVar13 = pVVar5->z;
+        __return_storage_ptr__->x = (float)uVar11 * offset.z + (float)slot;
+        __return_storage_ptr__->y = (float)uVar12 * offset.z + fStack_9;
+        __return_storage_ptr__->z = fVar13 * offset.z + fStack_10;
         return __return_storage_ptr__;
       }
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  pVVar5 = (Vector3 *)(*pcVar16)();
+  pcVar14 = (code *)swi(3);
+  pVVar5 = (Vector3 *)(*pcVar14)();
   return pVVar5;
 }
 
@@ -1542,37 +1541,34 @@ code_?:
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                       );
     if (bVar12 != 0) {
-      unaff_EDI = (Object__Array *)uVar11;
-      if ((unaff_EDI == (Object__Array *)0x0) ||
-         (((pDVar13 = 
-            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment <= (unaff_EDI->klass->_1).naturalAligment &&
-           ((Dictionary_2_System_Object_System_Object___Class *)
-            (unaff_EDI->klass->_1).typeHierarchy
-            [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
-             ).naturalAligment - 1] ==
-            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
-          (unaff_EDI != (Object__Array *)0x0)))) {
-        ppOStack_14 = (Object **)0x2;
-        pEVar15 = (Enum *)func_?(TypeInfo__MV__Common__AvatarAccessoryData,&ppOStack_14);
-        pSVar16 = mscorlib.dll::System::Enum::Enum_ToString_2
-                           (pEVar15,StringLiteral_d,(MethodInfo *)0x0);
-        if (unaff_EDI != (Object__Array *)0x0) {
-          TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+      this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)uVar11;
+      if (this_03 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0;
+      }
+      else if ((((this_03->klass->_1).naturalAligment <
+                 (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment) ||
+               ((Dictionary_2_System_Object_System_Object___Class *)
+                (this_03->klass->_1).typeHierarchy
+                [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 ->_1).naturalAligment - 1] !=
+                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+              || (this_03 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
+      goto code_?;
+      ppOStack_13 = (Object **)0x2;
+      pEVar14 = (Enum *)func_?(TypeInfo__MV__Common__AvatarAccessoryData,&ppOStack_13);
+      pSVar15 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar14,StringLiteral_d,(MethodInfo *)0x0)
+      ;
+      if ((this_03 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+         (TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                             unaff_EDI,(Object *)pSVar16,
+                            (this_03,(Object *)pSVar15,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          if (TVar17.m_Index != 0) {
-            pIVar18 = (Int32__Class *)TypeInfo__MV__Common__AccessorySlotType;
-            if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) ==
-                (TypeInfo__MV__Common__AccessorySlotType->_0).element_class) goto code_?;
-            goto code_?;
-          }
-        }
+                            ), TVar16.m_Index != 0)) {
+        pIVar17 = (Int32__Class *)TypeInfo__MV__Common__AccessorySlotType;
+        if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) ==
+            (TypeInfo__MV__Common__AccessorySlotType->_0).element_class) goto code_?;
         goto code_?;
       }
       goto code_?;
@@ -1585,110 +1581,109 @@ code_?:
                ,method_00);
     uStack_1 = 0xffffffff;
   }
-  if (accessory != (AvatarAccessory *)0x0) {
-    pTVar19 = AvatarAccessory::AvatarAccessory_get_Transform(accessory,(MethodInfo *)0x0);
-    if (pTVar19 != (Transform *)0x0) {
-      pGVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pTVar19,(MethodInfo *)0x0);
-      if (pGVar20 != (GameObject *)0x0) {
-        pOVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_GetComponentsInChildren
-                            (pGVar20,
-                             UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
-                            );
-        unaff_EDI = (Object__Array *)0x0;
-        if (pOVar21 != (Object__Array *)0x0) {
-          ppOStack_14 = pOVar21->vector;
-          while( true ) {
-            if ((int)pOVar21->max_length <= (int)unaff_EDI) {
-              *unaff_FS_OFFSET = puStack_3;
-              return;
-            }
-            if ((Object__Array *)pOVar21->max_length <= unaff_EDI) break;
-            pMStack_22 = (MeshFilter *)*ppOStack_14;
-            pGStack_2 = TypeInfo__UnityEngine__GameObject;
-            pGVar20 = (GameObject *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                      (pGVar20,StringLiteral_SelectionHelper,(MethodInfo *)0x0);
-            if (pGVar20 == (GameObject *)0x0) goto code_?;
-            pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar20,(MethodInfo *)0x0);
-            if (pMStack_22 == (MeshFilter *)0x0) goto code_?;
-            this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pMStack_22,(MethodInfo *)0x0);
-            if (this_00 == (GameObject *)0x0) goto code_?;
-            value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (this_00,(MethodInfo *)0x0);
-            if (pTVar19 == (Transform *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                      (pTVar19,value,(MethodInfo *)0x0);
-            pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar20,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__UnityEngine__Vector3);
-              cRam_? = '\x01';
-            }
-            if (pTVar19 == (Transform *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar19,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                       (MethodInfo *)0x0);
-            pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar20,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            if (pTVar19 == (Transform *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                      (pTVar19,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                       (MethodInfo *)0x0);
-            pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar20,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            if (pTVar19 == (Transform *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                      (pTVar19,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
-                       (MethodInfo *)0x0);
-            this_01 = (MeshCollider *)
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                                (pGVar20,
-                                 UnityEngine__MeshCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshCollider>__
-                                );
-            value_00 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                       MeshFilter_get_sharedMesh(pMStack_22,(MethodInfo *)0x0);
-            if (this_01 == (MeshCollider *)0x0) goto code_?;
-            UnityEngine.PhysicsModule.dll::UnityEngine::MeshCollider::MeshCollider_set_sharedMesh
-                      (this_01,value_00,(MethodInfo *)0x0);
-            value_01 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                                 (StringLiteral_Hidden,(MethodInfo *)0x0);
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                      (pGVar20,value_01,(MethodInfo *)0x0);
-            this_02 = (SelectionHelperAvatarAccessory *)
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                                (pGVar20,
-                                 SelectionHelperAvatarAccessory_MethodInfo__UnityEngine__GameObject__AddComponent<SelectionHelperAvatarAccessory>__
-                                );
-            if (this_02 == (SelectionHelperAvatarAccessory *)0x0) goto code_?;
-            pOVar21 = pOStack_9;
-            SelectionHelperAvatarAccessory::SelectionHelperAvatarAccessory_Init
-                      (this_02,accessory,accessorySlot,(this->fields).bodyWoId,(int32_t)pOStack_9,
-                       (MethodInfo *)0x0);
-            unaff_EDI = (Object__Array *)((int)&unaff_EDI->klass + 1);
-            ppOStack_14 = ppOStack_14 + 1;
-          }
-          goto code_?;
+  if (((accessory != (AvatarAccessory *)0x0) &&
+      (pTVar18 = AvatarAccessory::AvatarAccessory_get_Transform(accessory,(MethodInfo *)0x0),
+      pTVar18 != (Transform *)0x0)) &&
+     (pGVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pTVar18,(MethodInfo *)0x0), pGVar19 != (GameObject *)0x0)) {
+    pOVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+              GameObject_GetComponentsInChildren
+                        (pGVar19,
+                         UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
+                        );
+    uVar21 = 0;
+    if (pOVar20 != (Object__Array *)0x0) {
+      ppOStack_13 = pOVar20->vector;
+      while( true ) {
+        if ((int)pOVar20->max_length <= (int)uVar21) {
+          *unaff_FS_OFFSET = puStack_3;
+          return;
         }
+        if (pOVar20->max_length <= uVar21) break;
+        pMStack_22 = (MeshFilter *)*ppOStack_13;
+        pGStack_2 = TypeInfo__UnityEngine__GameObject;
+        pGVar19 = (GameObject *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+                  (pGVar19,StringLiteral_SelectionHelper,(MethodInfo *)0x0);
+        if ((((pGVar19 == (GameObject *)0x0) ||
+             (pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                        GameObject_get_transform(pGVar19,(MethodInfo *)0x0),
+             pMStack_22 == (MeshFilter *)0x0)) ||
+            (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)pMStack_22,(MethodInfo *)0x0),
+            this_00 == (GameObject *)0x0)) ||
+           (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (this_00,(MethodInfo *)0x0), pTVar18 == (Transform *)0x0))
+        goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                  (pTVar18,value,(MethodInfo *)0x0);
+        pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar19,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__UnityEngine__Vector3);
+          cRam_? = '\x01';
+        }
+        if (pTVar18 == (Transform *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                  (pTVar18,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                   (MethodInfo *)0x0);
+        pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar19,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        if (pTVar18 == (Transform *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
+                  (pTVar18,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
+                   (MethodInfo *)0x0);
+        pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar19,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        if (pTVar18 == (Transform *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                  (pTVar18,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
+                   (MethodInfo *)0x0);
+        this_01 = (MeshCollider *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                            (pGVar19,
+                             UnityEngine__MeshCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshCollider>__
+                            );
+        value_00 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh
+                             (pMStack_22,(MethodInfo *)0x0);
+        if (this_01 == (MeshCollider *)0x0) goto code_?;
+        UnityEngine.PhysicsModule.dll::UnityEngine::MeshCollider::MeshCollider_set_sharedMesh
+                  (this_01,value_00,(MethodInfo *)0x0);
+        value_01 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                             (StringLiteral_Hidden,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+                  (pGVar19,value_01,(MethodInfo *)0x0);
+        this_02 = (SelectionHelperAvatarAccessory *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                            (pGVar19,
+                             SelectionHelperAvatarAccessory_MethodInfo__UnityEngine__GameObject__AddComponent<SelectionHelperAvatarAccessory>__
+                            );
+        if (this_02 == (SelectionHelperAvatarAccessory *)0x0) goto code_?;
+        pOVar20 = pOStack_9;
+        SelectionHelperAvatarAccessory::SelectionHelperAvatarAccessory_Init
+                  (this_02,accessory,accessorySlot,(this->fields).bodyWoId,(int32_t)pOStack_9,
+                   (MethodInfo *)0x0);
+        uVar21 = uVar21 + 1;
+        ppOStack_13 = ppOStack_13 + 1;
       }
+      goto code_?;
     }
   }
 code_?:
   func_?();
-  pDVar13 = extraout_EDX;
+  this_03 = extraout_EDX;
 code_?:
-  uVar23 = func_?(unaff_EDI,pDVar13);
+  uVar23 = func_?(this_03,
+                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                          );
   func_?(uVar23);
 code_?:
   func_?();
@@ -1697,30 +1692,28 @@ code_?:
   return;
 code_?:
   method_00 = (MethodInfo *)&UNK_?;
-  pAVar25 = (AccessorySlotType__Enum *)func_?(TVar17.m_Index);
+  pAVar25 = (AccessorySlotType__Enum *)func_?(TVar16.m_Index);
   if (accessorySlot == *pAVar25) {
     pMStack_22 = (MeshFilter *)0x1;
-    pEVar15 = (Enum *)func_?(TypeInfo__MV__Common__AvatarAccessoryData,&pMStack_22);
-    pSVar16 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar15,StringLiteral_d,(MethodInfo *)0x0);
-    TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    pEVar14 = (Enum *)func_?(TypeInfo__MV__Common__AvatarAccessoryData,&pMStack_22);
+    pSVar15 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar14,StringLiteral_d,(MethodInfo *)0x0);
+    TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)unaff_EDI,
-                       (Object *)pSVar16,
+                      (this_03,(Object *)pSVar15,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar17.m_Index == 0) goto code_?;
-    pIVar18 = TypeInfo__System__Int32;
-    if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) !=
+    if (TVar16.m_Index == 0) goto code_?;
+    pIVar17 = TypeInfo__System__Int32;
+    if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) !=
         (TypeInfo__System__Int32->_0).element_class) {
 code_?:
-      func_?(TVar17.m_Index,pIVar18);
+      func_?(TVar16.m_Index,pIVar17);
       goto code_?;
     }
     method_00 = (MethodInfo *)&UNK_?;
-    puVar26 = (undefined4 *)func_?(TVar17.m_Index);
-    unaff_EDI = (Object__Array *)*puVar26;
-    pOStack_9 = unaff_EDI;
+    puVar26 = (undefined4 *)func_?(TVar16.m_Index);
+    pOStack_9 = (Object__Array *)*puVar26;
   }
   goto code_?;
 }

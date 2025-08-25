@@ -558,8 +558,8 @@ MeshVertexChunkCollection_GetWorldVertChunkClosestToScreenPt
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector2>__MoveNext__
                           );
         if (bVar14 == 0) break;
-        fVar19 = (LStack_7._current.x - screenPoint.x) * (LStack_7._current.x - screenPoint.x) +
-                (LStack_7._current.y - screenPoint.y) * (LStack_7._current.y - screenPoint.y);
+        fVar19 = (LStack_7._current.y - screenPoint.y) * (LStack_7._current.y - screenPoint.y) +
+                (LStack_7._current.x - screenPoint.x) * (LStack_7._current.x - screenPoint.x);
         if (fVar19 < fStack_9) {
           RStack_8 = RVar16;
           fStack_9 = fVar19;

@@ -345,10 +345,10 @@ void Assembly-CSharp.dll::ImpactState::ImpactState__ctor
   value = (ImpactState_ImpactDestruction *)func_?(TypeInfo__ImpactState__ImpactDestruction)
   ;
   if (cRam_? == '\0') {
-    func_?();
     pLStack_6 = (List_1_ImpactState_ImpactDamageRuntimeEventType___Class *)
-                 &TypeInfo__ImpactState__ImpactDamageRuntimeEventType;
+                 &TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent;
     func_?();
+    func_?(&TypeInfo__ImpactState__ImpactDamageRuntimeEventType);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<ImpactState::ImpactDamageRuntimeEventType>__Add_ImpactState__ImpactDamageRuntimeEventType_
                    );
@@ -398,8 +398,8 @@ void Assembly-CSharp.dll::ImpactState::ImpactState__ctor
       value_00 = (Object *)func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value_00,ExceptionArgument__Enum_obj,method_00);
-      value_00[1].klass = pOVar10;
       *(undefined1 *)&value_00[1].monitor = uVar8;
+      value_00[1].klass = pOVar10;
       if (pLVar11 == (List_1_ImpactState_ImpactDamageRuntimeEventType_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
                 ((List_1_System_Object_ *)pLVar11,value_00,

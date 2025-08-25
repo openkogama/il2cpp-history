@@ -240,7 +240,7 @@ code_?:
                       uVar24 = pVVar2->y;
                       fVar4 = pVVar2->z + fVar4;
                       if (this_01 != (AudioManager *)0x0) {
-                        uVar13 = CONCAT44((float)uVar24 + fVar12,fVar9 + (float)uVar23);
+                        uVar13 = CONCAT44(fVar12 + (float)uVar24,fVar9 + (float)uVar23);
                         goto code_?;
                       }
                     }

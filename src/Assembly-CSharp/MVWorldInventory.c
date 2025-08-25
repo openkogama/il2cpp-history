@@ -1071,12 +1071,12 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_UnpendRuntimeProtot
                 ((Object *)StringLiteral_Trying_to_unpend_runtime_prototy,(MethodInfo *)0x0);
       return;
     }
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_01 != (MVWorldObjectClientManager *)0x0) {
-      this_02 = (MVCubeModelBase *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_01,woId,(MethodInfo *)0x0);
-      if (this_02 == (MVCubeModelBase *)0x0) {
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_00 != (MVWorldObjectClientManager *)0x0) {
+      unaff_EDI = (MVCubeModelBase *)
+                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                            (this_00,woId,(MethodInfo *)0x0);
+      if (unaff_EDI == (MVCubeModelBase *)0x0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -1084,24 +1084,26 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_UnpendRuntimeProtot
                   ((Object *)StringLiteral_Trying_to_unpend_non_existing_cu,(MethodInfo *)0x0);
         goto code_?;
       }
-      if (((this_02->klass->_1).naturalAligment <
+      if (((unaff_EDI->klass->_1).naturalAligment <
            (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
          ((MVCubeModelInstance__Class *)
-          (this_02->klass->_1).typeHierarchy
+          (unaff_EDI->klass->_1).typeHierarchy
           [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] != TypeInfo__MVCubeModelInstance
          )) goto code_?;
+      pDVar3 = (this->fields).runtimePrototypes;
       pDVar1 = (this->fields).pendingRuntimePrototypes;
       if (pDVar1 != (Dictionary_2_System_Int32_PendingPrototypeData_ *)0x0) {
-        PVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+        PVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                 Int32,PendingPrototypeData]::
                 Dictionary_2_System_Int32_PendingPrototypeData__get_Item
                           (pDVar1,woId,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_PendingPrototypeData>__get_Item_int_
                           );
-        if (woId != 0) {
+        if (pDVar3 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
           bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                   Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                            ((Dictionary_2_System_Int32_System_Single_ *)woId,PVar3.prevPrototypeId,
+                            ((Dictionary_2_System_Int32_System_Single_ *)pDVar3,
+                             PVar4.prevPrototypeId,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__ContainsKey_int_
                             );
           if (bVar2 == 0) {
@@ -1112,6 +1114,7 @@ void Assembly-CSharp.dll::MVWorldInventory::MVWorldInventory_UnpendRuntimeProtot
                       ((Object *)StringLiteral_Trying_to_unpend_but_prev_protot,(MethodInfo *)0x0);
 code_?:
             pDVar1 = (this->fields).pendingRuntimePrototypes;
+            unaff_EDI = in_stack_5;
             if (pDVar1 != (Dictionary_2_System_Int32_PendingPrototypeData_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
               Int32,PendingPrototypeData]::Dictionary_2_System_Int32_PendingPrototypeData__Remove
@@ -1122,29 +1125,29 @@ code_?:
             }
           }
           else {
-            this_00 = (this->fields).runtimePrototypes;
+            pDVar3 = (this->fields).runtimePrototypes;
             pDVar1 = (this->fields).pendingRuntimePrototypes;
             if (pDVar1 != (Dictionary_2_System_Int32_PendingPrototypeData_ *)0x0) {
-              PVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              PVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Int32,PendingPrototypeData]::
                       Dictionary_2_System_Int32_PendingPrototypeData__get_Item
                                 (pDVar1,woId,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_PendingPrototypeData>__get_Item_int_
                                 );
-              if (this_00 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
-                pRVar4 = (RuntimePrototypeCubeModel *)
+              if (pDVar3 != (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)0x0) {
+                pRVar6 = (RuntimePrototypeCubeModel *)
                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                          Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                                    PVar3.prevPrototypeId,
+                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,
+                                    PVar4.prevPrototypeId,
                                     MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__get_Item_int_
                                    );
                 MVCubeModelBase::MVCubeModelBase_set_PrototypeCubeModel
-                          (this_02,pRVar4,(MethodInfo *)0x0);
-                pRVar4 = (this_02->fields).prototypeCubeModel;
-                if (pRVar4 != (RuntimePrototypeCubeModel *)0x0) {
+                          (unaff_EDI,pRVar6,(MethodInfo *)0x0);
+                pRVar6 = (unaff_EDI->fields).prototypeCubeModel;
+                if (pRVar6 != (RuntimePrototypeCubeModel *)0x0) {
                   RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_CreateInstance
-                            (pRVar4,this_02,(MethodInfo *)0x0);
+                            (pRVar6,unaff_EDI,(MethodInfo *)0x0);
                   goto code_?;
                 }
               }
@@ -1156,9 +1159,9 @@ code_?:
   }
   func_?();
 code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(unaff_EDI);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

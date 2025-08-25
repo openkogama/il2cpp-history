@@ -215,23 +215,22 @@ Vector2 Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D_GetExtentPoint
     VStack_12.y = VStack_12.y * fStack_9;
     break;
   case Shape2DExtentPoint__Enum_Top:
+    fVar6 = fVar6 * _UNK_?;
+    fVar7 = fVar7 * _UNK_?;
     VVar11 = RightAngTriangle2D::RightAngTriangle2D_get_ModelUp((MethodInfo *)0x0);
     VStack_12.x = VVar11.x;
     VStack_12.y = VVar11.y;
-    VStack_12.x = VStack_12.x * fStack_10;
-    VStack_12.y = VStack_12.y * fStack_10;
-    goto code_?;
+    VStack_12.y = fVar7 + fVar5 + VStack_12.y * fStack_10 * _UNK_?;
+    VStack_12.x = fVar6 + fVar4 + VStack_12.x * fStack_10 * _UNK_?;
+    return VStack_12;
   case Shape2DExtentPoint__Enum_Right:
+    fVar6 = fVar6 * _UNK_?;
+    fVar7 = fVar7 * _UNK_?;
     VVar11 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRight((MethodInfo *)0x0);
     VStack_12.x = VVar11.x;
     VStack_12.y = VVar11.y;
-    VStack_12.x = VStack_12.x * fStack_9;
-    VStack_12.y = VStack_12.y * fStack_9;
-code_?:
-    extentPt = (Shape2DExtentPoint__Enum)(fVar7 * fVar3 + fVar5);
-    this = (PolygonShape2D *)(fVar6 * fVar3 + fVar4);
-    VStack_12.y = (float)extentPt + VStack_12.y * _UNK_?;
-    VStack_12.x = (float)this + VStack_12.x * _UNK_?;
+    VStack_12.y = VStack_12.y * fStack_9 * _UNK_? + fVar7 + fVar5;
+    VStack_12.x = VStack_12.x * fStack_9 * _UNK_? + fVar6 + fVar4;
     return VStack_12;
   case Shape2DExtentPoint__Enum_Bottom:
     VVar11 = RightAngTriangle2D::RightAngTriangle2D_get_ModelUp((MethodInfo *)0x0);

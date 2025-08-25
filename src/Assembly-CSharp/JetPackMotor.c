@@ -35,9 +35,9 @@ Vector3 * Assembly-CSharp.dll::JetPackMotor::JetPackMotor_ApplyInputVelocityChan
     fVar10 = fVar10 / _UNK_?;
     fVar11 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
             Easing_InQuad(0.43,(MethodInfo *)0x0);
-    __return_storage_ptr__->x = velocity.x + fVar9 * fVar10 * fVar11;
-    __return_storage_ptr__->y = velocity.y + (uStack_2._4_4_ - velocity.y) * fVar10 * fVar11;
-    __return_storage_ptr__->z = velocity.z + (fStack_3 - velocity.z) * fVar10 * fVar11;
+    __return_storage_ptr__->x = velocity.x + fVar11 * fVar10 * fVar9;
+    __return_storage_ptr__->y = velocity.y + fVar10 * (uStack_2._4_4_ - velocity.y) * fVar11;
+    __return_storage_ptr__->z = velocity.z + fVar10 * (fStack_3 - velocity.z) * fVar11;
     return __return_storage_ptr__;
   }
 code_?:
@@ -128,130 +128,132 @@ void Assembly-CSharp.dll::JetPackMotor::JetPackMotor_FixedUpdateFunction
        (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) &&
       (this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pMVar4,(MethodInfo *)0x0), this_05 != (GameObject *)0x0))
-     && ((pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (this_05,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0 &&
-         (pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffb8,pTVar5,(MethodInfo *)0x0),
-         this_04 != (WaterPlaneManager *)0x0)))) {
-    fVar7 = WaterPlaneManager::WaterPlaneManager_ComputeAvatarWaterProximity
-                       (this_04,*pVVar6,(MethodInfo *)0x0);
-    pJVar8 = this->klass;
-    (this->fields).waterProximity = fVar7;
-    cVar9 = (*(code *)(pJVar8->vtable).get_IsMovementLocked.method)();
-    if (cVar9 != '\0') {
-      return;
-    }
-    if (shouldSetRotation != 0) {
-      pSVar3 = (this->fields).smoothController;
-      if (((pSVar3 == (SmoothCharacterController *)0x0) ||
-          (pMVar4 = (pSVar3->fields).controller, pMVar4 == (MvCharacterController *)0x0)) ||
-         (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pMVar4,(MethodInfo *)0x0), pTVar5 == (Transform *)0x0)
-         ) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (pTVar5,setQuaternion,(MethodInfo *)0x0);
-    }
-    uVar10 = (this->fields).velocityPrevFrame.y;
-    fVar7 = (this->fields).velocityPrevFrame.z;
-    this_00 = (this->fields).movableMotorState;
-    uVar11 = (this->fields).velocityPrevFrame.x;
-    uVar12 = (this->fields).velocityPrevFrame.y;
-    pSVar3 = (this->fields).smoothController;
-    if (((pSVar3 != (SmoothCharacterController *)0x0) &&
-        (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) &&
-       (fVar13 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                 TypedUxmlAttributeDescription`1[System::Single]::
-                 TypedUxmlAttributeDescription_1_System_Single__get_defaultValue
-                           ((TypedUxmlAttributeDescription_1_System_Single_ *)pMVar4,
-                            (MethodInfo *)0x0), this_00 != (MVMovableMotorState *)0x0)) {
-      lVar14 = (ulonglong)(uint)fVar2 << 0x20;
-      velocity_00.y = (float)uVar12;
-      velocity_00.x = (float)uVar11;
-      velocity_00.z = fVar7;
-      bVar15 = MVMovableMotorState::MVMovableMotorState_Move
-                         (this_00,velocity_00,pMVar4,fVar13,(this->fields)._.groundState,
-                          (Vector3 *)&stack0xffffffc4,(MethodInfo *)0x0);
-      fVar2 = (float)((ulonglong)lVar14 >> 0x20);
-      lVar16 = (ulonglong)(uint)uVar10 << 0x20;
-      pVVar6 = (Vector3 *)&stack0xffffffac;
-      puVar17 = &UNK_?;
-      auVar18._4_4_ = fVar7;
-      auVar18._0_4_ = uVar10;
-      auVar18._8_4_ = 0;
-      baseVelocity.z = fVar1;
-      baseVelocity.x = (float)(int)lVar14;
-      baseVelocity.y = (float)(int)((ulonglong)lVar14 >> 0x20);
-      pJVar19 = this;
-      pVVar20 = JetPackMotor_GetVelocity
-                          (pVVar6,this,(Vector3)(auVar18 << 0x20),baseVelocity,(MethodInfo *)0x0);
-      if (bVar15 == 0) {
-        uVar21 = pVVar20->x;
-        uVar22 = pVVar20->y;
-        fVar1 = pVVar20->z;
+     && (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (this_05,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
+    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&stack0xffffffb8,pTVar5,(MethodInfo *)0x0);
+    if (this_04 != (WaterPlaneManager *)0x0) {
+      fVar7 = WaterPlaneManager::WaterPlaneManager_ComputeAvatarWaterProximity
+                         (this_04,*pVVar6,(MethodInfo *)0x0);
+      pJVar8 = this->klass;
+      (this->fields).waterProximity = fVar7;
+      cVar9 = (*(code *)(pJVar8->vtable).get_IsMovementLocked.method)();
+      if (cVar9 != '\0') {
+        return;
       }
-      else {
-        uVar23 = pVVar20->x;
-        uVar24 = pVVar20->y;
-        fVar1 = pVVar20->z;
-        uVar21 = uVar23;
-        uVar22 = uVar24;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
+      if (shouldSetRotation != 0) {
+        pSVar3 = (this->fields).smoothController;
+        if (((pSVar3 == (SmoothCharacterController *)0x0) ||
+            (pMVar4 = (pSVar3->fields).controller, pMVar4 == (MvCharacterController *)0x0)) ||
+           (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pMVar4,(MethodInfo *)0x0),
+           pTVar5 == (Transform *)0x0)) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                  (pTVar5,setQuaternion,(MethodInfo *)0x0);
+      }
+      uVar10 = (this->fields).velocityPrevFrame.y;
+      fVar7 = (this->fields).velocityPrevFrame.z;
+      this_00 = (this->fields).movableMotorState;
+      uVar11 = (this->fields).velocityPrevFrame.x;
+      uVar12 = (this->fields).velocityPrevFrame.y;
+      pSVar3 = (this->fields).smoothController;
+      if (((pSVar3 != (SmoothCharacterController *)0x0) &&
+          (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) &&
+         (fVar13 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                   TypedUxmlAttributeDescription`1[System::Single]::
+                   TypedUxmlAttributeDescription_1_System_Single__get_defaultValue
+                             ((TypedUxmlAttributeDescription_1_System_Single_ *)pMVar4,
+                              (MethodInfo *)0x0), this_00 != (MVMovableMotorState *)0x0)) {
+        lVar14 = (ulonglong)(uint)fVar2 << 0x20;
+        velocity_00.y = (float)uVar12;
+        velocity_00.x = (float)uVar11;
+        velocity_00.z = fVar7;
+        bVar15 = MVMovableMotorState::MVMovableMotorState_Move
+                           (this_00,velocity_00,pMVar4,fVar13,(this->fields)._.groundState,
+                            (Vector3 *)&stack0xffffffc4,(MethodInfo *)0x0);
+        fVar2 = (float)((ulonglong)lVar14 >> 0x20);
+        lVar16 = (ulonglong)(uint)uVar10 << 0x20;
+        pVVar6 = (Vector3 *)&stack0xffffffac;
+        puVar17 = &UNK_?;
+        auVar18._4_4_ = fVar7;
+        auVar18._0_4_ = uVar10;
+        auVar18._8_4_ = 0;
+        baseVelocity.z = fVar1;
+        baseVelocity.x = (float)(int)lVar14;
+        baseVelocity.y = (float)(int)((ulonglong)lVar14 >> 0x20);
+        pJVar19 = this;
+        pVVar20 = JetPackMotor_GetVelocity
+                            (pVVar6,this,(Vector3)(auVar18 << 0x20),baseVelocity,(MethodInfo *)0x0)
+        ;
+        if (bVar15 == 0) {
+          uVar21 = pVVar20->x;
+          uVar22 = pVVar20->y;
+          fVar1 = pVVar20->z;
+        }
+        else {
+          uVar23 = pVVar20->x;
+          uVar24 = pVVar20->y;
+          fVar1 = pVVar20->z;
           uVar21 = uVar23;
           uVar22 = uVar24;
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+            uVar21 = uVar23;
+            uVar22 = uVar24;
+          }
         }
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      pSVar3 = (this->fields).smoothController;
-      if ((pSVar3 != (SmoothCharacterController *)0x0) &&
-         (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) {
-        (*(code *)(pMVar4->klass->vtable).__unknown_1.method)();
+        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
         pSVar3 = (this->fields).smoothController;
         if ((pSVar3 != (SmoothCharacterController *)0x0) &&
-           (this_01 = (this->fields)._.groundState, this_01 != (MVGroundState *)0x0)) {
-          velocity.y = (float)uVar22;
-          velocity.x = (float)uVar21;
-          velocity.z = fVar1;
-          MVGroundState::MVGroundState_Update
-                    (this_01,(pSVar3->fields).controller,velocity,0.0,(MethodInfo *)0x0);
+           (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) {
+          (*(code *)(pMVar4->klass->vtable).__unknown_1.method)();
           pSVar3 = (this->fields).smoothController;
           if ((pSVar3 != (SmoothCharacterController *)0x0) &&
-             (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) {
-            fVar1 = (pMVar4->fields)._Velocity_k__BackingField.x;
-            fVar7 = (pMVar4->fields)._Velocity_k__BackingField.y;
-            fVar13 = (pMVar4->fields)._Velocity_k__BackingField.z;
-            fVar25 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
-                               ((MethodInfo *)0x0);
-            (this->fields).velocityPrevFrame.x = fVar1 / fVar25;
-            (this->fields).velocityPrevFrame.y = fVar7 / fVar25;
-            (this->fields).velocityPrevFrame.z = fVar13 / fVar25;
-            this_02 = (this->fields).vehicleEnergyContainer;
-            if (this_02 != (VehicleEnergyContainer *)0x0) {
-              WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
-              VehicleEnergyContainer_Consume(this_02,(MethodInfo *)0x0);
-              if (bVar15 == 0) {
-                uVar26 = (this->fields).velocityPrevFrame.x;
-                uVar27 = (this->fields).velocityPrevFrame.y;
-                fVar1 = (this->fields).velocityPrevFrame.z;
-                (this->fields).velocityPrevFrame.x = (float)uVar26 - (float)puVar17;
-                (this->fields).velocityPrevFrame.y = (float)uVar27 - (float)pVVar6;
-                (this->fields).velocityPrevFrame.z = fVar1 - (float)pJVar19;
-              }
-              this_03 = (this->fields).impactState;
-              if (this_03 != (ImpactState *)0x0) {
-                prevVelocity.z = fVar2;
-                prevVelocity.x = (float)(int)lVar16;
-                prevVelocity.y = (float)(int)((ulonglong)lVar16 >> 0x20);
-                fVar2 = ImpactState::ImpactState_UpdateImpactState
-                                   (this_03,(this->fields).velocityPrevFrame,prevVelocity,
-                                    (this->fields).interactable,(MethodInfo *)0x0);
-                if (fVar2 != 0.0) {
-                  pMVar28 = (this->fields).interactable;
-                  if (pMVar28 == (MVInteractableBase *)0x0) goto code_?;
-                  (*(code *)(pMVar28->klass->vtable).__unknown.method)();
+             (this_01 = (this->fields)._.groundState, this_01 != (MVGroundState *)0x0)) {
+            velocity.y = (float)uVar22;
+            velocity.x = (float)uVar21;
+            velocity.z = fVar1;
+            MVGroundState::MVGroundState_Update
+                      (this_01,(pSVar3->fields).controller,velocity,0.0,(MethodInfo *)0x0);
+            pSVar3 = (this->fields).smoothController;
+            if ((pSVar3 != (SmoothCharacterController *)0x0) &&
+               (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) {
+              fVar1 = (pMVar4->fields)._Velocity_k__BackingField.x;
+              fVar7 = (pMVar4->fields)._Velocity_k__BackingField.y;
+              fVar13 = (pMVar4->fields)._Velocity_k__BackingField.z;
+              fVar25 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+                                 ((MethodInfo *)0x0);
+              (this->fields).velocityPrevFrame.x = fVar1 / fVar25;
+              (this->fields).velocityPrevFrame.y = fVar7 / fVar25;
+              (this->fields).velocityPrevFrame.z = fVar13 / fVar25;
+              this_02 = (this->fields).vehicleEnergyContainer;
+              if (this_02 != (VehicleEnergyContainer *)0x0) {
+                WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
+                VehicleEnergyContainer_Consume(this_02,(MethodInfo *)0x0);
+                if (bVar15 == 0) {
+                  uVar26 = (this->fields).velocityPrevFrame.x;
+                  uVar27 = (this->fields).velocityPrevFrame.y;
+                  fVar1 = (this->fields).velocityPrevFrame.z;
+                  (this->fields).velocityPrevFrame.x = (float)uVar26 - (float)puVar17;
+                  (this->fields).velocityPrevFrame.y = (float)uVar27 - (float)pVVar6;
+                  (this->fields).velocityPrevFrame.z = fVar1 - (float)pJVar19;
                 }
-                return;
+                this_03 = (this->fields).impactState;
+                if (this_03 != (ImpactState *)0x0) {
+                  prevVelocity.z = fVar2;
+                  prevVelocity.x = (float)(int)lVar16;
+                  prevVelocity.y = (float)(int)((ulonglong)lVar16 >> 0x20);
+                  fVar2 = ImpactState::ImpactState_UpdateImpactState
+                                     (this_03,(this->fields).velocityPrevFrame,prevVelocity,
+                                      (this->fields).interactable,(MethodInfo *)0x0);
+                  if (fVar2 != 0.0) {
+                    pMVar28 = (this->fields).interactable;
+                    if (pMVar28 == (MVInteractableBase *)0x0) goto code_?;
+                    (*(code *)(pMVar28->klass->vtable).__unknown.method)();
+                  }
+                  return;
+                }
               }
             }
           }
@@ -477,20 +479,19 @@ Vector3 * Assembly-CSharp.dll::JetPackMotor::JetPackMotor_GetDesiredHorizontalVe
     fStack_3 = (this->fields)._InputMoveDirection_k__BackingField.z;
     uStack_4._0_4_ = (this->fields)._InputMoveDirection_k__BackingField.x;
     uStack_4._4_4_ = (this->fields)._InputMoveDirection_k__BackingField.y;
-    fStack_5 = (float)fVar2;
-    fVar2 = (float10)func_?(&uStack_4,0);
-    fStack_6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                         ((MethodInfo *)0x0);
-    fVar7 = (this->fields).speed;
-    fVar8 = fStack_6 * _UNK_?;
-    if (fVar8 < 0.0) {
-      fVar8 = 0.0;
+    fVar5 = (float10)func_?(&uStack_4,0);
+    fStack_6 = (float)(fVar5 * (float10)(float)fVar2);
+    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    fVar7 = fVar7 * _UNK_?;
+    fVar8 = (this->fields).speed;
+    if (fVar7 < 0.0) {
+      fVar7 = 0.0;
     }
-    else if (_UNK_? < fVar8) {
-      fVar8 = _UNK_?;
+    else if (_UNK_? < fVar7) {
+      fVar7 = _UNK_?;
     }
     fStack_3 = (this->fields)._InputMoveDirection_k__BackingField.z;
-    (this->fields).speed = ((float)fVar2 * fStack_5 - fVar7) * fVar8 + fVar7;
+    (this->fields).speed = (fStack_6 - fVar8) * fVar7 + fVar8;
     uStack_4._0_4_ = (this->fields)._InputMoveDirection_k__BackingField.x;
     uStack_4._4_4_ = (this->fields)._InputMoveDirection_k__BackingField.y;
     fVar2 = (float10)func_?(&uStack_4,0);
@@ -507,19 +508,19 @@ Vector3 * Assembly-CSharp.dll::JetPackMotor::JetPackMotor_GetDesiredHorizontalVe
         uStack_4 = CONCAT44(uStack_4._4_4_,&UNK_?);
         func_?();
         this_01 = (this->fields).slopeSpeedMultiplier;
-        fVar7 = (this->fields).speed;
+        fVar8 = (this->fields).speed;
         if (this_01 == (AnimationCurve *)0x0) goto code_?;
-        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+        fVar7 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                            (this_01,(float)dVar11 * _UNK_?,(MethodInfo *)0x0);
-        (this->fields).speed = fVar8 * fVar7;
+        (this->fields).speed = fVar7 * fVar8;
       }
       uVar12 = (this->fields)._InputMoveDirection_k__BackingField.x;
       uVar13 = (this->fields)._InputMoveDirection_k__BackingField.y;
-      fVar8 = (this->fields)._InputMoveDirection_k__BackingField.z;
-      fVar7 = (this->fields).speed;
-      __return_storage_ptr__->x = (float)uVar12 * fVar7;
-      __return_storage_ptr__->y = (float)uVar13 * fVar7;
-      __return_storage_ptr__->z = fVar8 * fVar7;
+      fVar7 = (this->fields)._InputMoveDirection_k__BackingField.z;
+      fVar8 = (this->fields).speed;
+      __return_storage_ptr__->x = (float)uVar12 * fVar8;
+      __return_storage_ptr__->y = (float)uVar13 * fVar8;
+      __return_storage_ptr__->z = fVar7 * fVar8;
       return __return_storage_ptr__;
     }
   }
@@ -625,182 +626,149 @@ Vector3 * Assembly-CSharp.dll::JetPackMotor::JetPackMotor_GetVelocity
   fVar1 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
           Easing_InQuad(0.43,(MethodInfo *)0x0);
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar3 = velocity.y - velocity.y * fVar2 * fVar1;
-  fVar4 = velocity.z - velocity.z * fVar2 * fVar1;
-  pVVar5 = JetPackMotor_GetDesiredHorizontalVelocity
-                      ((Vector3 *)&stack0xffffffa0,this,(MethodInfo *)0x0);
-  fVar1 = pVVar5->x;
-  fVar2 = pVVar5->y;
-  fVar6 = pVVar5->z;
-  VVar7 = *pVVar5;
-  pMVar8 = (this->fields)._.groundState;
-  if (pMVar8 != (MVGroundState *)0x0) {
-    bVar9 = MVGroundState::MVGroundState_get_Grounded(pMVar8,(MethodInfo *)0x0);
-    if ((bVar9 != 0) && ((this->fields)._Thrust_k__BackingField == 0)) {
-      pMVar8 = (this->fields)._.groundState;
-      if (pMVar8 == (MVGroundState *)0x0) goto code_?;
-      pVVar5 = &(pMVar8->fields).groundNormal;
-      pMVar8 = (MVGroundState *)pVVar5->x;
-      pVVar5 = MVRigidBody::MVRigidBody_AdjustGroundVelocityToNormal
-                          (&VStack_10,VVar7,*pVVar5,(MethodInfo *)0x0);
-      uVar11 = pVVar5->x;
-      uVar12 = pVVar5->y;
-      fVar1 = baseVelocity.x + (float)uVar11;
-      fVar2 = baseVelocity.y + (float)uVar12;
-      fVar6 = baseVelocity.z + pVVar5->z;
+  fVar2 = fVar2 * fVar1;
+  VVar3.y = velocity.y - velocity.y * fVar2;
+  VVar3.x = velocity.x - velocity.x * fVar2;
+  VVar3.z = velocity.z - velocity.z * fVar2;
+  pVVar4 = JetPackMotor_ApplyInputVelocityChange
+                      ((Vector3 *)&stack0xffffffc0,this,VVar3,baseVelocity,(MethodInfo *)0x0);
+  uVar5._0_4_ = pVVar4->x;
+  uVar5._4_4_ = pVVar4->y;
+  fVar2 = pVVar4->z;
+  VVar3 = *pVVar4;
+  this_00 = (this->fields)._.groundState;
+  if (this_00 != (MVGroundState *)0x0) {
+    bVar6 = MVGroundState::MVGroundState_get_Grounded(this_00,(MethodInfo *)0x0);
+    if (bVar6 == 0) {
+      pVVar4 = MVRigidBody::MVRigidBody_ApplyGravity
+                          ((Vector3 *)&stack0xffffffc0,(MVRigidBody *)this,VVar3,
+                           (this->fields).velocityPrevFrame,(this->fields).interactable,
+                           (MethodInfo *)0x0);
+      uVar5._0_4_ = pVVar4->x;
+      uVar5._4_4_ = pVVar4->y;
+      fVar2 = pVVar4->z;
     }
-    fVar1 = fVar1 - (float)pMVar8;
-    fVar6 = fVar6 - fVar4;
-    fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
-                       ((MethodInfo *)0x0);
-    fVar13 = fVar13 / _UNK_?;
-    fVar1 = fVar13 * fVar1;
-    fVar6 = fVar13 * fVar6;
-    fVar14 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
-             Easing_InQuad(0.43,(MethodInfo *)0x0);
-    fVar1 = (float)pMVar8 + fVar14 * fVar1;
-    fVar3 = fVar3 + fVar14 * fVar13 * (fVar2 - fVar3);
-    fVar4 = fVar4 + fVar14 * fVar6;
-    pMVar8 = (this->fields)._.groundState;
-    if (pMVar8 != (MVGroundState *)0x0) {
-      bVar9 = MVGroundState::MVGroundState_get_Grounded(pMVar8,(MethodInfo *)0x0);
-      uVar15 = CONCAT44(fVar3,fVar1);
-      if (bVar9 == 0) {
-        VStack_10.z = (float)&UNK_?;
-        VVar7.y = fVar3;
-        VVar7.x = fVar1;
-        VVar7.z = fVar4;
-        pVVar5 = MVRigidBody::MVRigidBody_ApplyGravity
-                            (&VStack_10,(MVRigidBody *)this,VVar7,(this->fields).velocityPrevFrame,
-                             (this->fields).interactable,(MethodInfo *)0x0);
-        uVar15._0_4_ = pVVar5->x;
-        uVar15._4_4_ = pVVar5->y;
-        fVar4 = pVVar5->z;
-      }
-      this_00 = (this->fields).bounceState;
-      if (this_00 != (BounceState *)0x0) {
-        velocity_01.z = fVar4;
-        velocity_01.x = (float)(int)uVar15;
-        velocity_01.y = (float)(int)((ulonglong)uVar15 >> 0x20);
-        pVVar5 = BounceState::BounceState_ApplyBounceVelocity
-                            (&VStack_10,this_00,velocity_01,(MethodInfo *)0x0);
-        fVar2 = pVVar5->x;
-        fVar6 = pVVar5->y;
-        fVar1 = pVVar5->z;
-        if ((this->fields)._Thrust_k__BackingField == 0) {
+    this_01 = (this->fields).bounceState;
+    if (this_01 != (BounceState *)0x0) {
+      velocity_01.z = fVar2;
+      velocity_01.x = (float)(int)uVar5;
+      velocity_01.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+      pVVar4 = BounceState::BounceState_ApplyBounceVelocity
+                          ((Vector3 *)&stack0xffffffc0,this_01,velocity_01,(MethodInfo *)0x0);
+      fVar1 = pVVar4->x;
+      fVar7 = pVVar4->y;
+      fVar2 = pVVar4->z;
+      if ((this->fields)._Thrust_k__BackingField == 0) {
 code_?:
-          velocity_00.y = fVar6;
-          velocity_00.x = fVar2;
-          velocity_00.z = fVar1;
-          pVVar5 = MVRigidBody::MVRigidBody_GetImpulse
-                              (&VStack_10,(MVRigidBody *)this,velocity_00,
-                               (this->fields).interactable,(MethodInfo *)0x0);
-          pVVar5 = MVRigidBody::MVRigidBody_VelocityDamping
-                              (&VStack_10,*pVVar5,1.0,(this->fields).interactable,(MethodInfo *)0x0
-                              );
-          fVar2 = pVVar5->y;
-          fVar1 = pVVar5->z;
-          __return_storage_ptr__->x = pVVar5->x;
-          __return_storage_ptr__->y = fVar2;
-          __return_storage_ptr__->z = fVar1;
-          return __return_storage_ptr__;
-        }
-        this_01 = (this->fields).vehicleEnergyContainer;
-        if (this_01 != (VehicleEnergyContainer *)0x0) {
-          bVar9 = WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
-                   VehicleEnergyContainer_get_OutOfEnergy(this_01,(MethodInfo *)0x0);
-          __return_storage_ptr__ = (Vector3 *)(this->fields).thrust;
-          if (bVar9 != 0) {
-            if ((float)__return_storage_ptr__ < 0.0) {
-              __return_storage_ptr__ = (Vector3 *)0x0;
-            }
-            else {
-              pVVar5 = (Vector3 *)(this->fields).thrustOutOfEnergyMax;
-              if ((float)pVVar5 < (float)__return_storage_ptr__) {
-                __return_storage_ptr__ = pVVar5;
-              }
+        velocity_00.y = fVar7;
+        velocity_00.x = fVar1;
+        velocity_00.z = fVar2;
+        pVVar4 = MVRigidBody::MVRigidBody_GetImpulse
+                            ((Vector3 *)&stack0xffffffb0,(MVRigidBody *)this,velocity_00,
+                             (this->fields).interactable,(MethodInfo *)0x0);
+        pVVar4 = MVRigidBody::MVRigidBody_VelocityDamping
+                            ((Vector3 *)&stack0xffffffb0,*pVVar4,1.0,(this->fields).interactable,
+                             (MethodInfo *)0x0);
+        fVar1 = pVVar4->y;
+        fVar2 = pVVar4->z;
+        __return_storage_ptr__->x = pVVar4->x;
+        __return_storage_ptr__->y = fVar1;
+        __return_storage_ptr__->z = fVar2;
+        return __return_storage_ptr__;
+      }
+      this_02 = (this->fields).vehicleEnergyContainer;
+      if (this_02 != (VehicleEnergyContainer *)0x0) {
+        bVar6 = WorldObjectTypes::VehicleEnergy::VehicleEnergyContainer::
+                 VehicleEnergyContainer_get_OutOfEnergy(this_02,(MethodInfo *)0x0);
+        fVar8 = (this->fields).thrust;
+        if (bVar6 != 0) {
+          if (fVar8 < 0.0) {
+            fVar8 = 0.0;
+          }
+          else {
+            fVar9 = (this->fields).thrustOutOfEnergyMax;
+            if (fVar9 < fVar8) {
+              fVar8 = fVar9;
             }
           }
-          JetPackMotor_ApplyJetImpulse(this,(float)__return_storage_ptr__,(MethodInfo *)0x0);
-          if (((this->fields)._Thrust_k__BackingField == 0) || ((this->fields).leaveMode == 0))
-          goto code_?;
-          JetPackMotor_ApplyJetImpulse(this,1000.0,(MethodInfo *)0x0);
-          this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)this,(MethodInfo *)0x0);
-          pSVar16 = (this->fields).smoothController;
-          if ((pSVar16 != (SmoothCharacterController *)0x0) &&
-             (pMVar17 = (pSVar16->fields).controller, pMVar17 != (MvCharacterController *)0x0)) {
-            fVar6 = (pMVar17->fields).center.x;
-            fVar4 = (pMVar17->fields).center.y;
-            fVar1 = (pMVar17->fields).center.z;
-            if (this_02 != (Transform *)0x0) {
-              pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  (&VStack_10,this_02,(MethodInfo *)0x0);
-              uVar18 = pVVar5->x;
-              uVar19 = pVVar5->y;
-              fVar6 = (float)uVar18 + fVar6;
-              fVar4 = (float)uVar19 + fVar4;
-              fVar1 = pVVar5->z + fVar1;
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              pVVar20 = TypeInfo__UnityEngine__Vector3->static_fields;
-              uVar21 = (pVVar20->upVector).x;
-              uVar22 = (pVVar20->upVector).y;
-              fVar2 = (pVVar20->upVector).z;
-              fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
-                                ((this->fields).leaveModeRotationRange.key,
-                                 (this->fields).leaveModeRotationRange.value,(MethodInfo *)0x0);
-              fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                                 ((MethodInfo *)0x0);
-              point.y = fVar4;
-              point.x = fVar6;
-              point.z = fVar1;
-              axis.y = (float)uVar22;
-              axis.x = (float)uVar21;
-              axis.z = fVar2;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_RotateAround
-                        (this_02,point,axis,fVar13 * fVar3,(MethodInfo *)0x0);
-              pQVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                  ((Quaternion *)&stack0xffffff80,this_02,(MethodInfo *)0x0);
-              fVar1 = pQVar23->x;
-              fVar2 = pQVar23->y;
-              fVar6 = pQVar23->z;
-              fVar4 = pQVar23->w;
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              rotation.y = fVar2;
-              rotation.x = fVar1;
-              rotation.z = fVar6;
-              rotation.w = fVar4;
-              pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                        Quaternion_op_Multiply_1
-                                  (&VStack_10,rotation,
-                                   TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                                   (MethodInfo *)0x0);
-              fVar3 = pVVar5->x;
-              fVar13 = pVVar5->y;
-              fVar1 = pVVar5->z;
-              fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
-                                (0.0,4.5,(MethodInfo *)0x0);
-              fVar1 = fVar1 * fVar6 + 0.0;
-              fVar2 = fVar3 * fVar6 + 3.5116444e-29;
-              fVar6 = (float)this + fVar13 * fVar6;
-              goto code_?;
+        }
+        JetPackMotor_ApplyJetImpulse(this,fVar8,(MethodInfo *)0x0);
+        if (((this->fields)._Thrust_k__BackingField == 0) || ((this->fields).leaveMode == 0))
+        goto code_?;
+        JetPackMotor_ApplyJetImpulse(this,1000.0,(MethodInfo *)0x0);
+        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        pSVar10 = (this->fields).smoothController;
+        if ((pSVar10 != (SmoothCharacterController *)0x0) &&
+           (pMVar11 = (pSVar10->fields).controller, pMVar11 != (MvCharacterController *)0x0)) {
+          fVar2 = (pMVar11->fields).center.x;
+          fVar1 = (pMVar11->fields).center.y;
+          fVar7 = (pMVar11->fields).center.z;
+          if (this_03 != (Transform *)0x0) {
+            pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffb0,this_03,(MethodInfo *)0x0);
+            uVar12 = pVVar4->x;
+            uVar13 = pVVar4->y;
+            fVar2 = (float)uVar12 + fVar2;
+            fVar1 = (float)uVar13 + fVar1;
+            fVar7 = pVVar4->z + fVar7;
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
             }
+            pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
+            uVar15._0_4_ = (pVVar14->upVector).x;
+            uVar15._4_4_ = (pVVar14->upVector).y;
+            fVar8 = (pVVar14->upVector).z;
+            fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
+                               ((this->fields).leaveModeRotationRange.key,
+                                (this->fields).leaveModeRotationRange.value,(MethodInfo *)0x0);
+            fVar16 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                               ((MethodInfo *)0x0);
+            point.y = fVar1;
+            point.x = fVar2;
+            point.z = fVar7;
+            axis.z = fVar8;
+            axis.x = (float)(int)uVar15;
+            axis.y = (float)(int)((ulonglong)uVar15 >> 0x20);
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_RotateAround
+                      (this_03,point,axis,fVar16 * fVar9,(MethodInfo *)0x0);
+            pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                ((Quaternion *)&stack0xffffffb0,this_03,(MethodInfo *)0x0);
+            fVar2 = pQVar17->x;
+            fVar1 = pQVar17->y;
+            fVar7 = pQVar17->z;
+            fVar8 = pQVar17->w;
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            rotation.y = fVar1;
+            rotation.x = fVar2;
+            rotation.z = fVar7;
+            rotation.w = fVar8;
+            pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                                ((Vector3 *)&stack0xffffffb0,rotation,
+                                 TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
+                                 (MethodInfo *)0x0);
+            fVar7 = pVVar4->x;
+            fVar8 = pVVar4->y;
+            fVar2 = pVVar4->z;
+            fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
+                               (0.0,4.5,(MethodInfo *)0x0);
+            fVar2 = (float)this + fVar2 * fVar9;
+            fVar1 = fVar7 * fVar9 + 3.516284e-29;
+            fVar7 = fVar8 * fVar9 + 3.5162997e-29;
+            goto code_?;
           }
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  pVVar5 = (Vector3 *)(*pcVar24)();
-  return pVVar5;
+  pcVar18 = (code *)swi(3);
+  pVVar4 = (Vector3 *)(*pcVar18)();
+  return pVVar4;
 }
 
 
@@ -1110,38 +1078,38 @@ bool Assembly-CSharp.dll::JetPackMotor::JetPackMotor_IsStuck(JetPackMotor *this,
       cRam_? = '\x01';
     }
     pOStack_1 = (Object__Class *)0x0;
-    pMVar2 = (MethodInfo *)0x0;
-    pOStack_3 = (Object__Class *)0x0;
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (fVar4 - (this_00->fields).updateTime < (this_00->fields).updateInterval) {
-      pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+    method_00 = (MethodInfo *)0x0;
+    pOStack_2 = (Object__Class *)0x0;
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if (fVar3 - (this_00->fields).updateTime < (this_00->fields).updateInterval) {
+      pDVar4 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                 *)(this_00->fields).stuckObjects;
-      if (pDVar5 == (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+      if (pDVar4 == (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                      *)0x0) goto code_?;
-      iVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+      iVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
               StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
               Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                        (pDVar5,
+                        (pDVar4,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Count__
                         );
-      if (iVar6 == 0) goto code_?;
+      if (iVar5 == 0) goto code_?;
     }
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     this_06 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                *)0x0;
-    (this_00->fields).updateTime = fVar4;
+    (this_00->fields).updateTime = fVar3;
     this_01 = (MVRigidBody_StuckEvaluator_StuckObject__Class *)
               MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator_GetOverlapDictionary
                         (this_00,(MethodInfo *)0x0);
     if (this_01 == (MVRigidBody_StuckEvaluator_StuckObject__Class *)0x0) {
-      pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+      pDVar4 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                 *)(this_00->fields).stuckObjects;
-      if (pDVar5 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+      if (pDVar4 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                      *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
         StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
         Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-                  (pDVar5,
+                  (pDVar4,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__Clear__
                   );
 code_?:
@@ -1156,32 +1124,32 @@ code_?:
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
                  MethodInfo__System__Collections__Generic__List<int>__List__);
-      pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+      pDVar4 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                 *)(this_00->fields).stuckObjects;
-      if ((pDVar5 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+      if ((pDVar4 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                       *)0x0) &&
          (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
                     ::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                     Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
-                              (pDVar5,
+                              (pDVar4,
                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Keys__
                               ),
          this_03 !=
          (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
           *)0x0)) {
-        pDVar7 = mscorlib.dll::System::Collections::Generic::
+        pDVar6 = mscorlib.dll::System::Collections::Generic::
                  Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                  StyleSheetCache+SheetHandleKey,System::Object]::
                  Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                             *)&stack0xffffffa4,
+                             *)&pDStack_7,
                             (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                              *)this_03,
                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_MVRigidBody_StuckEvaluator::StuckObject>__GetEnumerator__
                            );
-        key_00 = (MethodInfo *)pDVar7->_currentValue;
+        pOVar8 = (Object__Class *)pDVar6->_currentValue;
         while( true ) {
-          bVar8 = mscorlib.dll::System::Collections::Generic::
+          bVar9 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
                   UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
@@ -1189,45 +1157,45 @@ code_?:
                               *)&pOStack_1,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__MoveNext__
                             );
-          if (bVar8 == 0) break;
-          in_stack_9 = key_00;
-          bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          if (bVar9 == 0) break;
+          in_stack_10 = pOVar8;
+          bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Int32,PendingPrototypeData]::
                   Dictionary_2_System_Int32_PendingPrototypeData__ContainsKey
                             ((Dictionary_2_System_Int32_PendingPrototypeData_ *)this_01,
-                             (int32_t)key_00,
+                             (int32_t)pOVar8,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__ContainsKey_int_
                             );
-          if (bVar8 == 0) {
+          if (bVar9 == 0) {
             if (this_02 == (MethodInfo *)0x0) goto code_?;
-            pMVar10 = this_02;
+            pMVar11 = this_02;
             func_?();
-            in_stack_11 = this_02;
-            this_02 = pMVar10;
+            method_00 = this_02;
+            this_02 = pMVar11;
           }
         }
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&pOStack_1,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__Dispose__
-                   ,in_stack_11);
+                   ,method_00);
         if (this_02 != (MethodInfo *)0x0) {
           pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)&stack0xffffffa4,
+                               *)&pDStack_7,
                               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                               this_02,
                               MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
           key = pLVar12->_current;
-          while (bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+          while (bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
                          Text::RegularExpressions::RegexCharClass+SingleRange]::
                          List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
                                    ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                      *)&stack0xffffff78,
                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
-                                   ), bVar8 != 0) {
+                                   ), bVar9 != 0) {
             pDVar13 = (this_00->fields).stuckObjects;
             if (pDVar13 == (Dictionary_2_System_Int32_MVRigidBody_StuckEvaluator_StuckObject_ *)0x0)
             goto code_?;
@@ -1241,75 +1209,79 @@ code_?:
                     ((Object *)&stack0xffffff78,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
-                     ,pMVar2);
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-          StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-          Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                    ((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                      *)&stack0xffffff98,
-                     (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                      *)this_01,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__GetEnumerator__
-                    );
+                     ,in_stack_14);
+          pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
+                   ::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                   Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                             ((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                               *)&stack0xffffffb4,
+                              (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                               *)this_01,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__GetEnumerator__
+                             );
+          pOVar8 = (Object__Class *)(pDVar15->_current).key.sheetInstanceID;
+          pOVar16 = (Object__Class *)
+                    ((ulonglong)*(undefined8 *)&(pDVar15->_current).key.index >> 0x20);
           while( true ) {
-            this_05 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32_PendingPrototypeData_ *)
-                      &stack0xffffffb4;
-            pOVar14 = (Object__Class *)
-                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVOverlapResult>__MoveNext__
-            ;
-            bVar8 = mscorlib.dll::System::Collections::Generic::
+            pDStack_7 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                          *)&UNK_?;
+            bVar9 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+Enumerator[System::Int32,PendingPrototypeData]::
                     Dictionary_2_TKey_TValue_Enumerator_System_Int32_PendingPrototypeData__MoveNext
-                              (this_05,
+                              ((Dictionary_2_TKey_TValue_Enumerator_System_Int32_PendingPrototypeData_
+                                *)&stack0xffffff98,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVOverlapResult>__MoveNext__
                               );
-            if (bVar8 == 0) break;
-            key_01 = &UNK_?;
+            if (bVar9 == 0) break;
             pDVar13 = (this_00->fields).stuckObjects;
             if (pDVar13 == (Dictionary_2_System_Int32_MVRigidBody_StuckEvaluator_StuckObject_ *)0x0)
             goto code_?;
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+            key_00 = &UNK_?;
+            pOVar17 = pOVar16;
+            bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                     Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                              ((Dictionary_2_System_Int32_System_Single_ *)pDVar13,0xADDR,
+                              ((Dictionary_2_System_Int32_System_Single_ *)pDVar13,(int32_t)pOVar8,
                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__ContainsKey_int_
                               );
-            pMVar2 = (MethodInfo *)(this_00->fields).stuckObjects;
-            if (bVar8 == 0) {
+            this_05 = (Object__Class *)(this_00->fields).stuckObjects;
+            if (bVar9 == 0) {
               this_01 = TypeInfo__MVRigidBody_StuckEvaluator__StuckObject;
-              pMVar15 = (MVRigidBody_StuckEvaluator_StuckObject *)func_?();
-              iVar6 = 0;
-              overlapResult.localCubePos = (IntVector__Array *)pOVar14;
-              overlapResult.woId = (int32_t)this_05;
+              pOVar8 = pOVar17;
+              pMVar18 = (MVRigidBody_StuckEvaluator_StuckObject *)func_?();
+              overlapResult.localCubePos = (IntVector__Array *)pOVar8;
+              overlapResult.woId = (int32_t)pDVar13;
               MVRigidBody+StuckEvaluator+StuckObject::MVRigidBody_StuckEvaluator_StuckObject__ctor
-                        (pMVar15,overlapResult,(MethodInfo *)0x0);
-              if (pMVar2 == (MethodInfo *)0x0) goto code_?;
+                        (pMVar18,overlapResult,(MethodInfo *)0x0);
+              if (this_05 == (Object__Class *)0x0) goto code_?;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
               ::Dictionary_2_System_Int32_System_Object__Add
-                        ((Dictionary_2_System_Int32_System_Object_ *)pMVar2,iVar6,(Object *)pMVar15,
+                        ((Dictionary_2_System_Int32_System_Object_ *)this_05,(int32_t)key_00,
+                         (Object *)pMVar18,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__Add_int__MVRigidBody_StuckEvaluator__StuckObject_
                         );
+              pOVar16 = this_05;
             }
             else {
-              if ((pMVar2 == (MethodInfo *)0x0) ||
+              if ((this_05 == (Object__Class *)0x0) ||
                  (this_01 = (MVRigidBody_StuckEvaluator_StuckObject__Class *)
                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Item_int_
-                 , pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                 , pOVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                      ((Dictionary_2_System_Int32_System_Object_ *)pMVar2,
-                                       (int32_t)key_01,
+                                      ((Dictionary_2_System_Int32_System_Object_ *)this_05,
+                                       (int32_t)key_00,
                                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Item_int_
-                                      ), pOVar16 == (Object *)0x0)) goto code_?;
-              pOVar16[1].monitor = (MonitorData *)this_05;
-              pOVar16[2].klass = pOVar14;
+                                      ), pOVar19 == (Object *)0x0)) goto code_?;
+              pOVar19[1].monitor = (MonitorData *)pDVar13;
+              pOVar19[2].klass = pOVar17;
               func_?();
-              in_stack_9 = pMVar2;
+              in_stack_10 = this_05;
             }
           }
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffb4,
+                    ((Object *)&stack0xffffff98,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVOverlapResult>__Dispose__
-                     ,in_stack_9);
+                     ,(MethodInfo *)in_stack_10);
           mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
           StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
           Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
@@ -1317,62 +1289,62 @@ code_?:
                       *)this_01,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVOverlapResult>__Clear__
                     );
-          pDVar5 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          pDVar4 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                     *)(this_00->fields).stuckObjects;
-          if ((pDVar5 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          if ((pDVar4 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                           *)0x0) &&
              (this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
                         UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                         Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                                  (pDVar5,
+                                  (pDVar4,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody_StuckEvaluator::StuckObject>__get_Values__
                                   ),
              this_04 !=
              (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
               *)0x0)) {
-            pDVar7 = mscorlib.dll::System::Collections::Generic::
+            pDVar6 = mscorlib.dll::System::Collections::Generic::
                      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets
                      ::StyleSheetCache+SheetHandleKey,System::Object]::
                      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                                 *)&stack0xffffffa4,this_04,
+                                 *)&pDStack_7,this_04,
                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVRigidBody_StuckEvaluator::StuckObject>__GetEnumerator__
                                );
-            pOStack_3 = (Object__Class *)pDVar7->_dictionary;
-            pMVar15 = (MVRigidBody_StuckEvaluator_StuckObject *)pDVar7->_currentValue;
+            pOStack_2 = (Object__Class *)pDVar6->_dictionary;
+            pMVar18 = (MVRigidBody_StuckEvaluator_StuckObject *)pDVar6->_currentValue;
             while( true ) {
               this_06 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                         *)&pOStack_3;
-              bVar8 = mscorlib.dll::System::Collections::Generic::
+                         *)&pOStack_2;
+              bVar9 = mscorlib.dll::System::Collections::Generic::
                       Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                       UInt32,System::Object]::
                       Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                                 (this_06,
                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__MoveNext__
                                 );
-              if (bVar8 == 0) break;
-              if (pMVar15 == (MVRigidBody_StuckEvaluator_StuckObject *)0x0) goto code_?;
-              fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+              if (bVar9 == 0) break;
+              if (pMVar18 == (MVRigidBody_StuckEvaluator_StuckObject *)0x0) goto code_?;
+              fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                                  ((MethodInfo *)0x0);
-              if (_UNK_? <= fVar4 - (pMVar15->fields).stuckTime) {
+              if (_UNK_? <= fVar3 - (pMVar18->fields).stuckTime) {
                 unaff_retaddr = (MethodInfo *)0x0;
-                bVar8 = MVRigidBody+StuckEvaluator+StuckObject::
+                bVar9 = MVRigidBody+StuckEvaluator+StuckObject::
                         MVRigidBody_StuckEvaluator_StuckObject_HandleFineGrained
-                                  (pMVar15,(MethodInfo *)0x0);
-                if (bVar8 == 0) {
+                                  (pMVar18,(MethodInfo *)0x0);
+                if (bVar9 == 0) {
                   mscorlib.dll::System::ThrowHelper::
                   ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                            ((Object *)&pOStack_3,
+                            ((Object *)&pOStack_2,
                              (ExceptionArgument__Enum)
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__Dispose__
-                             ,in_stack_17);
+                             ,in_stack_20);
                   *unaff_FS_OFFSET = this_06;
                   return 1;
                 }
               }
             }
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&pOStack_3,
+                      ((Object *)&pOStack_2,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVRigidBody_StuckEvaluator::StuckObject>__Dispose__
                        ,unaff_retaddr);
@@ -1385,9 +1357,9 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar8 = (*pcVar18)();
-  return bVar8;
+  pcVar21 = (code *)swi(3);
+  bVar9 = (*pcVar21)();
+  return bVar9;
 }
 
 

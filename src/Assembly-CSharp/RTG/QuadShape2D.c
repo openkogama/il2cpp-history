@@ -25,8 +25,8 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_AlignWidth
   fVar4 = pQVar2->y;
   fVar10 = pQVar2->z;
   fVar11 = pQVar2->w;
-  this = (QuadShape2D *)((fVar10 * fVar3 + fVar5 * fVar11 + fVar4 * fVar7) - pQVar2->x * fVar8);
-  fVar12 = (fVar4 * fVar3 + fVar11 * fVar8 + fVar5 * pQVar2->x) - fVar10 * fVar7;
+  this = (QuadShape2D *)((fVar10 * fVar3 + fVar5 * fVar11 + fVar4 * fVar7) - fVar8 * pQVar2->x);
+  fVar12 = (fVar4 * fVar3 + fVar8 * fVar11 + fVar5 * pQVar2->x) - fVar10 * fVar7;
   axis.x = ((fVar3 * fVar11 - pQVar2->x * fVar7) - fVar4 * fVar8) - fVar5 * fVar10;
   quat.x = (fVar3 * pQVar2->x + fVar7 * fVar11 + fVar10 * fVar8) - fVar4 * fVar5;
   quat = (Quaternion)CONCAT124(quat._0_12_,quat.x);

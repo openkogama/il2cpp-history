@@ -616,6 +616,8 @@ code_?:
   func_?();
 code_?:
   func_?();
+code_?:
+  func_?();
   func_?();
   pcVar26 = (code *)swi(3);
   (*pcVar26)();

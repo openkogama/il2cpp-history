@@ -141,8 +141,8 @@ void Assembly-CSharp.dll::ProcessScanner::ProcessScanner_StartScan
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
+  puStack_4 = &stack0xffffffb4;
+  puVar5 = &stack0xffffffb4;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
     func_?(&TypeInfo__HackingToolDetector);
@@ -201,17 +201,17 @@ code_?:
       if (uVar13 < banList->max_length) {
         pAVar15 = banList->vector[uVar13];
         if (pcRam_? == (code *)0x0) {
-          pcStack_16 = pcRam_?;
-          pcStack_17 = pcRam_?;
-          uStack_18 = 0;
-          uStack_19 = 0xb;
-          uStack_20 = 0x10;
-          uStack_21 = 1;
-          pcRam_? = (code *)func_?(&puStack_22);
+          pcStack_6 = pcRam_?;
+          pcStack_7 = pcRam_?;
+          uStack_8 = 0;
+          uStack_9 = 0xb;
+          uStack_10 = 0x10;
+          uStack_11 = 1;
+          pcRam_? = (code *)func_?(&puStack_12);
         }
-        uVar23 = (*pcRam_?)();
-        pSVar14 = (String *)func_?(uVar23);
-        func_?(uVar23);
+        uVar16 = (*pcRam_?)();
+        pSVar14 = (String *)func_?(uVar16);
+        func_?(uVar16);
         report = (HackingToolDetector_HackingToolReport *)
                  func_?(TypeInfo__HackingToolDetector__HackingToolReport);
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -250,8 +250,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

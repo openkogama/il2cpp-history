@@ -31,7 +31,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_SetLockToAxis
     fVar2 = (float10)func_?(&VStack_1,0);
     fVar3 = (float)fVar2;
     if (_UNK_? < fVar3) {
-      VStack_1.y = movement.x / fVar3;
+      normalizedDistance = movement.x / fVar3;
       fVar3 = movement.y / fVar3;
     }
     else {
@@ -39,27 +39,28 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_SetLockToAxis
         func_?(&TypeInfo__UnityEngine__Vector2);
         cRam_? = '\x01';
       }
-      VStack_1.y = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
+      normalizedDistance = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
       fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
     }
+    VStack_1.y = fVar3;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector2);
       cRam_? = '\x01';
     }
     JVar4 = (Joystick_SupressAxisFlag__Enum)
             (_UNK_? <
-            (float)((uint)(fVar3 * (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y +
-                          VStack_1.y *
-                          (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x) &
-                   _UNK_?));
+            (float)((uint)((TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y *
+                           VStack_1.y +
+                          (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x *
+                          normalizedDistance) & _UNK_?));
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector2);
       cRam_? = '\x01';
     }
     JVar5 = JVar4 | Joystick_SupressAxisFlag__Enum_Vertical;
-    if ((float)((uint)((TypeInfo__UnityEngine__Vector2->static_fields->upVector).y * fVar3 +
-                      (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x * VStack_1.y) &
-               _UNK_?) <= _UNK_?) {
+    if ((float)((uint)((TypeInfo__UnityEngine__Vector2->static_fields->upVector).y * VStack_1.y +
+                      (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x *
+                      normalizedDistance) & _UNK_?) <= _UNK_?) {
       JVar5 = JVar4;
     }
     return JVar5;
@@ -109,7 +110,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
     }
     else {
       if (cRam_? == '\0') {
-        uStack_3 = 0x11b51c6c1049de2a;
+        uStack_3 = 0x11b5b828104a11fa;
         func_?();
         cRam_? = '\x01';
       }
@@ -117,7 +118,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
       position.z = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
     }
     if (cRam_? == '\0') {
-      uStack_3 = 0x11b51c6c1049de7d;
+      uStack_3 = 0x11b5b828104a124d;
       func_?();
       cRam_? = '\x01';
     }
@@ -128,7 +129,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
                           (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x *
                           (float)this) & _UNK_?));
     if (cRam_? == '\0') {
-      uStack_3 = 0x11b51c6c1049ded4;
+      uStack_3 = 0x11b5b828104a12a4;
       func_?();
       cRam_? = '\x01';
     }

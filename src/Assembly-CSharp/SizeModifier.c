@@ -183,11 +183,11 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_Unstablize
     dVar15 = (double)((fVar1 - (this->fields).sizeUnstableAfterSeconds) * fVar4);
     func_?();
     fVar1 = _UNK_? - (float)dVar15;
-    uStack_16 = CONCAT44((float)uVar7 * fVar3 + fVar13 * fVar1,
-                         (float)uVar6 * fVar3 + fVar12 * fVar1);
+    uStack_16 = CONCAT44(fVar1 * fVar13 + (float)uVar7 * fVar3,
+                         (float)uVar6 * fVar3 + fVar1 * fVar12);
     if (pMVar9 != (MVAvatar *)0x0) {
       (*(code *)(pMVar9->klass->vtable).set_Scale.method)
-                (pMVar9,uStack_16,fVar8 * fVar3 + fVar14 * fVar1,
+                (pMVar9,uStack_16,fVar1 * fVar14 + fVar8 * fVar3,
                  (pMVar9->klass->vtable).get_WorldPosition.methodPtr);
       return;
     }

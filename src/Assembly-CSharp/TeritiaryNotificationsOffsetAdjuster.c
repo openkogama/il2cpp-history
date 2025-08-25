@@ -99,28 +99,29 @@ void Assembly-CSharp.dll::TeritiaryNotificationsOffsetAdjuster::
         func_?(&TypeInfo__MVGameControllerBase);
         cRam_? = '\x01';
       }
-      pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+      pDVar6 = (Delegate *)
+               TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
       unaff_ESI = (Delegate *)0x0;
-      if (pIVar1 != (IPlayModeUI *)0x0) {
-        pIVar6 = pIVar1->klass;
-        uVar7 = 0;
-        uVar8._0_1_ = (pIVar6->_1).rank;
-        uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
-        pIVar9 = pIVar1;
-        if (uVar8 != 0) {
+      if (pDVar6 != (Delegate *)0x0) {
+        pDVar7 = pDVar6->klass;
+        uVar8 = 0;
+        uVar9._0_1_ = (pDVar7->_1).rank;
+        uVar9._1_1_ = (pDVar7->_1).minimumAlignment;
+        pDVar10 = pDVar6;
+        if (uVar9 != 0) {
           do {
-            if (pIVar6->interfaceOffsets[uVar7].interfaceType ==
+            if (pDVar7->interfaceOffsets[uVar8].interfaceType ==
                 (Il2CppClass *)TypeInfo__IPlayModeUI) {
-              ppMVar10 = &(&(pIVar1->klass->vtable).get_IsPausedStateChange)
-                         [pIVar1->klass->interfaceOffsets[uVar7].offset].method;
+              ppMVar11 = &(&(pDVar6->klass->vtable).ToString)
+                         [pDVar6->klass->interfaceOffsets[uVar8].offset].method;
               goto code_?;
             }
-            uVar7 = uVar7 + 1;
-          } while (uVar7 < uVar8);
+            uVar8 = uVar8 + 1;
+          } while (uVar8 < uVar9);
         }
-        ppMVar10 = (MethodInfo **)func_?(pIVar1,TypeInfo__IPlayModeUI,3);
+        ppMVar11 = (MethodInfo **)func_?(pDVar6,TypeInfo__IPlayModeUI,3);
 code_?:
-        a = (Delegate *)(*(code *)*ppMVar10)(pIVar1,ppMVar10[1]);
+        pDVar6 = (Delegate *)(*(code *)*ppMVar11)(pDVar6,ppMVar11[1]);
         this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>)
         ;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -129,36 +130,36 @@ code_?:
                    MethodInfo__TeritiaryNotificationsOffsetAdjuster__OnIsPausedStateChange_bool_,
                    (MethodInfo *)0x0);
         unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                              (a,(Delegate *)this_00,(MethodInfo *)0x0);
+                              (pDVar6,(Delegate *)this_00,(MethodInfo *)0x0);
         unaff_EDI = TypeInfo__System__Action<bool>;
         if (unaff_ESI == (Delegate *)0x0) {
-          iStack_11 = 0;
+          iVar12 = 0;
 code_?:
-          uVar8 = 0;
-          pIVar6 = pIVar9->klass;
-          uVar7._0_1_ = (pIVar6->_1).rank;
-          uVar7._1_1_ = (pIVar6->_1).minimumAlignment;
-          if (uVar7 != 0) {
+          uVar9 = 0;
+          pDVar7 = pDVar10->klass;
+          uVar8._0_1_ = (pDVar7->_1).rank;
+          uVar8._1_1_ = (pDVar7->_1).minimumAlignment;
+          if (uVar8 != 0) {
             do {
-              if (pIVar6->interfaceOffsets[uVar8].interfaceType ==
+              if (pDVar7->interfaceOffsets[uVar9].interfaceType ==
                   (Il2CppClass *)TypeInfo__IPlayModeUI) {
-                pIVar6 = pIVar9->klass;
-                iVar12 = pIVar6->interfaceOffsets[uVar8].offset;
-                (*(code *)(&(pIVar6->vtable).set_IsPausedStateChange)[iVar12].method)
-                          (pIVar9,iStack_11,(&(pIVar6->vtable).get_IsInPauseMenu)[iVar12].methodPtr)
-                ;
+                pDVar7 = pDVar10->klass;
+                iVar13 = pDVar7->interfaceOffsets[uVar9].offset;
+                (*(code *)(&(pDVar7->vtable).Clone)[iVar13].method)
+                          (pDVar10,iVar12,(&(pDVar7->vtable).GetObjectData)[iVar13].methodPtr);
                 return;
               }
-              uVar8 = uVar8 + 1;
-            } while (uVar8 < uVar7);
+              uVar9 = uVar9 + 1;
+            } while (uVar9 < uVar8);
           }
-          puVar13 = (undefined4 *)func_?(pIVar9,TypeInfo__IPlayModeUI,4);
-          (*(code *)*puVar13)(pIVar9,&UNK_?,puVar13[1]);
+          pDVar6 = pDVar10;
+          puVar14 = (undefined4 *)func_?(pDVar10,TypeInfo__IPlayModeUI,4);
+          (*(code *)*puVar14)(pDVar10,pDVar6,puVar14[1]);
           return;
         }
-        pIVar9 = (IPlayModeUI *)&UNK_?;
-        iStack_11 = func_?(unaff_ESI,TypeInfo__System__Action<bool>);
-        if (iStack_11 != 0) goto code_?;
+        pDVar10 = unaff_ESI;
+        iVar12 = func_?(unaff_ESI,TypeInfo__System__Action<bool>);
+        if (iVar12 != 0) goto code_?;
         goto code_?;
       }
     }
@@ -166,8 +167,8 @@ code_?:
   func_?();
 code_?:
   func_?(unaff_ESI,unaff_EDI);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

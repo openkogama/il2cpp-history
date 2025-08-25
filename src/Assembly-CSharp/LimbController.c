@@ -7,25 +7,22 @@ Assembly-CSharp.dll::LimbController::LimbController_AddAndClampRotations
           Quaternion rotation2,MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = 0.0;
-  __return_storage_ptr__->y = 0.0;
-  __return_storage_ptr__->z = 0.0;
-  __return_storage_ptr__->w = 0.0;
-  fVar1 = (rotation2.w * rotation1.x + rotation2.x * rotation1.w + rotation1.y * rotation2.z) -
+  fVar1 = (rotation2.x * rotation1.w + rotation2.w * rotation1.x + rotation1.y * rotation2.z) -
           rotation1.z * rotation2.y;
   fVar2 = rotation1.z * rotation2.z;
-  fVar3 = (rotation2.y * rotation1.w + rotation1.y * rotation2.w + rotation1.z * rotation2.x) -
+  fVar3 = (rotation1.y * rotation2.w + rotation2.y * rotation1.w + rotation1.z * rotation2.x) -
           rotation2.z * rotation1.x;
-  rotation2.z = (rotation1.z * rotation2.w + rotation2.z * rotation1.w + rotation2.y * rotation1.x)
+  rotation1.z = (rotation1.z * rotation2.w + rotation2.z * rotation1.w + rotation2.y * rotation1.x)
                 - rotation1.y * rotation2.x;
-  rotation2.w = ((rotation2.w * rotation1.w - rotation1.x * rotation2.x) - rotation2.y * rotation1.y
+  rotation1.w = ((rotation2.w * rotation1.w - rotation1.x * rotation2.x) - rotation2.y * rotation1.y
                 ) - fVar2;
   __return_storage_ptr__->x = fVar1;
   __return_storage_ptr__->y = fVar3;
-  __return_storage_ptr__->z = rotation2.z;
-  __return_storage_ptr__->w = rotation2.w;
-  rotation2.x = fVar1;
-  rotation2.y = fVar3;
+  __return_storage_ptr__->z = rotation1.z;
+  __return_storage_ptr__->w = rotation1.w;
+  rotation1.x = fVar1;
+  rotation1.y = fVar3;
+  rotation2.w = rotation1.w;
   puVar4 = (undefined8 *)func_?(&rotation1.y,__return_storage_ptr__,0);
   rotation2.y = (float)*puVar4;
   rotation2.z = (float)((ulonglong)*puVar4 >> 0x20);
@@ -727,24 +724,24 @@ void Assembly-CSharp.dll::LimbController::LimbController_UpdateInterpolation
     fVar2 = pQVar5->y;
     fVar6 = pQVar5->z;
     fVar7 = pQVar5->w;
-    fVar12 = (fVar1 * fVar11 + fVar7 * fVar8 + fVar6 * fVar9) - fVar2 * fVar10;
-    fVar13 = (fVar2 * fVar11 + fVar7 * fVar9 + fVar1 * fVar10) - fVar6 * fVar8;
-    fVar14 = (fVar6 * fVar11 + fVar7 * fVar10 + fVar2 * fVar8) - fVar1 * fVar9;
-    fVar9 = ((fVar7 * fVar11 - fVar1 * fVar8) - fVar2 * fVar9) - fVar6 * fVar10;
+    fVar12 = (fVar8 * fVar7 + fVar11 * fVar1 + fVar9 * fVar6) - fVar10 * fVar2;
+    fVar13 = (fVar11 * fVar2 + fVar9 * fVar7 + fVar10 * fVar1) - fVar8 * fVar6;
+    fVar14 = (fVar11 * fVar6 + fVar10 * fVar7 + fVar8 * fVar2) - fVar9 * fVar1;
+    fVar10 = ((fVar11 * fVar7 - fVar8 * fVar1) - fVar9 * fVar2) - fVar10 * fVar6;
     fVar1 = (this->fields).modelRotationOffset.x;
     fVar2 = (this->fields).modelRotationOffset.y;
     fVar6 = (this->fields).modelRotationOffset.z;
     fVar7 = (this->fields).modelRotationOffset.w;
-    fVar8 = (fVar7 * fVar12 + fVar1 * fVar9 + fVar6 * fVar13) - fVar2 * fVar14;
-    fVar10 = (fVar7 * fVar13 + fVar2 * fVar9 + fVar1 * fVar14) - fVar6 * fVar12;
-    fVar11 = (fVar7 * fVar14 + fVar6 * fVar9 + fVar2 * fVar12) - fVar1 * fVar13;
-    fVar1 = ((fVar7 * fVar9 - fVar1 * fVar12) - fVar2 * fVar13) - fVar6 * fVar14;
-    a.y = fVar10;
-    a.x = fVar8;
+    fVar9 = (fVar12 * fVar7 + fVar10 * fVar1 + fVar13 * fVar6) - fVar14 * fVar2;
+    fVar8 = (fVar10 * fVar2 + fVar13 * fVar7 + fVar14 * fVar1) - fVar12 * fVar6;
+    fVar11 = (fVar10 * fVar6 + fVar14 * fVar7 + fVar12 * fVar2) - fVar13 * fVar1;
+    fVar1 = ((fVar10 * fVar7 - fVar12 * fVar1) - fVar13 * fVar2) - fVar14 * fVar6;
+    a.y = fVar8;
+    a.x = fVar9;
     a.z = fVar11;
     a.w = fVar1;
-    b.y = fVar10;
-    b.x = fVar8;
+    b.y = fVar8;
+    b.x = fVar9;
     b.z = fVar11;
     b.w = fVar1;
     pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp

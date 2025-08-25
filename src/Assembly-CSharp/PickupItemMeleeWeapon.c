@@ -1299,9 +1299,9 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnLocalHi
                       pTVar3 = (Transform *)voxelHit._60_4_;
                       if (pPVar12 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
                         fVar7 = (pPVar12->fields)._.recoilStrength;
-                        voxelHit.transform = (Transform *)(fVar7 * fVar11);
                         pTVar2 = (Transform *)
-                                  ((float)(MVPickupOwner *)voxelHit.interactionFlags * fVar7);
+                                  (fVar7 * (float)(MVPickupOwner *)voxelHit.interactionFlags);
+                        voxelHit.transform = (Transform *)(fVar7 * fVar11);
                         voxelHit._60_4_ = fVar7 * fVar9;
                         pTVar3 = voxelHit.transform;
                         voxelHit.interactionFlags._0_4_ = (MVPickupOwner *)voxelHit._60_4_;
@@ -1357,7 +1357,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnPickupN
     if (pTVar1 != (Transform *)0x0) {
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
                          ((Vector3 *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
-      fVar4 = pVVar2->x;
+      fVar4 = _UNK_? / pVVar2->x;
       pPVar5 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
         fVar6 = (pPVar5->fields)._.radius;
@@ -1366,7 +1366,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnPickupN
         if (pPVar5 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
           pTVar1 = (this->fields)._._._.muzzlePoint;
           if (pTVar1 != (Transform *)0x0) {
-            value.y = (fVar6 + (pPVar5->fields)._.range) * (_UNK_? / fVar4) * _UNK_?;
+            value.y = (fVar6 + (pPVar5->fields)._.range) * fVar4 * _UNK_?;
             value.x = (float)puVar7;
             value.z = fVar3;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition

@@ -675,31 +675,26 @@ code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
                 (pMVar1,(Vector3__Array *)value,(MethodInfo *)0x0);
       value_00 = (Color__Array *)func_?();
+      fVar11 = _UNK_?;
       fVar10 = _UNK_?;
       fVar9 = _UNK_?;
       fVar5 = _UNK_?;
       if (value_00 != (Color__Array *)0x0) {
         if (value_00->max_length == 0) goto code_?;
         value_00->vector[0].r = _UNK_?;
-        value_00->vector[0].g = fVar5;
-        value_00->vector[0].b = fVar9;
-        value_00->vector[0].a = fVar10;
-        fVar10 = _UNK_?;
-        fVar9 = _UNK_?;
-        fVar5 = _UNK_?;
+        value_00->vector[0].g = fVar9;
+        value_00->vector[0].b = fVar10;
+        value_00->vector[0].a = fVar11;
         if (value_00->max_length < 2) goto code_?;
-        value_00->vector[1].r = _UNK_?;
-        value_00->vector[1].g = fVar5;
-        value_00->vector[1].b = fVar9;
-        value_00->vector[1].a = fVar10;
-        fVar10 = _UNK_?;
-        fVar9 = _UNK_?;
-        fVar5 = _UNK_?;
+        value_00->vector[1].r = fVar5;
+        value_00->vector[1].g = fVar9;
+        value_00->vector[1].b = fVar10;
+        value_00->vector[1].a = fVar11;
         if (value_00->max_length < 3) goto code_?;
-        value_00->vector[2].r = _UNK_?;
-        value_00->vector[2].g = fVar5;
-        value_00->vector[2].b = fVar9;
-        value_00->vector[2].a = fVar10;
+        value_00->vector[2].r = fVar5;
+        value_00->vector[2].g = fVar9;
+        value_00->vector[2].b = fVar10;
+        value_00->vector[2].a = fVar11;
         UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
                   (pMVar1,value_00,(MethodInfo *)0x0);
         indices = (Int32__Array *)func_?();
@@ -722,8 +717,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  pMVar1 = (Mesh *)(*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  pMVar1 = (Mesh *)(*pcVar12)();
   return pMVar1;
 }
 

@@ -65,8 +65,8 @@ Assembly-CSharp.dll::SafeAreaPadding::SafeAreaPadding_CalculateMinMaxSafeAreas
       if (fVar4 < fVar9) {
         fVar9 = fVar4;
       }
-      fVar16 = (float)((uint)(fVar5 - fStack_2) & _UNK_?) *
-               (float)((uint)(fVar9 - fStack_1) & _UNK_?);
+      fVar16 = (float)((uint)(fVar9 - fStack_1) & _UNK_?) *
+               (float)((uint)(fVar5 - fStack_2) & _UNK_?);
       fStack_17 = fStack_11;
       fStack_18 = fStack_13;
       fStack_19 = fStack_14;
@@ -82,8 +82,8 @@ Assembly-CSharp.dll::SafeAreaPadding::SafeAreaPadding_CalculateMinMaxSafeAreas
       if (fVar9 < fStack_2) {
         fVar9 = fStack_2;
       }
-      fVar16 = (float)((uint)(fVar5 - fVar9) & _UNK_?) *
-               (float)((uint)(fVar4 - fStack_1) & _UNK_?);
+      fVar16 = (float)((uint)(fVar4 - fStack_1) & _UNK_?) *
+               (float)((uint)(fVar5 - fVar9) & _UNK_?);
       if (fVar12 < fVar16) {
         fVar12 = fVar16;
         fStack_17 = fStack_1;
@@ -196,16 +196,16 @@ void Assembly-CSharp.dll::SafeAreaPadding::SafeAreaPadding_Start
                            ((ValueTuple_2_UnityEngine_Vector2_UnityEngine_Vector2_ *)
                             &stack0xffffff90,this,(MethodInfo *)0x0);
         fVar11 = (pVVar10->Item1).x;
-        pMVar12 = (MethodInfo *)(pVVar10->Item2).x;
-        fVar13 = (pVVar10->Item2).y;
-        fVar14 = (pVVar10->Item1).y * fVar9;
-        iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width(pMVar12);
-        iVar15 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
+        method_00 = (MethodInfo *)(pVVar10->Item2).x;
+        fVar12 = (pVVar10->Item2).y;
+        fVar13 = (pVVar10->Item1).y * fVar9;
+        iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width(method_00);
+        iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
                           ((MethodInfo *)0x0);
-        fVar9 = (fVar13 - (float)iVar15) * fVar9;
+        fVar9 = (fVar12 - (float)iVar14) * fVar9;
         if (this_00 != (RectTransform *)0x0) {
-          value.y = fVar14;
-          value.x = ((float)pMVar12 - (float)iVar8) * fVar7;
+          value.y = fVar13;
+          value.x = ((float)method_00 - (float)iVar8) * fVar7;
           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_offsetMax
                     (this_00,value,(MethodInfo *)0x0);
           value_00.y = fVar9;
@@ -219,14 +219,12 @@ void Assembly-CSharp.dll::SafeAreaPadding::SafeAreaPadding_Start
                                   ((Component *)pRVar5,
                                    UnityEngine__UI__CanvasScaler_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::CanvasScaler>__
                                   ), this_01 != (CanvasScaler *)0x0)) {
-            pMVar12 = (MethodInfo *)
-                      ((float)((uint)this_00 & _UNK_?) +
-                       (this_01->fields).m_ReferenceResolution.y +
-                      (float)((uint)fVar9 & _UNK_?));
-            value_01.y = (float)pMVar12;
-            value_01.x = (float)pMVar12;
+            value_01.y = (float)((uint)this_00 & _UNK_?) +
+                         (this_01->fields).m_ReferenceResolution.y +
+                         (float)((uint)fVar9 & _UNK_?);
+            value_01.x = (this_01->fields).m_ReferenceResolution.x;
             UnityEngine.UI.dll::UnityEngine::UI::CanvasScaler::CanvasScaler_set_referenceResolution
-                      (this_01,value_01,pMVar12);
+                      (this_01,value_01,(MethodInfo *)0x0);
             return;
           }
         }
@@ -236,8 +234,8 @@ void Assembly-CSharp.dll::SafeAreaPadding::SafeAreaPadding_Start
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

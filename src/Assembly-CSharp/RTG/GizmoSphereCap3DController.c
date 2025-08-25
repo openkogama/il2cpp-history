@@ -60,39 +60,21 @@ void Assembly-CSharp.dll::RTG::GizmoSphereCap3DController::
       pGVar1 = (this->fields)._._data;
       if ((pGVar1 != (GizmoCap3DControllerData *)0x0) &&
          (pGVar2 = (pGVar1->fields).Cap, pGVar2 != (GizmoCap3D *)0x0)) {
-        if ((pGVar2->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-          pGVar4 = (pGVar2->fields)._lookAndFeel;
-          if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar4 = (pGVar2->fields)._sharedLookAndFeel;
-        }
-        if ((pGVar4->fields)._useZoomFactor == 0) {
-          zoomFactor = _UNK_?;
-        }
-        if ((pGVar2->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-          pGVar4 = (pGVar2->fields)._lookAndFeel;
-          if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar4 = (pGVar2->fields)._sharedLookAndFeel;
-        }
-        fVar5 = (pGVar4->fields)._sphereRadius * (pGVar4->fields)._scale * zoomFactor;
+        fVar4 = GizmoCap3D::GizmoCap3D_GetRealSphereRadius(pGVar2,zoomFactor,(MethodInfo *)0x0);
         pGVar3 = (pGVar2->fields)._transform;
         if (pGVar3 != (GizmoTransform *)0x0) {
-          value.y = sliderEndPt.y + sliderDirection.y * fVar5;
-          value.x = sliderEndPt.x + sliderDirection.x * fVar5;
-          value.z = sliderEndPt.z + sliderDirection.z * fVar5;
+          value.y = sliderEndPt.y + sliderDirection.y * fVar4;
+          value.x = sliderEndPt.x + sliderDirection.x * fVar4;
+          value.z = sliderEndPt.z + sliderDirection.z * fVar4;
           GizmoTransform::GizmoTransform_set_Position3D(pGVar3,value,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -104,36 +86,17 @@ float Assembly-CSharp.dll::RTG::GizmoSphereCap3DController::
                 (GizmoSphereCap3DController *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._._data;
-  if ((pGVar2 != (GizmoCap3DControllerData *)0x0) &&
-     (pGVar3 = (pGVar2->fields).Cap, pGVar3 != (GizmoCap3D *)0x0)) {
-    if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-      pGVar4 = (pGVar3->fields)._lookAndFeel;
-      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar4 = (pGVar3->fields)._sharedLookAndFeel;
-    }
-    if ((pGVar4->fields)._useZoomFactor == 0) {
-      zoomFactor = _UNK_?;
-    }
-    if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-      pGVar4 = (pGVar3->fields)._lookAndFeel;
-      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar4 = (pGVar3->fields)._sharedLookAndFeel;
-    }
-    fVar5 = (pGVar4->fields)._sphereRadius * (pGVar4->fields)._scale * zoomFactor;
-    return fVar5 + fVar5;
+  pGVar1 = (this->fields)._._data;
+  if ((pGVar1 != (GizmoCap3DControllerData *)0x0) &&
+     (this_00 = (pGVar1->fields).Cap, this_00 != (GizmoCap3D *)0x0)) {
+    fVar2 = GizmoCap3D::GizmoCap3D_GetRealSphereRadius(this_00,zoomFactor,(MethodInfo *)0x0);
+    return fVar2 + fVar2;
   }
-code_?:
-  uVar6 = func_?(auStack_7);
-  func_?(uVar6);
-  pcVar8 = (code *)swi(3);
-  fVar9 = (float10)(*pcVar8)();
-  return (float)fVar9;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  fVar5 = (float10)(*pcVar4)();
+  return (float)fVar5;
 }
 
 
@@ -192,53 +155,36 @@ void Assembly-CSharp.dll::RTG::GizmoSphereCap3DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
+    this_00 = (pGVar1->fields).Cap;
     pSVar2 = (pGVar1->fields).Sphere;
-    pGVar3 = (pGVar1->fields).Cap;
-    if ((pGVar3 != (GizmoCap3D *)0x0) &&
-       (pGVar4 = (pGVar3->fields)._transform, pGVar4 != (GizmoTransform *)0x0)) {
-      fVar5 = (pGVar4->fields)._position3D.y;
-      fVar6 = (pGVar4->fields)._position3D.z;
+    if ((this_00 != (GizmoCap3D *)0x0) &&
+       (pGVar3 = (this_00->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
+      fVar4 = (pGVar3->fields)._position3D.y;
+      fVar5 = (pGVar3->fields)._position3D.z;
       if (pSVar2 != (SphereShape3D *)0x0) {
-        (pSVar2->fields)._center.x = (pGVar4->fields)._position3D.x;
-        (pSVar2->fields)._center.y = fVar5;
-        (pSVar2->fields)._center.z = fVar6;
+        (pSVar2->fields)._center.x = (pGVar3->fields)._position3D.x;
+        (pSVar2->fields)._center.y = fVar4;
+        (pSVar2->fields)._center.z = fVar5;
         pGVar1 = (this->fields)._._data;
         if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
-          pGVar4 = (pGVar3->fields)._transform;
+          pGVar3 = (this_00->fields)._transform;
           pSVar2 = (pGVar1->fields).Sphere;
-          if (pGVar4 != (GizmoTransform *)0x0) {
-            fVar6 = (pGVar4->fields)._rotation3D.y;
-            fVar5 = (pGVar4->fields)._rotation3D.z;
-            fVar7 = (pGVar4->fields)._rotation3D.w;
+          if (pGVar3 != (GizmoTransform *)0x0) {
+            fVar5 = (pGVar3->fields)._rotation3D.y;
+            fVar4 = (pGVar3->fields)._rotation3D.z;
+            fVar6 = (pGVar3->fields)._rotation3D.w;
             if (pSVar2 != (SphereShape3D *)0x0) {
-              (pSVar2->fields)._rotation.x = (pGVar4->fields)._rotation3D.x;
-              (pSVar2->fields)._rotation.y = fVar6;
-              (pSVar2->fields)._rotation.z = fVar5;
-              (pSVar2->fields)._rotation.w = fVar7;
+              (pSVar2->fields)._rotation.x = (pGVar3->fields)._rotation3D.x;
+              (pSVar2->fields)._rotation.y = fVar5;
+              (pSVar2->fields)._rotation.z = fVar4;
+              (pSVar2->fields)._rotation.w = fVar6;
               pGVar1 = (this->fields)._._data;
               if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
-                this_00 = (TorusShape3D *)(pGVar1->fields).Sphere;
-                if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-                  pGVar8 = (pGVar3->fields)._lookAndFeel;
-                  if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-                }
-                else {
-                  pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
-                }
-                if ((pGVar8->fields)._useZoomFactor == 0) {
-                  zoomFactor = _UNK_?;
-                }
-                if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-                  pGVar8 = (pGVar3->fields)._lookAndFeel;
-                  if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-                }
-                else {
-                  pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
-                }
-                if (this_00 != (TorusShape3D *)0x0) {
-                  TorusShape3D::TorusShape3D_set_CoreRadius
-                            (this_00,(pGVar8->fields)._sphereRadius * (pGVar8->fields)._scale *
-                                     zoomFactor,(MethodInfo *)0x0);
+                this_01 = (TorusShape3D *)(pGVar1->fields).Sphere;
+                fVar5 = GizmoCap3D::GizmoCap3D_GetRealSphereRadius
+                                  (this_00,zoomFactor,(MethodInfo *)0x0);
+                if (this_01 != (TorusShape3D *)0x0) {
+                  TorusShape3D::TorusShape3D_set_CoreRadius(this_01,fVar5,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -248,10 +194,9 @@ void Assembly-CSharp.dll::RTG::GizmoSphereCap3DController::
       }
     }
   }
-code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

@@ -172,7 +172,7 @@ Assembly-CSharp.dll::MVGroup::MVGroup_Clone
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                           *)&stack0xffffffd8,this_00,
+                           *)&stack0xffffffdc,this_00,
                           MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                          );
       pOStack_4 = (Object__Class *)pLVar6->_list;
@@ -268,7 +268,7 @@ Bounds * Assembly-CSharp.dll::MVGroup::MVGroup_ComputeBoundsForWOs
                   (&BStack_4,point,(MethodInfo *)0x0);
         point_00.y = BStack_3.m_Extents.y + fVar8;
         point_00.x = fVar7 + (pBVar2->m_Center).x;
-        point_00.z = BStack_3.m_Extents.z + 3.5451242e-29;
+        point_00.z = BStack_3.m_Extents.z + 3.549785e-29;
         UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate
                   (&BStack_4,point_00,(MethodInfo *)0x0);
       }
@@ -531,10 +531,10 @@ int32_t Assembly-CSharp.dll::MVGroup::MVGroup_GetGroupAbove
                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                              (pMVar1,id,(MethodInfo *)0x0), this == (MVWorldObjectClient *)0x0))
         break;
-        returnParentIfHasFlags = InteractionFlags__Enum_CanChangeScale;
-        currentParent = 0;
+        leaf = (int32_t)method;
+        currentParent = returnParentIfHasFlags;
         bVar3 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag
-                          (this,InteractionFlags__Enum_CanChangeScale,method);
+                          (this,returnParentIfHasFlags,method);
         if (bVar3 != 0) {
           return id;
         }
@@ -629,10 +629,11 @@ Assembly-CSharp.dll::MVGroup::MVGroup_GetHierarchyWorldObjectIDs(MVGroup *this,M
           return (HashSet_1_System_Int32_ *)this_00;
         }
         if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
-        if ((*(byte *)(*(int *)RVar6 + 0xb8) < (TypeInfo__MVGroup->_1).naturalAligment) ||
-           (*(MVGroup__Class **)
-             (*(int *)(*(int *)RVar6 + 100) + -4 + (uint)(TypeInfo__MVGroup->_1).naturalAligment * 4
-             ) != TypeInfo__MVGroup)) {
+        if (((*(byte *)(*(int *)RVar6 + 0xb8) < (TypeInfo__MVGroup->_1).naturalAligment) ||
+            (*(MVGroup__Class **)
+              (*(int *)(*(int *)RVar6 + 100) + -4 +
+              (uint)(TypeInfo__MVGroup->_1).naturalAligment * 4) != TypeInfo__MVGroup)) ||
+           (RVar6 == (RegexCharClass_SingleRange)0x0)) {
           if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
           System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
           HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
@@ -640,7 +641,6 @@ Assembly-CSharp.dll::MVGroup::MVGroup_GetHierarchyWorldObjectIDs(MVGroup *this,M
                      MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
         }
         else {
-          if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
           iVar8 = func_?();
           if (iVar8 == 0) break;
           this_02 = (MVGroup *)func_?();

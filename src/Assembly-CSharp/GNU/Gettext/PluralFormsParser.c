@@ -574,28 +574,22 @@ bool Assembly-CSharp.dll::GNU::Gettext::PluralFormsParser::PluralFormsParser_Par
                     if ((pPVar2->fields).type != 0x12) {
                       return 0;
                     }
-                    pPVar2 = (((this->fields).scanner)->fields).token;
-                    if (pPVar2 != (PluralFormsToken *)0x0) {
-                      if ((pPVar2->fields).type != 0x12) {
+                    bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
+                    if (bVar3 == 0) {
+                      return 0;
+                    }
+                    pPVar4 = (this->fields).scanner;
+                    if ((pPVar4 != (PluralFormsScanner *)0x0) &&
+                       (pPVar2 = (pPVar4->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
+                      if ((pPVar2->fields).type != 1) {
                         return 0;
                       }
-                      bVar3 = PluralFormsParser_NextToken(this,(MethodInfo *)0x0);
-                      if (bVar3 == 0) {
-                        return 0;
-                      }
-                      pPVar4 = (this->fields).scanner;
-                      if ((pPVar4 != (PluralFormsScanner *)0x0) &&
-                         (pPVar2 = (pPVar4->fields).token, pPVar2 != (PluralFormsToken *)0x0)) {
-                        if ((pPVar2->fields).type != 1) {
-                          return 0;
-                        }
-                        if (this != (PluralFormsParser *)0x0) {
-                          (this->fields).scanner = pPVar1;
-                          this[1].klass = pPStack5;
-                          pPStack6 = this + 1;
-                          func_?();
-                          return 1;
-                        }
+                      if (this != (PluralFormsParser *)0x0) {
+                        (this->fields).scanner = pPVar1;
+                        this[1].klass = pPStack5;
+                        pPStack6 = this + 1;
+                        func_?();
+                        return 1;
                       }
                     }
                   }

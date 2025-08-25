@@ -5,46 +5,37 @@ bool Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_CanObjectBeMovedHrz
                (TerrainGizmo *this,GameObject *go,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-    pTVar1 = (this->fields)._settings;
-    if (pTVar1 == (TerrainGizmoSettings *)0x0) goto code_?;
-  }
-  else {
-    pTVar1 = (this->fields)._sharedSettings;
-  }
-  iVar2 = (pTVar1->fields)._objectHrzMoveLayerMask;
-  if (go != (GameObject *)0x0) {
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                      (go,(MethodInfo *)0x0);
-    if ((iVar2 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
-      return 0;
-    }
-    if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-      pTVar1 = (this->fields)._settings;
+  pTVar1 = (&(this->fields)._settings)
+           [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+  if (pTVar1 != (TerrainGizmoSettings *)0x0) {
+    iVar2 = (pTVar1->fields)._objectHrzMoveLayerMask;
+    if (go != (GameObject *)0x0) {
+      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                        (go,(MethodInfo *)0x0);
+      if ((iVar2 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
+        return 0;
+      }
+      pTVar1 = (&(this->fields)._settings)
+               [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
       item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
                        (go,(MethodInfo *)0x0);
-      if (pTVar1 == (TerrainGizmoSettings *)0x0) goto code_?;
-    }
-    else {
-      pTVar1 = (this->fields)._sharedSettings;
-      item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
-                       (go,(MethodInfo *)0x0);
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    this_00 = (pTVar1->fields)._objectHrzMoveIgnoreTags;
-    if (this_00 != (List_1_System_String_ *)0x0) {
-      bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Contains
-                        ((List_1_System_Object_ *)this_00,(Object *)item,
-                         MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
-                        );
-      return bVar4 ^ 1;
+      if (pTVar1 != (TerrainGizmoSettings *)0x0) {
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        this_00 = (pTVar1->fields)._objectHrzMoveIgnoreTags;
+        if (this_00 != (List_1_System_String_ *)0x0) {
+          bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                  List_1_System_Object__Contains
+                            ((List_1_System_Object_ *)this_00,(Object *)item,
+                             MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                            );
+          return bVar4 ^ 1;
+        }
+      }
     }
   }
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
@@ -58,46 +49,37 @@ bool Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_CanObjectBeMovedVert
                (TerrainGizmo *this,GameObject *go,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-    pTVar1 = (this->fields)._settings;
-    if (pTVar1 == (TerrainGizmoSettings *)0x0) goto code_?;
-  }
-  else {
-    pTVar1 = (this->fields)._sharedSettings;
-  }
-  iVar2 = (pTVar1->fields)._objectVertMoveLayerMask;
-  if (go != (GameObject *)0x0) {
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                      (go,(MethodInfo *)0x0);
-    if ((iVar2 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
-      return 0;
-    }
-    if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-      pTVar1 = (this->fields)._settings;
+  pTVar1 = (&(this->fields)._settings)
+           [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+  if (pTVar1 != (TerrainGizmoSettings *)0x0) {
+    iVar2 = (pTVar1->fields)._objectVertMoveLayerMask;
+    if (go != (GameObject *)0x0) {
+      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                        (go,(MethodInfo *)0x0);
+      if ((iVar2 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
+        return 0;
+      }
+      pTVar1 = (&(this->fields)._settings)
+               [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
       item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
                        (go,(MethodInfo *)0x0);
-      if (pTVar1 == (TerrainGizmoSettings *)0x0) goto code_?;
-    }
-    else {
-      pTVar1 = (this->fields)._sharedSettings;
-      item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
-                       (go,(MethodInfo *)0x0);
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    this_00 = (pTVar1->fields)._objectVertMoveIgnoreTags;
-    if (this_00 != (List_1_System_String_ *)0x0) {
-      bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Contains
-                        ((List_1_System_Object_ *)this_00,(Object *)item,
-                         MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
-                        );
-      return bVar4 ^ 1;
+      if (pTVar1 != (TerrainGizmoSettings *)0x0) {
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        this_00 = (pTVar1->fields)._objectVertMoveIgnoreTags;
+        if (this_00 != (List_1_System_String_ *)0x0) {
+          bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                  List_1_System_Object__Contains
+                            ((List_1_System_Object_ *)this_00,(Object *)item,
+                             MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                            );
+          return bVar4 ^ 1;
+        }
+      }
     }
   }
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
@@ -111,46 +93,37 @@ bool Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_CanObjectBeRotated
                (TerrainGizmo *this,GameObject *go,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-    pTVar1 = (this->fields)._settings;
-    if (pTVar1 == (TerrainGizmoSettings *)0x0) goto code_?;
-  }
-  else {
-    pTVar1 = (this->fields)._sharedSettings;
-  }
-  iVar2 = (pTVar1->fields)._objectRotationLayerMask;
-  if (go != (GameObject *)0x0) {
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                      (go,(MethodInfo *)0x0);
-    if ((iVar2 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
-      return 0;
-    }
-    if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-      pTVar1 = (this->fields)._settings;
+  pTVar1 = (&(this->fields)._settings)
+           [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+  if (pTVar1 != (TerrainGizmoSettings *)0x0) {
+    iVar2 = (pTVar1->fields)._objectRotationLayerMask;
+    if (go != (GameObject *)0x0) {
+      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                        (go,(MethodInfo *)0x0);
+      if ((iVar2 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
+        return 0;
+      }
+      pTVar1 = (&(this->fields)._settings)
+               [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
       item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
                        (go,(MethodInfo *)0x0);
-      if (pTVar1 == (TerrainGizmoSettings *)0x0) goto code_?;
-    }
-    else {
-      pTVar1 = (this->fields)._sharedSettings;
-      item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
-                       (go,(MethodInfo *)0x0);
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    this_00 = (pTVar1->fields)._objectRotationIgnoreTags;
-    if (this_00 != (List_1_System_String_ *)0x0) {
-      bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Contains
-                        ((List_1_System_Object_ *)this_00,(Object *)item,
-                         MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
-                        );
-      return bVar4 ^ 1;
+      if (pTVar1 != (TerrainGizmoSettings *)0x0) {
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        this_00 = (pTVar1->fields)._objectRotationIgnoreTags;
+        if (this_00 != (List_1_System_String_ *)0x0) {
+          bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                  List_1_System_Object__Contains
+                            ((List_1_System_Object_ *)this_00,(Object *)item,
+                             MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                            );
+          return bVar4 ^ 1;
+        }
+      }
     }
   }
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
@@ -284,24 +257,23 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_DragObjectsWithMidCap
   GizmoTransform *this_01;
   Terrain *pTVar12;
   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *this_02;
-  int iVar13;
+  TerrainGizmoSettings *pTVar13;
+  int iVar14;
   List_1_System_String_ *this_03;
-  code *pcVar14;
+  code *pcVar15;
   Ray ray;
-  Vector3 worldPosition;
   Vector3 value;
-  Vector3 worldPosition_00;
+  Vector3 worldPosition;
   Vector3 value_00;
-  bool bVar15;
-  Object *pOVar16;
-  undefined1 (*pauVar17) [20];
-  Regex_CachedCodeEntryKey *pRVar18;
-  Transform *pTVar19;
-  List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *pLVar20;
-  int32_t iVar21;
+  bool bVar16;
+  Object *pOVar17;
+  undefined1 (*pauVar18) [20];
+  Regex_CachedCodeEntryKey *pRVar19;
+  Transform *pTVar20;
+  List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *pLVar21;
+  int32_t iVar22;
   String *item;
-  Vector3 *pVVar22;
-  TerrainGizmoSettings *pTVar23;
+  Vector3 *pVVar23;
   undefined4 *unaff_FS_OFFSET;
   RegexCharClass_SingleRange method_00;
   float fVar24;
@@ -317,15 +289,14 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_DragObjectsWithMidCap
   float fStack_32;
   float fStack_33;
   float fStack_34;
-  TerrainGizmoSettings *pTStack_35;
-  undefined4 uStack_36;
-  undefined *puStack_37;
-  undefined4 uStack_38;
+  undefined4 uStack_35;
+  undefined *puStack_36;
+  undefined4 uStack_37;
   
-  uStack_38 = 0xffffffff;
-  puStack_37 = &DAT_?;
-  uStack_36 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_36;
+  uStack_37 = 0xffffffff;
+  puStack_36 = &DAT_?;
+  uStack_35 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_35;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
@@ -348,162 +319,156 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_DragObjectsWithMidCap
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
   }
-  pOVar16 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+  pOVar17 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                       (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-  if (pOVar16 != (Object *)0x0) {
-    pOVar9 = pOVar16[2].klass;
+  if (pOVar17 != (Object *)0x0) {
+    pOVar9 = pOVar17[2].klass;
     pGVar10 = (this->fields)._._gizmo;
-    if ((pGVar10 != (Gizmo *)0x0) &&
-       (Gizmo::Gizmo_GetWorkCamera(pGVar10,(MethodInfo *)0x0), pOVar9 != (Object__Class *)0x0)) {
-      pauVar17 = (undefined1 (*) [20])func_?(&stack0xffffff80,6);
-      this_00 = (this->fields)._terrainCollider;
-      if (this_00 != (TerrainCollider *)0x0) {
-        ray.m_Direction.z = (float)((ulonglong)*(undefined8 *)(*pauVar17 + 0x10) >> 0x20);
-        ray._0_20_ = *pauVar17;
-        bVar15 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_Raycast_1
-                           ((Collider *)this_00,ray,(RaycastHit *)&puStack_26,3.4028235e+38,
-                            (MethodInfo *)0x0);
-        if (bVar15 == 0) {
+    if (pGVar10 != (Gizmo *)0x0) {
+      Gizmo::Gizmo_GetWorkCamera(pGVar10,(MethodInfo *)0x0);
+      if (pOVar9 != (Object__Class *)0x0) {
+        pauVar18 = (undefined1 (*) [20])func_?(&stack0xffffff84,6);
+        this_00 = (this->fields)._terrainCollider;
+        if (this_00 != (TerrainCollider *)0x0) {
+          ray.m_Direction.z = (float)((ulonglong)*(undefined8 *)(*pauVar18 + 0x10) >> 0x20);
+          ray._0_20_ = *pauVar18;
+          bVar16 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_Raycast_1
+                             ((Collider *)this_00,ray,(RaycastHit *)&puStack_26,3.4028235e+38,
+                              (MethodInfo *)0x0);
+          if (bVar16 == 0) {
 code_?:
-          *unaff_FS_OFFSET = uStack_36;
-          return;
-        }
-        pRVar18 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
-                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
-                  KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                            ((Regex_CachedCodeEntryKey *)&stack0xffffffb8,
-                             (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                              *)&puStack_26,(MethodInfo *)0x0);
-        uVar1 = pRVar18->_options;
-        uVar5 = pRVar18->_cultureKey;
-        pGVar10 = (this->fields)._._gizmo;
-        if ((pGVar10 != (Gizmo *)0x0) &&
-           (pGVar11 = (pGVar10->fields)._transform, pGVar11 != (GizmoTransform *)0x0)) {
-          uVar2 = (pGVar11->fields)._position3D.x;
-          uVar6 = (pGVar11->fields)._position3D.y;
+            *unaff_FS_OFFSET = uStack_35;
+            return;
+          }
+          pRVar19 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
+                    RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                    KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
+                              ((Regex_CachedCodeEntryKey *)&stack0xffffffbc,
+                               (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                                *)&puStack_26,(MethodInfo *)0x0);
+          uVar1 = pRVar19->_options;
+          uVar5 = pRVar19->_cultureKey;
           pGVar10 = (this->fields)._._gizmo;
           if ((pGVar10 != (Gizmo *)0x0) &&
-             (this_01 = (pGVar10->fields)._transform, this_01 != (GizmoTransform *)0x0)) {
-            uVar3 = (this_01->fields)._position3D.x;
-            uVar7 = (this_01->fields)._position3D.y;
-            method_00 = (RegexCharClass_SingleRange)
-                        ((this_01->fields)._position3D.z +
-                        ((float)pRVar18->_pattern - (pGVar11->fields)._position3D.z));
-            value.y = (float)uVar7 + ((float)uVar5 - (float)uVar6);
-            value.x = (float)uVar3 + ((float)uVar1 - (float)uVar2);
-            value.z = (float)method_00;
-            GizmoTransform::GizmoTransform_set_Position3D(this_01,value,(MethodInfo *)0x0);
-            pTVar12 = (this->fields)._targetTerrain;
-            if (pTVar12 != (Terrain *)0x0) {
-              pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pTVar12,(MethodInfo *)0x0);
-              if (pTVar19 != (Transform *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffb8,pTVar19,(MethodInfo *)0x0);
-                this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this->fields)._objectsInRadius;
-                if (this_02 !=
-                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                  pLVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                      ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                        *)&stack0xffffff88,this_02,
-                                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                                      );
-                  uStack_38 = 1;
-                  RVar28 = pLVar20->_current;
-                  while( true ) {
-                    this_04 = RVar28;
-                    this_05 = (List_1_T_Enumerator_System_Object_ *)&stack0xffffff9c;
-                    bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System
-                             ::Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                       (this_05,
-                                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                       );
-                    if (bVar15 == 0) break;
-                    if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-                      pTVar23 = (this->fields)._settings;
-                      if (pTVar23 == (TerrainGizmoSettings *)0x0) goto code_?;
-                    }
-                    else {
-                      pTVar23 = (this->fields)._sharedSettings;
-                    }
-                    iVar13 = (pTVar23->fields)._objectHrzMoveLayerMask;
-                    if (this_04 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                    puVar29 = &UNK_?;
-                    RVar28 = this_04;
-                    iVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                             GameObject_get_layer((GameObject *)this_04,(MethodInfo *)0x0);
-                    if ((iVar13 >> ((byte)iVar21 & 0x1f) & 1U) != 0) {
-                      if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-                        pTStack_35 = (this->fields)._settings;
-                      }
-                      else {
-                        pTStack_35 = (this->fields)._sharedSettings;
-                      }
-                      if (this_04 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                      fVar30 = 0.0;
-                      method_00 = this_04;
-                      item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
-                                       ((GameObject *)this_04,(MethodInfo *)0x0);
-                      if (pTStack_35 == (TerrainGizmoSettings *)0x0) goto code_?;
-                      if (cRam_? == '\0') {
-                        func_?();
-                        cRam_? = '\x01';
-                      }
-                      this_03 = (pTStack_35->fields)._objectHrzMoveIgnoreTags;
-                      if (this_03 == (List_1_System_String_ *)0x0) goto code_?;
-                      bVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                               List_1_System_Object__Contains
-                                         ((List_1_System_Object_ *)this_03,(Object *)item,
-                                          MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+             (pGVar11 = (pGVar10->fields)._transform, pGVar11 != (GizmoTransform *)0x0)) {
+            uVar2 = (pGVar11->fields)._position3D.x;
+            uVar6 = (pGVar11->fields)._position3D.y;
+            pGVar10 = (this->fields)._._gizmo;
+            if ((pGVar10 != (Gizmo *)0x0) &&
+               (this_01 = (pGVar10->fields)._transform, this_01 != (GizmoTransform *)0x0)) {
+              uVar3 = (this_01->fields)._position3D.x;
+              uVar7 = (this_01->fields)._position3D.y;
+              method_00 = (RegexCharClass_SingleRange)
+                          ((this_01->fields)._position3D.z +
+                          ((float)pRVar19->_pattern - (pGVar11->fields)._position3D.z));
+              value.y = (float)uVar7 + ((float)uVar5 - (float)uVar6);
+              value.x = (float)uVar3 + ((float)uVar1 - (float)uVar2);
+              value.z = (float)method_00;
+              GizmoTransform::GizmoTransform_set_Position3D(this_01,value,(MethodInfo *)0x0);
+              pTVar12 = (this->fields)._targetTerrain;
+              if (pTVar12 != (Terrain *)0x0) {
+                pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)pTVar12,(MethodInfo *)0x0);
+                if (pTVar20 != (Transform *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&stack0xffffffbc,pTVar20,(MethodInfo *)0x0);
+                  this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            (this->fields)._objectsInRadius;
+                  if (this_02 !=
+                      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+                    pLVar21 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                              RegularExpressions::RegexCharClass+SingleRange]::
+                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                          *)&stack0xffffff8c,this_02,
+                                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                                        );
+                    uStack_37 = 1;
+                    RVar28 = pLVar21->_current;
+                    while( true ) {
+                      this_04 = RVar28;
+                      this_05 = (List_1_T_Enumerator_System_Object_ *)&stack0xffffffa0;
+                      bVar16 = mscorlib.dll::System::Collections::Generic::
+                               List`1[T]+Enumerator[System::Object]::
+                               List_1_T_Enumerator_System_Object__MoveNext
+                                         (this_05,
+                                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                                          );
-                      if (bVar15 == 0) {
-                        pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform((GameObject *)this_04,(MethodInfo *)0x0);
-                        if (pTVar19 == (Transform *)0x0) goto code_?;
-                        pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_position
-                                            ((Vector3 *)&puStack_27,pTVar19,(MethodInfo *)0x0);
-                        pTVar12 = (this->fields)._targetTerrain;
-                        uVar4 = pVVar22->x;
-                        uVar8 = pVVar22->y;
-                        worldPosition.y = (float)uVar8;
-                        worldPosition.x = (float)uVar4;
-                        fVar25 = pVVar22->z;
-                        if (pTVar12 == (Terrain *)0x0) goto code_?;
-                        worldPosition.z = pVVar22->z;
-                        fVar24 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
-                                 Terrain_SampleHeight(pTVar12,worldPosition,(MethodInfo *)0x0);
-                        fVar24 = fVar24 + fVar30;
-                        method_00 = (RegexCharClass_SingleRange)(fVar25 + (float)puVar29);
-                        pTVar12 = (this->fields)._targetTerrain;
-                        if (pTVar12 == (Terrain *)0x0) goto code_?;
-                        worldPosition_00.y = (float)uVar8 + (float)this_05;
-                        worldPosition_00.x = (float)uVar4 + 4.308017e-29;
-                        worldPosition_00.z = (float)method_00;
-                        fVar25 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
-                                 Terrain_SampleHeight(pTVar12,worldPosition_00,(MethodInfo *)0x0);
-                        pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform((GameObject *)this_04,(MethodInfo *)0x0);
-                        if (pTVar19 == (Transform *)0x0) goto code_?;
-                        value_00.y = fVar25 + fVar30 + ((float)uVar8 - fVar24);
-                        value_00.x = (float)uVar4 + 4.308017e-29;
-                        value_00.z = (float)method_00;
-                        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                                  (pTVar19,value_00,(MethodInfo *)0x0);
+                      if (bVar16 == 0) break;
+                      pTVar13 = (&(this->fields)._settings)
+                                [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+                      if ((pTVar13 == (TerrainGizmoSettings *)0x0) ||
+                         (iVar14 = (pTVar13->fields)._objectHrzMoveLayerMask,
+                         this_04 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+                      puVar29 = &UNK_?;
+                      RVar28 = this_04;
+                      iVar22 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                               GameObject_get_layer((GameObject *)this_04,(MethodInfo *)0x0);
+                      if ((iVar14 >> ((byte)iVar22 & 0x1f) & 1U) != 0) {
+                        pTVar13 = (&(this->fields)._settings)
+                                  [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+                        if (this_04 == (RegexCharClass_SingleRange)0x0) goto code_?;
+                        fVar30 = 0.0;
+                        method_00 = this_04;
+                        item = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                               GameObject_get_tag((GameObject *)this_04,(MethodInfo *)0x0);
+                        if (pTVar13 == (TerrainGizmoSettings *)0x0) goto code_?;
+                        if (cRam_? == '\0') {
+                          func_?();
+                          cRam_? = '\x01';
+                        }
+                        this_03 = (pTVar13->fields)._objectHrzMoveIgnoreTags;
+                        if (this_03 == (List_1_System_String_ *)0x0) goto code_?;
+                        bVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]
+                                 ::List_1_System_Object__Contains
+                                           ((List_1_System_Object_ *)this_03,(Object *)item,
+                                            MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                                           );
+                        if (bVar16 == 0) {
+                          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                    GameObject_get_transform
+                                              ((GameObject *)this_04,(MethodInfo *)0x0);
+                          if (pTVar20 == (Transform *)0x0) goto code_?;
+                          pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                    Transform_get_position
+                                              ((Vector3 *)&puStack_27,pTVar20,(MethodInfo *)0x0);
+                          fVar25 = pVVar23->z;
+                          uVar4 = pVVar23->x;
+                          uVar8 = pVVar23->y;
+                          pTVar12 = (this->fields)._targetTerrain;
+                          if (pTVar12 == (Terrain *)0x0) goto code_?;
+                          fVar24 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
+                                   Terrain_SampleHeight(pTVar12,*pVVar23,(MethodInfo *)0x0);
+                          fVar24 = fVar24 + fVar30;
+                          method_00 = (RegexCharClass_SingleRange)(fVar25 + (float)puVar29);
+                          pTVar12 = (this->fields)._targetTerrain;
+                          if (pTVar12 == (Terrain *)0x0) goto code_?;
+                          worldPosition.y = (float)uVar8 + (float)this_05;
+                          worldPosition.x = (float)uVar4 + 4.3116612e-29;
+                          worldPosition.z = (float)method_00;
+                          fVar25 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
+                                   Terrain_SampleHeight(pTVar12,worldPosition,(MethodInfo *)0x0);
+                          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                    GameObject_get_transform
+                                              ((GameObject *)this_04,(MethodInfo *)0x0);
+                          if (pTVar20 == (Transform *)0x0) goto code_?;
+                          value_00.y = fVar25 + fVar30 + ((float)uVar8 - fVar24);
+                          value_00.x = (float)uVar4 + 4.3116612e-29;
+                          value_00.z = (float)method_00;
+                          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                                    (pTVar20,value_00,(MethodInfo *)0x0);
+                        }
                       }
                     }
+                    uStack_37 = 0xffffffff;
+                    mscorlib.dll::System::ThrowHelper::
+                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                              ((Object *)&stack0xffffffa0,
+                               (ExceptionArgument__Enum)
+                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                               ,(MethodInfo *)method_00);
+                    goto code_?;
                   }
-                  uStack_38 = 0xffffffff;
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                            ((Object *)&stack0xffffff9c,
-                             (ExceptionArgument__Enum)
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                             ,(MethodInfo *)method_00);
-                  goto code_?;
                 }
               }
             }
@@ -514,8 +479,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -551,8 +516,8 @@ Vector3 * Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_GetRadiusCircleMa
     fVar13 = (pVVar6->forwardVector).z;
     fVar14 = (this->fields)._radius;
     __return_storage_ptr__->x = (float)uVar3 + (float)uVar7 * fVar10 + (float)uVar11 * fVar14;
-    __return_storage_ptr__->y = (float)uVar4 + (float)uVar8 * fVar10 + (float)uVar12 * fVar14;
-    __return_storage_ptr__->z = fVar5 + fVar9 * fVar10 + fVar13 * fVar14;
+    __return_storage_ptr__->y = (float)uVar12 * fVar14 + (float)uVar4 + (float)uVar8 * fVar10;
+    __return_storage_ptr__->z = fVar13 * fVar14 + fVar5 + fVar9 * fVar10;
     return __return_storage_ptr__;
   }
   func_?();
@@ -783,193 +748,193 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OffsetObjectsInRadius
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  this_00 = (this->fields)._targetTerrain;
   LStack_6._list = (List_1_System_Object_ *)0x0;
   LStack_6._index = 0;
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
-  this_00 = (this->fields)._targetTerrain;
-  if ((this_00 != (Terrain *)0x0) &&
-     (this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)this_00,(MethodInfo *)0x0), this_05 != (Transform *)0x0)) {
-    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_8,this_05,(MethodInfo *)0x0);
-    fStack_9 = pVVar7->y;
-    pGVar10 = (this->fields)._._gizmo;
-    if ((pGVar10 != (Gizmo *)0x0) &&
-       (pGVar11 = (pGVar10->fields)._transform, pGVar11 != (GizmoTransform *)0x0)) {
-      uStack_12._0_4_ = (pGVar11->fields)._position3D.x;
-      uStack_12._4_4_ = (pGVar11->fields)._position3D.y;
-      fStack_13 = (pGVar11->fields)._position3D.z;
-      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields)._objectsInRadius;
-      if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        if ((this_01->fields)._size != 0) {
-          if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-          goto code_?;
-          pLVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                             ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)auStack_15,this_01,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                             );
-          uStack_16 = 0;
-          LStack_6._list = (List_1_System_Object_ *)pLVar14->_list;
-          LStack_6._index = pLVar14->_index;
-          LStack_6._version = pLVar14->_version;
-          LStack_6._current = *(Object **)&pLVar14->_current;
-          uStack_1 = 1;
-          pLStack_17 = &LStack_6;
-          while (bVar18 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                         Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                   (&LStack_6,
-                                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                   ), this_04 = LStack_6._current, bVar18 != 0) {
-            if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-              pTVar19 = (this->fields)._settings;
-              if (pTVar19 == (TerrainGizmoSettings *)0x0) goto code_?;
-            }
-            else {
-              pTVar19 = (this->fields)._sharedSettings;
-            }
-            pSStack_20 = (String *)(pTVar19->fields)._objectVertMoveLayerMask;
-            if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+  if (this_00 != (Terrain *)0x0) {
+    this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_05 != (Transform *)0x0) {
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         (&VStack_8,this_05,(MethodInfo *)0x0);
+      fStack_9 = pVVar7->y;
+      pGVar10 = (this->fields)._._gizmo;
+      if ((pGVar10 != (Gizmo *)0x0) &&
+         (pGVar11 = (pGVar10->fields)._transform, pGVar11 != (GizmoTransform *)0x0)) {
+        uStack_12._0_4_ = (pGVar11->fields)._position3D.x;
+        uStack_12._4_4_ = (pGVar11->fields)._position3D.y;
+        fStack_13 = (pGVar11->fields)._position3D.z;
+        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields)._objectsInRadius;
+        if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          if ((this_01->fields)._size != 0) {
+            if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
             goto code_?;
-            iVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                               ((GameObject *)LStack_6._current,(MethodInfo *)0x0);
-            if (((int)pSStack_20 >> ((byte)iVar21 & 0x1f) & 1U) != 0) {
-              if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-                pTStack_22 = (this->fields)._settings;
-              }
-              else {
-                pTStack_22 = (this->fields)._sharedSettings;
-              }
-              if (((RegexCharClass_SingleRange)this_04 == (RegexCharClass_SingleRange)0x0) ||
-                 (in_stack_23 = (RegexCharClass_SingleRange)this_04,
-                 pSStack_20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_get_tag((GameObject *)this_04,(MethodInfo *)0x0),
-                 pTStack_22 == (TerrainGizmoSettings *)0x0)) goto code_?;
-              if (cRam_? == '\0') {
-                auStack_15._4_4_ =
-                     &
-                     MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
-                ;
-                auStack_15._0_4_ = &UNK_?;
-                func_?();
-                cRam_? = '\x01';
-              }
-              this_02 = (pTStack_22->fields)._objectVertMoveIgnoreTags;
-              if (this_02 == (List_1_System_String_ *)0x0) goto code_?;
-              bVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                      List_1_System_Object__Contains
-                                ((List_1_System_Object_ *)this_02,(Object *)pSStack_20,
-                                 MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+            pLVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                                ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)auStack_15,this_01,
+                                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                                 );
-              if (bVar18 == 0) {
-                pTStack_22 = (TerrainGizmoSettings *)
-                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                             GameObject_get_transform((GameObject *)this_04,(MethodInfo *)0x0);
+            uStack_16 = 0;
+            LStack_6._list = (List_1_System_Object_ *)pLVar14->_list;
+            LStack_6._index = pLVar14->_index;
+            LStack_6._version = pLVar14->_version;
+            LStack_6._current = *(Object **)&pLVar14->_current;
+            uStack_1 = 1;
+            pLStack_17 = &LStack_6;
+            while( true ) {
+              bVar18 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                (&LStack_6,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                                );
+              this_04 = LStack_6._current;
+              if (bVar18 == 0) break;
+              pTVar19 = (&(this->fields)._settings)
+                       [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+              if ((pTVar19 == (TerrainGizmoSettings *)0x0) ||
+                 (pSStack_20 = (String *)(pTVar19->fields)._objectVertMoveLayerMask,
+                 (RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0))
+              goto code_?;
+              iVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                                 ((GameObject *)LStack_6._current,(MethodInfo *)0x0);
+              if (((int)pSStack_20 >> ((byte)iVar21 & 0x1f) & 1U) != 0) {
+                pTStack_22 = (&(this->fields)._settings)
+                             [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+                if ((RegexCharClass_SingleRange)this_04 == (RegexCharClass_SingleRange)0x0)
+                goto code_?;
+                in_stack_23 = (RegexCharClass_SingleRange)this_04;
+                pSStack_20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
+                                       ((GameObject *)this_04,(MethodInfo *)0x0);
                 if (pTStack_22 == (TerrainGizmoSettings *)0x0) goto code_?;
-                pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                   ((Vector3 *)&stack0xffffff50,(Transform *)pTStack_22,
-                                    (MethodInfo *)0x0);
-                uStack_24._0_4_ = pVVar7->x;
-                uStack_24._4_4_ = pVVar7->y;
-                fStack_25 = pVVar7->z;
-                VStack_8.z = fStack_25 - fStack_13;
-                uStack_26 = CONCAT44(fStack_9 - fStack_9,
-                                     (float)(undefined4)uStack_24 - (float)uStack_12);
-                fStack_27 = VStack_8.z;
-                fVar28 = (float10)func_?();
-                fVar29 = (this->fields)._radius;
-                pSStack_20 = (String *)(float)fVar28;
-                if ((float)pSStack_20 <= fVar29) {
-                  fVar29 = _UNK_? - (float)pSStack_20 / fVar29;
-                  if (fVar29 <= 0.0) {
-                    fVar29 = 0.0;
-                  }
-                  this_03 = (this->fields)._elevationCurve;
-                  if (this_03 == (AnimationCurve *)0x0) goto code_?;
-                  pSStack_20 = (String *)
-                               UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                               AnimationCurve_Evaluate(this_03,fVar29,(MethodInfo *)0x0);
+                if (cRam_? == '\0') {
+                  auStack_15._4_4_ =
+                       &
+                       MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                  ;
+                  auStack_15._0_4_ = &UNK_?;
+                  func_?();
+                  cRam_? = '\x01';
+                }
+                this_02 = (pTStack_22->fields)._objectVertMoveIgnoreTags;
+                if (this_02 == (List_1_System_String_ *)0x0) goto code_?;
+                bVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                        List_1_System_Object__Contains
+                                  ((List_1_System_Object_ *)this_02,(Object *)pSStack_20,
+                                   MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
+                                  );
+                if (bVar18 == 0) {
+                  pTStack_22 = (TerrainGizmoSettings *)
+                               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                               GameObject_get_transform((GameObject *)this_04,(MethodInfo *)0x0);
+                  if (pTStack_22 == (TerrainGizmoSettings *)0x0) goto code_?;
                   pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                            Transform_get_position
-                                     ((Vector3 *)&stack0xffffff44,(Transform *)pTStack_22,
+                                     ((Vector3 *)&stack0xffffff50,(Transform *)pTStack_22,
                                       (MethodInfo *)0x0);
-                  uStack_30._0_4_ = pVVar7->x;
-                  uStack_30._4_4_ = pVVar7->y;
-                  fStack_31 = pVVar7->z;
-                  pVVar7 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
-                                     ((Vector3 *)&stack0xffffff38,(MethodInfo *)0x0);
-                  uStack_32._0_4_ = pVVar7->x;
-                  uStack_32._4_4_ = pVVar7->y;
-                  fStack_33 = pVVar7->z;
-                  fStack_34 = fStack_31 + fStack_33 * offset * (float)pSStack_20;
-                  fStack_35 = (float)uStack_30 +
-                              (float)(undefined4)uStack_32 * offset * (float)pSStack_20;
-                  fStack_36 = uStack_30._4_4_ + (float)uStack_32._4_4_ * offset * (float)pSStack_20;
-                  if (fStack_36 < fStack_9) {
-                    fStack_36 = fStack_9;
-                  }
-                  pHVar37 = (this->fields)._affectedObjectsSet;
-                  if (pHVar37 == (HashSet_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-                  bVar18 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-                          HashSet_1_System_Object__Contains
-                                    ((HashSet_1_System_Object_ *)pHVar37,this_04,
-                                     MethodInfo__System__Collections__Generic__HashSet<UnityEngine::GameObject>__Contains_UnityEngine__GameObject_
-                                    );
-                  if (bVar18 == 0) {
-                    pHVar37 = (this->fields)._affectedObjectsSet;
-                    if (pHVar37 == (HashSet_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-                    method_00 = (RegexCharClass_SingleRange)this_04;
-                    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-                    HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
-                              ((HashSet_1_System_Object_ *)pHVar37,this_04,
-                               MethodInfo__System__Collections__Generic__HashSet<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                              );
-                    pLStack_38 = (this->fields)._affectedObjects;
-                    pSStack_20 = (String *)func_?();
-                    mscorlib.dll::System::ThrowHelper::
-                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                              ((Object *)pSStack_20,ExceptionArgument__Enum_obj,
-                               (MethodInfo *)method_00);
-                    if (pSStack_20 == (String *)0x0) goto code_?;
-                    (pSStack_20->fields)._stringLength = (int32_t)this_04;
-                    func_?(&pSStack_20->fields,this_04);
+                  uStack_24._0_4_ = pVVar7->x;
+                  uStack_24._4_4_ = pVVar7->y;
+                  fStack_25 = pVVar7->z;
+                  VStack_8.z = fStack_25 - fStack_13;
+                  uStack_26 = CONCAT44(fStack_9 - fStack_9,
+                                       (float)(undefined4)uStack_24 - (float)uStack_12);
+                  fStack_27 = VStack_8.z;
+                  fVar28 = (float10)func_?();
+                  fVar29 = (this->fields)._radius;
+                  pSStack_20 = (String *)(float)fVar28;
+                  if ((float)pSStack_20 <= fVar29) {
+                    fVar29 = _UNK_? - (float)pSStack_20 / fVar29;
+                    if (fVar29 <= 0.0) {
+                      fVar29 = 0.0;
+                    }
+                    this_03 = (this->fields)._elevationCurve;
+                    if (this_03 == (AnimationCurve *)0x0) goto code_?;
+                    pSStack_20 = (String *)
+                                 UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                 AnimationCurve_Evaluate(this_03,fVar29,(MethodInfo *)0x0);
                     pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                              Transform_get_position
-                                       ((Vector3 *)(auStack_15 + 4),(Transform *)pTStack_22,
+                                       ((Vector3 *)&stack0xffffff44,(Transform *)pTStack_22,
                                         (MethodInfo *)0x0);
-                    pMVar39 = (MonitorData *)pVVar7->z;
-                    *(undefined8 *)&(pSStack_20->fields)._firstChar = *(undefined8 *)pVVar7;
-                    pSStack_20[1].monitor = pMVar39;
-                    if (pLStack_38 == (List_1_RTG_TerrainGizmoAffectedObject_ *)0x0)
-                    goto code_?;
-                    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                    List_1_System_Object__Add
-                              ((List_1_System_Object_ *)pLStack_38,(Object *)pSStack_20,
-                               MethodInfo__System__Collections__Generic__List<RTG::TerrainGizmoAffectedObject>__Add_RTG__TerrainGizmoAffectedObject_
-                              );
+                    uStack_30._0_4_ = pVVar7->x;
+                    uStack_30._4_4_ = pVVar7->y;
+                    fStack_31 = pVVar7->z;
+                    pVVar7 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
+                                       ((Vector3 *)&stack0xffffff38,(MethodInfo *)0x0);
+                    uStack_32._0_4_ = pVVar7->x;
+                    uStack_32._4_4_ = pVVar7->y;
+                    fStack_33 = pVVar7->z;
+                    fStack_34 = fStack_31 + fStack_33 * offset * (float)pSStack_20;
+                    fStack_35 = (float)uStack_30 +
+                                (float)(undefined4)uStack_32 * offset * (float)pSStack_20;
+                    fStack_36 = uStack_30._4_4_ +
+                                (float)uStack_32._4_4_ * offset * (float)pSStack_20;
+                    if (fStack_36 < fStack_9) {
+                      fStack_36 = fStack_9;
+                    }
+                    pHVar37 = (this->fields)._affectedObjectsSet;
+                    if (pHVar37 == (HashSet_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+                    bVar18 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]
+                            ::HashSet_1_System_Object__Contains
+                                      ((HashSet_1_System_Object_ *)pHVar37,this_04,
+                                       MethodInfo__System__Collections__Generic__HashSet<UnityEngine::GameObject>__Contains_UnityEngine__GameObject_
+                                      );
+                    if (bVar18 == 0) {
+                      pHVar37 = (this->fields)._affectedObjectsSet;
+                      if (pHVar37 == (HashSet_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+                      method_00 = (RegexCharClass_SingleRange)this_04;
+                      System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+                      HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
+                                ((HashSet_1_System_Object_ *)pHVar37,this_04,
+                                 MethodInfo__System__Collections__Generic__HashSet<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                                );
+                      pLStack_38 = (this->fields)._affectedObjects;
+                      pSStack_20 = (String *)func_?();
+                      mscorlib.dll::System::ThrowHelper::
+                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                                ((Object *)pSStack_20,ExceptionArgument__Enum_obj,
+                                 (MethodInfo *)method_00);
+                      if (pSStack_20 == (String *)0x0) goto code_?;
+                      (pSStack_20->fields)._stringLength = (int32_t)this_04;
+                      func_?(&pSStack_20->fields,this_04);
+                      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                               Transform_get_position
+                                         ((Vector3 *)(auStack_15 + 4),(Transform *)pTStack_22,
+                                          (MethodInfo *)0x0);
+                      pMVar39 = (MonitorData *)pVVar7->z;
+                      *(undefined8 *)&(pSStack_20->fields)._firstChar = *(undefined8 *)pVVar7;
+                      pSStack_20[1].monitor = pMVar39;
+                      if (pLStack_38 == (List_1_RTG_TerrainGizmoAffectedObject_ *)0x0)
+                      goto code_?;
+                      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                      List_1_System_Object__Add
+                                ((List_1_System_Object_ *)pLStack_38,(Object *)pSStack_20,
+                                 MethodInfo__System__Collections__Generic__List<RTG::TerrainGizmoAffectedObject>__Add_RTG__TerrainGizmoAffectedObject_
+                                );
+                    }
+                    value.y = fStack_36;
+                    value.x = fStack_35;
+                    value.z = fStack_34;
+                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                              ((Transform *)pTStack_22,value,(MethodInfo *)0x0);
                   }
-                  value.y = fStack_36;
-                  value.x = fStack_35;
-                  value.z = fStack_34;
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                            ((Transform *)pTStack_22,value,(MethodInfo *)0x0);
                 }
               }
             }
+            uStack_1 = 0xffffffff;
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                      ((Object *)&LStack_6,
+                       (ExceptionArgument__Enum)
+                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                       ,(MethodInfo *)in_stack_23);
           }
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_6,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                     ,(MethodInfo *)in_stack_23);
+          *unaff_FS_OFFSET = uStack_3;
+          return;
         }
-        *unaff_FS_OFFSET = uStack_3;
-        return;
       }
     }
   }
@@ -1711,7 +1676,7 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._affectedObjectsSet;
-  unique0x100010a1 = (double)CONCAT44(fStack_1,auStack_2._4_4_);
+  unique0x10001095 = (double)CONCAT44(fStack_1,auStack_2._4_4_);
   if (this_00 != (HashSet_1_UnityEngine_GameObject_ *)0x0) {
     System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
@@ -1719,7 +1684,7 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
               ((HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
                MethodInfo__System__Collections__Generic__HashSet<UnityEngine::GameObject>__Clear__);
     pLVar3 = (this->fields)._affectedObjects;
-    unique0x100010a9 = (double)CONCAT44(fStack_1,auStack_2._4_4_);
+    unique0x1000109d = (double)CONCAT44(fStack_1,auStack_2._4_4_);
     if (pLVar3 != (List_1_RTG_TerrainGizmoAffectedObject_ *)0x0) {
       iVar4 = (pLVar3->fields)._size;
       piVar5 = &(pLVar3->fields)._version;
@@ -1730,10 +1695,10 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
                   ((Array *)(pLVar3->fields)._items,0,iVar4,(MethodInfo *)0x0);
       }
       pGVar6 = (this->fields)._._gizmo;
-      unique0x100010b1 = (double)CONCAT44(fStack_1,auStack_2._4_4_);
+      unique0x100010a5 = (double)CONCAT44(fStack_1,auStack_2._4_4_);
       if ((pGVar6 != (Gizmo *)0x0) &&
          (pGVar7 = (pGVar6->fields)._transform,
-         unique0x100010b9 = (double)CONCAT44(fStack_1,auStack_2._4_4_),
+         unique0x100010ad = (double)CONCAT44(fStack_1,auStack_2._4_4_),
          pGVar7 != (GizmoTransform *)0x0)) {
         fVar8 = (pGVar7->fields)._position3D.z;
         if (cRam_? == '\0') {
@@ -1755,10 +1720,10 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
                    (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z *
                    (this->fields)._radius;
         pGVar6 = (this->fields)._._gizmo;
-        unique0x100010c1 = (double)CONCAT44(fStack_1,auStack_2._4_4_);
+        unique0x100010b5 = (double)CONCAT44(fStack_1,auStack_2._4_4_);
         if ((pGVar6 != (Gizmo *)0x0) &&
            (pGVar7 = (pGVar6->fields)._transform,
-           unique0x100010c9 = (double)CONCAT44(fStack_1,auStack_2._4_4_),
+           unique0x100010bd = (double)CONCAT44(fStack_1,auStack_2._4_4_),
            pGVar7 != (GizmoTransform *)0x0)) {
           uVar13 = (pGVar7->fields)._position3D.x;
           uVar14 = (pGVar7->fields)._position3D.y;
@@ -1806,10 +1771,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
                     this_04 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
                               Terrain_get_terrainData(pTVar19,(MethodInfo *)0x0);
                     if (this_04 != (TerrainData *)0x0) {
-                      pVVar21 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::
-                                TerrainData_get_size
-                                          ((Vector3 *)&stack0xffffffd8,this_04,(MethodInfo *)0x0);
-                      fStack_1 = pVVar21->x;
+                      UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_size
+                                ((Vector3 *)&stack0xffffffd8,this_04,(MethodInfo *)0x0);
                       pVVar21 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::
                                 TerrainData_get_size
                                           ((Vector3 *)&stack0xffffffd8,this_04,(MethodInfo *)0x0);
@@ -1848,11 +1811,11 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
                       iVar23 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::
                                TerrainData_get_internalHeightmapResolution
                                          (this_04,(MethodInfo *)0x0);
+                      fVar8 = (float)iVar23 * fStack_16;
                       if (cRam_? == '\0') {
                         func_?();
                         cRam_? = '\x01';
                       }
-                      fVar8 = (float)iVar23 * fStack_16;
                       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
@@ -1873,11 +1836,11 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
                       iVar23 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::
                                TerrainData_get_internalHeightmapResolution
                                          (this_04,(MethodInfo *)0x0);
+                      fVar8 = (float)iVar23 * fStack_12;
                       if (cRam_? == '\0') {
                         func_?();
                         cRam_? = '\x01';
                       }
-                      fVar8 = (float)iVar23 * fStack_12;
                       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
@@ -1898,11 +1861,11 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
                       iVar23 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::
                                TerrainData_get_internalHeightmapResolution
                                          (this_04,(MethodInfo *)0x0);
+                      fVar8 = (float)iVar23 * fStack_17;
                       if (cRam_? == '\0') {
                         func_?();
                         cRam_? = '\x01';
                       }
-                      fVar8 = (float)iVar23 * fStack_17;
                       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
@@ -1925,13 +1888,9 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoAttemptHandleDr
                       if (pTVar25 != (TerrainGizmo_RadiusTick *)0x0) {
                         uVar26 = (pTVar25->fields).DragAxis.x;
                         uVar27 = (pTVar25->fields).DragAxis.y;
-                        if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-                          pTVar28 = (this->fields)._settings;
-                          if (pTVar28 == (TerrainGizmoSettings *)0x0) goto code_?;
-                        }
-                        else {
-                          pTVar28 = (this->fields)._sharedSettings;
-                        }
+                        pTVar28 = (&(this->fields)._settings)
+                                  [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+                        if (pTVar28 == (TerrainGizmoSettings *)0x0) goto code_?;
                         this_01 = (this->fields)._radiusDrag;
                         if (this_01 == (GizmoSglAxisOffsetDrag3D *)0x0) goto code_?;
                         workData.Axis.x = (float)uVar26;
@@ -2057,19 +2016,12 @@ bool Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoCanBeginDrag
   if ((bVar1 == 0) || ((this->fields)._isVisible == 0)) {
     return 0;
   }
-  if ((this->fields)._sharedHotkeys == (TerrainGizmoHotkeys *)0x0) {
-    pTVar2 = (this->fields)._hotkeys;
-    if (pTVar2 == (TerrainGizmoHotkeys *)0x0) goto code_?;
-  }
-  else {
-    pTVar2 = (this->fields)._sharedHotkeys;
-  }
-  this_00 = (pTVar2->fields)._rotateObjects;
-  if (this_00 != (Hotkeys *)0x0) {
+  pTVar2 = (&(this->fields)._hotkeys)[(this->fields)._sharedHotkeys != (TerrainGizmoHotkeys *)0x0];
+  if ((pTVar2 != (TerrainGizmoHotkeys *)0x0) &&
+     (this_00 = (pTVar2->fields)._rotateObjects, this_00 != (Hotkeys *)0x0)) {
     bVar1 = Hotkeys::Hotkeys_IsActive(this_00,1,(MethodInfo *)0x0);
     return bVar1 ^ 1;
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   bVar1 = (*pcVar3)();
@@ -2496,13 +2448,9 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoRender
                         (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
     if (this_02 == (GizmoLineMaterial *)0x0) goto code_?;
     GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_02,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (TerrainGizmoLookAndFeel *)0x0) {
-      pTVar3 = (this->fields)._lookAndFeel;
-      if (pTVar3 == (TerrainGizmoLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pTVar3 = (this->fields)._sharedLookAndFeel;
-    }
+    pTVar3 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (TerrainGizmoLookAndFeel *)0x0];
+    if (pTVar3 == (TerrainGizmoLookAndFeel *)0x0) goto code_?;
     GizmoLineMaterial::GizmoLineMaterial_SetColor
               (this_02,(pTVar3->fields)._radiusCircleColor,(MethodInfo *)0x0);
     GizmoLineMaterial::GizmoLineMaterial_SetPass(this_02,0,(MethodInfo *)0x0);
@@ -2543,14 +2491,16 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoRender
         pLVar13 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                  (this->fields)._radiusCirclePoints;
         pTVar4 = (this->fields)._targetTerrain;
-        if ((pLVar13 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) ||
-           (pVVar14 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                      VisualTreeAsset+UsingEntry]::
-                      List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                ((VisualTreeAsset_UsingEntry *)&stack0xffffffb8,pLVar13,index,
-                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                                ), pTVar4 == (Terrain *)0x0)) goto code_?;
+        if (pLVar13 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
+        goto code_?;
+        pVVar14 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+                  VisualTreeAsset+UsingEntry]::
+                  List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                            ((VisualTreeAsset_UsingEntry *)&stack0xffffffb8,pLVar13,index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                            );
         fVar10 = (float)pVVar14->alias;
+        if (pTVar4 == (Terrain *)0x0) goto code_?;
         uVar9._4_4_ = (float)pTVar4;
         uVar9._0_4_ = (float)&UNK_?;
         fVar17 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_SampleHeight
@@ -2620,68 +2570,66 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoUpdateBegin
   undefined4 uVar2;
   undefined4 uVar3;
   ushort uVar4;
-  Hotkeys *pHVar5;
-  TerrainGizmo_ObjectRotationData *pTVar6;
+  TerrainGizmoHotkeys *pTVar5;
+  Hotkeys *pHVar6;
+  TerrainGizmo_ObjectRotationData *pTVar7;
+  TerrainGizmoSettings *pTVar8;
   Terrain *this_00;
   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *this_01;
   Il2CppClass *this_02;
-  List_1_UnityEngine_GameObject_ *pLVar7;
-  int iVar8;
-  Gizmo *pGVar9;
-  Object__Class *pOVar10;
+  List_1_UnityEngine_GameObject_ *pLVar9;
+  int iVar10;
+  Gizmo *pGVar11;
   TerrainCollider *this_03;
   GizmoTransform *this_04;
   GizmoPlaneSlider3D *this_05;
-  GizmoLineSlider3D *pGVar11;
-  GizmoSglAxisOffsetDrag3D *pGVar12;
-  code *pcVar13;
+  code *pcVar12;
   Ray ray;
   Vector3 axis;
-  undefined1 *puVar14;
-  bool bVar15;
-  char cVar16;
-  List_1_RTG_LocalTransformSnapshot_ *pLVar17;
-  Object *pOVar18;
-  Il2CppClass ***pppIVar19;
-  undefined8 *puVar20;
-  TerrainGizmoSettings *pTVar21;
-  Transform *pTVar22;
-  Vector3 *pVVar23;
-  List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *pLVar24;
-  int32_t iVar25;
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *pLVar26;
-  List_1_System_Object_ *pLVar27;
-  RTUndoRedo *this_06;
-  int *piVar28;
-  undefined1 (*pauVar29) [20];
-  Regex_CachedCodeEntryKey *pRVar30;
-  GizmoPlaneSlider3DSettings *this_07;
-  TerrainGizmoHotkeys *pTVar31;
-  ushort uVar32;
-  undefined4 *unaff_FS_OFFSET;
+  undefined1 *puVar13;
+  bool bVar14;
+  char cVar15;
+  List_1_RTG_LocalTransformSnapshot_ *pLVar16;
+  Object *pOVar17;
+  undefined4 *puVar18;
+  undefined8 *puVar19;
+  Transform *pTVar20;
+  Vector3 *pVVar21;
+  List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *pLVar22;
+  int32_t iVar23;
+  Il2CppAssembly *pIVar24;
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *this_06;
   MethodInfo *method_00;
-  RegexCharClass_SingleRange method_01;
-  List_1_T_Enumerator_System_Object_ LStack_33;
-  Regex_CachedCodeEntryKey RStack_34;
-  undefined1 auStack_35 [8];
-  int32_t iStack_36;
-  RegexCharClass_SingleRange RStack_37;
-  List_1_RTG_LocalTransformSnapshot_ *pLStack_38;
-  RegexCharClass_SingleRange RStack_39;
-  float fStack_40;
-  RegexCharClass_SingleRange RStack_41;
-  Object__Class *pOStack_42;
-  undefined1 *puStack_43;
-  undefined4 uStack_44;
-  undefined *puStack_45;
-  undefined4 uStack_46;
+  List_1_System_Object_ *this_07;
+  RTUndoRedo *this_08;
+  Il2CppMetadataTypeHandle *pp_Var25;
+  undefined1 (*pauVar25) [20];
+  Regex_CachedCodeEntryKey *pRVar26;
+  GizmoPlaneSlider3DSettings *this_09;
+  ushort uVar27;
+  undefined4 *unaff_FS_OFFSET;
+  Object__Class *pOVar28;
+  List_1_T_Enumerator_System_Object_ LStack_29;
+  Regex_CachedCodeEntryKey RStack_30;
+  undefined1 auStack_31 [8];
+  int32_t iStack_32;
+  RegexCharClass_SingleRange RStack_33;
+  GizmoSglAxisOffsetDrag3D *pGStack_34;
+  Object__Class *pOStack_35;
+  float fStack_36;
+  Object__Class *pOStack_37;
+  RegexCharClass_SingleRange RStack_38;
+  undefined1 *puStack_39;
+  undefined4 uStack_40;
+  undefined *puStack_41;
+  undefined4 uStack_42;
   
-  uStack_46 = 0xffffffff;
-  puStack_45 = &DAT_?;
-  uStack_44 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_44;
-  puStack_43 = &stack0xffffff68;
-  puVar14 = &stack0xffffff68;
+  uStack_42 = 0xffffffff;
+  puStack_41 = &DAT_?;
+  uStack_40 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_40;
+  puStack_39 = &stack0xffffff64;
+  puVar13 = &stack0xffffff64;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
@@ -2706,89 +2654,83 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoUpdateBegin
     func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
     func_?(&TypeInfo__RTG__TerrainGizmoObjectTransformsChangedAction);
     cRam_? = '\x01';
-    puVar14 = puStack_43;
+    puVar13 = puStack_39;
   }
-  puStack_43 = puVar14;
-  LStack_33._list = (List_1_System_Object_ *)0x0;
-  LStack_33._index = 0;
-  LStack_33._version = 0;
-  LStack_33._current = (Object *)0x0;
-  bVar15 = TerrainGizmo_IsTargetReady(this,(MethodInfo *)0x0);
-  if (bVar15 == 0) {
+  puStack_39 = puVar13;
+  LStack_29._list = (List_1_System_Object_ *)0x0;
+  LStack_29._index = 0;
+  LStack_29._version = 0;
+  LStack_29._current = (Object *)0x0;
+  bVar14 = TerrainGizmo_IsTargetReady(this,(MethodInfo *)0x0);
+  if (bVar14 == 0) {
 code_?:
-    *unaff_FS_OFFSET = uStack_44;
+    *unaff_FS_OFFSET = uStack_40;
     return;
   }
-  if ((this->fields)._sharedHotkeys == (TerrainGizmoHotkeys *)0x0) {
-    pTVar31 = (this->fields)._hotkeys;
-    if (pTVar31 == (TerrainGizmoHotkeys *)0x0) goto code_?;
-  }
-  else {
-    pTVar31 = (this->fields)._sharedHotkeys;
-  }
-  pHVar5 = (pTVar31->fields)._rotateObjects;
-  if (pHVar5 == (Hotkeys *)0x0) goto code_?;
-  bVar15 = Hotkeys::Hotkeys_IsActive(pHVar5,1,(MethodInfo *)0x0);
-  if (bVar15 == 0) {
-    pTVar6 = (this->fields)._objectRotationData;
-    if (pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
-    if ((pTVar6->fields).RotatingObjects != 0) {
-      (pTVar6->fields).RotatingObjects = 0;
-      pTVar6 = (this->fields)._objectRotationData;
-      if (pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
-      pLStack_38 = (pTVar6->fields).PreSnapshots;
-      RStack_39 = (RegexCharClass_SingleRange)
-                  LocalTransformSnapshot::LocalTransformSnapshot_GetSnapshotCollection
-                            ((IEnumerable_1_UnityEngine_GameObject_ *)
-                             (((this->fields)._objectRotationData)->fields).GameObjects,
-                             (MethodInfo *)0x0);
-      pOStack_42 = (Object__Class *)func_?();
+  pTVar5 = (&(this->fields)._hotkeys)[(this->fields)._sharedHotkeys != (TerrainGizmoHotkeys *)0x0];
+  if ((pTVar5 == (TerrainGizmoHotkeys *)0x0) ||
+     (pHVar6 = (pTVar5->fields)._rotateObjects, pHVar6 == (Hotkeys *)0x0)) goto code_?;
+  bVar14 = Hotkeys::Hotkeys_IsActive(pHVar6,1,(MethodInfo *)0x0);
+  if (bVar14 == 0) {
+    pTVar7 = (this->fields)._objectRotationData;
+    if (pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
+    if ((pTVar7->fields).RotatingObjects != 0) {
+      (pTVar7->fields).RotatingObjects = 0;
+      pTVar7 = (this->fields)._objectRotationData;
+      if (pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
+      pGStack_34 = (GizmoSglAxisOffsetDrag3D *)(pTVar7->fields).PreSnapshots;
+      pOStack_35 = (Object__Class *)
+                   LocalTransformSnapshot::LocalTransformSnapshot_GetSnapshotCollection
+                             ((IEnumerable_1_UnityEngine_GameObject_ *)
+                              (((this->fields)._objectRotationData)->fields).GameObjects,
+                              (MethodInfo *)0x0);
+      RStack_38 = (RegexCharClass_SingleRange)func_?();
       if (cRam_? == '\0') {
         func_?();
         func_?();
         func_?();
         cRam_? = '\x01';
       }
-      pLVar26 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                func_?();
+      pIVar24 = (Il2CppAssembly *)func_?();
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (pLVar26,
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pIVar24,
                  MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List__
                 );
-      (pOStack_42->_0).name = (char *)pLVar26;
+      *(Il2CppAssembly **)((int)RStack_38 + 8) = pIVar24;
       func_?();
-      pLVar26 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+      this_06 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
                 func_?();
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (pLVar26,
+                (this_06,
                  MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List__
                 );
-      (pOStack_42->_0).namespaze = (char *)pLVar26;
-      method_00 = (MethodInfo *)&(pOStack_42->_0).namespaze;
+      *(LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)((int)RStack_38 + 0xc)
+           = this_06;
+      method_00 = (MethodInfo *)((int)RStack_38 + 0xc);
       func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)pOStack_42,ExceptionArgument__Enum_obj,method_00);
-      pLVar27 = (List_1_System_Object_ *)func_?();
+                ((Object *)RStack_38,ExceptionArgument__Enum_obj,method_00);
+      pIVar24 = (Il2CppAssembly *)func_?();
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
       List_1_System_Object___ctor_1
-                (pLVar27,(IEnumerable_1_System_Object_ *)pLStack_38,
+                ((List_1_System_Object_ *)pIVar24,(IEnumerable_1_System_Object_ *)pGStack_34,
                  MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List_System__Collections__Generic__IEnumerable<RTG::LocalTransformSnapshot>_
                 );
-      (pOStack_42->_0).name = (char *)pLVar27;
-      LStack_33._list = (List_1_System_Object_ *)&(pOStack_42->_0).name;
-      LStack_33._index = (int32_t)pLVar27;
+      *(Il2CppAssembly **)((int)RStack_38 + 8) = pIVar24;
+      LStack_29._list = (List_1_System_Object_ *)((int)RStack_38 + 8);
+      LStack_29._index = (int32_t)pIVar24;
       func_?();
-      pLVar27 = (List_1_System_Object_ *)func_?();
+      this_07 = (List_1_System_Object_ *)func_?();
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
       List_1_System_Object___ctor_1
-                (pLVar27,(IEnumerable_1_System_Object_ *)RStack_39,
+                (this_07,(IEnumerable_1_System_Object_ *)pOStack_35,
                  MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List_System__Collections__Generic__IEnumerable<RTG::LocalTransformSnapshot>_
                 );
-      (pOStack_42->_0).namespaze = (char *)pLVar27;
+      *(List_1_System_Object_ **)((int)RStack_38 + 0xc) = this_07;
       func_?();
       if (cRam_? == '\0') {
         func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTUndoRedo>__get_Get__);
@@ -2798,71 +2740,71 @@ code_?:
       if ((TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>);
       }
-      this_06 = (RTUndoRedo *)
+      this_08 = (RTUndoRedo *)
                 MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                           (MethodInfo__RTG__MonoSingleton<RTG::RTUndoRedo>__get_Get__);
-      if (this_06 == (RTUndoRedo *)0x0) goto code_?;
-      RTUndoRedo::RTUndoRedo_RecordAction(this_06,(IUndoRedoAction *)pOStack_42,(MethodInfo *)0x0);
-      pTVar6 = (this->fields)._objectRotationData;
-      if ((pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) ||
-         (pLVar7 = (pTVar6->fields).GameObjects, pLVar7 == (List_1_UnityEngine_GameObject_ *)0x0))
+      if (this_08 == (RTUndoRedo *)0x0) goto code_?;
+      RTUndoRedo::RTUndoRedo_RecordAction(this_08,(IUndoRedoAction *)RStack_38,(MethodInfo *)0x0);
+      pTVar7 = (this->fields)._objectRotationData;
+      if ((pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) ||
+         (pLVar9 = (pTVar7->fields).GameObjects, pLVar9 == (List_1_UnityEngine_GameObject_ *)0x0))
       goto code_?;
-      iVar8 = (pLVar7->fields)._size;
-      piVar1 = &(pLVar7->fields)._version;
+      iVar10 = (pLVar9->fields)._size;
+      piVar1 = &(pLVar9->fields)._version;
       *piVar1 = *piVar1 + 1;
-      (pLVar7->fields)._size = 0;
-      if (0 < iVar8) {
+      (pLVar9->fields)._size = 0;
+      if (0 < iVar10) {
         mscorlib.dll::System::Array::Array_Clear
-                  ((Array *)(pLVar7->fields)._items,0,iVar8,(MethodInfo *)0x0);
+                  ((Array *)(pLVar9->fields)._items,0,iVar10,(MethodInfo *)0x0);
       }
-      pTVar6 = (this->fields)._objectRotationData;
-      if ((pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) ||
-         (pLVar17 = (pTVar6->fields).PreSnapshots,
-         pLVar17 == (List_1_RTG_LocalTransformSnapshot_ *)0x0)) goto code_?;
-      iVar8 = (pLVar17->fields)._size;
-      piVar1 = &(pLVar17->fields)._version;
+      pTVar7 = (this->fields)._objectRotationData;
+      if ((pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) ||
+         (pLVar16 = (pTVar7->fields).PreSnapshots,
+         pLVar16 == (List_1_RTG_LocalTransformSnapshot_ *)0x0)) goto code_?;
+      iVar10 = (pLVar16->fields)._size;
+      piVar1 = &(pLVar16->fields)._version;
       *piVar1 = *piVar1 + 1;
-      (pLVar17->fields)._size = 0;
-      if (0 < iVar8) {
+      (pLVar16->fields)._size = 0;
+      if (0 < iVar10) {
         mscorlib.dll::System::Array::Array_Clear
-                  ((Array *)(pLVar17->fields)._items,0,iVar8,(MethodInfo *)0x0);
+                  ((Array *)(pLVar16->fields)._items,0,iVar10,(MethodInfo *)0x0);
       }
     }
     if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar18 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+    pOVar17 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                         (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    if ((pOVar18 == (Object *)0x0) ||
-       (pOStack_42 = pOVar18[2].klass, pOStack_42 == (Object__Class *)0x0)) goto code_?;
-    RStack_41 = (RegexCharClass_SingleRange)(pOStack_42->_0).image;
-    uVar32 = 0;
-    pLStack_38 = (List_1_RTG_LocalTransformSnapshot_ *)0x0;
-    uVar4 = *(ushort *)((int)RStack_41 + 0xb6);
-    RStack_39.Last = 0;
-    RStack_39.First = uVar4;
+    if ((pOVar17 == (Object *)0x0) ||
+       (RStack_38 = (RegexCharClass_SingleRange)pOVar17[2].klass,
+       RStack_38 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+    pOStack_37 = *(Object__Class **)RStack_38;
+    uVar27 = 0;
+    pGStack_34 = (GizmoSglAxisOffsetDrag3D *)0x0;
+    uVar4._0_1_ = (pOStack_37->_1).rank;
+    uVar4._1_1_ = (pOStack_37->_1).minimumAlignment;
+    pOStack_35 = (Object__Class *)(uint)uVar4;
     if (uVar4 != 0) {
       do {
-        if ((*(Il2CppRuntimeInterfaceOffsetPair **)((int)RStack_41 + 0x58))[uVar32].interfaceType ==
+        if (pOStack_37->interfaceOffsets[uVar27].interfaceType ==
             (Il2CppClass *)TypeInfo__RTG__IInputDevice) {
-          piVar28 = (int *)((int)RStack_41 +
-                           ((*(Il2CppRuntimeInterfaceOffsetPair **)((int)RStack_41 + 0x58))[uVar32].
-                            offset + 0x22) * 8);
+          pp_Var25 = &pOStack_37[1]._0.typeMetadataHandle +
+                     pOStack_37->interfaceOffsets[uVar27].offset * 2;
           goto code_?;
         }
-        uVar32 = uVar32 + 1;
-      } while (uVar32 < uVar4);
+        uVar27 = uVar27 + 1;
+      } while (uVar27 < uVar4);
     }
-    piVar28 = (int *)func_?();
+    pp_Var25 = (Il2CppMetadataTypeHandle *)func_?();
 code_?:
-    cVar16 = (*(code *)*piVar28)();
-    if (cVar16 != '\0') {
-      pGVar9 = (this->fields)._._gizmo;
-      if (pGVar9 == (Gizmo *)0x0) goto code_?;
-      bVar15 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ChangeEvent`1[System::
+    cVar15 = (*(code *)*pp_Var25)();
+    if (cVar15 != '\0') {
+      pGVar11 = (this->fields)._._gizmo;
+      if (pGVar11 == (Gizmo *)0x0) goto code_?;
+      bVar14 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ChangeEvent`1[System::
                Boolean]::ChangeEvent_1_System_Boolean__get_previousValue
-                         ((ChangeEvent_1_System_Boolean_ *)pGVar9,(MethodInfo *)0x0);
-      if (bVar15 == 0) {
+                         ((ChangeEvent_1_System_Boolean_ *)pGVar11,(MethodInfo *)0x0);
+      if (bVar14 == 0) {
         if (cRam_? == '\0') {
           func_?();
           func_?();
@@ -2874,34 +2816,34 @@ code_?:
         {
           func_?();
         }
-        pOVar18 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+        pOVar17 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                             (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-        if (pOVar18 == (Object *)0x0) goto code_?;
-        pOVar10 = pOVar18[2].klass;
-        pGVar9 = (this->fields)._._gizmo;
-        if ((pGVar9 == (Gizmo *)0x0) ||
-           (Gizmo::Gizmo_GetWorkCamera(pGVar9,(MethodInfo *)0x0), pOVar10 == (Object__Class *)0x0))
+        if (pOVar17 == (Object *)0x0) goto code_?;
+        pOVar28 = pOVar17[2].klass;
+        pGVar11 = (this->fields)._._gizmo;
+        if ((pGVar11 == (Gizmo *)0x0) ||
+           (Gizmo::Gizmo_GetWorkCamera(pGVar11,(MethodInfo *)0x0), pOVar28 == (Object__Class *)0x0))
         goto code_?;
-        pauVar29 = (undefined1 (*) [20])func_?();
+        pauVar25 = (undefined1 (*) [20])func_?();
         this_03 = (this->fields)._terrainCollider;
         if (this_03 == (TerrainCollider *)0x0) goto code_?;
-        ray.m_Direction.z = (float)((ulonglong)*(undefined8 *)(*pauVar29 + 0x10) >> 0x20);
-        ray._0_20_ = *pauVar29;
-        bVar15 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_Raycast_1
-                           ((Collider *)this_03,ray,(RaycastHit *)&stack0xffffff74,3.4028235e+38,
+        ray.m_Direction.z = (float)((ulonglong)*(undefined8 *)(*pauVar25 + 0x10) >> 0x20);
+        ray._0_20_ = *pauVar25;
+        bVar14 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_Raycast_1
+                           ((Collider *)this_03,ray,(RaycastHit *)&stack0xffffff70,3.4028235e+38,
                             (MethodInfo *)0x0);
-        if (bVar15 != 0) {
-          pGVar9 = (this->fields)._._gizmo;
-          if (pGVar9 == (Gizmo *)0x0) goto code_?;
-          this_04 = (pGVar9->fields)._transform;
-          pRVar30 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
+        if (bVar14 != 0) {
+          pGVar11 = (this->fields)._._gizmo;
+          if (pGVar11 == (Gizmo *)0x0) goto code_?;
+          this_04 = (pGVar11->fields)._transform;
+          pRVar26 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
                     RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
                     KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
-                              (&RStack_34,
+                              (&RStack_30,
                                (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
-                                *)&stack0xffffff74,(MethodInfo *)0x0);
+                                *)&stack0xffffff70,(MethodInfo *)0x0);
           if (this_04 == (GizmoTransform *)0x0) goto code_?;
-          GizmoTransform::GizmoTransform_set_Position3D(this_04,(Vector3)*pRVar30,(MethodInfo *)0x0)
+          GizmoTransform::GizmoTransform_set_Position3D(this_04,(Vector3)*pRVar26,(MethodInfo *)0x0)
           ;
           TerrainGizmo_SetVisible(this,1,(MethodInfo *)0x0);
         }
@@ -2909,212 +2851,189 @@ code_?:
     }
   }
   else {
-    pTVar6 = (this->fields)._objectRotationData;
-    if (pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
-    if ((pTVar6->fields).RotatingObjects == 0) {
+    pTVar7 = (this->fields)._objectRotationData;
+    if (pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
+    if ((pTVar7->fields).RotatingObjects == 0) {
       TerrainGizmo_CollectObjectsInRadius(this,(this->fields)._objectsInRadius,(MethodInfo *)0x0);
-      pTVar6 = (this->fields)._objectRotationData;
-      if (pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
-      (pTVar6->fields).RotatingObjects = 1;
-      pTVar6 = (this->fields)._objectRotationData;
-      if (pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
-      (pTVar6->fields).GameObjects = (this->fields)._objectsInRadius;
+      pTVar7 = (this->fields)._objectRotationData;
+      if (pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
+      (pTVar7->fields).RotatingObjects = 1;
+      pTVar7 = (this->fields)._objectRotationData;
+      if (pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
+      (pTVar7->fields).GameObjects = (this->fields)._objectsInRadius;
       func_?();
-      pTVar6 = (this->fields)._objectRotationData;
-      if (pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
-      pLVar17 = LocalTransformSnapshot::LocalTransformSnapshot_GetSnapshotCollection
-                          ((IEnumerable_1_UnityEngine_GameObject_ *)(pTVar6->fields).GameObjects,
+      pTVar7 = (this->fields)._objectRotationData;
+      if (pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) goto code_?;
+      pLVar16 = LocalTransformSnapshot::LocalTransformSnapshot_GetSnapshotCollection
+                          ((IEnumerable_1_UnityEngine_GameObject_ *)(pTVar7->fields).GameObjects,
                            (MethodInfo *)0x0);
-      (pTVar6->fields).PreSnapshots = pLVar17;
+      (pTVar7->fields).PreSnapshots = pLVar16;
       func_?();
     }
     if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar18 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+    pOVar17 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                         (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    if ((pOVar18 == (Object *)0x0) ||
-       (RStack_41 = (RegexCharClass_SingleRange)pOVar18[2].klass,
-       RStack_41 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-    pOStack_42 = *(Object__Class **)RStack_41;
-    uVar32 = 0;
-    fStack_40 = 0.0;
-    uVar4._0_1_ = (pOStack_42->_1).rank;
-    uVar4._1_1_ = (pOStack_42->_1).minimumAlignment;
-    RStack_39.Last = 0;
-    RStack_39.First = uVar4;
+    if ((pOVar17 == (Object *)0x0) ||
+       (pOStack_37 = pOVar17[2].klass, pOStack_37 == (Object__Class *)0x0)) goto code_?;
+    RStack_38 = (RegexCharClass_SingleRange)(pOStack_37->_0).image;
+    uVar27 = 0;
+    fStack_36 = 0.0;
+    uVar4 = *(ushort *)((int)RStack_38 + 0xb6);
+    pOStack_35 = (Object__Class *)(uint)uVar4;
     if (uVar4 != 0) {
       do {
-        if (pOStack_42->interfaceOffsets[uVar32].interfaceType ==
-            (Il2CppClass *)TypeInfo__RTG__IInputDevice) {
-          pppIVar19 = &pOStack_42[1]._1.typeHierarchy +
-                      pOStack_42->interfaceOffsets[uVar32].offset * 2;
+        if (*(IInputDevice__Class **)
+             (((Il2CppImage *)((int)RStack_38 + 0x58))->name + (uint)uVar27 * 8) ==
+            TypeInfo__RTG__IInputDevice) {
+          puVar18 = (undefined4 *)
+                    ((int)RStack_38 +
+                    (*(int *)(((Il2CppImage *)((int)RStack_38 + 0x58))->name + (uint)uVar27 * 8 + 4)
+                    + 0x28) * 8);
           goto code_?;
         }
-        uVar32 = uVar32 + 1;
-      } while (uVar32 < uVar4);
+        uVar27 = uVar27 + 1;
+      } while (uVar27 < uVar4);
     }
-    pppIVar19 = (Il2CppClass ***)func_?();
+    puVar18 = (undefined4 *)func_?();
 code_?:
-    method_01 = RStack_41;
-    puVar20 = (undefined8 *)(*(code *)*pppIVar19)();
-    RStack_34._pattern = *(String **)(puVar20 + 1);
-    RStack_34._options = (int32_t)*puVar20;
-    RStack_34._cultureKey = (String *)((ulonglong)*puVar20 >> 0x20);
-    if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-      pTVar21 = (this->fields)._settings;
-      if (pTVar21 == (TerrainGizmoSettings *)0x0) goto code_?;
-    }
-    else {
-      pTVar21 = (this->fields)._sharedSettings;
-    }
-    fStack_40 = (float)RStack_34._options * (pTVar21->fields)._rotationSensitivity;
+    pOVar28 = pOStack_37;
+    puVar19 = (undefined8 *)(*(code *)*puVar18)();
+    RStack_30._pattern = *(String **)(puVar19 + 1);
+    RStack_30._options = (int32_t)*puVar19;
+    RStack_30._cultureKey = (String *)((ulonglong)*puVar19 >> 0x20);
+    pTVar8 = (&(this->fields)._settings)
+             [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+    if (pTVar8 == (TerrainGizmoSettings *)0x0) goto code_?;
+    fStack_36 = (float)RStack_30._options * (pTVar8->fields)._rotationSensitivity;
     this_00 = (this->fields)._targetTerrain;
     if ((this_00 == (Terrain *)0x0) ||
-       (pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_00,(MethodInfo *)0x0), pTVar22 == (Transform *)0x0))
+       (pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this_00,(MethodInfo *)0x0), pTVar20 == (Transform *)0x0))
     goto code_?;
-    pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                        ((Vector3 *)(auStack_35 + 4),pTVar22,(MethodInfo *)0x0);
-    uVar2 = pVVar23->x;
-    uVar3 = pVVar23->y;
-    pLStack_38 = (List_1_RTG_LocalTransformSnapshot_ *)pVVar23->z;
-    pTVar6 = (this->fields)._objectRotationData;
-    RStack_34._cultureKey = (String *)uVar2;
-    RStack_34._pattern = (String *)uVar3;
-    if ((pTVar6 == (TerrainGizmo_ObjectRotationData *)0x0) ||
+    pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                        ((Vector3 *)(auStack_31 + 4),pTVar20,(MethodInfo *)0x0);
+    uVar2 = pVVar21->x;
+    uVar3 = pVVar21->y;
+    pGStack_34 = (GizmoSglAxisOffsetDrag3D *)pVVar21->z;
+    pTVar7 = (this->fields)._objectRotationData;
+    RStack_30._cultureKey = (String *)uVar2;
+    RStack_30._pattern = (String *)uVar3;
+    if ((pTVar7 == (TerrainGizmo_ObjectRotationData *)0x0) ||
        (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (pTVar6->fields).GameObjects,
+                  (pTVar7->fields).GameObjects,
        this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
     goto code_?;
-    pLVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar22 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                          *)auStack_35,this_01,
+                          *)auStack_31,this_01,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                         );
-    LStack_33._list = (List_1_System_Object_ *)pLVar24->_list;
-    LStack_33._index = pLVar24->_index;
-    LStack_33._version = pLVar24->_version;
-    LStack_33._current = *(Object **)&pLVar24->_current;
-    iStack_36 = 0;
-    uStack_46 = 1;
-    RStack_37 = (RegexCharClass_SingleRange)&LStack_33;
-    while (bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+    LStack_29._list = (List_1_System_Object_ *)pLVar22->_list;
+    LStack_29._index = pLVar22->_index;
+    LStack_29._version = pLVar22->_version;
+    LStack_29._current = *(Object **)&pLVar22->_current;
+    iStack_32 = 0;
+    uStack_42 = 1;
+    RStack_33 = (RegexCharClass_SingleRange)&LStack_29;
+    while (bVar14 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              (&LStack_33,
+                              (&LStack_29,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                              ), bVar15 != 0) {
-      RStack_41 = (RegexCharClass_SingleRange)LStack_33._current;
-      if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-        pTVar21 = (this->fields)._settings;
-        if (pTVar21 == (TerrainGizmoSettings *)0x0) goto code_?;
-      }
-      else {
-        pTVar21 = (this->fields)._sharedSettings;
-      }
-      RStack_39 = (RegexCharClass_SingleRange)(pTVar21->fields)._objectRotationLayerMask;
-      if ((RegexCharClass_SingleRange)LStack_33._current == (RegexCharClass_SingleRange)0x0)
+                              ), bVar14 != 0) {
+      RStack_38 = (RegexCharClass_SingleRange)LStack_29._current;
+      pTVar8 = (&(this->fields)._settings)
+               [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+      if ((pTVar8 == (TerrainGizmoSettings *)0x0) ||
+         (pOStack_35 = (Object__Class *)(pTVar8->fields)._objectRotationLayerMask,
+         (RegexCharClass_SingleRange)LStack_29._current == (RegexCharClass_SingleRange)0x0))
       goto code_?;
-      iVar25 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                         ((GameObject *)LStack_33._current,(MethodInfo *)0x0);
-      if (((int)RStack_39 >> ((byte)iVar25 & 0x1f) & 1U) != 0) {
-        if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-          pOStack_42 = (Object__Class *)(this->fields)._settings;
-        }
-        else {
-          pOStack_42 = (Object__Class *)(this->fields)._sharedSettings;
-        }
-        if ((RStack_41 == (RegexCharClass_SingleRange)0x0) ||
-           (RStack_39 = (RegexCharClass_SingleRange)
-                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
-                                  ((GameObject *)RStack_41,(MethodInfo *)0x0),
-           pOStack_42 == (Object__Class *)0x0)) goto code_?;
+      iVar23 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                         ((GameObject *)LStack_29._current,(MethodInfo *)0x0);
+      if (((int)pOStack_35 >> ((byte)iVar23 & 0x1f) & 1U) != 0) {
+        pOStack_37 = (Object__Class *)
+                     (&(this->fields)._settings)
+                     [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+        if ((RStack_38 == (RegexCharClass_SingleRange)0x0) ||
+           (pOStack_35 = (Object__Class *)
+                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_tag
+                                   ((GameObject *)RStack_38,(MethodInfo *)0x0),
+           pOStack_37 == (Object__Class *)0x0)) goto code_?;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        this_02 = (pOStack_42->_0).declaringType;
+        this_02 = (pOStack_37->_0).declaringType;
         if (this_02 == (Il2CppClass *)0x0) goto code_?;
-        method_01 = RStack_39;
-        bVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        pOVar28 = pOStack_35;
+        bVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                  List_1_System_Object__Contains
-                           ((List_1_System_Object_ *)this_02,(Object *)RStack_39,
+                           ((List_1_System_Object_ *)this_02,(Object *)pOStack_35,
                             MethodInfo__System__Collections__Generic__List<System::String>__Contains_System__String_
                            );
-        if (bVar15 == 0) {
-          pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              ((GameObject *)RStack_41,(MethodInfo *)0x0);
-          if (pTVar22 == (Transform *)0x0) goto code_?;
-          method_01 = (RegexCharClass_SingleRange)&UNK_?;
-          axis.y = (float)RStack_34._pattern;
-          axis.x = (float)RStack_34._cultureKey;
-          axis.z = (float)pLStack_38;
+        if (bVar14 == 0) {
+          pTVar20 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              ((GameObject *)RStack_38,(MethodInfo *)0x0);
+          if (pTVar20 == (Transform *)0x0) goto code_?;
+          pOVar28 = (Object__Class *)&UNK_?;
+          axis.y = (float)RStack_30._pattern;
+          axis.x = (float)RStack_30._cultureKey;
+          axis.z = (float)pGStack_34;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-                    (pTVar22,axis,fStack_40,(MethodInfo *)0x0);
+                    (pTVar20,axis,fStack_36,(MethodInfo *)0x0);
         }
       }
     }
-    uStack_46 = 0xffffffff;
+    uStack_42 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&LStack_33,
+              ((Object *)&LStack_29,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-               ,(MethodInfo *)method_01);
-    uStack_46 = 0xffffffff;
+               ,(MethodInfo *)pOVar28);
+    uStack_42 = 0xffffffff;
   }
   this_05 = (GizmoPlaneSlider3D *)(this->fields)._axisSlider;
   if (this_05 != (GizmoPlaneSlider3D *)0x0) {
-    this_07 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_Settings(this_05,(MethodInfo *)0x0);
-    if ((this->fields)._sharedSettings == (TerrainGizmoSettings *)0x0) {
-      pTVar21 = (this->fields)._settings;
-      if (pTVar21 == (TerrainGizmoSettings *)0x0) goto code_?;
-    }
-    else {
-      pTVar21 = (this->fields)._sharedSettings;
-    }
-    if (this_07 != (GizmoPlaneSlider3DSettings *)0x0) {
+    this_09 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_Settings(this_05,(MethodInfo *)0x0);
+    pTVar8 = (&(this->fields)._settings)
+             [(this->fields)._sharedSettings != (TerrainGizmoSettings *)0x0];
+    if ((pTVar8 != (TerrainGizmoSettings *)0x0) && (this_09 != (GizmoPlaneSlider3DSettings *)0x0)) {
       ObjectKeyRotationSettings::ObjectKeyRotationSettings_set_XRotationStep
-                ((ObjectKeyRotationSettings *)this_07,(pTVar21->fields)._offsetSnapStep,
+                ((ObjectKeyRotationSettings *)this_09,(pTVar8->fields)._offsetSnapStep,
                  (MethodInfo *)0x0);
-      pGVar11 = (this->fields)._axisSlider;
+      pGStack_34 = (GizmoSglAxisOffsetDrag3D *)(this->fields)._axisSlider;
       if ((this->fields)._isSnapEnabled == 0) {
-        if ((this->fields)._sharedHotkeys == (TerrainGizmoHotkeys *)0x0) {
-          pTVar31 = (this->fields)._hotkeys;
-          if (pTVar31 == (TerrainGizmoHotkeys *)0x0) goto code_?;
-        }
-        else {
-          pTVar31 = (this->fields)._sharedHotkeys;
-        }
-        pHVar5 = (pTVar31->fields)._enableSnapping;
-        if (pHVar5 == (Hotkeys *)0x0) goto code_?;
-        bVar15 = Hotkeys::Hotkeys_IsActive(pHVar5,1,(MethodInfo *)0x0);
-        RStack_41.First._0_1_ = bVar15;
+        pTVar5 = (&(this->fields)._hotkeys)
+                 [(this->fields)._sharedHotkeys != (TerrainGizmoHotkeys *)0x0];
+        if ((pTVar5 == (TerrainGizmoHotkeys *)0x0) ||
+           (pHVar6 = (pTVar5->fields)._enableSnapping, pHVar6 == (Hotkeys *)0x0))
+        goto code_?;
+        bVar14 = Hotkeys::Hotkeys_IsActive(pHVar6,1,(MethodInfo *)0x0);
+        pOStack_37 = (Object__Class *)CONCAT31(pOStack_37._1_3_,bVar14);
       }
       else {
-        RStack_41.First._0_1_ = 1;
+        pOStack_37 = (Object__Class *)CONCAT31(pOStack_37._1_3_,1);
       }
-      if (pGVar11 != (GizmoLineSlider3D *)0x0) {
-        (*(code *)(pGVar11->klass->vtable).SetSnapEnabled_1.method)();
-        pGVar12 = (this->fields)._radiusDrag;
+      if (pGStack_34 != (GizmoSglAxisOffsetDrag3D *)0x0) {
+        (*(code *)(((List_1_RTG_LocalTransformSnapshot___Class *)pGStack_34->klass)->vtable).
+                  Contains.method)();
+        pGStack_34 = (this->fields)._radiusDrag;
         if ((this->fields)._isSnapEnabled == 0) {
-          if ((this->fields)._sharedHotkeys == (TerrainGizmoHotkeys *)0x0) {
-            pTVar31 = (this->fields)._hotkeys;
-            if (pTVar31 == (TerrainGizmoHotkeys *)0x0) goto code_?;
-          }
-          else {
-            pTVar31 = (this->fields)._sharedHotkeys;
-          }
-          pHVar5 = (pTVar31->fields)._enableSnapping;
-          if (pHVar5 == (Hotkeys *)0x0) goto code_?;
-          bVar15 = Hotkeys::Hotkeys_IsActive(pHVar5,1,(MethodInfo *)0x0);
+          pTVar5 = (&(this->fields)._hotkeys)
+                   [(this->fields)._sharedHotkeys != (TerrainGizmoHotkeys *)0x0];
+          if ((pTVar5 == (TerrainGizmoHotkeys *)0x0) ||
+             (pHVar6 = (pTVar5->fields)._enableSnapping, pHVar6 == (Hotkeys *)0x0))
+          goto code_?;
+          bVar14 = Hotkeys::Hotkeys_IsActive(pHVar6,1,(MethodInfo *)0x0);
         }
         else {
-          bVar15 = 1;
+          bVar14 = 1;
         }
-        if (pGVar12 != (GizmoSglAxisOffsetDrag3D *)0x0) {
-          (pGVar12->fields)._._isSnapEnabled = bVar15;
+        if (pGStack_34 != (GizmoSglAxisOffsetDrag3D *)0x0) {
+          (pGStack_34->fields)._._isSnapEnabled = bVar14;
           TerrainGizmo_UpdateTicks(this,(MethodInfo *)0x0);
           goto code_?;
         }
@@ -3124,8 +3043,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -3366,32 +3285,21 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_SetupSharedLookAndFeel
                (TerrainGizmo *this,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel == (TerrainGizmoLookAndFeel *)0x0) {
-    pTVar1 = (this->fields)._lookAndFeel;
-    if (pTVar1 == (TerrainGizmoLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pTVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  this_00 = (this->fields)._axisSlider;
-  if (this_00 != (GizmoLineSlider3D *)0x0) {
+  pTVar1 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (TerrainGizmoLookAndFeel *)0x0];
+  if ((pTVar1 != (TerrainGizmoLookAndFeel *)0x0) &&
+     (this_00 = (this->fields)._axisSlider, this_00 != (GizmoLineSlider3D *)0x0)) {
     GizmoLineSlider3D::GizmoLineSlider3D_set_SharedLookAndFeel
               (this_00,(pTVar1->fields)._axisSliderLookAndFeel,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (TerrainGizmoLookAndFeel *)0x0) {
-      pTVar1 = (this->fields)._lookAndFeel;
-      if (pTVar1 == (TerrainGizmoLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pTVar1 = (this->fields)._sharedLookAndFeel;
-    }
-    pGVar2 = (this->fields)._midCap;
-    if (pGVar2 != (GizmoCap3D *)0x0) {
+    pTVar1 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (TerrainGizmoLookAndFeel *)0x0];
+    if ((pTVar1 != (TerrainGizmoLookAndFeel *)0x0) &&
+       (pGVar2 = (this->fields)._midCap, pGVar2 != (GizmoCap3D *)0x0)) {
       (pGVar2->fields)._sharedLookAndFeel = (pTVar1->fields)._midCapLookAndFeel;
       func_?(&(pGVar2->fields)._sharedLookAndFeel,&stack0xfffffffc,&UNK_?);
       return;
     }
   }
-code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -3930,19 +3838,12 @@ bool Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_get_IsRotatingObjects
                (TerrainGizmo *this,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedHotkeys == (TerrainGizmoHotkeys *)0x0) {
-    pTVar1 = (this->fields)._hotkeys;
-    if (pTVar1 == (TerrainGizmoHotkeys *)0x0) goto code_?;
-  }
-  else {
-    pTVar1 = (this->fields)._sharedHotkeys;
-  }
-  this_00 = (pTVar1->fields)._rotateObjects;
-  if (this_00 != (Hotkeys *)0x0) {
+  pTVar1 = (&(this->fields)._hotkeys)[(this->fields)._sharedHotkeys != (TerrainGizmoHotkeys *)0x0];
+  if ((pTVar1 != (TerrainGizmoHotkeys *)0x0) &&
+     (this_00 = (pTVar1->fields)._rotateObjects, this_00 != (Hotkeys *)0x0)) {
     bVar2 = Hotkeys::Hotkeys_IsActive(this_00,1,(MethodInfo *)0x0);
     return bVar2;
   }
-code_?:
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
   pcVar4 = (code *)swi(3);
@@ -3960,19 +3861,12 @@ bool Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_get_IsSnapEnabled
   if ((this->fields)._isSnapEnabled != 0) {
     return 1;
   }
-  if ((this->fields)._sharedHotkeys == (TerrainGizmoHotkeys *)0x0) {
-    pTVar1 = (this->fields)._hotkeys;
-    if (pTVar1 == (TerrainGizmoHotkeys *)0x0) goto code_?;
-  }
-  else {
-    pTVar1 = (this->fields)._sharedHotkeys;
-  }
-  this_00 = (pTVar1->fields)._enableSnapping;
-  if (this_00 != (Hotkeys *)0x0) {
+  pTVar1 = (&(this->fields)._hotkeys)[(this->fields)._sharedHotkeys != (TerrainGizmoHotkeys *)0x0];
+  if ((pTVar1 != (TerrainGizmoHotkeys *)0x0) &&
+     (this_00 = (pTVar1->fields)._enableSnapping, this_00 != (Hotkeys *)0x0)) {
     bVar2 = Hotkeys::Hotkeys_IsActive(this_00,1,(MethodInfo *)0x0);
     return bVar2;
   }
-code_?:
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
   pcVar4 = (code *)swi(3);

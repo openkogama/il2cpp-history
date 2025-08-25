@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_ChangeB
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xe2,(MethodInfo *)0x0);
+                  (pGVar1,0x82,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -428,24 +428,22 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_UpdateX
     }
     iVar5 = SubscriberRewardDataManager::SubscriberRewardDataManager_GetBaseXpAmount
                       ((MethodInfo *)0x0);
-    IVar6.m_value = IStack_1.m_value;
     pTVar2 = (this->fields).bonusXPAmountText;
-    this = (GamePassesXpRewardInfo *)((float)iVar5 / _UNK_?);
+    this = (GamePassesXpRewardInfo *)
+           (((float)iVar5 / _UNK_? + _UNK_?) * (float)IStack_1.m_value);
     if (cRam_? == '\0') {
       func_?();
-      this = (GamePassesXpRewardInfo *)&TypeInfo__System__Math;
       cRam_? = '\x01';
+      this = (GamePassesXpRewardInfo *)&TypeInfo__System__Math;
     }
-    pMVar7 = TypeInfo__System__Math;
-    pMVar8 = (Math__Class *)(((float)this + _UNK_?) * (float)IVar6.m_value);
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      this = (GamePassesXpRewardInfo *)TypeInfo__System__Math;
       func_?();
-      pMVar8 = pMVar7;
     }
-    uStack_4 = (double)(float)pMVar8;
-    fVar9 = (float10)func_?();
-    uStack_4._0_4_ = SUB84((double)fVar9,0);
-    uStack_4 = (double)CONCAT44((int)fVar9,(undefined4)uStack_4);
+    uStack_4 = (double)(float)this;
+    fVar6 = (float10)func_?();
+    uStack_4._0_4_ = SUB84((double)fVar6,0);
+    uStack_4 = (double)CONCAT44((int)fVar6,(undefined4)uStack_4);
     pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)((int)&uStack_4 + 4),(MethodInfo *)0x0);
     mscorlib.dll::System::String::String_Concat_3
@@ -458,8 +456,8 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_UpdateX
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

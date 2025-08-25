@@ -408,25 +408,30 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
     cRam_? = '\x01';
   }
   fVar1 = (this->fields)._radius;
-  fStack_2 = (this->fields)._rotation.x;
-  puStack_3 = (undefined *)(this->fields)._rotation.y;
-  fVar4 = (this->fields)._rotation.z;
+  pLVar2 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___Class *)
+            (this->fields)._rotation.x;
+  pSVar3 = (String *)(this->fields)._rotation.y;
+  pVVar4 = (VisualTreeAsset_UsingEntry__Array *)(this->fields)._rotation.z;
   fVar5 = (this->fields)._rotation.w;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                      ((Quaternion *)&stack0xffffff88,90.0,
+                      ((Quaternion *)&stack0xffffff80,90.0,
                        TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0)
   ;
   fVar7 = pQVar6->y;
   fVar8 = pQVar6->z;
   fVar9 = pQVar6->w;
-  fVar10 = (fVar9 * fStack_2 + pQVar6->x * fVar5 + fVar8 * (float)puStack_3) - fVar7 * fVar4;
-  fVar11 = ((float)puStack_3 * fVar9 + fVar7 * fVar5 + fVar4 * pQVar6->x) - fVar8 * fStack_2;
-  fVar12 = (fVar4 * fVar9 + fVar8 * fVar5 + fVar7 * fStack_2) - (float)puStack_3 * pQVar6->x;
-  fVar4 = ((fVar9 * fVar5 - fStack_2 * pQVar6->x) - fVar7 * (float)puStack_3) - fVar4 * fVar8;
+  fVar10 = (fVar9 * (float)pLVar2 + pQVar6->x * fVar5 + fVar8 * (float)pSVar3) -
+           fVar7 * (float)pVVar4;
+  fVar11 = ((float)pSVar3 * fVar9 + fVar7 * fVar5 + (float)pVVar4 * pQVar6->x) -
+           fVar8 * (float)pLVar2;
+  fVar12 = ((float)pVVar4 * fVar9 + fVar8 * fVar5 + fVar7 * (float)pLVar2) -
+           (float)pSVar3 * pQVar6->x;
+  fVar5 = ((fVar9 * fVar5 - (float)pLVar2 * pQVar6->x) - fVar7 * (float)pSVar3) -
+          (float)pVVar4 * fVar8;
   if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -438,49 +443,48 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
     q.y = fVar11;
     q.x = fVar10;
     q.z = fVar12;
-    q.w = fVar4;
+    q.w = fVar5;
     s.y = fVar1;
     s.x = fVar1;
     s.z = 1.0;
     pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&stack0xffffff48,(this->fields)._baseCenter,q,s,
+                        ((Matrix4x4 *)&stack0xffffff40,(this->fields)._baseCenter,q,s,
                          (MethodInfo *)0x0);
-    fStack_2 = pMVar15->m00;
-    puStack_3 = (undefined *)pMVar15->m10;
-    fVar16 = pMVar15->m20;
-    fVar17 = pMVar15->m30;
-    pLVar18 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___Class *)pMVar15->m01;
-    pSVar19 = (String *)pMVar15->m11;
-    pVVar20 = (VisualTreeAsset_UsingEntry__Array *)pMVar15->m21;
-    fVar5 = pMVar15->m31;
-    fVar7 = pMVar15->m02;
-    fVar8 = pMVar15->m12;
-    fVar9 = pMVar15->m22;
+    pLVar2 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___Class *)pMVar15->m00;
+    pSVar3 = (String *)pMVar15->m10;
+    pVVar4 = (VisualTreeAsset_UsingEntry__Array *)pMVar15->m20;
+    fVar16 = pMVar15->m30;
+    fVar7 = pMVar15->m01;
+    pOVar17 = (Object *)pMVar15->m11;
+    fVar8 = pMVar15->m21;
+    fVar9 = pMVar15->m31;
+    fVar18 = pMVar15->m02;
+    fVar19 = pMVar15->m12;
+    fVar20 = pMVar15->m22;
     fVar21 = pMVar15->m32;
-    fVar22 = pMVar15->m03;
-    puVar23 = (undefined *)pMVar15->m13;
-    pGVar24 = (Graphics__Class *)pMVar15->m23;
+    pGVar22 = (Graphics__Class *)pMVar15->m03;
+    fVar23 = pMVar15->m13;
+    fVar24 = pMVar15->m23;
     fVar25 = pMVar15->m33;
     if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-      puVar23 = &UNK_?;
-      pGVar24 = TypeInfo__UnityEngine__Graphics;
+      pGVar22 = TypeInfo__UnityEngine__Graphics;
       func_?();
     }
-    matrix.m10 = (float)puStack_3;
-    matrix.m00 = fStack_2;
-    matrix.m20 = fVar16;
-    matrix.m30 = fVar17;
-    matrix.m01 = (float)pLVar18;
-    matrix.m11 = (float)pSVar19;
-    matrix.m21 = (float)pVVar20;
-    matrix.m31 = fVar5;
-    matrix.m02 = fVar7;
-    matrix.m12 = fVar8;
-    matrix.m22 = fVar9;
+    matrix.m10 = (float)pSVar3;
+    matrix.m00 = (float)pLVar2;
+    matrix.m20 = (float)pVVar4;
+    matrix.m30 = fVar16;
+    matrix.m01 = fVar7;
+    matrix.m11 = (float)pOVar17;
+    matrix.m21 = fVar8;
+    matrix.m31 = fVar9;
+    matrix.m02 = fVar18;
+    matrix.m12 = fVar19;
+    matrix.m22 = fVar20;
     matrix.m32 = fVar21;
-    matrix.m03 = fVar22;
-    matrix.m13 = (float)puVar23;
-    matrix.m23 = (float)pGVar24;
+    matrix.m03 = (float)pGVar22;
+    matrix.m13 = fVar23;
+    matrix.m23 = fVar24;
     matrix.m33 = fVar25;
     UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
               (pMVar14,matrix,(MethodInfo *)0x0);
@@ -489,42 +493,42 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
                         (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
     if (pMVar13 != (MeshPool *)0x0) {
       pMVar14 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar13,(MethodInfo *)0x0);
-      pSVar19 = (String *)(this->fields)._baseCenter.x;
-      pVVar20 = (VisualTreeAsset_UsingEntry__Array *)(this->fields)._baseCenter.y;
+      pOVar17 = (Object *)(this->fields)._baseCenter.x;
+      fVar8 = (this->fields)._baseCenter.y;
       pVVar26 = TorusShape3D::TorusShape3D_get_Up
-                          ((Vector3 *)&fStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffffc0,(TorusShape3D *)this,(MethodInfo *)0x0);
       uVar27 = pVVar26->x;
       uVar28 = pVVar26->y;
-      fVar5 = (this->fields)._height;
-      pos.y = (float)pVVar20 + (float)uVar28 * fVar5;
-      pos.x = (float)pSVar19 + (float)uVar27 * fVar5;
+      fVar7 = (this->fields)._height;
+      pos.y = fVar8 + (float)uVar28 * fVar7;
+      pos.x = (float)pOVar17 + (float)uVar27 * fVar7;
       pos.z = fVar1;
       q_00.y = fVar11;
       q_00.x = fVar10;
       q_00.z = fVar12;
-      q_00.w = fVar4;
+      q_00.w = fVar5;
       s_00.y = fVar1;
       s_00.x = fVar1;
       s_00.z = 1.0;
       pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                          ((Matrix4x4 *)&stack0xffffff48,pos,q_00,s_00,(MethodInfo *)0x0);
+                          ((Matrix4x4 *)&stack0xffffff40,pos,q_00,s_00,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
                 (pMVar14,*pMVar15,(MethodInfo *)0x0);
       pLVar29 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                 CylinderMath::CylinderMath_CalcExtentPoints
                           ((this->fields)._baseCenter,(this->fields)._radius,
                            (this->fields)._rotation,(MethodInfo *)0x0);
-      fVar4 = (this->fields)._baseCenter.x;
-      fVar5 = (this->fields)._baseCenter.y;
-      fVar7 = (this->fields)._baseCenter.z;
+      fVar5 = (this->fields)._baseCenter.x;
+      fVar7 = (this->fields)._baseCenter.y;
+      fVar8 = (this->fields)._baseCenter.z;
       pVVar26 = TorusShape3D::TorusShape3D_get_Up
-                          ((Vector3 *)&fStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffffc0,(TorusShape3D *)this,(MethodInfo *)0x0);
       uVar30 = pVVar26->x;
       uVar31 = pVVar26->y;
       fVar1 = (this->fields)._height;
-      center.y = fVar5 + (float)uVar31 * fVar1;
-      center.x = fVar4 + (float)uVar30 * fVar1;
-      center.z = fVar7 + pVVar26->z * fVar1;
+      center.y = fVar7 + (float)uVar31 * fVar1;
+      center.x = fVar5 + (float)uVar30 * fVar1;
+      center.z = fVar8 + pVVar26->z * fVar1;
       this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                 CylinderMath::CylinderMath_CalcExtentPoints
                           (center,(this->fields)._radius,(this->fields)._rotation,(MethodInfo *)0x0)
@@ -539,7 +543,7 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
         VisualTreeAsset+UsingEntry]::
         List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                  ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,pLVar29,0,
+                  ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,0,
                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                   );
         if (pairPoints != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
@@ -548,7 +552,21 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
             VisualTreeAsset+UsingEntry]::
             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,this_00,0,
+                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,this_00,0,
+                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                      );
+            func_?();
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+            VisualTreeAsset+UsingEntry]::
+            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,1,
+                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                      );
+            func_?();
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+            VisualTreeAsset+UsingEntry]::
+            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,this_00,1,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
             pLVar29 = pairPoints;
@@ -556,29 +574,15 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
             VisualTreeAsset+UsingEntry]::
             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,pLVar29,1,
+                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,2,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
             func_?();
-            pLVar29 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)&stack0xffffffe0;
+            pLVar29 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)&stack0xffffffc0;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
             VisualTreeAsset+UsingEntry]::
             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)pLVar29,this_00,1,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            func_?();
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,pLVar29,2,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            func_?();
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,this_00,2,
+                      ((VisualTreeAsset_UsingEntry *)pLVar29,this_00,2,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
             pMStack32 =
@@ -588,7 +592,7 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
             VisualTreeAsset+UsingEntry]::
             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,pLVar29,3,
+                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,3,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
             pMStack33 =
@@ -599,7 +603,7 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
             VisualTreeAsset+UsingEntry]::
             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,this_00,3,
+                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,this_00,3,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
             pMStack33 = (MethodInfo *)pairPoints;

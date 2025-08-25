@@ -895,7 +895,7 @@ void Assembly-CSharp.dll::MVBlueprintBase::MVBlueprintBase_Initialize
                MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__)
     ;
     uStack_1 = 1;
-    do {
+    while( true ) {
       pMVar4 = 
       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
       ;
@@ -915,19 +915,19 @@ void Assembly-CSharp.dll::MVBlueprintBase::MVBlueprintBase_Initialize
         return;
       }
       if (pMVar4 == (MethodInfo *)0x0) break;
-      if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (byte)pMVar4->methodPointer[0xb8])
-         && (*(MVCubeModelInstance__Class **)
-              (*(int *)(pMVar4->methodPointer + 100) + -4 +
-              (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) ==
-             TypeInfo__MVCubeModelInstance)) {
-        if (pMVar4 == (MethodInfo *)0x0) break;
-        if ((((this->fields)._._.interactionFlags & 0x4000) != 0) &&
-           (uVar7._0_2_ = pMVar4[3].flags, uVar7._2_2_ = pMVar4[3].iflags, (uVar7 & 0x4000) == 0)) {
-          uVar8 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-          piVar9 = &(this->fields)._._.interactionFlags;
-          *(uint *)piVar9 = (uint)*piVar9 & 0xffffbfff;
-          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar8;
-        }
+      if (((((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
+             (byte)pMVar4->methodPointer[0xb8]) &&
+           (*(MVCubeModelInstance__Class **)
+             (*(int *)(pMVar4->methodPointer + 100) + -4 +
+             (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4) ==
+            TypeInfo__MVCubeModelInstance)) && (pMVar4 != (MethodInfo *)0x0)) &&
+         ((((this->fields)._._.interactionFlags & 0x4000) != 0 &&
+          (uVar7._0_2_ = pMVar4[3].flags, uVar7._2_2_ = pMVar4[3].iflags, (uVar7 & 0x4000) == 0))))
+      {
+        uVar8 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+        piVar9 = &(this->fields)._._.interactionFlags;
+        *(uint *)piVar9 = (uint)*piVar9 & 0xffffbfff;
+        *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar8;
       }
       if (pMVar4 == (MethodInfo *)0x0) break;
       uVar10._0_2_ = pMVar4[3].flags;
@@ -937,7 +937,7 @@ void Assembly-CSharp.dll::MVBlueprintBase::MVBlueprintBase_Initialize
       pMVar4[3].slot = pMVar4[3].slot;
       pMVar4[3].parameters_count = pMVar4[3].parameters_count;
       pMVar4[3].field_0x2f = pMVar4[3].field_0x2f;
-    } while( true );
+    }
   }
   func_?();
   pcVar11 = (code *)swi(3);

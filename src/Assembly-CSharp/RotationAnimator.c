@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::RotationAnimator::RotationAnimator_Update
                     ((MethodInfo *)0x0);
   if (this_00 != (AnimationCurve *)0x0) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,(this->fields).rotateSpeed * fVar1,(MethodInfo *)0x0);
+                      (this_00,fVar1 * (this->fields).rotateSpeed,(MethodInfo *)0x0);
     this_01 = (Transform *)(this->fields).rotateTarget;
     auVar2._4_8_ = 0;
     auVar2._0_4_ = (float)((uint)fVar1 ^

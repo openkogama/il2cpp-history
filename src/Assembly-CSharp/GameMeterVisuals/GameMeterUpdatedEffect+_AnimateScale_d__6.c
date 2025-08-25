@@ -131,29 +131,35 @@ code_?:
     }
   }
 code_?:
-  uVar16 = func_?();
-  out(pGVar1->klass,(short)((uint6)uVar16 >> 0x20));
-  uVar17 = (uint)uVar16 & 0xffffff4c;
-  pfVar4 = &(pGVar2->fields).startSize.z;
-  bVar18 = *(byte *)pfVar4;
-  bVar19 = (byte)((uint)unaff_EBX >> 8);
-  *(byte *)pfVar4 = *(char *)pfVar4 + bVar19;
-  pbVar20 = (byte *)(uVar17 + 0x26);
-  bVar21 = (byte)(uVar17 >> 8);
-  bVar22 = *pbVar20 + bVar21;
-  bVar23 = CARRY1(*pbVar20,bVar21) || CARRY1(bVar22,CARRY1(bVar18,bVar19));
-  *pbVar20 = bVar22 + CARRY1(bVar18,bVar19);
-  pbVar20 = (byte *)((int)&unaff_EBX[3].klass + 3);
-  bVar18 = *pbVar20;
-  bVar22 = *pbVar20 + (byte)unaff_EBX;
-  *pbVar20 = bVar22 + bVar23;
-  ppOVar24 = &pGVar1[4].fields.__2__current;
-  *(char *)ppOVar24 =
-       *(char *)ppOVar24 + (char)((uint6)uVar16 >> 0x20) +
-       (CARRY1(bVar18,(byte)unaff_EBX) || CARRY1(bVar22,bVar23));
-  do {
-                    /* WARNING: Do nothing block with infinite loop */
-  } while( true );
+  bVar16 = 0;
+  func_?();
+  pbVar17 = (byte *)((int)&pGVar2[2].monitor + 3);
+  bVar18 = *pbVar17 + (byte)unaff_EBX;
+  bVar19 = CARRY1(*pbVar17,(byte)unaff_EBX) || CARRY1(bVar18,bVar16);
+  *pbVar17 = bVar18 + bVar16;
+  pbVar17 = (byte *)(unaff_ESI + 0x5a);
+  bVar18 = *pbVar17 + (byte)unaff_ESI;
+  bVar20 = CARRY1(*pbVar17,(byte)unaff_ESI) || CARRY1(bVar18,bVar19);
+  *pbVar17 = bVar18 + bVar19;
+  bVar18 = *(byte *)&unaff_EBX->klass;
+  bVar21 = (byte)((uint)unaff_EBX >> 8);
+  bVar16 = *(char *)&unaff_EBX->klass + bVar21;
+  *(byte *)&unaff_EBX->klass = bVar16 + bVar20;
+  *(char *)&pGVar1[4].fields.__1__state =
+       (char)pGVar1[4].fields.__1__state + extraout_DL +
+       (CARRY1(bVar18,bVar21) || CARRY1(bVar16,bVar20));
+  uVar22 = func_?();
+  this_00 = (NotSupportedException *)func_?(uVar22);
+  mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
+            (this_00,(MethodInfo *)0x0);
+  VStack_9.y = (float)func_?(&
+                                       MethodInfo__GameMeterVisuals__GameMeterUpdatedEffect___AnimateScale_d__6__System_Collections_IEnumerator_Reset__
+                                      );
+  VStack_9.x = (float)this_00;
+  func_?();
+  pcVar23 = (code *)swi(3);
+  bVar24 = (*pcVar23)();
+  return bVar24;
 }
 
 

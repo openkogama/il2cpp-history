@@ -97,16 +97,15 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
               fVar14 = *(float *)(iVar12 + 0x10);
               fVar15 = *(float *)(iVar12 + 0x14);
               fVar16 = *(float *)(iVar12 + 0x18);
-              pDVar2 = (this->fields)._.SortedParams;
-              if (pDVar2 != (DotParamsList_1_StarsParam_ *)0x0) {
+              pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+              if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
                 iVar12 = 0;
-                if (iVar7 < (pDVar2->fields)._._size) {
+                if (iVar7 < (pSVar3->fields)._size) {
                   iVar12 = iVar7;
                 }
                 pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::
                           Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys
-                                    ((SortedList_2_System_Single_System_Object_ *)
-                                     (this->fields)._.SortedParams,
+                                    (pSVar3,
                                      MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
                                     );
                 if (pIVar8 != (IList_1_System_Single_ *)0x0) {

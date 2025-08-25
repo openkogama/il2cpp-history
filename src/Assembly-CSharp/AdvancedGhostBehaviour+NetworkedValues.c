@@ -25,124 +25,111 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
   uVar6 = (pVVar4->backVector).y;
   fVar7 = (float)uVar5 * radius;
   fVar8 = (float)uVar6 * radius;
-  fVar9 = (pVVar4->backVector).z * radius;
-  VStack_10.y = 0.0;
-  VStack_10.z = 0.0;
-  fStack_11 = 0.0;
-  VStack_10.x = fVar7;
+  VStack_9.z = (pVVar4->backVector).z * radius;
   if (fVar1 < fVar2) {
     func_?();
-    fVar9 = (float)((uint)fVar9 ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-    fVar7 = (float)((uint)VStack_10.x ^
+    VStack_9.z = (float)((uint)VStack_9.z ^
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+    fVar7 = (float)((uint)fVar7 ^
                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     fVar8 = (float)((uint)fVar8 ^
                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   }
-  puVar12 = (undefined8 *)func_?(&stack0xffffff90,&stack0xffffffbc,0);
-  fVar2 = (float)((uint)*puVar12 ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-  fVar1 = (float)((uint)((ulonglong)*puVar12 >> 0x20) ^
+  fVar2 = VStack_9.z;
+  puVar10 = (undefined8 *)func_?(&VStack_9,&stack0xffffffbc,0);
+  fVar11 = (float)((uint)((ulonglong)*puVar10 >> 0x20) ^
                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-  fVar13 = (float)(*(uint *)(puVar12 + 1) ^
+  fVar1 = (float)(*(uint *)(puVar10 + 1) ^
                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   if (transform != (Transform *)0x0) {
     position_00.y = fVar8;
     position_00.x = fVar7;
-    position_00.z = fVar9;
-    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                        ((Vector3 *)&stack0xffffff90,transform,position_00,(MethodInfo *)0x0);
-    uVar15 = pVVar14->x;
-    uVar16 = pVVar14->y;
-    fVar8 = pVVar14->z;
-    position_01.y = 0.0;
+    position_00.z = fVar2;
+    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                        (&VStack_9,transform,position_00,(MethodInfo *)0x0);
+    uVar13 = pVVar12->x;
+    uVar14 = pVVar12->y;
+    fVar15 = pVVar12->z;
+    position_01.y = fVar8;
     position_01.x = fVar7;
-    position_01.z = fVar9;
-    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                        ((Vector3 *)&stack0xffffff90,transform,position_01,(MethodInfo *)0x0);
-    uVar17 = pVVar14->x;
-    uVar18 = pVVar14->y;
-    fStack_11 = pVVar14->z;
-    VStack_10.x = (float)uVar17 + fVar2;
-    VStack_10.y = (float)uVar18 + fVar1;
-    VStack_10.z = fStack_11 + fVar13;
+    position_01.z = fVar2;
+    fVar7 = fVar2;
+    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                        (&VStack_9,transform,position_01,(MethodInfo *)0x0);
+    uVar16 = pVVar12->x;
+    uVar17 = pVVar12->y;
+    fVar7 = (float)uVar16 + fVar7;
+    fVar11 = (float)uVar17 + fVar11;
+    fVar1 = pVVar12->z + fVar1;
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Debug);
     }
-    start.y = (float)uVar16;
-    start.x = (float)uVar15;
-    start.z = fVar8;
-    end.y = VStack_10.y;
-    end.x = VStack_10.x;
-    end.z = VStack_10.z;
+    start.y = (float)uVar14;
+    start.x = (float)uVar13;
+    start.z = fVar15;
+    end.y = fVar11;
+    end.x = fVar7;
+    end.z = fVar1;
     color.g = _UNK_?;
-    color.r = _UNK_?;
-    color.b = (float)_UNK_?;
+    color.r = (float)_UNK_?;
+    color.b = _UNK_?;
     color.a = _UNK_?;
-    fVar2 = VStack_10.y;
-    fVar1 = VStack_10.z;
+    fVar1 = _UNK_?;
+    fVar7 = _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
               (start,end,color,0.5,(MethodInfo *)0x0);
-    position_02.y = fVar1;
-    position_02.x = fVar2;
-    position_02.z = fVar9;
-    pTVar19 = transform;
-    fVar7 = fVar2;
-    fVar8 = fVar1;
-    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                        ((Vector3 *)&stack0xffffff90,transform,position_02,(MethodInfo *)0x0);
-    uVar20 = pVVar14->x;
-    puVar21 = &UNK_?;
-    position_03.y = fVar1;
-    position_03.x = fVar2;
-    position_03.z = fVar9;
-    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                        (&VStack_10,transform,position_03,(MethodInfo *)0x0);
-    fVar2 = pVVar14->x;
-    fVar1 = pVVar14->y;
-    fVar9 = pVVar14->z;
+    position_02.y = fVar7;
+    position_02.x = fVar1;
+    position_02.z = fVar2;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+              (&VStack_9,transform,position_02,(MethodInfo *)0x0);
+    position_03.y = fVar7;
+    position_03.x = fVar1;
+    position_03.z = fVar2;
+    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                        ((Vector3 *)&stack0xffffffa8,transform,position_03,(MethodInfo *)0x0);
+    VStack_9.x = pVVar12->x;
+    VStack_9.y = pVVar12->y;
+    VStack_9.z = pVVar12->z;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar22 = (pVVar4->rightVector).x;
-    uVar23 = (pVVar4->rightVector).y;
-    fStack_11 = (pVVar4->rightVector).z;
-    fVar1 = (float)uVar23 + fVar1;
-    fVar9 = fStack_11 + fVar9;
-    start_00.y = (float)puVar21;
-    start_00.x = (float)uVar20;
-    start_00.z = (float)uVar22 + fVar2;
-    end_00.y = fVar1;
-    end_00.x = (float)uVar22 + fVar2;
-    end_00.z = fVar9;
+    uVar18 = (pVVar4->rightVector).x;
+    uVar19 = (pVVar4->rightVector).y;
+    VStack_9.z = (pVVar4->rightVector).z + VStack_9.z;
+    fVar15 = 0.0;
+    fVar8 = 0.5;
+    puVar20 = &UNK_?;
+    start_00.y = fVar7;
+    start_00.x = fVar1;
+    start_00.z = _UNK_?;
+    end_00.y = (float)uVar19 + VStack_9.y;
+    end_00.x = (float)uVar18 + VStack_9.x;
+    end_00.z = VStack_9.z;
     color_00.g = _UNK_?;
-    color_00.r = _UNK_?;
-    color_00.b = (float)_UNK_?;
+    color_00.r = (float)_UNK_?;
+    color_00.b = _UNK_?;
     color_00.a = _UNK_?;
-    VStack_10.y = (float)uVar22;
-    VStack_10.z = (float)uVar23;
     fVar2 = _UNK_?;
-    fVar13 = _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
               (start_00,end_00,color_00,0.5,(MethodInfo *)0x0);
-    position.y = fVar7 + fVar9 * fVar13;
-    position.x = (float)pTVar19 + fVar2 * fVar13;
-    position.z = fVar8 + fVar1 * fVar13;
-    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                        ((Vector3 *)&stack0xffffff90,transform,position,(MethodInfo *)0x0);
-    fVar1 = pVVar14->y;
-    fVar2 = pVVar14->z;
-    __return_storage_ptr__->x = pVVar14->x;
-    __return_storage_ptr__->y = fVar1;
-    __return_storage_ptr__->z = fVar2;
-    return __return_storage_ptr__;
+    VStack_9.z = fVar2 * fVar15 + fVar7;
+    position.y = fVar8 * fVar15 + fVar1;
+    position.x = fVar11 * fVar15 + (float)puVar20;
+    position.z = VStack_9.z;
+    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                        (&VStack_9,transform,position,(MethodInfo *)0x0);
+    _UNK_? = pVVar12->x;
+    _UNK_? = pVVar12->y;
+    _UNK_? = pVVar12->z;
+    return (Vector3 *)&UNK_?;
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  pVVar14 = (Vector3 *)(*pcVar24)();
-  return pVVar14;
+  pcVar21 = (code *)swi(3);
+  pVVar12 = (Vector3 *)(*pcVar21)();
+  return pVVar12;
 }
 
 
@@ -463,27 +450,27 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
             func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
             cRam_? = '\x01';
           }
-          fStack_15 = (this->fields).minLookDeltaOffset;
+          fStack_2 = (this->fields).minLookDeltaOffset;
           pAVar3 = (this->fields).ghostBehaviour;
           if (pAVar3 != (AdvancedGhostBehaviour *)0x0) {
-            iVar16 = (pAVar3->fields).speed.currentCryptoKey;
+            iVar15 = (pAVar3->fields).speed.currentCryptoKey;
             AStack_5 = (pAVar3->fields).speed.hiddenValue;
             pBStack_6 = (pAVar3->fields).speed.hiddenValueOld;
-            fVar17 = (pAVar3->fields).speed.fakeValue;
+            fVar16 = (pAVar3->fields).speed.fakeValue;
             if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
                 cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
             }
             value.hiddenValue = AStack_5;
-            value.currentCryptoKey = iVar16;
+            value.currentCryptoKey = iVar15;
             value.hiddenValueOld = pBStack_6;
-            value.fakeValue = fVar17;
+            value.fakeValue = fVar16;
             value.inited = (pAVar3->fields).speed.inited;
             value._17_3_ = *(undefined3 *)&(pAVar3->fields).speed.field_0x11;
-            fStack_8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                       ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-            fStack_8 = 1.0 / fStack_8;
+            fVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                     ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
             pAVar3 = (this->fields).ghostBehaviour;
+            fVar16 = (_UNK_? / fVar16) * fStack_2 * _UNK_?;
             pFVar1 = (this->fields).patrolPattern;
             if (pAVar3 != (AdvancedGhostBehaviour *)0x0) {
               fStack_2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
@@ -502,11 +489,11 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
                     puVar13 = (undefined8 *)
                              (*(pFVar1->fields)._._.invoke_impl)
                                        (&AStack_5,(pFVar1->fields)._._.method_code,
-                                        (int)(fStack_8 * fStack_15 * _UNK_?) + iVar4,fStack_2
-                                        ,fVar17,pTVar9,(pFVar1->fields)._._.method);
-                    _pBStack_1c = *puVar13;
+                                        (int)fVar16 + iVar4,fStack_2,fVar17,pTVar9,
+                                        (pFVar1->fields)._._.method);
+                    _pBStack_18 = *puVar13;
                     pIStack_18 = (Il2CppArrayBounds *)(*(float *)(puVar13 + 1) - fVar7);
-                    puVar13 = (undefined8 *)func_?(&AStack_5,&stack0xffffffd8,0);
+                    puVar13 = (undefined8 *)func_?(&AStack_5,&stack0xffffffdc,0);
                     uVar14 = *puVar13;
                     fVar7 = *(float *)(puVar13 + 1);
                     (this->fields).lookDir.x = (float)(int)uVar14;

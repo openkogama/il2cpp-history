@@ -29,7 +29,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
   rotation.z = rotation0.z;
   rotation.w = rotation0.w;
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xffffff8c,rotation,
+                      ((Vector3 *)&stack0xffffff90,rotation,
                        TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0)
   ;
   fVar5 = rotation0.w;
@@ -50,7 +50,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
     rotation_01.z = rotation0.z;
     rotation_01.w = rotation0.w;
     pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffff8c,rotation_01,
+                        ((Vector3 *)&stack0xffffff90,rotation_01,
                          TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
     fVar5 = rotation0.w;
     if (pVVar3 != (Vector3__Array *)0x0) {
@@ -182,9 +182,9 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                 } while (iVar9 < 3);
                 rotation0.w = (float)((int)rotation0.w + 1);
               } while ((int)rotation0.w < 3);
-              puStack_19 = (undefined *)(center1.x - center0.x);
-              rotation0.w = center1.y - center0.y;
-              fStack_18 = center1.z - center0.z;
+              rotation0.w = center1.x - center0.x;
+              fStack_18 = center1.y - center0.y;
+              fStack_19 = center1.z - center0.z;
               if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
@@ -208,44 +208,44 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                     uVar25 = pVVar24->vector[2].x;
                     uVar26 = pVVar24->vector[2].y;
                     uVar27 = 0;
-                    fStack_28 = (float)puStack_19 * (float)uVar20 + rotation0.w * (float)uVar21 +
-                                fStack_18 * fVar5;
-                    fVar7 = fStack_18 * pVVar24->vector[2].z;
-                    fStack_18 = (float)puStack_19 * (float)uVar22 + rotation0.w * (float)uVar23 +
-                                fStack_18 * pVVar3->vector[1].z;
-                    VStack_2.z = (float)puStack_19 * (float)uVar25 + rotation0.w * (float)uVar26 +
-                                  fVar7;
-                    VStack_2.y = fStack_18;
-                    VStack_2.x = fStack_28;
+                    VStack_2.x = (float)uVar21 * fStack_18 + (float)uVar20 * rotation0.w +
+                                  fVar5 * fStack_19;
+                    VStack_2.y = (float)uVar23 * fStack_18 + (float)uVar22 * rotation0.w +
+                                  pVVar3->vector[1].z * fStack_19;
+                    VStack_2.z = (float)uVar26 * fStack_18 + (float)uVar25 * rotation0.w +
+                                  pVVar24->vector[2].z * fStack_19;
                     rotation0.w = fVar5;
-                    puStack_19 = (undefined *)VStack_2.z;
+                    fStack_18 = VStack_2.y;
+                    fStack_19 = VStack_2.x;
+                    puStack_28 = (undefined *)VStack_2.z;
                     do {
                       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
-                      pSVar10 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      pSStack_29 = TypeInfo__RTG__BoxMath->static_fields->absR;
                       fVar5 = rotation0.w;
-                      if (pSVar10 == (Single__Array_1 *)0x0) goto code_?;
-                      if ((pSVar10->bounds->length <= uVar27) ||
-                         (iVar29 = pSVar10->bounds[1].length, iVar29 == 0)) goto code_?;
-                      pSStack_30 = (Single__Array_1 *)pSVar10->vector[iVar29 * uVar27];
-                      pSVar10 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      uVar31 = pSVar10->bounds[1].length;
-                      if (uVar31 < 2) goto code_?;
-                      fStack_32 = pSVar10->vector[uVar31 * uVar27 + 1];
-                      pSVar10 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      uVar31 = pSVar10->bounds[1].length;
-                      if (uVar31 < 3) goto code_?;
-                      pSStack_33 = (Single__Array_1 *)
-                                   (fStack_15 * pSVar10->vector[uVar31 * uVar27 + 2]);
-                      rotation0.w = UnityEngine.CoreModule.dll::UnityEngine::Vector3::
-                                    Vector3_get_Item(&VStack_2,uVar27,(MethodInfo *)0x0);
-                      pSStack_8 = (Single__Array_1 *)((uint)rotation0.w & _UNK_?);
+                      if (pSStack_29 == (Single__Array_1 *)0x0) goto code_?;
+                      if ((pSStack_29->bounds->length <= uVar27) ||
+                         (iVar30 = pSStack_29->bounds[1].length, iVar30 == 0))
+                      goto code_?;
+                      pSStack_31 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      rotation0.w = (float)pSStack_31->bounds[1].length;
+                      fVar5 = rotation0.w;
+                      if ((uint)rotation0.w < 2) goto code_?;
+                      pSStack_8 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      uVar32 = pSStack_8->bounds[1].length;
+                      if (uVar32 < 3) goto code_?;
+                      pSStack_8 = (Single__Array_1 *)
+                                   (fStack_14 * pSStack_31->vector[(int)rotation0.w * uVar27 + 1] +
+                                    fStack_13 * pSStack_29->vector[iVar30 * uVar27] +
+                                   fStack_15 * pSStack_8->vector[uVar32 * uVar27 + 2]);
+                      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                                         (&VStack_2,uVar27,(MethodInfo *)0x0);
+                      rotation0.w = (float)((uint)fVar5 & _UNK_?);
                       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                          (&VStack_1,uVar27,(MethodInfo *)0x0);
-                      rotation0.w = fVar5 + fStack_14 * fStack_32 + fStack_13 * (float)pSStack_30 +
-                                             (float)pSStack_33;
-                      if (rotation0.w < (float)pSStack_8) {
+                      pSStack_8 = (Single__Array_1 *)(fVar5 + (float)pSStack_8);
+                      if ((float)pSStack_8 < rotation0.w) {
                         return 0;
                       }
                       uVar27 = uVar27 + 1;
@@ -261,39 +261,41 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                       if (pSVar10 == (Single__Array_1 *)0x0) goto code_?;
                       if ((pSVar10->bounds->length == 0) || (pSVar10->bounds[1].length <= uVar27))
                       goto code_?;
-                      pSStack_33 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      if (pSStack_33->bounds->length < 2) goto code_?;
-                      pSStack_8 = (Single__Array_1 *)pSStack_33->bounds[1].length;
-                      pSStack_30 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      if (pSStack_30->bounds->length < 3) goto code_?;
-                      pSStack_33 = (Single__Array_1 *)
-                                   (fStack_12 *
-                                    pSStack_33->vector[(int)pSStack_8->vector + (uVar27 - 0x10)] +
-                                    fStack_11 *
-                                    *(float *)((int)pSVar10->vector + (int)rotation0.w + -0x10) +
-                                   fStack_16 *
-                                   pSStack_30->vector[uVar27 + pSStack_30->bounds[1].length * 2]);
+                      pSStack_29 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      if (pSStack_29->bounds->length < 2) goto code_?;
+                      pSStack_8 = (Single__Array_1 *)pSStack_29->bounds[1].length;
+                      pSStack_31 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      if (pSStack_31->bounds->length < 3) goto code_?;
+                      pSStack_31 = (Single__Array_1 *)
+                                  (fStack_12 *
+                                   pSStack_29->vector[(int)pSStack_8->vector + (uVar27 - 0x10)] +
+                                   fStack_11 *
+                                   *(float *)((int)pSVar10->vector + (int)rotation0.w + -0x10) +
+                                  fStack_16 *
+                                  pSStack_31->vector[uVar27 + pSStack_31->bounds[1].length * 2]);
+                      pSStack_29 = TypeInfo__RTG__BoxMath->static_fields->R;
+                      if (pSStack_29 == (Single__Array_1 *)0x0) goto code_?;
+                      if ((pSStack_29->bounds->length == 0) ||
+                         (pSStack_29->bounds[1].length <= uVar27)) goto code_?;
                       pSVar10 = TypeInfo__RTG__BoxMath->static_fields->R;
-                      if (pSVar10 == (Single__Array_1 *)0x0) goto code_?;
-                      if ((pSVar10->bounds->length == 0) || (pSVar10->bounds[1].length <= uVar27))
-                      goto code_?;
-                      pSStack_8 = TypeInfo__RTG__BoxMath->static_fields->R;
-                      if (pSStack_8->bounds->length < 2) goto code_?;
+                      pIVar33 = pSVar10->bounds;
+                      if (pIVar33->length < 2) goto code_?;
+                      pSStack_8 = (Single__Array_1 *)pIVar33[1].length;
                       pSVar34 = TypeInfo__RTG__BoxMath->static_fields->R;
-                      pIVar35 = pSVar34->bounds;
-                      if (pIVar35->length < 3) goto code_?;
-                      rotation0.w = (float)((uint)(fStack_28 *
-                                                   *(float *)((int)pSVar10->vector +
+                      pIVar33 = pSVar34->bounds;
+                      if (pIVar33->length < 3) goto code_?;
+                      rotation0.w = (float)((uint)(fStack_18 *
+                                                   pSVar10->vector
+                                                   [(int)pSStack_8->vector + (uVar27 - 0x10)] +
+                                                   fStack_19 *
+                                                   *(float *)((int)pSStack_29->vector +
                                                              (int)rotation0.w + -0x10) +
-                                                   fStack_18 *
-                                                   pSStack_8->vector
-                                                   [pSStack_8->bounds[1].length + uVar27] +
-                                                  (float)puStack_19 *
-                                                  pSVar34->vector[uVar27 + pIVar35[1].length * 2]) &
+                                                  (float)puStack_28 *
+                                                  pSVar34->vector[uVar27 + pIVar33[1].length * 2]) &
                                            _UNK_?);
                       fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                         ((Vector3 *)&stack0xffffffa4,uVar27,(MethodInfo *)0x0);
-                      pSStack_8 = (Single__Array_1 *)(fVar7 + (float)pSStack_33);
+                                         ((Vector3 *)&stack0xffffffa8,uVar27,(MethodInfo *)0x0);
+                      pSStack_8 = (Single__Array_1 *)(fVar7 + (float)pSStack_31);
                       if ((float)pSStack_8 < rotation0.w) {
                         return 0;
                       }
@@ -313,7 +315,8 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                       if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                         fVar17 = (float10)func_?();
                         rotation0.w = fStack_12 * rotation0.w;
-                        fStack_32 = (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
+                        pSStack_31 = (Single__Array_1 *)
+                                    (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
                         fVar5 = rotation0.w;
                         if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                           fVar17 = (float10)func_?();
@@ -333,12 +336,12 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                               if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0
                                  ) {
                                 pSStack_8 = (Single__Array_1 *)
-                                             ((float)puStack_19 * (float)pSStack_8);
+                                             ((float)puStack_28 * (float)pSStack_8);
                                 fVar17 = (float10)func_?();
                                 pSStack_8 = (Single__Array_1 *)
                                              (float)((float10)(float)pSStack_8 -
                                                     fVar17 * (float10)VStack_2.y);
-                                if (rotation0.w + fStack_32 <
+                                if (rotation0.w + (float)pSStack_31 <
                                     (float)((uint)pSStack_8 & _UNK_?)) {
                                   return 0;
                                 }
@@ -355,8 +358,9 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                       (Single__Array_1 *)0x0) {
                                     fVar17 = (float10)func_?();
                                     rotation0.w = fStack_12 * rotation0.w;
-                                    fStack_32 = (float)(fVar17 * (float10)fStack_16 +
-                                                      (float10)rotation0.w);
+                                    pSStack_31 = (Single__Array_1 *)
+                                                (float)(fVar17 * (float10)fStack_16 +
+                                                       (float10)rotation0.w);
                                     fVar5 = rotation0.w;
                                     if (TypeInfo__RTG__BoxMath->static_fields->absR !=
                                         (Single__Array_1 *)0x0) {
@@ -367,7 +371,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                           (Single__Array_1 *)0x0) {
                                         fVar17 = (float10)func_?();
                                         rotation0.w = (float)(fVar17 * (float10)fStack_15 +
-                                                             (float10)(fStack_13 * rotation0.w));
+                                                             (float10)(rotation0.w * fStack_13));
                                         fVar5 = rotation0.w;
                                         if (TypeInfo__RTG__BoxMath->static_fields->R !=
                                             (Single__Array_1 *)0x0) {
@@ -377,12 +381,12 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                           if (TypeInfo__RTG__BoxMath->static_fields->R !=
                                               (Single__Array_1 *)0x0) {
                                             pSStack_8 = (Single__Array_1 *)
-                                                         ((float)pSStack_8 * (float)puStack_19);
+                                                         ((float)puStack_28 * (float)pSStack_8);
                                             fVar17 = (float10)func_?();
                                             pSStack_8 = (Single__Array_1 *)
                                                          (float)((float10)(float)pSStack_8 -
                                                                 fVar17 * (float10)VStack_2.y);
-                                            if (rotation0.w + fStack_32 <
+                                            if (rotation0.w + (float)pSStack_31 <
                                                 (float)((uint)pSStack_8 & _UNK_?)) {
                                               return 0;
                                             }
@@ -400,8 +404,9 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                   (Single__Array_1 *)0x0) {
                                                 fVar17 = (float10)func_?();
                                                 rotation0.w = fStack_12 * rotation0.w;
-                                                fStack_32 = (float)(fVar17 * (float10)fStack_16 +
-                                                                  (float10)rotation0.w);
+                                                pSStack_31 = (Single__Array_1 *)
+                                                            (float)(fVar17 * (float10)fStack_16 +
+                                                                   (float10)rotation0.w);
                                                 fVar5 = rotation0.w;
                                                 if (TypeInfo__RTG__BoxMath->static_fields->absR !=
                                                     (Single__Array_1 *)0x0) {
@@ -412,7 +417,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                       (Single__Array_1 *)0x0) {
                                                     fVar17 = (float10)func_?();
                                                     rotation0.w = (float)(fVar17 * (float10)
-                                                  fStack_14 + (float10)(fStack_13 * rotation0.w));
+                                                  fStack_14 + (float10)(rotation0.w * fStack_13));
                                                   fVar5 = rotation0.w;
                                                   if (TypeInfo__RTG__BoxMath->static_fields->R !=
                                                       (Single__Array_1 *)0x0) {
@@ -423,12 +428,12 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                         (Single__Array_1 *)0x0) {
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    ((float)pSStack_8 *
-                                                                   (float)puStack_19);
+                                                                   (float)puStack_28);
                                                       fVar17 = (float10)func_?();
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    (float)((float10)(float)
                                                   pSStack_8 - fVar17 * (float10)VStack_2.y);
-                                                  if (rotation0.w + fStack_32 <
+                                                  if (rotation0.w + (float)pSStack_31 <
                                                       (float)((uint)pSStack_8 & _UNK_?)) {
                                                     return 0;
                                                   }
@@ -446,8 +451,9 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                         != (Single__Array_1 *)0x0) {
                                                       fVar17 = (float10)func_?();
                                                       rotation0.w = rotation0.w * fStack_11;
-                                                      fStack_32 = (float)(fVar17 * (float10)fStack_16
-                                                                        + (float10)rotation0.w);
+                                                      pSStack_31 = (Single__Array_1 *)
+                                                                  (float)(fVar17 * (float10)fStack_16
+                                                                         + (float10)rotation0.w);
                                                       fVar5 = rotation0.w;
                                                       if (TypeInfo__RTG__BoxMath->static_fields->
                                                           absR != (Single__Array_1 *)0x0) {
@@ -468,12 +474,12 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                     if (TypeInfo__RTG__BoxMath->static_fields->R !=
                                                         (Single__Array_1 *)0x0) {
                                                       pSStack_8 = (Single__Array_1 *)
-                                                                   ((float)pSStack_8 * fStack_28);
+                                                                   ((float)pSStack_8 * fStack_19);
                                                       fVar17 = (float10)func_?();
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    (float)((float10)(float)
                                                   pSStack_8 - fVar17 * (float10)VStack_2.z);
-                                                  if (rotation0.w + fStack_32 <
+                                                  if (rotation0.w + (float)pSStack_31 <
                                                       (float)((uint)pSStack_8 & _UNK_?)) {
                                                     return 0;
                                                   }
@@ -491,8 +497,9 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                         != (Single__Array_1 *)0x0) {
                                                       fVar17 = (float10)func_?();
                                                       rotation0.w = rotation0.w * fStack_11;
-                                                      fStack_32 = (float)(fVar17 * (float10)fStack_16
-                                                                        + (float10)rotation0.w);
+                                                      pSStack_31 = (Single__Array_1 *)
+                                                                  (float)(fVar17 * (float10)fStack_16
+                                                                         + (float10)rotation0.w);
                                                       fVar5 = rotation0.w;
                                                       if (TypeInfo__RTG__BoxMath->static_fields->
                                                           absR != (Single__Array_1 *)0x0) {
@@ -513,12 +520,12 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                     if (TypeInfo__RTG__BoxMath->static_fields->R !=
                                                         (Single__Array_1 *)0x0) {
                                                       pSStack_8 = (Single__Array_1 *)
-                                                                   ((float)pSStack_8 * fStack_28);
+                                                                   ((float)pSStack_8 * fStack_19);
                                                       fVar17 = (float10)func_?();
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    (float)((float10)(float)
                                                   pSStack_8 - fVar17 * (float10)VStack_2.z);
-                                                  if (rotation0.w + fStack_32 <
+                                                  if (rotation0.w + (float)pSStack_31 <
                                                       (float)((uint)pSStack_8 & _UNK_?)) {
                                                     return 0;
                                                   }
@@ -536,8 +543,9 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                         != (Single__Array_1 *)0x0) {
                                                       fVar17 = (float10)func_?();
                                                       rotation0.w = rotation0.w * fStack_11;
-                                                      fStack_32 = (float)(fVar17 * (float10)fStack_16
-                                                                        + (float10)rotation0.w);
+                                                      pSStack_31 = (Single__Array_1 *)
+                                                                  (float)(fVar17 * (float10)fStack_16
+                                                                         + (float10)rotation0.w);
                                                       fVar5 = rotation0.w;
                                                       if (TypeInfo__RTG__BoxMath->static_fields->
                                                           absR != (Single__Array_1 *)0x0) {
@@ -558,12 +566,12 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                     if (TypeInfo__RTG__BoxMath->static_fields->R !=
                                                         (Single__Array_1 *)0x0) {
                                                       pSStack_8 = (Single__Array_1 *)
-                                                                   ((float)pSStack_8 * fStack_28);
+                                                                   ((float)pSStack_8 * fStack_19);
                                                       fVar17 = (float10)func_?();
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    (float)((float10)(float)
                                                   pSStack_8 - fVar17 * (float10)VStack_2.z);
-                                                  if (rotation0.w + fStack_32 <
+                                                  if (rotation0.w + (float)pSStack_31 <
                                                       (float)((uint)pSStack_8 & _UNK_?)) {
                                                     return 0;
                                                   }
@@ -581,18 +589,19 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                         != (Single__Array_1 *)0x0) {
                                                       fVar17 = (float10)func_?();
                                                       rotation0.w = rotation0.w * fStack_11;
-                                                      fStack_32 = (float)(fVar17 * (float10)fStack_12
-                                                                        + (float10)rotation0.w);
-                                                      fVar5 = rotation0.w;
-                                                      if (TypeInfo__RTG__BoxMath->static_fields->
-                                                          absR != (Single__Array_1 *)0x0) {
-                                                        fVar17 = (float10)func_?();
-                                                        rotation0.w = (float)fVar17;
-                                                        fVar5 = rotation0.w;
-                                                        if (TypeInfo__RTG__BoxMath->static_fields->
-                                                            absR != (Single__Array_1 *)0x0) {
-                                                          fVar17 = (float10)func_?();
-                                                          rotation0.w = (float)(fVar17 * (float10)
+                                                      pSStack_31 = (Single__Array_1 *)
+                                                                  (float)(fVar17 * (float10)
+                                                  fStack_12 + (float10)rotation0.w);
+                                                  fVar5 = rotation0.w;
+                                                  if (TypeInfo__RTG__BoxMath->static_fields->absR !=
+                                                      (Single__Array_1 *)0x0) {
+                                                    fVar17 = (float10)func_?();
+                                                    rotation0.w = (float)fVar17;
+                                                    fVar5 = rotation0.w;
+                                                    if (TypeInfo__RTG__BoxMath->static_fields->absR
+                                                        != (Single__Array_1 *)0x0) {
+                                                      fVar17 = (float10)func_?();
+                                                      rotation0.w = (float)(fVar17 * (float10)
                                                   fStack_15 + (float10)(rotation0.w * fStack_14));
                                                   fVar5 = rotation0.w;
                                                   if (TypeInfo__RTG__BoxMath->static_fields->R !=
@@ -608,7 +617,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    (float)((float10)(float)
                                                   pSStack_8 - fVar17 * (float10)VStack_2.x);
-                                                  if (rotation0.w + fStack_32 <
+                                                  if (rotation0.w + (float)pSStack_31 <
                                                       (float)((uint)pSStack_8 & _UNK_?)) {
                                                     return 0;
                                                   }
@@ -626,18 +635,19 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                         != (Single__Array_1 *)0x0) {
                                                       fVar17 = (float10)func_?();
                                                       rotation0.w = rotation0.w * fStack_11;
-                                                      fStack_32 = (float)(fVar17 * (float10)fStack_12
-                                                                        + (float10)rotation0.w);
-                                                      fVar5 = rotation0.w;
-                                                      if (TypeInfo__RTG__BoxMath->static_fields->
-                                                          absR != (Single__Array_1 *)0x0) {
-                                                        fVar17 = (float10)func_?();
-                                                        rotation0.w = (float)fVar17;
-                                                        fVar5 = rotation0.w;
-                                                        if (TypeInfo__RTG__BoxMath->static_fields->
-                                                            absR != (Single__Array_1 *)0x0) {
-                                                          fVar17 = (float10)func_?();
-                                                          rotation0.w = (float)(fVar17 * (float10)
+                                                      pSStack_31 = (Single__Array_1 *)
+                                                                  (float)(fVar17 * (float10)
+                                                  fStack_12 + (float10)rotation0.w);
+                                                  fVar5 = rotation0.w;
+                                                  if (TypeInfo__RTG__BoxMath->static_fields->absR !=
+                                                      (Single__Array_1 *)0x0) {
+                                                    fVar17 = (float10)func_?();
+                                                    rotation0.w = (float)fVar17;
+                                                    fVar5 = rotation0.w;
+                                                    if (TypeInfo__RTG__BoxMath->static_fields->absR
+                                                        != (Single__Array_1 *)0x0) {
+                                                      fVar17 = (float10)func_?();
+                                                      rotation0.w = (float)(fVar17 * (float10)
                                                   fStack_15 + (float10)(rotation0.w * fStack_13));
                                                   fVar5 = rotation0.w;
                                                   if (TypeInfo__RTG__BoxMath->static_fields->R !=
@@ -653,7 +663,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    (float)((float10)(float)
                                                   pSStack_8 - fVar17 * (float10)VStack_2.x);
-                                                  if (rotation0.w + fStack_32 <
+                                                  if (rotation0.w + (float)pSStack_31 <
                                                       (float)((uint)pSStack_8 & _UNK_?)) {
                                                     return 0;
                                                   }
@@ -671,18 +681,19 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                         != (Single__Array_1 *)0x0) {
                                                       fVar17 = (float10)func_?();
                                                       rotation0.w = rotation0.w * fStack_11;
-                                                      fStack_32 = (float)(fVar17 * (float10)fStack_12
-                                                                        + (float10)rotation0.w);
-                                                      fVar5 = rotation0.w;
-                                                      if (TypeInfo__RTG__BoxMath->static_fields->
-                                                          absR != (Single__Array_1 *)0x0) {
-                                                        fVar17 = (float10)func_?();
-                                                        rotation0.w = (float)fVar17;
-                                                        fVar5 = rotation0.w;
-                                                        if (TypeInfo__RTG__BoxMath->static_fields->
-                                                            absR != (Single__Array_1 *)0x0) {
-                                                          fVar17 = (float10)func_?();
-                                                          rotation0.w = (float)(fVar17 * (float10)
+                                                      pSStack_31 = (Single__Array_1 *)
+                                                                  (float)(fVar17 * (float10)
+                                                  fStack_12 + (float10)rotation0.w);
+                                                  fVar5 = rotation0.w;
+                                                  if (TypeInfo__RTG__BoxMath->static_fields->absR !=
+                                                      (Single__Array_1 *)0x0) {
+                                                    fVar17 = (float10)func_?();
+                                                    rotation0.w = (float)fVar17;
+                                                    fVar5 = rotation0.w;
+                                                    if (TypeInfo__RTG__BoxMath->static_fields->absR
+                                                        != (Single__Array_1 *)0x0) {
+                                                      fVar17 = (float10)func_?();
+                                                      rotation0.w = (float)(fVar17 * (float10)
                                                   fStack_14 + (float10)(rotation0.w * fStack_13));
                                                   fVar5 = rotation0.w;
                                                   if (TypeInfo__RTG__BoxMath->static_fields->R !=
@@ -695,7 +706,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox
                                                       pSStack_8 = (Single__Array_1 *)
                                                                    ((float)pSStack_8 * fStack_18);
                                                       fVar17 = (float10)func_?();
-                                                      if (rotation0.w + fStack_32 <
+                                                      if (rotation0.w + (float)pSStack_31 <
                                                           (float)((uint)(float)((float10)(float)
                                                   pSStack_8 - fVar17 * (float10)VStack_2.x) &
                                                   _UNK_?)) {
@@ -772,9 +783,9 @@ code_?:
 code_?:
   rotation0.w = fVar5;
   func_?();
-  pcVar36 = (code *)swi(3);
-  bVar37 = (*pcVar36)();
-  return bVar37;
+  pcVar35 = (code *)swi(3);
+  bVar36 = (*pcVar35)();
+  return bVar36;
 }
 
 
@@ -801,11 +812,12 @@ Assembly-CSharp.dll::RTG::BoxMath::BoxMath_CalcBoxCornerPoints
   rotation.x = boxRotation.x;
   rotation.z = boxRotation.z;
   rotation.w = boxRotation.w;
-  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-            (&boxSize,rotation,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
-             (MethodInfo *)0x0);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                      (&boxSize,rotation,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
+                       (MethodInfo *)0x0);
+  uVar2 = pVVar1->y;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    func_?(&TypeInfo__UnityEngine__Vector3,uVar2,pVVar1->z);
     cRam_? = '\x01';
   }
   rotation_00.y = boxRotation.y;
@@ -820,120 +832,121 @@ Assembly-CSharp.dll::RTG::BoxMath::BoxMath_CalcBoxCornerPoints
     cRam_? = '\x01';
   }
   pVVar1 = &TypeInfo__UnityEngine__Vector3->static_fields->forwardVector;
-  fVar2 = pVVar1->x;
-  fVar3 = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
+  fVar3 = pVVar1->x;
+  fVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
   __return_storage_ptr__ = &boxRotation.y;
-  puVar4 = &UNK_?;
+  puVar5 = &UNK_?;
   rotation_01.y = boxRotation.y;
   rotation_01.x = boxRotation.x;
   rotation_01.z = boxRotation.z;
   rotation_01.w = boxRotation.w;
-  fVar5 = boxRotation.x;
-  fVar6 = boxRotation.y;
-  fVar7 = boxRotation.z;
-  fVar8 = boxRotation.w;
+  fVar6 = boxRotation.x;
+  fVar7 = boxRotation.y;
+  fVar8 = boxRotation.z;
+  fVar9 = boxRotation.w;
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     ((Vector3 *)__return_storage_ptr__,rotation_01,*pVVar1,(MethodInfo *)0x0);
-  fVar9 = pVVar1->x;
-  fVar10 = pVVar1->y;
-  fVar11 = pVVar1->z;
-  boxSize.z = boxCenter.x - fVar9 * fVar3;
-  boxRotation.w = boxCenter.y - fVar10 * fVar3;
-  fVar3 = 1.12104e-44;
-  puVar12 = &UNK_?;
-  boxSize.x = fVar9;
-  boxSize.y = fVar10;
-  pVVar13 = TypeInfo__UnityEngine__Vector3;
+                      ((Vector3 *)__return_storage_ptr__,rotation_01,*pVVar1,(MethodInfo *)0x0);
+  fVar10 = pVVar1->x;
+  fVar11 = pVVar1->y;
+  fVar12 = pVVar1->z;
+  boxSize.z = boxCenter.y - fVar11 * fVar4;
+  boxRotation.w = boxCenter.z - fVar12 * fVar4;
+  fVar4 = 1.12104e-44;
+  puVar13 = &UNK_?;
+  boxSize.x = fVar10;
+  boxSize.y = fVar11;
+  pVVar14 = TypeInfo__UnityEngine__Vector3;
   collection = (IEnumerable_1_UnityEngine_Vector3_ *)func_?();
   if (collection == (IEnumerable_1_UnityEngine_Vector3_ *)0x0) {
     boxRotation.x = (float)&UNK_?;
     func_?();
   }
   else if (collection[1].monitor != (MonitorData *)0x0) {
-    IVar14.monitor =
+    IVar15.monitor =
          (MonitorData *)
-         ((boxRotation.w - (float)puVar12 * fVar7) + (float)__return_storage_ptr__ * fVar2);
-    IVar14.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
-                  ((boxSize.z - (float)puVar12 * fVar6) + (float)puVar4 * fVar2);
-    collection[2] = IVar14;
+         ((boxSize.z - (float)__return_storage_ptr__ * (float)puVar13) + fVar8 * fVar3);
+    IVar15.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
+                  ((fVar4 - (float)puVar5 * (float)puVar13) + fVar7 * fVar3);
+    collection[2] = IVar15;
     collection[3].klass =
          (IEnumerable_1_UnityEngine_Vector3___Class *)
-         ((fVar3 - (float)puVar12 * fVar8) + fVar5 * fVar2);
+         ((boxRotation.w - fVar6 * (float)puVar13) + fVar9 * fVar3);
     if ((MonitorData *)0x1 < collection[1].monitor) {
       *(ulonglong *)&collection[3].monitor =
-           CONCAT44(boxRotation.w + (float)puVar12 * fVar7 + (float)__return_storage_ptr__ * fVar2,
-                    boxSize.z + (float)puVar12 * fVar6 + (float)puVar4 * fVar2);
-      collection[4].monitor = (MonitorData *)(fVar3 + (float)puVar12 * fVar8 + fVar5 * fVar2);
+           CONCAT44(boxSize.z + (float)__return_storage_ptr__ * (float)puVar13 + fVar8 * fVar3,
+                    fVar4 + (float)puVar5 * (float)puVar13 + fVar7 * fVar3);
+      collection[4].monitor =
+           (MonitorData *)(fVar6 * (float)puVar13 + boxRotation.w + fVar9 * fVar3);
       if ((MonitorData *)0x2 < collection[1].monitor) {
-        IVar15.monitor =
+        IVar16.monitor =
              (MonitorData *)
-             ((boxRotation.w + (float)puVar12 * fVar7) - (float)__return_storage_ptr__ * fVar2);
-        IVar15.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
-                      ((boxSize.z + (float)puVar12 * fVar6) - (float)puVar4 * fVar2);
-        collection[5] = IVar15;
+             (((float)__return_storage_ptr__ * (float)puVar13 + boxSize.z) - fVar8 * fVar3);
+        IVar16.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
+                      (((float)puVar5 * (float)puVar13 + fVar4) - fVar7 * fVar3);
+        collection[5] = IVar16;
         collection[6].klass =
              (IEnumerable_1_UnityEngine_Vector3___Class *)
-             ((fVar3 + (float)puVar12 * fVar8) - fVar5 * fVar2);
-        boxSize.x = (boxSize.z - (float)puVar12 * fVar6) - (float)puVar4 * fVar2;
-        boxSize.y = (boxRotation.w - (float)puVar12 * fVar7) -
-                    (float)__return_storage_ptr__ * fVar2;
-        boxSize.z = (fVar3 - (float)puVar12 * fVar8) - fVar5 * fVar2;
+             ((fVar6 * (float)puVar13 + boxRotation.w) - fVar9 * fVar3);
+        boxRotation.w = boxRotation.w - fVar6 * (float)puVar13;
+        boxSize.x = (fVar4 - (float)puVar5 * (float)puVar13) - fVar7 * fVar3;
+        boxSize.y = (boxSize.z - (float)__return_storage_ptr__ * (float)puVar13) - fVar8 * fVar3;
+        boxSize.z = boxRotation.w - fVar9 * fVar3;
         if ((MonitorData *)0x3 < collection[1].monitor) {
           *(ulonglong *)&collection[6].monitor = CONCAT44(boxSize.y,boxSize.x);
           collection[7].monitor = (MonitorData *)boxSize.z;
-          boxSize.z = boxCenter.x + (float)pVVar13 * fVar9;
-          boxRotation.w = boxCenter.y + (float)pVVar13 * fVar10;
-          fVar9 = boxCenter.z + (float)pVVar13 * fVar11;
+          boxSize.z = boxCenter.x + fVar10 * (float)pVVar14;
+          fVar10 = boxCenter.z + fVar12 * (float)pVVar14;
+          boxRotation.w = boxCenter.y + fVar11 * (float)pVVar14;
           if ((MonitorData *)0x4 < collection[1].monitor) {
-            IVar16.monitor =
+            IVar17.monitor =
                  (MonitorData *)
-                 (boxRotation.w + (float)puVar12 * fVar7 + (float)__return_storage_ptr__ * fVar2);
-            IVar16.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
-                          (boxSize.z + (float)puVar12 * fVar6 + (float)puVar4 * fVar2);
-            collection[8] = IVar16;
+                 (fVar8 * fVar3 + boxRotation.w + (float)__return_storage_ptr__ * (float)puVar13);
+            IVar17.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
+                          (fVar7 * fVar3 + boxSize.z + (float)puVar5 * (float)puVar13);
+            collection[8] = IVar17;
             collection[9].klass =
                  (IEnumerable_1_UnityEngine_Vector3___Class *)
-                 (fVar9 + (float)puVar12 * fVar8 + fVar5 * fVar2);
+                 (fVar9 * fVar3 + fVar6 * (float)puVar13 + fVar10);
             if ((MonitorData *)0x5 < collection[1].monitor) {
               *(ulonglong *)&collection[9].monitor =
-                   CONCAT44((boxRotation.w - (float)puVar12 * fVar7) +
-                            (float)__return_storage_ptr__ * fVar2,
-                            (boxSize.z - (float)puVar12 * fVar6) + (float)puVar4 * fVar2);
+                   CONCAT44(fVar8 * fVar3 +
+                            (boxRotation.w - (float)__return_storage_ptr__ * (float)puVar13),
+                            fVar7 * fVar3 + (boxSize.z - (float)puVar5 * (float)puVar13));
               collection[10].monitor =
-                   (MonitorData *)((fVar9 - (float)puVar12 * fVar8) + fVar5 * fVar2);
+                   (MonitorData *)(fVar9 * fVar3 + (fVar10 - fVar6 * (float)puVar13));
               if ((MonitorData *)0x6 < collection[1].monitor) {
-                IVar17.monitor =
+                IVar18.monitor =
                      (MonitorData *)
-                     ((boxRotation.w - (float)puVar12 * fVar7) -
-                     (float)__return_storage_ptr__ * fVar2);
-                IVar17.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
-                              ((boxSize.z - (float)puVar12 * fVar6) - (float)puVar4 * fVar2);
-                collection[0xb] = IVar17;
+                     ((boxRotation.w - (float)__return_storage_ptr__ * (float)puVar13) -
+                     fVar8 * fVar3);
+                IVar18.klass = (IEnumerable_1_UnityEngine_Vector3___Class *)
+                              ((boxSize.z - (float)puVar5 * (float)puVar13) - fVar7 * fVar3);
+                collection[0xb] = IVar18;
                 collection[0xc].klass =
                      (IEnumerable_1_UnityEngine_Vector3___Class *)
-                     ((fVar9 - (float)puVar12 * fVar8) - fVar5 * fVar2);
+                     ((fVar10 - fVar6 * (float)puVar13) - fVar9 * fVar3);
                 if ((MonitorData *)0x7 < collection[1].monitor) {
                   *(ulonglong *)&collection[0xc].monitor =
-                       CONCAT44((boxRotation.w + (float)puVar12 * fVar7) -
-                                (float)__return_storage_ptr__ * fVar2,
-                                (boxSize.z + (float)puVar12 * fVar6) - (float)puVar4 * fVar2);
+                       CONCAT44(((float)__return_storage_ptr__ * (float)puVar13 + boxRotation.w) -
+                                fVar8 * fVar3,
+                                ((float)puVar5 * (float)puVar13 + boxSize.z) - fVar7 * fVar3);
                   collection[0xd].monitor =
-                       (MonitorData *)((fVar9 + (float)puVar12 * fVar8) - fVar5 * fVar2);
+                       (MonitorData *)((fVar6 * (float)puVar13 + fVar10) - fVar9 * fVar3);
                   boxRotation.x =
                        (float)TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>;
                   boxSize.z = (float)&UNK_?;
-                  pLVar18 = (List_1_UnityEngine_Vector3_ *)func_?();
+                  pLVar19 = (List_1_UnityEngine_Vector3_ *)func_?();
                   boxSize.z = (float)
                               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_
                   ;
-                  boxSize.x = (float)pLVar18;
+                  boxSize.x = (float)pLVar19;
                   boxSize.y = (float)collection;
                   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector3]::
                   List_1_UnityEngine_Vector3___ctor_1
-                            (pLVar18,collection,
+                            (pLVar19,collection,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_
                             );
-                  return pLVar18;
+                  return pLVar19;
                 }
               }
             }
@@ -944,9 +957,9 @@ Assembly-CSharp.dll::RTG::BoxMath::BoxMath_CalcBoxCornerPoints
   }
   boxRotation.x = (float)&UNK_?;
   func_?();
-  pcVar19 = (code *)swi(3);
-  pLVar18 = (List_1_UnityEngine_Vector3_ *)(*pcVar19)();
-  return pLVar18;
+  pcVar20 = (code *)swi(3);
+  pLVar19 = (List_1_UnityEngine_Vector3_ *)(*pcVar20)();
+  return pLVar19;
 }
 
 
@@ -1217,16 +1230,16 @@ Plane * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_CalcBoxFacePlane
     VVar20.y = boxRotation.z;
     VVar20.x = boxRotation.y;
     VVar20.z = fVar9;
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                       ((Vector3 *)&stack0xffffffbc,VVar20,(MethodInfo *)0x0);
-    uVar21 = pVVar2->x;
-    uVar22 = pVVar2->y;
-    fVar1 = pVVar2->z;
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        ((Vector3 *)&stack0xffffffbc,VVar20,(MethodInfo *)0x0);
+    uVar21 = pVVar4->x;
+    uVar22 = pVVar4->y;
+    fVar1 = pVVar4->z;
     (__return_storage_ptr__->m_Normal).x = (float)uVar21;
     (__return_storage_ptr__->m_Normal).y = (float)uVar22;
     (__return_storage_ptr__->m_Normal).z = fVar1;
     __return_storage_ptr__->m_Distance =
-         (float)((uint)((float)uVar21 * (boxCenter.x + (float)puVar5 * fVar10) + (float)uVar22 * 0.0
+         (float)((uint)((float)uVar22 * (boxCenter.y + (float)pVVar2 * fVar10) + (float)uVar21 * 0.0
                        + fVar1 * (boxCenter.z + fVar6 * fVar10)) ^
                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     return __return_storage_ptr__;

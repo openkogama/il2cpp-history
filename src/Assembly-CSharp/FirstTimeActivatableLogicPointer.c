@@ -485,27 +485,30 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::
       pOVar2 = pOVar1->klass;
       uVar3._0_2_ = pOVar2[1]._1.interfaces_count;
       uVar3._2_2_ = pOVar2[1]._1.interface_offsets_count;
-      puVar4 = (undefined8 *)(**(code **)&pOVar2[1]._1.nested_type_count)(&fStack_5,pOVar1,uVar3);
+      puVar4 = (undefined8 *)(**(code **)&pOVar2[1]._1.nested_type_count)(&uStack_5,pOVar1,uVar3);
       uVar6 = (this->fields).bubbleWorldSpaceOffset.x;
       uVar7 = (this->fields).bubbleWorldSpaceOffset.y;
-      uStack_8._4_4_ = (float)((ulonglong)*puVar4 >> 0x20);
-      uStack_8._0_4_ = (float)*puVar4;
-      pVVar9 = &(this->fields).offset;
-      _fStack_10 = CONCAT44(pVVar9->x,uVar6);
-      fStack_10 = (this->fields).offset.y;
+      fStack_8 = (float)((ulonglong)*puVar4 >> 0x20);
+      fStack_9 = (float)*puVar4;
+      fVar10 = fStack_8 + (float)uVar7;
+      fStack_11 = *(float *)(puVar4 + 1) + (this->fields).bubbleWorldSpaceOffset.z;
+      uStack_5 = CONCAT44(fVar10,(float)uVar6 + fStack_9);
+      pVVar12 = &(this->fields).offset;
+      _fStack_10 = CONCAT44(pVVar12->x,fStack_9);
+      fStack_13 = (this->fields).offset.y;
       if (x != (TextBubbleController *)0x0) {
-        worldPosition.z = (this->fields).bubbleWorldSpaceOffset.z + *(float *)(puVar4 + 1);
-        worldPosition.x = (float)uVar6 + (float)uStack_8;
-        worldPosition.y = uStack_8._4_4_ + (float)uVar7;
+        worldPosition.z = fStack_11;
+        worldPosition.x = (float)uVar6 + fStack_9;
+        worldPosition.y = fVar10;
         TextBubbleController::TextBubbleController_UpdatePosition3D
-                  (x,bubbleId,worldPosition,*pVVar9,(MethodInfo *)0x0);
+                  (x,bubbleId,worldPosition,*pVVar12,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

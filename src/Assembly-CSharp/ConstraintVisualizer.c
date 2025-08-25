@@ -662,37 +662,52 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_OnDestroy
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).constraint;
-  if (((pIVar1 != (IModelingConstraint *)0x0) &&
-      ((TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment <=
-       (pIVar1->klass->_1).naturalAligment)) &&
-     ((pIVar1->klass->_1).typeHierarchy
-      [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] ==
-      (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
-    this_00 = (EventHandler_1_Object_ *)
-              func_?(TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_
-               ,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
-      cRam_? = '\x01';
+  if (pIVar1 != (IModelingConstraint *)0x0) {
+    if (((pIVar1->klass->_1).naturalAligment <
+         (TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment) ||
+       ((pIVar1->klass->_1).typeHierarchy
+        [(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
+      bVar2 = false;
     }
-    pDVar2 = (Delegate *)pIVar1[0xb].monitor;
-    do {
-      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         (pDVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      iVar3 = 0;
-      if ((pDVar2 != (Delegate *)0x0) && (iVar3 = func_?(pDVar2), iVar3 == 0)) {
-        func_?(pDVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
+    else {
+      bVar2 = true;
+    }
+    pIVar3 = (IModelingConstraint *)0x0;
+    if (bVar2) {
+      pIVar3 = pIVar1;
+    }
+    if (pIVar3 != (IModelingConstraint *)0x0) {
+      this_00 = (EventHandler_1_Object_ *)
+                func_?(TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_
+                 ,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+        cRam_? = '\x01';
       }
-      this_00 = (EventHandler_1_Object_ *)&UNK_?;
-      pDVar5 = (Delegate *)&pIVar1[0xb].monitor;
-      pDVar2 = (Delegate *)func_?(&pIVar1[0xb].monitor,iVar3);
-    } while (pDVar2 != pDVar5);
+      pDVar4 = (Delegate *)pIVar3[0xb].monitor;
+      ppMVar5 = &pIVar3[0xb].monitor;
+      do {
+        pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                           (pDVar4,(Delegate *)this_00,(MethodInfo *)pDVar4);
+        iVar6 = 0;
+        if (pDVar4 != (Delegate *)0x0) {
+          ppMVar5 = (MonitorData **)&UNK_?;
+          iVar6 = func_?(pDVar4);
+          if (iVar6 == 0) {
+            func_?(pDVar4);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+        }
+        pDVar8 = (Delegate *)&UNK_?;
+        pDVar4 = (Delegate *)func_?(ppMVar5,iVar6);
+      } while (pDVar4 != pDVar8);
+    }
   }
   return;
 }

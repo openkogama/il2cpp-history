@@ -96,12 +96,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_AppendRecursive
     OStack_5.klass =
          (Object__Class *)func_?(0,TypeInfo__System__Collections__IEnumerable,collection);
     unaff_ESI = &OStack_5;
+    unaff_EBX = (Object__Class *)&pIStack_4;
     _Stack_8.__klassIndex = 1;
-    unaff_EBX = (IEnumerator__Class *)&pIStack_4;
     while (OStack_5.klass != (Object__Class *)0x0) {
       cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,OStack_5.klass);
-      pOVar7 = OStack_5.klass;
-      pIVar8 = TypeInfo__System__Collections__IEnumerator;
+      unaff_EBX = OStack_5.klass;
       if (cVar6 == '\0') {
         _Stack_8.__klassIndex = -1;
         pIStack_4 = (Il2CppImage *)func_?(OStack_5.klass,TypeInfo__System__IDisposable);
@@ -113,100 +112,98 @@ void Assembly-CSharp.dll::Extensions::Extensions_AppendRecursive
         *unaff_FS_OFFSET = _Stack_10;
         return;
       }
-      unaff_ESI = (Object *)0x0;
       if (OStack_5.klass == (Object__Class *)0x0) break;
-      pIVar9 = ((OStack_5.klass)->_0).image;
-      uVar10 = 0;
-      uVar11 = *(ushort *)((int)&pIVar9[4].nameNoExt + 2);
-      if (uVar11 != 0) {
+      pIVar7 = ((OStack_5.klass)->_0).image;
+      uVar8 = 0;
+      uVar9 = *(ushort *)((int)&pIVar7[4].nameNoExt + 2);
+      if (uVar9 != 0) {
         do {
-          if (*(IEnumerator__Class **)(pIVar9[2].name + (uint)uVar10 * 8) ==
+          if (*(IEnumerator__Class **)(pIVar7[2].name + (uint)uVar8 * 8) ==
               TypeInfo__System__Collections__IEnumerator) {
-            pIVar9 = ((OStack_5.klass)->_0).image;
-            pp_Var8 = &pIVar9[4].metadataHandle +
-                      *(int *)(pIVar9[2].name + (uint)uVar10 * 8 + 4) * 2;
+            pIVar7 = ((OStack_5.klass)->_0).image;
+            pp_Var6 = &pIVar7[4].metadataHandle +
+                      *(int *)(pIVar7[2].name + (uint)uVar8 * 8 + 4) * 2;
             goto code_?;
           }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
+          uVar8 = uVar8 + 1;
+        } while (uVar8 < uVar9);
       }
-      pp_Var8 = (Il2CppMetadataImageHandle *)
+      pp_Var6 = (Il2CppMetadataImageHandle *)
                 func_?(OStack_5.klass,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
       unaff_ESI = (Object *)
-                  (*(code *)*pp_Var8)(pOVar7,(Il2CppNameToTypeHandleHashTable *)pp_Var8[1]);
-      unaff_EBX = pIVar8;
+                  (*(code *)*pp_Var6)(unaff_EBX,(Il2CppNameToTypeHandleHashTable *)pp_Var6[1]);
       if (OStack_5.monitor._3_1_ == '\0' && eachEntryNewLine == 0) {
-        pSVar12 = ::StringLiteral___;
+        pSVar10 = ::StringLiteral___;
         if (sb == (StringBuilder *)0x0) break;
       }
       else {
         OStack_5.monitor._3_1_ = '\0';
         if (sb == (StringBuilder *)0x0) break;
-        iVar13 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_get_Length
+        iVar11 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_get_Length
                           (sb,(MethodInfo *)0x0);
-        if (iVar13 != 0) {
-          pSVar12 = mscorlib.dll::System::Environment::Environment_get_NewLine((MethodInfo *)0x0);
+        if (iVar11 != 0) {
+          pSVar10 = mscorlib.dll::System::Environment::Environment_get_NewLine((MethodInfo *)0x0);
           mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,pSVar12,(MethodInfo *)0x0);
+                    (sb,pSVar10,(MethodInfo *)0x0);
         }
         if (::StringLiteral__ == (String *)0x0) break;
-        pSVar12 = mscorlib.dll::System::String::String_PadLeft
+        pSVar10 = mscorlib.dll::System::String::String_PadLeft
                             (::StringLiteral__,depth * 2,(MethodInfo *)0x0);
       }
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                (sb,pSVar12,(MethodInfo *)0x0);
+                (sb,pSVar10,(MethodInfo *)0x0);
       if (unaff_ESI == (Object *)0x0) {
 code_?:
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10
                   (sb,unaff_ESI,(MethodInfo *)0x0);
       }
       else {
-        pOVar14 = (Object *)0x0;
+        pOVar12 = (Object *)0x0;
         if ((KeyValuePair_2_System_Object_System_Object___Class *)unaff_ESI->klass ==
             TypeInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>) {
-          pOVar14 = unaff_ESI;
+          pOVar12 = unaff_ESI;
         }
-        if (pOVar14 == (Object *)0x0) goto code_?;
+        if (pOVar12 == (Object *)0x0) goto code_?;
         if ((unaff_ESI->klass->_0).element_class !=
             (TypeInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>->
             _0).element_class) goto code_?;
-        piVar15 = (int *)func_?();
-        unaff_EBX = (IEnumerator__Class *)*piVar15;
-        unaff_ESI = (Object *)piVar15[1];
-        pSVar16 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+        piVar13 = (int *)func_?();
+        unaff_EBX = (Object__Class *)*piVar13;
+        unaff_ESI = (Object *)piVar13[1];
+        pSVar14 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                             (sb,StringLiteral__k__,(MethodInfo *)0x0);
-        if (((unaff_EBX == (IEnumerator__Class *)0x0) ||
-            (pSVar12 = (String *)func_?(3,unaff_EBX), pSVar16 == (StringBuilder *)0x0)) ||
-           (pSVar16 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                                (pSVar16,pSVar12,(MethodInfo *)0x0), pSVar16 == (StringBuilder *)0x0
+        if (((unaff_EBX == (Object__Class *)0x0) ||
+            (pSVar10 = (String *)func_?(3,unaff_EBX), pSVar14 == (StringBuilder *)0x0)) ||
+           (pSVar14 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                                (pSVar14,pSVar10,(MethodInfo *)0x0), pSVar14 == (StringBuilder *)0x0
            )) break;
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                  (pSVar16,StringLiteral__v__,(MethodInfo *)0x0);
-        iVar17 = func_?();
-        if (iVar17 == 0) {
+                  (pSVar14,StringLiteral__v__,(MethodInfo *)0x0);
+        iVar15 = func_?();
+        if (iVar15 == 0) {
 code_?:
-          pSVar12 = StringLiteral_NULL;
+          pSVar10 = StringLiteral_NULL;
           if (unaff_ESI != (Object *)0x0) {
-            pSVar12 = (String *)func_?(3,unaff_ESI);
+            pSVar10 = (String *)func_?(3,unaff_ESI);
           }
           mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    (sb,pSVar12,(MethodInfo *)0x0);
+                    (sb,pSVar10,(MethodInfo *)0x0);
           mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6
                     (sb,0x5d,(MethodInfo *)0x0);
         }
         else {
           if (unaff_ESI != (Object *)0x0) {
-            pOVar14 = (Object *)0x0;
+            pOVar12 = (Object *)0x0;
             if ((String__Class *)unaff_ESI->klass == TypeInfo__System__String) {
-              pOVar14 = unaff_ESI;
+              pOVar12 = unaff_ESI;
             }
-            if (pOVar14 != (Object *)0x0) goto code_?;
+            if (pOVar12 != (Object *)0x0) goto code_?;
           }
           if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__Extensions);
           }
-          unaff_EBX = (IEnumerator__Class *)TypeInfo__System__Collections__IEnumerable;
+          unaff_EBX = (Object__Class *)TypeInfo__System__Collections__IEnumerable;
           if (unaff_ESI == (Object *)0x0) {
             collection_00 = (IEnumerable *)0x0;
           }
@@ -227,8 +224,8 @@ code_?:
   func_?(unaff_ESI,unaff_EBX);
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1526,7 +1523,7 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
     if (bVar1 == 0) {
       return defaultValue;
     }
-    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)hashtable
@@ -1546,12 +1543,12 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
       if (pTVar3 == (Type *)0x0) goto code_?;
       cVar4 = (*(code *)(pTVar3->klass->vtable).get_IsEnum.method)
                         (pTVar3,(pTVar3->klass->vtable).get_IsMarshalByRef.methodPtr);
-      if ((cVar4 == '\0') || (unaff_EBX.m_Index == 0)) {
+      if ((cVar4 == '\0') || (unaff_EDI.m_Index == 0)) {
         return defaultValue;
       }
       TVar5.m_Index = 0;
-      if (*(Int32__Class **)unaff_EBX.m_Index == TypeInfo__System__Int32) {
-        TVar5 = unaff_EBX;
+      if (*(Int32__Class **)unaff_EDI.m_Index == TypeInfo__System__Int32) {
+        TVar5 = unaff_EDI;
       }
       if (TVar5.m_Index == 0) {
         return defaultValue;
@@ -1561,11 +1558,11 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
     if (((uint)((Il2CppClass *)handle.value)->vtable[0].methodPtr & 0x100) == 0) {
       handle.value = (void *)func_?(handle.value);
     }
-    if (unaff_EBX.m_Index == 0) {
+    if (unaff_EDI.m_Index == 0) {
       pOVar6 = (Object *)0x0;
     }
     else {
-      pOVar6 = (Object *)func_?(unaff_EBX.m_Index,handle.value);
+      pOVar6 = (Object *)func_?(unaff_EDI.m_Index,handle.value);
       if (pOVar6 == (Object *)0x0) goto code_?;
     }
     return pOVar6;
@@ -1573,7 +1570,7 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
 code_?:
   func_?();
 code_?:
-  func_?(unaff_EBX.m_Index,handle.value);
+  func_?(unaff_EDI.m_Index,handle.value);
   pcVar7 = (code *)swi(3);
   pOVar6 = (Object *)(*pcVar7)();
   return pOVar6;

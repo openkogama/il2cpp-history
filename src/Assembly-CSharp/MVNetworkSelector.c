@@ -32,26 +32,36 @@ code_?:
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    this_01 = (MVGroup *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_00,id,(MethodInfo *)0x0);
-    if (this_01 != (MVGroup *)0x0) {
-      if (((TypeInfo__MVGroup->_1).naturalAligment <= (this_01->klass->_1).naturalAligment) &&
+    pMVar3 = (MVGroup *)
+             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_00,id,(MethodInfo *)0x0);
+    if (pMVar3 != (MVGroup *)0x0) {
+      if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
          ((MVGroup__Class *)
-          (this_01->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] ==
+          (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
           TypeInfo__MVGroup)) {
+        bVar4 = false;
+      }
+      else {
+        bVar4 = true;
+      }
+      this_01 = (MVGroup *)0x0;
+      if (bVar4) {
+        this_01 = pMVar3;
+      }
+      if (this_01 != (MVGroup *)0x0) {
         this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                   MVGroup::MVGroup_get_Children(this_01,(MethodInfo *)0x0);
         if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                *)&stack0xffffffd8,this_02,
                               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                              );
-          pOStack_1 = (Object__Class *)pLVar3->_list;
-          RVar4 = pLVar3->_current;
+          pOStack_1 = (Object__Class *)pLVar5->_list;
+          RVar6 = pLVar5->_current;
           do {
             bVar2 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
@@ -66,9 +76,9 @@ code_?:
                          ,method_00);
               goto code_?;
             }
-            if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
             bVar2 = MVNetworkSelector_CanRequestOwnerShip
-                              (this,*(int32_t *)((int)RVar4 + 8),(MethodInfo *)0x0);
+                              (this,*(int32_t *)((int)RVar6 + 8),(MethodInfo *)0x0);
           } while (bVar2 != 0);
           method_00 = (MethodInfo *)&UNK_?;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -87,8 +97,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
+  pcVar7 = (code *)swi(3);
+  bVar2 = (*pcVar7)();
   return bVar2;
 }
 

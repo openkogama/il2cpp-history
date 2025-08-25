@@ -226,191 +226,178 @@ void Assembly-CSharp.dll::MVTextMsg::MVTextMsg_UpdateText(MVTextMsg *this,Method
     func_?(&StringLiteral_textSize);
     cRam_? = '\x01';
   }
-  pSStack_2 = (String__Class *)0x0;
-  pSStack_3 = (String__Class *)0x0;
+  pSStack_2 = (String *)0x0;
+  pOStack_3 = (Object__Class *)0x0;
   pOVar4 = (Object *)0x0;
   pDVar5 = (this->fields)._._._.data;
   if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
   bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__TryGetValue
-                    (pDVar5,(Object *)StringLiteral_text,(Object **)&pSStack_2,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                    );
-  pOVar7 = unaff_EBX;
+           Dictionary_2_System_Object_System_Object__TryGetValue
+                     (pDVar5,(Object *)StringLiteral_text,(Object **)&pSStack_2,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                     );
+  pSVar7 = TypeInfo__System__String;
+  pOVar8 = pOVar4;
   if (bVar6 == 0) {
 code_?:
     pDVar5 = (this->fields)._._._.data;
-    if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
-code_?:
-      func_?();
-      value_02 = extraout_ECX;
-      pSVar8 = extraout_EDX;
-      pOVar7 = unaff_EBX;
-      goto code_?;
-    }
-    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__TryGetValue
-                      (pDVar5,(Object *)StringLiteral_textSize,(Object **)&pSStack_3,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                      );
-    if (bVar6 != 0) {
-      if (pSStack_3 != (String__Class *)0x0) {
-        value_02 = pSStack_3;
-        pSVar8 = (String__Class *)TypeInfo__System__Single;
-        if ((((String__Class *)(pSStack_3->_0).image)->_0).element_class !=
-            (TypeInfo__System__Single->_0).element_class) goto code_?;
-        pfVar9 = (float *)func_?(pSStack_3);
-        pMVar10 = (MVTextMsg *)*pfVar9;
-        pMVar11 = (this->fields).msgObject;
-        this = pMVar10;
-        if ((pMVar11 != (MVTextMsgObject *)0x0) &&
-           (pTVar12 = (pMVar11->fields).textMesh, pTVar12 != (TextMesh *)0x0)) {
-          this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pTVar12,(MethodInfo *)0x0);
-          stack0xffffffe4 = (float)pMVar10;
-          pMStack_13 = pMVar10;
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-    pMVar11 = (this->fields).msgObject;
-    if ((pMVar11 == (MVTextMsgObject *)0x0) ||
-       (pTVar12 = (pMVar11->fields).textMesh, pTVar12 == (TextMesh *)0x0)) goto code_?;
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pTVar12,(MethodInfo *)0x0);
-    pMStack_13 = (MVTextMsg *)0x3e4ccccd;
-    stack0xffffffe4 = 0.2;
-    pMVar10 = (MVTextMsg *)0x3e4ccccd;
-code_?:
-    if (this_01 == (Transform *)0x0) goto code_?;
-    value_00.z = (float)pMVar10;
-    value_00.x = (float)pMStack_13;
-    value_00.y = stack0xffffffe4;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (this_01,value_00,(MethodInfo *)0x0);
-    pOVar7 = pOVar4;
-    if ((TypeInfo__MessageBoxSettings->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MessageBoxSettings);
-      pOVar7 = pOVar4;
-    }
-    pSVar14 = TypeInfo__MessageBoxSettings->static_fields->defaultColor;
-    pDVar5 = (pMVar1->fields)._._._.data;
     if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
     bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__TryGetValue
-                      (pDVar5,(Object *)StringLiteral_textColor,(Object **)&stack0xfffffff0,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                      );
+             ::Dictionary_2_System_Object_System_Object__TryGetValue
+                       (pDVar5,(Object *)StringLiteral_textSize,(Object **)&pOStack_3,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                       );
     if (bVar6 == 0) {
+      pMVar9 = (this->fields).msgObject;
+      if ((pMVar9 == (MVTextMsgObject *)0x0) ||
+         (pTVar10 = (pMVar9->fields).textMesh, pTVar10 == (TextMesh *)0x0)) {
 code_?:
-      pMVar11 = (pMVar1->fields).msgObject;
-      if ((pMVar11 != (MVTextMsgObject *)0x0) &&
-         (pTVar12 = (pMVar11->fields).textMesh, pSVar14 != (Single__Array *)0x0)) {
-        if ((pSVar14->max_length == 0) ||
-           ((fVar15 = pSVar14->vector[0], pSVar14->max_length < 2 || (pSVar14->max_length < 3))))
+        func_?();
+        pSVar11 = extraout_ECX;
+        pOVar8 = unaff_EBX;
         goto code_?;
-        stack0xffffffe4 = pSVar14->vector[2];
-        pMStack_13 = (MVTextMsg *)pSVar14->vector[1];
-        fStack_16 = fVar15;
-        if (pTVar12 != (TextMesh *)0x0) {
-          value.g = pSVar14->vector[1];
-          value.r = fVar15;
-          value.b = pSVar14->vector[2];
-          value.a = 1.0;
-          UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_color
-                    (pTVar12,value,(MethodInfo *)0x0);
-          pMVar11 = (pMVar1->fields).msgObject;
-          if ((pMVar11 != (MVTextMsgObject *)0x0) &&
-             (pRVar17 = (pMVar11->fields).textMeshRenderer, pRVar17 != (Renderer *)0x0)) {
-            this_02 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                (pRVar17,(MethodInfo *)0x0);
-            pMVar11 = (pMVar1->fields).msgObject;
-            if ((pMVar11 != (MVTextMsgObject *)0x0) &&
-               ((pTVar12 = (pMVar11->fields).textMesh, pTVar12 != (TextMesh *)0x0 &&
-                (pCVar18 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::
-                           TextMesh_get_color((Color *)&fStack_16,pTVar12,(MethodInfo *)0x0),
-                this_02 != (Material *)0x0)))) {
-              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                        (this_02,*pCVar18,(MethodInfo *)0x0);
-              pDVar5 = (pMVar1->fields)._._._.data;
-              if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                value_02 = (String__Class *)&stack0xffffffec;
-                stack0xffffffe4 = (float)pDVar5;
-                bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,System::Object]::
-                        Dictionary_2_System_Object_System_Object__TryGetValue
-                                  (pDVar5,(Object *)StringLiteral_billboard,(Object **)value_02,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                  );
-                if (bVar6 == 0) goto code_?;
-                if (value_02 != (String__Class *)0x0) {
-                  pSVar8 = (String__Class *)TypeInfo__System__Boolean;
-                  pOVar7 = unaff_EBX;
-                  if ((((String__Class *)(value_02->_0).image)->_0).element_class !=
-                      (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                  pbVar19 = (byte *)func_?();
-                  pMVar11 = (pMVar1->fields).msgObject;
-                  bVar20 = *pbVar19;
-                  unaff_EBX = (Object *)(uint)bVar20;
-                  if (pMVar11 != (MVTextMsgObject *)0x0) {
-                    if (cRam_? == '\0') {
-                      func_?(&
-                                      LookAtMainCamera_MethodInfo__UnityEngine__GameObject__AddComponent<LookAtMainCamera>__
-                                     );
-                      func_?(&TypeInfo__UnityEngine__Object);
-                      cRam_? = '\x01';
-                    }
-                    this = (MVTextMsg *)(pMVar11->fields).billboardScript;
-                    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__UnityEngine__Object);
-                    }
-                    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                      ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
-                    if ((bVar20 == 0) || (bVar6 != 0)) {
-                      bVar21 = 0;
-                      if (bVar20 == 0) {
-                        bVar21 = bVar6;
-                      }
-                      if (bVar21 != 0) {
-                        pLVar22 = (pMVar11->fields).billboardScript;
-                        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?(TypeInfo__UnityEngine__Object);
-                        }
-                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                                  ((Object_1 *)pLVar22,(MethodInfo *)0x0);
-                      }
-                    }
-                    else {
-                      this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_gameObject((Component *)pMVar11,(MethodInfo *)0x0);
-                      if (this_03 == (GameObject *)0x0) goto code_?;
-                      pLVar22 = (LookAtMainCamera *)
-                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                GameObject_AddComponent_1
-                                          (this_03,
-                                           LookAtMainCamera_MethodInfo__UnityEngine__GameObject__AddComponent<LookAtMainCamera>__
-                                          );
-                      (pMVar11->fields).billboardScript = pLVar22;
-                      func_?(&(pMVar11->fields).billboardScript,pLVar22);
-                    }
+      }
+      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pTVar10,(MethodInfo *)0x0);
+      CStack_12._.m_CachedPtr = (Object_1__Fields)(void *)0x3e4ccccd;
+      stack0xffffffe4 = 0.2;
+      pMVar13 = (MVTextMsg *)0x3e4ccccd;
 code_?:
-                    if ((pMVar1->fields)._.cullingSubscriberBase == (CullingSubscriberBase *)0x0) {
-                      return;
-                    }
-                    pMVar11 = (pMVar1->fields).msgObject;
-                    this_00 = (pMVar1->fields)._.cullingSubscriberBase;
-                    if ((pMVar11 != (MVTextMsgObject *)0x0) &&
-                       (pRVar17 = (pMVar11->fields).textMeshRenderer, pRVar17 != (Renderer *)0x0)) {
-                      pBVar23 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
-                                Renderer_get_bounds((Bounds *)&stack0xffffffd4,pRVar17,
-                                                    (MethodInfo *)0x0);
-                      pMStack_13 = (MVTextMsg *)(pBVar23->m_Extents).x;
-                      unique0x100005ba = (pBVar23->m_Extents).y;
-                      fVar24 = (float10)func_?(&pMStack_13,0);
-                      CullingSubscriberBase::CullingSubscriberBase_set_Radius
-                                (this_00,(float)fVar24,(MethodInfo *)0x0);
-                      return;
+      if (this_00 == (Transform *)0x0) goto code_?;
+      value_00.z = (float)pMVar13;
+      value_00.x = (float)CStack_12._.m_CachedPtr;
+      value_00.y = stack0xffffffe4;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
+                (this_00,value_00,(MethodInfo *)0x0);
+      if ((TypeInfo__MessageBoxSettings->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MessageBoxSettings);
+      }
+      unaff_EDI = (String__Class *)TypeInfo__MessageBoxSettings->static_fields->defaultColor;
+      pDVar5 = (pMVar1->fields)._._._.data;
+      if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+      bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                         (pDVar5,(Object *)StringLiteral_textColor,(Object **)&stack0xfffffff0,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                         );
+      if (bVar6 == 0) {
+code_?:
+        pMVar9 = (pMVar1->fields).msgObject;
+        if ((pMVar9 != (MVTextMsgObject *)0x0) &&
+           (pTVar10 = (pMVar9->fields).textMesh, unaff_EDI != (String__Class *)0x0)) {
+          if (((unaff_EDI->_0).namespaze == (char *)0x0) ||
+             ((pvVar14 = (unaff_EDI->_0).byval_arg.data.dummy,
+              (unaff_EDI->_0).namespaze < (char *)0x2 ||
+              (fVar15 = *(float *)&(unaff_EDI->_0).byval_arg.attrs,
+              (unaff_EDI->_0).namespaze < (char *)0x3)))) goto code_?;
+          pvVar16 = (unaff_EDI->_0).this_arg.data.dummy;
+          stack0xffffffe4 = (float)pvVar16;
+          CStack_12._.m_CachedPtr = (Object_1__Fields)(Object_1__Fields)fVar15;
+          pvStack_17 = pvVar14;
+          if (pTVar10 != (TextMesh *)0x0) {
+            value.g = fVar15;
+            value.r = (float)pvVar14;
+            value.b = (float)pvVar16;
+            value.a = 1.0;
+            UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_color
+                      (pTVar10,value,(MethodInfo *)0x0);
+            pMVar9 = (pMVar1->fields).msgObject;
+            if ((pMVar9 != (MVTextMsgObject *)0x0) &&
+               (pRVar18 = (pMVar9->fields).textMeshRenderer, pRVar18 != (Renderer *)0x0)) {
+              unaff_EDI = (String__Class *)
+                          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                    (pRVar18,(MethodInfo *)0x0);
+              pMVar9 = (pMVar1->fields).msgObject;
+              if ((pMVar9 != (MVTextMsgObject *)0x0) &&
+                 ((pTVar10 = (pMVar9->fields).textMesh, pTVar10 != (TextMesh *)0x0 &&
+                  (pCVar19 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::
+                             TextMesh_get_color((Color *)&pvStack_17,pTVar10,(MethodInfo *)0x0),
+                  unaff_EDI != (String__Class *)0x0)))) {
+                UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                          ((Material *)unaff_EDI,*pCVar19,(MethodInfo *)0x0);
+                pDVar5 = (pMVar1->fields)._._._.data;
+                if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                  value_02 = (Object__Class *)&stack0xffffffec;
+                  stack0xffffffe4 = (float)pDVar5;
+                  CStack_12._.m_CachedPtr = (Object_1__Fields)(Object_1__Fields)&UNK_?;
+                  bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Object,System::Object]::
+                           Dictionary_2_System_Object_System_Object__TryGetValue
+                                     (pDVar5,(Object *)StringLiteral_billboard,(Object **)value_02,
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                                     );
+                  if (bVar6 == 0) goto code_?;
+                  if (value_02 != (Object__Class *)0x0) {
+                    pSVar20 = (Single__Class *)TypeInfo__System__Boolean;
+                    if ((Il2CppClass *)((value_02->_0).image)->codeGenModule !=
+                        (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+                    pbVar21 = (byte *)func_?();
+                    unaff_EDI = (String__Class *)(pMVar1->fields).msgObject;
+                    bVar22 = *pbVar21;
+                    unaff_EBX = (Object *)(uint)bVar22;
+                    if (unaff_EDI != (String__Class *)0x0) {
+                      if (cRam_? == '\0') {
+                        func_?(&
+                                        LookAtMainCamera_MethodInfo__UnityEngine__GameObject__AddComponent<LookAtMainCamera>__
+                                       );
+                        func_?(&TypeInfo__UnityEngine__Object);
+                        cRam_? = '\x01';
+                      }
+                      this = (MVTextMsg *)(unaff_EDI->_0).castClass;
+                      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                        func_?(TypeInfo__UnityEngine__Object);
+                      }
+                      bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::
+                               Object_1_op_Inequality
+                                         ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
+                      if ((bVar22 == 0) || (bVar6 != 0)) {
+                        bVar23 = 0;
+                        if (bVar22 == 0) {
+                          bVar23 = bVar6;
+                        }
+                        if (bVar23 != 0) {
+                          pIVar24 = (unaff_EDI->_0).castClass;
+                          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                            func_?(TypeInfo__UnityEngine__Object);
+                          }
+                          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                                    ((Object_1 *)pIVar24,(MethodInfo *)0x0);
+                        }
+                      }
+                      else {
+                        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_gameObject((Component *)unaff_EDI,(MethodInfo *)0x0)
+                        ;
+                        if (this_01 == (GameObject *)0x0) goto code_?;
+                        pIVar24 = (Il2CppClass *)
+                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_AddComponent_1
+                                            (this_01,
+                                             LookAtMainCamera_MethodInfo__UnityEngine__GameObject__AddComponent<LookAtMainCamera>__
+                                            );
+                        (unaff_EDI->_0).castClass = pIVar24;
+                        func_?(&(unaff_EDI->_0).castClass,pIVar24);
+                      }
+code_?:
+                      if ((pMVar1->fields)._.cullingSubscriberBase == (CullingSubscriberBase *)0x0)
+                      {
+                        return;
+                      }
+                      pMVar9 = (pMVar1->fields).msgObject;
+                      unaff_EDI = (String__Class *)(pMVar1->fields)._.cullingSubscriberBase;
+                      if ((pMVar9 != (MVTextMsgObject *)0x0) &&
+                         (pRVar18 = (pMVar9->fields).textMeshRenderer, pRVar18 != (Renderer *)0x0)) {
+                        pBVar25 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::
+                                  Renderer_get_bounds((Bounds *)&stack0xffffffd4,pRVar18,
+                                                      (MethodInfo *)0x0);
+                        CStack_12._.m_CachedPtr = (Object_1__Fields)(pBVar25->m_Extents).x;
+                        unique0x100005c8 = (pBVar25->m_Extents).y;
+                        fVar26 = (float10)func_?(&CStack_12,0);
+                        CullingSubscriberBase::CullingSubscriberBase_set_Radius
+                                  ((CullingSubscriberBase *)unaff_EDI,(float)fVar26,
+                                   (MethodInfo *)0x0);
+                        return;
+                      }
                     }
                   }
                 }
@@ -418,43 +405,71 @@ code_?:
             }
           }
         }
+        goto code_?;
+      }
+      this = (MVTextMsg *)TypeInfo__System__Single;
+      unaff_EBX = pOVar8;
+      if (pOVar8 == (Object *)0x0) {
+        unaff_EDI = (String__Class *)0x0;
+        goto code_?;
+      }
+      unaff_EDI = (String__Class *)func_?(pOVar8,TypeInfo__System__Single);
+      if (unaff_EDI != (String__Class *)0x0) goto code_?;
+      goto code_?;
+    }
+    if (pOStack_3 == (Object__Class *)0x0) goto code_?;
+    value_02 = pOStack_3;
+    pSVar20 = TypeInfo__System__Single;
+    if ((Il2CppClass *)((pOStack_3->_0).image)->codeGenModule ==
+        (TypeInfo__System__Single->_0).element_class) {
+      pfVar27 = (float *)func_?(pOStack_3);
+      pMVar13 = (MVTextMsg *)*pfVar27;
+      pMVar9 = (this->fields).msgObject;
+      this = pMVar13;
+      if ((pMVar9 != (MVTextMsgObject *)0x0) &&
+         (pTVar10 = (pMVar9->fields).textMesh, pTVar10 != (TextMesh *)0x0)) {
+        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pTVar10,(MethodInfo *)0x0);
+        stack0xffffffe4 = (float)pMVar13;
+        CStack_12._.m_CachedPtr = (Object_1__Fields)(Object_1__Fields)pMVar13;
+        goto code_?;
       }
       goto code_?;
     }
-    this = (MVTextMsg *)TypeInfo__System__Single;
-    unaff_EBX = pOVar7;
-    if (pOVar7 == (Object *)0x0) {
-      pSVar14 = (Single__Array *)0x0;
-      goto code_?;
-    }
-    pSVar14 = (Single__Array *)func_?(pOVar7,TypeInfo__System__Single);
-    if (pSVar14 != (Single__Array *)0x0) goto code_?;
   }
   else {
-    pMVar11 = (this->fields).msgObject;
-    if ((pMVar11 == (MVTextMsgObject *)0x0) ||
-       (pTVar12 = (pMVar11->fields).textMesh, pTVar12 == (TextMesh *)0x0)) goto code_?;
-    value_01 = (String__Class *)0x0;
-    if (pSStack_2 == (String__Class *)0x0) {
+    pMVar9 = (this->fields).msgObject;
+    if ((pMVar9 == (MVTextMsgObject *)0x0) ||
+       (pTVar10 = (pMVar9->fields).textMesh, pTVar10 == (TextMesh *)0x0)) goto code_?;
+    value_01 = (String *)0x0;
+    if (pSStack_2 == (String *)0x0) {
 code_?:
       UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                (pTVar12,(String *)value_01,(MethodInfo *)0x0);
+                (pTVar10,value_01,(MethodInfo *)0x0);
+      unaff_EDI = pSVar7;
+      pOVar8 = pOVar4;
       goto code_?;
     }
-    if ((String__Class *)(pSStack_2->_0).image == TypeInfo__System__String) {
+    if (pSStack_2->klass == TypeInfo__System__String) {
       value_01 = pSStack_2;
     }
-    value_02 = pSStack_2;
-    pSVar8 = TypeInfo__System__String;
-    if (value_01 != (String__Class *)0x0) goto code_?;
+    pSVar11 = pSStack_2;
+    pOVar8 = unaff_EBX;
+    unaff_EDI = TypeInfo__System__String;
+    if (value_01 != (String *)0x0) goto code_?;
 code_?:
-    func_?(value_02,pSVar8);
+    func_?(pSVar11,unaff_EDI);
+code_?:
+    func_?(pOVar8,this);
+    value_02 = extraout_ECX_00;
+    pSVar20 = extraout_EDX;
   }
-  func_?(pOVar7,this);
+code_?:
+  func_?(value_02,pSVar20);
 code_?:
   func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 

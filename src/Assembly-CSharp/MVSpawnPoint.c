@@ -178,22 +178,22 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
           TVar5 = TVar4;
         }
         if (TVar5.m_Index != 0) {
-          pIVar6 = (TypeInfo__System__Boolean->_0).element_class;
-          bVar7 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar6;
-          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar6) goto code_?;
+          pBVar6 = TypeInfo__System__Boolean;
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar8 = (int8_t *)func_?();
+          piVar7 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar8,
+                    ((Nullable_1_SByte_ *)&this,*piVar7,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar9 != (MVNetworkGame *)0x0) {
-      this_00 = (MethodInfo *)(pMVar9->fields).teamManager;
+    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar8 != (MVNetworkGame *)0x0) {
+      this_00 = (MethodInfo *)(pMVar8->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -220,20 +220,21 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
     }
   }
 code_?:
-  bVar7 = 0;
   func_?();
   TVar4.m_Index = (int32_t)extraout_EDX;
+  pBVar6 = unaff_EDI;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
-  cVar10 = func_?();
-  bVar11 = (byte)((ushort)extraout_DX >> 8);
-  bVar12 = CARRY1(bRam_?,bVar11);
-  bVar11 = bRam_? + bVar11;
-  bRam_? = bVar11 + bVar7;
-  *(char *)(unaff_EBX + -0x3c) =
-       *(char *)(unaff_EBX + -0x3c) + cVar10 + (bVar12 || CARRY1(bVar11,bVar7));
-  in(extraout_DX);
+  uVar9 = func_?();
+  *(char *)uVar9 = *(char *)uVar9 + '\x01';
+  in_AF = 9 < ((byte)uVar9 & 0xf) | in_AF;
+  cRam_? = cRam_? + ((byte)uVar9 + in_AF * '\x06' & 0xf) + in_AF;
+  pIVar10 = (pBVar6->_0).image;
+  (pBVar6->_0).image = (Il2CppImage *)((int)&pMVar1->klass + (int)(pBVar6->_0).image);
+  *unaff_EBX = *unaff_EBX + (char)((uint6)uVar9 >> 0x20) + CARRY4((uint)pIVar10,(uint)pMVar1);
+  (pBVar6->_0).image = (Il2CppImage *)((int)&pMVar1->klass + (int)(pBVar6->_0).image);
+  in((short)((uint6)uVar9 >> 0x20));
   switch(this) {
   case (MVSpawnPoint *)0x27:
     return;

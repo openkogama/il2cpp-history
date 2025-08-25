@@ -183,85 +183,94 @@ void Assembly-CSharp.dll::RTG::SphereTreeNode`1[System::Object]::
                (SphereTreeNode_1_System_Object_ *this,MethodInfo *method)
 
 {
-  if ((this->fields)._numChildren != 0) {
-    if (this == (SphereTreeNode_1_System_Object_ *)0x0) {
-code_?:
-      func_?();
-code_?:
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+  pSVar1 = (SphereTreeNode_1_System_Object_ *)(this->fields)._numChildren;
+  while( true ) {
+    if (pSVar1 == (SphereTreeNode_1_System_Object_ *)0x0) {
       return;
     }
-    do {
+    pSVar2 = (this->fields)._children;
+    if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
+    if (pSVar2->max_length == 0) goto code_?;
+    pSVar1 = pSVar2->vector[0];
+    if (pSVar1 == (SphereTreeNode_1_System_Object_ *)0x0) break;
+    fStack_3 = (pSVar1->fields)._sphere._center.z;
+    uStack_4._0_4_ = (pSVar1->fields)._sphere._center.x;
+    uStack_4._4_4_ = (pSVar1->fields)._sphere._center.y;
+    pSVar2 = (this->fields)._children;
+    if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
+    if (pSVar2->max_length < 2) goto code_?;
+    if (pSVar2->vector[1] != (SphereTreeNode_1_System_Object_ *)0x0) {
       pSVar2 = (this->fields)._children;
-      if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) goto code_?;
-      if (pSVar2->max_length == 0) goto code_?;
-      pSVar3 = pSVar2->vector[0];
-      if (pSVar3 == (SphereTreeNode_1_System_Object_ *)0x0) goto code_?;
-      fStack_4 = (pSVar3->fields)._sphere._center.z;
-      uStack_5._0_4_ = (pSVar3->fields)._sphere._center.x;
-      uStack_5._4_4_ = (pSVar3->fields)._sphere._center.y;
-      pSVar2 = (this->fields)._children;
-      if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) goto code_?;
-      if (pSVar2->max_length < 2) goto code_?;
-      if (pSVar2->vector[1] != (SphereTreeNode_1_System_Object_ *)0x0) {
-        pSVar2 = (this->fields)._children;
-        if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) goto code_?;
+      if (pSVar2 != (SphereTreeNode_1_System_Object___Array *)0x0) {
         if (pSVar2->max_length < 2) goto code_?;
-        pSVar6 = pSVar2->vector[1];
-        if (pSVar6 == (SphereTreeNode_1_System_Object_ *)0x0) goto code_?;
-        uVar7 = (pSVar6->fields)._sphere._center.x;
-        uVar8 = (pSVar6->fields)._sphere._center.y;
-        fStack_4 = (pSVar6->fields)._sphere._center.z + (pSVar3->fields)._sphere._center.z;
-        uStack_5 = CONCAT44((float)uVar8 + uStack_5._4_4_,(float)uVar7 + (float)uStack_5);
-      }
-      fVar9 = _UNK_? / (float)(this->fields)._numChildren;
-      (this->fields)._sphere._center.x = (float)uStack_5 * fVar9;
-      (this->fields)._sphere._center.y = uStack_5._4_4_ * fVar9;
-      (this->fields)._sphere._center.z = fStack_4 * fVar9;
-      pSVar2 = (this->fields)._children;
-      if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) goto code_?;
-      if (pSVar2->max_length == 0) goto code_?;
-      pSVar3 = pSVar2->vector[0];
-      if (pSVar3 == (SphereTreeNode_1_System_Object_ *)0x0) goto code_?;
-      uVar10 = (pSVar3->fields)._sphere._center.x;
-      uVar11 = (pSVar3->fields)._sphere._center.y;
-      fStack_12 = (pSVar3->fields)._sphere._center.z - fStack_4 * fVar9;
-      uStack_13 = CONCAT44((float)uVar11 - uStack_5._4_4_ * fVar9,
-                           (float)uVar10 - (float)uStack_5 * fVar9);
-      fVar14 = (float10)func_?(&uStack_13,0);
-      pSVar2 = (this->fields)._children;
-      if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) goto code_?;
-      if (pSVar2->max_length == 0) goto code_?;
-      if (pSVar2->vector[0] == (SphereTreeNode_1_System_Object_ *)0x0) goto code_?;
-      fStack_15 = (float)fVar14 + (pSVar2->vector[0]->fields)._sphere._radius;
-      pSVar2 = (this->fields)._children;
-      if (pSVar2->max_length < 2) goto code_?;
-      fVar9 = fStack_15;
-      if (pSVar2->vector[1] != (SphereTreeNode_1_System_Object_ *)0x0) {
-        pSVar3 = pSVar2->vector[1];
-        uVar16 = (pSVar3->fields)._sphere._center.x;
-        uVar17 = (pSVar3->fields)._sphere._center.y;
-        uVar18 = (this->fields)._sphere._center.x;
-        uVar19 = (this->fields)._sphere._center.y;
-        fStack_12 = (pSVar3->fields)._sphere._center.z - (this->fields)._sphere._center.z;
-        uStack_13 = CONCAT44((float)uVar17 - (float)uVar19,(float)uVar16 - (float)uVar18);
-        fVar14 = (float10)func_?(&uStack_13,0);
-        pSVar2 = (this->fields)._children;
-        if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) goto code_?;
-        if (pSVar2->max_length < 2) goto code_?;
-        if (pSVar2->vector[1] == (SphereTreeNode_1_System_Object_ *)0x0) goto code_?;
-        fVar20 = (float)fVar14 + (pSVar2->vector[1]->fields)._sphere._radius;
-        fVar9 = fStack_15;
-        if (fStack_15 < fVar20) {
-          fVar9 = fVar20;
+        pSVar5 = pSVar2->vector[1];
+        if (pSVar5 != (SphereTreeNode_1_System_Object_ *)0x0) {
+          uVar6 = (pSVar5->fields)._sphere._center.x;
+          uVar7 = (pSVar5->fields)._sphere._center.y;
+          fStack_3 = (pSVar5->fields)._sphere._center.z + (pSVar1->fields)._sphere._center.z;
+          uStack_4 = CONCAT44((float)uVar7 + uStack_4._4_4_,(float)uVar6 + (float)uStack_4);
+          goto code_?;
         }
       }
-      Sphere::Sphere_set_Radius(&(this->fields)._sphere,fVar9,(MethodInfo *)0x0);
-      this = (this->fields)._parent;
-    } while (this != (SphereTreeNode_1_System_Object_ *)0x0);
+      break;
+    }
+code_?:
+    fVar8 = _UNK_? / (float)(this->fields)._numChildren;
+    (this->fields)._sphere._center.x = (float)uStack_4 * fVar8;
+    (this->fields)._sphere._center.y = uStack_4._4_4_ * fVar8;
+    (this->fields)._sphere._center.z = fStack_3 * fVar8;
+    pSVar2 = (this->fields)._children;
+    if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
+    if (pSVar2->max_length == 0) goto code_?;
+    pSVar1 = pSVar2->vector[0];
+    if (pSVar1 == (SphereTreeNode_1_System_Object_ *)0x0) break;
+    uVar9 = (pSVar1->fields)._sphere._center.x;
+    uVar10 = (pSVar1->fields)._sphere._center.y;
+    fStack_11 = (pSVar1->fields)._sphere._center.z - fStack_3 * fVar8;
+    uStack_12 = CONCAT44((float)uVar10 - uStack_4._4_4_ * fVar8,
+                         (float)uVar9 - (float)uStack_4 * fVar8);
+    fVar13 = (float10)func_?(&uStack_12,0);
+    pSVar2 = (this->fields)._children;
+    if (pSVar2 == (SphereTreeNode_1_System_Object___Array *)0x0) break;
+    if (pSVar2->max_length == 0) goto code_?;
+    if (pSVar2->vector[0] == (SphereTreeNode_1_System_Object_ *)0x0) break;
+    fStack_14 = (float)fVar13 + (pSVar2->vector[0]->fields)._sphere._radius;
+    pSVar2 = (this->fields)._children;
+    if (pSVar2->max_length < 2) goto code_?;
+    fVar8 = fStack_14;
+    if (pSVar2->vector[1] != (SphereTreeNode_1_System_Object_ *)0x0) {
+      pSVar1 = pSVar2->vector[1];
+      uVar15 = (pSVar1->fields)._sphere._center.x;
+      uVar16 = (pSVar1->fields)._sphere._center.y;
+      uVar17 = (this->fields)._sphere._center.x;
+      uVar18 = (this->fields)._sphere._center.y;
+      fStack_11 = (pSVar1->fields)._sphere._center.z - (this->fields)._sphere._center.z;
+      uStack_12 = CONCAT44((float)uVar16 - (float)uVar18,(float)uVar15 - (float)uVar17);
+      fVar13 = (float10)func_?(&uStack_12,0);
+      pSVar2 = (this->fields)._children;
+      if (pSVar2 != (SphereTreeNode_1_System_Object___Array *)0x0) {
+        if (pSVar2->max_length < 2) goto code_?;
+        if (pSVar2->vector[1] != (SphereTreeNode_1_System_Object_ *)0x0) {
+          fVar19 = (float)fVar13 + (pSVar2->vector[1]->fields)._sphere._radius;
+          fVar8 = fStack_14;
+          if (fStack_14 < fVar19) {
+            fVar8 = fVar19;
+          }
+          goto code_?;
+        }
+      }
+      break;
+    }
+code_?:
+    Sphere::Sphere_set_Radius(&(this->fields)._sphere,fVar8,(MethodInfo *)0x0);
+    this = (this->fields)._parent;
+    pSVar1 = this;
   }
+  func_?();
+code_?:
+  func_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

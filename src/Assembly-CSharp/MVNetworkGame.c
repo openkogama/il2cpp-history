@@ -698,7 +698,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         if (pOVar9 == (Object *)0x0) goto code_?;
         if ((pOVar9->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
         goto code_?;
-        func_?();
+        piVar11 = (int32_t *)func_?();
+        profileID = *piVar11;
         pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                  Object]::Dictionary_2_System_Byte_System_Object__get_Item
                            (this_02,0x59,
@@ -717,19 +718,19 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         if ((pOVar9->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
         goto code_?;
         func_?();
-        pSStack_11 = (String *)
+        pSStack_12 = (String *)
                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                      Object]::Dictionary_2_System_Byte_System_Object__get_Item
                                (this_02,0x9a,
                                 MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                                );
-        if (pSStack_11 != (String *)0x0) {
-          pSVar12 = (String *)0x0;
-          if (pSStack_11->klass == TypeInfo__System__String) {
-            pSVar12 = pSStack_11;
+        if (pSStack_12 != (String *)0x0) {
+          pSVar13 = (String *)0x0;
+          if (pSStack_12->klass == TypeInfo__System__String) {
+            pSVar13 = pSStack_12;
           }
-          pSStack_11 = pSVar12;
-          if (pSVar12 == (String *)0x0) goto code_?;
+          pSStack_12 = pSVar13;
+          if (pSVar13 == (String *)0x0) goto code_?;
         }
         pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                  Object]::Dictionary_2_System_Byte_System_Object__get_Item
@@ -739,7 +740,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         if (pOVar9 == (Object *)0x0) goto code_?;
         if ((pOVar9->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
         goto code_?;
-        func_?();
+        pbVar14 = (bool *)func_?();
+        bVar5 = *pbVar14;
         pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                  Object]::Dictionary_2_System_Byte_System_Object__get_Item
                            (this_02,0x44,
@@ -748,10 +750,10 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         if (pOVar9 == (Object *)0x0) goto code_?;
         if ((pOVar9->klass->_0).element_class !=
             (TypeInfo__MV__Common__PlayerGameState->_0).element_class) goto code_?;
-        puVar13 = (uint8_t *)func_?();
-        uVar14 = *puVar13;
-        PStack_15 = CONCAT31(PStack_15._1_3_,uVar14);
-        pSVar12 = (String *)
+        puVar15 = (uint8_t *)func_?();
+        uVar16 = *puVar15;
+        PStack_17 = CONCAT31(PStack_17._1_3_,uVar16);
+        pSVar13 = (String *)
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__get_Item
                             (this_02,0xdf,
@@ -760,42 +762,40 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pSVar16 = (String *)0x0;
-        if (pSVar12 != (String *)0x0) {
-          if (pSVar12->klass == TypeInfo__System__String) {
-            pSVar16 = pSVar12;
+        pSVar18 = (String *)0x0;
+        if (pSVar13 != (String *)0x0) {
+          if (pSVar13->klass == TypeInfo__System__String) {
+            pSVar18 = pSVar13;
           }
-          if (pSVar16 == (String *)0x0) goto code_?;
+          if (pSVar18 == (String *)0x0) goto code_?;
         }
-        Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                  (pSVar16,
-                   MV__WorldObject__GamePassSystem__PlayerPlanetDataRemote_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerPlanetDataRemote>_System__String_
-                  );
-        iVar17 = 0xe0;
-        this_05 = this_02;
-        pMVar4 = 
-        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-        ;
-        pSVar16 = (String *)
+        playerPlanetDataRemote =
+             (PlayerPlanetDataRemote *)
+             Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                       (pSVar18,
+                        MV__WorldObject__GamePassSystem__PlayerPlanetDataRemote_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::GamePassSystem::PlayerPlanetDataRemote>_System__String_
+                       );
+        pSVar18 = (String *)
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__get_Item
                             (this_02,0xe0,
                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                             );
-        pSVar12 = (String *)0x0;
-        if (pSVar16 != (String *)0x0) {
-          if (pSVar16->klass == TypeInfo__System__String) {
-            pSVar12 = pSVar16;
+        pSVar13 = (String *)0x0;
+        if (pSVar18 != (String *)0x0) {
+          if (pSVar18->klass == TypeInfo__System__String) {
+            pSVar13 = pSVar18;
           }
-          if (pSVar12 == (String *)0x0) goto code_?;
+          if (pSVar13 == (String *)0x0) goto code_?;
         }
-        Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                  (pSVar12,
-                   MV__WorldObject__MetaData__UserProfileData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::MetaData::UserProfileData>_System__String_
-                  );
-        userProfileData = (UserProfileData *)0xbc;
-        level = &UNK_?;
-        pMVar18 = 
+        userProfileData =
+             (UserProfileData *)
+             Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                       (pSVar13,
+                        MV__WorldObject__MetaData__UserProfileData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::MetaData::UserProfileData>_System__String_
+                       );
+        iVar19 = 0xbc;
+        pMVar4 = 
         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
         ;
         pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
@@ -803,36 +803,34 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
                            (this_02,0xbc,
                             MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                            );
-        bVar5 = (bool)pMVar18;
         if (pOVar9 == (Object *)0x0) goto code_?;
         if ((pOVar9->klass->_0).element_class !=
             (TypeInfo__MV__Common__BuildTarget->_0).element_class) goto code_?;
-        puVar19 = (undefined1 *)func_?();
-        buildTarget = CONCAT31((int3)((uint)this_02 >> 8),*puVar19);
+        puVar20 = (undefined1 *)func_?();
+        BStack_21 = CONCAT31((int3)((uint)TypeInfo__MVPlayer >> 8),*puVar20);
         this_03 = (MVPlayer *)func_?();
         MVPlayer::MVPlayer__ctor_1
-                  (this_03,(int32_t)pMVar4,0xADDR,(int32_t)level,pSStack_11,buildTarget,
-                   userProfileData,bVar5,uVar14 == 3,(PlayerPlanetDataRemote *)&UNK_?,
-                   (MethodInfo *)0x0);
+                  (this_03,(int32_t)pMVar4,profileID,0xADDR,pSStack_12,BStack_21,
+                   userProfileData,bVar5,uVar16 == 3,playerPlanetDataRemote,(MethodInfo *)0x0);
         if (this_03 == (MVPlayer *)0x0) goto code_?;
-        (this_03->fields)._Team_k__BackingField = iVar17;
-        pSVar16 = (String *)
+        (this_03->fields)._Team_k__BackingField = iVar19;
+        pSVar18 = (String *)
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                   Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                            (this_05,0xf5,
+                            (this_02,0xf5,
                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                             );
-        pSVar12 = (String *)0x0;
-        if (pSVar16 != (String *)0x0) {
-          if (pSVar16->klass == TypeInfo__System__String) {
-            pSVar12 = pSVar16;
+        pSVar13 = (String *)0x0;
+        if (pSVar18 != (String *)0x0) {
+          if (pSVar18->klass == TypeInfo__System__String) {
+            pSVar13 = pSVar18;
           }
-          if (pSVar12 == (String *)0x0) goto code_?;
+          if (pSVar13 == (String *)0x0) goto code_?;
         }
         spawnRolesRuntimeData =
              (SpawnRolesRuntimeData *)
              Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                       (pSVar12,
+                       (pSVar13,
                         MV__WorldObject__SpawnRoles__SpawnRolesRuntimeData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData>_System__String_
                        );
         this_04 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
@@ -848,8 +846,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_CreatePlayersFromUserList
         List_1_System_Object__Add
                   ((List_1_System_Object_ *)playerList,(Object *)this_03,
                    MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_);
-        if ((this_03->fields).playerState != uVar14) {
-          MVPlayer::MVPlayer_set_PlayerState(this_03,PStack_15,(MethodInfo *)0x0);
+        if ((this_03->fields).playerState != uVar16) {
+          MVPlayer::MVPlayer_set_PlayerState(this_03,PStack_17,(MethodInfo *)0x0);
         }
       }
     }
@@ -877,9 +875,11 @@ code_?:
   func_?();
 code_?:
   func_?();
+code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  func_?();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -1988,7 +1988,7 @@ Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnCloneWorldObjectTree
 code_?:
     func_?();
 code_?:
-    pOVar1 = (Object *)func_?();
+    uVar1 = func_?();
   }
   else {
     unaff_EBX = (String *)
@@ -2002,35 +2002,39 @@ code_?:
       iVar2 = func_?(unaff_EBX,TypeInfo__System__Int32);
       if (iVar2 == 0) goto code_?;
     }
-    pOVar1 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+    pOVar3 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                        (this_01,0x14,(MethodInfo *)0x0);
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-      func_?();
-      pOVar1 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+    uVar1 = CONCAT44(TypeInfo__System__Int32,pOVar3);
+    if (pOVar3 == (Object *)0x0) goto code_?;
+    if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+      func_?(pOVar3);
+      pOVar3 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                          (this_01,0x3a,(MethodInfo *)0x0);
-      if (pOVar1 == (Object *)0x0) goto code_?;
-      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+      uVar1 = CONCAT44(TypeInfo__System__Int32,pOVar3);
+      if (pOVar3 == (Object *)0x0) goto code_?;
+      if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      func_?();
-      pOVar1 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      func_?(pOVar3);
+      pOVar3 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                          (this_01,0x5c,(MethodInfo *)0x0);
-      if (pOVar1 == (Object *)0x0) goto code_?;
-      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+      uVar1 = CONCAT44(TypeInfo__System__Int32,pOVar3);
+      if (pOVar3 == (Object *)0x0) goto code_?;
+      if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      piVar3 = (int32_t *)func_?();
-      eventData = (EventData *)*piVar3;
-      pOVar1 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      piVar4 = (int32_t *)func_?(pOVar3);
+      eventData = (EventData *)*piVar4;
+      pOVar3 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                          (this_01,0x65,(MethodInfo *)0x0);
-      if (pOVar1 == (Object *)0x0) goto code_?;
-      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
+      uVar1 = CONCAT44(TypeInfo__System__Boolean,pOVar3);
+      if (pOVar3 == (Object *)0x0) goto code_?;
+      if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
       goto code_?;
-      func_?();
+      pbVar5 = (bool *)func_?(pOVar3);
+      BStack_6.m_value = *pbVar5;
       if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Boolean);
       }
-      str1 = mscorlib.dll::System::Boolean::Boolean_ToString
-                       ((Boolean *)&stack0xfffffff8,(MethodInfo *)0x0);
+      str1 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_6,(MethodInfo *)0x0);
       unaff_EBX = mscorlib.dll::System::String::String_Concat_3
                             (StringLiteral_CloneToRootGroup_,str1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -2038,21 +2042,21 @@ code_?:
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)unaff_EBX,(MethodInfo *)0x0);
-      pOVar1 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
+      pOVar3 = Photon3Unity3D.dll::ExitGames::Client::Photon::EventData::EventData_get_Item
                          (this_01,0x80,(MethodInfo *)0x0);
-      if (pOVar1 == (Object *)0x0) goto code_?;
-      if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
+      uVar1 = CONCAT44(TypeInfo__System__Int32,pOVar3);
+      if (pOVar3 == (Object *)0x0) goto code_?;
+      if ((pOVar3->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      piVar3 = (int32_t *)func_?();
+      piVar4 = (int32_t *)func_?(pOVar3);
       this_00 = (this->fields).worldNetwork;
       if (iVar2 == 0) goto code_?;
       if ((*(int *)(iVar2 + 0xc) != 0) && (1 < *(uint *)(iVar2 + 0xc))) {
         if (this_00 != (WorldNetwork *)0x0) {
-          pMVar4 = WorldNetwork::WorldNetwork_OnCloneWorldObjectTreeEvent
-                             (this_00,(int32_t)eventData,*piVar3,0,*(int32_t *)(iVar2 + 0x10),
-                              *(int32_t *)(iVar2 + 0x14),(int32_t)eventData,(int32_t)eventData,
-                              (MethodInfo *)0x0);
-          return pMVar4;
+          pMVar7 = WorldNetwork::WorldNetwork_OnCloneWorldObjectTreeEvent
+                             (this_00,0,*piVar4,(bool)eventData,*(int32_t *)(iVar2 + 0x10),
+                              *(int32_t *)(iVar2 + 0x14),0,(int32_t)eventData,(MethodInfo *)0x0);
+          return pMVar7;
         }
         goto code_?;
       }
@@ -2060,12 +2064,12 @@ code_?:
     }
   }
 code_?:
-  func_?(pOVar1);
+  func_?(uVar1);
 code_?:
   func_?(unaff_EBX,eventData);
-  pcVar5 = (code *)swi(3);
-  pMVar4 = (MVWorldObjectClient *)(*pcVar5)();
-  return pMVar4;
+  pcVar8 = (code *)swi(3);
+  pMVar7 = (MVWorldObjectClient *)(*pcVar8)();
+  return pMVar7;
 }
 
 
@@ -2696,8 +2700,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnGetBuiltInItemBusinessD
                         (Dictionary_2_System_UInt32_System_Object_ *)builtInItemBusinessData,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                        );
-    method_00 = (MethodInfo *)pDVar6->_dictionary;
-    piVar7 = (int *)(pDVar6->_current).key;
+    method_00 = (Object__Class *)pDVar6->_dictionary;
+    pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pDVar6->_current).key;
     uVar8 = *(undefined8 *)&(pDVar6->_current).value;
     uStack_1 = 1;
     while( true ) {
@@ -2714,26 +2718,31 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnGetBuiltInItemBusinessD
                   ((Object *)&stack0xffffffb8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                   ,method_00);
+                   ,(MethodInfo *)method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       pDStack_10 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)uVar8;
+      pDStack_11 = pDStack_10;
       this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
       UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
       if ((this_01 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) ||
-         (piVar7 == (int *)0x0)) break;
-      pIVar11 = TypeInfo__System__Int32;
-      if (*(Il2CppClass **)(*piVar7 + 0x20) != (TypeInfo__System__Int32->_0).element_class)
+         (pDVar7 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) break;
+      pDVar12 = pDVar7;
+      pDVar13 = (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__Int32;
+      if ((pDVar7->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      puVar12 = (undefined4 *)func_?(piVar7);
-      (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)*puVar12;
+      puVar14 = (undefined4 *)func_?(pDVar7);
+      (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)*puVar14;
       if ((pDStack_10 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
-         ((((pDStack_10->klass->_1).naturalAligment <
-            (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment ||
+         (((pDVar12 = pDStack_10,
+           pDVar13 = 
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
+           (pDStack_10->klass->_1).naturalAligment <
+           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment ||
            ((Dictionary_2_System_Object_System_Object___Class *)
             (pDStack_10->klass->_1).typeHierarchy
             [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
@@ -2744,74 +2753,74 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnGetBuiltInItemBusinessD
       builtInItemBusinessData =
            (Dictionary_2_System_Object_System_Object_ *)CONCAT13(0x70,builtInItemBusinessData._0_3_)
       ;
-      pOVar13 = (Object *)func_?(TypeInfo__System__Byte,(int)&builtInItemBusinessData + 3);
+      pOVar15 = (Object *)func_?(TypeInfo__System__Byte,(int)&builtInItemBusinessData + 3);
       if (pDStack_10 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) break;
-      TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (pDStack_10,pOVar13,
+                        (pDStack_10,pOVar15,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      uVar15 = CONCAT44(TypeInfo__System__Int32,TVar14.m_Index);
-      if (TVar14.m_Index == 0) break;
-      if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
+      uVar17 = CONCAT44(TypeInfo__System__Int32,TVar16.m_Index);
+      if (TVar16.m_Index == 0) break;
+      if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) !=
           (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      puVar12 = (undefined4 *)func_?(TVar14.m_Index);
-      this_01[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)*puVar12;
-      uStack_16 = 0xf;
-      pOVar13 = (Object *)func_?(TypeInfo__System__Byte,&uStack_16);
-      TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      puVar14 = (undefined4 *)func_?(TVar16.m_Index);
+      this_01[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)*puVar14;
+      uStack_18 = 0xf;
+      pOVar15 = (Object *)func_?(TypeInfo__System__Byte,&uStack_18);
+      TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (pDStack_10,pOVar13,
+                        (pDStack_10,pOVar15,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      uVar15 = CONCAT44(TypeInfo__System__Int32,TVar14.m_Index);
-      if (TVar14.m_Index == 0) break;
-      if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
+      uVar17 = CONCAT44(TypeInfo__System__Int32,TVar16.m_Index);
+      if (TVar16.m_Index == 0) break;
+      if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) !=
           (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      puVar12 = (undefined4 *)func_?(TVar14.m_Index);
-      this_01[1].monitor = (MonitorData *)*puVar12;
-      uStack_17 = 10;
-      pOVar13 = (Object *)func_?(TypeInfo__System__Byte,&uStack_17);
-      TVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      puVar14 = (undefined4 *)func_?(TVar16.m_Index);
+      this_01[1].monitor = (MonitorData *)*puVar14;
+      uStack_19 = 10;
+      pOVar15 = (Object *)func_?(TypeInfo__System__Byte,&uStack_19);
+      TVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (pDStack_10,pOVar13,
+                        (pDStack_10,pOVar15,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      uVar15 = CONCAT44(TypeInfo__System__String,TVar18.m_Index);
-      TVar14.m_Index = 0;
-      if (TVar18.m_Index == 0) {
+      uVar17 = CONCAT44(TypeInfo__System__String,TVar20.m_Index);
+      TVar16.m_Index = 0;
+      if (TVar20.m_Index == 0) {
         this_01[2].monitor = (MonitorData *)0x0;
       }
       else {
-        if (*(String__Class **)TVar18.m_Index == TypeInfo__System__String) {
-          TVar14 = TVar18;
+        if (*(String__Class **)TVar20.m_Index == TypeInfo__System__String) {
+          TVar16 = TVar20;
         }
-        if ((MonitorData *)TVar14.m_Index == (MonitorData *)0x0) goto code_?;
-        this_01[2].monitor = (MonitorData *)TVar14.m_Index;
-        uVar15 = CONCAT44(TypeInfo__System__String,TVar18.m_Index);
-        TVar14.m_Index = (int32_t)(MonitorData *)0x0;
-        if (*(String__Class **)TVar18.m_Index == TypeInfo__System__String) {
-          TVar14 = TVar18;
+        if ((MonitorData *)TVar16.m_Index == (MonitorData *)0x0) goto code_?;
+        this_01[2].monitor = (MonitorData *)TVar16.m_Index;
+        uVar17 = CONCAT44(TypeInfo__System__String,TVar20.m_Index);
+        TVar16.m_Index = (int32_t)(MonitorData *)0x0;
+        if (*(String__Class **)TVar20.m_Index == TypeInfo__System__String) {
+          TVar16 = TVar20;
         }
-        if ((MonitorData *)TVar14.m_Index == (MonitorData *)0x0) goto code_?;
+        if ((MonitorData *)TVar16.m_Index == (MonitorData *)0x0) goto code_?;
       }
-      func_?(&this_01[2].monitor,TVar14.m_Index);
-      uStack_19 = 100;
-      pOVar13 = (Object *)func_?(TypeInfo__System__Byte,&uStack_19);
-      TVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      func_?(&this_01[2].monitor,TVar16.m_Index);
+      uStack_21 = 100;
+      pOVar15 = (Object *)func_?(TypeInfo__System__Byte,&uStack_21);
+      TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (pDStack_10,pOVar13,
+                        (pDStack_10,pOVar15,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      uVar15 = CONCAT44(TypeInfo__System__Boolean,TVar14.m_Index);
-      if (TVar14.m_Index == 0) break;
-      if (*(Il2CppClass **)(*(int *)TVar14.m_Index + 0x20) !=
+      uVar17 = CONCAT44(TypeInfo__System__Boolean,TVar16.m_Index);
+      if (TVar16.m_Index == 0) break;
+      if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) !=
           (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-      puVar5 = (undefined1 *)func_?(TVar14.m_Index);
+      puVar5 = (undefined1 *)func_?(TVar16.m_Index);
       *(undefined1 *)((int)&this_01[3].monitor + 1) = *puVar5;
       this_00 = (this->fields).itemBusinessLogic;
       if (this_00 == (MVItemBusinessLogic *)0x0) break;
@@ -2821,20 +2830,15 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnGetBuiltInItemBusinessD
                  (int32_t)this_01[1].monitor,(String *)this_01[2].monitor,(MethodInfo *)0x0);
     }
   }
-  uVar15 = func_?();
+  uVar17 = func_?();
 code_?:
-  func_?(uVar15);
-  pDStack_10 = extraout_EDX;
+  func_?(uVar17);
+  pDVar12 = pDStack_11;
+  pDVar13 = extraout_EDX;
 code_?:
-  func_?(pDStack_10,
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 );
-  piVar7 = extraout_ECX;
-  pIVar11 = extraout_EDX_00;
-code_?:
-  func_?(piVar7,pIVar11);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  func_?(pDVar12,pDVar13);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -3562,15 +3566,15 @@ code_?:
                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                        );
     if ((pIVar1 != (IAdManager__Class *)0x0) &&
-       ((pDVar4 = (Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image,
+       ((pIVar4 = (pIVar1->_0).image,
         pDVar5 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        , (pDVar4->_1).naturalAligment <
+        , *(byte *)&pIVar4[4].assembly <
           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
           naturalAligment ||
-        ((Dictionary_2_System_Object_System_Object___Class *)
-         (pDVar4->_1).typeHierarchy
-         [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment - 1] !=
+        (*(Dictionary_2_System_Object_System_Object___Class **)
+          ((pIVar4[2].typeCount - 4) +
+          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                ->_1).naturalAligment * 4) !=
          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
     goto code_?;
     if (cRam_? == '\0') {
@@ -3618,8 +3622,7 @@ code_?:
     }
     pIVar2 = (IAdManager__Class *)0x0;
     if (pIVar1 != (IAdManager__Class *)0x0) {
-      if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image ==
-          (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+      if ((String__Class *)(pIVar1->_0).image == TypeInfo__System__String) {
         pIVar2 = pIVar1;
       }
       pSVar8 = TypeInfo__System__String;
@@ -3707,8 +3710,7 @@ code_?:
     }
     pIVar2 = (IAdManager__Class *)0x0;
     if (pIVar1 != (IAdManager__Class *)0x0) {
-      if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image ==
-          (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+      if ((String__Class *)(pIVar1->_0).image == TypeInfo__System__String) {
         pIVar2 = pIVar1;
       }
       pSVar8 = TypeInfo__System__String;
@@ -3885,14 +3887,13 @@ code_?:
     unaff_ESI = pIVar1;
     if (pIVar1 == (IAdManager__Class *)0x0) goto code_?;
     pDVar5 = (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__Boolean;
-    if ((((Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image)->_0).element_class
-        != (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+    if ((Il2CppClass *)((pIVar1->_0).image)->codeGenModule !=
+        (TypeInfo__System__Boolean->_0).element_class) goto code_?;
     pbVar21 = (bool *)func_?(pIVar1);
     pIVar1 = (IAdManager__Class *)0x0;
     bVar10 = *pbVar21;
     if (pIVar2 != (IAdManager__Class *)0x0) {
-      if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar2->_0).image ==
-          (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+      if ((String__Class *)(pIVar2->_0).image == TypeInfo__System__String) {
         pIVar1 = pIVar2;
       }
       pSVar8 = TypeInfo__System__String;
@@ -3944,8 +3945,7 @@ code_?:
     pIVar22 = pIVar1;
     if (pIVar1 != (IAdManager__Class *)0x0) {
       pIVar22 = (IAdManager__Class *)0x0;
-      if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image ==
-          (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+      if ((String__Class *)(pIVar1->_0).image == TypeInfo__System__String) {
         pIVar22 = pIVar1;
       }
       pSVar8 = TypeInfo__System__String;
@@ -3979,8 +3979,8 @@ code_?:
         unaff_ESI = pIVar1;
         if (pIVar1 == (IAdManager__Class *)0x0) goto code_?;
         pDVar5 = (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__Int32;
-        if ((((Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image)->_0).
-            element_class != (TypeInfo__System__Int32->_0).element_class) goto code_?;
+        if ((Il2CppClass *)((pIVar1->_0).image)->codeGenModule !=
+            (TypeInfo__System__Int32->_0).element_class) goto code_?;
         piVar7 = (int32_t *)func_?(pIVar1);
         unaff_ESI = (IAdManager__Class *)*piVar7;
         if (pDVar19 == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
@@ -4033,8 +4033,8 @@ code_?:
           iVar15 = *piVar7;
           if (pIVar1 == (IAdManager__Class *)0x0) goto code_?;
           pSVar8 = (String__Class *)TypeInfo__System__Int32;
-          if ((((Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image)->_0).
-              element_class != (TypeInfo__System__Int32->_0).element_class) goto code_?;
+          if ((Il2CppClass *)((pIVar1->_0).image)->codeGenModule !=
+              (TypeInfo__System__Int32->_0).element_class) goto code_?;
           piVar7 = (int32_t *)func_?(pIVar1);
           unaff_ESI = (IAdManager__Class *)*piVar7;
           if (pDVar19 == (Dictionary_2_System_Byte_System_Object_ *)0x0) goto code_?;
@@ -4148,8 +4148,7 @@ code_?:
               TypeInfo__MVLocalPlayerTourist)) {
             pIVar22 = (IAdManager__Class *)0x0;
             if (pIVar2 != (IAdManager__Class *)0x0) {
-              if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar2->_0).image ==
-                  (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+              if ((String__Class *)(pIVar2->_0).image == TypeInfo__System__String) {
                 pIVar22 = pIVar2;
               }
               if (pIVar22 == (IAdManager__Class *)0x0) goto code_?;
@@ -4174,8 +4173,7 @@ code_?:
                                  );
               unaff_ESI = (IAdManager__Class *)0x0;
               if (pIVar2 != (IAdManager__Class *)0x0) {
-                if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar2->_0).image ==
-                    (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+                if ((String__Class *)(pIVar2->_0).image == TypeInfo__System__String) {
                   unaff_ESI = pIVar2;
                 }
 joined_?:
@@ -4193,8 +4191,7 @@ joined_?:
                                  );
               unaff_ESI = (IAdManager__Class *)0x0;
               if (pIVar2 != (IAdManager__Class *)0x0) {
-                if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar2->_0).image ==
-                    (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+                if ((String__Class *)(pIVar2->_0).image == TypeInfo__System__String) {
                   unaff_ESI = pIVar2;
                 }
                 goto joined_?;
@@ -4228,8 +4225,7 @@ code_?:
             ProfileSettingsManager_InitTourist((MethodInfo *)0x0);
             goto code_?;
           }
-          if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar2->_0).image ==
-              (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+          if ((String__Class *)(pIVar2->_0).image == TypeInfo__System__String) {
             pIVar22 = pIVar2;
           }
           if (pIVar22 != (IAdManager__Class *)0x0) goto code_?;
@@ -4239,16 +4235,14 @@ code_?:
       }
       goto code_?;
     }
-    if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar2->_0).image ==
-        (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+    if ((String__Class *)(pIVar2->_0).image == TypeInfo__System__String) {
       pIVar1 = pIVar2;
     }
     pSVar8 = TypeInfo__System__String;
     if (pIVar1 != (IAdManager__Class *)0x0) goto code_?;
   }
   else {
-    if ((Dictionary_2_System_Object_System_Object___Class *)(pIVar1->_0).image ==
-        (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__System__String) {
+    if ((String__Class *)(pIVar1->_0).image == TypeInfo__System__String) {
       pIVar2 = pIVar1;
     }
     pSVar8 = TypeInfo__System__String;
@@ -5280,8 +5274,12 @@ code_?:
           if (*(String__Class **)TVar15.m_Index == TypeInfo__System__String) {
             TVar16 = TVar15;
           }
-          if (TVar16.m_Index == 0) goto code_?;
+          if (TVar16.m_Index != 0) goto code_?;
+code_?:
+          func_?();
+          goto code_?;
         }
+code_?:
         uStack_17 = (undefined *)CONCAT13(0x35,(undefined3)uStack_17);
         pOVar12 = (Object *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::

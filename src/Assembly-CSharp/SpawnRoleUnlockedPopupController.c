@@ -309,8 +309,8 @@ code_?:
                    (this_02,(MethodInfo *)0x0);
     SpawnRoleUnlockedPopupController_SetupPreviewImage
               (this,spawnRolePreviewObject,(MethodInfo *)0x0);
-    MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team(this_02,(MethodInfo *)0x0);
-    pIVar3 = (this->fields).Background;
+    MVar3 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team(this_02,(MethodInfo *)0x0);
+    pIVar4 = (this->fields).Background;
     if (cRam_? == '\0') {
       func_?();
       func_?();
@@ -320,76 +320,74 @@ code_?:
     if ((pMVar2 == (MVNetworkGame *)0x0) ||
        (this_00 = (pMVar2->fields).teamManager, this_00 == (MVTeamManager *)0x0))
     goto code_?;
-    pLVar4 = MVTeamManager::MVTeamManager_GetTeamList(this_00,(MethodInfo *)0x0);
-    if (pLVar4 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
-    if ((pLVar4->fields)._size < 2) {
+    pLVar5 = MVTeamManager::MVTeamManager_GetTeamList(this_00,(MethodInfo *)0x0);
+    if (pLVar5 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+    if ((pLVar5->fields)._size < 2) {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      Styles::Styles_GetColor((Color *)&stack0xffffffdc,ColorStyle__Enum_OffGray,(MethodInfo *)0x0);
+      pCVar6 = Styles::Styles_GetColor
+                         ((Color *)&stack0xffffffec,ColorStyle__Enum_OffGray,(MethodInfo *)0x0);
     }
     else {
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,MVTeam__Enum_Blue,0,(MethodInfo *)0x0);
+      pCVar6 = Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,MVar3,0,(MethodInfo *)0x0);
     }
-    if (pIVar3 == (Image *)0x0) goto code_?;
-    pIVar5 = pIVar3->klass;
-    pIVar6 = (pIVar5->vtable).get_raycastTarget.methodPtr;
-    (*(code *)(pIVar5->vtable).set_color.method)();
+    fVar1 = pCVar6->r;
+    if (pIVar4 == (Image *)0x0) goto code_?;
+    (*(code *)(pIVar4->klass->vtable).set_color.method)();
     TM::TM__(StringLiteral_NEW_CLASS_UNLOCKED_,(MethodInfo *)0x0);
-    wasTempUnlocked = (bool)pIVar6;
+    wasTempUnlocked = SUB41(fVar1,0);
     if (wasTempUnlocked != 0) {
       TM::TM__(StringLiteral_NEW_CLASS_IS_NOW_UNLOCKED_UNTIL_,(MethodInfo *)0x0);
     }
     pTVar7 = (this->fields).titleText;
     if (pTVar7 == (Text *)0x0) goto code_?;
     (*(code *)(pTVar7->klass->vtable).set_text.method)();
-    MVar8 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team(this_02,(MethodInfo *)0x0);
-    (this->fields).team = MVar8;
-    pAVar9 = TypeInfo__System__Action;
-    pCVar10 = (this->fields).continueButtonHandler;
-    if (pCVar10 == (ContinueButtonHandler *)0x0) goto code_?;
-    pAVar11 = (pCVar10->fields).OnClick;
-    pNVar12 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    MVar3 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Team(this_02,(MethodInfo *)0x0);
+    (this->fields).team = MVar3;
+    pCVar8 = (this->fields).continueButtonHandler;
+    if (pCVar8 == (ContinueButtonHandler *)0x0) goto code_?;
+    pAVar9 = (pCVar8->fields).OnClick;
+    pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar12,(Object *)this,MethodInfo__SpawnRoleUnlockedPopupController__OnPressedPlay__,
+              (pNVar10,(Object *)this,MethodInfo__SpawnRoleUnlockedPopupController__OnPressedPlay__,
                (MethodInfo *)0x0);
-    pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
-    if (pDVar13 == (Delegate *)0x0) {
-      (pAVar9->_0).byval_arg.data.dummy = (void *)0x0;
+    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
+    if (pDVar11 == (Delegate *)0x0) {
+      _UNK_? = (Delegate *)0x0;
 code_?:
       func_?();
-      pAVar9 = TypeInfo__System__Action;
-      pCVar10 = (this->fields).backgroundContinueButtonHandler;
-      if (pCVar10 == (ContinueButtonHandler *)0x0) goto code_?;
-      pAVar11 = (pCVar10->fields).OnClick;
-      pNVar12 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      pCVar8 = (this->fields).backgroundContinueButtonHandler;
+      if (pCVar8 == (ContinueButtonHandler *)0x0) goto code_?;
+      pAVar9 = (pCVar8->fields).OnClick;
+      pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar12,(Object *)this,
+                (pNVar10,(Object *)this,
                  MethodInfo__SpawnRoleUnlockedPopupController__OnPressedPlay__,(MethodInfo *)0x0);
-      pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
-      if (pDVar13 == (Delegate *)0x0) {
-        (pAVar9->_0).byval_arg.data.dummy = (void *)0x0;
+      pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
+      if (pDVar11 == (Delegate *)0x0) {
+        _UNK_? = (Delegate *)0x0;
         func_?();
         return;
       }
-      pDVar14 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar13->klass == TypeInfo__System__Action) {
-        pDVar14 = pDVar13;
+      pDVar12 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar11->klass == TypeInfo__System__Action) {
+        pDVar12 = pDVar11;
       }
-      if (pDVar14 != (Delegate *)0x0) {
-        (pAVar9->_0).byval_arg.data.dummy = pDVar14;
-        pDVar14 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar13->klass == TypeInfo__System__Action) {
-          pDVar14 = pDVar13;
+      if (pDVar12 != (Delegate *)0x0) {
+        pDVar13 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar11->klass == TypeInfo__System__Action) {
+          pDVar13 = pDVar11;
         }
-        if (pDVar14 != (Delegate *)0x0) {
+        _UNK_? = pDVar12;
+        if (pDVar13 != (Delegate *)0x0) {
           func_?();
           return;
         }
@@ -397,25 +395,25 @@ code_?:
       }
       goto code_?;
     }
-    pDVar14 = (Delegate *)0x0;
-    if ((Action__Class *)pDVar13->klass == TypeInfo__System__Action) {
-      pDVar14 = pDVar13;
+    pDVar12 = (Delegate *)0x0;
+    if ((Action__Class *)pDVar11->klass == TypeInfo__System__Action) {
+      pDVar12 = pDVar11;
     }
-    if (pDVar14 != (Delegate *)0x0) {
-      (pAVar9->_0).byval_arg.data.dummy = pDVar14;
-      pDVar14 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar13->klass == TypeInfo__System__Action) {
-        pDVar14 = pDVar13;
+    if (pDVar12 != (Delegate *)0x0) {
+      pDVar13 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar11->klass == TypeInfo__System__Action) {
+        pDVar13 = pDVar11;
       }
-      if (pDVar14 != (Delegate *)0x0) goto code_?;
+      _UNK_? = pDVar12;
+      if (pDVar13 != (Delegate *)0x0) goto code_?;
       goto code_?;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -773,13 +771,14 @@ void Assembly-CSharp.dll::SpawnRoleUnlockedPopupController::
           func_?();
         }
         pCVar4 = Styles::Styles_GetColor
-                           ((Color *)&stack0xffffffdc,ColorStyle__Enum_OffGray,(MethodInfo *)0x0);
+                           ((Color *)&stack0xffffffec,ColorStyle__Enum_OffGray,(MethodInfo *)0x0);
       }
       else {
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pCVar4 = Styles::Styles_GetTeamColor(&CStack_5,spawnRoleTeam,0,(MethodInfo *)0x0);
+        pCVar4 = Styles::Styles_GetTeamColor
+                           ((Color *)&stack0xffffffec,spawnRoleTeam,0,(MethodInfo *)0x0);
       }
       if (pIVar1 != (Image *)0x0) {
         (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,pCVar4->r,pCVar4->g,pCVar4->b);
@@ -788,8 +787,8 @@ void Assembly-CSharp.dll::SpawnRoleUnlockedPopupController::
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

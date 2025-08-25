@@ -9,8 +9,10 @@ void Assembly-CSharp.dll::ThemeTimers::Timer::Timer_1_Update(Timer_1 *this,Metho
   fVar3 = _UNK_?;
   fVar1 = fVar2 * (this->fields).timeScale + fVar1;
   (this->fields)._Time_k__BackingField = fVar1;
-  while (fVar3 < fVar1) {
-    fVar1 = (this->fields)._Time_k__BackingField - fVar3;
+  if (fVar3 < fVar1) {
+    do {
+      fVar1 = fVar1 - fVar3;
+    } while (fVar3 < fVar1);
     (this->fields)._Time_k__BackingField = fVar1;
   }
   return;

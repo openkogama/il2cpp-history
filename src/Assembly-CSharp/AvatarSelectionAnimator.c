@@ -359,7 +359,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
               if (RVar10 != (RegexCharClass_SingleRange)0x0) {
                 (**(code **)(*(int *)RVar10 + 400))
                           (RVar10,((float)uVar14 +
-                                  (float)uVar15 * (float)this * (this_00->fields).time) -
+                                  (this_00->fields).time * (float)uVar15 * (float)this) -
                                   (float)uVar16 * (float)this);
                 pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                           (this_00->fields).Bodies;

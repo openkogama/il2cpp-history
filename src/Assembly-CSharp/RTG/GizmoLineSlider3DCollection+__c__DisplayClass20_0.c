@@ -7,14 +7,10 @@ int32_t Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection+<>c__DisplayClass2
                   GizmoLineSlider3D *s1,MethodInfo *method)
 
 {
-  if (s0 != (GizmoLineSlider3D *)0x0) {
-    if ((s0->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
-      pGVar1 = (s0->fields)._lookAndFeel;
-      if (pGVar1 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar1 = (s0->fields)._sharedLookAndFeel;
-    }
+  if ((s0 != (GizmoLineSlider3D *)0x0) &&
+     (pGVar1 = (&(s0->fields)._lookAndFeel)
+               [(s0->fields)._sharedLookAndFeel != (GizmoLineSlider3DLookAndFeel *)0x0],
+     pGVar1 != (GizmoLineSlider3DLookAndFeel *)0x0)) {
     fVar2 = _UNK_?;
     if ((pGVar1->fields)._useZoomFactor != 0) {
       pGVar3 = (s0->fields)._._handle;
@@ -24,14 +20,10 @@ int32_t Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection+<>c__DisplayClass2
     }
     GizmoLineSlider3D::GizmoLineSlider3D_GetRealEndPosition
               ((Vector3 *)&stack0xffffffe0,s0,fVar2,(MethodInfo *)0x0);
-    if (s1 != (GizmoLineSlider3D *)0x0) {
-      if ((s1->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
-        pGVar1 = (s1->fields)._lookAndFeel;
-        if (pGVar1 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-      }
-      else {
-        pGVar1 = (s1->fields)._sharedLookAndFeel;
-      }
+    if ((s1 != (GizmoLineSlider3D *)0x0) &&
+       (pGVar1 = (&(s1->fields)._lookAndFeel)
+                 [(s1->fields)._sharedLookAndFeel != (GizmoLineSlider3DLookAndFeel *)0x0],
+       pGVar1 != (GizmoLineSlider3DLookAndFeel *)0x0)) {
       fVar2 = _UNK_?;
       if ((pGVar1->fields)._useZoomFactor != 0) {
         pGVar3 = (s1->fields)._._handle;

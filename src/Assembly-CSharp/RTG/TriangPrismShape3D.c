@@ -113,8 +113,8 @@ bool Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_ContainsPo
                (TriangPrismShape3D *this,Vector3 point,MethodInfo *method)
 
 {
-  baseDepth = (this->fields)._depth;
   baseWidth = (this->fields)._width;
+  baseDepth = (this->fields)._depth;
   bVar1 = PrismMath::PrismMath_ContainsPoint
                     (point,(this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,
                      (this->fields)._height,(this->fields)._rotation,
@@ -129,8 +129,8 @@ AABB * Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_GetAABB
                  (AABB *__return_storage_ptr__,TriangPrismShape3D *this,MethodInfo *method)
 
 {
-  baseDepth = (this->fields)._depth;
   baseWidth = (this->fields)._width;
+  baseDepth = (this->fields)._depth;
   pointCloud = PrismMath::PrismMath_CalcTriangPrismCornerPoints
                          ((this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,
                           (this->fields)._height,(this->fields)._rotation,(MethodInfo *)0x0);
@@ -172,8 +172,8 @@ bool Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_Raycast
                (TriangPrismShape3D *this,Ray ray,float *t,MethodInfo *method)
 
 {
-  baseDepth = (this->fields)._depth;
   baseWidth = (this->fields)._width;
+  baseDepth = (this->fields)._depth;
   bVar1 = PrismMath::PrismMath_RaycastTriangular
                     (ray,t,(this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,
                      (this->fields)._height,(this->fields)._rotation,(MethodInfo *)0x0);
@@ -405,9 +405,9 @@ Vector3 * Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_get_M
   uVar10 = pVVar3->x;
   uVar11 = pVVar3->y;
   fVar12 = (this->fields)._depth;
-  fVar13 = (fStack_9 + (float)uVar11 * fVar12) * _UNK_?;
-  fVar14 = (fStack_7 + pVVar3->z * fVar12) * _UNK_?;
-  __return_storage_ptr__->x = (float)uStack_2 + (fVar8 + (float)uVar10 * fVar12) * _UNK_?;
+  fVar13 = ((float)uVar11 * fVar12 + fStack_9) * _UNK_?;
+  fVar14 = (pVVar3->z * fVar12 + fStack_7) * _UNK_?;
+  __return_storage_ptr__->x = (float)uStack_2 + ((float)uVar10 * fVar12 + fVar8) * _UNK_?;
   __return_storage_ptr__->y = uStack_2._4_4_ + fVar13;
   __return_storage_ptr__->z = fStack_1 + fVar14;
   return __return_storage_ptr__;

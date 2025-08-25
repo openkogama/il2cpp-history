@@ -161,48 +161,48 @@ void Assembly-CSharp.dll::GhostEye::GhostEye_Update(GhostEye *this,MethodInfo *m
 code_?:
     pfVar7 = (float *)(*(code *)*ppMVar6)(&QStack_8,pOVar1,this,ppMVar6[1]);
     this_01 = (this->fields).eyeBall;
-    QStack_9.x = *pfVar7;
-    QStack_9.y = pfVar7[1];
-    QStack_9.z = pfVar7[2];
-    QStack_9.w = pfVar7[3];
+    fStack_9 = *pfVar7;
+    fStack_10 = pfVar7[1];
+    fStack_11 = pfVar7[2];
+    fStack_12 = pfVar7[3];
     if (_UNK_? < (this->fields).currentTransitionTime) {
-      fVar10 = *pfVar7;
-      fVar11 = pfVar7[1];
-      fVar12 = pfVar7[2];
-      fVar13 = pfVar7[3];
+      fVar13 = *pfVar7;
+      fVar14 = pfVar7[1];
+      fVar15 = pfVar7[2];
+      fVar16 = pfVar7[3];
       if (this_01 != (Transform *)0x0) goto code_?;
     }
     else if (this_01 != (Transform *)0x0) {
-      pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+      pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                          (&QStack_8,this_01,(MethodInfo *)0x0);
-      b.y = QStack_9.y;
-      b.x = QStack_9.x;
-      b.z = QStack_9.z;
-      b.w = QStack_9.w;
-      pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                         (&QStack_9,*pQVar14,b,(this->fields).currentTransitionTime / _UNK_?,
+      b.y = fStack_10;
+      b.x = fStack_9;
+      b.z = fStack_11;
+      b.w = fStack_12;
+      pQVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
+                         (&QStack_8,*pQVar17,b,(this->fields).currentTransitionTime / _UNK_?,
                           (MethodInfo *)0x0);
-      fVar10 = pQVar14->x;
-      fVar11 = pQVar14->y;
-      fVar12 = pQVar14->z;
-      fVar13 = pQVar14->w;
+      fVar13 = pQVar17->x;
+      fVar14 = pQVar17->y;
+      fVar15 = pQVar17->z;
+      fVar16 = pQVar17->w;
 code_?:
-      value.y = fVar11;
-      value.x = fVar10;
-      value.z = fVar12;
-      value.w = fVar13;
+      value.y = fVar14;
+      value.x = fVar13;
+      value.z = fVar15;
+      value.w = fVar16;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
                 (this_01,value,(MethodInfo *)0x0);
-      fVar10 = (this->fields).currentTransitionTime;
-      fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+      fVar13 = (this->fields).currentTransitionTime;
+      fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                          ((MethodInfo *)0x0);
-      (this->fields).currentTransitionTime = fVar11 + fVar10;
+      (this->fields).currentTransitionTime = fVar14 + fVar13;
       return;
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

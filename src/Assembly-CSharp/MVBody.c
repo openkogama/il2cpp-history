@@ -3494,7 +3494,123 @@ void Assembly-CSharp.dll::MVBody::MVBody__ctor
             ((MVBlueprintBase *)pMVar1,(Dictionary_2_System_Object_System_Object_ *)data_00,
              (ObjectPrefab *)this,data_00,(MethodInfo *)0x0);
   pMVar7 = (MVBodyObject *)(pMVar1->fields)._._._.component;
-  if (pMVar7 != (MVBodyObject *)0x0) {
+  if (pMVar7 == (MVBodyObject *)0x0) {
+    (pMVar1->fields).bodyObject = (MVBodyObject *)0x0;
+code_?:
+    func_?();
+    this = (MVBody *)0x0;
+    if (data_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+      worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+      ;
+      data = (Dictionary_2_System_Object_System_Object_ *)&this;
+      this = (MVBody *)(pMVar1->fields)._._._._.groupId;
+      bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__TryGetValue
+                        ((Dictionary_2_System_Int32_System_Object_ *)data_00,(int32_t)this,
+                         (Object **)data,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
+                        );
+      if ((bVar8 != 0) && (this != (MVBody *)0x0)) {
+        if (((TypeInfo__MVAvatar->_1).naturalAligment <= (this->klass->_1).naturalAligment) &&
+           (((MVAvatar__Class *)
+             (this->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] ==
+             TypeInfo__MVAvatar && (this != (MVBody *)0x0)))) {
+          (pMVar1->fields).hasAvatarBeenAttached = 1;
+        }
+        if (this != (MVBody *)0x0) {
+          if ((((TypeInfo__MVBuildModeAvatar->_1).naturalAligment <=
+                (this->klass->_1).naturalAligment) &&
+              ((MVBuildModeAvatar__Class *)
+               (this->klass->_1).typeHierarchy
+               [(TypeInfo__MVBuildModeAvatar->_1).naturalAligment - 1] ==
+               TypeInfo__MVBuildModeAvatar)) && (this != (MVBody *)0x0)) {
+            (pMVar1->fields).hasAvatarBeenAttached = 1;
+          }
+        }
+      }
+      piVar9 = &(pMVar1->fields)._._._.previewLayerMask;
+      *piVar9 = *piVar9 | 0x1000;
+      (pMVar1->fields)._LayerToSetTo_k__BackingField = StringLiteral_Player;
+      func_?();
+      pMVar2 = (MVBody *)(pMVar1->fields)._._._.gameObject;
+      pDVar10 = (Dictionary_2_System_Object_System_Object_ *)
+                UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                          ((pMVar1->fields)._LayerToSetTo_k__BackingField,(MethodInfo *)0x0);
+      if (pMVar2 != (MVBody *)0x0) {
+        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0;
+        this = pMVar2;
+        data = pDVar10;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+                  ((GameObject *)pMVar2,(int32_t)pDVar10,(MethodInfo *)0x0);
+        pMVar2 = (MVBody *)(pMVar1->fields)._.blueprintData;
+        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&data;
+        data = (Dictionary_2_System_Object_System_Object_ *)0x4;
+        this = (MVBody *)&UNK_?;
+        this_03 = (Enum *)func_?();
+        pDVar10 = (Dictionary_2_System_Object_System_Object_ *)
+                  mscorlib.dll::System::Enum::Enum_ToString_2
+                            (this_03,StringLiteral_d,(MethodInfo *)0x0);
+        if (pMVar2 != (MVBody *)0x0) {
+          worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+          ;
+          this = pMVar2;
+          data = pDVar10;
+          bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::TextureId]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pMVar2,
+                             (Object *)pDVar10,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                            );
+          if (bVar8 == 0) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            method = (MethodInfo *)&UNK_?;
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                      ((Object *)StringLiteral_Accessory_data_not_found__This_s,(MethodInfo *)0x0);
+            pDVar10 = (pMVar1->fields)._.blueprintData;
+            data = (Dictionary_2_System_Object_System_Object_ *)0x4;
+            method = (MethodInfo *)&UNK_?;
+            data = (Dictionary_2_System_Object_System_Object_ *)func_?();
+            method = (MethodInfo *)0x0;
+            worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)StringLiteral_d;
+            this = (MVBody *)&UNK_?;
+            pMVar1 = (MVBody *)
+                      mscorlib.dll::System::Enum::Enum_ToString_2
+                                ((Enum *)data,StringLiteral_d,(MethodInfo *)0x0);
+            method = (MethodInfo *)
+                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+            ;
+            worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;
+            this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)func_?();
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                      (this_04,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                      );
+            if (pDVar10 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+            worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+            ;
+            this = pMVar1;
+            data = (Dictionary_2_System_Object_System_Object_ *)this_04;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__set_Item
+                      (pDVar10,(Object *)pMVar1,(Object *)this_04,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                      );
+          }
+          return;
+        }
+      }
+    }
+  }
+  else {
     if (((TypeInfo__MVBodyObject->_1).naturalAligment <=
          (((ObjectPrefab__Class *)pMVar7->klass)->_1).naturalAligment) &&
        ((((ObjectPrefab__Class *)pMVar7->klass)->_1).typeHierarchy
@@ -3508,119 +3624,6 @@ void Assembly-CSharp.dll::MVBody::MVBody__ctor
           (Il2CppClass *)TypeInfo__MVBodyObject)) goto code_?;
     }
     func_?();
-    goto code_?;
-  }
-  (pMVar1->fields).bodyObject = (MVBodyObject *)0x0;
-code_?:
-  func_?();
-  this = (MVBody *)0x0;
-  if (data_00 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) goto code_?;
-  worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-  ;
-  data = (Dictionary_2_System_Object_System_Object_ *)&this;
-  this = (MVBody *)(pMVar1->fields)._._._._.groupId;
-  bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-          Dictionary_2_System_Int32_System_Object__TryGetValue
-                    ((Dictionary_2_System_Int32_System_Object_ *)data_00,(int32_t)this,
-                     (Object **)data,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                    );
-  if ((bVar8 != 0) && (this != (MVBody *)0x0)) {
-    if (((TypeInfo__MVAvatar->_1).naturalAligment <= (this->klass->_1).naturalAligment) &&
-       ((MVAvatar__Class *)
-        (this->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] ==
-        TypeInfo__MVAvatar)) {
-      if (this == (MVBody *)0x0) goto code_?;
-      (pMVar1->fields).hasAvatarBeenAttached = 1;
-    }
-    if (this != (MVBody *)0x0) {
-      if ((((TypeInfo__MVBuildModeAvatar->_1).naturalAligment <= (this->klass->_1).naturalAligment)
-          && ((MVBuildModeAvatar__Class *)
-              (this->klass->_1).typeHierarchy[(TypeInfo__MVBuildModeAvatar->_1).naturalAligment - 1]
-              == TypeInfo__MVBuildModeAvatar)) && (this != (MVBody *)0x0)) {
-        (pMVar1->fields).hasAvatarBeenAttached = 1;
-      }
-    }
-  }
-code_?:
-  piVar9 = &(pMVar1->fields)._._._.previewLayerMask;
-  *piVar9 = *piVar9 | 0x1000;
-  (pMVar1->fields)._LayerToSetTo_k__BackingField = StringLiteral_Player;
-  func_?();
-  pMVar2 = (MVBody *)(pMVar1->fields)._._._.gameObject;
-  pDVar10 = (Dictionary_2_System_Object_System_Object_ *)
-            UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                      ((pMVar1->fields)._LayerToSetTo_k__BackingField,(MethodInfo *)0x0);
-  if (pMVar2 != (MVBody *)0x0) {
-    worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0;
-    this = pMVar2;
-    data = pDVar10;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-              ((GameObject *)pMVar2,(int32_t)pDVar10,(MethodInfo *)0x0);
-    pMVar2 = (MVBody *)(pMVar1->fields)._.blueprintData;
-    worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&data;
-    data = (Dictionary_2_System_Object_System_Object_ *)0x4;
-    this = (MVBody *)&UNK_?;
-    this_03 = (Enum *)func_?();
-    pDVar10 = (Dictionary_2_System_Object_System_Object_ *)
-              mscorlib.dll::System::Enum::Enum_ToString_2(this_03,StringLiteral_d,(MethodInfo *)0x0)
-    ;
-    if (pMVar2 != (MVBody *)0x0) {
-      worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-      ;
-      this = pMVar2;
-      data = pDVar10;
-      bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pMVar2,
-                         (Object *)pDVar10,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                        );
-      if (bVar8 == 0) {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        method = (MethodInfo *)&UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                  ((Object *)StringLiteral_Accessory_data_not_found__This_s,(MethodInfo *)0x0);
-        pDVar10 = (pMVar1->fields)._.blueprintData;
-        data = (Dictionary_2_System_Object_System_Object_ *)0x4;
-        method = (MethodInfo *)&UNK_?;
-        data = (Dictionary_2_System_Object_System_Object_ *)func_?();
-        method = (MethodInfo *)0x0;
-        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)StringLiteral_d;
-        this = (MVBody *)&UNK_?;
-        pMVar1 = (MVBody *)
-                  mscorlib.dll::System::Enum::Enum_ToString_2
-                            ((Enum *)data,StringLiteral_d,(MethodInfo *)0x0);
-        method = (MethodInfo *)
-                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;
-        this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)func_?();
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-        UIElements::StyleComplexSelector+PseudoStateData]::
-        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                  (this_04,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                  );
-        if (pDVar10 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-        ;
-        this = pMVar1;
-        data = (Dictionary_2_System_Object_System_Object_ *)this_04;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  (pDVar10,(Object *)pMVar1,(Object *)this_04,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                  );
-      }
-      return;
-    }
   }
 code_?:
   worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;

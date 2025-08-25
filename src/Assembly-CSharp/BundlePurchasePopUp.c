@@ -111,7 +111,7 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          fVar8 = (float10)func_?((double)((float)iVar6 * fVar7));
+          fVar8 = (float10)func_?((double)(fVar7 * (float)iVar6));
           pTVar2 = (this->fields).originalPriceText;
           this_00.m_value = (this->fields).originalPrice - (int)fVar8;
           pSVar5 = mscorlib.dll::System::Int32::Int32_ToString_1

@@ -56,8 +56,8 @@ code_?:
         if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar6 + 0x58) + (uint)uVar7 * 8) ==
             TypeInfo__ISpawnRoleRemote) {
           puVar8 = (undefined4 *)
-                   (*piVar6 +
-                   (*(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar7 * 8) + 0x19) * 8);
+                   (*piVar6 + (*(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar7 * 8) + 0x19) * 8)
+          ;
           goto code_?;
         }
         uVar7 = uVar7 + 1;

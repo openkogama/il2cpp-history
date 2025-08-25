@@ -32,7 +32,7 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_InPause
           ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
   pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
            ObscuredFloat_op_Implicit
-                     ((ObscuredFloat *)&stack0xffffffe0,fVar6 + (fVar1 - fVar2),(MethodInfo *)0x0);
+                     ((ObscuredFloat *)&stack0xffffffe4,fVar6 + (fVar1 - fVar2),(MethodInfo *)0x0);
   AVar4 = pOVar7->hiddenValue;
   pBVar5 = pOVar7->hiddenValueOld;
   fVar2 = pOVar7->fakeValue;

@@ -95,104 +95,87 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
     cRam_? = '\x01';
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-  if (pIVar1 == (IPlayModeUI *)0x0) goto code_?;
-  cVar2 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
-  if (cVar2 != '\0') {
-    return;
-  }
-  if (((this->fields)._._.ignoreInputTypes & 1) != 0) {
-    return;
-  }
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
-  }
-  fVar3 = MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
-                     (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-  fVar4 = MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
-                     (StringLiteral_Mouse_X,(MethodInfo *)0x0);
-  this_00 = (this->fields).inputMovementPrecisionModifier;
-  if (this_00 == (InputMovementPrecisionModifier *)0x0) goto code_?;
-  input.y = fVar4;
-  input.x = fVar3;
-  input.z = 0.0;
-  pVVar5 = InputMovementPrecisionModifier::InputMovementPrecisionModifier_GetPrecisionInput
-                     ((Vector3 *)&stack0xffffffe4,this_00,input,(MethodInfo *)0x0);
-  uVar6 = pVVar5->x;
-  uVar7 = pVVar5->y;
-  inputVector.y = (float)uVar7;
-  inputVector.x = (float)uVar6;
-  this_01 = (this->fields).axisBias;
-  if (this_01 == (AxisBias *)0x0) goto code_?;
-  inputVector.z = 0.0;
-  pVVar5 = AxisBias::AxisBias_GetBiasedVector
-                     ((Vector3 *)&stack0xffffffe4,this_01,inputVector,(MethodInfo *)0x0);
-  uVar8 = pVVar5->x;
-  uVar9 = pVVar5->y;
-  (this->fields)._.targetRotation.x =
-       (float)uVar8 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;
-  (this->fields)._.targetRotation.y =
-       (float)uVar9 * (this->fields)._.yawSensitivity + (this->fields)._.targetRotation.y;
-  fStack_10 = (float)((uint)(this->fields)._.maxLookAngleDownward ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-  fVar11 = (float10)func_?();
-  fVar3 = (this->fields)._.targetRotation.x - (float)fVar11 * _UNK_?;
-  fVar4 = 0.0;
-  if ((fVar3 < 0.0) || (fVar4 = _UNK_?, _UNK_? < fVar3)) {
-    fVar3 = fVar4;
-  }
-  fVar11 = (float10)func_?();
-  fStack_10 = fStack_10 - (float)fVar11 * _UNK_?;
-  fVar4 = 0.0;
-  if ((fStack_10 < 0.0) || (fVar4 = _UNK_?, _UNK_? < fStack_10)) {
-    fStack_10 = fVar4;
-  }
-  fVar11 = (float10)func_?();
-  fVar4 = (this->fields)._.maxLookAngleUpward - (float)fVar11 * _UNK_?;
-  if (fVar4 < 0.0) {
-    fVar12 = 0.0;
-code_?:
-    fVar4 = fVar12;
-  }
-  else {
-    fVar12 = _UNK_?;
-    if (_UNK_? < fVar4) goto code_?;
-  }
-  if ((fVar3 < fStack_10) && (fVar4 < fVar3)) {
-    fVar12 = fVar3;
-    fVar13 = AndroidFirstPersonCamera_DegreesBetween(this,fVar3,fStack_10,(MethodInfo *)0x0);
-    fVar3 = fVar4;
-    fVar4 = AndroidFirstPersonCamera_DegreesBetween(this,fVar12,fVar4,(MethodInfo *)0x0);
-    if (fVar13 < fVar4) {
-      fVar3 = fStack_10;
-    }
-  }
-  (this->fields)._.targetRotation.x = fVar3;
-  pTVar14 = (this->fields)._.smoothRotation;
-  if (pTVar14 != (TargetRotation *)0x0) {
-    TargetRotation::TargetRotation_SetTargetRotation_1
-              (pTVar14,fVar3,(this->fields)._.targetRotation.y,(MethodInfo *)0x0);
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this,(MethodInfo *)0x0);
-    pTVar14 = (this->fields)._.smoothRotation;
-    this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this,(MethodInfo *)0x0);
-    if (((this_03 != (Transform *)0x0) &&
-        (pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                            ((Quaternion *)&stack0xffffffd4,this_03,(MethodInfo *)0x0),
-        pTVar14 != (TargetRotation *)0x0)) &&
-       (pQVar15 = TargetRotation::TargetRotation_GetLerpRotation
-                           ((Quaternion *)&stack0xffffffd4,pTVar14,*pQVar15,(MethodInfo *)0x0),
-       this_02 != (Transform *)0x0)) {
-      fStack16 = pQVar15->w;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (this_02,*pQVar15,(MethodInfo *)0x0);
+  if (pIVar1 != (IPlayModeUI *)0x0) {
+    cVar2 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
+    if (cVar2 != '\0') {
       return;
     }
+    if (((this->fields)._._.ignoreInputTypes & 1) != 0) {
+      return;
+    }
+    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVInputWrapper);
+    }
+    fStack_3 = MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
+                         (StringLiteral_Mouse_Y,(MethodInfo *)0x0);
+    VStack_4.z = MVInputWrapper::MVInputWrapper_GetAxisWithoutSensitivity
+                            (StringLiteral_Mouse_X,(MethodInfo *)0x0);
+    this_00 = (this->fields).inputMovementPrecisionModifier;
+    stack0xffffffe0 = CONCAT44(VStack_4.z,fStack_3);
+    fStack_5 = 0.0;
+    if (this_00 != (InputMovementPrecisionModifier *)0x0) {
+      input.z = 0.0;
+      input.x = fStack_3;
+      input.y = VStack_4.z;
+      pVVar6 = InputMovementPrecisionModifier::InputMovementPrecisionModifier_GetPrecisionInput
+                         ((Vector3 *)(auStack_7 + 4),this_00,input,(MethodInfo *)0x0);
+      auStack_7._4_4_ = pVVar6->x;
+      unique0x0000a404 = pVVar6->y;
+      VStack_4.z = pVVar6->z;
+      this_01 = (this->fields).axisBias;
+      fStack_5 = 0.0;
+      VStack_4._0_8_ = unique0x0000a400;
+      if (this_01 != (AxisBias *)0x0) {
+        inputVector.z = 0.0;
+        inputVector.x = (float)auStack_7._4_4_;
+        inputVector.y = (float)unique0x0000a404;
+        pVVar6 = AxisBias::AxisBias_GetBiasedVector
+                           (&VStack_4,this_01,inputVector,(MethodInfo *)0x0);
+        auStack_7._4_4_ = pVVar6->x;
+        unique0x0000a404 = pVVar6->y;
+        fStack_5 = pVVar6->z;
+        (this->fields)._.targetRotation.x =
+             (float)auStack_7._4_4_ * (this->fields)._.pitchSensitivity +
+             (this->fields)._.targetRotation.x;
+        (this->fields)._.targetRotation.y =
+             (float)unique0x0000a404 * (this->fields)._.yawSensitivity +
+             (this->fields)._.targetRotation.y;
+        fVar8 = AndroidFirstPersonCamera_EulerClamp
+                          (this,(this->fields)._.targetRotation.x,
+                           (float)((uint)(this->fields)._.maxLookAngleDownward ^
+                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                  ),(this->fields)._.maxLookAngleUpward,(MethodInfo *)0x0);
+        (this->fields)._.targetRotation.x = fVar8;
+        fVar8 = (this->fields)._.targetRotation.x;
+        this_02 = (this->fields)._.smoothRotation;
+        VStack_4.y = fVar8;
+        VStack_4.z = (this->fields)._.targetRotation.y;
+        if (this_02 != (TargetRotation *)0x0) {
+          TargetRotation::TargetRotation_SetTargetRotation_1
+                    (this_02,fVar8,VStack_4.z,(MethodInfo *)0x0);
+          this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)this,(MethodInfo *)0x0);
+          VStack_4.z = (float)(this->fields)._.smoothRotation;
+          this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)this,(MethodInfo *)0x0);
+          if (((this_04 != (Transform *)0x0) &&
+              (pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                  ((Quaternion *)auStack_7,this_04,(MethodInfo *)0x0),
+              (TargetRotation *)VStack_4.z != (TargetRotation *)0x0)) &&
+             (pQVar9 = TargetRotation::TargetRotation_GetLerpRotation
+                                 ((Quaternion *)auStack_7,(TargetRotation *)VStack_4.z,*pQVar9,
+                                  (MethodInfo *)0x0), this_03 != (Transform *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                      (this_03,*pQVar9,(MethodInfo *)0x0);
+            return;
+          }
+        }
+      }
+    }
   }
-code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

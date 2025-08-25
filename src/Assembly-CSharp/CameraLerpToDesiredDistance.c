@@ -30,9 +30,9 @@ Vector3 * Assembly-CSharp.dll::CameraLerpToDesiredDistance::CameraLerpToDesiredD
   fVar6 = (this->fields).newDistance;
   uStack_2._0_4_ = (float)*puVar8;
   uStack_2._4_4_ = (float)((ulonglong)*puVar8 >> 0x20);
-  __return_storage_ptr__->x = targetPosition.x + (float)uStack_2 * fVar6;
-  __return_storage_ptr__->y = targetPosition.y + uStack_2._4_4_ * fVar6;
-  __return_storage_ptr__->z = targetPosition.z + fVar10 * fVar6;
+  __return_storage_ptr__->x = (float)uStack_2 * fVar6 + targetPosition.x;
+  __return_storage_ptr__->y = uStack_2._4_4_ * fVar6 + targetPosition.y;
+  __return_storage_ptr__->z = fVar10 * fVar6 + targetPosition.z;
   return __return_storage_ptr__;
 }
 

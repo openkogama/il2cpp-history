@@ -41,24 +41,17 @@ void Assembly-CSharp.dll::RTG::GizmoThinLineSlider3DController::
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoLineSlider3DControllerData *)0x0) {
     this_00 = (pGVar1->fields).Segment;
-    pGVar2 = (((this->fields)._._data)->fields).Slider;
-    if (pGVar2 != (GizmoLineSlider3D *)0x0) {
-      if ((pGVar2->fields)._sharedSettings == (GizmoLineSlider3DSettings *)0x0) {
-        pGVar3 = (pGVar2->fields)._settings;
-        if (pGVar3 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedSettings;
-      }
-      if (this_00 != (SegmentShape3D *)0x0) {
-        TriangPrismShape3D::TriangPrismShape3D_set_PtContainEps
-                  ((TriangPrismShape3D *)this_00,zoomFactor * (pGVar3->fields)._lineHoverEps,
-                   (MethodInfo *)0x0);
-        return;
-      }
+    pGVar2 = (pGVar1->fields).Slider;
+    if (((pGVar2 != (GizmoLineSlider3D *)0x0) &&
+        (pGVar3 = (&(pGVar2->fields)._settings)
+                  [(pGVar2->fields)._sharedSettings != (GizmoLineSlider3DSettings *)0x0],
+        pGVar3 != (GizmoLineSlider3DSettings *)0x0)) && (this_00 != (SegmentShape3D *)0x0)) {
+      TriangPrismShape3D::TriangPrismShape3D_set_PtContainEps
+                ((TriangPrismShape3D *)this_00,zoomFactor * (pGVar3->fields)._lineHoverEps,
+                 (MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   uVar4 = func_?(&stack0xfffffff0);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);

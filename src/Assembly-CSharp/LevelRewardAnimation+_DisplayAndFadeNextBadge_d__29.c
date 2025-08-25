@@ -25,7 +25,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
     euler_00.x = fVar1;
     euler_00.z = 0.0;
     pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                        ((Quaternion *)&stack0xffffffd0,euler_00,(MethodInfo *)0x0);
+                       ((Quaternion *)&stack0xffffffd0,euler_00,(MethodInfo *)0x0);
     if (pTVar3 == (Transform *)0x0) goto code_?;
     fVar1 = pQVar4->z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
@@ -102,8 +102,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
             euler.x = fVar1;
             euler.z = 0.0;
             pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                      Quaternion_Internal_FromEulerRad
-                                ((Quaternion *)&stack0xffffffd0,euler,(MethodInfo *)0x0);
+                     Quaternion_Internal_FromEulerRad
+                               ((Quaternion *)&stack0xffffffd0,euler,(MethodInfo *)0x0);
             if (pTVar3 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                         (pTVar3,*pQVar4,(MethodInfo *)0x0);
@@ -154,9 +154,9 @@ code_?:
                             euler_01.x = fVar1;
                             euler_01.z = 0.0;
                             pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                                      Quaternion_Internal_FromEulerRad
-                                                ((Quaternion *)&stack0xffffffc0,euler_01,
-                                                 (MethodInfo *)0x0);
+                                     Quaternion_Internal_FromEulerRad
+                                               ((Quaternion *)&stack0xffffffc0,euler_01,
+                                                (MethodInfo *)0x0);
                             if (pTVar3 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_set_rotation(pTVar3,*pQVar4,(MethodInfo *)0x0);
@@ -186,18 +186,19 @@ code_?:
                                                (pAVar5,(fVar12 + fVar6) /
                                                        (this_00->fields).rotateUIYAxisTime,
                                                 (MethodInfo *)0x0);
+                            fVar6 = fVar6 * _UNK_?;
                             pRVar2 = (this_00->fields).nextLevelBadge;
                             if (pRVar2 != (RawImage *)0x0) {
                               pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                        Component_get_transform
                                                  ((Component *)pRVar2,(MethodInfo *)0x0);
-                              euler_03.y = fVar6 * _UNK_? * _UNK_?;
+                              euler_03.y = fVar6 * _UNK_?;
                               euler_03.x = fVar1;
                               euler_03.z = 0.0;
                               pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                                        Quaternion_Internal_FromEulerRad
-                                                  ((Quaternion *)&stack0xffffffc0,euler_03,
-                                                   (MethodInfo *)0x0);
+                                       Quaternion_Internal_FromEulerRad
+                                                 ((Quaternion *)&stack0xffffffc0,euler_03,
+                                                  (MethodInfo *)0x0);
                               if (pTVar3 != (Transform *)0x0) {
                                 UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_set_rotation(pTVar3,*pQVar4,(MethodInfo *)0x0);
@@ -289,15 +290,16 @@ code_?:
                          (pAVar5,(fVar12 + fVar6) / (this_00->fields).rotateUIYAxisTime,
                           (MethodInfo *)0x0);
       pRVar2 = (this_00->fields).nextLevelBadge;
+      fVar6 = fVar6 * _UNK_? - _UNK_?;
       if (pRVar2 != (RawImage *)0x0) {
         pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)pRVar2,(MethodInfo *)0x0);
-        euler_02.y = (fVar6 * _UNK_? - _UNK_?) * _UNK_?;
+        euler_02.y = fVar6 * _UNK_?;
         euler_02.x = fVar1;
         euler_02.z = 0.0;
         pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                  Quaternion_Internal_FromEulerRad
-                            ((Quaternion *)&stack0xffffffc0,euler_02,(MethodInfo *)0x0);
+                 Quaternion_Internal_FromEulerRad
+                           ((Quaternion *)&stack0xffffffc0,euler_02,(MethodInfo *)0x0);
         if (pTVar3 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                     (pTVar3,*pQVar4,(MethodInfo *)0x0);
@@ -311,12 +313,8 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  pcVar13 = (char *)((int)&this->monitor + 1);
-  *pcVar13 = *pcVar13 + extraout_AH;
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  bVar13 = func_?();
+  return bVar13;
 }
 
 

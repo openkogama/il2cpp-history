@@ -163,7 +163,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DCircleBor
       pMVar6 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fVar3 = (float)dVar4 * circleRadius + circleCenter.x;
+      fVar3 = circleCenter.x + (float)dVar4 * circleRadius;
       pSVar7 = (String *)(circleCenter.y + (float)dVar5 * circleRadius);
       if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                    *)0x0) {
@@ -226,16 +226,18 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
     cRam_? = '\x01';
   }
-  uStack_1 = CONCAT44(uStack_1._4_4_,(undefined *)uStack_1);
-  uStack_2 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
   if (cwPolyPoints != (List_1_UnityEngine_Vector2_ *)0x0) {
-    fVar3 = (float)(cwPolyPoints->fields)._size;
-    uStack_2._4_4_ = fVar3;
+    iVar1 = (cwPolyPoints->fields)._size;
+    fStack_2 = (float)(iVar1 + -1);
     if (isClosed == 0) {
-      if ((int)fVar3 < 3) goto code_?;
+      bVar3 = SBORROW4((int)fStack_2,2);
+      iVar1 = iVar1 + -3;
     }
-    else if ((int)fVar3 < 4) {
-code_?:
+    else {
+      bVar3 = SBORROW4((int)fStack_2,3);
+      iVar1 = iVar1 + -4;
+    }
+    if (bVar3 != iVar1 < 0) {
       pLVar4 = (List_1_UnityEngine_Vector2_ *)func_?();
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
@@ -249,328 +251,297 @@ code_?:
       fStack_5 = _UNK_?;
     }
     fStack_5 = fStack_5 * borderThickness;
-    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-            *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-    VStack_6.y = (float)this;
+    capacity = (cwPolyPoints->fields)._size;
+    pLVar6 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+              *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    pLStack_7 = pLVar6;
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
     MultiColumnCollectionHeader+ViewState+ColumnState]::
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-              (this,(int32_t)fVar3,
+              (pLVar6,capacity,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
     if (isClosed == 0) {
-      VStack_7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      VStack_8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                   List_1_UnityEngine_Vector2__get_Item
                             (cwPolyPoints,0,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                             );
-      VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      VVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                List_1_UnityEngine_Vector2__get_Item
                          (cwPolyPoints,1,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                          );
-      VStack_9.y = VVar8.y;
-      VStack_10.y = VStack_9.x - VStack_7.x;
-      VStack_10.x = (float)((uint)(VStack_9.y - VStack_7.y) ^
+      VStack_10.y = VVar9.y;
+      VStack_11.y = VStack_10.x - VStack_8.x;
+      VStack_11.x = (float)((uint)(VStack_10.y - VStack_8.y) ^
                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
       ;
-      VStack_9 = VVar8;
-      uVar11 = func_?(&VStack_10);
-      VStack_9.x = (float)uVar11 * fStack_5 + VStack_7.x;
-      VStack_9.y = (float)((ulonglong)uVar11 >> 0x20) * fStack_5 + VStack_7.y;
-      uStack_1 = CONCAT44(uStack_1._4_4_,(undefined *)uStack_1);
-      uStack_2 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
-      if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)0x0) {
-        func_?(this,VStack_9.x,VStack_9.y,
+      VStack_10 = VVar9;
+      uVar12 = func_?(&VStack_11);
+      VStack_10.x = VStack_8.x + (float)uVar12 * fStack_5;
+      VStack_10.y = VStack_8.y + (float)((ulonglong)uVar12 >> 0x20) * fStack_5;
+      if (pLVar6 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                     *)0x0) {
+        func_?(pLVar6,VStack_10.x,VStack_10.y,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                        );
-        iVar12 = 0;
-        VStack_7.y = (float)((int)uStack_2._4_4_ + -2);
-        if (0 < (int)uStack_2._4_4_ + -2) {
+        iVar1 = 0;
+        if (fStack_2 != 1.4013e-45 && -1 < (int)fStack_2 + -1) {
+          VStack_8.y = (float)((int)fStack_2 + -1);
           do {
-            VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            VVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                      List_1_UnityEngine_Vector2__get_Item
-                               (cwPolyPoints,iVar12,
+                               (cwPolyPoints,iVar1,
                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                );
-            VStack_13 = VVar8;
-            VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            VStack_13 = VVar9;
+            VStack_14 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                         List_1_UnityEngine_Vector2__get_Item
-                                  (cwPolyPoints,iVar12 + 1,
+                                  (cwPolyPoints,iVar1 + 1,
                                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                   );
-            VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                        List_1_UnityEngine_Vector2__get_Item
+                                  ((List_1_UnityEngine_Vector2_ *)pLVar6,iVar1,
+                                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                  );
+            VVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                      List_1_UnityEngine_Vector2__get_Item
-                               ((List_1_UnityEngine_Vector2_ *)this,iVar12,
+                               (cwPolyPoints,iVar1 + 2,
                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                );
-            VStack_14 = VVar8;
-            VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                     List_1_UnityEngine_Vector2__get_Item
-                               (cwPolyPoints,iVar12 + 2,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+            fStack_15 = VStack_16.x - VStack_14.x;
+            VStack_16.y = VVar9.y;
+            fStack_17 = (float)((uint)(VStack_16.y - VStack_14.y) ^
+                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                );
-            fStack_15 = VStack_16.x - VStack_9.x;
-            VStack_16.y = VVar8.y;
-            pMStack_17 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                         ((uint)(VStack_16.y - VStack_9.y) ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-            ppMVar18 = &pMStack_17;
+            pfVar18 = &fStack_17;
             uVar19 = 0;
-            VStack_16 = VVar8;
-            uVar11 = func_?();
-            VStack_6.y = (float)((ulonglong)uVar11 >> 0x20);
-            fStack_20 = (float)uVar11;
-            uStack_21._4_4_ = VStack_16.x + fStack_20 * fStack_5;
-            pMStack_22 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                         (VStack_16.y + VStack_6.y * fStack_5);
-            fStack_23 = VStack_9.x - VStack_13.x;
-            fStack_24 = VStack_9.y - VStack_13.y;
-            uStack_1 = uVar11;
-            fVar25 = (float10)func_?(&stack0xffffff88,0,ppMVar18,uVar19);
-            uStack_2._4_4_ = (float)fVar25;
-            if (_UNK_? < uStack_2._4_4_) {
-              fVar3 = fStack_23 / uStack_2._4_4_;
-              fVar26 = fStack_24 / uStack_2._4_4_;
+            VStack_16 = VVar9;
+            VStack_20 = (Vector2)func_?();
+            uStack_21._4_4_ = VStack_20.x * fStack_5 + VStack_16.x;
+            fStack_22 = VStack_20.y * fStack_5 + VStack_16.y;
+            pLStack_7 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)(VStack_14.x - VStack_13.x);
+            fStack_23 = VStack_14.y - VStack_13.y;
+            fVar24 = (float10)func_?(&stack0xffffff98,0,pfVar18,uVar19);
+            fStack_2 = (float)fVar24;
+            if (_UNK_? < fStack_2) {
+              fVar25 = (float)pLStack_7 / fStack_2;
+              fVar26 = fStack_23 / fStack_2;
             }
             else {
               if (cRam_? == '\0') {
                 func_?(&TypeInfo__UnityEngine__Vector2);
                 cRam_? = '\x01';
               }
-              fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
+              fVar25 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
               fVar26 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
             }
-            fVar27 = VStack_6.y * fVar26 + fStack_20 * fVar3;
-            if ((_UNK_? <= (float)((uint)fVar27 & _UNK_?)) &&
-               (fVar27 = (fStack_20 * (VStack_14.x - uStack_21._4_4_) +
-                         VStack_6.y * (VStack_14.y - (float)pMStack_22)) /
-                         (float)((uint)fVar27 ^
-                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
-                                ), 0.0 <= fVar27)) {
-              VStack_10.x = VStack_14.x + fVar3 * fVar27;
-              VStack_10.y = VStack_14.y + fVar26 * fVar27;
-              func_?(this,VStack_10.x,VStack_10.y,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                             );
+            fVar27 = VStack_20.y * fVar26 + VStack_20.x * fVar25;
+            if (_UNK_? <= (float)((uint)fVar27 & _UNK_?)) {
+              fVar27 = ((VStack_10.y - fStack_22) * VStack_20.y +
+                       (VStack_10.x - uStack_21._4_4_) * VStack_20.x) /
+                       (float)((uint)fVar27 ^
+                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              );
+              if (0.0 <= fVar27) {
+                VStack_11.y = fVar26 * fVar27 + VStack_10.y;
+                VStack_11.x = fVar25 * fVar27 + VStack_10.x;
+                func_?(pLVar6,VStack_11.x,VStack_11.y,
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                               );
+              }
             }
-            iVar12 = iVar12 + 1;
-          } while (iVar12 < (int)VStack_7.y);
+            iVar1 = iVar1 + 1;
+          } while (iVar1 < (int)VStack_8.y);
         }
-        VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+        VStack_11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                     List_1_UnityEngine_Vector2__get_Item
                               (cwPolyPoints,(cwPolyPoints->fields)._size + -2,
                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                               );
-        VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+        VStack_20 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                     List_1_UnityEngine_Vector2__get_Item
                               (cwPolyPoints,(cwPolyPoints->fields)._size + -1,
                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                               );
-        uVar11 = func_?();
+        uVar12 = func_?();
         pMVar28 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        VStack_10.x = VStack_9.x + (float)uVar11 * fStack_5;
-        VStack_10.y = VStack_9.y + (float)((ulonglong)uVar11 >> 0x20) * fStack_5;
-        piVar29 = &(this->fields)._version;
+        VStack_11.x = (float)uVar12 * fStack_5 + VStack_20.x;
+        VStack_11.y = (float)((ulonglong)uVar12 >> 0x20) * fStack_5 + VStack_20.y;
+        piVar29 = &(pLVar6->fields)._version;
         *piVar29 = *piVar29 + 1;
-        pMVar30 = (this->fields)._items;
+        pMVar30 = (pLVar6->fields)._items;
         if (pMVar30 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-          uVar31 = (this->fields)._size;
+          uVar31 = (pLVar6->fields)._size;
           if (pMVar30->max_length <= uVar31) {
-            item.y = VStack_10.y;
-            item.x = VStack_10.x;
+            item.y = VStack_11.y;
+            item.x = VStack_11.x;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__AddWithResize
-                      ((List_1_UnityEngine_Vector2_ *)this,item,
+                      ((List_1_UnityEngine_Vector2_ *)pLVar6,item,
                        pMVar28->klass->rgctx_data[0xe].method);
-            return (List_1_UnityEngine_Vector2_ *)this;
+            return (List_1_UnityEngine_Vector2_ *)pLVar6;
           }
-          (this->fields)._size = uVar31 + 1;
+          (pLVar6->fields)._size = uVar31 + 1;
           if (uVar31 < pMVar30->max_length) {
-            (&pMVar30->vector[0].index)[uVar31 * 2] = (int32_t)VStack_10.x;
-            (&pMVar30->vector[0].name)[uVar31 * 2] = (String *)VStack_10.y;
-            return (List_1_UnityEngine_Vector2_ *)this;
+            (&pMVar30->vector[0].index)[uVar31 * 2] = (int32_t)VStack_11.x;
+            (&pMVar30->vector[0].name)[uVar31 * 2] = (String *)VStack_11.y;
+            return (List_1_UnityEngine_Vector2_ *)pLVar6;
           }
           goto code_?;
         }
       }
     }
     else {
-      VVar32 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      VVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                List_1_UnityEngine_Vector2__get_Item
                          (cwPolyPoints,0,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                          );
-      VStack_16 = VVar32;
-      VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      VStack_14 = VVar9;
+      VStack_11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                   List_1_UnityEngine_Vector2__get_Item
                             (cwPolyPoints,1,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                             );
-      uStack_21 = func_?(&stack0xffffff88);
-      VStack_7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      uStack_21 = func_?(&stack0xffffff98);
+      VStack_8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                   List_1_UnityEngine_Vector2__get_Item
                             (cwPolyPoints,(cwPolyPoints->fields)._size + -2,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                             );
-      VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      VStack_20 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                   List_1_UnityEngine_Vector2__get_Item
                             (cwPolyPoints,(cwPolyPoints->fields)._size + -1,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                             );
-      VStack_10 = (Vector2)func_?(&stack0xffffff88,0);
-      uStack_1._4_4_ = &stack0xffffff88;
-      VStack_9 = (Vector2)((ulonglong)VStack_9 & 0xffffffff00000000);
-      uStack_1._0_4_ = &UNK_?;
-      VStack_14 = (Vector2)func_?();
-      fVar3 = VStack_6.y;
-      VVar33.y = VStack_6.y;
-      VVar33.x = VStack_6.x;
-      VVar8.y = VStack_13.y;
-      VVar8.x = VStack_13.x;
-      fVar27 = VStack_7.x + VStack_10.x * fStack_5;
-      fVar34 = VStack_7.y + VStack_10.y * fStack_5;
-      VStack_7.y = VStack_16.x + (float)uStack_21 * fStack_5;
-      pMStack_22 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                   (VStack_16.y + uStack_21._4_4_ * fStack_5);
-      fVar26 = uStack_21._4_4_ * VStack_14.y + VStack_14.x * (float)uStack_21;
-      if (((float)((uint)fVar26 & _UNK_?) < _UNK_?) ||
-         (fVar26 = ((fVar34 - (float)pMStack_22) * uStack_21._4_4_ +
-                   (fVar27 - VStack_7.y) * (float)uStack_21) /
-                   (float)((uint)fVar26 ^
+      VStack_11 = (Vector2)func_?(&stack0xffffff98,0);
+      VStack_14 = (Vector2)((ulonglong)VStack_14 & 0xffffffff00000000);
+      VStack_20.y = (float)&stack0xffffff98;
+      VStack_20.x = (float)&UNK_?;
+      VStack_13 = (Vector2)func_?();
+      pLVar6 = pLStack_7;
+      fVar26 = VStack_11.x * fStack_5 + VStack_8.x;
+      fVar27 = VStack_11.y * fStack_5 + VStack_8.y;
+      VStack_8.y = (float)uStack_21 * fStack_5 + VStack_14.x;
+      fStack_22 = uStack_21._4_4_ * fStack_5 + VStack_14.y;
+      fVar25 = VStack_13.y * uStack_21._4_4_ + VStack_13.x * (float)uStack_21;
+      if (((float)((uint)fVar25 & _UNK_?) < _UNK_?) ||
+         (fVar25 = ((fVar27 - fStack_22) * uStack_21._4_4_ +
+                   (fVar26 - VStack_8.y) * (float)uStack_21) /
+                   (float)((uint)fVar25 ^
                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field),
-         fVar26 < 0.0)) {
-        if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)VStack_6.y !=
+         fVar25 < 0.0)) {
+        if (pLStack_7 !=
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)0x0) goto code_?;
       }
       else {
-        VStack_10.x = VStack_14.x * fVar26 + fVar27;
-        VStack_10.y = VStack_14.y * fVar26 + fVar34;
-        VStack_13 = VVar8;
-        VStack_6 = VVar33;
-        uStack_1 = CONCAT44(uStack_1._4_4_,(undefined *)uStack_1);
-        uStack_2 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
-        if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)VStack_6.y !=
+        VStack_11.x = VStack_13.x * fVar25 + fVar26;
+        VStack_11.y = VStack_13.y * fVar25 + fVar27;
+        if (pLStack_7 !=
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)0x0) {
-          VVar32.y = VStack_10.y;
-          VVar32.x = VStack_10.x;
+          VVar9.y = VStack_11.y;
+          VVar9.x = VStack_11.x;
 code_?:
-          func_?(VStack_6.y,VVar32,
+          func_?(pLStack_7,VVar9,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                          );
-          uVar11 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
-          iVar12 = 0;
-          fStack_23 = (float)((int)uStack_2._4_4_ + -2);
-          if (0 < (int)fStack_23) {
+          iVar1 = 0;
+          if (fStack_2 != 1.4013e-45 && -1 < (int)fStack_2 + -1) {
+            pLStack_7 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)((int)fStack_2 + -1);
             do {
-              uStack_2 = uVar11;
+              VStack_11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                          List_1_UnityEngine_Vector2__get_Item
+                                    (cwPolyPoints,iVar1,
+                                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                    );
+              VStack_14 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                          List_1_UnityEngine_Vector2__get_Item
+                                    (cwPolyPoints,iVar1 + 1,
+                                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                    );
               VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                           List_1_UnityEngine_Vector2__get_Item
-                                    (cwPolyPoints,iVar12,
+                                    ((List_1_UnityEngine_Vector2_ *)pLVar6,iVar1,
                                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                     );
-              VStack_16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+              VStack_20 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                           List_1_UnityEngine_Vector2__get_Item
-                                    (cwPolyPoints,iVar12 + 1,
+                                    (cwPolyPoints,iVar1 + 2,
                                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                     );
-              VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                       List_1_UnityEngine_Vector2__get_Item
-                                 ((List_1_UnityEngine_Vector2_ *)fVar3,iVar12,
-                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                 );
-              VStack_6 = VVar8;
-              VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                          List_1_UnityEngine_Vector2__get_Item
-                                    (cwPolyPoints,iVar12 + 2,
-                                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                    );
-              uVar11 = func_?(&stack0xffffff88,0);
-              fStack_20 = (float)uVar11 * fStack_5 + VStack_9.x;
-              fStack_24 = (float)((ulonglong)uVar11 >> 0x20) * fStack_5 + VStack_9.y;
-              pMStack_17 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                           (VStack_16.x - VStack_10.x);
-              fStack_15 = VStack_16.y - VStack_10.y;
-              pMStack_22 = pMStack_17;
+              VStack_16 = (Vector2)func_?(&stack0xffffff98,0);
+              fStack_23 = VStack_16.x * fStack_5 + VStack_20.x;
+              fStack_2 = VStack_16.y * fStack_5 + VStack_20.y;
+              fStack_17 = VStack_14.x - VStack_11.x;
+              fStack_15 = VStack_14.y - VStack_11.y;
+              fStack_22 = fStack_17;
               uStack_21._4_4_ = fStack_15;
-              uStack_2 = uVar11;
-              fVar25 = (float10)func_?(&pMStack_17,0);
-              fVar26 = (float)fVar25;
-              VStack_7.y = fVar26;
-              if (_UNK_? < fVar26) {
-                fVar27 = (float)pMStack_22 / fVar26;
-                fVar26 = uStack_21._4_4_ / fVar26;
-                uVar11 = uStack_2;
+              fVar24 = (float10)func_?(&fStack_17,0);
+              fVar25 = (float)fVar24;
+              VStack_8.y = fVar25;
+              if (_UNK_? < fVar25) {
+                fVar26 = fStack_22 / fVar25;
+                fVar25 = uStack_21._4_4_ / fVar25;
               }
               else {
                 if (cRam_? == '\0') {
                   func_?(&TypeInfo__UnityEngine__Vector2);
                   cRam_? = '\x01';
                 }
-                fVar27 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-                fVar26 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-                uVar11 = uStack_2;
+                fVar26 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
+                fVar25 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
               }
-              uStack_2._4_4_ = (float)((ulonglong)uVar11 >> 0x20);
-              uStack_2._0_4_ = (float)uVar11;
-              fVar34 = fVar26 * uStack_2._4_4_ + fVar27 * (float)uStack_2;
-              if ((_UNK_? <= (float)((uint)fVar34 & _UNK_?)) &&
-                 (fVar34 = ((VStack_6.y - fStack_24) * uStack_2._4_4_ +
-                           (VStack_6.x - fStack_20) * (float)uStack_2) /
-                           (float)((uint)fVar34 ^
-                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
-                                  ), 0.0 <= fVar34)) {
-                VStack_14.y = fVar26 * fVar34 + VStack_6.y;
-                VStack_14.x = fVar27 * fVar34 + VStack_6.x;
-                uStack_2 = uVar11;
-                func_?(fVar3,VStack_14.x,VStack_14.y,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                               );
-                uVar11 = uStack_2;
+              fVar27 = fVar25 * VStack_16.y + fVar26 * VStack_16.x;
+              if (_UNK_? <= (float)((uint)fVar27 & _UNK_?)) {
+                fVar27 = ((VStack_10.y - fStack_2) * VStack_16.y +
+                         (VStack_10.x - fStack_23) * VStack_16.x) /
+                         (float)((uint)fVar27 ^
+                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                );
+                if (0.0 <= fVar27) {
+                  VStack_13.y = fVar25 * fVar27 + VStack_10.y;
+                  VStack_13.x = fVar26 * fVar27 + VStack_10.x;
+                  func_?(pLVar6,VStack_13.x,VStack_13.y,
+                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                                 );
+                }
               }
-              iVar12 = iVar12 + 1;
-            } while (iVar12 < (int)fStack_23);
+              iVar1 = iVar1 + 1;
+            } while (iVar1 < (int)pLStack_7);
           }
-          uStack_2 = uVar11;
-          VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+          VStack_11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                       List_1_UnityEngine_Vector2__get_Item
-                                ((List_1_UnityEngine_Vector2_ *)fVar3,0,
+                                ((List_1_UnityEngine_Vector2_ *)pLVar6,0,
                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                 );
           pMVar28 = 
           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
           ;
-          piVar29 = &((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-                      *)((int)fVar3 + 8))->_version;
+          piVar29 = &(pLVar6->fields)._version;
           *piVar29 = *piVar29 + 1;
-          pMVar30 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-                     *)((int)fVar3 + 8))->_items;
+          pMVar30 = (pLVar6->fields)._items;
           if (pMVar30 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-            uVar31 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-                      *)((int)fVar3 + 8))->_size;
+            uVar31 = (pLVar6->fields)._size;
             if (pMVar30->max_length <= uVar31) {
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
               List_1_UnityEngine_Vector2__AddWithResize
-                        ((List_1_UnityEngine_Vector2_ *)fVar3,VStack_10,
+                        ((List_1_UnityEngine_Vector2_ *)pLVar6,VStack_11,
                          pMVar28->klass->rgctx_data[0xe].method);
-              return (List_1_UnityEngine_Vector2_ *)
-                     (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                      *)fVar3;
+              return (List_1_UnityEngine_Vector2_ *)pLVar6;
             }
-            ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-              *)((int)fVar3 + 8))->_size = uVar31 + 1;
+            (pLVar6->fields)._size = uVar31 + 1;
             if (uVar31 < pMVar30->max_length) {
-              (&pMVar30->vector[0].index)[uVar31 * 2] = (int32_t)VStack_10.x;
-              (&pMVar30->vector[0].name)[uVar31 * 2] = (String *)VStack_10.y;
-              return (List_1_UnityEngine_Vector2_ *)
-                     (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                      *)fVar3;
+              (&pMVar30->vector[0].index)[uVar31 * 2] = (int32_t)VStack_11.x;
+              (&pMVar30->vector[0].name)[uVar31 * 2] = (String *)VStack_11.y;
+              return (List_1_UnityEngine_Vector2_ *)pLVar6;
             }
             goto code_?;
           }
@@ -581,8 +552,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar35 = (code *)swi(3);
-  pLVar4 = (List_1_UnityEngine_Vector2_ *)(*pcVar35)();
+  pcVar32 = (code *)swi(3);
+  pLVar4 = (List_1_UnityEngine_Vector2_ *)(*pcVar32)();
   return pLVar4;
 }
 
@@ -612,281 +583,286 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
     cRam_? = '\x01';
   }
-  if ((cwPolyPoints == (List_1_UnityEngine_Vector2_ *)0x0) ||
-     (cwBorderPts == (List_1_UnityEngine_Vector2_ *)0x0)) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-    pcVar1 = (code *)swi(3);
-    pLVar2 = (List_1_UnityEngine_Vector2_ *)(*pcVar1)();
-    return pLVar2;
-  }
-  iVar3 = (cwPolyPoints->fields)._size;
-  if (iVar3 != (cwBorderPts->fields)._size) {
-    pLVar2 = (List_1_UnityEngine_Vector2_ *)func_?();
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-    return pLVar2;
-  }
-  if (isClosed == 0) {
-    if (2 < iVar3) goto code_?;
-  }
-  else if (3 < iVar3) {
-code_?:
+  if ((cwPolyPoints != (List_1_UnityEngine_Vector2_ *)0x0) &&
+     (cwBorderPts != (List_1_UnityEngine_Vector2_ *)0x0)) {
+    iVar1 = (cwPolyPoints->fields)._size;
+    if (iVar1 != (cwBorderPts->fields)._size) {
+      pLVar2 = (List_1_UnityEngine_Vector2_ *)func_?();
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType]::
+      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+      return pLVar2;
+    }
+    iVar1 = iVar1 + -1;
+    if (isClosed == 0) {
+      bVar3 = SBORROW4(iVar1,2);
+      iVar4 = -2;
+    }
+    else {
+      bVar3 = SBORROW4(iVar1,3);
+      iVar4 = -3;
+    }
+    if (bVar3 != iVar1 + iVar4 < 0) {
+      pLVar2 = (List_1_UnityEngine_Vector2_ *)
+               func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType]::
+      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+      return pLVar2;
+    }
     this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
             *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
     MultiColumnCollectionHeader+ViewState+ColumnState]::
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-              (this,iVar3 * 4 + -4,
+              (this,iVar1 * 4,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
-    iVar3 = 0;
+    iVar1 = 0;
     if (borderDirection == PrimitiveFactory_PolyBorderDirection__Enum_Outward) {
       while( true ) {
-        if ((cwPolyPoints->fields)._size + -1 <= iVar3) break;
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        if ((cwPolyPoints->fields)._size + -1 <= iVar1) break;
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,iVar1,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
         if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                      *)0x0) goto code_?;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = (String *)VVar5.y;
         }
         else {
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
         }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwBorderPts,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwBorderPts,iVar1,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = (String *)VVar5.y;
         }
         else {
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
         }
-        cwPolyPoints = (List_1_UnityEngine_Vector2_ *)(iVar3 + 1);
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,(int32_t)cwPolyPoints,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        cwPolyPoints = (List_1_UnityEngine_Vector2_ *)(iVar1 + 1);
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,(int32_t)cwPolyPoints,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = (String *)VVar5.y;
           cwBorderPts = cwPolyPoints;
         }
         else {
           cwBorderPts = (List_1_UnityEngine_Vector2_ *)&UNK_?;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
         }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3 + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,iVar1 + 1,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          iVar3 = iVar3 + 1;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          iVar1 = iVar1 + 1;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = (String *)VVar5.y;
         }
         else {
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-          iVar3 = iVar3 + 1;
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
+          iVar1 = iVar1 + 1;
         }
       }
     }
     else {
       while( true ) {
-        if ((cwPolyPoints->fields)._size + -1 <= iVar3) break;
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        if ((cwPolyPoints->fields)._size + -1 <= iVar1) break;
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,iVar1,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
         if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                      *)0x0) goto code_?;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = (String *)VVar5.y;
         }
         else {
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
         }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3 + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,iVar1 + 1,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = (String *)VVar5.y;
         }
         else {
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
         }
-        cwPolyPoints = (List_1_UnityEngine_Vector2_ *)(iVar3 + 1);
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,(int32_t)cwPolyPoints,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        cwPolyPoints = (List_1_UnityEngine_Vector2_ *)(iVar1 + 1);
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,(int32_t)cwPolyPoints,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          pSStack_9 = (String *)VVar4.y;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = pSStack_9;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          pSStack_10 = (String *)VVar5.y;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = pSStack_10;
           cwBorderPts = cwPolyPoints;
         }
         else {
           cwBorderPts = (List_1_UnityEngine_Vector2_ *)&UNK_?;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
         }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwBorderPts,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
+        VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwBorderPts,iVar1,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar7 = &(this->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pMVar8 = (this->fields)._items;
+        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          iVar3 = iVar3 + 1;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+        uVar9 = (this->fields)._size;
+        if (uVar9 < pMVar8->max_length) {
+          (this->fields)._size = uVar9 + 1;
+          if (pMVar8->max_length <= uVar9) goto code_?;
+          iVar1 = iVar1 + 1;
+          (&pMVar8->vector[0].index)[uVar9 * 2] = (int32_t)VVar5.x;
+          (&pMVar8->vector[0].name)[uVar9 * 2] = (String *)VVar5.y;
         }
         else {
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-          iVar3 = iVar3 + 1;
+                    ((List_1_UnityEngine_Vector2_ *)this,VVar5,
+                     pMVar6->klass->rgctx_data[0xe].method);
+          iVar1 = iVar1 + 1;
         }
       }
     }
     return (List_1_UnityEngine_Vector2_ *)this;
   }
-  pLVar2 = (List_1_UnityEngine_Vector2_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar11 = (code *)swi(3);
+  pLVar2 = (List_1_UnityEngine_Vector2_ *)(*pcVar11)();
   return pLVar2;
 }
 
@@ -1239,15 +1215,15 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_GenerateSphereBorde
                   fStack_10 * fStack_30;
           if (_UNK_? < (float)((uint)fVar4 & _UNK_?)) {
             fStack_37 = MathEx::MathEx_SafeAcos(fVar4,(MethodInfo *)0x0);
+            fStack_37 = fStack_37 * _UNK_?;
             fStack_38 = fStack_33 * uStack_9._4_4_ - fStack_34 * uStack_29._4_4_;
             uStack_5 = CONCAT44(fStack_35 * fStack_34 - fStack_36 * fStack_33,
                                  fStack_36 * uStack_29._4_4_ - fStack_35 * uStack_9._4_4_);
             fStack_6 = fStack_38;
             pVVar1 = (Vector3 *)func_?(auStack_39);
             pQVar40 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                               ((Quaternion *)&stack0xfffffe60,
-                                _UNK_? - fStack_37 * _UNK_?,*pVVar1,(MethodInfo *)0x0)
-            ;
+                               ((Quaternion *)&stack0xfffffe60,_UNK_? - fStack_37,*pVVar1,
+                                (MethodInfo *)0x0);
             point.z = uStack_11._4_4_;
             point.x = (float)(undefined4)uStack_23;
             point.y = (float)uStack_23._4_4_;

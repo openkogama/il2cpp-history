@@ -21,33 +21,30 @@ void Assembly-CSharp.dll::MainMenuGridAdjuster::MainMenuGridAdjuster_OnValidate
        (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform)) {
       this_00 = pTVar1;
     }
+    uVar2 = 0;
   }
   else {
     if ((pTVar1 != (Transform *)0x0) &&
        (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform)) {
       this_00 = pTVar1;
     }
-    bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
+    bVar3 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                       ((MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      fVar3 = (this->fields).bottomPaddingWithGamePasses;
-      goto code_?;
-    }
+    uVar2 = (uint)bVar3;
   }
-  fVar3 = (this->fields).bottomPaddingWithoutGamePasses;
-code_?:
+  fVar4 = (&(this->fields).bottomPaddingWithoutGamePasses)[uVar2];
   if (this_00 != (Transform *)0x0) {
-    VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_offsetMin
+    VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_offsetMin
                       ((RectTransform *)this_00,(MethodInfo *)0x0);
-    value.y = fVar3;
-    value.x = VVar4.x;
+    value.y = fVar4;
+    value.x = VVar5.x;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_offsetMin
               ((RectTransform *)this_00,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -74,33 +71,30 @@ void Assembly-CSharp.dll::MainMenuGridAdjuster::MainMenuGridAdjuster_SetRectTran
        (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform)) {
       this_00 = pTVar1;
     }
+    uVar2 = 0;
   }
   else {
     if ((pTVar1 != (Transform *)0x0) &&
        (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform)) {
       this_00 = pTVar1;
     }
-    bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
+    bVar3 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                       ((MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      fVar3 = (this->fields).bottomPaddingWithGamePasses;
-      goto code_?;
-    }
+    uVar2 = (uint)bVar3;
   }
-  fVar3 = (this->fields).bottomPaddingWithoutGamePasses;
-code_?:
+  fVar4 = (&(this->fields).bottomPaddingWithoutGamePasses)[uVar2];
   if (this_00 != (Transform *)0x0) {
-    VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_offsetMin
+    VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_offsetMin
                       ((RectTransform *)this_00,(MethodInfo *)0x0);
-    value.y = fVar3;
-    value.x = VVar4.x;
+    value.y = fVar4;
+    value.x = VVar5.x;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_offsetMin
               ((RectTransform *)this_00,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

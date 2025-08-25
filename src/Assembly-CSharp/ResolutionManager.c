@@ -60,7 +60,7 @@ float Assembly-CSharp.dll::ResolutionManager::ResolutionManager_GetScreenDpiScal
     iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
     fVar2 = (float)iVar4;
   }
-  dVar3 = (double)(fVar2 * fVar2 + fVar1 * fVar1);
+  dVar3 = (double)(fVar1 * fVar1 + fVar2 * fVar2);
   if (dVar3 < 0.0) {
     func_?();
   }
@@ -113,7 +113,7 @@ void Assembly-CSharp.dll::ResolutionManager::ResolutionManager_Init
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  dVar5 = (double)(fVar2 * fVar2 + fVar4 * fVar4);
+  dVar5 = (double)(fVar4 * fVar4 + fVar2 * fVar2);
   if (dVar5 < 0.0) {
     func_?();
   }

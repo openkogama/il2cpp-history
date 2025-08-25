@@ -116,9 +116,9 @@ int32_t Assembly-CSharp.dll::SubscribableVariableBase`1[UnityEngine::Vector3]::
     }
     func_?(pIVar2->static_fields,pEVar3);
   }
+  uVar4._0_4_ = (this->fields).value.x;
+  uVar4._4_4_ = (this->fields).value.y;
   if (pEVar3 != (EqualityComparer_1_UnityEngine_Vector3_ *)0x0) {
-    uVar4._0_4_ = (this->fields).value.x;
-    uVar4._4_4_ = (this->fields).value.y;
     iVar5 = (*(code *)(pEVar3->klass->vtable).__unknown_1.method)
                       (pEVar3,uVar4,(this->fields).value.z,(pEVar3->klass->vtable).IndexOf.methodPtr
                       );

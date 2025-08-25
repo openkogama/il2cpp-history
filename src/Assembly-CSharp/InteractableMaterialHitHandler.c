@@ -289,7 +289,7 @@ void Assembly-CSharp.dll::InteractableMaterialHitHandler::
         if (pTVar2 != (Transform *)0x0) {
           worldPosition.y = eulerRotation.y + position.y;
           worldPosition.x = position.x + eulerRotation.x;
-          worldPosition.z = position.z + eulerRotation.z;
+          worldPosition.z = eulerRotation.z + position.z;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
                     (pTVar2,worldPosition,(MethodInfo *)0x0);
           return;

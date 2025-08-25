@@ -7,14 +7,10 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamViewportUpdater::SceneGizmoCamViewpo
 
 {
   pSVar1 = (this->fields)._sceneGizmo;
-  if (pSVar1 == (SceneGizmo *)0x0) goto code_?;
-  if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-    this_00 = (pSVar1->fields)._lookAndFeel;
-    if (this_00 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    this_00 = (pSVar1->fields)._sharedLookAndFeel;
-  }
+  if ((pSVar1 == (SceneGizmo *)0x0) ||
+     (this_00 = (&(pSVar1->fields)._lookAndFeel)
+                [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0],
+     this_00 == (SceneGizmoLookAndFeel *)0x0)) goto code_?;
   fStack_2 = (this_00->fields)._screenOffset.x;
   fVar3 = (this_00->fields)._screenOffset.y;
   if ((sceneGizmoCamera == (RTSceneGizmoCamera *)0x0) ||
@@ -31,11 +27,11 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamViewportUpdater::SceneGizmoCamViewpo
   fVar11 = (this_00->fields)._screenSize;
   bVar12 = (this_00->fields)._isCamPrjSwitchLabelVisible;
   if ((this_00->fields)._screenCorner == 1) {
-    fVar6 = (fVar8 + fVar6) - fVar11;
+    fVar6 = (fVar6 + fVar8) - fVar11;
 code_?:
     fStack_2 = fStack_2 + fVar6;
     pCVar4 = (sceneGizmoCamera->fields)._camera;
-    fVar7 = (fVar9 + fVar7) - fVar11;
+    fVar7 = (fVar7 + fVar9) - fVar11;
   }
   else {
     if ((this_00->fields)._screenCorner == 0) goto code_?;
@@ -48,7 +44,7 @@ code_?:
         fStack_13 = fStack_13 + _UNK_?;
       }
       pCVar4 = (sceneGizmoCamera->fields)._camera;
-      fStack_2 = fStack_2 + ((fVar8 + fVar6) - fVar11);
+      fStack_2 = fStack_2 + ((fVar6 + fVar8) - fVar11);
       fVar7 = fVar7 + fStack_13;
     }
     else {

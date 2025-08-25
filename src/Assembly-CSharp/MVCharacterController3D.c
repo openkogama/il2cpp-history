@@ -455,25 +455,26 @@ Vector3 * Assembly-CSharp.dll::MVCharacterController3D::
 
 {
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&eDir,(MethodInfo *)0x0);
-  fVar1 = ePos.z + eDir.z * distance;
-  fVar2 = ePos.y + eDir.y * distance;
-  fVar3 = fVar1 - ePoint.z;
-  value.y = fVar2 - ePoint.y;
-  value.x = (ePos.x + eDir.x * distance) - ePoint.x;
-  value.z = fVar3;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffc0,value,(MethodInfo *)0x0);
-  uVar5 = pVVar4->x;
-  uVar6 = pVVar4->y;
-  value_00.y = (fVar2 + (float)uVar6 * _UNK_?) - ePos.y;
-  value_00.x = (fVar3 + (float)uVar5 * _UNK_?) - ePos.x;
-  value_00.z = (fVar1 + pVVar4->z * _UNK_?) - ePos.z;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffc0,value_00,(MethodInfo *)0x0);
-  fVar3 = pVVar4->y;
-  fVar1 = pVVar4->z;
-  __return_storage_ptr__->x = pVVar4->x;
-  __return_storage_ptr__->y = fVar3;
+  fVar1 = eDir.z * distance;
+  fVar2 = ePos.x + eDir.x * distance;
+  eDir.z = ePos.y + eDir.y * distance;
+  fVar1 = ePos.z + fVar1;
+  value.y = eDir.z - ePoint.y;
+  value.x = fVar2 - ePoint.x;
+  value.z = fVar1 - ePoint.z;
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffe0,value,(MethodInfo *)0x0);
+  uVar4 = pVVar3->x;
+  uVar5 = pVVar3->y;
+  value_00.y = ((float)uVar5 * _UNK_? + eDir.z) - ePos.y;
+  value_00.x = ((float)uVar4 * _UNK_? + fVar2) - ePos.x;
+  value_00.z = (fVar1 + pVVar3->z * _UNK_?) - ePos.z;
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&ePos,value_00,(MethodInfo *)0x0);
+  fVar2 = pVVar3->y;
+  fVar1 = pVVar3->z;
+  __return_storage_ptr__->x = pVVar3->x;
+  __return_storage_ptr__->y = fVar2;
   __return_storage_ptr__->z = fVar1;
   return __return_storage_ptr__;
 }

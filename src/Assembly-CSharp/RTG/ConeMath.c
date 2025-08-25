@@ -143,7 +143,7 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_ContainsPoint
   uVar9 = (pVVar8->upVector).x;
   uVar10 = (pVVar8->upVector).y;
   coneBaseCenter.z = (pVVar8->upVector).z;
-  fVar7 = (float)uVar5 * (float)uVar9 + (float)uVar6 * (float)uVar10 + fVar7 * coneBaseCenter.z;
+  fVar7 = (float)uVar6 * (float)uVar10 + (float)uVar5 * (float)uVar9 + fVar7 * coneBaseCenter.z;
   if (((float)((uint)epsilon._vertEps ^
               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <= fVar7)
      && (fVar7 <= epsilon._vertEps + coneHeight)) {

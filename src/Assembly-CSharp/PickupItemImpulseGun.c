@@ -54,7 +54,7 @@ void Assembly-CSharp.dll::PickupItemImpulseGun::PickupItemImpulseGun_DoChargingA
         fVar10 = (float)uVar7 + (float)uVar9 * fVar3;
         if (pTVar4 != (Transform *)0x0) {
           value.y = fVar10;
-          value.x = (float)uVar8 * fVar3 + (float)uVar6;
+          value.x = (float)uVar6 + (float)uVar8 * fVar3;
           value.z = (pVVar5->zeroVector).z + (this->fields).shakeDirection.z * fVar3;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                     (pTVar4,value,(MethodInfo *)0x0);

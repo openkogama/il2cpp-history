@@ -88,8 +88,24 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
   pMVar5 = extraout_ECX;
   team = unaff_EDI;
 code_?:
-  func_?(team,pMVar5);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar9 = func_?(team,pMVar5);
+  iVar10 = (int)((ulonglong)uVar9 >> 0x20);
+  bVar11 = (byte)((ulonglong)uVar9 >> 8) < *(byte *)((int)uVar9 + 0x41);
+  pbVar12 = (byte *)(iVar10 + 0x60);
+  bVar13 = (byte)((ulonglong)uVar9 >> 0x20);
+  bVar14 = *pbVar12 + bVar13;
+  bVar15 = CARRY1(*pbVar12,bVar13) || CARRY1(bVar14,bVar11);
+  *pbVar12 = bVar14 + bVar11;
+  pbVar12 = (byte *)(iVar10 + 0x60);
+  bVar14 = *pbVar12;
+  bVar16 = (byte)((uint)(extraout_ECX_00 + 1) >> 8);
+  bVar13 = *pbVar12 + bVar16;
+  *pbVar12 = bVar13 + bVar15;
+  *(char *)(iVar10 + -0x33efbea0) =
+       *(char *)(iVar10 + -0x33efbea0) + (char)uVar9 +
+       (CARRY1(bVar14,bVar16) || CARRY1(bVar13,bVar15));
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
+  return;
 }
 

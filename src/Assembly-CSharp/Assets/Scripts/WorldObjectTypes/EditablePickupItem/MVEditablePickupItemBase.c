@@ -231,50 +231,62 @@ code_?:
                               (pDVar4,(Object *)StringLiteral_itemData,(Object **)&this,
                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                               );
-            this_00 = this;
-            if ((((bVar3 == 0) || (this == (MVEditablePickupItemBase *)0x0)) ||
-                ((this->klass->_1).naturalAligment <
-                 (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment)) ||
-               (((Dictionary_2_System_Object_System_Object___Class *)
-                 (this->klass->_1).typeHierarchy
-                 [(
+            if ((bVar3 != 0) && (this != (MVEditablePickupItemBase *)0x0)) {
+              if (((this->klass->_1).naturalAligment <
+                   (
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).naturalAligment) ||
+                 ((Dictionary_2_System_Object_System_Object___Class *)
+                  (this->klass->_1).typeHierarchy
+                  [(
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   ->_1).naturalAligment - 1] !=
                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                  ->_1).naturalAligment - 1] !=
-                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                || (this == (MVEditablePickupItemBase *)0x0)))) {
-code_?:
-              if ((pMVar1->fields)._.useInteractor == (UseInteractor *)0x0) {
-                return;
+                 )) {
+                bVar5 = false;
               }
-              pMVar5 = (pMVar1->fields).blueprint;
-              if (pMVar5 != (MVEditablePickupItemBaseBlueprint *)0x0) {
-                method = (MethodInfo *)(pMVar5->fields)._._._._.data;
-                this = (MVEditablePickupItemBase *)(pMVar1->fields)._.useInteractor;
-                UseInteractor::UseInteractor_UpdateData
-                          ((UseInteractor *)this,(Dictionary_2_System_Object_System_Object_ *)method
-                           ,(MethodInfo *)0x0);
-                return;
+              else {
+                bVar5 = true;
               }
-            }
-            else if ((pMVar1->fields).blueprint != (MVEditablePickupItemBaseBlueprint *)0x0) {
-              this = (MVEditablePickupItemBase *)&stack0xfffffff8;
-              value = (Object *)func_?();
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__set_Item
-                        ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                         (Object *)StringLiteral_CubeModelId,value,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                        );
-              pDVar4 = (pMVar1->fields)._._._._.data;
-              if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                Object]::Dictionary_2_System_Object_System_Object__set_Item
-                          (pDVar4,(Object *)StringLiteral_itemData,(Object *)this_00,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                          );
+              this_00 = (MVEditablePickupItemBase *)0x0;
+              if (bVar5) {
+                this_00 = this;
+              }
+              if (this_00 != (MVEditablePickupItemBase *)0x0) {
+                if ((pMVar1->fields).blueprint != (MVEditablePickupItemBaseBlueprint *)0x0) {
+                  this = (MVEditablePickupItemBase *)&stack0xfffffff8;
+                  value = (Object *)func_?();
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__set_Item
+                            ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                             (Object *)StringLiteral_CubeModelId,value,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                            );
+                  pDVar4 = (pMVar1->fields)._._._._.data;
+                  if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__set_Item
+                              (pDVar4,(Object *)StringLiteral_itemData,(Object *)this_00,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                              );
+                    goto code_?;
+                  }
+                }
                 goto code_?;
               }
+            }
+code_?:
+            if ((pMVar1->fields)._.useInteractor == (UseInteractor *)0x0) {
+              return;
+            }
+            pMVar6 = (pMVar1->fields).blueprint;
+            if (pMVar6 != (MVEditablePickupItemBaseBlueprint *)0x0) {
+              method = (MethodInfo *)(pMVar6->fields)._._._._.data;
+              this = (MVEditablePickupItemBase *)(pMVar1->fields)._.useInteractor;
+              UseInteractor::UseInteractor_UpdateData
+                        ((UseInteractor *)this,(Dictionary_2_System_Object_System_Object_ *)method,
+                         (MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -289,13 +301,13 @@ code_?:
                                (pDVar2,(Object *)StringLiteral_itemType,
                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                );
-            uVar6 = CONCAT44(TypeInfo__MV__Common__AvatarItemType,method);
+            uVar7 = CONCAT44(TypeInfo__MV__Common__AvatarItemType,method);
             if (method != (MethodInfo *)0x0) {
               if (*(Il2CppClass **)(*(int *)method + 0x20) !=
                   (TypeInfo__MV__Common__AvatarItemType->_0).element_class) goto code_?;
               this = (MVEditablePickupItemBase *)&UNK_?;
-              piVar7 = (int32_t *)func_?();
-              (pMVar1->fields)._.pickupItemType = *piVar7;
+              piVar8 = (int32_t *)func_?();
+              (pMVar1->fields)._.pickupItemType = *piVar8;
               goto code_?;
             }
           }
@@ -313,26 +325,27 @@ code_?:
                            (pDVar2,(Object *)StringLiteral_variantId,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-        uVar6 = CONCAT44(TypeInfo__System__Int32,method);
+        uVar7 = CONCAT44(TypeInfo__System__Int32,method);
         if (method != (MethodInfo *)0x0) {
           if (*(Il2CppClass **)(*(int *)method + 0x20) !=
               (TypeInfo__System__Int32->_0).element_class) goto code_?;
           this = (MVEditablePickupItemBase *)&UNK_?;
-          piVar7 = (int32_t *)func_?();
-          (pMVar1->fields)._.pickupVariantId = *piVar7;
+          piVar8 = (int32_t *)func_?();
+          (pMVar1->fields)._.pickupVariantId = *piVar8;
           goto code_?;
         }
       }
     }
   }
-  method = (MethodInfo *)&UNK_?;
-  uVar6 = func_?();
 code_?:
-  method = (MethodInfo *)((ulonglong)uVar6 >> 0x20);
-  this = (MVEditablePickupItemBase *)uVar6;
+  method = (MethodInfo *)&UNK_?;
+  uVar7 = func_?();
+code_?:
+  method = (MethodInfo *)((ulonglong)uVar7 >> 0x20);
+  this = (MVEditablePickupItemBase *)uVar7;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -359,49 +372,61 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
     func_?(&StringLiteral_itemData);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  pDVar1 = (this->fields)._._._._.data;
-  if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  pDVar2 = (this->fields)._._._._.data;
+  if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+  bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__TryGetValue
-                    (pDVar1,(Object *)StringLiteral_itemData,(Object **)&stack0xfffffff8,
+                    (pDVar2,(Object *)StringLiteral_itemData,(Object **)&stack0xfffffff8,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                     );
-  if ((((bVar2 != 0) && (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) &&
-      ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       naturalAligment <= (this_00->klass->_1).naturalAligment)) &&
-     (((Dictionary_2_System_Object_System_Object___Class *)
-       (this_00->klass->_1).typeHierarchy
-       [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-        naturalAligment - 1] ==
-       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object> &&
-      (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)))) {
-    if ((this->fields).blueprint == (MVEditablePickupItemBaseBlueprint *)0x0) goto code_?;
-    value = (Object *)func_?(TypeInfo__System__Int32);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__set_Item
-              (this_00,(Object *)StringLiteral_CubeModelId,value,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-              );
-    pDVar1 = (this->fields)._._._._.data;
-    if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__set_Item
-              (pDVar1,(Object *)StringLiteral_itemData,(Object *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-              );
+  if ((bVar3 != 0) && (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+    if (((pDVar1->klass->_1).naturalAligment <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (pDVar1->klass->_1).typeHierarchy
+        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment - 1] !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      bVar4 = false;
+    }
+    else {
+      bVar4 = true;
+    }
+    pDVar2 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+    if (bVar4) {
+      pDVar2 = pDVar1;
+    }
+    if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      if ((this->fields).blueprint == (MVEditablePickupItemBaseBlueprint *)0x0)
+      goto code_?;
+      value = (Object *)func_?(TypeInfo__System__Int32);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__set_Item
+                (pDVar2,(Object *)StringLiteral_CubeModelId,value,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                );
+      pDVar1 = (this->fields)._._._._.data;
+      if (pDVar1 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__set_Item
+                (pDVar1,(Object *)StringLiteral_itemData,(Object *)pDVar2,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                );
+    }
   }
   if ((this->fields)._.useInteractor != (UseInteractor *)0x0) {
-    pMVar3 = (this->fields).blueprint;
-    if (pMVar3 == (MVEditablePickupItemBaseBlueprint *)0x0) {
+    pMVar5 = (this->fields).blueprint;
+    if (pMVar5 == (MVEditablePickupItemBaseBlueprint *)0x0) {
 code_?:
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
     UseInteractor::UseInteractor_UpdateData
-              ((this->fields)._.useInteractor,(pMVar3->fields)._._._._.data,(MethodInfo *)0x0);
+              ((this->fields)._.useInteractor,(pMVar5->fields)._._._._.data,(MethodInfo *)0x0);
   }
   return;
 }

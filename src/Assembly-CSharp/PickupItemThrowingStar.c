@@ -258,7 +258,7 @@ code_?:
                   uVar23 = pVVar2->y;
                   VStack_6.z = pVVar2->z;
                   fVar11 = VStack_6.z + VStack_3.z;
-                  VStack_3.y = (float)uVar23 + VStack_3.y;
+                  VStack_3.y = VStack_3.y + (float)uVar23;
                   VStack_3.x = VStack_3.x + (float)uVar22;
                   uVar20 = VStack_3._0_8_;
                   VStack_3.z = fVar11;

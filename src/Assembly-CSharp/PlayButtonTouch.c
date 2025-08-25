@@ -322,17 +322,16 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_Update
         }
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                  ((MethodInfo *)(pMVar5->fields).respawnTime);
+        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
         puVar9 = &UNK_?;
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        puVar10 = &UNK_?;
-        fVar4 = MVLocalPlayer::MVLocalPlayer_get_RespawnDuration(pMVar5,(MethodInfo *)0x0);
-        pIVar6 = (this->fields).countdownFill;
-        if (pIVar6 == (Image *)0x0) goto code_?;
+        fVar4 = (float)puVar9 - fVar4;
+        fVar10 = MVLocalPlayer::MVLocalPlayer_get_RespawnDuration(pMVar5,(MethodInfo *)0x0);
+        this = (PlayButtonTouch *)0x0;
+        if (pIRam00000010 == (Image *)0x0) goto code_?;
         UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                  (pIVar6,((float)puVar10 - (float)puVar9) / fVar4,(MethodInfo *)0x0);
+                  (pIRam00000010,fVar4 / fVar10,(MethodInfo *)0x0);
       }
       pIVar6 = (this->fields).countdownFill;
       if (pIVar6 != (Image *)0x0) {
@@ -371,10 +370,10 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch__Play_b__5_0
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
     cRam_? = '\x01';
   }
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
+  this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-  UnityAction_2_System_Int32_System_Int32___ctor
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::
+  UnityAction_2_System_Boolean_System_Boolean___ctor
             (this_00,(Object *)this,MethodInfo__PlayButtonTouch__OnPromotionShown_bool__bool_,
              (MethodInfo *)0x0);
   if (x != (IDeathPromotionSelector *)0x0) {
@@ -401,10 +400,10 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch__Play_b__5_1
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
     cRam_? = '\x01';
   }
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
+  this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-  UnityAction_2_System_Int32_System_Int32___ctor
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::
+  UnityAction_2_System_Boolean_System_Boolean___ctor
             (this_00,(Object *)this,MethodInfo__PlayButtonTouch__OnPromotionShown_bool__bool_,
              (MethodInfo *)0x0);
   if (x != (IDeathPromotionSelector *)0x0) {

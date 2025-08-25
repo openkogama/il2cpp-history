@@ -90,9 +90,9 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
                      );
       cRam_? = '\x01';
     }
-    pGVar1 = (this->fields)._.gameCounterManager;
+    unaff_EBX = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (pGVar1 != (GameStatCounterManager *)0x0) {
+    if (unaff_EBX != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -100,7 +100,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar2 = (pGVar1->fields).activeTeams;
+      pHVar2 = (unaff_EBX->fields).activeTeams;
       this_00 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
@@ -112,7 +112,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
                 );
       if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
         pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (pGVar1,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
         return pHVar3;
       }
@@ -144,6 +144,12 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
     }
   }
   func_?();
+  bVar4 = (byte)((uint)unaff_EBX >> 8);
+  LOCK();
+  *(char *)(extraout_EDX + 0x7a10f0bb) =
+       *(char *)(extraout_EDX + 0x7a10f0bb) + bVar4 +
+       (bVar4 < *(byte *)&unaff_EBX[-0x1e746a4].klass);
+  UNLOCK();
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }
@@ -220,9 +226,9 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
                      );
       cRam_? = '\x01';
     }
-    pGVar1 = (this->fields)._.gameCounterManager;
+    unaff_EBX = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (pGVar1 != (GameStatCounterManager *)0x0) {
+    if (unaff_EBX != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -230,7 +236,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar2 = (pGVar1->fields).activeTeams;
+      pHVar2 = (unaff_EBX->fields).activeTeams;
       this_00 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
@@ -242,7 +248,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
                 );
       if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
         pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (pGVar1,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
         return pHVar3;
       }
@@ -274,6 +280,12 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
     }
   }
   func_?();
+  bVar4 = (byte)((uint)unaff_EBX >> 8);
+  LOCK();
+  *(char *)(extraout_EDX + 0x7a10f0bb) =
+       *(char *)(extraout_EDX + 0x7a10f0bb) + bVar4 +
+       (bVar4 < *(byte *)&unaff_EBX[-0x1e746a4].klass);
+  UNLOCK();
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

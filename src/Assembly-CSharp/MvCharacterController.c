@@ -39,14 +39,14 @@ bool Assembly-CSharp.dll::MvCharacterController::MvCharacterController_CheckOver
                       ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
+                       ((Vector3 *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
     uVar2 = pVVar1->x;
     uVar3 = pVVar1->y;
     uVar4 = (this->fields).center.x;
     uVar5 = (this->fields).center.y;
     R3Position.y = (float)uVar3 + (float)uVar5;
     R3Position.x = (float)uVar4 + (float)uVar2;
-    R3Position.z = (this->fields).center.z + pVVar1->z;
+    R3Position.z = pVVar1->z + (this->fields).center.z;
     bVar6 = MvCharacterController_OverlapCheckCollision(this,R3Position,(MethodInfo *)0x0);
     return bVar6;
   }
@@ -170,11 +170,10 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
       uVar32._0_4_ = (this->fields).elipsoidRadius.z;
       VStack_16.x = (this->fields).elipsoidRadius.x;
       VStack_16.y = (this->fields).elipsoidRadius.y;
-      fStack_15 = in_stack_33;
       if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      puVar34 = &UNK_?;
+      puVar33 = &UNK_?;
       R3Dir.y = uVar8._4_4_;
       R3Dir.x = (float)uVar8;
       R3Dir.z = fStack_7;
@@ -182,49 +181,48 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
       R3Radius.x = VStack_16.x;
       R3Radius.y = VStack_16.y;
       distance = (Cube *)MvCharacterController_DistanceR3SpaceToESpace
-                                   (fStack_15,R3Dir,R3Radius,(MethodInfo *)0x0);
+                                   (in_stack_34,R3Dir,R3Radius,(MethodInfo *)0x0);
       vec1 = (Cube *)&(this->fields).elipsoidRadius;
       vec0 = (Vector3 *)&stack0xfffffef4;
       pVVar1 = &VStack_2;
       puVar35 = &UNK_?;
       pVVar36 = MathFunctions::MathFunctions_DivideVector
                           (pVVar1,vec0,(Vector3 *)vec1,(MethodInfo *)0x0);
-      VStack_6.z = pVVar36->z;
       uVar32._0_4_ = pVVar36->x;
       uVar32._4_4_ = pVVar36->y;
-      fVar37 = pVVar36->z;
+      pTVar37 = (Transform *)pVVar36->z;
       method_00 = (MethodInfo *)&UNK_?;
       VStack_6._0_8_ = uVar32;
+      VStack_6.z = (float)pTVar37;
       VStack_16._0_8_ = uVar32;
-      pTStack_18 = (Transform *)VStack_6.z;
-      fVar38 = MvCharacterController_GetCollisionAngle
-                         (*ePos,*eVel,(float)distance,*pVVar36,(MethodInfo *)0x0);
-      if ((fVar38 <= _UNK_?) || ((float)distance == 0.0)) {
-        uVar39 = ePos->x;
-        uVar40 = ePos->y;
-        uVar41 = eVel->x;
-        uVar42 = eVel->y;
+      pTStack_18 = pTVar37;
+      fStack_15 = MvCharacterController_GetCollisionAngle
+                            (*ePos,*eVel,(float)distance,*pVVar36,(MethodInfo *)0x0);
+      if ((fStack_15 <= _UNK_?) || ((float)distance == 0.0)) {
+        uVar38 = ePos->x;
+        uVar39 = ePos->y;
+        uVar40 = eVel->x;
+        uVar41 = eVel->y;
         VStack_2.z = eVel->z + ePos->z;
-        fStack_43 = eVel->z;
+        fStack_42 = eVel->z;
         VStack_16.z = ePos->z;
-        uVar44 = eVel->x;
-        uVar45 = eVel->y;
-        uVar46 = ePos->x;
-        uVar47 = ePos->y;
-        uVar48 = eVel->x;
-        uVar49 = eVel->y;
-        VStack_2.y = (float)uVar42 + (float)uVar40;
-        VStack_2.x = (float)uVar41 + (float)uVar39;
-        fVar38 = fStack_15;
-        fStack_50 = (float)uVar48;
-        fStack_51 = (float)uVar49;
-        fStack_52 = (float)uVar39;
-        auStack_53._0_4_ = uVar46;
-        auStack_53._4_4_ = uVar47;
-        fStack_54 = (float)uVar41;
-        fStack_55 = (float)uVar44;
-        fStack_56 = (float)uVar45;
+        uVar43 = eVel->x;
+        uVar44 = eVel->y;
         fStack_15 = eVel->z;
+        uVar45 = ePos->x;
+        uVar46 = ePos->y;
+        uVar47 = eVel->x;
+        uVar48 = eVel->y;
+        VStack_2.y = (float)uVar41 + (float)uVar39;
+        VStack_2.x = (float)uVar40 + (float)uVar38;
+        fStack_49 = (float)uVar47;
+        fStack_50 = (float)uVar48;
+        fStack_51 = (float)uVar38;
+        auStack_52._0_4_ = uVar45;
+        auStack_52._4_4_ = uVar46;
+        fStack_53 = (float)uVar40;
+        fStack_54 = (float)uVar43;
+        fStack_55 = (float)uVar44;
         if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -235,52 +233,52 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
         if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        uVar57 = 0;
-        fVar58 = VStack_16.x;
-        pCVar59 = VStack_16.y;
-        puVar60 = &UNK_?;
-        ePos_00.y = (float)auStack_53._4_4_;
-        ePos_00.x = (float)auStack_53._0_4_;
+        uVar56 = 0;
+        fVar57 = VStack_16.x;
+        pCVar58 = VStack_16.y;
+        puVar59 = &UNK_?;
+        ePos_00.y = (float)auStack_52._4_4_;
+        ePos_00.x = (float)auStack_52._0_4_;
         ePos_00.z = VStack_16.z;
-        eDir.y = fStack_51;
-        eDir.x = fStack_50;
+        eDir.y = fStack_50;
+        eDir.x = fStack_49;
         eDir.z = fStack_15;
         ePoint.z = (float)pTStack_18;
         ePoint.x = VStack_16.x;
         ePoint.y = VStack_16.y;
-        fVar61 = VStack_16.z;
+        fVar60 = VStack_16.z;
+        fVar61 = fStack_49;
         fVar62 = fStack_50;
-        fVar63 = fStack_51;
-        fVar64 = fStack_15;
-        pCVar65 = distance;
-        pTVar66 = pTStack_18;
-        fVar67 = MvCharacterController_GetCollisionAngle
+        fVar63 = fStack_15;
+        pCVar64 = distance;
+        pTVar65 = pTStack_18;
+        fVar66 = MvCharacterController_GetCollisionAngle
                            (ePos_00,eDir,(float)distance,ePoint,(MethodInfo *)0x0);
-        dVar68 = (double)(fVar67 * _UNK_?);
-        fVar67 = (float)auStack_53._0_4_;
-        uVar4 = auStack_53._4_4_;
-        auStack_53 = (undefined1  [8])dVar68;
+        dVar67 = (double)(fVar66 * _UNK_?);
+        fVar66 = (float)auStack_52._0_4_;
+        uVar4 = auStack_52._4_4_;
+        auStack_52 = (undefined1  [8])dVar67;
         func_?();
-        VStack_16.z = _UNK_? / (float)dVar68 -
-                      (_UNK_? / (float)dVar68) * _UNK_?;
-        value.y = fStack_56;
-        value.x = fStack_55;
-        value.z = fStack_43;
+        VStack_16.z = _UNK_? / (float)dVar67 -
+                      (_UNK_? / (float)dVar67) * _UNK_?;
+        value.y = fStack_55;
+        value.x = fStack_54;
+        value.z = fStack_42;
         pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                             ((Vector3 *)&MStack_10.position.y,value,(MethodInfo *)0x0);
-        uVar69 = pVVar36->x;
-        uVar70 = pVVar36->y;
-        fStack_51 = pVVar36->z;
-        fStack_71 = (float)uVar69;
-        fStack_50 = (float)uVar70;
+        uVar68 = pVVar36->x;
+        uVar69 = pVVar36->y;
+        fStack_50 = pVVar36->z;
+        fStack_70 = (float)uVar68;
+        fStack_49 = (float)uVar69;
         if (((float)distance - VStack_16.z < 0.0) || (VStack_16.z <= 0.0)) {
-          puVar72 = (undefined8 *)func_?();
-          VStack_2._0_8_ = *puVar72;
-          VStack_2.z = *(float *)(puVar72 + 1);
+          puVar71 = (undefined8 *)func_?();
+          VStack_2._0_8_ = *puVar71;
+          VStack_2.z = *(float *)(puVar71 + 1);
           fVar17 = (float10)func_?();
           VStack_2.z = VStack_2.z * (float)fVar17;
-          piVar73 = &(this->fields).collisionRecursionDepth;
-          *piVar73 = *piVar73 + 1;
+          piVar72 = &(this->fields).collisionRecursionDepth;
+          *piVar72 = *piVar72 + 1;
           pVVar1 = MvCharacterController_CollideWithWorld
                               ((Vector3 *)&MStack_10.position.y,this,ePos,
                                (Vector3 *)&stack0xffffff58,foundValidPosition,(MethodInfo *)0x0);
@@ -291,72 +289,72 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
           __return_storage_ptr__->z = (float)uVar8;
           return __return_storage_ptr__;
         }
-        uVar74 = ePos->x;
-        uVar75 = ePos->y;
-        auStack_53._4_4_ = ePos->z;
-        uVar76 = pVVar36->x;
-        uVar77 = pVVar36->y;
-        fVar78 = (float)uVar74 + (float)uVar76 * ((float)distance - VStack_16.z);
-        fStack_56 = (float)auStack_53._4_4_ + fStack_51 * ((float)distance - VStack_16.z);
-        fVar79 = VStack_6.x - (float)uVar69 * VStack_16.z;
-        fVar80 = VStack_6.y - (float)uVar70 * VStack_16.z;
-        fVar81 = VStack_6.z - fStack_51 * VStack_16.z;
-        VStack_6.z = fVar81;
-        fStack_52 = (float)uVar74;
-        auStack_53._0_4_ = uVar75;
+        uVar73 = ePos->x;
+        uVar74 = ePos->y;
+        auStack_52._4_4_ = ePos->z;
+        uVar75 = pVVar36->x;
+        uVar76 = pVVar36->y;
+        fVar77 = (float)uVar73 + (float)uVar75 * ((float)distance - VStack_16.z);
+        fStack_55 = (float)auStack_52._4_4_ + fStack_50 * ((float)distance - VStack_16.z);
+        fVar78 = VStack_6.x - (float)uVar68 * VStack_16.z;
+        fVar79 = VStack_6.y - (float)uVar69 * VStack_16.z;
+        fVar80 = VStack_6.z - fStack_50 * VStack_16.z;
+        VStack_6.z = fVar80;
+        fStack_51 = (float)uVar73;
+        auStack_52._0_4_ = uVar74;
+        fStack_53 = (float)uVar75;
         fStack_54 = (float)uVar76;
-        fStack_55 = (float)uVar77;
         (*(code *)(this->klass->vtable).__unknown_2.method)();
-        if (SUB41(fVar63,0) != 0) {
+        if (SUB41(fVar62,0) != 0) {
           func_?();
+          uVar81 = 0;
           uVar82 = 0;
-          uVar83 = 0;
-          uVar84 = (this->fields).elipsoidRadius.x;
-          uVar85 = (this->fields).elipsoidRadius.y;
+          uVar83 = (this->fields).elipsoidRadius.x;
+          uVar84 = (this->fields).elipsoidRadius.y;
           hit.point.y = uVar32._4_4_;
           hit.point.x = (float)uVar32;
-          hit.point.z = fVar37;
-          hit.normal.x = (float)puVar60;
-          hit.normal.y = fVar67;
+          hit.point.z = (float)pTVar37;
+          hit.normal.x = (float)puVar59;
+          hit.normal.y = fVar66;
           hit.normal.z = (float)uVar4;
-          hit.cubePos._0_4_ = fVar61;
-          hit._28_4_ = fVar62;
-          hit.face = (int32_t)fVar63;
-          hit._36_4_ = fVar64;
-          hit.woId = (int32_t)pCVar65;
-          hit.cube = (Cube *)fVar58;
-          hit.distance = (float)pCVar59;
-          hit.collider = (Collider *)pTVar66;
-          hit.transform = (Transform *)uVar57;
-          hit._60_4_ = in_stack_86;
-          hit.interactionFlags._0_4_ = uStack_87;
-          hit.interactionFlags._4_4_ = fVar79;
+          hit.cubePos._0_4_ = fVar60;
+          hit._28_4_ = fVar61;
+          hit.face = (int32_t)fVar62;
+          hit._36_4_ = fVar63;
+          hit.woId = (int32_t)pCVar64;
+          hit.cube = (Cube *)fVar57;
+          hit.distance = (float)pCVar58;
+          hit.collider = (Collider *)pTVar65;
+          hit.transform = (Transform *)uVar56;
+          hit._60_4_ = in_stack_85;
+          hit.interactionFlags._0_4_ = uStack_86;
+          hit.interactionFlags._4_4_ = fVar78;
           position.y = fStack_5;
-          position.x = fVar80;
-          position.z = (float)uVar84;
+          position.x = fVar79;
+          position.z = (float)uVar83;
           elipsoidRadius.y = (this->fields).elipsoidRadius.z;
-          elipsoidRadius.x = (float)uVar85;
-          elipsoidRadius.z = fVar81;
+          elipsoidRadius.x = (float)uVar84;
+          elipsoidRadius.z = fVar80;
           R3Velocity.y = fStack_7;
-          R3Velocity.x = fVar78;
+          R3Velocity.x = fVar77;
           R3Velocity.z = 0.0;
           uVar32._0_4_ = fStack_7;
           MVControllerColliderHit::MVControllerColliderHit__ctor
                     ((MVControllerColliderHit *)&stack0xfffffe64,hit,position,elipsoidRadius,
                      R3Velocity,0,unaff_ESI);
           uVar32._4_4_ = 0.0;
-          puVar88 = (undefined4 *)&stack0xfffffe64;
-          puVar89 = (undefined4 *)&stack0xfffffe44;
-          for (iVar90 = 0x24; iVar90 != 0; iVar90 = iVar90 + -1) {
-            *puVar89 = *puVar88;
+          puVar87 = (undefined4 *)&stack0xfffffe64;
+          puVar88 = (undefined4 *)&stack0xfffffe44;
+          for (iVar89 = 0x24; iVar89 != 0; iVar89 = iVar89 + -1) {
+            *puVar88 = *puVar87;
+            puVar87 = puVar87 + 1;
             puVar88 = puVar88 + 1;
-            puVar89 = puVar89 + 1;
           }
-          controllerColliderHit.positionTouchingHit.y = fVar78;
-          controllerColliderHit.positionTouchingHit.x = fVar81;
+          controllerColliderHit.positionTouchingHit.y = fVar77;
+          controllerColliderHit.positionTouchingHit.x = fVar80;
           controllerColliderHit.positionTouchingHit.z = (float)uVar32;
-          controllerColliderHit.moveDirection.x = (float)uVar83;
-          controllerColliderHit.moveDirection.y = (float)uVar82;
+          controllerColliderHit.moveDirection.x = (float)uVar82;
+          controllerColliderHit.moveDirection.y = (float)uVar81;
           controllerColliderHit.moveDirection.z = (float)unaff_ESI;
           controllerColliderHit.elipsoidNormal.x = (float)puVar9;
           controllerColliderHit.elipsoidNormal.y = (float)puVar28;
@@ -374,16 +372,16 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
           controllerColliderHit.hit.normal.x = (float)ignoreWoIds;
           controllerColliderHit.hit.normal.y = fVar14;
           controllerColliderHit.hit.normal.z = fVar19;
-          uVar91 = in_stack_92._0_6_;
-          controllerColliderHit.hit.cubePos.x = (short)uVar91;
-          controllerColliderHit.hit.cubePos.y = (short)((uint6)uVar91 >> 0x10);
-          controllerColliderHit.hit.cubePos.z = (short)((uint6)uVar91 >> 0x20);
-          controllerColliderHit.hit._30_2_ = in_stack_92._6_2_;
-          controllerColliderHit.hit.face = in_stack_92._8_4_;
-          controllerColliderHit.hit._36_4_ = in_stack_93;
-          controllerColliderHit.hit.woId = (int32_t)in_stack_94;
-          controllerColliderHit.hit.cube = (Cube *)puVar34;
-          controllerColliderHit.hit.distance = fVar38;
+          uVar90 = in_stack_91._0_6_;
+          controllerColliderHit.hit.cubePos.x = (short)uVar90;
+          controllerColliderHit.hit.cubePos.y = (short)((uint6)uVar90 >> 0x10);
+          controllerColliderHit.hit.cubePos.z = (short)((uint6)uVar90 >> 0x20);
+          controllerColliderHit.hit._30_2_ = in_stack_91._6_2_;
+          controllerColliderHit.hit.face = in_stack_91._8_4_;
+          controllerColliderHit.hit._36_4_ = in_stack_92;
+          controllerColliderHit.hit.woId = (int32_t)in_stack_93;
+          controllerColliderHit.hit.cube = (Cube *)puVar33;
+          controllerColliderHit.hit.distance = in_stack_34;
           controllerColliderHit.hit.collider = (Collider *)(float)uVar8;
           controllerColliderHit.hit.transform = (Transform *)uVar8._4_4_;
           controllerColliderHit.hit._60_4_ = puVar35;
@@ -393,30 +391,29 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
           controllerColliderHit._140_4_ = uVar32._4_4_;
           MvCharacterController_SendCharacterCollision(this,controllerColliderHit,method_00);
         }
-        piVar73 = &(this->fields).collisionRecursionDepth;
-        *piVar73 = *piVar73 + 1;
+        piVar72 = &(this->fields).collisionRecursionDepth;
+        *piVar72 = *piVar72 + 1;
         pVVar1 = MvCharacterController_CollideWithWorld
                             ((Vector3 *)&MStack_10.position.y,this,(Vector3 *)&stack0xffffff64,
                              (Vector3 *)&stack0xffffff70,foundValidPosition,(MethodInfo *)0x0);
       }
       else {
-        fStack_15 = fVar38;
-        puVar72 = (undefined8 *)func_?();
-        VStack_95._0_8_ = *puVar72;
-        VStack_95.z = *(float *)(puVar72 + 1);
-        fStack_56 = *(float *)(puVar72 + 1);
-        fStack_54 = (float)*puVar72;
-        fStack_55 = (float)((ulonglong)*puVar72 >> 0x20);
+        puVar71 = (undefined8 *)func_?();
+        VStack_94._0_8_ = *puVar71;
+        VStack_94.z = *(float *)(puVar71 + 1);
+        fStack_55 = *(float *)(puVar71 + 1);
+        fStack_53 = (float)*puVar71;
+        fStack_54 = (float)((ulonglong)*puVar71 >> 0x20);
         fVar17 = (float10)func_?();
         uVar8._0_4_ = (float)fVar17;
-        VStack_95.z = fStack_56 * (float)uVar8;
-        piVar73 = &(this->fields).collisionRecursionDepth;
-        *piVar73 = *piVar73 + 1;
-        VStack_95.y = fStack_55 * (float)uVar8;
-        VStack_95.x = fStack_54 * (float)uVar8;
-        VStack_2.z = VStack_95.z;
+        VStack_94.z = fStack_55 * (float)uVar8;
+        piVar72 = &(this->fields).collisionRecursionDepth;
+        *piVar72 = *piVar72 + 1;
+        VStack_94.y = fStack_54 * (float)uVar8;
+        VStack_94.x = fStack_53 * (float)uVar8;
+        VStack_2.z = VStack_94.z;
         pVVar1 = MvCharacterController_CollideWithWorld
-                            (&VStack_2,this,ePos,&VStack_95,foundValidPosition,(MethodInfo *)0x0);
+                            (&VStack_2,this,ePos,&VStack_94,foundValidPosition,(MethodInfo *)0x0);
       }
       uVar8._4_4_ = pVVar1->y;
       uVar8._0_4_ = pVVar1->z;
@@ -425,21 +422,21 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
       __return_storage_ptr__->z = (float)uVar8;
       return __return_storage_ptr__;
     }
-    pMVar96 = MvCharacterController_HandleNoCollision
+    pMVar95 = MvCharacterController_HandleNoCollision
                         (&MStack_10,this,*ePos,*eVel,1,(MethodInfo *)0x0);
-    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar96->position).x;
-    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 1);
-    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 2);
-    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 3);
-    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar96->position).y;
-    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 1);
-    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 2);
-    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 3);
-    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar96->position).z;
-    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 1);
-    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 2);
-    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 3);
-    if (pMVar96->valid == 0) {
+    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar95->position).x;
+    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 1);
+    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 2);
+    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 3);
+    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar95->position).y;
+    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 1);
+    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 2);
+    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 3);
+    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar95->position).z;
+    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 1);
+    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 2);
+    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 3);
+    if (pMVar95->valid == 0) {
       uVar8._4_4_ = ePos->y;
       uVar8._0_4_ = ePos->z;
       __return_storage_ptr__->x = ePos->x;
@@ -449,21 +446,21 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
     }
   }
   else {
-    pMVar96 = MvCharacterController_HandleNoCollision
+    pMVar95 = MvCharacterController_HandleNoCollision
                         (&MStack_10,this,*ePos,*eVel,1,(MethodInfo *)0x0);
-    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar96->position).x;
-    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 1);
-    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 2);
-    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar96->position).x + 3);
-    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar96->position).y;
-    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 1);
-    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 2);
-    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar96->position).y + 3);
-    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar96->position).z;
-    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 1);
-    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 2);
-    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar96->position).z + 3);
-    if (pMVar96->valid == 0) {
+    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar95->position).x;
+    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 1);
+    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 2);
+    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 3);
+    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar95->position).y;
+    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 1);
+    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 2);
+    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 3);
+    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar95->position).z;
+    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 1);
+    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 2);
+    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 3);
+    if (pMVar95->valid == 0) {
       *foundValidPosition = 0;
       uVar8._4_4_ = ePos->y;
       uVar8._0_4_ = ePos->z;
@@ -588,8 +585,8 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_GetG
   fVar5 = pVVar2->z;
   uVar6 = (this->fields).center.x;
   uVar7 = (this->fields).center.y;
-  fVar8 = (this->fields).center.z;
-  fVar9 = (float)uVar6 + (float)uVar3;
+  fVar8 = (float)uVar6 + (float)uVar3;
+  fVar9 = (this->fields).center.z;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -597,24 +594,24 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_GetG
   pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar11 = (pVVar10->downVector).x;
   uVar12 = (pVVar10->downVector).y;
-  VStack_13.z = fVar8 + fVar5 + elipsoidHit.distance * (pVVar10->downVector).z;
-  VStack_13.y = (float)uVar7 + (float)uVar4 + elipsoidHit.distance * (float)uVar12;
-  VStack_13.x = fVar9 + elipsoidHit.distance * (float)uVar11;
+  VStack_13.z = elipsoidHit.distance * (pVVar10->downVector).z + fVar9 + fVar5;
+  VStack_13.y = elipsoidHit.distance * (float)uVar12 + (float)uVar7 + (float)uVar4;
+  VStack_13.x = fVar8 + elipsoidHit.distance * (float)uVar11;
   pVVar2 = MathFunctions::MathFunctions_DivideVector
                       ((Vector3 *)&stack0xffffffb0,&elipsoidHit.point,&(this->fields).elipsoidRadius
                        ,(MethodInfo *)0x0);
   fVar5 = pVVar2->x;
-  fVar8 = pVVar2->y;
-  fVar9 = pVVar2->z;
+  fVar9 = pVVar2->y;
+  fVar8 = pVVar2->z;
   pVVar2 = MathFunctions::MathFunctions_DivideVector
                       ((Vector3 *)&stack0xffffffb0,&VStack_13,&(this->fields).elipsoidRadius,
                        (MethodInfo *)0x0);
   uVar14 = pVVar2->x;
   uVar15 = pVVar2->y;
   VStack_13.z = (float)&UNK_?;
-  value.y = (float)uVar15 - fVar8;
+  value.y = (float)uVar15 - fVar9;
   value.x = (float)uVar14 - fVar5;
-  value.z = pVVar2->z - fVar9;
+  value.z = pVVar2->z - fVar8;
   pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                       ((Vector3 *)&stack0xffffffb0,value,(MethodInfo *)0x0);
   uVar16 = pVVar2->y;
@@ -630,10 +627,10 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_GetG
     pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar19 = (pVVar10->upVector).x;
     uVar20 = (pVVar10->upVector).y;
-    fVar8 = (float)uVar18 - (float)uVar19;
-    fVar9 = SUB84(uVar18,4) - (float)uVar20;
+    fVar9 = (float)uVar18 - (float)uVar19;
+    fVar8 = SUB84(uVar18,4) - (float)uVar20;
     fVar5 = (float)puVar17 - (pVVar10->upVector).z;
-    if (_UNK_? <= fVar9 * fVar9 + fVar8 * fVar8 + fVar5 * fVar5) {
+    if (_UNK_? <= fVar8 * fVar8 + fVar9 * fVar9 + fVar5 * fVar5) {
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -660,10 +657,10 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_GetG
       cRam_? = '\x01';
     }
     pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar8 = (pVVar10->zeroVector).y;
+    fVar9 = (pVVar10->zeroVector).y;
     fVar5 = (pVVar10->zeroVector).z;
     __return_storage_ptr__->x = (pVVar10->zeroVector).x;
-    __return_storage_ptr__->y = fVar8;
+    __return_storage_ptr__->y = fVar9;
     __return_storage_ptr__->z = fVar5;
     return __return_storage_ptr__;
   }
@@ -672,10 +669,10 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_GetG
     cRam_? = '\x01';
   }
   pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar8 = (pVVar10->downVector).y;
+  fVar9 = (pVVar10->downVector).y;
   fVar5 = (pVVar10->downVector).z;
   __return_storage_ptr__->x = (pVVar10->downVector).x;
-  __return_storage_ptr__->y = fVar8;
+  __return_storage_ptr__->y = fVar9;
   __return_storage_ptr__->z = fVar5;
   return __return_storage_ptr__;
 }
@@ -845,10 +842,10 @@ Assembly-CSharp.dll::MvCharacterController::MvCharacterController_HandleNoCollis
   (__return_storage_ptr__->position).y = 0.0;
   (__return_storage_ptr__->position).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->valid = 0;
-  func_?(&stack0xfffffef8,0,0x48);
-  func_?(&stack0xfffffeb0,0,0x48);
+  func_?(&stack0xfffffee8,0,0x48);
+  func_?(&stack0xfffffea0,0,0x48);
   pVVar1 = MathFunctions::MathFunctions_MultiplyVector
-                      ((Vector3 *)&stack0xffffff80,&ePos,&(this->fields).elipsoidRadius,
+                      ((Vector3 *)&stack0xffffff70,&ePos,&(this->fields).elipsoidRadius,
                        (MethodInfo *)0x0);
   uVar2._0_4_ = pVVar1->x;
   uVar2._4_4_ = pVVar1->y;
@@ -856,7 +853,7 @@ Assembly-CSharp.dll::MvCharacterController::MvCharacterController_HandleNoCollis
   VStack_4._4_8_ = uVar2;
   puStack_5 = (undefined *)fStack_3;
   pVVar1 = MathFunctions::MathFunctions_MultiplyVector
-                      ((Vector3 *)&stack0xffffff80,&eVel,&(this->fields).elipsoidRadius,
+                      ((Vector3 *)&stack0xffffff70,&eVel,&(this->fields).elipsoidRadius,
                        (MethodInfo *)0x0);
   fVar6 = pVVar1->z;
   uVar7._0_4_ = pVVar1->x;
@@ -870,112 +867,119 @@ Assembly-CSharp.dll::MvCharacterController::MvCharacterController_HandleNoCollis
   InpVec.x = (float)(int)uVar7;
   InpVec.y = (float)(int)((ulonglong)uVar7 >> 0x20);
   pVVar1 = MvCharacterController_GetNormalizedVector
-                      ((Vector3 *)&stack0xffffff80,InpVec,(MethodInfo *)0x0);
+                      ((Vector3 *)&stack0xffffff70,InpVec,(MethodInfo *)0x0);
   uVar10 = pVVar1->x;
   uVar11 = pVVar1->y;
   fStack_12 = pVVar1->z;
   InpVec_00.y = eVel.y;
   InpVec_00.x = eVel.x;
   InpVec_00.z = eVel.z;
-  pVVar1 = MvCharacterController_GetNormalizedVector
-                      ((Vector3 *)&stack0xffffffb8,InpVec_00,(MethodInfo *)0x0);
-  puVar13 = (undefined *)pVVar1->y;
-  fStack_14 = pVVar1->z;
-  bVar15 = cRam_? == '\0';
+  pVVar1 = MvCharacterController_GetNormalizedVector(&VStack_13,InpVec_00,(MethodInfo *)0x0);
+  puVar14 = (undefined *)pVVar1->y;
+  fStack_15 = pVVar1->z;
+  VStack_13.z = ePos.z + eVel.z;
+  bVar16 = cRam_? == '\0';
   (__return_storage_ptr__->position).x = ePos.x + eVel.x;
   (__return_storage_ptr__->position).y = ePos.y + eVel.y;
-  (__return_storage_ptr__->position).z = ePos.z + eVel.z;
+  (__return_storage_ptr__->position).z = VStack_13.z;
   __return_storage_ptr__->valid = 1;
-  puVar16 = puVar13;
-  uVar17 = uVar10;
-  uVar18 = uVar11;
-  fVar9 = fStack_14;
-  if (bVar15) {
+  puVar17 = puVar14;
+  uVar18 = uVar10;
+  uVar19 = uVar11;
+  fVar9 = fStack_15;
+  if (bVar16) {
     func_?();
     cRam_? = '\x01';
-    puVar16 = puVar13;
-    uVar17 = uVar10;
-    uVar18 = uVar11;
+    puVar17 = puVar14;
+    uVar18 = uVar10;
+    uVar19 = uVar11;
   }
   distance = MvCharacterController_DistanceESpaceToR3Space
                        (0.005,TypeInfo__UnityEngine__Vector3->static_fields->downVector,
                         (this->fields).elipsoidRadius,(MethodInfo *)0x0);
-  fVar19 = VStack_4.y + (float)uVar8;
-  fVar20 = VStack_4.z + (float)((ulonglong)uVar8 >> 0x20);
-  fVar21 = fStack_3 + fVar6;
+  fStack_20 = VStack_4.y + (float)uVar8;
+  fStack_21 = VStack_4.z + (float)((ulonglong)uVar8 >> 0x20);
+  VStack_13.z = fStack_3 + fVar6;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
+  fVar22 = fStack_21;
+  fVar23 = fStack_20;
+  fVar24 = VStack_13.z;
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      ((Vector3 *)&stack0xffffffb8,
-                       TypeInfo__UnityEngine__Vector3->static_fields->downVector,(MethodInfo *)0x0);
-  uVar22 = pVVar1->x;
-  uVar23 = pVVar1->y;
-  puVar13 = &UNK_?;
-  ray_00.m_Origin.y = fVar20;
-  ray_00.m_Origin.x = fVar19;
-  ray_00.m_Origin.z = fVar21;
-  ray_00.m_Direction.x = (float)uVar22;
-  ray_00.m_Direction.y = (float)uVar23;
+                      (&VStack_13,TypeInfo__UnityEngine__Vector3->static_fields->downVector,
+                       (MethodInfo *)0x0);
+  uVar25 = pVVar1->x;
+  uVar26 = pVVar1->y;
+  puVar14 = &UNK_?;
+  ray_00.m_Origin.y = fVar22;
+  ray_00.m_Origin.x = fVar23;
+  ray_00.m_Origin.z = fVar24;
+  ray_00.m_Direction.x = (float)uVar25;
+  ray_00.m_Direction.y = (float)uVar26;
   ray_00.m_Direction.z = pVVar1->z;
-  bVar24 = CollisionDetection::CollisionDetection_MVElipsoidCast
-                     (ray_00,(this->fields).elipsoidRadius,distance,(VoxelHit *)&stack0xfffffef8,
+  bVar27 = CollisionDetection::CollisionDetection_MVElipsoidCast
+                     (ray_00,(this->fields).elipsoidRadius,distance,(VoxelHit *)&stack0xfffffee8,
                       (this->fields).IgnoreWoIds,
                       TypeInfo__MvCharacterController->static_fields->layerMask,(MethodInfo *)0x0);
-  if (bVar24 != 0) {
+  if (bVar27 != 0) {
+    fStack_20 = fStack_28;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    uVar25._0_4_ = (this->fields).elipsoidRadius.x;
-    uVar25._4_4_ = (this->fields).elipsoidRadius.y;
-    pVVar26 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar27._0_4_ = (pVVar26->downVector).x;
-    uVar27._4_4_ = (pVVar26->downVector).y;
-    fVar9 = (pVVar26->downVector).z;
-    fVar19 = (this->fields).elipsoidRadius.z;
+    uVar29._0_4_ = (this->fields).elipsoidRadius.x;
+    uVar29._4_4_ = (this->fields).elipsoidRadius.y;
+    pVVar30 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar31._0_4_ = (pVVar30->downVector).x;
+    uVar31._4_4_ = (pVVar30->downVector).y;
+    fStack_21 = (pVVar30->downVector).z;
+    VStack_13.z = (this->fields).elipsoidRadius.z;
     if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
-      puVar13 = &UNK_?;
+      puVar14 = &UNK_?;
       func_?();
-      uVar27 = CONCAT44(puVar13,(undefined4)uVar27);
+      uVar31 = CONCAT44(puVar14,(undefined4)uVar31);
     }
-    R3Dir.z = fVar9;
-    R3Dir.x = (float)(int)uVar27;
-    R3Dir.y = (float)(int)((ulonglong)uVar27 >> 0x20);
-    R3Radius.z = fVar19;
-    R3Radius.x = (float)(int)uVar25;
-    R3Radius.y = (float)(int)((ulonglong)uVar25 >> 0x20);
-    fVar19 = MvCharacterController_DistanceR3SpaceToESpace
-                       (fStack_28,R3Dir,R3Radius,(MethodInfo *)0x0);
-    fVar9 = VStack_4.y + (float)uVar8;
-    uVar8._0_4_ = VStack_4.z + (float)((ulonglong)uVar8 >> 0x20);
-    fVar6 = fStack_3 + fVar6;
+    R3Dir.z = fStack_21;
+    R3Dir.x = (float)(int)uVar31;
+    R3Dir.y = (float)(int)((ulonglong)uVar31 >> 0x20);
+    R3Radius.z = VStack_13.z;
+    R3Radius.x = (float)(int)uVar29;
+    R3Radius.y = (float)(int)((ulonglong)uVar29 >> 0x20);
+    fStack_12 = MvCharacterController_DistanceR3SpaceToESpace
+                          (fStack_20,R3Dir,R3Radius,(MethodInfo *)0x0);
+    VStack_13.z = VStack_4.y + (float)uVar8;
+    fStack_21 = VStack_4.z + (float)((ulonglong)uVar8 >> 0x20);
+    fStack_20 = fStack_3 + fVar6;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
+    fVar24 = fStack_21;
+    fVar9 = fStack_20;
+    fVar6 = VStack_13.z;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                         (&VStack_4,TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                          (MethodInfo *)0x0);
-    uVar29 = pVVar1->x;
-    uVar30 = pVVar1->y;
-    puVar13 = (undefined *)0x0;
-    ray.m_Origin.y = (float)uVar8;
-    ray.m_Origin.x = fVar9;
-    ray.m_Origin.z = fVar6;
-    ray.m_Direction.x = (float)uVar29;
-    ray.m_Direction.y = (float)uVar30;
+    uVar32 = pVVar1->x;
+    uVar33 = pVVar1->y;
+    puVar14 = (undefined *)0x0;
+    ray.m_Origin.y = fVar24;
+    ray.m_Origin.x = fVar6;
+    ray.m_Origin.z = fVar9;
+    ray.m_Direction.x = (float)uVar32;
+    ray.m_Direction.y = (float)uVar33;
     ray.m_Direction.z = pVVar1->z;
-    bVar24 = CollisionDetection::CollisionDetection_MVElipsoidCast
-                       (ray,(this->fields).elipsoidRadius,distance,(VoxelHit *)&stack0xfffffef8,
+    bVar27 = CollisionDetection::CollisionDetection_MVElipsoidCast
+                       (ray,(this->fields).elipsoidRadius,distance,(VoxelHit *)&stack0xfffffee8,
                         (this->fields).IgnoreWoIds,
                         TypeInfo__MvCharacterController->static_fields->layerMask,(MethodInfo *)0x0)
     ;
-    uVar8._4_4_ = ePos.y + eVel.y;
-    uVar8._0_4_ = ePos.z + eVel.z;
+    fStack_21 = ePos.y + eVel.y;
+    VStack_13.z = ePos.z + eVel.z;
     VStack_4.x = ePos.x + eVel.x;
-    if (bVar24 == 0) {
+    if (bVar27 == 0) {
       VStack_4.y = 0.0;
       VStack_4.z = 0.0;
       fStack_3 = 0.0;
@@ -995,108 +999,110 @@ Assembly-CSharp.dll::MvCharacterController::MvCharacterController_HandleNoCollis
       }
       __return_storage_ptr__->valid = 0;
     }
-    pVVar26 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar31 = (pVVar26->upVector).x;
-    uVar32 = (pVVar26->upVector).y;
-    fVar19 = _UNK_? - fVar19;
-    fStack_3 = (float)uVar8 + (pVVar26->upVector).z * fVar19;
-    (__return_storage_ptr__->position).x = VStack_4.x + (float)uVar31 * fVar19;
-    (__return_storage_ptr__->position).y = uVar8._4_4_ + (float)uVar32 * fVar19;
+    fVar6 = _UNK_? - fStack_12;
+    pVVar30 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar34 = (pVVar30->upVector).x;
+    uVar35 = (pVVar30->upVector).y;
+    fStack_3 = VStack_13.z + (pVVar30->upVector).z * fVar6;
+    (__return_storage_ptr__->position).x = VStack_4.x + (float)uVar34 * fVar6;
+    (__return_storage_ptr__->position).y = fStack_21 + (float)uVar35 * fVar6;
     (__return_storage_ptr__->position).z = fStack_3;
-    uVar33 = (__return_storage_ptr__->position).x;
-    uVar34 = (__return_storage_ptr__->position).y;
-    uVar8._4_4_ = (float)uVar33 - ePos.x;
-    uVar8._0_4_ = (float)uVar34 - ePos.y;
+    uVar36 = (__return_storage_ptr__->position).x;
+    uVar37 = (__return_storage_ptr__->position).y;
+    fVar9 = (float)uVar36 - ePos.x;
+    fVar6 = (float)uVar37 - ePos.y;
     VStack_4.z = fStack_3 - ePos.z;
-    VStack_4.y = (float)uVar33;
+    VStack_4.y = (float)uVar36;
     if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    InpVec_01.y = (float)uVar8;
-    InpVec_01.x = uVar8._4_4_;
+    InpVec_01.y = fVar6;
+    InpVec_01.x = fVar9;
     InpVec_01.z = VStack_4.z;
     pVVar1 = MvCharacterController_GetNormalizedVector(&VStack_4,InpVec_01,(MethodInfo *)0x0);
-    puVar16 = (undefined *)pVVar1->y;
-    fStack_14 = pVVar1->z;
-    fVar9 = fStack_14;
+    puVar17 = (undefined *)pVVar1->y;
+    fStack_15 = pVVar1->z;
+    fVar9 = fStack_15;
     pVVar1 = MathFunctions::MathFunctions_MultiplyVector
-                        (&VStack_4,(Vector3 *)&stack0xffffff54,&(this->fields).elipsoidRadius,
+                        (&VStack_4,(Vector3 *)&stack0xffffff44,&(this->fields).elipsoidRadius,
                          (MethodInfo *)0x0);
     pVVar1 = MvCharacterController_GetNormalizedVector(&VStack_4,*pVVar1,(MethodInfo *)0x0);
-    uVar17 = pVVar1->x;
-    uVar18 = pVVar1->y;
+    uVar18 = pVVar1->x;
+    uVar19 = pVVar1->y;
     fStack_12 = pVVar1->z;
   }
   if (adjustVerticalOnly == 0) {
-    uVar8._0_4_ = (this->fields).elipsoidRadius.x;
-    uVar8._4_4_ = (this->fields).elipsoidRadius.y;
+    VStack_13.x = (this->fields).elipsoidRadius.x;
+    VStack_13.y = (this->fields).elipsoidRadius.y;
     fVar6 = (this->fields).elipsoidRadius.z;
     if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
-      puVar16 = &UNK_?;
+      puVar17 = &UNK_?;
       func_?();
     }
-    eDir.y = (float)puVar16;
-    eDir.x = (float)(int)((ulonglong)uVar8 >> 0x20);
+    eDir.y = (float)puVar17;
+    eDir.x = VStack_13.y;
     eDir.z = fVar9;
     R3Radius_00.z = fVar6;
-    R3Radius_00.x = (float)(int)uVar8;
-    R3Radius_00.y = (float)(int)((ulonglong)uVar8 >> 0x20);
-    fVar6 = MvCharacterController_DistanceESpaceToR3Space(0.005,eDir,R3Radius_00,(MethodInfo *)0x0)
-    ;
-    puVar16 = puStack_5;
-    value.y = (float)uVar18;
-    value.x = (float)uVar17;
+    R3Radius_00.x = VStack_13.x;
+    R3Radius_00.y = VStack_13.y;
+    VStack_13.z = MvCharacterController_DistanceESpaceToR3Space
+                            (0.005,eDir,R3Radius_00,(MethodInfo *)0x0);
+    puVar17 = puStack_5;
+    value.y = (float)uVar19;
+    value.x = (float)uVar18;
     value.z = fStack_12;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                         (&VStack_4,value,(MethodInfo *)0x0);
-    uVar35 = pVVar1->x;
-    uVar36 = pVVar1->y;
-    uVar8._0_4_ = pVVar1->z;
-    uVar8._4_4_ = (this->fields).elipsoidRadius.z;
-    uVar37 = (this->fields).elipsoidRadius.x;
-    uVar38 = (this->fields).elipsoidRadius.y;
-    fVar39 = (float10)func_?();
-    puStack_5 = (undefined *)(float)fVar39;
+    uVar38 = pVVar1->x;
+    uVar39 = pVVar1->y;
+    fVar6 = pVVar1->z;
+    fVar9 = (this->fields).elipsoidRadius.z;
+    uVar40 = (this->fields).elipsoidRadius.x;
+    uVar41 = (this->fields).elipsoidRadius.y;
+    fVar42 = (float10)func_?();
+    puStack_5 = (undefined *)(float)fVar42;
     layerMask = TypeInfo__MvCharacterController->static_fields->layerMask;
-    uVar40 = (ulonglong)layerMask;
+    uVar43 = (ulonglong)layerMask;
     ray_01.m_Origin.y = uVar2._4_4_;
     ray_01.m_Origin.x = (float)uVar2;
-    ray_01.m_Origin.z = (float)puVar16;
-    ray_01.m_Direction.x = (float)uVar35;
-    ray_01.m_Direction.y = (float)uVar36;
-    ray_01.m_Direction.z = (float)uVar8;
-    radius.y = (float)uVar38;
-    radius.x = (float)uVar37;
-    radius.z = uVar8._4_4_;
-    bVar24 = CollisionDetection::CollisionDetection_MVElipsoidCast
-                       (ray_01,radius,(float)puStack_5 + fVar6,(VoxelHit *)&stack0xfffffeb0,
+    ray_01.m_Origin.z = (float)puVar17;
+    ray_01.m_Direction.x = (float)uVar38;
+    ray_01.m_Direction.y = (float)uVar39;
+    ray_01.m_Direction.z = fVar6;
+    radius.y = (float)uVar41;
+    radius.x = (float)uVar40;
+    radius.z = fVar9;
+    bVar27 = CollisionDetection::CollisionDetection_MVElipsoidCast
+                       (ray_01,radius,(float)puStack_5 + VStack_13.z,(VoxelHit *)&stack0xfffffea0,
                         (this->fields).IgnoreWoIds,layerMask,(MethodInfo *)0x0);
-    if (bVar24 != 0) {
-      uVar41._0_4_ = (this->fields).elipsoidRadius.x;
-      uVar41._4_4_ = (this->fields).elipsoidRadius.y;
+    if (bVar27 != 0) {
+      uVar8._0_4_ = (this->fields).elipsoidRadius.x;
+      uVar8._4_4_ = (this->fields).elipsoidRadius.y;
       uVar2._0_4_ = (this->fields).elipsoidRadius.z;
-      puStack_5 = puVar13;
+      puStack_5 = puVar14;
       if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      R3Dir_00.y = (float)uVar38;
-      R3Dir_00.x = (float)uVar37;
+      R3Dir_00.y = (float)uVar41;
+      R3Dir_00.x = (float)uVar40;
       R3Dir_00.z = fStack_12;
       R3Radius_01.z = (float)uVar2;
-      R3Radius_01.x = (float)(int)uVar41;
-      R3Radius_01.y = (float)(int)((ulonglong)uVar41 >> 0x20);
-      uVar2._0_4_ = MvCharacterController_DistanceR3SpaceToESpace
-                              ((float)puStack_5,R3Dir_00,R3Radius_01,(MethodInfo *)0x0);
-      fVar39 = (float10)func_?();
+      R3Radius_01.x = (float)(int)uVar8;
+      R3Radius_01.y = (float)(int)((ulonglong)uVar8 >> 0x20);
+      puStack_5 = (undefined *)
+                   MvCharacterController_DistanceR3SpaceToESpace
+                             ((float)puStack_5,R3Dir_00,R3Radius_01,(MethodInfo *)0x0);
+      fVar42 = (float10)func_?();
+      fStack_3 = ePos.z;
       VStack_4.y = ePos.x;
       VStack_4.z = ePos.y;
-      fStack_3 = ePos.z;
-      puStack_5 = (undefined *)(float)fVar39;
-      fVar39 = (float10)func_?();
-      uVar2._0_4_ = (float)(fVar39 - (float10)(((float)puStack_5 + _UNK_?) - (float)uVar2));
-      (__return_storage_ptr__->position).x = VStack_4.y + (float)uVar40 * (float)uVar2;
-      (__return_storage_ptr__->position).y = VStack_4.z + (float)(uVar40 >> 0x20) * (float)uVar2;
-      (__return_storage_ptr__->position).z = fStack_3 + fStack_14 * (float)uVar2;
+      puStack_5 = (undefined *)
+                   (float)((fVar42 + (float10)_UNK_?) - (float10)(float)puStack_5);
+      fVar42 = (float10)func_?();
+      uVar2._0_4_ = (float)(fVar42 - (float10)(float)puStack_5);
+      (__return_storage_ptr__->position).x = VStack_4.y + (float)uVar43 * (float)uVar2;
+      (__return_storage_ptr__->position).y = VStack_4.z + (float)(uVar43 >> 0x20) * (float)uVar2;
+      (__return_storage_ptr__->position).z = fStack_3 + fStack_15 * (float)uVar2;
       __return_storage_ptr__->valid = 1;
       return __return_storage_ptr__;
     }

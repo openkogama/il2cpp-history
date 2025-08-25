@@ -70,19 +70,21 @@ void Assembly-CSharp.dll::GhostEye+IdleBase::GhostEye_IdleBase_UpdateWrappedTime
   fVar1 = _UNK_?;
   fVar2 = deltaTime * (this->fields).direction * (this->fields).rotatationPrSecond * _UNK_? +
           (this->fields).wrappedTime;
+  bVar3 = _UNK_? <= fVar2;
   (this->fields).wrappedTime = fVar2;
-  fVar3 = _UNK_?;
-  while (_UNK_? = fVar3, fVar1 <= fVar2) {
-    fVar2 = (this->fields).wrappedTime - fVar1;
+  if (bVar3) {
+    do {
+      fVar2 = fVar2 - fVar1;
+    } while (fVar1 <= fVar2);
     (this->fields).wrappedTime = fVar2;
-    fVar3 = _UNK_?;
   }
   pfVar4 = &(this->fields).wrappedTime;
-  if (*pfVar4 <= fVar3 && fVar3 != *pfVar4) {
+  if (*pfVar4 <= _UNK_? && _UNK_? != *pfVar4) {
+    fVar2 = (this->fields).wrappedTime;
     do {
-      fVar2 = (this->fields).wrappedTime + fVar1;
-      (this->fields).wrappedTime = fVar2;
-    } while (fVar2 < fVar3);
+      fVar2 = fVar2 + fVar1;
+    } while (fVar2 < _UNK_?);
+    (this->fields).wrappedTime = fVar2;
   }
   return;
 }

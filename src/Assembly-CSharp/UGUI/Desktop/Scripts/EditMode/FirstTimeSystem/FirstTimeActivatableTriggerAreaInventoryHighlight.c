@@ -427,9 +427,9 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                             ((this->fields).insideInventory,(MethodInfo *)0x0);
           bVar7 = 0;
           if (0 < iVar5) {
-            bVar7 = bVar6 & bVar4 & bVar1;
+            bVar7 = bVar4;
           }
-          return bVar7 & (bVar3 ^ 1);
+          return bVar6 & bVar7 & (bVar3 ^ 1) & bVar1;
         }
       }
     }

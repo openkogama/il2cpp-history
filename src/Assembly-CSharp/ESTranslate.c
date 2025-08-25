@@ -9,8 +9,8 @@ void Assembly-CSharp.dll::ESTranslate::ESTranslate_Enter
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff30;
-  puVar5 = &stack0xffffff30;
+  puStack_4 = &stack0xfffffee8;
+  puVar5 = &stack0xfffffee8;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__UnityEngine__Debug);
@@ -388,11 +388,6 @@ code_?:
                                 ((MVWorldObjectClientManager *)pOStack_39,(int32_t)pOVar40[1].klass,
                                  (this->fields).woIds,(MethodInfo *)0x0);
                       if (cRam_? == '\0') {
-                        VStack_17.point.z =
-                             (float)&
-                                    MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                        ;
-                        VStack_17.point.y = (float)&UNK_?;
                         func_?();
                         cRam_? = '\x01';
                       }
@@ -1370,52 +1365,52 @@ bool Assembly-CSharp.dll::ESTranslate::ESTranslate_GetInitialAvatarMoveObjectHit
                    );
     cRam_? = '\x01';
   }
-  func_?(&fStack_1,0,0x48);
+  func_?(&VStack_1,0,0x48);
   bVar2 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                    ((VoxelHit *)&fStack_1,(HashSet_1_System_Int32_ *)0x0,-0x40005,
-                     (MethodInfo *)0x0);
-  if ((bVar2 == 0) || (uStack_3 == 0xffffffff)) {
+                    (&VStack_1,(HashSet_1_System_Int32_ *)0x0,-0x40005,(MethodInfo *)0x0);
+  if ((bVar2 == 0) || (VStack_1.woId == 0xffffffff)) {
     return 0;
   }
-  if (e != (EditorStateMachine *)0x0) {
-    this_00 = (HashSet_1_System_UInt32_ *)
-              MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
-                        ((MVJetPack_LocalObjectsJetPack *)e,(MethodInfo *)0x0);
-    if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
-      puVar4 = &UNK_?;
-      bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-              HashSet_1_System_UInt32__Contains
-                        (this_00,uStack_3,
-                         MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-      if (bVar2 == 0) {
-        return 0;
-      }
-      uStack_5 = CONCAT44(puStack_6,fStack_1);
-      puStack_7 = puVar4;
-      pSVar8 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                         ((MethodInfo *)0x0);
-      if (pSVar8 != (SpawnRoleDataMediator *)0x0) {
-        pVVar9 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
-                 ::SpawnRoleVariable`1[UnityEngine::Vector3]::
-                 SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                           (&VStack_10,
-                            (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar8->fields).position,
-                            MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
-                           );
-        uVar11 = pVVar9->x;
-        uVar12 = pVVar9->y;
-        fStack_13 = (float)puStack_7 - pVVar9->z;
-        uStack_14 = CONCAT44(uStack_5._4_4_ - (float)uVar12,(float)uStack_5 - (float)uVar11);
-        puStack_7 = (undefined *)fStack_13;
-        fVar15 = (float10)func_?();
-        *hitDistance = (float)fVar15;
-        return 1;
-      }
+  if ((e != (EditorStateMachine *)0x0) &&
+     (this_00 = (HashSet_1_System_UInt32_ *)
+                MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
+                          ((MVJetPack_LocalObjectsJetPack *)e,(MethodInfo *)0x0),
+     this_00 != (HashSet_1_System_UInt32_ *)0x0)) {
+    bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+            HashSet_1_System_UInt32__Contains
+                      (this_00,VStack_1.woId,
+                       MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    if (bVar2 == 0) {
+      return 0;
+    }
+    fStack_3 = VStack_1.point.x;
+    fStack_4 = VStack_1.point.y;
+    fStack_5 = VStack_1.point.z;
+    pSVar6 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                       ((MethodInfo *)0x0);
+    if (pSVar6 != (SpawnRoleDataMediator *)0x0) {
+      pVVar7 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+               SpawnRoleVariable`1[UnityEngine::Vector3]::
+               SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
+                         (&VStack_8,
+                          (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar6->fields).position,
+                          MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+                         );
+      uVar9 = pVVar7->x;
+      uVar10 = pVVar7->y;
+      fStack_5 = fStack_5 - pVVar7->z;
+      uStack_11 = CONCAT44(fStack_4 - (float)uVar10,fStack_3 - (float)uVar9);
+      fStack_12 = fStack_5;
+      fVar13 = (float10)func_?(&uStack_11,0,VStack_1.woId,VStack_1.cube,VStack_1.distance
+                                       ,VStack_1.collider,VStack_1.transform,VStack_1._60_4_,
+                                       VStack_1.interactionFlags);
+      *hitDistance = (float)fVar13;
+      return 1;
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  bVar2 = (*pcVar16)();
+  pcVar14 = (code *)swi(3);
+  bVar2 = (*pcVar14)();
   return bVar2;
 }
 

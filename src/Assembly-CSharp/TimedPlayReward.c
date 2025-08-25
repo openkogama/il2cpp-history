@@ -556,9 +556,8 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_UpdateControllerUpdat
         if ((this_02 != (MVNetworkGame *)0x0) &&
            (MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_02,(MethodInfo *)0x0),
            (this->fields).waitForTicks != (WaitForTicks *)0x0)) {
-          pTVar2 = this->klass;
           (this->fields)._IsClaimable_k__BackingField = 0;
-          (*(code *)(pTVar2->vtable).DisableEffects.method)();
+          (*(code *)(this->klass->vtable).DisableEffects.method)();
           (*(code *)(this->klass->vtable).UpdateOutline.method)();
           return;
         }
@@ -597,8 +596,8 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_UpdateControllerUpdat
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

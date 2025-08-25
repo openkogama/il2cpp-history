@@ -785,15 +785,12 @@ code_?:
           pVVar46 = MeshVertexChunk::MeshVertexChunk_GetWorldVertClosestToScreenPt
                               (&VStack_47,(MeshVertexChunk *)LStack_8._current,screenPoint,
                                worldMtx_00,focusCamera,(MethodInfo *)0x0);
+          pLStack_32 = (List_1_UnityEngine_Vector3_ *)pVVar46->z;
           uStack_27._0_4_ = pVVar46->x;
           uStack_27._4_4_ = (MeshVertexChunkCollection *)pVVar46->y;
-          pLStack_32 = (List_1_UnityEngine_Vector3_ *)pVVar46->z;
           if (focusCamera == (Camera *)0x0) goto code_?;
-          position.z = pVVar46->z;
-          position.x = (float)uStack_27;
-          position.y = (float)uStack_27._4_4_;
           pVVar46 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                              (&VStack_48,focusCamera,position,(MethodInfo *)0x0);
+                              (&VStack_48,focusCamera,*pVVar46,(MethodInfo *)0x0);
           uStack_49._0_4_ = pVVar46->x;
           uStack_49._4_4_ = pVVar46->y;
           fVar11 = (fStack_17 - (float)(undefined4)uStack_49) *

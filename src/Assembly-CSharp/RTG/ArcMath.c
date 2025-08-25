@@ -193,8 +193,8 @@ OBB * Assembly-CSharp.dll::RTG::ArcMath::ArcMath_CalcSh3DArcOBB
   uVar16 = pVVar5->x;
   uVar17 = pVVar5->y;
   fVar2 = epsilon._extrudeEps * _UNK_?;
-  fVar3 = (float)((uint)((float)uVar16 * (float)puVar15 + (float)uVar17 * angle +
-                        pVVar5->z * 4.3747333e-29) & _UNK_?) +
+  fVar3 = (float)((uint)((float)uVar17 * (float)puVar15 + (float)uVar16 * angle +
+                        pVVar5->z * 4.3781952e-29) & _UNK_?) +
           (float)((uint)(fVar12 * fVar11 + fVar10 * fVar8 + fVar7 * fVar3) & _UNK_?) + fVar13;
   fVar18 = (float10)func_?();
   (__return_storage_ptr__->_size).x = fVar3;
@@ -552,9 +552,9 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_LgArcContains3DPoint
     return 1;
   }
   fVar1 = (float10)func_?();
-  fVar2 = (float)fVar1;
+  fVar2 = (float)(fVar1 + (float10)epsilon._areaEps);
   fVar1 = (float10)func_?();
-  return (float)fVar1 <= epsilon._areaEps + fVar2;
+  return (float)fVar1 <= fVar2;
 }
 
 

@@ -9,11 +9,11 @@ void Assembly-CSharp.dll::MVNetworkReporter::MVNetworkReporter_Update
     func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
     cRam_? = '\x01';
   }
-  dVar1 = 0.0;
+  uVar1 = 0;
   if (game != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(game,(MethodInfo *)0x0);
     func_?();
-    if ((float)((uint)(float)dVar1 & _UNK_?) <= _UNK_?) {
+    if ((float)(uVar1 & _UNK_?) <= _UNK_?) {
       return;
     }
     pMVar2 = (this->fields)._.worldObject;

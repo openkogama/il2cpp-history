@@ -96,12 +96,11 @@ bool Assembly-CSharp.dll::EditModeObjectPicker::EditModeObjectPicker_GetPickingI
                   pCStack_12 = (Cube *)(cr->fields)._.gameObject;
                   pCVar11 = *info;
                   if (pCVar11 != (CubePickingInfo *)0x0) {
-                    pos.z._2_2_ = (short)((uint)pCVar16 >> 0x10);
-                    pos.z._0_2_ = (pCVar11->fields).iLocalPos.z;
                     pos.y = (float)puVar17;
                     pos.x = (float)pCVar14;
+                    pos.z = (float)pCVar16;
                     EVar22 = Cube::Cube_GetEdge_1
-                                       ((GameObject *)pCStack_12,(pCVar11->fields).cube,
+                                       ((GameObject *)pCStack_12,((*info)->fields).cube,
                                         (pCVar11->fields).pickedFace,pos,(pCVar11->fields).iLocalPos,
                                         (MethodInfo *)0x0);
                     *(Edge__Enum *)((int)RStack_3.m_Direction.z + 0x10) = EVar22;

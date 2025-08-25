@@ -101,7 +101,7 @@ uint32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_In
       *puVar7 = *puVar7 + 1;
       (this->fields).step = 0;
     }
-    return uVar3 * uVar1 * uVar2;
+    return uVar1 * uVar3 * uVar2;
   }
   func_?();
   pcVar8 = (code *)swi(3);

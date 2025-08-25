@@ -26,11 +26,11 @@ void Assembly-CSharp.dll::RTG::GizmoDblAxisRotationDrag3D::
   puVar3 = (undefined8 *)func_?();
   fStack_4 = (float)*puVar3;
   fStack_5 = (float)((ulonglong)*puVar3 >> 0x20);
-  fVar6 = (fStack_4 * (this->fields)._workData.ScreenAxis0.x +
-          fStack_5 * (this->fields)._workData.ScreenAxis0.y) * (this->fields)._._sensitivity;
+  fVar6 = ((this->fields)._workData.ScreenAxis0.y * fStack_5 +
+          (this->fields)._workData.ScreenAxis0.x * fStack_4) * (this->fields)._._sensitivity;
   (this->fields)._relativeRotation0 = fVar6;
-  fVar7 = (fStack_5 * (this->fields)._workData.ScreenAxis1.y +
-           fStack_4 * (this->fields)._workData.ScreenAxis1.x) * (this->fields)._._sensitivity;
+  fVar7 = ((this->fields)._workData.ScreenAxis1.y * fStack_5 +
+           (this->fields)._workData.ScreenAxis1.x * fStack_4) * (this->fields)._._sensitivity;
   (this->fields)._relativeRotation1 = fVar7;
   if ((fVar6 == 0.0) && (fVar7 == 0.0)) {
     if (cRam_? == '\0') {

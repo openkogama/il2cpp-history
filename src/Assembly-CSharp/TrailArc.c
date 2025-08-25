@@ -496,17 +496,17 @@ code_?:
           pfVar23 = &(this->fields).averageInsertionTime;
           (this->fields).elapsedInsertionTime = fVar19;
           if (*pfVar23 <= fVar19 && fVar19 != *pfVar23) {
-            fVar19 = (this->fields).averageInsertionTime;
+            fVar18 = (this->fields).averageInsertionTime;
             iVar20 = (this->fields).displayCnt;
             do {
-              fVar18 = (this->fields).elapsedInsertionTime - fVar19;
+              fVar19 = fVar19 - fVar18;
               iVar41 = iVar20 + 1;
               if ((this->fields).pointCnt <= iVar20) {
                 iVar41 = iVar20;
               }
-              (this->fields).elapsedInsertionTime = fVar18;
               iVar20 = iVar41;
-            } while (fVar19 < fVar18);
+            } while (fVar18 < fVar19);
+            (this->fields).elapsedInsertionTime = fVar19;
             (this->fields).displayCnt = iVar41;
           }
         }
@@ -739,10 +739,11 @@ code_?:
                       fVar75 = fStack_76 * (float)pCStack_65 * _UNK_?;
                     }
                     else {
-                      uStack_66 = (double)CONCAT44((this->fields).time,(float)uStack_66);
-                      fStack_68 = UnityEngine.CoreModule.dll::UnityEngine::Time::
-                                  Time_1_get_deltaTime((MethodInfo *)0x0);
-                      (this->fields).time = (float)uStack_66._4_4_ + fStack_68;
+                      fStack_68 = (this->fields).time;
+                      fVar71 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                                         ((MethodInfo *)0x0);
+                      uStack_66 = (double)CONCAT44(fVar71,(float)uStack_66);
+                      (this->fields).time = fVar71 + fStack_68;
                       pVVar9 = (this->fields).points;
                       if (puVar48 == (undefined1 *)((int)pSStack_43[-1].vector + 0x7f)) {
                         if (pVVar9 == (Vector3__Array *)0x0) goto code_?;
@@ -1148,15 +1149,15 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_findCoordinates
               fVar30 = fVar28 * _UNK_? - (fVar29 + fVar29);
               fVar31 = (fVar29 - (fVar28 + fVar28)) + fVar27;
               fVar29 = fVar29 - fVar28;
-              uStack_32 = CONCAT44(fVar29 * fVar20 +
-                                   fVar13 * fVar31 + (float)uVar3 * fVar25 + (float)uVar6 * fVar30,
-                                   fVar29 * fVar19 +
-                                   fVar12 * fVar31 + (float)uVar2 * fVar25 + (float)uVar5 * fVar30);
+              uStack_32 = CONCAT44(fVar20 * fVar29 +
+                                   fVar13 * fVar31 + (float)uVar6 * fVar30 + (float)uVar3 * fVar25,
+                                   fVar19 * fVar29 +
+                                   fVar12 * fVar31 + (float)uVar5 * fVar30 + (float)uVar2 * fVar25);
               if (pVVar1 == (Vector3__Array *)0x0) goto code_?;
               if (pVVar1->max_length <= uVar26) goto code_?;
               *(undefined8 *)((int)pVVar1 + uVar26 * 0xc + 0x10) = uStack_32;
               *(float *)((int)pVVar1 + uVar26 * 0xc + 0x18) =
-                   fVar29 * fVar21 + fVar14 * fVar31 + fVar4 * fVar25 + fVar7 * fVar30;
+                   fVar21 * fVar29 + fVar14 * fVar31 + fVar7 * fVar30 + fVar4 * fVar25;
               fVar25 = _UNK_?;
               pVVar1 = (this->fields).savedUp;
               pVVar33 = (this->fields).pointsUp;
@@ -1165,10 +1166,10 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_findCoordinates
               goto code_?;
               uVar34 = pVVar1->vector[index + 1].x;
               uVar35 = pVVar1->vector[index + 1].y;
-              fVar31 = pVVar1->vector[index + 1].z;
+              fVar30 = pVVar1->vector[index + 1].z;
               uVar36 = pVVar1->vector[index].x;
               uVar37 = pVVar1->vector[index].y;
-              fVar29 = pVVar1->vector[index].z;
+              fVar31 = pVVar1->vector[index].z;
               if (fVar27 < 0.0) {
                 fVar27 = 0.0;
               }
@@ -1180,7 +1181,7 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_findCoordinates
               *(ulonglong *)((int)pVVar33 + uVar26 * 0xc + 0x10) =
                    CONCAT44(((float)uVar35 - (float)uVar37) * fVar27 + (float)uVar37,
                             ((float)uVar34 - (float)uVar36) * fVar27 + (float)uVar36);
-              *(float *)((int)pVVar33 + uVar26 * 0xc + 0x18) = (fVar31 - fVar29) * fVar27 + fVar29;
+              *(float *)((int)pVVar33 + uVar26 * 0xc + 0x18) = (fVar30 - fVar31) * fVar27 + fVar31;
               iVar24 = iVar24 + 1;
               iStack_23 = iStack_23 + 1;
             } while (iVar24 < (this->fields).segmentsPerPoint + iVar22);

@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
   }
   pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_PeerStatusCallback___,pSVar1,(MethodInfo *)0x0);
+                      (StringLiteral_PeerStatusCallback___,pSVar1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -108,7 +108,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
       (this->fields).registeredFatalStatusCodeInStatHat = 1;
       pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)returnCode,(MethodInfo *)0x0);
       pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_StatusCode_,pSVar1,(MethodInfo *)0x0);
+                          (StringLiteral_StatusCode_,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -116,7 +116,7 @@ void Assembly-CSharp.dll::MVNetworkGame+StatusChangedHandling::
       pSStack_3 = TypeInfo__ExitGames__Client__Photon__StatusCode;
       pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pSStack_3,(MethodInfo *)0x0);
       pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_Client_disconnected_,pSVar1,(MethodInfo *)0x0);
+                          (StringLiteral_Client_disconnected_,pSVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -242,7 +242,7 @@ code_?:
     pSStack_3 = TypeInfo__ExitGames__Client__Photon__StatusCode;
     pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pSStack_3,(MethodInfo *)0x0);
     pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_Unhandled_PeerStatusCallback__re,pSVar1,(MethodInfo *)0x0);
+                        (StringLiteral_Unhandled_PeerStatusCallback__re,pSVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -251,30 +251,31 @@ code_?:
     return;
   }
 code_?:
-  uVar6 = func_?();
-  pcVar7 = (char *)((int)uVar6 + -1);
-  bVar8 = (byte)pcVar7;
-  bVar9 = (byte)extraout_ECX;
-  bVar10 = (char)((uint)unaff_EBX >> 8) + bVar9 + (bVar8 < 0x67);
-  bVar11 = CARRY1(bVar10,*(byte *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass);
-  sVar12 = CONCAT11(bVar10 + *(char *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->
-                                       klass,(char)unaff_EBX);
-  piVar13 = (int *)CONCAT22((short)((uint)unaff_EBX >> 0x10),sVar12);
-  pbVar14 = (byte *)((int)((ulonglong)uVar6 >> 0x20) + 0x3d);
-  bVar10 = *pbVar14;
-  bVar15 = *pbVar14;
-  *pbVar14 = bVar15 + bVar9 + bVar11;
-  pcVar16 = (char *)segment(in_DS,sVar12 + (short)this);
-  *pcVar16 = *pcVar16 + bVar8 + (CARRY1(bVar10,bVar9) || CARRY1(bVar15 + bVar9,bVar11));
-  *extraout_ECX = *extraout_ECX + bVar8;
-  piVar17 = (int *)(CONCAT31((int3)((uint)pcVar7 >> 8),bVar8 + *pcVar7) + *piVar13);
-  pcVar16 = (char *)((int)piVar17 + *piVar13 + *piVar13 + *piVar13 + *piVar13 + *piVar17);
-  cVar18 = (char)pcVar16;
-  *pcVar16 = *pcVar16 + cVar18;
-  *pcVar16 = *pcVar16 + cVar18;
-  *pcVar16 = *pcVar16 + cVar18;
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  bVar6 = 0;
+  sVar7 = func_?();
+  pcVar8 = (char *)(int)sVar7;
+  pbVar9 = (byte *)segment(in_FS,(short)unaff_EBX);
+  bVar10 = (byte)unaff_EBX;
+  bVar11 = CARRY1(*pbVar9,bVar10) || CARRY1(*pbVar9 + bVar10,bVar6);
+  *pbVar9 = *pbVar9 + bVar10 + bVar6;
+  piVar12 = &(((Dictionary_2_System_Byte_System_Object_ *)returnCode)->fields)._count;
+  sVar13 = -((ushort)*piVar12 & 3);
+  *(ushort *)piVar12 = (short)*piVar12 + (ushort)(0 < sVar13) * sVar13;
+  pbVar9 = (byte *)segment(in_FS,(short)&stack0xfffffffc + (short)this + 0x6765);
+  bVar6 = *pbVar9;
+  bVar14 = *pbVar9;
+  *pbVar9 = bVar14 + bVar10 + bVar11;
+  cVar15 = (char)sVar7;
+  *pcVar8 = *pcVar8 + cVar15 + (CARRY1(bVar6,bVar10) || CARRY1(bVar14 + bVar10,bVar11));
+  *extraout_ECX = *extraout_ECX + cVar15;
+  piVar16 = (int *)(CONCAT31((int3)(char)((ushort)sVar7 >> 8),cVar15 + *pcVar8) + *unaff_EBX);
+  pcVar8 = (char *)((int)piVar16 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar16);
+  cVar15 = (char)pcVar8;
+  *pcVar8 = *pcVar8 + cVar15;
+  *pcVar8 = *pcVar8 + cVar15;
+  *pcVar8 = *pcVar8 + cVar15;
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

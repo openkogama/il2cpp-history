@@ -267,8 +267,7 @@ void Assembly-CSharp.dll::TierOnDeathProgress::TierOnDeathProgress_Initialize
                             euler.z = pVVar15->z * _UNK_?;
                             pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                                       Quaternion_Internal_MakePositive
-                                                ((Vector3 *)&stack0xfffffff0,euler,(MethodInfo *)0x0
-                                                );
+                                                ((Vector3 *)&pSStack_9,euler,(MethodInfo *)0x0);
                             fVar7 = pVVar15->y;
                             fVar2 = pVVar15->z;
                             (pTVar1->fields).lockStartRot.x = pVVar15->x;

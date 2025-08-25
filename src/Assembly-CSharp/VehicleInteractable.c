@@ -206,7 +206,7 @@ code_?:
             pAVar2 = (this->fields)._.modifierPackages;
             if (pAVar2 != (AvatarModifierPackages *)0x0) {
               AVar1 = AvatarModifierPackages::AvatarModifierPackages_GetPackageToActWith
-                                 (pAVar2,AVar1,action,(MethodInfo *)0x0);
+                                (pAVar2,AVar1,action,(MethodInfo *)0x0);
               (*(code *)(this->klass->vtable).RemoveModifier.method)
                         (this,AVar1,id,(this->klass->vtable).HasModifierEffect.methodPtr);
               return;
@@ -228,20 +228,9 @@ code_?:
   }
   uVar9 = func_?();
 code_?:
-  uVar13 = func_?(uVar9);
-  pcVar14 = (char *)uVar13;
-  *pcVar14 = *pcVar14 - (char)((uint6)uVar13 >> 0x20);
-  cVar15 = (char)((uint6)uVar13 >> 0x28);
-  *pcVar14 = *pcVar14 - cVar15;
-  uVar16 = (undefined3)((uint6)uVar13 >> 8);
-  uVar17 = *(undefined1 *)((int)&this->klass + ((uint)pcVar14 & 0xff));
-  pcVar14 = (char *)CONCAT31(uVar16,uVar17);
-  *pcVar14 = *pcVar14 - cVar15;
-  pcVar14 = (char *)(CONCAT31(uVar16,uVar17) | 0xd8);
-  *pcVar14 = *pcVar14 - cVar15;
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
-  return;
+  func_?(uVar9);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

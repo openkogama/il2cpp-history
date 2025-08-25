@@ -304,69 +304,69 @@ bool Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_GetCubePosO
 
 {
   fVar1 = 0.0;
-  puStack_2 = (undefined *)0x0;
-  stack0xffffffec = 0.0;
-  bVar3 = WorldEditorDrawPlane_Pick(this,(Vector3 *)&puStack_2,(MethodInfo *)0x0);
+  fVar2 = 0.0;
+  fVar3 = 0.0;
+  bVar4 = WorldEditorDrawPlane_Pick(this,(Vector3 *)&stack0xffffffe8,(MethodInfo *)0x0);
   this_00 = (this->fields)._targetGameObject;
   if (this_00 != (GameObject *)0x0) {
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (this_00,(MethodInfo *)0x0);
-    if (pTVar4 != (Transform *)0x0) {
+    if (pTVar5 != (Transform *)0x0) {
+      position.y = fVar3;
+      position.x = fVar2;
       position.z = fVar1;
-      position.x = (float)puStack_2;
-      position.y = stack0xffffffec;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
-                ((Vector3 *)&stack0xffffffc4,pTVar4,position,(MethodInfo *)0x0);
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
+                         (&VStack_7,pTVar5,position,(MethodInfo *)0x0);
+      uStack_8._0_4_ = pVVar6->x;
+      uStack_8._4_4_ = pVVar6->y;
+      puStack_9 = (undefined *)pVVar6->z;
+      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
       this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       if (this_01 != (MainCameraManager *)0x0) {
-        VStack_5.z = (float)&UNK_?;
         this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this_01,(MethodInfo *)0x0);
         if (this_02 != (Transform *)0x0) {
           pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             (&VStack_5,this_02,(MethodInfo *)0x0);
-          if (pTVar4 != (Transform *)0x0) {
+                             (&VStack_7,this_02,(MethodInfo *)0x0);
+          if (pTVar5 != (Transform *)0x0) {
             pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                     Transform_InverseTransformPoint(&VStack_7,pTVar4,*pVVar6,(MethodInfo *)0x0);
-            fVar1 = pVVar6->y;
-            pVVar6 = (Vector3 *)&stack0xffffffa0;
-            puVar8 = &UNK_?;
-            pVVar9 = WorldEditorDrawPlane_GetDirectionVector(pVVar6,this,(MethodInfo *)0x0);
-            uVar10 = pVVar9->x;
-            uVar11 = pVVar9->y;
-            fVar1 = (float)(int)((uint)(_UNK_? < fVar1) * 2 + -1);
-            fVar12 = pVVar9->z * _UNK_? * fVar1 + (float)this;
-            stack0xffffffec = (float)&stack0xffffffa0;
-            vector.y = (float)uVar11 * _UNK_? * fVar1 + (float)pVVar6;
-            vector.x = (float)uVar10 * _UNK_? * fVar1 + (float)puVar8;
-            vector.z._0_2_ = SUB42(fVar12,0);
-            vector.z._2_2_ = (short)((uint)fVar12 >> 0x10);
+                     Transform_InverseTransformPoint
+                               ((Vector3 *)&stack0xffffffdc,pTVar5,*pVVar6,(MethodInfo *)0x0);
+            VStack_7.x = pVVar6->x;
+            VStack_7.y = pVVar6->y;
+            VStack_7.z = pVVar6->z;
+            pVVar6 = WorldEditorDrawPlane_GetDirectionVector
+                               ((Vector3 *)&stack0xffffffb8,this,(MethodInfo *)0x0);
+            uVar10 = pVVar6->x;
+            uVar11 = pVVar6->y;
+            fVar2 = (float)(int)((uint)(_UNK_? < VStack_7.y) * 2 + -1);
+            VStack_7.z = (float)puStack_9 + fVar2 * pVVar6->z * _UNK_?;
+            vector.y = uStack_8._4_4_ + fVar2 * (float)uVar11 * _UNK_?;
+            vector.x = (float)uStack_8 + fVar2 * (float)uVar10 * _UNK_?;
+            vector.z = VStack_7.z;
             pVVar6 = MathFunctions::MathFunctions_RoundVector
-                               ((Vector3 *)&stack0xffffffa0,vector,0,(MethodInfo *)0x0);
-            uVar13 = pVVar6->x;
-            uVar14 = pVVar6->y;
-            iVar15 = (int16_t)(int)(float)uVar14;
-            x = (int)(float)uVar13 & 0xffff;
-            stack0xffffffec = (float)&UNK_?;
-            puStack_2 = (undefined *)uVar13;
+                               ((Vector3 *)&stack0xffffffb8,vector,0,(MethodInfo *)0x0);
+            uVar12 = pVVar6->x;
+            uVar13 = pVVar6->y;
+            uVar14._0_2_ = 0;
+            uVar14._2_2_ = 0;
+            x = (undefined4 *)((int)(float)uVar12 & 0xffff);
             MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                      ((IntVector *)&stack0xfffffff4,x,(int)(float)uVar14 & 0xffff,
+                      ((IntVector *)&stack0xfffffff4,(int32_t)x,(int)(float)uVar13 & 0xffff,
                        (int)pVVar6->z & 0xffff,(MethodInfo *)0x0);
-            intVectorHitPos->x = (short)x;
-            intVectorHitPos->y = (short)(x >> 0x10);
-            intVectorHitPos->z = iVar15;
-            return bVar3;
+            *x = uVar14;
+            *(undefined2 *)(x + 1) = 0;
+            return bVar4;
           }
         }
       }
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  bVar3 = (*pcVar16)();
-  return bVar3;
+  pcVar15 = (code *)swi(3);
+  bVar4 = (*pcVar15)();
+  return bVar4;
 }
 
 
@@ -877,8 +877,8 @@ void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_SetToGridAl
       uVar8 = pVVar2->x;
       uVar9 = pVVar2->y;
       fVar5 = fVar5 + (float)uVar8 * _UNK_?;
-      fVar7 = (float)uVar9 * _UNK_? + fVar7;
       fVar3 = fVar3 + pVVar2->z * _UNK_?;
+      fVar7 = fVar7 + (float)uVar9 * _UNK_?;
       puStack_6 = (undefined *)uVar8;
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);

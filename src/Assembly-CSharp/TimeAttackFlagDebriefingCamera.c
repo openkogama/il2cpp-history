@@ -159,13 +159,13 @@ Vector3 * Assembly-CSharp.dll::TimeAttackFlagDebriefingCamera::
   if (this_00 != (Transform *)0x0) {
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                        (&VStack_2,this_00,(MethodInfo *)0x0);
-    fVar3 = (this->fields).height;
-    uVar4 = pVVar1->x;
-    uVar5 = pVVar1->y;
-    fVar6 = pVVar1->z;
-    __return_storage_ptr__->x = (float)uVar4 + 0.0;
-    __return_storage_ptr__->y = fVar3 + (float)uVar5;
-    __return_storage_ptr__->z = fVar6 + 0.0;
+    uVar3 = pVVar1->x;
+    uVar4 = pVVar1->y;
+    fVar5 = pVVar1->z;
+    fVar6 = (this->fields).height;
+    __return_storage_ptr__->x = (float)uVar3 + 0.0;
+    __return_storage_ptr__->y = (float)uVar4 + fVar6;
+    __return_storage_ptr__->z = fVar5 + 0.0;
     return __return_storage_ptr__;
   }
   func_?();
@@ -330,9 +330,9 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefingCamera::
       uVar12 = pVVar2->x;
       uVar13 = pVVar2->y;
       if (pTVar1 != (Transform *)0x0) {
-        this = (TimeAttackFlagDebriefingCamera *)(fVar5 + 0.0 + pVVar2->z);
-        fVar14 = fVar6 + (float)uVar13;
-        VVar15.x = (float)uVar3 + 0.0 + (float)uVar12;
+        this = (TimeAttackFlagDebriefingCamera *)(pVVar2->z + fVar5 + 0.0);
+        fVar14 = (float)uVar13 + fVar6;
+        VVar15.x = (float)uVar12 + (float)uVar3 + 0.0;
         VVar15 = (Vector3)CONCAT84(uVar16,VVar15.x);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (pTVar1,VVar15,(MethodInfo *)0x0);

@@ -8,7 +8,7 @@ float Assembly-CSharp.dll::ImageAnimator::ImageAnimator_GetCurrentAlpha
   this_00 = (this->fields).curve;
   if (this_00 != (AnimationCurve *)0x0) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,(this->fields).speed * (this->fields).time,(MethodInfo *)0x0);
+                      (this_00,(this->fields).time * (this->fields).speed,(MethodInfo *)0x0);
     return fVar1;
   }
   uVar2 = func_?(&stack0xfffffff0);

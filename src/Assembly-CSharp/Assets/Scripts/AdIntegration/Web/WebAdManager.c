@@ -299,37 +299,48 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).inHouseAdManager;
-  if (((pIVar1 != (IAdManager *)0x0) &&
-      ((TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment <=
-       (pIVar1->klass->_1).naturalAligment)) &&
-     ((pIVar1->klass->_1).typeHierarchy
-      [(TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment - 1] ==
-      (Il2CppClass *)TypeInfo__AdIntegration__InHouse__InHouseAdManager)) {
-    pIVar1[1].monitor = (MonitorData *)inHouseAdController;
-    func_?(&pIVar1[1].monitor,inHouseAdController);
-    pMVar2 = pIVar1[1].monitor;
-    pMVar3 = pIVar1[4].monitor;
-    if (pMVar2 == (MonitorData *)0x0) {
+  if (pIVar1 != (IAdManager *)0x0) {
+    if (((pIVar1->klass->_1).naturalAligment <
+         (TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment) ||
+       ((pIVar1->klass->_1).typeHierarchy
+        [(TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment - 1] !=
+        (Il2CppClass *)TypeInfo__AdIntegration__InHouse__InHouseAdManager)) {
+      bVar2 = false;
+    }
+    else {
+      bVar2 = true;
+    }
+    pIVar3 = (IAdManager *)0x0;
+    if (bVar2) {
+      pIVar3 = pIVar1;
+    }
+    if (pIVar3 != (IAdManager *)0x0) {
+      pIVar3[1].monitor = (MonitorData *)inHouseAdController;
+      func_?(&pIVar3[1].monitor,inHouseAdController);
+      pMVar4 = pIVar3[1].monitor;
+      pMVar5 = pIVar3[4].monitor;
+      if (pMVar4 != (MonitorData *)0x0) {
+        bVar2 = cRam_? == '\0';
+        pMVar4[0x28] = *(MonitorData *)&pIVar3[4].klass;
+        *(MonitorData **)(pMVar4 + 0x2c) = pMVar5;
+        if (bVar2) {
+          func_?(&TypeInfo__UnityEngine__Object);
+          cRam_? = '\x01';
+        }
+        x = (Object_1 *)pIVar3[1].monitor;
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                          (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+        *(bool *)&pIVar3[1].klass = bVar6;
+        return;
+      }
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
-    bVar5 = cRam_? == '\0';
-    pMVar2[0x28] = *(MonitorData *)&pIVar1[4].klass;
-    *(MonitorData **)(pMVar2 + 0x2c) = pMVar3;
-    if (bVar5) {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    x = (Object_1 *)pIVar1[1].monitor;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    *(bool *)&pIVar1[1].klass = bVar6;
-    return;
   }
   return;
 }

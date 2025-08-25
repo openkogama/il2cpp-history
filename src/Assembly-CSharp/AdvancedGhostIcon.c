@@ -173,7 +173,6 @@ void Assembly-CSharp.dll::AdvancedGhostIcon::AdvancedGhostIcon_CloneCubeMeshes
               }
               break;
             }
-            unaff_ESI = (Transform *)0x0;
             if ((Transform *)TStack_4.monitor == (Transform *)0x0) break;
             pTVar11 = *(Transform__Class **)&(TStack_4.monitor)->field_0x0;
             uVar12 = 0;

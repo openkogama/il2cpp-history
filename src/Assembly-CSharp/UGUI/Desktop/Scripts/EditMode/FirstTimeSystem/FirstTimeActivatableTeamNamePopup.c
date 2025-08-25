@@ -382,13 +382,13 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                   );
         (this->fields)._.isRegistered = 1;
       }
-      FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
-                ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+      bVar3 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
+                        ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if (pGVar2 != (GameObject *)0x0) {
-        bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_get_activeInHierarchy(pGVar2,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                  (pGVar2,(MethodInfo *)0x0);
         this_01 = (this->fields).slots;
         if (this_01 != (InventorySlots *)0x0) {
           this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -406,13 +406,14 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                                   ((this->fields).insideInventory,(MethodInfo *)0x0);
                 bVar9 = 0;
                 if (1 < iVar7) {
-                  bVar9 = bVar8 & bVar3 & bVar1;
+                  bVar9 = bVar8 & (bVar3 ^ 1);
                 }
+                this._3_1_ = 0x10;
                 bVar10 = 0;
                 if (0 < iVar4) {
-                  bVar10 = 0x11;
+                  bVar10 = this._3_1_;
                 }
-                return bVar9 & bVar10;
+                return bVar9 & bVar10 & bVar1;
               }
             }
           }

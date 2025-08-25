@@ -80,31 +80,41 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVObjectTransparency::MVObjectTransp
                (this_03->klass->_1).typeHierarchy
                [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] != TypeInfo__MVCubeModelBase))
         {
-          pTVar8 = mscorlib.dll::System::Object::Object_GetType((Object *)this_03,(MethodInfo *)0x0)
+          bVar8 = false;
+        }
+        else {
+          bVar8 = true;
+        }
+        this_04 = (MVCubeModelBase *)0x0;
+        if (bVar8) {
+          this_04 = this_03;
+        }
+        if (this_04 == (MVCubeModelBase *)0x0) {
+          pTVar9 = mscorlib.dll::System::Object::Object_GetType((Object *)this_03,(MethodInfo *)0x0)
           ;
-          pSVar9 = StringLiteral_AdjustTransparency_invalid_world;
-          if (pTVar8 == (Type *)0x0) {
+          pSVar10 = StringLiteral_AdjustTransparency_invalid_world;
+          if (pTVar9 == (Type *)0x0) {
             str1 = (String *)0x0;
           }
           else {
             str1 = (String *)func_?();
           }
-          pSVar9 = mscorlib.dll::System::String::String_Concat_3(pSVar9,str1,(MethodInfo *)0x0);
+          pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar10,str1,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                    ((Object *)pSVar9,(MethodInfo *)0x0);
+                    ((Object *)pSVar10,(MethodInfo *)0x0);
         }
         else {
-          MVCubeModelBase::MVCubeModelBase_ObjectLinkTransparency(this_03,(MethodInfo *)0x0);
+          MVCubeModelBase::MVCubeModelBase_ObjectLinkTransparency(this_04,(MethodInfo *)0x0);
         }
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

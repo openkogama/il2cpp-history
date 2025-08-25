@@ -47,7 +47,7 @@ bool Assembly-CSharp.dll::HealthbarLerp+<LerpProgress>d__10::
   if (_UNK_? <= fVar4) {
 code_?:
     this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
     (pHVar1->fields).__2__current = pOVar3;
     func_?(&(pHVar1->fields).__2__current,pOVar3);
     (pHVar1->fields).__1__state = 3;
@@ -72,7 +72,7 @@ code_?:
          (pPVar7 = (pHVar2->fields).targetProgressBar, pPVar7 != (ProgressBar *)0x0)) {
         if ((pPVar7->fields).progress < (pPVar5->fields).progress) {
           this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-          pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+          pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
           (pHVar1->fields).__2__current = pOVar3;
           func_?(&(pHVar1->fields).__2__current,pOVar3);
           (pHVar1->fields).__1__state = 2;
@@ -83,17 +83,10 @@ code_?:
     }
   }
 code_?:
-  bVar8 = 0;
   func_?();
-  pbVar9 = (byte *)(in_GS + 0xeff61044 + (int)&stack0xfffffffc * 8);
-  bVar10 = *pbVar9;
-  bVar11 = *pbVar9;
-  *pbVar9 = bVar11 + extraout_CL + bVar8;
-  *unaff_EBX = *unaff_EBX + extraout_AH +
-               (CARRY1(bVar10,extraout_CL) || CARRY1(bVar11 + extraout_CL,bVar8));
-  pcVar12 = (code *)swi(1);
-  bVar13 = (*pcVar12)();
-  return bVar13;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 

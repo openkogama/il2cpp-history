@@ -272,176 +272,148 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
 
 {
   AndroidVehicleCamera_UpdateTargetRotation(this,(MethodInfo *)0x0);
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                      ((Component *)this,(MethodInfo *)0x0);
+  AndroidVehicleCamera_HandlePos(this,(MethodInfo *)0x0);
+  pTVar1 = (this->fields).lookAtTransform;
+  aVStack_2[0].z = 0.0;
+  aVStack_2[0].x = 0.0;
+  aVStack_2[0].y = 0.0;
   if (pTVar1 != (Transform *)0x0) {
-    pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                        ((Quaternion *)&stack0xffffffb8,pTVar1,(MethodInfo *)0x0);
-    fVar3 = pQVar2->x;
-    fVar4 = pQVar2->y;
-    fVar5 = pQVar2->z;
-    fVar6 = pQVar2->w;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar8 = (pVVar7->forwardVector).x;
-    uVar9 = (pVVar7->forwardVector).y;
-    rotation.y = fVar4;
-    rotation.x = fVar3;
-    rotation.z = fVar5;
-    rotation.w = fVar6;
-    point.y = (float)(uVar9 ^ 
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-    point.x = (float)(uVar8 ^ 
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-    point.z = (float)((uint)(pVVar7->forwardVector).z ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffffd0,rotation,point,(MethodInfo *)0x0);
-    fVar4 = pVVar10->x;
-    fVar5 = pVVar10->y;
-    fVar6 = pVVar10->z;
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
-              ((Vector3 *)&stack0xffffffe4,(MethodInfo *)0x0);
-    fVar3 = (this->fields).distanceToLookAt;
-    fVar5 = fVar5 * fVar3;
-    fVar6 = fVar6 * fVar3;
-    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&QStack_4,pTVar1,(MethodInfo *)0x0);
+    this_00 = (this->fields).cameraCollision;
+    uVar5 = pVVar3->x;
+    uVar6 = pVVar3->y;
+    fStack_7 = pVVar3->z;
+    pTStack_8 = (Transform *)(this->fields)._.cameraRadius;
+    fStack_9 = (this->fields).distanceToLookAt;
+    QStack_10.z = pVVar3->x;
+    QStack_10.w = pVVar3->y;
+    fStack_11 = (float)uVar5;
+    fStack_12 = (float)uVar6;
+    fStack_13 = fStack_7;
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).lookAtTransform;
     if (pTVar1 != (Transform *)0x0) {
-      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffd0,pTVar1,(MethodInfo *)0x0);
-      uVar12 = pVVar10->x;
-      uVar13 = pVVar10->y;
-      uVar14 = (this->fields).lookAtOffset.x;
-      uVar15 = (this->fields).lookAtOffset.y;
-      if (pTVar11 != (Transform *)0x0) {
-        value_00.y = (float)uVar15 + fVar5 + (float)uVar13;
-        value_00.x = (float)uVar14 + fVar4 * fVar3 + (float)uVar12;
-        value_00.z = (this->fields).lookAtOffset.z + fVar6 + pVVar10->z;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar11,value_00,(MethodInfo *)0x0);
-        pTVar1 = (this->fields).lookAtTransform;
-        fVar5 = 0.0;
-        fVar3 = 0.0;
-        fVar4 = 0.0;
-        if (pTVar1 != (Transform *)0x0) {
-          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffb8,pTVar1,(MethodInfo *)0x0);
-          this_00 = (this->fields).cameraCollision;
-          fVar6 = pVVar10->x;
-          fVar16 = pVVar10->y;
-          fVar17 = pVVar10->z;
-          this_03 = (Component *)(this->fields)._.cameraRadius;
-          fVar18 = pVVar10->x;
-          puVar19 = &UNK_?;
+      pVStack_14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&QStack_4,pTVar1,(MethodInfo *)0x0);
+      if (this_00 != (CameraCollision *)0x0) {
+        func_?();
+        targetPosition.z = fStack_7;
+        targetPosition.x = QStack_10.z;
+        targetPosition.y = QStack_10.w;
+        bVar15 = CameraCollision::CameraCollision_Collide_1
+                           (this_00,(VoxelHit *)&stack0xffffff38,aVStack_2,(float)pTStack_8,
+                            fStack_9,targetPosition,*pVStack_14,(this->fields).ignoreAvatarId,
+                            (MethodInfo *)0x0);
+        if (bVar15 != 0) {
           pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              (this_03,(MethodInfo *)0x0);
-          if (pTVar1 != (Transform *)0x0) {
-            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                ((Vector3 *)&stack0xffffffb8,pTVar1,(MethodInfo *)0x0);
-            if (this_00 != (CameraCollision *)0x0) {
-              fVar20 = 1.00893e-43;
-              func_?();
-              targetPosition.y = (float)puVar19;
-              targetPosition.x = fVar18;
-              targetPosition.z = fVar17;
-              bVar21 = CameraCollision::CameraCollision_Collide_1
-                                 (this_00,(VoxelHit *)&stack0xffffff50,(Vector3 *)&stack0xffffffd4,
-                                  (float)this_03,3.1982414e-29,targetPosition,*pVVar10,
-                                  (this->fields).ignoreAvatarId,(MethodInfo *)0x0);
-              if (bVar21 != 0) {
-                pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)this,(MethodInfo *)0x0);
-                if (pTVar1 == (Transform *)0x0) goto code_?;
-                value.y = fVar4;
-                value.x = fVar3;
-                value.z = fVar5;
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                          (pTVar1,value,(MethodInfo *)0x0);
-              }
+                              ((Component *)this,(MethodInfo *)0x0);
+          if (pTVar1 == (Transform *)0x0) goto code_?;
+          value.y = aVStack_2[0].y;
+          value.x = aVStack_2[0].x;
+          value.z = aVStack_2[0].z;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                    (pTVar1,value,(MethodInfo *)0x0);
+        }
+        pTStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)this,(MethodInfo *)0x0);
+        this_01 = (this->fields).cameraLerpToDesiredDistance;
+        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (pTVar1 != (Transform *)0x0) {
+          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              ((Vector3 *)&QStack_4,pTVar1,(MethodInfo *)0x0);
+          if (this_01 != (CameraLerpToDesiredDistance *)0x0) {
+            targetPosition_00.y = fStack_12;
+            targetPosition_00.x = fStack_11;
+            targetPosition_00.z = fStack_13;
+            pVVar3 = CameraLerpToDesiredDistance::CameraLerpToDesiredDistance_Update
+                                ((Vector3 *)&QStack_4,this_01,targetPosition_00,*pVVar3,
+                                 (MethodInfo *)0x0);
+            if (pTStack_8 != (Transform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                        (pTStack_8,*pVVar3,(MethodInfo *)0x0);
+              this_02 = (this->fields).cameraShake;
               pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   ((Component *)this,(MethodInfo *)0x0);
-              this_01 = (this->fields).cameraLerpToDesiredDistance;
-              pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)this,(MethodInfo *)0x0);
-              if (pTVar11 != (Transform *)0x0) {
-                pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                    ((Vector3 *)&stack0xffffffb8,pTVar11,(MethodInfo *)0x0);
-                if (this_01 != (CameraLerpToDesiredDistance *)0x0) {
-                  targetPosition_00.y = fVar16;
-                  targetPosition_00.x = fVar6;
-                  targetPosition_00.z = fVar20;
-                  pVVar10 = CameraLerpToDesiredDistance::CameraLerpToDesiredDistance_Update
-                                      ((Vector3 *)&stack0xffffffb8,this_01,targetPosition_00,
-                                       *pVVar10,(MethodInfo *)0x0);
-                  if (pTVar1 != (Transform *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                              (pTVar1,*pVVar10,(MethodInfo *)0x0);
-                    this_02 = (this->fields).cameraShake;
-                    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_transform((Component *)this,(MethodInfo *)0x0);
-                    if (pTVar1 != (Transform *)0x0) {
-                      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                Transform_get_position
-                                          ((Vector3 *)&stack0xffffffb8,pTVar1,(MethodInfo *)0x0);
-                      pMVar22 = (this->fields).avatarLocal;
-                      fVar3 = pVVar10->x;
-                      fVar17 = pVVar10->y;
-                      fVar4 = pVVar10->z;
-                      if (pMVar22 != (MVAvatarLocal *)0x0) {
-                        (*(code *)(pMVar22->klass->vtable).get_VelocityRelative.method)();
-                        fVar23 = (float10)func_?();
-                        if (this_02 != (CameraShake *)0x0) {
-                          pVVar10 = CameraShake::CameraShake_Shake_1
-                                              ((Vector3 *)&stack0xffffffb8,this_02,(float)fVar23,
-                                               (MethodInfo *)0x0);
-                          uVar24 = pVVar10->x;
-                          uVar25 = pVVar10->y;
-                          if (targetTransform != (ProtectedTransform *)0x0) {
-                            value_01.y = fVar17 + (float)uVar25;
-                            value_01.x = fVar3 + (float)uVar24;
-                            value_01.z = fVar4 + pVVar10->z;
-                            ProtectedTransform::ProtectedTransform_set_position
-                                      (targetTransform,value_01,(MethodInfo *)0x0);
-                            pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                      Component_get_transform((Component *)this,(MethodInfo *)0x0);
-                            if (pTVar1 != (Transform *)0x0) {
-                              pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                        Transform_get_rotation
-                                                  ((Quaternion *)&stack0xffffffb8,pTVar1,
-                                                   (MethodInfo *)0x0);
-                              fVar6 = pQVar2->x;
-                              fVar18 = pQVar2->y;
-                              fVar16 = pQVar2->z;
-                              puVar19 = &UNK_?;
-                              euler.y = 0.0;
-                              euler.z = 0.0;
-                              euler.x = (this->fields).localPitch * _UNK_?;
-                              pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                                        Quaternion_Internal_FromEulerRad
-                                                  ((Quaternion *)&stack0xffffff98,euler,
-                                                   (MethodInfo *)0x0);
-                              fVar3 = pQVar2->y;
-                              fVar4 = pQVar2->z;
-                              fVar5 = pQVar2->w;
-                              value_02.y = (fVar18 * fVar5 + fVar3 * (float)puVar19 +
-                                           fVar16 * pQVar2->x) - fVar4 * fVar6;
-                              value_02.x = (fVar5 * fVar6 + pQVar2->x * (float)puVar19 +
-                                           fVar4 * fVar18) - fVar3 * fVar16;
-                              value_02.z = (fVar16 * fVar5 + fVar4 * (float)puVar19 + fVar3 * fVar6
-                                           ) - fVar18 * pQVar2->x;
-                              value_02.w = ((fVar5 * (float)puVar19 - fVar6 * pQVar2->x) -
-                                           fVar3 * fVar18) - fVar16 * fVar4;
-                              ProtectedTransform::ProtectedTransform_set_rotation
-                                        (targetTransform,value_02,(MethodInfo *)0x0);
-                              return;
-                            }
-                          }
-                        }
+              if (pTVar1 != (Transform *)0x0) {
+                pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                    ((Vector3 *)&QStack_4,pTVar1,(MethodInfo *)0x0);
+                pMVar16 = (this->fields).avatarLocal;
+                uVar17 = pVVar3->x;
+                uVar18 = pVVar3->y;
+                aVStack_2[0].z = pVVar3->z;
+                aVStack_2[0].x = (float)uVar17;
+                aVStack_2[0].y = (float)uVar18;
+                if (pMVar16 != (MVAvatarLocal *)0x0) {
+                  puVar19 = (undefined8 *)
+                            (*(code *)(pMVar16->klass->vtable).get_VelocityRelative.method)();
+                  fStack_12 = *(float *)(puVar19 + 1);
+                  fStack_20 = (float)*puVar19;
+                  fStack_11 = (float)((ulonglong)*puVar19 >> 0x20);
+                  fVar21 = (float10)func_?();
+                  fStack_13 = (float)fVar21;
+                  if (this_02 != (CameraShake *)0x0) {
+                    pVVar3 = CameraShake::CameraShake_Shake_1
+                                        ((Vector3 *)&QStack_4,this_02,fStack_13,(MethodInfo *)0x0);
+                    uVar22 = pVVar3->x;
+                    uVar23 = pVVar3->y;
+                    fStack_12 = pVVar3->z;
+                    fStack_24 = aVStack_2[0].x + (float)uVar22;
+                    aVStack_2[0].x = aVStack_2[0].y + (float)uVar23;
+                    aVStack_2[0].y = aVStack_2[0].z + fStack_12;
+                    fStack_20 = (float)uVar22;
+                    fStack_11 = (float)uVar23;
+                    if (targetTransform != (ProtectedTransform *)0x0) {
+                      value_00.y = aVStack_2[0].x;
+                      value_00.x = fStack_24;
+                      value_00.z = aVStack_2[0].y;
+                      ProtectedTransform::ProtectedTransform_set_position
+                                (targetTransform,value_00,(MethodInfo *)0x0);
+                      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                Component_get_transform((Component *)this,(MethodInfo *)0x0);
+                      if (pTVar1 != (Transform *)0x0) {
+                        pQVar25 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                  Transform_get_rotation(&QStack_4,pTVar1,(MethodInfo *)0x0);
+                        aVStack_2[0].y = 0.0;
+                        QStack_4.x = pQVar25->x;
+                        QStack_4.y = pQVar25->y;
+                        QStack_4.z = pQVar25->z;
+                        QStack_4.w = pQVar25->w;
+                        euler.y = 0.0;
+                        euler.z = 0.0;
+                        euler.x = (this->fields).localPitch * _UNK_?;
+                        pQVar25 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                                  Quaternion_Internal_FromEulerRad
+                                            (&QStack_10,euler,(MethodInfo *)0x0);
+                        fVar26 = pQVar25->y;
+                        fVar27 = pQVar25->z;
+                        aVStack_2[0].x = pQVar25->w;
+                        fStack_28 = QStack_4.w;
+                        fStack_20 = QStack_4.w;
+                        fStack_11 = QStack_4.w;
+                        fStack_12 = QStack_4.w;
+                        fStack_13 = (aVStack_2[0].x * QStack_4.x + pQVar25->x * QStack_4.w +
+                                    fVar27 * QStack_4.y) - fVar26 * QStack_4.z;
+                        fVar29 = QStack_4.z * fVar27;
+                        fVar30 = (QStack_4.y * aVStack_2[0].x + fVar26 * QStack_4.w +
+                                 QStack_4.z * pQVar25->x) - fVar27 * QStack_4.x;
+                        QStack_4.z = (QStack_4.z * aVStack_2[0].x + fVar27 * QStack_4.w +
+                                      fVar26 * QStack_4.x) - QStack_4.y * pQVar25->x;
+                        QStack_4.w = ((aVStack_2[0].x * QStack_4.w - QStack_4.x * pQVar25->x) -
+                                      fVar26 * QStack_4.y) - fVar29;
+                        value_01.y = fVar30;
+                        value_01.x = fStack_13;
+                        value_01.z = QStack_4.z;
+                        value_01.w = QStack_4.w;
+                        QStack_4.x = fStack_13;
+                        QStack_4.y = fVar30;
+                        fStack_24 = QStack_4.w;
+                        aVStack_2[0].y = aVStack_2[0].x;
+                        aVStack_2[0].z = aVStack_2[0].x;
+                        ProtectedTransform::ProtectedTransform_set_rotation
+                                  (targetTransform,value_01,(MethodInfo *)0x0);
+                        return;
                       }
                     }
                   }
@@ -455,8 +427,8 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
   }
 code_?:
   func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  pcVar31 = (code *)swi(3);
+  (*pcVar31)();
   return;
 }
 

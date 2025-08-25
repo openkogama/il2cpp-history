@@ -141,21 +141,32 @@ code_?:
                                    (Object **)&stack0xfffffff8,
                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                                   );
-                if (((bVar7 != 0) &&
-                    (((pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0 &&
-                      ((
+                if ((bVar7 != 0) && (pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0)) {
+                  if (((pMVar2->klass->_1).naturalAligment <
+                       (
                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                       ->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment)) &&
+                       ->_1).naturalAligment) ||
                      ((Dictionary_2_System_Object_System_Object___Class *)
                       (pMVar2->klass->_1).typeHierarchy
                       [(
                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                       ->_1).naturalAligment - 1] ==
+                       ->_1).naturalAligment - 1] !=
                       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     )))) && (pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0)) {
-                  (this->fields).bluePrintData = (Dictionary_2_System_Object_System_Object_ *)pMVar2
-                  ;
-                  func_?();
+                     )) {
+                    bVar8 = false;
+                  }
+                  else {
+                    bVar8 = true;
+                  }
+                  pMVar3 = (MVWorldObjectSpawnerVehicle *)0x0;
+                  if (bVar8) {
+                    pMVar3 = pMVar2;
+                  }
+                  if (pMVar3 != (MVWorldObjectSpawnerVehicle *)0x0) {
+                    (this->fields).bluePrintData =
+                         (Dictionary_2_System_Object_System_Object_ *)pMVar3;
+                    func_?();
+                  }
                 }
                 if ((this->fields).bluePrintData == (Dictionary_2_System_Object_System_Object_ *)0x0
                    ) {
@@ -184,8 +195,8 @@ code_?:
   pMVar2 = extraout_EDX;
 code_?:
   func_?(pMVar2);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

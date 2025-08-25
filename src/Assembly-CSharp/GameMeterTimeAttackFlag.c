@@ -228,31 +228,30 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_Updat
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0);
   if (pFVar2 != (FlagDebriefingControl *)0x0) {
-    fVar3 = (pFVar2->fields).RunStartTime;
+    fVar1 = (fVar1 - (pFVar2->fields).RunStartTime) * _UNK_?;
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__System__Math);
       cRam_? = '\x01';
     }
-    fVar1 = (fVar1 - fVar3) * _UNK_?;
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Math);
     }
-    dVar4 = (double)fVar1;
+    dVar3 = (double)fVar1;
     statType = &UNK_?;
-    func_?(dVar4,8);
-    method_00 = SUB84(dVar4,0);
+    func_?(dVar3,8);
+    method_00 = SUB84(dVar3,0);
     score = func_?();
     WinningConditionControl::WinningConditionControl_MakeIntoScoreText
               (score,(GameStatCounterType__Enum)statType,method_00);
-    pTVar5 = (this->fields).timeAttackFlagText;
-    if (pTVar5 != (Text *)0x0) {
-      (*(code *)(pTVar5->klass->vtable).set_text.method)();
+    pTVar4 = (this->fields).timeAttackFlagText;
+    if (pTVar4 != (Text *)0x0) {
+      (*(code *)(pTVar4->klass->vtable).set_text.method)();
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

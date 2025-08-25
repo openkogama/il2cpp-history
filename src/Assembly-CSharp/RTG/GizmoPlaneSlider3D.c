@@ -130,46 +130,29 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_ApplyZoomF
     func_?(&TypeInfo__RTG__IGizmoPlaneSlider3DController);
     cRam_? = '\x01';
   }
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-code_?:
+  pGVar1 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
     if ((pGVar1->fields)._useZoomFactor == 0) {
       return;
     }
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar1 = (this->fields)._lookAndFeel;
-      if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-    }
-    if ((pGVar1->fields)._useZoomFactor != 0) {
-      this_00 = (this->fields)._._handle;
-      if (this_00 == (GizmoHandle *)0x0) goto code_?;
+    this_00 = (this->fields)._._handle;
+    if (this_00 != (GizmoHandle *)0x0) {
       GizmoHandle::GizmoHandle_GetZoomFactor(this_00,camera,(MethodInfo *)0x0);
-    }
-    pIVar2 = (this->fields)._controllers;
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar1 = (this->fields)._lookAndFeel;
-      if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-    }
-    if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-      uVar3 = (pGVar1->fields)._planeType;
-      if (pIVar2->max_length <= uVar3) goto code_?;
-      if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
-        func_?(1,TypeInfo__RTG__IGizmoPlaneSlider3DController,pIVar2->vector[uVar3]);
-        return;
+      pIVar2 = (this->fields)._controllers;
+      pGVar1 = (&(this->fields)._lookAndFeel)
+               [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if ((pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+         (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
+        uVar3 = (pGVar1->fields)._planeType;
+        if (pIVar2->max_length <= uVar3) goto code_?;
+        if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+          func_?(1,TypeInfo__RTG__IGizmoPlaneSlider3DController,pIVar2->vector[uVar3]);
+          return;
+        }
       }
     }
   }
-code_?:
   func_?();
 code_?:
   func_?();
@@ -210,44 +193,41 @@ float Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetRealCi
                 (GizmoPlaneSlider3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar1->fields)._useZoomFactor == 0) {
-    zoomFactor = _UNK_?;
-  }
-  pGVar2 = (this->fields)._scaleDrag;
-  if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) {
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    fVar4 = (float10)(*pcVar3)();
-    return (float)fVar4;
-  }
-  cVar5 = (*(code *)(pGVar2->klass->vtable).get_IsActive_1.method)
-                    (pGVar2,(pGVar2->klass->vtable).get_DragChannel_1.methodPtr);
-  fVar6 = _UNK_?;
-  if (cVar5 != '\0') {
-    pGVar2 = (this->fields)._scaleDrag;
-    if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-    fVar6 = (pGVar2->fields)._totalScale0;
-    if ((float)((uint)fVar6 & _UNK_?) <
-        (float)((uint)(pGVar2->fields)._totalScale1 & _UNK_?)) {
-      fVar6 = (pGVar2->fields)._totalScale1;
+  pGVar1 = this;
+  pGVar2 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar2->fields)._useZoomFactor == 0) {
+      zoomFactor = 1.0;
+    }
+    pGVar3 = (this->fields)._scaleDrag;
+    this = (GizmoPlaneSlider3D *)0x3f800000;
+    if (pGVar3 != (GizmoDblAxisScaleDrag3D *)0x0) {
+      cVar4 = (*(code *)(pGVar3->klass->vtable).get_IsActive_1.method)
+                        (pGVar3,(pGVar3->klass->vtable).get_DragChannel_1.methodPtr);
+      if (cVar4 != '\0') {
+        pGVar3 = (pGVar1->fields)._scaleDrag;
+        if (pGVar3 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+        this = (GizmoPlaneSlider3D *)(pGVar3->fields)._totalScale0;
+        if ((float)((uint)(pGVar3->fields)._totalScale0 & _UNK_?) <
+            (float)((uint)(pGVar3->fields)._totalScale1 & _UNK_?)) {
+          this = (GizmoPlaneSlider3D *)(pGVar3->fields)._totalScale1;
+        }
+      }
+      pGVar2 = (&(pGVar1->fields)._lookAndFeel)
+               [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+        return ((&(pGVar1->fields)._lookAndFeel)
+                [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+               fields)._scale * (pGVar2->fields)._circleRadius * zoomFactor * (float)this;
+      }
     }
   }
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  return (pGVar1->fields)._circleRadius * (pGVar1->fields)._scale * zoomFactor * fVar6;
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -257,40 +237,37 @@ float Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetRealQu
                 (GizmoPlaneSlider3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+  pGVar1 = this;
+  pGVar2 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar2->fields)._useZoomFactor == 0) {
+      zoomFactor = 1.0;
+    }
+    pGVar3 = (this->fields)._scaleDrag;
+    this = (GizmoPlaneSlider3D *)0x3f800000;
+    if (pGVar3 != (GizmoDblAxisScaleDrag3D *)0x0) {
+      cVar4 = (*(code *)(pGVar3->klass->vtable).get_IsActive_1.method)
+                        (pGVar3,(pGVar3->klass->vtable).get_DragChannel_1.methodPtr);
+      if (cVar4 != '\0') {
+        pGVar3 = (pGVar1->fields)._scaleDrag;
+        if (pGVar3 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+        this = (GizmoPlaneSlider3D *)((uint)(pGVar3->fields)._totalScale1 & _UNK_?);
+      }
+      pGVar2 = (&(pGVar1->fields)._lookAndFeel)
+               [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+        return ((&(pGVar1->fields)._lookAndFeel)
+                [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+               fields)._scale * (pGVar2->fields)._quadHeight * zoomFactor * (float)this;
+      }
+    }
   }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar1->fields)._useZoomFactor == 0) {
-    zoomFactor = _UNK_?;
-  }
-  pGVar2 = (this->fields)._scaleDrag;
-  if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) {
 code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    fVar4 = (float10)(*pcVar3)();
-    return (float)fVar4;
-  }
-  cVar5 = (*(code *)(pGVar2->klass->vtable).get_IsActive_1.method)
-                    (pGVar2,(pGVar2->klass->vtable).get_DragChannel_1.methodPtr);
-  fVar6 = _UNK_?;
-  if (cVar5 != '\0') {
-    pGVar2 = (this->fields)._scaleDrag;
-    if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-    fVar6 = (float)((uint)(pGVar2->fields)._totalScale1 & _UNK_?);
-  }
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  return (pGVar1->fields)._quadHeight * (pGVar1->fields)._scale * zoomFactor * fVar6;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -302,46 +279,47 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetReal
 {
   pGVar1 = this;
   pGVar2 = _UNK_?;
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar3 = (this->fields)._lookAndFeel;
-    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar3 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar3->fields)._useZoomFactor == 0) {
-    this = _UNK_?;
-  }
-  else {
-    this = (GizmoPlaneSlider3D *)zoomFactor;
-  }
-  pGVar4 = (pGVar1->fields)._scaleDrag;
-  if (pGVar4 == (GizmoDblAxisScaleDrag3D *)0x0) {
-code_?:
-    func_?();
-    pcVar5 = (code *)swi(3);
-    VVar6 = (Vector2)(*pcVar5)();
-    return VVar6;
-  }
-  cVar7 = (*(code *)(pGVar4->klass->vtable).get_IsActive_1.method)
-                    (pGVar4,(pGVar4->klass->vtable).get_DragChannel_1.methodPtr);
-  pGVar8 = _UNK_?;
-  if (cVar7 != '\0') {
+  pGVar3 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar3->fields)._useZoomFactor == 0) {
+      this = _UNK_?;
+    }
+    else {
+      this = (GizmoPlaneSlider3D *)zoomFactor;
+    }
     pGVar4 = (pGVar1->fields)._scaleDrag;
-    if (pGVar4 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-    pGVar2 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale1;
-    pGVar8 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale0;
+    if (pGVar4 != (GizmoDblAxisScaleDrag3D *)0x0) {
+      cVar5 = (*(code *)(pGVar4->klass->vtable).get_IsActive_1.method)
+                        (pGVar4,(pGVar4->klass->vtable).get_DragChannel_1.methodPtr);
+      pGVar6 = _UNK_?;
+      if (cVar5 != '\0') {
+        pGVar4 = (pGVar1->fields)._scaleDrag;
+        if (pGVar4 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+        pGVar2 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale1;
+        pGVar6 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale0;
+      }
+      pGVar3 = (&(pGVar1->fields)._lookAndFeel)
+               [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+        VVar7.y = ((&(pGVar1->fields)._lookAndFeel)
+                   [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+                  fields)._scale *
+                  ((&(pGVar1->fields)._lookAndFeel)
+                   [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+                  fields)._quadHeight * (float)this * (float)pGVar2;
+        VVar7.x = ((&(pGVar1->fields)._lookAndFeel)
+                   [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+                  fields)._scale * (pGVar3->fields)._quadWidth * (float)this * (float)pGVar6;
+        return VVar7;
+      }
+    }
   }
-  if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar3 = (pGVar1->fields)._lookAndFeel;
-    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar3 = (pGVar1->fields)._sharedLookAndFeel;
-  }
-  VVar6.y = (pGVar3->fields)._quadHeight * (pGVar3->fields)._scale * (float)this * (float)pGVar2;
-  VVar6.x = (pGVar3->fields)._scale * (pGVar3->fields)._quadWidth * (float)this * (float)pGVar8;
-  return VVar6;
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  VVar7 = (Vector2)(*pcVar8)();
+  return VVar7;
 }
 
 
@@ -351,40 +329,37 @@ float Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetRealQu
                 (GizmoPlaneSlider3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+  pGVar1 = this;
+  pGVar2 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar2->fields)._useZoomFactor == 0) {
+      zoomFactor = 1.0;
+    }
+    pGVar3 = (this->fields)._scaleDrag;
+    this = (GizmoPlaneSlider3D *)0x3f800000;
+    if (pGVar3 != (GizmoDblAxisScaleDrag3D *)0x0) {
+      cVar4 = (*(code *)(pGVar3->klass->vtable).get_IsActive_1.method)
+                        (pGVar3,(pGVar3->klass->vtable).get_DragChannel_1.methodPtr);
+      if (cVar4 != '\0') {
+        pGVar3 = (pGVar1->fields)._scaleDrag;
+        if (pGVar3 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+        this = (GizmoPlaneSlider3D *)((uint)(pGVar3->fields)._totalScale0 & _UNK_?);
+      }
+      pGVar2 = (&(pGVar1->fields)._lookAndFeel)
+               [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+        return ((&(pGVar1->fields)._lookAndFeel)
+                [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+               fields)._scale * (pGVar2->fields)._quadWidth * zoomFactor * (float)this;
+      }
+    }
   }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar1->fields)._useZoomFactor == 0) {
-    zoomFactor = _UNK_?;
-  }
-  pGVar2 = (this->fields)._scaleDrag;
-  if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) {
 code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    fVar4 = (float10)(*pcVar3)();
-    return (float)fVar4;
-  }
-  cVar5 = (*(code *)(pGVar2->klass->vtable).get_IsActive_1.method)
-                    (pGVar2,(pGVar2->klass->vtable).get_DragChannel_1.methodPtr);
-  fVar6 = _UNK_?;
-  if (cVar5 != '\0') {
-    pGVar2 = (this->fields)._scaleDrag;
-    if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-    fVar6 = (float)((uint)(pGVar2->fields)._totalScale0 & _UNK_?);
-  }
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  return (pGVar1->fields)._quadWidth * (pGVar1->fields)._scale * zoomFactor * fVar6;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -396,48 +371,48 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetReal
 {
   pGVar1 = this;
   pGVar2 = _UNK_?;
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar3 = (this->fields)._lookAndFeel;
-    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar3 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar3->fields)._useZoomFactor == 0) {
-    this = _UNK_?;
-  }
-  else {
-    this = (GizmoPlaneSlider3D *)zoomFactor;
-  }
-  pGVar4 = (pGVar1->fields)._scaleDrag;
-  if (pGVar4 == (GizmoDblAxisScaleDrag3D *)0x0) {
-code_?:
-    func_?();
-    pcVar5 = (code *)swi(3);
-    VVar6 = (Vector2)(*pcVar5)();
-    return VVar6;
-  }
-  cVar7 = (*(code *)(pGVar4->klass->vtable).get_IsActive_1.method)
-                    (pGVar4,(pGVar4->klass->vtable).get_DragChannel_1.methodPtr);
-  pGVar8 = _UNK_?;
-  if (cVar7 != '\0') {
+  pGVar3 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar3->fields)._useZoomFactor == 0) {
+      this = _UNK_?;
+    }
+    else {
+      this = (GizmoPlaneSlider3D *)zoomFactor;
+    }
     pGVar4 = (pGVar1->fields)._scaleDrag;
-    if (pGVar4 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-    pGVar2 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale1;
-    pGVar8 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale0;
+    if (pGVar4 != (GizmoDblAxisScaleDrag3D *)0x0) {
+      cVar5 = (*(code *)(pGVar4->klass->vtable).get_IsActive_1.method)
+                        (pGVar4,(pGVar4->klass->vtable).get_DragChannel_1.methodPtr);
+      pGVar6 = _UNK_?;
+      if (cVar5 != '\0') {
+        pGVar4 = (pGVar1->fields)._scaleDrag;
+        if (pGVar4 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+        pGVar2 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale1;
+        pGVar6 = (GizmoPlaneSlider3D *)(pGVar4->fields)._totalScale0;
+      }
+      pGVar3 = (&(pGVar1->fields)._lookAndFeel)
+               [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+        VVar7.y = ((&(pGVar1->fields)._lookAndFeel)
+                   [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+                  fields)._scale *
+                  ((&(pGVar1->fields)._lookAndFeel)
+                   [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+                  fields)._raTriangleYLength * (float)this * (float)pGVar2;
+        VVar7.x = ((&(pGVar1->fields)._lookAndFeel)
+                   [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+                  fields)._scale * (pGVar3->fields)._raTriangleXLength * (float)this * (float)pGVar6
+        ;
+        return VVar7;
+      }
+    }
   }
-  if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar3 = (pGVar1->fields)._lookAndFeel;
-    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar3 = (pGVar1->fields)._sharedLookAndFeel;
-  }
-  VVar6.y = (pGVar3->fields)._raTriangleYLength * (pGVar3->fields)._scale * (float)this *
-            (float)pGVar2;
-  VVar6.x = (pGVar3->fields)._scale * (pGVar3->fields)._raTriangleXLength * (float)this *
-            (float)pGVar8;
-  return VVar6;
+code_?:
+  func_?();
+  pcVar8 = (code *)swi(3);
+  VVar7 = (Vector2)(*pcVar8)();
+  return VVar7;
 }
 
 
@@ -447,40 +422,37 @@ float Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetRealRA
                 (GizmoPlaneSlider3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+  pGVar1 = this;
+  pGVar2 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar2->fields)._useZoomFactor == 0) {
+      zoomFactor = 1.0;
+    }
+    pGVar3 = (this->fields)._scaleDrag;
+    this = (GizmoPlaneSlider3D *)0x3f800000;
+    if (pGVar3 != (GizmoDblAxisScaleDrag3D *)0x0) {
+      cVar4 = (*(code *)(pGVar3->klass->vtable).get_IsActive_1.method)
+                        (pGVar3,(pGVar3->klass->vtable).get_DragChannel_1.methodPtr);
+      if (cVar4 != '\0') {
+        pGVar3 = (pGVar1->fields)._scaleDrag;
+        if (pGVar3 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+        this = (GizmoPlaneSlider3D *)((uint)(pGVar3->fields)._totalScale0 & _UNK_?);
+      }
+      pGVar2 = (&(pGVar1->fields)._lookAndFeel)
+               [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+        return ((&(pGVar1->fields)._lookAndFeel)
+                [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+               fields)._scale * (pGVar2->fields)._raTriangleXLength * zoomFactor * (float)this;
+      }
+    }
   }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar1->fields)._useZoomFactor == 0) {
-    zoomFactor = _UNK_?;
-  }
-  pGVar2 = (this->fields)._scaleDrag;
-  if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) {
 code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    fVar4 = (float10)(*pcVar3)();
-    return (float)fVar4;
-  }
-  cVar5 = (*(code *)(pGVar2->klass->vtable).get_IsActive_1.method)
-                    (pGVar2,(pGVar2->klass->vtable).get_DragChannel_1.methodPtr);
-  fVar6 = _UNK_?;
-  if (cVar5 != '\0') {
-    pGVar2 = (this->fields)._scaleDrag;
-    if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-    fVar6 = (float)((uint)(pGVar2->fields)._totalScale0 & _UNK_?);
-  }
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  return (pGVar1->fields)._raTriangleXLength * (pGVar1->fields)._scale * zoomFactor * fVar6;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -490,43 +462,40 @@ float Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetRealRA
                 (GizmoPlaneSlider3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+  pGVar1 = this;
+  pGVar2 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar2->fields)._useZoomFactor == 0) {
+      zoomFactor = 1.0;
+    }
+    pGVar3 = (this->fields)._scaleDrag;
+    this = (GizmoPlaneSlider3D *)0x3f800000;
+    if (pGVar3 != (GizmoDblAxisScaleDrag3D *)0x0) {
+      cVar4 = (*(code *)(pGVar3->klass->vtable).get_IsActive_1.method)
+                        (pGVar3,(pGVar3->klass->vtable).get_DragChannel_1.methodPtr);
+      if (cVar4 != '\0') {
+        pGVar3 = (pGVar1->fields)._scaleDrag;
+        if (pGVar3 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+        this = (GizmoPlaneSlider3D *)((uint)(pGVar3->fields)._totalScale1 & _UNK_?);
+      }
+      pGVar2 = (&(pGVar1->fields)._lookAndFeel)
+               [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+        return ((&(pGVar1->fields)._lookAndFeel)
+                [(pGVar1->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->
+               fields)._scale * (pGVar2->fields)._raTriangleYLength * zoomFactor * (float)this;
+      }
+    }
   }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar1->fields)._useZoomFactor == 0) {
-    zoomFactor = _UNK_?;
-  }
-  pGVar2 = (this->fields)._scaleDrag;
-  if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) {
 code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    fVar4 = (float10)(*pcVar3)();
-    return (float)fVar4;
-  }
-  cVar5 = (*(code *)(pGVar2->klass->vtable).get_IsActive_1.method)
-                    (pGVar2,(pGVar2->klass->vtable).get_DragChannel_1.methodPtr);
-  fVar6 = _UNK_?;
-  if (cVar5 != '\0') {
-    pGVar2 = (this->fields)._scaleDrag;
-    if (pGVar2 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-    fVar6 = (float)((uint)(pGVar2->fields)._totalScale1 & _UNK_?);
-  }
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  return (pGVar1->fields)._raTriangleYLength * (pGVar1->fields)._scale * zoomFactor * fVar6;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
-/* decompilation failed: Exception while decompiling 10594610: Decompiler process died */
+/* decompilation failed: Exception while decompiling 105975f0: Decompiler process died */
 
 
 /* Void MakeSliderPlane(GizmoTransform, PlaneId, GizmoLineSlider3D, GizmoLineSlider3D, Camera) */
@@ -585,7 +554,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_MakeSlider
         uStack_11._4_4_ = pVVar8->y;
         fVar12 = pVVar8->z;
         fStack_13 = fVar12;
-        unique0x10000689 = uStack_11;
+        unique0x1000068e = uStack_11;
         pAVar5 = PlaneIdHelper::PlaneIdHelper_GetSecondAxisDescriptor
                            (planeId,planeQuadrantId,(MethodInfo *)0x0);
         pVVar8 = GizmoTransform::GizmoTransform_GetAxis3D
@@ -609,50 +578,47 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_MakeSlider
             direction_00.z = fVar14;
             direction_00.x = (float)auStack_15._0_4_;
             direction_00.y = (float)auStack_15._4_4_;
-            fVar17 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealSizeAlongDirection
+            fVar19 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealSizeAlongDirection
                                (firstAxisSlider,camera,direction_00,(MethodInfo *)0x0);
-            fVar19 = VStack_9.x * fVar17;
-            fVar14 = VStack_9.y * fVar17;
-            fVar17 = VStack_9.z * fVar17;
-            if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-              pGVar20 = (this->fields)._lookAndFeel;
-              if (pGVar20 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-            }
-            else {
-              pGVar20 = (this->fields)._sharedLookAndFeel;
-            }
-            if ((pGVar20->fields)._planeType != 0) {
-              return;
-            }
-            VStack_9.x = (sliderPlaneTransform->fields)._position3D.x;
-            VStack_9.y = (sliderPlaneTransform->fields)._position3D.y;
-            VStack_9.z = (sliderPlaneTransform->fields)._position3D.z;
-            fVar12 = VStack_9.x + fVar12 + fVar19 * _UNK_?;
-            fVar14 = VStack_9.y + fStack_18 + fVar14 * _UNK_?;
-            fVar17 = VStack_9.z + fStack_16 + fVar17 * _UNK_?;
-            pGVar7 = (this->fields)._transform;
-            if (pGVar7 != (GizmoTransform *)0x0) {
-              VStack_9.x = (pGVar7->fields)._position3D.x;
-              VStack_9.y = (pGVar7->fields)._position3D.y;
-              VStack_9.z = (pGVar7->fields)._position3D.z;
-              this_00 = (this->fields)._quad;
-              if (this_00 != (QuadShape3D *)0x0) {
-                pVVar8 = QuadShape3D::QuadShape3D_GetCornerPosition
-                                   ((Vector3 *)(auStack_1 + 4),this_00,QuadCorner__Enum_BottomLeft,
-                                    (MethodInfo *)0x0);
-                uStack_11._0_4_ = pVVar8->x;
-                uStack_11._4_4_ = pVVar8->y;
-                fStack_13 = pVVar8->z;
-                VStack_9.x = fVar12 + (VStack_9.x - (float)uStack_11);
-                VStack_9.y = fVar14 + (VStack_9.y - uStack_11._4_4_);
-                VStack_9.z = fVar17 + (VStack_9.z - fStack_13);
-                pGVar7 = (this->fields)._transform;
-                if (pGVar7 != (GizmoTransform *)0x0) {
-                  value.y = VStack_9.y;
-                  value.x = VStack_9.x;
-                  value.z = VStack_9.z;
-                  GizmoTransform::GizmoTransform_set_Position3D(pGVar7,value,(MethodInfo *)0x0);
-                  return;
+            fVar14 = VStack_9.x * fVar19;
+            fVar17 = VStack_9.y * fVar19;
+            fVar19 = VStack_9.z * fVar19;
+            pGVar20 = (&(this->fields)._lookAndFeel)
+                     [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+            if (pGVar20 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+              if ((pGVar20->fields)._planeType != 0) {
+                return;
+              }
+              VStack_9.x = (sliderPlaneTransform->fields)._position3D.x;
+              VStack_9.y = (sliderPlaneTransform->fields)._position3D.y;
+              VStack_9.z = (sliderPlaneTransform->fields)._position3D.z;
+              fVar12 = VStack_9.x + fVar14 * _UNK_? + fVar12;
+              fVar14 = VStack_9.y + fVar17 * _UNK_? + fStack_18;
+              fVar17 = VStack_9.z + fVar19 * _UNK_? + fStack_16;
+              pGVar7 = (this->fields)._transform;
+              if (pGVar7 != (GizmoTransform *)0x0) {
+                VStack_9.x = (pGVar7->fields)._position3D.x;
+                VStack_9.y = (pGVar7->fields)._position3D.y;
+                VStack_9.z = (pGVar7->fields)._position3D.z;
+                this_00 = (this->fields)._quad;
+                if (this_00 != (QuadShape3D *)0x0) {
+                  pVVar8 = QuadShape3D::QuadShape3D_GetCornerPosition
+                                     ((Vector3 *)(auStack_1 + 4),this_00,
+                                      QuadCorner__Enum_BottomLeft,(MethodInfo *)0x0);
+                  uStack_11._0_4_ = pVVar8->x;
+                  uStack_11._4_4_ = pVVar8->y;
+                  fStack_13 = pVVar8->z;
+                  VStack_9.x = (VStack_9.x - (float)uStack_11) + fVar12;
+                  VStack_9.y = (VStack_9.y - uStack_11._4_4_) + fVar14;
+                  VStack_9.z = (VStack_9.z - fStack_13) + fVar17;
+                  pGVar7 = (this->fields)._transform;
+                  if (pGVar7 != (GizmoTransform *)0x0) {
+                    value.y = VStack_9.y;
+                    value.x = VStack_9.x;
+                    value.z = VStack_9.z;
+                    GizmoTransform::GizmoTransform_set_Position3D(pGVar7,value,(MethodInfo *)0x0);
+                    return;
+                  }
                 }
               }
             }
@@ -661,7 +627,6 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_MakeSlider
       }
     }
   }
-code_?:
   func_?();
   pcVar21 = (code *)swi(3);
   (*pcVar21)();
@@ -684,21 +649,13 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnCanHover
            SparselyPopulatedArrayFragment_1_System_Object__get_Length
                      ((SparselyPopulatedArrayFragment_1_System_Object_ *)this,(MethodInfo *)0x0);
   if ((handleId == iVar1) && (gizmo == (this->fields)._._gizmo)) {
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar2 = (this->fields)._lookAndFeel;
-      if (pGVar2 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar2 = (this->fields)._sharedLookAndFeel;
-    }
+    pGVar2 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+    if (pGVar2 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
     if ((pGVar2->fields)._planeType == 2) {
-      if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar3 = (this->fields)._settings;
-        if (pGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (this->fields)._sharedSettings;
-      }
+      pGVar3 = (&(this->fields)._settings)
+               [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+      if (pGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
       if ((pGVar3->fields)._isCircleHoverCullEnabled != 0) {
         if (hoverData == (GizmoHandleHoverData *)0x0) goto code_?;
         fStack_4 = (hoverData->fields)._hoverPoint.z;
@@ -780,7 +737,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoAtt
     pGVar2 = (this->fields)._transform;
     if (pGVar2 != (GizmoTransform *)0x0) {
       pVVar3 = GizmoTransform::GizmoTransform_GetAxis3D_1
-                          ((Vector3 *)&stack0xffffffc0,pGVar2,0,AxisSign__Enum_Positive,
+                          ((Vector3 *)&stack0xffffffcc,pGVar2,0,AxisSign__Enum_Positive,
                            (MethodInfo *)0x0);
       uVar4 = pVVar3->y;
       fVar5 = pVVar3->z;
@@ -788,40 +745,34 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoAtt
       if (pGVar2 != (GizmoTransform *)0x0) {
         uVar6 = 0;
         pVVar3 = GizmoTransform::GizmoTransform_GetAxis3D_1
-                            ((Vector3 *)&stack0xffffffc0,pGVar2,1,AxisSign__Enum_Positive,
+                            ((Vector3 *)&stack0xffffffcc,pGVar2,1,AxisSign__Enum_Positive,
                              (MethodInfo *)0x0);
         uVar7 = pVVar3->x;
         uVar8 = pVVar3->y;
         pGVar2 = (this->fields)._transform;
         if (pGVar2 != (GizmoTransform *)0x0) {
-          if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-            pGVar9 = (this->fields)._settings;
-            if (pGVar9 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-          }
-          else {
-            pGVar9 = (this->fields)._sharedSettings;
-          }
-          if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-            pGVar10 = (this->fields)._settings;
-            if (pGVar10 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-          }
-          else {
-            pGVar10 = (this->fields)._sharedSettings;
-          }
-          this_02 = (this->fields)._dblAxisOffsetDrag;
-          if (this_02 != (GizmoDblAxisOffsetDrag3D *)0x0) {
-            workData_01.Axis0.x = (float)uVar6;
-            workData_01.DragOrigin = (pGVar2->fields)._position3D;
-            workData_01.Axis0.y = (float)uVar4;
-            workData_01.Axis0.z = fVar5;
-            workData_01.Axis1.x = (float)uVar7;
-            workData_01.Axis1.y = (float)uVar8;
-            workData_01.Axis1.z = 0.0;
-            workData_01.SnapStep0 = (pGVar9->fields)._offsetSnapStepRight;
-            workData_01.SnapStep1 = (pGVar10->fields)._offsetSnapStepUp;
-            GizmoDblAxisOffsetDrag3D::GizmoDblAxisOffsetDrag3D_SetWorkData
-                      (this_02,workData_01,(MethodInfo *)0x0);
-            return;
+          pGVar9 = (&(this->fields)._settings)
+                    [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+          if (pGVar9 != (GizmoPlaneSlider3DSettings *)0x0) {
+            pGVar10 = (&(this->fields)._settings)
+                      [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+            if (pGVar10 != (GizmoPlaneSlider3DSettings *)0x0) {
+              this_03 = (this->fields)._dblAxisOffsetDrag;
+              if (this_03 != (GizmoDblAxisOffsetDrag3D *)0x0) {
+                workData_01.Axis0.x = (float)uVar6;
+                workData_01.DragOrigin = (pGVar2->fields)._position3D;
+                workData_01.Axis0.y = (float)uVar4;
+                workData_01.Axis0.z = fVar5;
+                workData_01.Axis1.x = (float)uVar7;
+                workData_01.Axis1.y = (float)uVar8;
+                workData_01.Axis1.z = 0.0;
+                workData_01.SnapStep0 = (pGVar9->fields)._offsetSnapStepRight;
+                workData_01.SnapStep1 = (pGVar10->fields)._offsetSnapStepUp;
+                GizmoDblAxisOffsetDrag3D::GizmoDblAxisOffsetDrag3D_SetWorkData
+                          (this_03,workData_01,(MethodInfo *)0x0);
+                return;
+              }
+            }
           }
         }
       }
@@ -833,90 +784,89 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoAtt
     uVar12 = pVVar3->y;
     pGVar2 = (this->fields)._transform;
     if (pGVar2 != (GizmoTransform *)0x0) {
-      if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar9 = (this->fields)._settings;
-        if (pGVar9 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar9 = (this->fields)._sharedSettings;
-      }
-      if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar10 = (this->fields)._settings;
-        if (pGVar10 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar10 = (this->fields)._sharedSettings;
-      }
-      this_01 = (this->fields)._rotationDrag;
-      if (this_01 != (GizmoSglAxisRotationDrag3D *)0x0) {
-        workData_00.Axis.x = (float)uVar11;
-        workData_00.RotationPlanePos = (pGVar2->fields)._position3D;
-        workData_00.Axis.y = (float)uVar12;
-        workData_00.Axis.z = pVVar3->z;
-        workData_00.SnapMode = (pGVar9->fields)._rotationSnapMode;
-        workData_00.SnapStep = (pGVar10->fields)._rotationSnapStep;
-        GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationDrag3D_SetWorkData
-                  (this_01,workData_00,(MethodInfo *)0x0);
-        pGVar2 = (this->fields)._transform;
-        if (pGVar2 != (GizmoTransform *)0x0) {
-          pVVar3 = GizmoTransform::GizmoTransform_GetAxis3D_1
-                              (&VStack_13,pGVar2,2,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._transform;
-          if (pGVar2 != (GizmoTransform *)0x0) {
-            fVar5 = (pGVar2->fields)._position3D.x;
-            fVar14 = (pGVar2->fields)._position3D.y;
-            fVar15 = (pGVar2->fields)._position3D.z;
-            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                ((Vector3 *)&stack0xffffffc0,*pVVar3,(MethodInfo *)0x0);
-            uVar16 = pVVar3->x;
-            uVar17 = pVVar3->y;
-            pGVar18 = (this->fields)._._gizmo;
-            if (pGVar18 != (Gizmo *)0x0) {
-              uVar19 = (pGVar18->fields)._hoverInfo._hoverPoint.z;
-              uVar20 = (pGVar18->fields)._hoverInfo._hoverPoint.x;
-              uVar21 = (pGVar18->fields)._hoverInfo._hoverPoint.y;
-              pt.y = (float)uVar21;
-              pt.x = (float)uVar20;
-              plane.m_Distance =
-                   (float)((uint)(fVar14 * (float)uVar17 + fVar5 * (float)uVar16 + fVar15 * pVVar3->z
-                                 ) ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-              plane.m_Normal = *pVVar3;
-              pt.z = (float)uVar19;
-              pVVar3 = PlaneEx::PlaneEx_ProjectPoint
-                                  ((Vector3 *)&stack0xffffffc0,plane,pt,(MethodInfo *)0x0);
-              VStack_13.y = pVVar3->x;
-              VStack_13.z = pVVar3->y;
-              fStack_22 = pVVar3->z;
-              pGStack_23 = (this->fields)._rotationArc;
-              pVVar3 = GizmoPlaneSlider3D_get_Normal
-                                  ((Vector3 *)&stack0xffffffc0,this,(MethodInfo *)0x0);
-              fVar15 = pVVar3->x;
-              fVar24 = pVVar3->y;
-              fStack_25 = pVVar3->z;
+      pGVar9 = (&(this->fields)._settings)
+                [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+      if (pGVar9 != (GizmoPlaneSlider3DSettings *)0x0) {
+        pGVar10 = (&(this->fields)._settings)
+                  [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+        if (pGVar10 != (GizmoPlaneSlider3DSettings *)0x0) {
+          this_01 = (this->fields)._rotationDrag;
+          if (this_01 != (GizmoSglAxisRotationDrag3D *)0x0) {
+            workData_00.Axis.x = (float)uVar11;
+            workData_00.RotationPlanePos = (pGVar2->fields)._position3D;
+            workData_00.Axis.y = (float)uVar12;
+            workData_00.Axis.z = pVVar3->z;
+            workData_00.SnapMode = (pGVar9->fields)._rotationSnapMode;
+            workData_00.SnapStep = (pGVar10->fields)._rotationSnapStep;
+            GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationDrag3D_SetWorkData
+                      (this_01,workData_00,(MethodInfo *)0x0);
+            pGVar2 = (this->fields)._transform;
+            if (pGVar2 != (GizmoTransform *)0x0) {
+              pVVar3 = GizmoTransform::GizmoTransform_GetAxis3D_1
+                                  ((Vector3 *)&stack0xffffffd8,pGVar2,2,AxisSign__Enum_Positive,
+                                   (MethodInfo *)0x0);
               pGVar2 = (this->fields)._transform;
               if (pGVar2 != (GizmoTransform *)0x0) {
-                uVar6 = (pGVar2->fields)._position3D.x;
-                uVar26 = (pGVar2->fields)._position3D.y;
-                fVar5 = (pGVar2->fields)._position3D.z;
-                pGVar18 = (this->fields)._._gizmo;
-                if (pGVar18 != (Gizmo *)0x0) {
-                  camera = Gizmo::Gizmo_get_FocusCamera(pGVar18,(MethodInfo *)0x0);
-                  fVar14 = GizmoPlaneSlider3D_GetZoomFactor(this,camera,(MethodInfo *)0x0);
-                  fVar14 = GizmoPlaneSlider3D_GetRealCircleRadius(this,fVar14,(MethodInfo *)0x0);
-                  if (pGStack_23 != (GizmoRotationArc3D *)0x0) {
-                    rotationAxis.y = fVar24;
-                    rotationAxis.x = fVar15;
-                    rotationAxis.z = fStack_25;
-                    arcOrigin.y = (float)uVar26;
-                    arcOrigin.x = (float)uVar6;
-                    arcOrigin.z = fVar5;
-                    arcStart.z = fStack_22;
-                    arcStart.x = VStack_13.y;
-                    arcStart.y = VStack_13.z;
-                    GizmoRotationArc3D::GizmoRotationArc3D_SetArcData
-                              (pGStack_23,rotationAxis,arcOrigin,arcStart,fVar14,(MethodInfo *)0x0);
-                    return;
+                method_00 = (MethodInfo *)(pGVar2->fields)._position3D.z;
+                fVar5 = pVVar3->y;
+                uVar13._0_4_ = pVVar3->z;
+                pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                    ((Vector3 *)&stack0xffffffe4,*pVVar3,method_00);
+                uVar14 = pVVar3->x;
+                uVar15 = pVVar3->y;
+                pGVar16 = (this->fields)._._gizmo;
+                if (pGVar16 != (Gizmo *)0x0) {
+                  uVar17 = (pGVar16->fields)._hoverInfo._hoverPoint.z;
+                  uVar18 = (pGVar16->fields)._hoverInfo._hoverPoint.x;
+                  uVar19 = (pGVar16->fields)._hoverInfo._hoverPoint.y;
+                  pt.y = (float)uVar19;
+                  pt.x = (float)uVar18;
+                  plane.m_Distance =
+                       (float)((uint)((float)uVar13 * (float)uVar15 + fVar5 * (float)uVar14 +
+                                     (float)method_00 * pVVar3->z) ^
+                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              );
+                  plane.m_Normal = *pVVar3;
+                  pt.z = (float)uVar17;
+                  pVVar3 = PlaneEx::PlaneEx_ProjectPoint
+                                      ((Vector3 *)&stack0xffffffcc,plane,pt,(MethodInfo *)0x0);
+                  uVar13._0_4_ = pVVar3->x;
+                  fStack_20 = pVVar3->y;
+                  fVar5 = pVVar3->z;
+                  this_02 = (this->fields)._rotationArc;
+                  pVVar3 = GizmoPlaneSlider3D_get_Normal
+                                      ((Vector3 *)&stack0xffffffd8,this,(MethodInfo *)(float)uVar13)
+                  ;
+                  fVar21 = pVVar3->x;
+                  fVar22 = pVVar3->y;
+                  fVar23 = pVVar3->z;
+                  pGVar2 = (this->fields)._transform;
+                  if (pGVar2 != (GizmoTransform *)0x0) {
+                    fVar24 = (pGVar2->fields)._position3D.x;
+                    fVar25 = (pGVar2->fields)._position3D.y;
+                    fVar26 = (pGVar2->fields)._position3D.z;
+                    pGVar16 = (this->fields)._._gizmo;
+                    if (pGVar16 != (Gizmo *)0x0) {
+                      camera = Gizmo::Gizmo_get_FocusCamera(pGVar16,(MethodInfo *)0x0);
+                      fVar27 = GizmoPlaneSlider3D_GetZoomFactor(this,camera,(MethodInfo *)0x0);
+                      fVar27 = GizmoPlaneSlider3D_GetRealCircleRadius(this,fVar27,(MethodInfo *)0x0)
+                      ;
+                      if (this_02 != (GizmoRotationArc3D *)0x0) {
+                        rotationAxis.y = fVar22;
+                        rotationAxis.x = fVar21;
+                        rotationAxis.z = fVar23;
+                        arcOrigin.y = fVar25;
+                        arcOrigin.x = fVar24;
+                        arcOrigin.z = fVar26;
+                        arcStart.z = fVar5;
+                        arcStart.x = (float)uVar13;
+                        arcStart.y = fStack_20;
+                        GizmoRotationArc3D::GizmoRotationArc3D_SetArcData
+                                  (this_02,rotationAxis,arcOrigin,arcStart,fVar27,(MethodInfo *)0x0)
+                        ;
+                        return;
+                      }
+                    }
                   }
                 }
               }
@@ -931,7 +881,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoAtt
       return;
     }
     pVVar3 = GizmoPlaneSlider3D_get_Right((Vector3 *)&stack0xffffffcc,this,(MethodInfo *)0x0);
-    uVar27 = pVVar3->y;
+    uVar6 = pVVar3->y;
     fVar5 = pVVar3->z;
     pVVar3 = GizmoPlaneSlider3D_get_Up((Vector3 *)&stack0xffffffcc,this,(MethodInfo *)0x0);
     uVar28 = pVVar3->x;
@@ -944,32 +894,28 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoAtt
       uVar33 = (this->fields)._scaleDragAxisIndexUp;
       workData.AxisIndex1 = uVar33;
       workData.AxisIndex0 = uVar32;
-      if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar9 = (this->fields)._settings;
-        if (pGVar9 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar9 = (this->fields)._sharedSettings;
-      }
-      this_00 = (this->fields)._scaleDrag;
-      if (this_00 != (GizmoDblAxisScaleDrag3D *)0x0) {
-        workData.DragOrigin.x = (float)uVar30;
-        workData.DragOrigin.y = (float)uVar31;
-        workData.DragOrigin.z = (pGVar2->fields)._position3D.z;
-        workData.Axis0.x = 0.0;
-        workData.Axis0.y = (float)uVar27;
-        workData.Axis0.z = fVar5;
-        workData.Axis1.x = (float)uVar28;
-        workData.Axis1.y = (float)uVar29;
-        workData.Axis1.z = pVVar3->z;
-        workData.SnapStep = (pGVar9->fields)._proportionalScaleSnapStep;
-        GizmoDblAxisScaleDrag3D::GizmoDblAxisScaleDrag3D_SetWorkData
-                  (this_00,workData,(MethodInfo *)0x0);
-        return;
+      pGVar9 = (&(this->fields)._settings)
+                [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+      if (pGVar9 != (GizmoPlaneSlider3DSettings *)0x0) {
+        this_00 = (this->fields)._scaleDrag;
+        if (this_00 != (GizmoDblAxisScaleDrag3D *)0x0) {
+          workData.DragOrigin.x = (float)uVar30;
+          workData.DragOrigin.y = (float)uVar31;
+          workData.DragOrigin.z = (pGVar2->fields)._position3D.z;
+          workData.Axis0.x = 0.0;
+          workData.Axis0.y = (float)uVar6;
+          workData.Axis0.z = fVar5;
+          workData.Axis1.x = (float)uVar28;
+          workData.Axis1.y = (float)uVar29;
+          workData.Axis1.z = pVVar3->z;
+          workData.SnapStep = (pGVar9->fields)._proportionalScaleSnapStep;
+          GizmoDblAxisScaleDrag3D::GizmoDblAxisScaleDrag3D_SetWorkData
+                    (this_00,workData,(MethodInfo *)0x0);
+          return;
+        }
       }
     }
   }
-code_?:
   func_?();
   pcVar34 = (code *)swi(3);
   (*pcVar34)();
@@ -983,7 +929,63 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoPos
                (GizmoPlaneSlider3D *this,Gizmo *gizmo,MethodInfo *method)
 
 {
-  GizmoPlaneSlider3D_Refresh(this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__RTG__IGizmoPlaneSlider3DController);
+    cRam_? = '\x01';
+  }
+  this_00 = (this->fields)._._gizmo;
+  if (this_00 != (Gizmo *)0x0) {
+    camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
+    pGVar1 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+    if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+      if ((pGVar1->fields)._useZoomFactor != 0) {
+        this_01 = (this->fields)._._handle;
+        if (this_01 == (GizmoHandle *)0x0) goto code_?;
+        GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+      }
+      pIVar2 = (this->fields)._controllers;
+      pGVar1 = (&(this->fields)._lookAndFeel)
+               [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if ((pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+         (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
+        uVar3 = (pGVar1->fields)._planeType;
+        if (pIVar2->max_length <= uVar3) goto code_?;
+        if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+          func_?();
+          pIVar2 = (this->fields)._controllers;
+          pGVar1 = (&(this->fields)._lookAndFeel)
+                   [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+          if ((pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+             (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
+            uVar3 = (pGVar1->fields)._planeType;
+            if (pIVar2->max_length <= uVar3) goto code_?;
+            if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+              func_?(2);
+              pIVar2 = (this->fields)._controllers;
+              pGVar1 = (&(this->fields)._lookAndFeel)
+                       [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+              if ((pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+                 (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
+                uVar3 = (pGVar1->fields)._planeType;
+                if (pIVar2->max_length <= uVar3) goto code_?;
+                if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+                  func_?(1);
+                  return;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -998,84 +1000,67 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoPre
     func_?(&TypeInfo__RTG__IGizmoPlaneSlider3DController);
     cRam_? = '\x01';
   }
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar1 = (this->fields)._lookAndFeel;
-    if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar1 = (this->fields)._sharedLookAndFeel;
-code_?:
+  pGVar1 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
     pIVar2 = (this->fields)._controllers;
+    uVar3 = (pGVar1->fields)._planeType;
     if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-      uVar3 = (pGVar1->fields)._planeType;
       if (pIVar2->max_length <= uVar3) goto code_?;
       if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
         func_?(0,TypeInfo__RTG__IGizmoPlaneSlider3DController,pIVar2->vector[uVar3]);
         this_00 = (this->fields)._dblAxisOffsetDrag;
-        if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-          pGVar4 = (this->fields)._settings;
-          if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-        }
-        else {
-          pGVar4 = (this->fields)._sharedSettings;
-        }
-        if (this_00 != (GizmoDblAxisOffsetDrag3D *)0x0) {
+        pGVar4 = (&(this->fields)._settings)
+                 [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+        if ((pGVar4 != (GizmoPlaneSlider3DSettings *)0x0) &&
+           (this_00 != (GizmoDblAxisOffsetDrag3D *)0x0)) {
           GizmoScreenDrag::GizmoScreenDrag_set_Sensitivity
                     ((GizmoScreenDrag *)this_00,(pGVar4->fields)._offsetSensitivity,
                      (MethodInfo *)0x0);
           this_01 = (this->fields)._rotationDrag;
-          if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-            pGVar4 = (this->fields)._settings;
-            if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-          }
-          else {
-            pGVar4 = (this->fields)._sharedSettings;
-          }
-          if (this_01 != (GizmoSglAxisRotationDrag3D *)0x0) {
+          pGVar4 = (&(this->fields)._settings)
+                   [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+          if ((pGVar4 != (GizmoPlaneSlider3DSettings *)0x0) &&
+             (this_01 != (GizmoSglAxisRotationDrag3D *)0x0)) {
             GizmoScreenDrag::GizmoScreenDrag_set_Sensitivity
                       ((GizmoScreenDrag *)this_01,(pGVar4->fields)._rotationSensitivity,
                        (MethodInfo *)0x0);
             this_02 = (this->fields)._scaleDrag;
-            if ((this->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-              pGVar4 = (this->fields)._settings;
-              if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-            }
-            else {
-              pGVar4 = (this->fields)._sharedSettings;
-            }
-            if (this_02 != (GizmoDblAxisScaleDrag3D *)0x0) {
+            pGVar4 = (&(this->fields)._settings)
+                     [(this->fields)._sharedSettings != (GizmoPlaneSlider3DSettings *)0x0];
+            if ((pGVar4 != (GizmoPlaneSlider3DSettings *)0x0) &&
+               (this_02 != (GizmoDblAxisScaleDrag3D *)0x0)) {
               GizmoScreenDrag::GizmoScreenDrag_set_Sensitivity
                         ((GizmoScreenDrag *)this_02,(pGVar4->fields)._scaleSensitivity,
                          (MethodInfo *)0x0);
               this_03 = (this->fields)._._gizmo;
               if (this_03 != (Gizmo *)0x0) {
                 camera = Gizmo::Gizmo_get_FocusCamera(this_03,(MethodInfo *)0x0);
-                if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                  pGVar1 = (this->fields)._lookAndFeel;
-                  if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-                }
-                else {
-                  pGVar1 = (this->fields)._sharedLookAndFeel;
-                }
-                fVar5 = _UNK_?;
-                if ((pGVar1->fields)._useZoomFactor != 0) {
-                  this_04 = (this->fields)._._handle;
-                  if (this_04 == (GizmoHandle *)0x0) goto code_?;
-                  fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_04,camera,(MethodInfo *)0x0);
-                }
-                pIVar2 = (this->fields)._controllers;
-                if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-                  if (pIVar2->max_length <= uVar3) goto code_?;
-                  if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
-                    func_?(1,TypeInfo__RTG__IGizmoPlaneSlider3DController,
-                                    pIVar2->vector[uVar3],fVar5);
-                    pIVar2 = (this->fields)._controllers;
-                    if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-                      if (pIVar2->max_length <= uVar3) goto code_?;
-                      if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
-                        func_?(2,TypeInfo__RTG__IGizmoPlaneSlider3DController,
-                                        pIVar2->vector[uVar3],fVar5);
-                        return;
+                pGVar1 = (&(this->fields)._lookAndFeel)
+                         [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]
+                ;
+                if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                  fVar5 = _UNK_?;
+                  if ((pGVar1->fields)._useZoomFactor != 0) {
+                    this_04 = (this->fields)._._handle;
+                    if (this_04 == (GizmoHandle *)0x0) goto code_?;
+                    fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_04,camera,(MethodInfo *)0x0)
+                    ;
+                  }
+                  pIVar2 = (this->fields)._controllers;
+                  if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
+                    if (pIVar2->max_length <= uVar3) goto code_?;
+                    if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+                      func_?(1,TypeInfo__RTG__IGizmoPlaneSlider3DController,
+                                      pIVar2->vector[uVar3],fVar5);
+                      pIVar2 = (this->fields)._controllers;
+                      if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
+                        if (pIVar2->max_length <= uVar3) goto code_?;
+                        if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+                          func_?(2,TypeInfo__RTG__IGizmoPlaneSlider3DController,
+                                          pIVar2->vector[uVar3],fVar5);
+                          return;
+                        }
                       }
                     }
                   }
@@ -1145,32 +1130,25 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnTransfor
   this_00 = (this->fields)._._gizmo;
   if (this_00 != (Gizmo *)0x0) {
     camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar1 = (this->fields)._lookAndFeel;
-      if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-    }
-    if ((pGVar1->fields)._useZoomFactor != 0) {
-      this_01 = (this->fields)._._handle;
-      if (this_01 == (GizmoHandle *)0x0) goto code_?;
-      GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
-    }
-    pIVar2 = (this->fields)._controllers;
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar1 = (this->fields)._lookAndFeel;
-      if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-    }
-    if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-      uVar3 = (pGVar1->fields)._planeType;
-      if (pIVar2->max_length <= uVar3) goto code_?;
-      if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
-        func_?(1);
-        return;
+    pGVar1 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+    if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+      if ((pGVar1->fields)._useZoomFactor != 0) {
+        this_01 = (this->fields)._._handle;
+        if (this_01 == (GizmoHandle *)0x0) goto code_?;
+        GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+      }
+      pIVar2 = (this->fields)._controllers;
+      pGVar1 = (&(this->fields)._lookAndFeel)
+               [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if ((pGVar1 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+         (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
+        uVar3 = (pGVar1->fields)._planeType;
+        if (pIVar2->max_length <= uVar3) goto code_?;
+        if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+          func_?();
+          return;
+        }
       }
     }
   }
@@ -1195,28 +1173,20 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnVisibili
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields)._controllers;
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar2 = (this->fields)._lookAndFeel;
-    if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar2 = (this->fields)._sharedLookAndFeel;
-code_?:
-    if (pIVar1 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-      uVar3 = (pGVar2->fields)._planeType;
-      if (pIVar1->max_length <= uVar3) goto code_?;
-      if (pIVar1->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
-        func_?(0,TypeInfo__RTG__IGizmoPlaneSlider3DController,pIVar1->vector[uVar3]);
-        this_00 = (this->fields)._._gizmo;
-        if (this_00 != (Gizmo *)0x0) {
-          camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-          if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-            pGVar2 = (this->fields)._lookAndFeel;
-            if (pGVar2 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-          }
-          else {
-            pGVar2 = (this->fields)._sharedLookAndFeel;
-          }
+  pGVar2 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if ((pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+     (pIVar1 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
+    uVar3 = (pGVar2->fields)._planeType;
+    if (pIVar1->max_length <= uVar3) goto code_?;
+    if (pIVar1->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
+      func_?(0,TypeInfo__RTG__IGizmoPlaneSlider3DController,pIVar1->vector[uVar3]);
+      this_00 = (this->fields)._._gizmo;
+      if (this_00 != (Gizmo *)0x0) {
+        camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
+        pGVar2 = (&(this->fields)._lookAndFeel)
+                 [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+        if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
           fVar4 = _UNK_?;
           if ((pGVar2->fields)._useZoomFactor != 0) {
             this_01 = (this->fields)._._handle;
@@ -1224,28 +1194,20 @@ code_?:
             fVar4 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
           }
           pIVar1 = (this->fields)._controllers;
-          if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-            pGVar2 = (this->fields)._lookAndFeel;
-            if (pGVar2 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-          }
-          else {
-            pGVar2 = (this->fields)._sharedLookAndFeel;
-          }
-          if (pIVar1 != (IGizmoPlaneSlider3DController__Array *)0x0) {
+          pGVar2 = (&(this->fields)._lookAndFeel)
+                   [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+          if ((pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+             (pIVar1 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
             uVar3 = (pGVar2->fields)._planeType;
             if (pIVar1->max_length <= uVar3) goto code_?;
             if (pIVar1->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
               func_?(2,TypeInfo__RTG__IGizmoPlaneSlider3DController,pIVar1->vector[uVar3],
                               fVar4);
               pIVar1 = (this->fields)._controllers;
-              if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                pGVar2 = (this->fields)._lookAndFeel;
-                if (pGVar2 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-              }
-              else {
-                pGVar2 = (this->fields)._sharedLookAndFeel;
-              }
-              if (pIVar1 != (IGizmoPlaneSlider3DController__Array *)0x0) {
+              pGVar2 = (&(this->fields)._lookAndFeel)
+                       [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+              if ((pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+                 (pIVar1 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
                 uVar3 = (pGVar2->fields)._planeType;
                 if (pIVar1->max_length <= uVar3) goto code_?;
                 if (pIVar1->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
@@ -1266,90 +1228,6 @@ code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
-  return;
-}
-
-
-/* Void Refresh() */
-
-void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_Refresh
-               (GizmoPlaneSlider3D *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoPlaneSlider3DController);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields)._._gizmo;
-  if (this_00 != (Gizmo *)0x0) {
-    camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar1 = (this->fields)._lookAndFeel;
-      if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-    }
-    if ((pGVar1->fields)._useZoomFactor != 0) {
-      this_01 = (this->fields)._._handle;
-      if (this_01 == (GizmoHandle *)0x0) goto code_?;
-      GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
-    }
-    pIVar2 = (this->fields)._controllers;
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar1 = (this->fields)._lookAndFeel;
-      if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-    }
-    if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-      uVar3 = (pGVar1->fields)._planeType;
-      if (pIVar2->max_length <= uVar3) goto code_?;
-      if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
-        func_?();
-        pIVar2 = (this->fields)._controllers;
-        if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-          pGVar1 = (this->fields)._lookAndFeel;
-          if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar1 = (this->fields)._sharedLookAndFeel;
-        }
-        if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-          uVar3 = (pGVar1->fields)._planeType;
-          if (pIVar2->max_length <= uVar3) goto code_?;
-          pIVar4 = pIVar2->vector[uVar3];
-          if (pIVar4 != (IGizmoPlaneSlider3DController *)0x0) {
-            func_?(2);
-            pIVar2 = (this->fields)._controllers;
-            if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-              pGVar1 = (this->fields)._lookAndFeel;
-              if (pGVar1 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-            }
-            else {
-              pGVar1 = (this->fields)._sharedLookAndFeel;
-            }
-            if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
-              uVar3 = (pGVar1->fields)._planeType;
-              if (pIVar2->max_length <= uVar3) goto code_?;
-              if (pIVar2->vector[uVar3] != (IGizmoPlaneSlider3DController *)0x0) {
-                pIStack5 = pIVar4;
-                func_?();
-                return;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
   return;
 }
 
@@ -1431,66 +1309,51 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_Render
   cVar2 = (*(code *)(pGVar1->klass->vtable).get_IsActive_1.method)
                     (pGVar1,(pGVar1->klass->vtable).get_DragChannel_1.methodPtr);
   if (cVar2 != '\0') {
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar3 = (this->fields)._lookAndFeel;
-      if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar3 = (this->fields)._sharedLookAndFeel;
-    }
-    if ((pGVar3->fields)._planeType == 2) {
-      if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-        pGVar3 = (this->fields)._lookAndFeel;
-        if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (this->fields)._sharedLookAndFeel;
-      }
-      if ((pGVar3->fields)._isRotationArcVisible != 0) {
-        pGVar1 = (this->fields)._rotationDrag;
-        if ((pGVar1 == (GizmoSglAxisRotationDrag3D *)0x0) ||
-           (pGVar4 = (this->fields)._rotationArc, pGVar4 == (GizmoRotationArc3D *)0x0))
-        goto code_?;
-        GizmoRotationArc3D::GizmoRotationArc3D_set_RotationAngle
-                  (pGVar4,(pGVar1->fields)._totalRotation,(MethodInfo *)0x0);
-        pGVar4 = (this->fields)._rotationArc;
-        fVar5 = GizmoPlaneSlider3D_GetZoomFactor(this,camera,(MethodInfo *)0x0);
-        fVar5 = GizmoPlaneSlider3D_GetRealCircleRadius(this,fVar5,(MethodInfo *)0x0);
-        if (pGVar4 == (GizmoRotationArc3D *)0x0) goto code_?;
-        GizmoRotationArc3D::GizmoRotationArc3D_set_Radius(pGVar4,fVar5,(MethodInfo *)0x0);
-        pGVar4 = (this->fields)._rotationArc;
-        if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-          pGVar3 = (this->fields)._lookAndFeel;
-          if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar3 = (this->fields)._sharedLookAndFeel;
-        }
-        if (pGVar4 == (GizmoRotationArc3D *)0x0) goto code_?;
-        GizmoRotationArc3D::GizmoRotationArc3D_Render
-                  (pGVar4,(pGVar3->fields)._rotationArcLookAndFeel,(MethodInfo *)0x0);
-      }
+    pGVar3 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+    if (((pGVar3->fields)._planeType == 2) &&
+       (((&(this->fields)._lookAndFeel)
+         [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->fields).
+        _isRotationArcVisible != 0)) {
+      pGVar1 = (this->fields)._rotationDrag;
+      if ((pGVar1 == (GizmoSglAxisRotationDrag3D *)0x0) ||
+         (pGVar4 = (this->fields)._rotationArc, pGVar4 == (GizmoRotationArc3D *)0x0))
+      goto code_?;
+      GizmoRotationArc3D::GizmoRotationArc3D_set_RotationAngle
+                (pGVar4,(pGVar1->fields)._totalRotation,(MethodInfo *)0x0);
+      pGVar4 = (this->fields)._rotationArc;
+      fVar5 = GizmoPlaneSlider3D_GetZoomFactor(this,camera,(MethodInfo *)0x0);
+      fVar5 = GizmoPlaneSlider3D_GetRealCircleRadius(this,fVar5,(MethodInfo *)0x0);
+      if (pGVar4 == (GizmoRotationArc3D *)0x0) goto code_?;
+      GizmoRotationArc3D::GizmoRotationArc3D_set_Radius(pGVar4,fVar5,(MethodInfo *)0x0);
+      pGVar4 = (this->fields)._rotationArc;
+      pGVar3 = (&(this->fields)._lookAndFeel)
+               [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if ((pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) || (pGVar4 == (GizmoRotationArc3D *)0x0))
+      goto code_?;
+      GizmoRotationArc3D::GizmoRotationArc3D_Render
+                (pGVar4,(pGVar3->fields)._rotationArcLookAndFeel,(MethodInfo *)0x0);
     }
   }
   if ((this->fields)._._isVisible != 0) {
     bVar6 = GizmoSlider::GizmoSlider_get_IsHovered((GizmoSlider *)this,(MethodInfo *)0x0);
     pGVar3 = (this->fields)._sharedLookAndFeel;
     if (bVar6 == 0) {
-      if ((pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
-         (pGVar3 = (this->fields)._lookAndFeel, pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0))
-      goto code_?;
-      fVar5 = (pGVar3->fields)._color.b;
-      fVar7 = (pGVar3->fields)._color.a;
-    }
-    else if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar3 = (this->fields)._lookAndFeel;
+      pGVar3 = (&(this->fields)._lookAndFeel)[pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0];
       if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-      fVar5 = (pGVar3->fields)._hoveredColor.b;
-      fVar7 = (pGVar3->fields)._hoveredColor.a;
+      fVar5 = (pGVar3->fields)._color.r;
+      fVar7 = (pGVar3->fields)._color.g;
+      fVar8 = (pGVar3->fields)._color.b;
+      fVar9 = (pGVar3->fields)._color.a;
     }
     else {
-      fVar5 = (pGVar3->fields)._hoveredColor.b;
-      fVar7 = (pGVar3->fields)._hoveredColor.a;
+      pGVar3 = (&(this->fields)._lookAndFeel)[pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+      if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+      fVar5 = (pGVar3->fields)._hoveredColor.r;
+      fVar7 = (pGVar3->fields)._hoveredColor.g;
+      fVar8 = (pGVar3->fields)._hoveredColor.b;
+      fVar9 = (pGVar3->fields)._hoveredColor.a;
     }
     if ((TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
@@ -1501,17 +1364,11 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_Render
     if (this_03 == (GizmoSolidMaterial *)0x0) goto code_?;
     GizmoSolidMaterial::GizmoSolidMaterial_ResetValuesToSensibleDefaults(this_03,(MethodInfo *)0x0);
     GizmoSolidMaterial::GizmoSolidMaterial_SetCullModeOff(this_03,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar3 = (this->fields)._lookAndFeel;
-      if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar3 = (this->fields)._sharedLookAndFeel;
-    }
+    pGVar3 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
     GizmoSolidMaterial::GizmoSolidMaterial_SetLit
               (this_03,(pGVar3->fields)._shadeMode == 0,(MethodInfo *)0x0);
-    uVar8 = 0;
-    pGVar9 = this_03;
     bVar6 = GizmoSolidMaterial::GizmoSolidMaterial_get_IsLit(this_03,(MethodInfo *)0x0);
     if (bVar6 != 0) {
       if (camera == (Camera *)0x0) goto code_?;
@@ -1519,98 +1376,69 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_Render
                           ((Component *)camera,(MethodInfo *)0x0);
       if (this_04 == (Transform *)0x0) goto code_?;
       pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                         ((Vector3 *)&puStack_11,this_04,(MethodInfo *)0x0);
+                         (&VStack_11,this_04,(MethodInfo *)0x0);
       GizmoSolidMaterial::GizmoSolidMaterial_SetLightDirection(this_03,*pVVar10,(MethodInfo *)0x0);
     }
-    color.g = (float)uVar8;
-    color.r = (float)pGVar9;
-    color.b = fVar5;
-    color.a = fVar7;
+    color.g = fVar7;
+    color.r = fVar5;
+    color.b = fVar8;
+    color.a = fVar9;
     GizmoSolidMaterial::GizmoSolidMaterial_SetColor(this_03,color,(MethodInfo *)0x0);
     GizmoSolidMaterial::GizmoSolidMaterial_SetPass(this_03,0,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar3 = (this->fields)._lookAndFeel;
-      if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar3 = (this->fields)._sharedLookAndFeel;
-    }
+    pGVar3 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
     if ((pGVar3->fields)._planeType == 0) {
       this_05 = (this->fields)._._handle;
       if (this_05 == (GizmoHandle *)0x0) goto code_?;
       shapeIndex = (this->fields)._quadIndex;
     }
+    else if (((&(this->fields)._lookAndFeel)
+              [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->fields).
+             _planeType == 1) {
+      this_05 = (this->fields)._._handle;
+      if (this_05 == (GizmoHandle *)0x0) goto code_?;
+      shapeIndex = (this->fields)._raTriangleIndex;
+    }
     else {
-      if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-        pGVar3 = (this->fields)._lookAndFeel;
-        if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (this->fields)._sharedLookAndFeel;
-      }
-      if ((pGVar3->fields)._planeType == 1) {
-        this_05 = (this->fields)._._handle;
-        if (this_05 == (GizmoHandle *)0x0) goto code_?;
-        shapeIndex = (this->fields)._raTriangleIndex;
-      }
-      else {
-        if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-          pGVar3 = (this->fields)._lookAndFeel;
-          if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar3 = (this->fields)._sharedLookAndFeel;
-        }
-        if ((pGVar3->fields)._planeType != 2) goto code_?;
-        this_05 = (this->fields)._._handle;
-        if (this_05 == (GizmoHandle *)0x0) goto code_?;
-        shapeIndex = (this->fields)._circleIndex;
-      }
+      if (((&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->fields).
+          _planeType != 2) goto code_?;
+      this_05 = (this->fields)._._handle;
+      if (this_05 == (GizmoHandle *)0x0) goto code_?;
+      shapeIndex = (this->fields)._circleIndex;
     }
     GizmoHandle::GizmoHandle_Render3DSolid_1(this_05,shapeIndex,(MethodInfo *)0x0);
   }
 code_?:
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar3 = (this->fields)._lookAndFeel;
-    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar3 = (this->fields)._sharedLookAndFeel;
-  }
-  if ((pGVar3->fields)._planeType == 0) {
-    this_02 = (this->fields)._quadBorder;
-    if (this_02 != (GizmoQuad3DBorder *)0x0) {
-      GizmoQuad3DBorder::GizmoQuad3DBorder_Render(this_02,camera,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  else {
-    if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar3 = (this->fields)._lookAndFeel;
-      if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+  pGVar3 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+    if ((pGVar3->fields)._planeType == 0) {
+      this_02 = (this->fields)._quadBorder;
+      if (this_02 != (GizmoQuad3DBorder *)0x0) {
+        GizmoQuad3DBorder::GizmoQuad3DBorder_Render(this_02,camera,(MethodInfo *)0x0);
+        return;
+      }
     }
     else {
-      pGVar3 = (this->fields)._sharedLookAndFeel;
-    }
-    if ((pGVar3->fields)._planeType != 1) {
-      if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-        pGVar3 = (this->fields)._lookAndFeel;
-        if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+      if (((&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->fields).
+          _planeType != 1) {
+        if (((&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0]->fields).
+            _planeType == 2) {
+          this_00 = (this->fields)._circleBorder;
+          if (this_00 == (GizmoCircle3DBorder *)0x0) goto code_?;
+          GizmoCircle3DBorder::GizmoCircle3DBorder_Render(this_00,camera,(MethodInfo *)0x0);
+        }
+        return;
       }
-      else {
-        pGVar3 = (this->fields)._sharedLookAndFeel;
+      this_01 = (this->fields)._raTriangleBorder;
+      if (this_01 != (GizmoRATriangle3DBorder *)0x0) {
+        GizmoRATriangle3DBorder::GizmoRATriangle3DBorder_Render(this_01,camera,(MethodInfo *)0x0);
+        return;
       }
-      if ((pGVar3->fields)._planeType == 2) {
-        this_00 = (this->fields)._circleBorder;
-        if (this_00 == (GizmoCircle3DBorder *)0x0) goto code_?;
-        GizmoCircle3DBorder::GizmoCircle3DBorder_Render(this_00,camera,(MethodInfo *)0x0);
-      }
-      return;
-    }
-    this_01 = (this->fields)._raTriangleBorder;
-    if (this_01 != (GizmoRATriangle3DBorder *)0x0) {
-      GizmoRATriangle3DBorder::GizmoRATriangle3DBorder_Render(this_01,camera,(MethodInfo *)0x0);
-      return;
     }
   }
 code_?:
@@ -1664,16 +1492,12 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderV
   if (isVisible == (this->fields)._isBorderVisible) {
     return;
   }
-  (this->fields)._isBorderVisible = isVisible;
   pIVar2 = (this->fields)._controllers;
-  if ((this->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-    pGVar3 = (this->fields)._lookAndFeel;
-    if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pGVar3 = (this->fields)._sharedLookAndFeel;
-  }
-  if (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0) {
+  (this->fields)._isBorderVisible = isVisible;
+  pGVar3 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0];
+  if ((pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+     (pIVar2 != (IGizmoPlaneSlider3DController__Array *)0x0)) {
     uVar4 = (pGVar3->fields)._planeType;
     if (pIVar2->max_length <= uVar4) {
       pIStack_1 = (IGizmoPlaneSlider3DController *)0x0;
@@ -1691,7 +1515,6 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderV
       return;
     }
   }
-code_?:
   pIStack_1 = (IGizmoPlaneSlider3DController *)&stack0xfffffffc;
   uVar8 = func_?(&puStack_7);
   func_?(uVar8);

@@ -120,7 +120,7 @@ code_?:
     euler.x = (float)uVar9 * _UNK_?;
     euler.z = pVVar6->z * _UNK_?;
     pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive
-                       ((Vector3 *)&stack0xfffffff0,euler,(MethodInfo *)0x0);
+                       ((Vector3 *)&stack0xffffffe4,euler,(MethodInfo *)0x0);
     pSVar7 = MathFunctions::MathFunctions_ToFloatArray(*pVVar6,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__set_Item

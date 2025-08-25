@@ -161,12 +161,11 @@ void Assembly-CSharp.dll::RTG::SegmentShape2D::SegmentShape2D_set_Direction
 
 {
   VVar1 = (Vector2)func_?(&value,0);
-  fVar2 = (this->fields)._startPoint.x;
   (this->fields)._direction = VVar1;
-  fVar3 = (this->fields)._length;
-  fVar4 = (this->fields)._startPoint.y;
-  (this->fields)._endPoint.x = fVar2 + VVar1.x * (this->fields)._length;
-  (this->fields)._endPoint.y = VVar1.y * fVar3 + fVar4;
+  fVar2 = (this->fields)._length;
+  fVar3 = (this->fields)._startPoint.y;
+  (this->fields)._endPoint.x = VVar1.x * (this->fields)._length + (this->fields)._startPoint.x;
+  (this->fields)._endPoint.y = VVar1.y * fVar2 + fVar3;
   return;
 }
 
@@ -269,12 +268,12 @@ void Assembly-CSharp.dll::RTG::SegmentShape2D::SegmentShape2D_set_StartPoint
   fVar1 = (this->fields)._direction.x;
   fVar2 = (this->fields)._direction.y;
   fVar3 = (this->fields)._length;
-  (this->fields)._startPoint.y = value.y;
-  fVar4 = (this->fields)._startPoint.y;
-  fVar5 = (this->fields)._length;
   (this->fields)._startPoint.x = value.x;
+  fVar4 = (this->fields)._length;
+  (this->fields)._startPoint.y = value.y;
+  fVar5 = (this->fields)._startPoint.y;
   (this->fields)._endPoint.x = fVar1 * fVar3 + (this->fields)._startPoint.x;
-  (this->fields)._endPoint.y = fVar4 + fVar2 * fVar5;
+  (this->fields)._endPoint.y = fVar2 * fVar4 + fVar5;
   return;
 }
 

@@ -18,7 +18,7 @@ void Assembly-CSharp.dll::FireSettings::FireSettings_Initialize
                    );
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__Single);
-    func_?(&::_2C699A84B0526F49E282B1E6BCA03A337065953829C8A51594B9791894741925_Field);
+    func_?(&_2C699A84B0526F49E282B1E6BCA03A337065953829C8A51594B9791894741925_Field);
     func_?(&StringLiteral_R);
     func_?(&StringLiteral_G);
     func_?(&StringLiteral_I);
@@ -114,52 +114,51 @@ code_?:
     pSVar6 = (pFVar1->fields).color;
     pSVar8 = (pFVar1->fields).colorR;
     if (pSVar6 == (Single__Array *)0x0) goto code_?;
-    if (pSVar6->max_length != 0) {
-      if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar8,StringLiteral_R,pSVar6->vector[0],0.3,1.0,(MethodInfo *)0x0);
-      pSVar6 = (pFVar1->fields).color;
-      pSVar8 = (pFVar1->fields).colorG;
-      if (pSVar6 == (Single__Array *)0x0) goto code_?;
-      if (pSVar6->max_length < 2) goto code_?;
-      if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar8,StringLiteral_G,pSVar6->vector[1],0.3,1.0,(MethodInfo *)0x0);
-      pSVar6 = (pFVar1->fields).color;
-      pSVar8 = (pFVar1->fields).colorB;
-      if (pSVar6 == (Single__Array *)0x0) goto code_?;
-      if (pSVar6->max_length < 3) goto code_?;
-      if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar8,StringLiteral_B,pSVar6->vector[2],0.3,1.0,(MethodInfo *)0x0);
-      pSVar8 = (pFVar1->fields).intensity;
-      TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                         (Object *)StringLiteral_I,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      uVar2 = CONCAT44(TypeInfo__System__Single,TVar5.m_Index);
-      if ((pSVar8 == (SettingsSlider *)0x0) || (TVar5.m_Index == 0)) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
-          (TypeInfo__System__Single->_0).element_class) {
-        pfVar9 = (float *)func_?(TVar5.m_Index);
-        SettingsSlider::SettingsSlider_Initialize
-                  (pSVar8,StringLiteral_I,*pfVar9,1.0,20.0,(MethodInfo *)0x0);
-        pSVar6 = (pFVar1->fields).color;
-        pIVar10 = (pFVar1->fields).preview;
-        if (pSVar6 != (Single__Array *)0x0) {
-          if (((pSVar6->max_length == 0) || (pSVar6->max_length < 2)) || (pSVar6->max_length < 3))
-          goto code_?;
-          if (pIVar10 != (Image *)0x0) {
-            (*(code *)(pIVar10->klass->vtable).set_color.method)
-                      (pIVar10,pSVar6->vector[0],pSVar6->vector[1],pSVar6->vector[2],0x3f800000,
-                       (pIVar10->klass->vtable).get_raycastTarget.methodPtr);
-            return;
-          }
+    if (pSVar6->max_length == 0) goto code_?;
+    if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar8,StringLiteral_R,pSVar6->vector[0],0.3,1.0,(MethodInfo *)0x0);
+    pSVar6 = (pFVar1->fields).color;
+    pSVar8 = (pFVar1->fields).colorG;
+    if (pSVar6 == (Single__Array *)0x0) goto code_?;
+    if (pSVar6->max_length < 2) goto code_?;
+    if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar8,StringLiteral_G,pSVar6->vector[1],0.3,1.0,(MethodInfo *)0x0);
+    pSVar6 = (pFVar1->fields).color;
+    pSVar8 = (pFVar1->fields).colorB;
+    if (pSVar6 == (Single__Array *)0x0) goto code_?;
+    if (pSVar6->max_length < 3) goto code_?;
+    if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar8,StringLiteral_B,pSVar6->vector[2],0.3,1.0,(MethodInfo *)0x0);
+    pSVar8 = (pFVar1->fields).intensity;
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
+                       (Object *)StringLiteral_I,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar2 = CONCAT44(TypeInfo__System__Single,TVar5.m_Index);
+    if ((pSVar8 == (SettingsSlider *)0x0) || (TVar5.m_Index == 0)) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
+        (TypeInfo__System__Single->_0).element_class) goto code_?;
+    pfVar9 = (float *)func_?(TVar5.m_Index);
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar8,StringLiteral_I,*pfVar9,1.0,20.0,(MethodInfo *)0x0);
+    pSVar6 = (pFVar1->fields).color;
+    pIVar10 = (pFVar1->fields).preview;
+    if (pSVar6 == (Single__Array *)0x0) goto code_?;
+    if ((pSVar6->max_length != 0) && (1 < pSVar6->max_length)) {
+      if (pSVar6 != (Single__Array *)0x0) {
+        if (pSVar6->max_length < 3) goto code_?;
+        if (pIVar10 != (Image *)0x0) {
+          (*(code *)(pIVar10->klass->vtable).set_color.method)
+                    (pIVar10,pSVar6->vector[0],pSVar6->vector[1],pSVar6->vector[2],0x3f800000,
+                     (pIVar10->klass->vtable).get_raycastTarget.methodPtr);
+          return;
         }
-        goto code_?;
       }
       goto code_?;
     }
@@ -244,13 +243,15 @@ code_?:
           pSVar3 = (this->fields).color;
           pIVar5 = (this->fields).preview;
           if (pSVar3 != (Single__Array *)0x0) {
-            if (((pSVar3->max_length == 0) || (pSVar3->max_length < 2)) || (pSVar3->max_length < 3))
-            goto code_?;
-            if (pIVar5 != (Image *)0x0) {
-              pIVar6 = pIVar5->klass;
-              pIStack7 = (pIVar6->vtable).get_raycastTarget.methodPtr;
-              (*(code *)(pIVar6->vtable).set_color.method)();
-              return;
+            if ((pSVar3->max_length == 0) || (pSVar3->max_length < 2)) goto code_?;
+            if (pSVar3 != (Single__Array *)0x0) {
+              if (pSVar3->max_length < 3) goto code_?;
+              if (pIVar5 != (Image *)0x0) {
+                pIVar6 = pIVar5->klass;
+                pIStack7 = (pIVar6->vtable).get_raycastTarget.methodPtr;
+                (*(code *)(pIVar6->vtable).set_color.method)();
+                return;
+              }
             }
           }
         }

@@ -18,37 +18,34 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::
   iVar1 = (this->fields).promotionActionType;
   if (iVar1 != 0) {
     if (iVar1 != 1) {
-      pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)
+      pUVar2 = (UnityAction_2_System_Boolean_System_Boolean_ *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-      UnityAction_2_System_Int32_System_Int32___ctor
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::
+      Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor
                 (pUVar2,(Object *)0x0,MethodInfo__BrowserCommGotoRequests__GotoSignup_bool__bool_,
                  (MethodInfo *)0x0);
       GeneralPromotionAd_PerformAction
-                (this,StringLiteral_InHouseAd_Kogama_Signup,
-                 (UnityAction_2_System_Boolean_System_Boolean_ *)pUVar2,(MethodInfo *)0x0);
+                (this,StringLiteral_InHouseAd_Kogama_Signup,pUVar2,(MethodInfo *)0x0);
       return;
     }
-    pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)
+    pUVar2 = (UnityAction_2_System_Boolean_System_Boolean_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]
+    ::UnityAction_2_System_Boolean_System_Boolean___ctor
               (pUVar2,(Object *)0x0,
                MethodInfo__BrowserCommGotoRequests__GotoEliteUpgrade_bool__bool_,(MethodInfo *)0x0);
     GeneralPromotionAd_PerformAction
-              (this,StringLiteral_InHouseAd_Kogama_Elite,
-               (UnityAction_2_System_Boolean_System_Boolean_ *)pUVar2,(MethodInfo *)0x0);
+              (this,StringLiteral_InHouseAd_Kogama_Elite,pUVar2,(MethodInfo *)0x0);
     return;
   }
-  pUVar2 = (UnityAction_2_System_Int32_System_Int32_ *)
+  pUVar2 = (UnityAction_2_System_Boolean_System_Boolean_ *)
            func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-  UnityAction_2_System_Int32_System_Int32___ctor
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::
+  UnityAction_2_System_Boolean_System_Boolean___ctor
             (pUVar2,(Object *)0x0,MethodInfo__BrowserCommGotoRequests__GotoPurchaseGold_bool__bool_,
              (MethodInfo *)0x0);
   GeneralPromotionAd_PerformAction
-            (this,StringLiteral_InHouseAd_Kogama_Gold,
-             (UnityAction_2_System_Boolean_System_Boolean_ *)pUVar2,(MethodInfo *)0x0);
+            (this,StringLiteral_InHouseAd_Kogama_Gold,pUVar2,(MethodInfo *)0x0);
   return;
 }
 
@@ -867,36 +864,36 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::GeneralPromotionAd::GeneralPro
     cRam_? = '\x01';
   }
   if ((this->fields).finishedWaiting == 0) {
-    fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fStack_1 = fStack_1 - (this->fields).startTime;
-    if (fStack_1 < (this->fields).secondsToWait) {
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar1 = fVar1 - (this->fields).startTime;
+    if (fVar1 < (this->fields).secondsToWait) {
       fVar2 = (this->fields).secondsToWait;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__System__Math);
         cRam_? = '\x01';
       }
-      fVar2 = fVar2 - fStack_1;
       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Math);
       }
-      uStack_3 = (double)fVar2;
+      uStack_3 = (double)(fVar2 - fVar1);
       fVar4 = (float10)func_?(uStack_3);
       pTVar5 = (this->fields).continueText;
       uStack_3 = (double)CONCAT44((int)fVar4,SUB84((double)fVar4,0));
       str0 = GeneralPromotionAd_get_StartContinueText(this,(MethodInfo *)0x0);
       str2 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)((int)&uStack_3 + 4),(MethodInfo *)0x0);
-      mscorlib.dll::System::String::String_Concat_5
-                (str0,::StringLiteral___,str2,::StringLiteral__,(MethodInfo *)0x0);
+      pSStack6 =
+           mscorlib.dll::System::String::String_Concat_5
+                     (str0,::StringLiteral___,str2,::StringLiteral__,(MethodInfo *)0x0);
       if (pTVar5 != (Text *)0x0) {
-        pTVar6 = pTVar5->klass;
-        pIStack7 = (pTVar6->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-        (*(code *)(pTVar6->vtable).set_text.method)();
+        pTVar7 = pTVar5->klass;
+        pIStack8 = (pTVar7->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar7->vtable).set_text.method)();
         return;
       }
       func_?();
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
     GeneralPromotionAd_ActivateContinueButton(this,(MethodInfo *)0x0);

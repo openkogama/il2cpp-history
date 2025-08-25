@@ -671,24 +671,29 @@ String * Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_ExtractWeap
     if (x == (PickupItem *)0x0) {
       return ::StringLiteral__;
     }
-    pPVar2 = x->klass;
-    if ((pPVar2->_1).naturalAligment < (TypeInfo__PickupItemEditable->_1).naturalAligment) {
+    if (((x->klass->_1).naturalAligment < (TypeInfo__PickupItemEditable->_1).naturalAligment) ||
+       ((PickupItemEditable__Class *)
+        (x->klass->_1).typeHierarchy[(TypeInfo__PickupItemEditable->_1).naturalAligment - 1] !=
+        TypeInfo__PickupItemEditable)) {
+      bVar2 = false;
+    }
+    else {
+      bVar2 = true;
+    }
+    pPStack3 = (PickupItem *)0x0;
+    if (bVar2) {
+      pPStack3 = x;
+    }
+    if (pPStack3 == (PickupItem *)0x0) {
       return ::StringLiteral__;
     }
-    if ((PickupItemEditable__Class *)
-        (pPVar2->_1).typeHierarchy[(TypeInfo__PickupItemEditable->_1).naturalAligment - 1] !=
-        TypeInfo__PickupItemEditable) {
-      return ::StringLiteral__;
-    }
-    pIStack3 = pPVar2[1]._0.declaringType;
-    pPStack4 = x;
-    pSVar5 = (String *)(*(code *)pPVar2[1]._0.castClass)();
-    return pSVar5;
+    pSVar4 = (String *)(*(code *)pPStack3->klass[1]._0.castClass)();
+    return pSVar4;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  pSVar5 = (String *)(*pcVar6)();
-  return pSVar5;
+  pcVar5 = (code *)swi(3);
+  pSVar4 = (String *)(*pcVar5)();
+  return pSVar4;
 }
 
 

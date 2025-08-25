@@ -299,14 +299,12 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect__ctor
   fVar1 = _UNK_?;
   fVar2 = _UNK_?;
   fVar3 = _UNK_?;
+  fVar4 = _UNK_?;
   (this->fields).top.r = _UNK_?;
   (this->fields).top.g = fVar3;
   (this->fields).top.b = fVar2;
   (this->fields).top.a = fVar1;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields).bottom.r = _UNK_?;
+  (this->fields).bottom.r = fVar4;
   (this->fields).bottom.g = fVar3;
   (this->fields).bottom.b = fVar2;
   (this->fields).bottom.a = fVar1;

@@ -33,9 +33,10 @@ void Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed_WrapDel
   fVar1 = (this->fields).currentDeltaTime - (this->fields).range;
   if (0.0 < fVar1) {
     do {
-      (this->fields).currentDeltaTime = fVar1;
-      fVar1 = fVar1 - (this->fields).range;
+      fVar2 = fVar1;
+      fVar1 = fVar2 - (this->fields).range;
     } while (0.0 < fVar1);
+    (this->fields).currentDeltaTime = fVar2;
     (this->fields).newIteration = 1;
   }
   return;

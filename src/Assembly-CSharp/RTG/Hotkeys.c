@@ -436,101 +436,101 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsActive
     if (((((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) &&
         ((this->fields)._lCtrl == 0)) && ((this->fields)._lShift == 0)) {
       if (((this->fields)._lMouseBtn == 0) && ((this->fields)._rMouseBtn == 0)) {
-        if ((this->fields)._mMouseBtn == 0) goto code_?;
-        goto code_?;
+        bVar7 = (this->fields)._mMouseBtn == 0;
       }
+      else {
+        bVar7 = false;
+      }
+      if (bVar7) goto code_?;
     }
-    else {
-code_?:
-      if ((this->fields)._key != 0) goto code_?;
-    }
+    if ((this->fields)._key != 0) goto code_?;
   }
   else {
 code_?:
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       ((this->fields)._key,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((((this->fields)._useStrictModifierCheck != 0) && ((this->fields)._lAlt == 0)) &&
      (((this->fields)._lCmd == 0 && (((this->fields)._lCtrl == 0 && ((this->fields)._lShift == 0))))
      )) {
-    bVar7 = Hotkeys_IsAnyModifierKeyPressed(this,(MethodInfo *)0x0);
-    if (bVar7 != 0) goto code_?;
+    bVar8 = Hotkeys_IsAnyModifierKeyPressed(this,(MethodInfo *)0x0);
+    if (bVar8 != 0) goto code_?;
   }
   if ((this->fields)._lCtrl != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftControl,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._lCmd != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftApple,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._lAlt != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftAlt,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._lShift != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftShift,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._useStrictMouseCheck != 0) {
-    bVar7 = Hotkeys_HasNoMouseButtons(this,(MethodInfo *)0x0);
-    if (bVar7 != 0) {
+    bVar8 = Hotkeys_HasNoMouseButtons(this,(MethodInfo *)0x0);
+    if (bVar8 != 0) {
       unaff_EDI = (MethodInfo *)this;
-      bVar7 = Hotkeys_IsAnyMouseButtonPressed(this,(MethodInfo *)0x0);
-      if (bVar7 != 0) goto code_?;
+      bVar8 = Hotkeys_IsAnyMouseButtonPressed(this,(MethodInfo *)0x0);
+      if (bVar8 != 0) goto code_?;
     }
   }
   if ((this->fields)._lMouseBtn != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
                       (0,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._rMouseBtn != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
                       (1,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._mMouseBtn != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
                       (2,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if (checkForOverlaps == 0) {
 code_?:
     *unaff_FS_OFFSET = uStack_3;
     return 1;
   }
-  pLVar8 = (this->fields)._potentialOverlaps;
-  if (pLVar8 == (List_1_RTG_Hotkeys_ *)0x0) {
+  pLVar9 = (this->fields)._potentialOverlaps;
+  if (pLVar9 == (List_1_RTG_Hotkeys_ *)0x0) {
 code_?:
     func_?();
-    pcVar9 = (code *)swi(3);
-    bVar7 = (*pcVar9)();
-    return bVar7;
+    pcVar10 = (code *)swi(3);
+    bVar8 = (*pcVar10)();
+    return bVar8;
   }
-  puVar10 = (undefined4 *)
-           func_?(auStack_11,pLVar8,
+  puVar11 = (undefined4 *)
+           func_?(auStack_12,pLVar9,
                            MethodInfo__System__Collections__Generic__List<RTG::Hotkeys>__GetEnumerator__
                           );
-  pOStack_6 = (Object__Class *)*puVar10;
-  uStack_12 = 0;
+  pOStack_6 = (Object__Class *)*puVar11;
+  uStack_13 = 0;
   uStack_1 = 1;
-  method_00 = (MethodInfo *)puVar10[3];
-  pOStack_13 = (Object *)&pOStack_6;
+  method_00 = (MethodInfo *)puVar11[3];
+  pOStack_14 = (Object *)&pOStack_6;
   do {
     do {
       this_00 = method_00;
-      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
                         ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::Hotkeys>__MoveNext__
                         );
-      if (bVar7 == 0) {
+      if (bVar8 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&pOStack_6,
@@ -541,11 +541,11 @@ code_?:
       }
       if (this_00 == (MethodInfo *)0x0) goto code_?;
       method_00 = this_00;
-      bVar7 = Hotkeys_IsActive((Hotkeys *)this_00,0,(MethodInfo *)0x0);
-    } while (bVar7 == 0);
+      bVar8 = Hotkeys_IsActive((Hotkeys *)this_00,0,(MethodInfo *)0x0);
+    } while (bVar8 == 0);
     unaff_EDI = (MethodInfo *)this;
-    bVar7 = Hotkeys_IsOverlappedBy(this,(Hotkeys *)this_00,(MethodInfo *)0x0);
-  } while (bVar7 == 0);
+    bVar8 = Hotkeys_IsOverlappedBy(this,(Hotkeys *)this_00,(MethodInfo *)0x0);
+  } while (bVar8 == 0);
   uStack_1 = 0xffffffff;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)&pOStack_6,
@@ -591,101 +591,101 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsActiveInFrame
     if (((((this->fields)._lAlt == 0) && ((this->fields)._lCmd == 0)) &&
         ((this->fields)._lCtrl == 0)) && ((this->fields)._lShift == 0)) {
       if (((this->fields)._lMouseBtn == 0) && ((this->fields)._rMouseBtn == 0)) {
-        if ((this->fields)._mMouseBtn == 0) goto code_?;
-        goto code_?;
+        bVar7 = (this->fields)._mMouseBtn == 0;
       }
+      else {
+        bVar7 = false;
+      }
+      if (bVar7) goto code_?;
     }
-    else {
-code_?:
-      if ((this->fields)._key != 0) goto code_?;
-    }
+    if ((this->fields)._key != 0) goto code_?;
   }
   else {
 code_?:
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyDown
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyDown
                       ((this->fields)._key,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((((this->fields)._useStrictModifierCheck != 0) && ((this->fields)._lAlt == 0)) &&
      (((this->fields)._lCmd == 0 && (((this->fields)._lCtrl == 0 && ((this->fields)._lShift == 0))))
      )) {
-    bVar7 = Hotkeys_IsAnyModifierKeyPressed(this,(MethodInfo *)0x0);
-    if (bVar7 != 0) goto code_?;
+    bVar8 = Hotkeys_IsAnyModifierKeyPressed(this,(MethodInfo *)0x0);
+    if (bVar8 != 0) goto code_?;
   }
   if ((this->fields)._lCtrl != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftControl,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._lCmd != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftApple,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._lAlt != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftAlt,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._lShift != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                       (KeyCode__Enum_LeftShift,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._useStrictMouseCheck != 0) {
-    bVar7 = Hotkeys_HasNoMouseButtons(this,(MethodInfo *)0x0);
-    if (bVar7 != 0) {
+    bVar8 = Hotkeys_HasNoMouseButtons(this,(MethodInfo *)0x0);
+    if (bVar8 != 0) {
       unaff_EDI = (MethodInfo *)this;
-      bVar7 = Hotkeys_IsAnyMouseButtonPressed(this,(MethodInfo *)0x0);
-      if (bVar7 != 0) goto code_?;
+      bVar8 = Hotkeys_IsAnyMouseButtonPressed(this,(MethodInfo *)0x0);
+      if (bVar8 != 0) goto code_?;
     }
   }
   if ((this->fields)._lMouseBtn != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
                       (0,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._rMouseBtn != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
                       (1,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if ((this->fields)._mMouseBtn != 0) {
-    bVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
+    bVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
                       (2,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
+    if (bVar8 == 0) goto code_?;
   }
   if (checkForOverlaps == 0) {
 code_?:
     *unaff_FS_OFFSET = uStack_3;
     return 1;
   }
-  pLVar8 = (this->fields)._potentialOverlaps;
-  if (pLVar8 == (List_1_RTG_Hotkeys_ *)0x0) {
+  pLVar9 = (this->fields)._potentialOverlaps;
+  if (pLVar9 == (List_1_RTG_Hotkeys_ *)0x0) {
 code_?:
     func_?();
-    pcVar9 = (code *)swi(3);
-    bVar7 = (*pcVar9)();
-    return bVar7;
+    pcVar10 = (code *)swi(3);
+    bVar8 = (*pcVar10)();
+    return bVar8;
   }
-  puVar10 = (undefined4 *)
-           func_?(auStack_11,pLVar8,
+  puVar11 = (undefined4 *)
+           func_?(auStack_12,pLVar9,
                            MethodInfo__System__Collections__Generic__List<RTG::Hotkeys>__GetEnumerator__
                           );
-  pOStack_6 = (Object__Class *)*puVar10;
-  uStack_12 = 0;
+  pOStack_6 = (Object__Class *)*puVar11;
+  uStack_13 = 0;
   uStack_1 = 1;
-  method_00 = (MethodInfo *)puVar10[3];
-  pOStack_13 = (Object *)&pOStack_6;
+  method_00 = (MethodInfo *)puVar11[3];
+  pOStack_14 = (Object *)&pOStack_6;
   do {
     do {
       this_00 = method_00;
-      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
                         ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::Hotkeys>__MoveNext__
                         );
-      if (bVar7 == 0) {
+      if (bVar8 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&pOStack_6,
@@ -696,11 +696,11 @@ code_?:
       }
       if (this_00 == (MethodInfo *)0x0) goto code_?;
       method_00 = this_00;
-      bVar7 = Hotkeys_IsActiveInFrame((Hotkeys *)this_00,0,(MethodInfo *)0x0);
-    } while (bVar7 == 0);
+      bVar8 = Hotkeys_IsActiveInFrame((Hotkeys *)this_00,0,(MethodInfo *)0x0);
+    } while (bVar8 == 0);
     unaff_EDI = (MethodInfo *)this;
-    bVar7 = Hotkeys_IsOverlappedBy(this,(Hotkeys *)this_00,(MethodInfo *)0x0);
-  } while (bVar7 == 0);
+    bVar8 = Hotkeys_IsOverlappedBy(this,(Hotkeys *)this_00,(MethodInfo *)0x0);
+  } while (bVar8 == 0);
   uStack_1 = 0xffffffff;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)&pOStack_6,
@@ -794,15 +794,15 @@ bool Assembly-CSharp.dll::RTG::Hotkeys::Hotkeys_IsOverlappedBy
     if ((hotkeys->fields)._lCtrl == 0) {
       bVar3 = bVar1;
     }
-    bVar4 = bVar2 + 1;
-    if ((this->fields)._lShift == 0) {
-      bVar4 = bVar2;
-    }
-    bVar2 = bVar3 + 1;
+    bVar4 = bVar3 + 1;
     if ((hotkeys->fields)._lShift == 0) {
-      bVar2 = bVar3;
+      bVar4 = bVar3;
     }
-    if (bVar4 <= bVar2) {
+    bVar3 = bVar2 + 1;
+    if ((this->fields)._lShift == 0) {
+      bVar3 = bVar2;
+    }
+    if (bVar3 <= bVar4) {
       bVar1 = (this->fields)._lMouseBtn != 0;
       bVar2 = bVar1 + 1;
       if ((this->fields)._rMouseBtn == 0) {
