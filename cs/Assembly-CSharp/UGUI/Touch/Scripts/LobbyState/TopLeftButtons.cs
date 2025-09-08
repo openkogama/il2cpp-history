@@ -15,7 +15,9 @@ namespace UGUI.Touch.Scripts.LobbyState
 	{
 		// Fields
 		[SerializeField]
-		private Transform resetGameButton;
+		private GameObject resetGameButton;
+		[SerializeField]
+		private GameObject fullscreenButton;
 	
 		// Constructors
 		public TopLeftButtons();

@@ -15,19 +15,17 @@ using UnityEngine;
 public class HealthbarLerp : GameMeterVisualEffect
 {
 	// Fields
-	private float lerpForSeconds;
-	private float lerpDelay;
-	private float lerpStart;
-	private float startProgress;
-	private bool isInitialized;
 	[SerializeField]
 	private ProgressBar progressBar;
 	[SerializeField]
 	private ProgressBar targetProgressBar;
+	private float lerpStart;
+	private float startProgress;
+	private bool isInitialized;
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _LerpProgress_d__10 : IEnumerator<object>
+	private sealed class _LerpProgress_d__8 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -41,7 +39,7 @@ public class HealthbarLerp : GameMeterVisualEffect
 
 		// Constructors
 		[DebuggerHidden]
-		public _LerpProgress_d__10(int __1__state);
+		public _LerpProgress_d__8(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -58,7 +56,7 @@ public class HealthbarLerp : GameMeterVisualEffect
 	private void OnEnable();
 	public override void ExecuteEffect();
 	private void OnDisable();
-	[IteratorStateMachine(typeof(_LerpProgress_d__10))]
+	[IteratorStateMachine(typeof(_LerpProgress_d__8))]
 	private IEnumerator LerpProgress();
 }
 

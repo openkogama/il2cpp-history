@@ -6,12 +6,17 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 public class GoldRewardNotification : Notification
 {
 	// Fields
+	[FormerlySerializedAs("TertiaryNotificationUI")]
+	[SerializeField]
+	private TertiaryNotificationUI tertiaryNotificationUI;
 	private NotificationLifetime lifeTime;
 
 	// Properties

@@ -51,6 +51,7 @@ public abstract class PickupItem : MonoBehaviour
 	public virtual bool ThirdPersonGunMode { get; }
 	public virtual bool CanHolster { get; }
 	public virtual bool HasUnlimitedAmmo { get; }
+	public virtual bool HasPercentageAmmo { get; }
 	public virtual bool CanUnequip { get; }
 	protected virtual bool IsAmmoDepleted { get; }
 	public bool IsHolstered { [CompilerGenerated] get; [CompilerGenerated] private set; }

@@ -14,7 +14,6 @@ public class GameMeterFlag : GameMeterBase
 	// Fields
 	[SerializeField]
 	private GameObject flagBar;
-	private FlagReachedClient flagClient;
 
 	// Properties
 	public override GameMeterType GameMeterType { get; }

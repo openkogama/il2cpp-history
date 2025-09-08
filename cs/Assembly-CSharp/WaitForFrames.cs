@@ -7,15 +7,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityEngine;
 using UnityEngine.Events;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public static class WaitForFrames
+public class WaitForFrames : CustomYieldInstruction
 {
+	// Fields
+	private readonly int targetFrameCount;
+
+	// Properties
+	public override bool keepWaiting { get; }
+
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _Frames_d__0 : IEnumerator<object>
+	private sealed class _WithCallback_d__4 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -29,7 +36,7 @@ public static class WaitForFrames
 
 		// Constructors
 		[DebuggerHidden]
-		public _Frames_d__0(int __1__state);
+		public _WithCallback_d__4(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -39,8 +46,11 @@ public static class WaitForFrames
 		void IEnumerator.Reset();
 	}
 
+	// Constructors
+	public WaitForFrames(int frameCount);
+
 	// Methods
-	[IteratorStateMachine(typeof(_Frames_d__0))]
-	public static IEnumerator Frames(int frameCount, UnityAction callback);
+	[IteratorStateMachine(typeof(_WithCallback_d__4))]
+	public static IEnumerator WithCallback(int frameCount, UnityAction callback);
 }
 

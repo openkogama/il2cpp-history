@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -18,6 +19,9 @@ public class NextLevelRewardNotification : Notification
 	private UnityEngine.UI.Text goldAmount;
 	[SerializeField]
 	private UnityEngine.UI.Text levelText;
+	[FormerlySerializedAs("TertiaryNotificationUI")]
+	[SerializeField]
+	private TertiaryNotificationUI tertiaryNotificationUI;
 
 	// Properties
 	protected override NotificationLifetime Lifetime { get; }

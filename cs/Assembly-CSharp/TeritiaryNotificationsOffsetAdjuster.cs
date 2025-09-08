@@ -17,6 +17,17 @@ public class TeritiaryNotificationsOffsetAdjuster : MonoBehaviour
 	private float topPaddingInMenu;
 	[SerializeField]
 	private float topPaddingInGame;
+	[SerializeField]
+	private float bottomPaddingInMenu;
+	[SerializeField]
+	private float bottomPaddingInMenuGamePass;
+	[SerializeField]
+	private float bottomPaddingInGame;
+	[SerializeField]
+	private float rectWidth;
+	[SerializeField]
+	private float rectWidthWithChat;
+	private RectTransform rectTransform;
 
 	// Constructors
 	public TeritiaryNotificationsOffsetAdjuster();
@@ -24,5 +35,7 @@ public class TeritiaryNotificationsOffsetAdjuster : MonoBehaviour
 	// Methods
 	private void Start();
 	private void OnIsPausedStateChange(bool isPaused);
+	private void OnIsChatConsoleStateChange(ChatConsoleMode mode);
+	private void OnDestroy();
 }
 

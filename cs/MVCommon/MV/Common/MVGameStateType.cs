@@ -17,6 +17,7 @@ namespace MV.Common
 	{
 		None = 0,
 		Round = 1,
-		RoundEnded = 2
+		RoundEnded = 2,
+		StartingRound = 3
 	}
 }

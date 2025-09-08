@@ -13,9 +13,9 @@ using UnityEngine;
 public class ChatConsoleModes : MonoBehaviour
 {
 	// Fields
-	private ChatConsoleMode chatConsoleMode;
 	[SerializeField]
 	private List<ChatConsoleModeDef> chatConsoleModeDefs;
+	private ChatConsoleMode chatConsoleMode;
 
 	// Properties
 	public ChatConsoleMode ChatConsoleMode { get; }

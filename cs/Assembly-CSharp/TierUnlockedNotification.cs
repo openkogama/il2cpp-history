@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -16,8 +17,9 @@ public class TierUnlockedNotification : Notification
 	// Fields
 	[SerializeField]
 	private UnityEngine.UI.Text tierUnlockedText;
+	[FormerlySerializedAs("TertiaryNotificationUI")]
 	[SerializeField]
-	private NotificationSlideOut slider;
+	private TertiaryNotificationUI tertiaryNotificationUI;
 
 	// Properties
 	protected override NotificationLifetime Lifetime { get; }
@@ -27,6 +29,5 @@ public class TierUnlockedNotification : Notification
 
 	// Methods
 	public override void Initialize(Dictionary<object, object> data);
-	protected override void Update();
 }
 

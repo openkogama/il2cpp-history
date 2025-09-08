@@ -96,8 +96,8 @@ namespace UGUI.Desktop.Scripts.EditMode.SettingsBoxes.CustomGuns
 		private Image chargeParticlesColorImage;
 		[Header("Projectile settings serialized fields")]
 		[SerializeField]
-		[Space(20f)]
 		[Space(10f)]
+		[Space(20f)]
 		private SettingsToggle sparksOnHitToggle;
 		[SerializeField]
 		[Space(10f)]

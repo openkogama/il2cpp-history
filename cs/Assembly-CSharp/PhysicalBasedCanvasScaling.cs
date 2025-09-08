@@ -12,11 +12,12 @@ using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent(typeof(Canvas))]
 [RequireComponent(typeof(CanvasScaler))]
+[RequireComponent(typeof(Canvas))]
 public class PhysicalBasedCanvasScaling : MonoBehaviour
 {
 	// Fields
+	public static Action OnScreenDimentionsChanged;
 	[Range(1f, 1000f)]
 	[SerializeField]
 	private float baselineDPI;
@@ -27,7 +28,7 @@ public class PhysicalBasedCanvasScaling : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _SetCanvasScaleCoroutine_d__5 : IEnumerator<object>
+	private sealed class _SetCanvasScaleCoroutine_d__6 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -40,7 +41,7 @@ public class PhysicalBasedCanvasScaling : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _SetCanvasScaleCoroutine_d__5(int __1__state);
+		public _SetCanvasScaleCoroutine_d__6(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -55,7 +56,7 @@ public class PhysicalBasedCanvasScaling : MonoBehaviour
 
 	// Methods
 	private void Awake();
-	[IteratorStateMachine(typeof(_SetCanvasScaleCoroutine_d__5))]
+	[IteratorStateMachine(typeof(_SetCanvasScaleCoroutine_d__6))]
 	private IEnumerator SetCanvasScaleCoroutine();
 	private void SetCanvasScale(float dpi, Vector2 screen);
 	private void OnDestroy();
