@@ -181,26 +181,28 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
             UnityWebRequest_get_error(www,(MethodInfo *)0x0);
     bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      if ((this->fields).useCache == 0) {
+      if (*(char *)&unaff_ESI[1].fields._._._.m_CachedPtr == '\0') {
         if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pOVar2 = StreamingAsset::StreamingAsset_UnpackBundle_NonCached
-                           (www,(MonoBehaviour *)this,method->klass->rgctx_data[3].method);
-        (this->fields).asset = pOVar2;
-        func_?(&(this->fields).asset);
+        pCVar2 = (CancellationTokenSource *)
+                 StreamingAsset::StreamingAsset_UnpackBundle_NonCached
+                           (www,unaff_ESI,method->klass->rgctx_data[3].method);
+        unaff_ESI[1].fields.m_CancellationTokenSource = pCVar2;
+        func_?(&unaff_ESI[1].fields.m_CancellationTokenSource);
       }
       else {
         if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pOVar2 = StreamingAsset::StreamingAsset_UnpackBundle_Cached
+        pCVar2 = (CancellationTokenSource *)
+                 StreamingAsset::StreamingAsset_UnpackBundle_Cached
                            (www,method->klass->rgctx_data[5].method);
-        (this->fields).asset = pOVar2;
-        func_?(&(this->fields).asset);
+        unaff_ESI[1].fields.m_CancellationTokenSource = pCVar2;
+        func_?(&unaff_ESI[1].fields.m_CancellationTokenSource);
       }
-      if ((this->fields)._.onAssetSetAction != (UnityAction *)0x0) {
-        (*(((this->fields)._.onAssetSetAction)->fields)._._.invoke_impl)();
+      if (unaff_ESI[1].monitor != (MonitorData *)0x0) {
+        (**(code **)(unaff_ESI[1].monitor + 0xc))();
       }
     }
   }
@@ -285,8 +287,8 @@ void Assembly-CSharp.dll::StreamingAsset`2[System::Object,System::Object]::
 {
   (this->fields).asset = value;
   func_?(&(this->fields).asset,value);
-  if ((this->fields)._.onAssetSetAction != (UnityAction *)0x0) {
-    pUVar1 = (this->fields)._.onAssetSetAction;
+  pUVar1 = (this->fields)._.onAssetSetAction;
+  if (pUVar1 != (UnityAction *)0x0) {
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }

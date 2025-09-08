@@ -732,11 +732,11 @@ code_?:
 code_?:
       uVar11 = pVVar2->x;
       uVar12 = pVVar2->y;
-      uVar13 = uVar12 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+      uVar13 = uVar12 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       fVar4 = (float)((uint)pVVar2->z ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields)._offsetDragWorkData.Axis.x =
-           (float)(uVar11 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+           (float)(uVar11 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       (this->fields)._offsetDragWorkData.Axis.y = (float)uVar13;
       goto code_?;
@@ -1225,15 +1225,15 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                         uVar15 = pVVar2->x;
                         uVar16 = pVVar2->y;
                         value.y = (float)(uVar16 ^ 
-                                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                          );
                         value.x = (float)((uint)pVVar2->z ^
-                                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                          );
                         if (pSVar13 != (SphereColliderGizmo_ExtentTick *)0x0) {
                           (pSVar13->fields).Normal.x =
                                (float)(uVar15 ^ 
-                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       );
                           (pSVar13->fields).Normal.y = value.y;
                           (pSVar13->fields).Normal.z = value.x;
@@ -1251,7 +1251,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                               uVar18 = pVVar2->y;
                               pCVar19 = (Camera *)((float)uVar17 * fVar6 + 0.0);
                               value.y = (float)uVar4 + (float)uVar18 * fVar6;
-                              fVar6 = pVVar2->z * fVar6 + 4.2111247e-29;
+                              fVar6 = pVVar2->z * fVar6 + 4.207687e-29;
                               pGVar10 = (this->fields)._rightTick;
                               pVVar2 = (Vector3 *)&stack0xffffffd0;
                               position_04.y = value.y;
@@ -1311,7 +1311,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                 uVar22 = pVVar20->y;
                                                 fVar11 = (float)uVar21 * value.x + 0.0;
                                                 value.y = (float)uVar22 * value.x + (float)uVar4;
-                                                fVar6 = pVVar20->z * value.x + 4.2111247e-29;
+                                                fVar6 = pVVar20->z * value.x + 4.207687e-29;
                                                 pGVar10 = (this->fields)._topTick;
                                                 position.y = value.y;
                                                 position.x = fVar11;
@@ -1383,7 +1383,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                   uVar24 = pVVar20->y;
                                                   fVar11 = 0.0 - (float)uVar23 * value.x;
                                                   value.y = (float)uVar4 - (float)uVar24 * value.x;
-                                                  fVar6 = 4.2111247e-29 - pVVar20->z * value.x;
+                                                  fVar6 = 4.207687e-29 - pVVar20->z * value.x;
                                                   pGVar10 = (this->fields)._bottomTick;
                                                   position_00.y = value.y;
                                                   position_00.x = fVar11;
@@ -1434,17 +1434,17 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                   uVar25 = pVVar20->x;
                                                   uVar26 = pVVar20->y;
                                                   value.y = (float)(uVar26 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   fVar6 = (float)((uint)pVVar20->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pSVar13 !=
                                                       (SphereColliderGizmo_ExtentTick *)0x0) {
                                                     (pSVar13->fields).Normal.x =
                                                          (float)(uVar25 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pSVar13->fields).Normal.y = value.y;
                                                   (pSVar13->fields).Normal.z = fVar6;
@@ -1467,7 +1467,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                       fVar11 = 0.0 - (float)uVar27 * value.x;
                                                       value.y = (float)uVar4 -
                                                                 (float)uVar28 * value.x;
-                                                      fVar6 = 4.2111247e-29 - pVVar20->z * value.x;
+                                                      fVar6 = 4.207687e-29 - pVVar20->z * value.x;
                                                       pGVar10 = (this->fields)._frontTick;
                                                       position_01.y = value.y;
                                                       position_01.x = fVar11;
@@ -1523,17 +1523,17 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                         uVar29 = pVVar20->x;
                                                         uVar30 = pVVar20->y;
                                                         value.y = (float)(uVar30 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   fVar6 = (float)((uint)pVVar20->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pSVar13 !=
                                                       (SphereColliderGizmo_ExtentTick *)0x0) {
                                                     (pSVar13->fields).Normal.x =
                                                          (float)(uVar29 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pSVar13->fields).Normal.y = value.y;
                                                   (pSVar13->fields).Normal.z = fVar6;
@@ -1556,7 +1556,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                       fVar11 = (float)uVar31 * value.x + 0.0;
                                                       value.y = (float)uVar32 * value.x +
                                                                 (float)uVar4;
-                                                      fVar6 = pVVar20->z * value.x + 4.2111247e-29;
+                                                      fVar6 = pVVar20->z * value.x + 4.207687e-29;
                                                       pGVar10 = (this->fields)._backTick;
                                                       position_02.y = value.y;
                                                       position_02.x = fVar11;
@@ -2330,7 +2330,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateTi
         uStack_10 = 0;
         pSVar11 = (this->fields)._extentTicks;
         fVar6 = (float)((uint)((float)uVar5 * fVar8 + (float)uVar4 * fVar7 + fVar6 * fVar9) ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         if (pSVar11 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
           ppSVar12 = pSVar11->vector;
           while( true ) {

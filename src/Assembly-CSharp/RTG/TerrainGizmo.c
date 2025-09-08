@@ -444,7 +444,7 @@ code_?:
                           pTVar12 = (this->fields)._targetTerrain;
                           if (pTVar12 == (Terrain *)0x0) goto code_?;
                           worldPosition.y = (float)uVar8 + (float)this_05;
-                          worldPosition.x = (float)uVar4 + 4.3116612e-29;
+                          worldPosition.x = (float)uVar4 + 4.3082957e-29;
                           worldPosition.z = (float)method_00;
                           fVar25 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
                                    Terrain_SampleHeight(pTVar12,worldPosition,(MethodInfo *)0x0);
@@ -453,7 +453,7 @@ code_?:
                                               ((GameObject *)this_04,(MethodInfo *)0x0);
                           if (pTVar20 == (Transform *)0x0) goto code_?;
                           value_00.y = fVar25 + fVar30 + ((float)uVar8 - fVar24);
-                          value_00.x = (float)uVar4 + 4.3116612e-29;
+                          value_00.x = (float)uVar4 + 4.3082957e-29;
                           value_00.z = (float)method_00;
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                     (pTVar20,value_00,(MethodInfo *)0x0);
@@ -1127,14 +1127,14 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnAttached
             uVar9 = (pVVar8->rightVector).x;
             uVar10 = (pVVar8->rightVector).y;
             uVar11 = uVar10 ^ 
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
             fVar12 = (float)((uint)(pVVar8->rightVector).z ^
-                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
             if (pTVar7 != (TerrainGizmo_RadiusTick *)0x0) {
               (pTVar7->fields).DragAxis.x =
                    (float)(uVar9 ^ 
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
               (pTVar7->fields).DragAxis.y = (float)uVar11;
               (pTVar7->fields).DragAxis.z = fVar12;
               pTVar7 = (this->fields)._leftRadiusTick;
@@ -1202,15 +1202,15 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnAttached
                         uVar15 = (pVVar8->forwardVector).x;
                         uVar16 = (pVVar8->forwardVector).y;
                         uVar11 = uVar16 ^ 
-                                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                         ;
                         fVar12 = (float)((uint)(pVVar8->forwardVector).z ^
-                                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                         );
                         if (pTVar7 != (TerrainGizmo_RadiusTick *)0x0) {
                           (pTVar7->fields).DragAxis.x =
                                (float)(uVar15 ^ 
-                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       );
                           (pTVar7->fields).DragAxis.y = (float)uVar11;
                           (pTVar7->fields).DragAxis.z = fVar12;

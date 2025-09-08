@@ -152,3 +152,26 @@ void Assembly-CSharp.dll::AdOfferGold::AdOfferGold_OnTryClickGoldAd
   return;
 }
 
+
+/* Void RewardAvailable(Boolean) */
+
+void Assembly-CSharp.dll::AdOfferGold::AdOfferGold_RewardAvailable
+               (AdOfferGold *this,bool available,MethodInfo *method)
+
+{
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pGVar1 != (GameObject *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    (*pcRam_?)();
+    return;
+  }
+  uVar2 = func_?(&stack0xfffffff8);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+

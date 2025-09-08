@@ -34,43 +34,91 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_OnB
         if (this_02 !=
             (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)0x0) {
-          mscorlib.dll::System::Collections::Generic::
-          Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-          StyleSheetCache+SheetHandleKey,System::Object]::
-          Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                    (this_02,
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                    );
-          pTVar3 = (this->fields).boostsActive;
-          IVar4.m_value = (int32_t)&UNK_?;
-          mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-          if (pTVar3 != (Text *)0x0) {
-            (*(code *)(pTVar3->klass->vtable).set_text.method)();
-            if (IVar4.m_value < 1) {
-              fVar5 = (this->fields).boostInactiveColor.r;
-              fVar6 = (this->fields).boostInactiveColor.g;
-              fVar7 = (this->fields).boostInactiveColor.b;
-              fVar8 = (this->fields).boostInactiveColor.a;
+          iVar3 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+                  StyleSheetCache+SheetHandleKey,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
+                            (this_02,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                            );
+          pTVar4 = (this->fields).boostsActive;
+          if (iVar3 < 1) {
+            if (pTVar4 != (Text *)0x0) {
+              pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)pTVar4,(MethodInfo *)0x0);
+              if (pGVar5 != (GameObject *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar5,0,(MethodInfo *)0x0);
+                pIVar6 = (this->fields).backgroundColor;
+                if (pIVar6 != (Image *)0x0) {
+                  pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0);
+                  if (pGVar5 != (GameObject *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                              (pGVar5,0,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
+              }
             }
-            else {
-              fVar5 = (this->fields).boostActiveColor.r;
-              fVar6 = (this->fields).boostActiveColor.g;
-              fVar7 = (this->fields).boostActiveColor.b;
-              fVar8 = (this->fields).boostActiveColor.a;
-            }
-            pIVar9 = (this->fields).backgroundColor;
-            if (pIVar9 != (Image *)0x0) {
-              (*(code *)(pIVar9->klass->vtable).set_color.method)(pIVar9,fVar5,fVar6,fVar7,fVar8);
-              return;
+          }
+          else if (pTVar4 != (Text *)0x0) {
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar4,(MethodInfo *)0x0);
+            if (pGVar5 != (GameObject *)0x0) {
+              bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                                (pGVar5,(MethodInfo *)0x0);
+              if (bVar7 == 0) {
+                pTVar4 = (this->fields).boostsActive;
+                if (pTVar4 == (Text *)0x0) goto code_?;
+                pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pTVar4,(MethodInfo *)0x0);
+                if (pGVar5 == (GameObject *)0x0) goto code_?;
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar5,1,(MethodInfo *)0x0);
+              }
+              pIVar6 = (this->fields).backgroundColor;
+              if (pIVar6 != (Image *)0x0) {
+                pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0);
+                if (pGVar5 != (GameObject *)0x0) {
+                  bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                          GameObject_get_activeSelf(pGVar5,(MethodInfo *)0x0);
+                  if (bVar7 == 0) {
+                    pIVar6 = (this->fields).backgroundColor;
+                    if (pIVar6 == (Image *)0x0) goto code_?;
+                    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                             Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0);
+                    if (pGVar5 == (GameObject *)0x0) goto code_?;
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                              (pGVar5,1,(MethodInfo *)0x0);
+                  }
+                  pTVar4 = (this->fields).boostsActive;
+                  pSVar8 = mscorlib.dll::System::Int32::Int32_ToString
+                                     ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+                  if (pTVar4 != (Text *)0x0) {
+                    (*(code *)(pTVar4->klass->vtable).set_text.method)(pTVar4,pSVar8);
+                    pIVar6 = (this->fields).backgroundColor;
+                    if (pIVar6 != (Image *)0x0) {
+                      (*(code *)(pIVar6->klass->vtable).set_color.method)
+                                (pIVar6,(this->fields).boostActiveColor.r,
+                                 (this->fields).boostActiveColor.g,(this->fields).boostActiveColor.b
+                                 ,(this->fields).boostActiveColor.a);
+                      return;
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   }
+code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -153,111 +201,197 @@ void Assembly-CSharp.dll::BoostNotificationDisplay::BoostNotificationDisplay_Sta
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-  pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-  if ((pMVar2 == (MVLocalPlayer *)0x0) ||
-     (pBVar3 = (pMVar2->fields).boostController, pBVar3 == (BoostController *)0x0))
-  goto code_?;
-  pAVar4 = (pBVar3->fields).BoostCountChanged;
-  this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-  NavMesh_OnNavMeshPreUpdate__ctor
-            (this_01,(Object *)this,MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__,
-             (MethodInfo *)0x0);
-  pAVar4 = (Action *)
-           mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-  if (pAVar4 == (Action *)0x0) {
-    (pBVar3->fields).BoostCountChanged = (Action *)0x0;
-code_?:
-    func_?();
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                     );
-      cRam_? = '\x01';
-    }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-      if ((pMVar2 != (MVLocalPlayer *)0x0) &&
-         (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+    if (pMVar2 != (MVLocalPlayer *)0x0) {
+      pBVar3 = (pMVar2->fields).boostController;
+      if (pBVar3 != (BoostController *)0x0) {
+        pAVar4 = (pBVar3->fields).BoostCountChanged;
+        this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_01,unaff_EBX,MethodInfo__BoostNotificationDisplay__OnBoostCountChanged__,
+                   (MethodInfo *)0x0);
+        pAVar4 = (Action *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+        if (pAVar4 == (Action *)0x0) {
+          (pBVar3->fields).BoostCountChanged = (Action *)0x0;
+        }
+        else {
+          pAVar5 = (Action *)0x0;
+          if (pAVar4->klass == TypeInfo__System__Action) {
+            pAVar5 = pAVar4;
+          }
+          if (pAVar5 == (Action *)0x0) goto code_?;
+          (pBVar3->fields).BoostCountChanged = pAVar5;
+          pAVar5 = (Action *)0x0;
+          if (pAVar4->klass == TypeInfo__System__Action) {
+            pAVar5 = pAVar4;
+          }
+          if (pAVar5 == (Action *)0x0) goto code_?;
+        }
+        func_?();
         if (cRam_? == '\0') {
-          func_?(&
-                          MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
-                         );
+          func_?();
           cRam_? = '\x01';
         }
-        this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                   *)(pBVar3->fields).activeBoosts;
-        if (this_00 !=
-            (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)0x0) {
-          this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
-                    ::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-                    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                              (this_00,
-                               MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
-                              );
-          if (this_02 !=
-              (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)0x0) {
-            mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-            StyleSheetCache+SheetHandleKey,System::Object]::
-            Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                      (this_02,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                      );
-            this_03.m_value = (int32_t)&stack0xfffffff8;
-            pTVar5 = (this->fields).boostsActive;
-            mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_03.m_value,(MethodInfo *)0x0);
-            if (pTVar5 != (Text *)0x0) {
-              (*(code *)(pTVar5->klass->vtable).set_text.method)();
-              if (this_03.m_value < 1) {
-                fVar6 = (this->fields).boostInactiveColor.r;
-                fVar7 = (this->fields).boostInactiveColor.g;
-                fVar8 = (this->fields).boostInactiveColor.b;
-                fVar9 = (this->fields).boostInactiveColor.a;
-              }
-              else {
-                fVar6 = (this->fields).boostActiveColor.r;
-                fVar7 = (this->fields).boostActiveColor.g;
-                fVar8 = (this->fields).boostActiveColor.b;
-                fVar9 = (this->fields).boostActiveColor.a;
-              }
-              pIVar10 = (this->fields).backgroundColor;
-              if (pIVar10 != (Image *)0x0) {
-                (*(code *)(pIVar10->klass->vtable).set_color.method)
-                          (pIVar10,fVar6,fVar7,fVar8,fVar9,
-                           (pIVar10->klass->vtable).get_raycastTarget.methodPtr);
-                return;
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar1 != (MVNetworkGame *)0x0) {
+          pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+          if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+             (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
+            if (cRam_? == '\0') {
+              func_?();
+              cRam_? = '\x01';
+            }
+            this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                       *)(pBVar3->fields).activeBoosts;
+            if (this_00 !=
+                (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                 *)0x0) {
+              pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                       UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                       Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                                 (this_00,
+                                  MethodInfo__System__Collections__Generic__Dictionary<BoostType,_Boost>__get_Values__
+                                 );
+              if (pDVar6 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                             *)0x0) {
+                in_stack_7 =
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                ;
+                in_stack_8 = pDVar6;
+                iVar9 = mscorlib.dll::System::Collections::Generic::
+                        Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::
+                        StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                        Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
+                                  (pDVar6,
+                                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
+                                  );
+                pCVar10 = in_stack_11;
+                pCVar12 = (Component *)in_stack_11[1].monitor;
+                if (iVar9 < 1) {
+                  if (pCVar12 != (Component *)0x0) {
+                    in_stack_13 = (GameObject *)0x0;
+                    in_stack_7 = (MethodInfo *)&UNK_?;
+                    in_stack_11 = pCVar12;
+                    pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                             Component_get_gameObject(pCVar12,(MethodInfo *)0x0);
+                    if (pGVar14 != (GameObject *)0x0) {
+                      in_stack_15 = (undefined *)0x0;
+                      in_stack_16 = (GameObject *)0x0;
+                      in_stack_11 = (Component *)&UNK_?;
+                      in_stack_13 = pGVar14;
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                (pGVar14,0,(MethodInfo *)0x0);
+                      pCVar12 = pCVar10[1].fields._.m_CachedPtr;
+                      if (pCVar12 != (Component *)0x0) {
+                        in_stack_17 = (GameObject *)0x0;
+                        in_stack_18 = (Component *)&UNK_?;
+                        in_stack_19 = pCVar12;
+                        pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                 Component_get_gameObject(pCVar12,(MethodInfo *)0x0);
+                        if (pGVar14 != (GameObject *)0x0) {
+                          in_stack_20 = 0;
+                          in_stack_19 = (Component *)&UNK_?;
+                          in_stack_17 = pGVar14;
+                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                    (pGVar14,0,(MethodInfo *)0x0);
+                          return;
+                        }
+                      }
+                    }
+                  }
+                }
+                else if (pCVar12 != (Component *)0x0) {
+                  in_stack_13 = (GameObject *)0x0;
+                  in_stack_7 = (MethodInfo *)&UNK_?;
+                  in_stack_11 = pCVar12;
+                  pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject(pCVar12,(MethodInfo *)0x0);
+                  if (pGVar14 != (GameObject *)0x0) {
+                    in_stack_15 = (undefined *)0x0;
+                    in_stack_13 = (GameObject *)&UNK_?;
+                    in_stack_16 = pGVar14;
+                    bVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_get_activeSelf(pGVar14,(MethodInfo *)0x0);
+                    if (bVar21 == 0) {
+                      pCVar12 = (Component *)pCVar10[1].monitor;
+                      if (pCVar12 == (Component *)0x0) goto code_?;
+                      in_stack_19 = (Component *)0x0;
+                      in_stack_15 = &UNK_?;
+                      in_stack_18 = pCVar12;
+                      pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                               Component_get_gameObject(pCVar12,(MethodInfo *)0x0);
+                      if (pGVar14 == (GameObject *)0x0) goto code_?;
+                      in_stack_20 = 0;
+                      in_stack_17 = (GameObject *)0x1;
+                      in_stack_18 = (Component *)&UNK_?;
+                      in_stack_19 = (Component *)pGVar14;
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                (pGVar14,1,(MethodInfo *)0x0);
+                    }
+                    pCVar12 = pCVar10[1].fields._.m_CachedPtr;
+                    if (pCVar12 != (Component *)0x0) {
+                      pDVar6 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                                *)UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_gameObject(pCVar12,(MethodInfo *)0x0);
+                      if (pDVar6 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                                     *)0x0) {
+                        in_stack_7 = (MethodInfo *)0x0;
+                        in_stack_8 = pDVar6;
+                        bVar21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                GameObject_get_activeSelf((GameObject *)pDVar6,(MethodInfo *)0x0);
+                        if (bVar21 == 0) {
+                          pCVar12 = pCVar10[1].fields._.m_CachedPtr;
+                          if (pCVar12 == (Component *)0x0) goto code_?;
+                          in_stack_13 = (GameObject *)0x0;
+                          in_stack_7 = (MethodInfo *)&UNK_?;
+                          in_stack_11 = pCVar12;
+                          pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                   Component_get_gameObject(pCVar12,(MethodInfo *)0x0);
+                          if (pGVar14 == (GameObject *)0x0) goto code_?;
+                          in_stack_15 = (undefined *)0x0;
+                          in_stack_16 = (GameObject *)0x1;
+                          in_stack_11 = (Component *)&UNK_?;
+                          in_stack_13 = pGVar14;
+                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                    (pGVar14,1,(MethodInfo *)0x0);
+                        }
+                        pMVar22 = pCVar10[1].monitor;
+                        mscorlib.dll::System::Int32::Int32_ToString
+                                  ((Int32 *)&stack0x00000020,(MethodInfo *)0x0);
+                        if (pMVar22 != (MonitorData *)0x0) {
+                          (**(code **)(*(int *)pMVar22 + 0x318))();
+                          piStack23 = pCVar10[1].fields._.m_CachedPtr;
+                          if (piStack23 != (int *)0x0) {
+                            pCStack24 = pCVar10[2].klass;
+                            (**(code **)(*piStack23 + 0x178))();
+                            return;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
         }
+code_?:
+        func_?();
+        pcVar25 = (code *)swi(3);
+        (*pcVar25)();
+        return;
       }
     }
   }
-  else {
-    pAVar11 = (Action *)0x0;
-    if (pAVar4->klass == TypeInfo__System__Action) {
-      pAVar11 = pAVar4;
-    }
-    if (pAVar11 != (Action *)0x0) {
-      (pBVar3->fields).BoostCountChanged = pAVar11;
-      pAVar11 = (Action *)0x0;
-      if (pAVar4->klass == TypeInfo__System__Action) {
-        pAVar11 = pAVar4;
-      }
-      if (pAVar11 != (Action *)0x0) goto code_?;
-    }
-    func_?();
-  }
+  func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

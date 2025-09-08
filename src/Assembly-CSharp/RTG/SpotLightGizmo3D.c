@@ -1341,7 +1341,7 @@ void Assembly-CSharp.dll::RTG::SpotLightGizmo3D::SpotLightGizmo3D_UpdateTicks
           pGVar1 = (this->fields)._._gizmo;
           fVar5 = (float)((uint)(fVar7 * VVar8.y + fVar6 * VVar8.x +
                                 (float)method_00 * (float)puVar9) ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           VStack_10 = VVar8;
           puStack_11 = puVar9;
           if (pGVar1 != (Gizmo *)0x0) {
@@ -1480,17 +1480,17 @@ code_?:
                                               pSVar31 = pSVar30->vector[2];
                                               uVar32 = (uint)VStack_10.y ^
                                                                                                               
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                               ;
                                               fVar5 = (float)((uint)puStack_11 ^
                                                                                                                           
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                               if (pSVar31 != (SpotLightGizmo3D_AngleTick *)0x0) {
                                                 (pSVar31->fields).LightAxis.x =
                                                      (float)((uint)VStack_10.x ^
                                                                                                                         
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                 (pSVar31->fields).LightAxis.y = (float)uVar32;
                                                 (pSVar31->fields).LightAxis.z = fVar5;
@@ -1708,23 +1708,23 @@ code_?:
                                                     pSVar31 = pSVar30->vector[3];
                                                     VStack_10.y = (float)((uint)uVar22._4_4_ ^
                                                                                                                                                   
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   puStack_11 = (undefined *)
                                                                ((uint)fVar26 ^
                                                                                                                               
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   VStack_10.x = (float)((uint)(float)uVar22 ^
                                                                                                                                               
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pSVar31 != (SpotLightGizmo3D_AngleTick *)0x0)
                                                   {
                                                     (pSVar31->fields).LightAxis.x =
                                                          (float)((uint)(float)uVar22 ^
                                                                                                                                 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pSVar31->fields).LightAxis.y = VStack_10.y;
                                                   (pSVar31->fields).LightAxis.z = (float)puStack_11;

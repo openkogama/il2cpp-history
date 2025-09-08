@@ -90,7 +90,7 @@ void Assembly-CSharp.dll::RespawnButton::RespawnButton_Respawn
     }
     pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar5 != (IPlayModeUI *)0x0) {
-      func_?(6,TypeInfo__IPlayModeUI,pIVar5,0);
+      func_?(8,TypeInfo__IPlayModeUI,pIVar5,0);
       return;
     }
   }

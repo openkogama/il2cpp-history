@@ -55,11 +55,11 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::
 
 {
   fVar1 = (float)((uint)inVector.x ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar2 = (float)((uint)inVector.y ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar3 = (float)((uint)inVector.z ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   inVector.x = fVar1;
   inVector.y = fVar2;
   inVector.z = fVar3;
@@ -198,14 +198,14 @@ void Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_Updat
                   (&VStack_4,(MethodInfo *)0x0);
         fStack_7 = mvControllerColliderHit.elipsoidNormal.z *
                    (float)((uint)VStack_4.x ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
                    + mvControllerColliderHit.slopeNormal.x *
                      (float)((uint)VStack_4.y ^
-                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             ) +
                    mvControllerColliderHit.slopeNormal.y *
                    (float)((uint)VStack_4.z ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         if (_UNK_? < fStack_7) {
           fVar6 = (float10)func_?(&mvControllerColliderHit.slopeNormal.z,0);
           fStack_7 = (float)(fVar6 * (float10)fStack_7 * (float10)(float)pMStack_5);

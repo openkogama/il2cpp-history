@@ -475,23 +475,36 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_Update
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     pIVar2 = (this->fields).timerFill;
     if (pIVar2 != (Image *)0x0) {
+      value = _UNK_? - (fVar1 - (this->fields).started) / (this->fields).duration;
       UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                (pIVar2,_UNK_? - (fVar1 - (this->fields).started) / (this->fields).duration,
-                 (MethodInfo *)0x0);
+                (pIVar2,value,(MethodInfo *)0x0);
+      fVar1 = (this->fields).duration;
       pTVar3 = (this->fields).timerText;
-      func_?();
-      pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
-                         ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        IStack_4.m_value = (int32_t)&UNK_?;
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        IStack_4.m_value = (int32_t)&UNK_?;
+        func_?();
+      }
+      IStack_4.m_value = SUB84((double)(value * fVar1),0);
+      fVar5 = (float10)func_?();
+      IStack_4.m_value = (int32_t)fVar5;
+      pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
       if (pTVar3 != (Text *)0x0) {
-        (*(code *)(pTVar3->klass->vtable).set_text.method)(pTVar3,pSVar4);
+        (*(code *)(pTVar3->klass->vtable).set_text.method)
+                  (pTVar3,pSVar6,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+        ;
         return;
       }
     }
   }
   else {
-    pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if ((pGVar5 != (GameEventManager *)0x0) &&
-       (this_00 = (pGVar5->fields).AvatarCommandsPlayMode,
+    pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if ((pGVar7 != (GameEventManager *)0x0) &&
+       (this_00 = (pGVar7->fields).AvatarCommandsPlayMode,
        this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
       GameEventManager+AvatarCommandsPlayModeManager::
       GameEventManager_AvatarCommandsPlayModeManager_ReviveTimeElapsed(this_00,(MethodInfo *)0x0);
@@ -501,20 +514,20 @@ void Assembly-CSharp.dll::ReviveUIHandlerBase::ReviveUIHandlerBase_Update
       if (pIVar2 != (Image *)0x0) {
         UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
                   (pIVar2,0.0,(MethodInfo *)0x0);
-        pTStack6 = (this->fields).timerText;
-        if (pTStack6 != (Text *)0x0) {
-          pIStack7 =
-               (pTStack6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-          pSStack8 = StringLiteral__0;
-          (*(code *)(pTStack6->klass->vtable).set_text.method)();
+        pTStack8 = (this->fields).timerText;
+        if (pTStack8 != (Text *)0x0) {
+          pIStack9 =
+               (pTStack8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+          pSStack10 = StringLiteral__0;
+          (*(code *)(pTStack8->klass->vtable).set_text.method)();
           return;
         }
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

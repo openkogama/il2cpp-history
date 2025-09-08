@@ -415,7 +415,7 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateTargetRotat
   if (pTVar2 != (TargetRotation *)0x0) {
     uVar3 = (pTVar2->fields).eulerAngles.x;
     uVar4 = (pTVar2->fields).eulerAngles.y;
-    fVar5 = (float)(uVar3 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+    fVar5 = (float)(uVar3 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                    );
     fStack_6 = (float)uVar4;
     if (cRam_? == '\0') {
@@ -424,7 +424,7 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateTargetRotat
     }
     pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar7 != (IPlayModeUI *)0x0) {
-      bVar8 = func_?(5,TypeInfo__IPlayModeUI,pIVar7);
+      bVar8 = func_?(7,TypeInfo__IPlayModeUI,pIVar7);
       (this->fields)._.autoRotate = bVar8 ^ 1;
       if (((bVar8 ^ 1) != 0) && (((this->fields)._._._.ignoreInputTypes & 1) == 0)) {
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -447,7 +447,7 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateTargetRotat
       if (pTVar2 != (TargetRotation *)0x0) {
         TargetRotation::TargetRotation_SetTargetRotation_1
                   (pTVar2,(float)((uint)fVar5 ^
-                                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                  ),fStack_6,(MethodInfo *)0x0);
         return;
       }

@@ -16,19 +16,17 @@ void Assembly-CSharp.dll::TextBubbleController+BubbleTracker::
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Clear,(MethodInfo *)0x0);
-  pTVar1 = (this->fields).bubble;
+  this_00 = (this->fields).bubble;
   (this->fields).timeToLive = 0.0;
   (this->fields).currentLifeTime = 0.0;
-  if ((pTVar1 != (TextBubble *)0x0) &&
-     (this_00 = (pTVar1->fields).fadeGroup, this_00 != (CanvasGroup *)0x0)) {
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (this_00,0.0,(MethodInfo *)0x0);
+  if (this_00 != (TextBubble *)0x0) {
+    TextBubble::TextBubble_SetTransparancy(this_00,0.0,(MethodInfo *)0x0);
     TextBubbleController_BubbleTracker_set_Bubble(this,(TextBubble *)0x0,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

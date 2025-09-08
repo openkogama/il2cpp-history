@@ -13,18 +13,25 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
     cRam_? = '\x01';
   }
   this_00 = (this->fields).firstTimeEventMessage;
-  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+  this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
              *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
   DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
   DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_01,(Object *)this,
+            (this_02,(Object *)this,
              MethodInfo__FirstTimeActivatableMessagePopup__OnFinished_UnityEngine__GameObject_,
              (MethodInfo *)0x0);
   if (this_00 != (FirstTimeEventMessage *)0x0) {
-    FirstTimeEventMessage::FirstTimeEventMessage_FadeOut
-              (this_00,(Action_1_UnityEngine_GameObject_ *)this_01,(MethodInfo *)0x0);
-    return;
+    this_01 = (this_00->fields).fader;
+    targetGameObject =
+         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_01 != (FirstTimeFadeHandler *)0x0) {
+      FirstTimeFadeHandler::FirstTimeFadeHandler_StartFadeOut
+                (this_01,(Action_1_UnityEngine_GameObject_ *)this_02,targetGameObject,
+                 (MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
   pcVar1 = (code *)swi(3);
@@ -126,16 +133,18 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
                      );
   (this->fields).firstTimeEventMessage = pFVar1;
   func_?(&(this->fields).firstTimeEventMessage,pFVar1);
-  this_00 = (DebriefingWinnerGUI *)(this->fields).firstTimeEventMessage;
-  time = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
-  if (this_00 != (DebriefingWinnerGUI *)0x0) {
-    DebriefingWinnerGUI::DebriefingWinnerGUI_SetTimerText(this_00,time,(MethodInfo *)0x0);
+  pFVar1 = (this->fields).firstTimeEventMessage;
+  pSVar2 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
+  if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
+     (pTVar3 = (pFVar1->fields).message, pTVar3 != (Text *)0x0)) {
+    (*(code *)(pTVar3->klass->vtable).set_text.method)(pTVar3,pSVar2);
     (this->fields).isShown = 1;
     if (cRam_? == '\0') {
       func_?();
-      func_?();
-      func_?();
-      time = (String *)&UNK_?;
+      func_?(&
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                     );
+      func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       func_?(&
                       MethodInfo__FirstTimeActivatableMessagePopup___PushToStack_b__11_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      );
@@ -143,7 +152,11 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
     }
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
@@ -156,27 +169,22 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
               (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    iVar2 = iRam_?;
-    if ((this->fields).firstTimeEventMessage != (FirstTimeEventMessage *)0x0) {
-      if (iRam_? != 0) {
-        puVar3 = (undefined4 *)(iRam_? + 0x10);
-        *(undefined1 *)(iRam_? + 0x24) = 1;
-        if ((CanvasGroup *)*puVar3 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    ((CanvasGroup *)*puVar3,0.0,(MethodInfo *)0x0);
-          *(undefined4 *)(iVar2 + 0x20) = 0;
-          return;
-        }
+    pFVar1 = (this->fields).firstTimeEventMessage;
+    if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
+       (pFVar4 = (pFVar1->fields).fader, pFVar4 != (FirstTimeFadeHandler *)0x0)) {
+      this_00 = (pFVar4->fields).canvasGroup;
+      (pFVar4->fields).fadingIn = 1;
+      if (this_00 != (CanvasGroup *)0x0) {
+        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                  (this_00,0.0,(MethodInfo *)0x0);
+        (pFVar4->fields).currentFadeInTime = 0.0;
+        return;
       }
-      func_?(time);
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -242,22 +250,29 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
         cRam_? = '\x01';
       }
       this_00 = (this->fields).firstTimeEventMessage;
-      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                  *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
       DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
       DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_01,(Object *)this,
+                (this_02,(Object *)this,
                  MethodInfo__FirstTimeActivatableMessagePopup__OnFinished_UnityEngine__GameObject_,
                  (MethodInfo *)0x0);
       if (this_00 == (FirstTimeEventMessage *)0x0) {
+code_?:
         func_?();
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
         return;
       }
-      FirstTimeEventMessage::FirstTimeEventMessage_FadeOut
-                (this_00,(Action_1_UnityEngine_GameObject_ *)this_01,(MethodInfo *)0x0);
+      this_01 = (this_00->fields).fader;
+      targetGameObject =
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this_00,(MethodInfo *)0x0);
+      if (this_01 == (FirstTimeFadeHandler *)0x0) goto code_?;
+      FirstTimeFadeHandler::FirstTimeFadeHandler_StartFadeOut
+                (this_01,(Action_1_UnityEngine_GameObject_ *)this_02,targetGameObject,
+                 (MethodInfo *)0x0);
       (this->fields).isDone = 1;
     }
     if ((this->fields).isShown != 0) {
@@ -357,8 +372,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessagePopup::FirstTimeActivatable
   (this->fields)._.onShowSound = 3;
   (this->fields)._.prerequisiteEvent = -1;
   (this->fields)._.checkForStackBlocking = 1;
-  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

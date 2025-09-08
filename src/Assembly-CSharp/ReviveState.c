@@ -317,36 +317,21 @@ void Assembly-CSharp.dll::ReviveState::ReviveState_set_SafeGroundedData
   if (bVar1 == 0) {
     return;
   }
-  uStack_2._4_4_ = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
-  ;
-  if (uStack_2._4_4_ - (this->fields).safeSpotSuppressedTime <
-      (this->fields).safeSpotSuppressedDuration) {
+  fStack_2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  if (fStack_2 - (this->fields).safeSpotSuppressedTime < (this->fields).safeSpotSuppressedDuration)
+  {
     return;
   }
   pLVar3 = (this->fields).safePositions;
   if (pLVar3 != (List_1_SafeSpotData_ *)0x0) {
     if ((pLVar3->fields)._size != 0) {
-      pfVar4 = (float *)func_?(auStack_5,(this->fields).safePositions,
-                                        (pLVar3->fields)._size + -1,
-                                        MethodInfo__System__Collections__Generic__List<SafeSpotData>__get_Item_int_
-                                       );
-      fStack_6 = pfVar4[4];
-      fStack_7 = pfVar4[5];
-      fStack_8 = pfVar4[6];
-      fStack_9 = pfVar4[7];
-      fStack_10 = pfVar4[8];
-      fStack_11 = pfVar4[9];
-      fStack_12 = pfVar4[10];
-      fStack_13 = pfVar4[0xb];
-      fStack_14 = *pfVar4 - value.Position.x;
-      uStack_15 = *(undefined8 *)(pfVar4 + 0xc);
-      uStack_2._0_4_ = pfVar4[1] - value.Position.y;
-      fStack_16 = pfVar4[2] - value.Position.z;
-      uStack_2._4_4_ = fStack_16;
-      fVar17 = (float10)func_?(&fStack_14,0);
-      uStack_2._4_4_ = (float)fVar17;
+      pfVar4 = (float *)func_?(&stack0xffffff70,(this->fields).safePositions);
+      fStack_5 = pfVar4[2] - value.Position.z;
+      uStack_6 = CONCAT44(pfVar4[1] - value.Position.y,*pfVar4 - value.Position.x);
+      fVar7 = (float10)func_?(&uStack_6,0);
+      fStack_2 = (float)fVar7;
       pfVar4 = &(this->fields).minDistanceBetweenSafePositions;
-      if (uStack_2._4_4_ < *pfVar4 || uStack_2._4_4_ == *pfVar4) {
+      if (fStack_2 < *pfVar4 || fStack_2 == *pfVar4) {
         return;
       }
       pLVar3 = (this->fields).safePositions;
@@ -355,19 +340,8 @@ void Assembly-CSharp.dll::ReviveState::ReviveState_set_SafeGroundedData
         pLVar3 = (this->fields).safePositions;
         goto code_?;
       }
-      iVar18 = (this->fields).maxNumberOfSafePositions;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__System__Math);
-        cRam_? = '\x01';
-      }
-      uStack_2._4_4_ = (float)(iVar18 / 2);
-      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__Math);
-      }
-      uStack_2 = (double)uStack_2._4_4_;
-      func_?(SUB84(uStack_2,0),(int)((ulonglong)uStack_2 >> 0x20));
-      iVar19 = func_?();
-      (this->fields).currentPreviewedSafePosition = iVar19;
+      iVar8 = func_?();
+      (this->fields).currentPreviewedSafePosition = iVar8;
       pLVar3 = (this->fields).safePositions;
       if (pLVar3 == (List_1_SafeSpotData_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
@@ -383,16 +357,14 @@ code_?:
       func_?(pLVar3,value.Position.x,value.Position.y,value.Position.z,value.Rotation.x,
                       value.Rotation.y,value.Rotation.z,value.Rotation.w,value.CameraPosition.x,
                       value.CameraPosition.y,value.CameraPosition.z,value.CameraRotation.x,
-                      value.CameraRotation.y,value.CameraRotation.z,value.CameraRotation.w,
-                      MethodInfo__System__Collections__Generic__List<SafeSpotData>__Add_SafeSpotData_
-                     );
+                      value.CameraRotation.y,value.CameraRotation._8_8_);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

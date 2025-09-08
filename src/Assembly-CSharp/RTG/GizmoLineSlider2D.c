@@ -1863,9 +1863,9 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoLineSlider2D::GizmoLineSlider2D_get_Direc
               WebCompletionSource_1_T_Result_System_Object__get_Success(this_00,(MethodInfo *)0x0);
       if (bVar11 != 0) {
         VVar8.y = (float)((uint)puStack_10 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         VVar8.x = (float)((uint)fVar9 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         return VVar8;
       }
     }

@@ -150,8 +150,8 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_BindExtenderToClosestBorder
                                 ((Vector3 *)&stack0xffffffc8,pTVar1,(MethodInfo *)0x0);
             uVar7 = pVVar3->x;
             uVar8 = pVVar3->y;
-            fVar9 = (float)uVar4 - (3.5690055e-29 - (float)uVar7);
-            fVar10 = SUB84(uVar4,4) - (3.5690124e-29 - (float)uVar8);
+            fVar9 = (float)uVar4 - (3.5658518e-29 - (float)uVar7);
+            fVar10 = SUB84(uVar4,4) - (3.5658587e-29 - (float)uVar8);
             fVar5 = fVar5 - ((float)puVar6 - pVVar3->z);
             pCVar11 = (Camera *)(fVar10 * fVar10 + fVar9 * fVar9 + fVar5 * fVar5);
             camera = (Camera *)&stack0xffffffc8;
@@ -179,8 +179,8 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_BindExtenderToClosestBorder
                                     ((Vector3 *)&stack0xffffffc8,pTVar1,(MethodInfo *)0x0);
                 uVar14 = pVVar3->x;
                 uVar15 = pVVar3->y;
-                fVar9 = (float)uVar13 - ((float)uVar14 + 3.5690055e-29);
-                fVar10 = SUB84(uVar13,4) - ((float)uVar15 + 3.5690124e-29);
+                fVar9 = (float)uVar13 - ((float)uVar14 + 3.5658518e-29);
+                fVar10 = SUB84(uVar13,4) - ((float)uVar15 + 3.5658587e-29);
                 fVar5 = fVar5 - ((float)puVar6 + pVVar3->z);
                 pCVar2 = (this->fields).anchor;
                 fVar5 = fVar10 * fVar10 + fVar9 * fVar9 + fVar5 * fVar5;
@@ -202,8 +202,8 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_BindExtenderToClosestBorder
                                                   (MethodInfo *)0x0);
                     uVar17 = pVVar3->x;
                     uVar18 = pVVar3->y;
-                    fVar10 = (float)uVar16 - (3.5690055e-29 - (float)uVar17);
-                    fVar19 = SUB84(uVar16,4) - (3.5690124e-29 - (float)uVar18);
+                    fVar10 = (float)uVar16 - (3.5658518e-29 - (float)uVar17);
+                    fVar19 = SUB84(uVar16,4) - (3.5658587e-29 - (float)uVar18);
                     fVar9 = fVar9 - ((float)puVar6 - pVVar3->z);
                     fVar10 = fVar19 * fVar19 + fVar10 * fVar10 + fVar9 * fVar9;
                     fVar9 = fVar5;
@@ -346,8 +346,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void CalculateExtenderBorderVertices(ExtenderBorderInfo, Vector3 ByRef, Vector3 ByRef) */
 
 void Assembly-CSharp.dll::ChatBubble::ChatBubble_CalculateExtenderBorderVertices
@@ -373,10 +371,10 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_CalculateExtenderBorderVertices
         switch((info->fields).Border) {
         case 0:
           fStack_4 = (float)((uint)fStack_4 ^
-                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
           v1->x = (float)((uint)fVar2 ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) +
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
                   (info->fields).CutoffNear;
           v2->x = fVar2 - (info->fields).CutoffFar;
           fStack_4 = fStack_4 + (info->fields).Margin;
@@ -385,9 +383,9 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_CalculateExtenderBorderVertices
           break;
         case 1:
           fVar2 = (float)((uint)fVar2 ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           v1->y = (float)((uint)fStack_4 ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) +
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
                   (info->fields).CutoffNear;
           v2->y = fStack_4 - (info->fields).CutoffFar;
           fVar2 = fVar2 + (info->fields).Margin;
@@ -396,7 +394,7 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_CalculateExtenderBorderVertices
           return;
         case 2:
           v1->y = (float)((uint)fStack_4 ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) +
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
                   (info->fields).CutoffNear;
           v2->y = fStack_4 - (info->fields).CutoffFar;
           fVar2 = fVar2 - (info->fields).Margin;
@@ -405,7 +403,7 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_CalculateExtenderBorderVertices
           return;
         case 3:
           v1->x = (float)((uint)fVar2 ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) +
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
                   (info->fields).CutoffNear;
           v2->x = fVar2 - (info->fields).CutoffFar;
           fStack_4 = fStack_4 - (info->fields).Margin;
@@ -514,7 +512,7 @@ bool Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoHeight
             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
             RectTransform_SetSizeWithCurrentAnchors
                       (pRVar2,RectTransform_Axis__Enum_Vertical,
-                       (fVar5 - 3.569575e-29) + pRVar3->m_Height,(MethodInfo *)0x0);
+                       (fVar5 - 3.5664214e-29) + pRVar3->m_Height,(MethodInfo *)0x0);
             return 1;
           }
         }
@@ -566,7 +564,7 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoSize
         if (fVar4 <= fVar5) {
           fVar4 = fVar5;
         }
-        if (fVar4 == 3.5696642e-29) {
+        if (fVar4 == 3.5665105e-29) {
           return;
         }
         pRVar3 = ChatBubble_get_rectTransform(this,(MethodInfo *)0x0);
@@ -578,7 +576,7 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoSize
             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
             RectTransform_SetSizeWithCurrentAnchors
                       (pRVar3,RectTransform_Axis__Enum_Horizontal,
-                       ((float)&stack0xffffffd4 - 3.5696642e-29) + pRVar7->m_Width,(MethodInfo *)0x0
+                       ((float)&stack0xffffffd4 - 3.5665105e-29) + pRVar7->m_Width,(MethodInfo *)0x0
                       );
             ChatBubble_PerformAutoHeight(this,(MethodInfo *)0x0);
             return;
@@ -635,7 +633,7 @@ bool Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoWidth
             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
             RectTransform_SetSizeWithCurrentAnchors
                       (pRVar2,RectTransform_Axis__Enum_Horizontal,
-                       (fVar5 - 3.5697638e-29) + pRVar3->m_Width,(MethodInfo *)0x0);
+                       (fVar5 - 3.56661e-29) + pRVar3->m_Width,(MethodInfo *)0x0);
             return 1;
           }
         }
@@ -649,8 +647,6 @@ bool Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformAutoWidth
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void PerformExtenderPosition() */
 
 void Assembly-CSharp.dll::ChatBubble::ChatBubble_PerformExtenderPosition
@@ -683,83 +679,59 @@ code_?:
       cRam_? = '\x01';
     }
     pEVar2 = (this->fields).ExtenderBorderInfo;
-    uVar3 = pEVar2 == (ExtenderBorderInfo__Array *)0x0;
-    if (!(bool)uVar3) {
-      uVar4 = (this->fields).ExtenderDock;
-      uVar3 = uVar4 == pEVar2->max_length;
-      if (pEVar2->max_length <= uVar4) goto code_?;
-      info = pEVar2->vector[uVar4];
-      pTVar5 = (Transform *)ChatBubble_get_rectTransform(this,(MethodInfo *)0x0);
-      uVar3 = pTVar5 == (Transform *)0x0;
-      if (!(bool)uVar3) {
+    if (pEVar2 != (ExtenderBorderInfo__Array *)0x0) {
+      uVar3 = (this->fields).ExtenderDock;
+      if (pEVar2->max_length <= uVar3) goto code_?;
+      info = pEVar2->vector[uVar3];
+      pTVar4 = (Transform *)ChatBubble_get_rectTransform(this,(MethodInfo *)0x0);
+      if (pTVar4 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                  ((Vector3 *)&stack0xffffffe4,pTVar5,(MethodInfo *)0x0);
+                  ((Vector3 *)&stack0xffffffe4,pTVar4,(MethodInfo *)0x0);
         this_01 = ChatBubble_get_rectTransform(this,(MethodInfo *)0x0);
-        uVar3 = this_01 == (RectTransform *)0x0;
-        if (!(bool)uVar3) {
-          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta
-                    (this_01,(MethodInfo *)0x0);
-          uVar3 = info == (ExtenderBorderInfo *)0x0;
-          if (!(bool)uVar3) {
-            ChatBubble_SetExtenderAnchorPosToBorder(this,info,(MethodInfo *)0x0);
-            return;
-          }
+        if ((this_01 != (RectTransform *)0x0) &&
+           (UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta
+                      (this_01,(MethodInfo *)0x0), info != (ExtenderBorderInfo *)0x0)) {
+          ChatBubble_SetExtenderAnchorPosToBorder(this,info,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
   else {
-    pCVar6 = (this->fields).anchor;
+    pCVar5 = (this->fields).anchor;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pCVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
+                      ((Object_1 *)pCVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 == 0) goto code_?;
-    pCVar6 = (this->fields).anchor;
-    uVar3 = pCVar6 == (ChatAnchor *)0x0;
-    if (!(bool)uVar3) {
-      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pCVar6,(MethodInfo *)0x0);
-      uVar3 = pTVar5 == (Transform *)0x0;
-      if (!(bool)uVar3) {
-        pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xfffffff0,pTVar5,(MethodInfo *)0x0);
-        uVar3 = this_00 == (Camera *)0x0;
-        if (!(bool)uVar3) {
-          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToViewportPoint_1
-                              ((Vector3 *)&stack0xffffffe4,this_00,*pVVar7,(MethodInfo *)0x0);
-          uVar8 = pVVar7->x;
-          uVar9 = pVVar7->y;
-          if ((((pVVar7->z <= 0.0) || ((float)uVar8 <= 0.0)) || (_UNK_? <= (float)uVar8)) ||
-             (((float)uVar9 <= 0.0 || (_UNK_? <= (float)uVar9)))) {
-            in_stack_10 = 0;
-            ChatBubble_BindExtenderToClosestBorder(this,this_00,(MethodInfo *)0x0);
-          }
-          else {
-            in_stack_10 = 0;
-            ChatBubble_BindExtenderDock(this,ExtenderBorderEnum__Enum_Bottom,(MethodInfo *)0x0);
-          }
-          goto code_?;
-        }
+    pCVar5 = (this->fields).anchor;
+    if (((pCVar5 != (ChatAnchor *)0x0) &&
+        (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pCVar5,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) &&
+       (pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                           ((Vector3 *)&stack0xfffffff0,pTVar4,(MethodInfo *)0x0),
+       this_00 != (Camera *)0x0)) {
+      pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToViewportPoint_1
+                         ((Vector3 *)&stack0xffffffe4,this_00,*pVVar6,(MethodInfo *)0x0);
+      uVar7 = pVVar6->x;
+      uVar8 = pVVar6->y;
+      if (((pVVar6->z <= 0.0) || ((float)uVar7 <= 0.0)) ||
+         ((_UNK_? <= (float)uVar7 ||
+          (((float)uVar8 <= 0.0 || (_UNK_? <= (float)uVar8)))))) {
+        ChatBubble_BindExtenderToClosestBorder(this,this_00,(MethodInfo *)0x0);
       }
+      else {
+        ChatBubble_BindExtenderDock(this,ExtenderBorderEnum__Enum_Bottom,(MethodInfo *)0x0);
+      }
+      goto code_?;
     }
   }
   func_?();
 code_?:
-  uVar4 = func_?();
-  if ((bool)uVar3) {
-    bVar11 = false;
-  }
-  else {
-    pbVar12 = (byte *)((int)&stack0x00000024 + (uVar4 ^ 0x35047410) + 1);
-    bVar11 = CARRY1(*pbVar12,extraout_DH);
-    *pbVar12 = *pbVar12 + extraout_DH;
-  }
-  pcVar13 = (char *)((int)&stack0x00000024 + (uVar4 ^ 0x35047410) + 1);
-  *pcVar13 = *pcVar13 + extraout_DH + bVar11;
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -975,6 +947,7 @@ code_?:
   func_?();
 code_?:
   func_?();
+  segment(in_DS,(short)this);
   pcVar13 = (code *)swi(3);
   (*pcVar13)();
   return;
@@ -1092,81 +1065,169 @@ void Assembly-CSharp.dll::ChatBubble::ChatBubble_SetExtenderAnchorPosToBorder
   switch((this->fields).ExtenderDock) {
   case 0:
     pIVar1 = (this->fields).ExtenderComponent;
-    if (pIVar1 == (Image *)0x0) goto code_?;
-    this_00 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                        ((Graphic *)pIVar1,(MethodInfo *)0x0);
-    pIVar1 = (this->fields).ExtenderComponent;
-    if ((pIVar1 == (Image *)0x0) ||
-       (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                           ((Graphic *)pIVar1,(MethodInfo *)0x0), pRVar2 == (RectTransform *)0x0))
-    goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
-              (pRVar2,(MethodInfo *)0x0);
-    goto joined_?;
+    if (pIVar1 != (Image *)0x0) {
+      this_01 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                          ((Graphic *)pIVar1,(MethodInfo *)0x0);
+      pIVar1 = (this->fields).ExtenderComponent;
+      if ((pIVar1 != (Image *)0x0) &&
+         (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                              ((Graphic *)pIVar1,(MethodInfo *)0x0), pRVar2 != (RectTransform *)0x0
+         )) {
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
+                  (pRVar2,(MethodInfo *)0x0);
+joined_?:
+        if (info != (ExtenderBorderInfo *)0x0) {
+code_?:
+          if (this_01 != (RectTransform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+            RectTransform_set_anchoredPosition(this_01,(Vector2)0x0,(MethodInfo *)0x0);
+code_?:
+            return;
+          }
+        }
+      }
+    }
+    break;
   case 1:
     pIVar1 = (this->fields).ExtenderComponent;
-    if (((pIVar1 == (Image *)0x0) ||
-        (this_00 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                             ((Graphic *)pIVar1,(MethodInfo *)0x0),
-        info == (ExtenderBorderInfo *)0x0)) ||
-       ((pIVar1 = (this->fields).ExtenderComponent, pIVar1 == (Image *)0x0 ||
-        (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                            ((Graphic *)pIVar1,(MethodInfo *)0x0), pRVar2 == (RectTransform *)0x0)))
-       ) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
-              (pRVar2,(MethodInfo *)0x0);
+    if (pIVar1 != (Image *)0x0) {
+      this_01 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                          ((Graphic *)pIVar1,(MethodInfo *)0x0);
+      if (info != (ExtenderBorderInfo *)0x0) {
+        pCVar3 = (ChatBubble *)(info->fields).Margin;
+        pIVar1 = (this->fields).ExtenderComponent;
+        this = pCVar3;
+        if ((pIVar1 != (Image *)0x0) &&
+           (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                                ((Graphic *)pIVar1,(MethodInfo *)0x0),
+           pRVar2 != (RectTransform *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
+                    (pRVar2,(MethodInfo *)0x0);
+          goto code_?;
+        }
+      }
+    }
     break;
   case 2:
     pIVar1 = (this->fields).ExtenderComponent;
-    if ((((pIVar1 == (Image *)0x0) ||
-         (this_00 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                              ((Graphic *)pIVar1,(MethodInfo *)0x0),
-         info == (ExtenderBorderInfo *)0x0)) ||
-        (pIVar1 = (this->fields).ExtenderComponent, pIVar1 == (Image *)0x0)) ||
-       (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                           ((Graphic *)pIVar1,(MethodInfo *)0x0), pRVar2 == (RectTransform *)0x0))
-    goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
-              (pRVar2,(MethodInfo *)0x0);
+    if (pIVar1 != (Image *)0x0) {
+      this_01 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                          ((Graphic *)pIVar1,(MethodInfo *)0x0);
+      if (info != (ExtenderBorderInfo *)0x0) {
+        pCVar3 = (ChatBubble *)(info->fields).Margin;
+        pIVar1 = (this->fields).ExtenderComponent;
+        this = pCVar3;
+        if ((pIVar1 != (Image *)0x0) &&
+           (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                                ((Graphic *)pIVar1,(MethodInfo *)0x0),
+           pRVar2 != (RectTransform *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
+                    (pRVar2,(MethodInfo *)0x0);
+          goto code_?;
+        }
+      }
+    }
     break;
   case 3:
     pIVar1 = (this->fields).ExtenderComponent;
-    if (pIVar1 == (Image *)0x0) goto code_?;
-    this_00 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                        ((Graphic *)pIVar1,(MethodInfo *)0x0);
-    pIVar1 = (this->fields).ExtenderComponent;
-    if ((pIVar1 == (Image *)0x0) ||
-       (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                           ((Graphic *)pIVar1,(MethodInfo *)0x0), pRVar2 == (RectTransform *)0x0))
-    goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
-              (pRVar2,(MethodInfo *)0x0);
-joined_?:
-    if (info == (ExtenderBorderInfo *)0x0) goto code_?;
+    if (pIVar1 != (Image *)0x0) {
+      this_01 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                          ((Graphic *)pIVar1,(MethodInfo *)0x0);
+      pIVar1 = (this->fields).ExtenderComponent;
+      if ((pIVar1 != (Image *)0x0) &&
+         (pRVar2 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
+                              ((Graphic *)pIVar1,(MethodInfo *)0x0), pRVar2 != (RectTransform *)0x0
+         )) {
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
+                  (pRVar2,(MethodInfo *)0x0);
+        goto joined_?;
+      }
+    }
     break;
   default:
     goto code_?;
   }
-  if (this_00 != (RectTransform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
-              (this_00,(Vector2)0x0,(MethodInfo *)0x0);
-code_?:
+  uVar4 = func_?();
+  in_AF = 9 < ((byte)uVar4 & 0xf) | in_AF;
+  uVar5 = CONCAT31((int3)((uint)uVar4 >> 8),(byte)uVar4 + in_AF * -6) & 0xffffff0f;
+  iVar6 = CONCAT22((short)(uVar5 >> 0x10),CONCAT11((char)((uint)uVar4 >> 8) - in_AF,(char)uVar5)
+                   );
+  if (extraout_ECX != 1) {
+    pcVar7 = (code *)swi(0x4f);
+    (*pcVar7)();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  cRam_? = cRam_? + extraout_DH + in_AF;
+  piVar8 = (int *)(iVar6 + 0xADDR);
+  puVar9 = (uint *)(iVar6 + -0x2ff8ef61);
+  uVar5 = *puVar9;
+  *puVar9 = *puVar9 + (int)piVar8;
+  *piVar8 = (int)piVar8 + (uint)CARRY4(uVar5,(uint)piVar8) + *piVar8;
+  if (*piVar8 == 0) {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar10 != (MVGameControllerBase *)0x0) &&
+      (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) &&
+     (pMVar12 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar11,(MethodInfo *)0x0),
+     pMVar12 != (MVLocalPlayer *)0x0)) {
+    bVar13 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)pMVar12,(MethodInfo *)0x0);
+    if (bVar13 != 0) {
+      pCVar14 = (this->fields).anchor;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        ((Object_1 *)pCVar14,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar13 == 0) {
+        pCVar14 = (this->fields).anchor;
+        if ((pCVar14 != (ChatAnchor *)0x0) &&
+           (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pCVar14,(MethodInfo *)0x0), this_02 != (Transform *)0x0
+           )) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                    ((Vector3 *)&stack0xffffffe0,this_02,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+          if (((pMVar10 != (MVGameControllerBase *)0x0) &&
+              (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) &&
+             ((pMVar12 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar11,(MethodInfo *)0x0),
+              pMVar12 != (MVLocalPlayer *)0x0 &&
+              (pSVar15 = (pMVar12->fields).spawnRoleDataMediator,
+              pSVar15 != (SpawnRoleDataMediator *)0x0)))) {
+            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
+            SpawnRoleVariable`1[UnityEngine::Vector3]::
+            SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
+                      ((Vector3 *)&stack0xffffffd4,
+                       (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar15->fields).position,
+                       MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+                      );
+            fVar16 = (float10)func_?();
+            if ((float)fVar16 <= _UNK_?) {
+              return;
+            }
+            this_00 = (this->fields).CanvasGroup;
+            if (this_00 != (CanvasGroup *)0x0) {
+              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                        (this_00,(_UNK_? - (float)fVar16) / _UNK_?,(MethodInfo *)0x0);
+              return;
+            }
+          }
+        }
+        goto code_?;
+      }
+    }
     return;
   }
 code_?:
-  cVar3 = '\0';
   func_?();
-  pcVar4 = (code *)swi(4);
-  iVar5 = extraout_ECX;
-  cVar6 = extraout_AH;
-  if (cVar3 == '\x01') {
-    (*pcVar4)();
-    iVar5 = extraout_ECX_00;
-    cVar6 = extraout_AH_00;
-  }
-  *(char *)(iVar5 + 0x1710350b) = *(char *)(iVar5 + 0x1710350b) + cVar6;
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

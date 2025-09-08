@@ -878,148 +878,132 @@ void Assembly-CSharp.dll::DesktopEditModeController::DesktopEditModeController_I
   (this->fields)._EditModeStateMachine_k__BackingField = pEVar4;
   func_?(&(this->fields)._EditModeStateMachine_k__BackingField,pEVar4);
   pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
-  if ((pEVar4 == (EditorStateMachine *)0x0) ||
+  if ((pEVar4 != (EditorStateMachine *)0x0) &&
      (this_00 = (pEVar4->fields).cubeModelingStateMachine,
-     this_00 == (CubeModelingStateMachine *)0x0)) {
-code_?:
-    func_?();
-  }
-  else {
+     this_00 != (CubeModelingStateMachine *)0x0)) {
     CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
               (this_00,0x15,(MethodInfo *)0x0);
     pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
     value = (Object *)func_?();
-    if (pEVar4 == (EditorStateMachine *)0x0) goto code_?;
-    FSMEntity::FSMEntity_set_Event((FSMEntity *)pEVar4,value,(MethodInfo *)0x0);
-    (this->fields).stateMachine = (FSMEntity *)(this->fields)._EditModeStateMachine_k__BackingField;
-    func_?();
-    pDVar5 = (this->fields).drawPlaneController;
-    if (pDVar5 == (DrawPlaneControllerUUI *)0x0) goto code_?;
-    DrawPlaneControllerUUI::DrawPlaneControllerUUI_Initialize(pDVar5,(MethodInfo *)0x0);
-    pDVar5 = (this->fields).drawPlaneController;
-    if (cRam_? == '\0') {
+    if (pEVar4 != (EditorStateMachine *)0x0) {
+      FSMEntity::FSMEntity_set_Event((FSMEntity *)pEVar4,value,(MethodInfo *)0x0);
+      (this->fields).stateMachine =
+           (FSMEntity *)(this->fields)._EditModeStateMachine_k__BackingField;
       func_?();
-      cRam_? = '\x01';
-    }
-    TypeInfo__DrawPlane->static_fields->drawPlaneController = pDVar5;
-    func_?();
-    this_01 = (this->fields).editorWorldObjectCreation;
-    if (this_01 == (EditorWorldObjectCreation *)0x0) goto code_?;
-    EditorWorldObjectCreation::EditorWorldObjectCreation_Initialize
-              (this_01,(this->fields)._EditModeStateMachine_k__BackingField,(MethodInfo *)0x0);
-    pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
-    if ((pEVar4 == (EditorStateMachine *)0x0) ||
-       (pMVar6 = (this->fields).materialsController, pMVar6 == (MaterialsControllerEditMode *)0x0))
-    goto code_?;
-    MaterialsController::MaterialsController_Initialize
-              ((MaterialsController *)pMVar6,(pEVar4->fields).cubeModelingStateMachine,
-               (MethodInfo *)0x0);
-    pMVar6 = (this->fields).materialsController;
-    this_02 = (this->fields).uiStack;
-    if (pMVar6 == (MaterialsControllerEditMode *)0x0) goto code_?;
-    this_06 = (Component *)(*(code *)(pMVar6->klass->vtable).SetActive.method)();
-    if (this_06 == (Component *)0x0) goto code_?;
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       (this_06,(MethodInfo *)0x0);
-    if (this_02 == (UIStack *)0x0) goto code_?;
-    UIStack::UIStack_Push
-              (this_02,pGVar1,UIPushOption__Enum_None,(UnityAction *)0x0,UIGroupFlags__Enum_MainUI,
-               (MethodInfo *)0x0);
-    pCVar2 = (this->fields).contextMenuController;
-    pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
-    if (pCVar2 == (ContextMenuController *)0x0) goto code_?;
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?();
-      cRam_? = '\x01';
-    }
-    (pCVar2->fields).editorStateMachine = pEVar4;
-    func_?();
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-        (IEditModeUI *)0x0) goto code_?;
-    iVar7 = func_?();
-    if (iVar7 == 0) goto code_?;
-    pDVar8 = *(Delegate **)(iVar7 + 8);
-    this_07 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_07,(Object *)MethodInfo__ContextMenuController__OnFailedToAddItem__,
-               MethodInfo__ContextMenuController__OnFailedToAddItem__,(MethodInfo *)0x0);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        (pDVar8,(Delegate *)this_07,(MethodInfo *)0x0);
-    if (pDVar8 == (Delegate *)0x0) {
-      *(undefined4 *)(iVar7 + 8) = 0;
-code_?:
-      func_?();
-      pGVar3 = (this->fields).gizmoController;
-      pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
-      if (pGVar3 != (GizmoController *)0x0) {
+      pDVar5 = (this->fields).drawPlaneController;
+      if (pDVar5 != (DrawPlaneControllerUUI *)0x0) {
+        DrawPlaneControllerUUI::DrawPlaneControllerUUI_Initialize(pDVar5,(MethodInfo *)0x0);
+        pDVar5 = (this->fields).drawPlaneController;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        (pGVar3->fields).editorStateMachine = pEVar4;
+        TypeInfo__DrawPlane->static_fields->drawPlaneController = pDVar5;
         func_?();
-        pEVar4 = (pGVar3->fields).editorStateMachine;
-        this_08 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                   *)func_?();
-        System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP
-        ::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-        __Il2CppFullySharedGenericType]::
-        SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                  (this_08,(SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                            *)pEVar4,(MethodInfo *)0x0);
-        (pGVar3->fields).rotationHelper = (RotationHelper *)this_08;
-        func_?(&(pGVar3->fields).rotationHelper);
-        this_03 = (this->fields).clientShopController;
-        if (this_03 != (EditModeClientShopController *)0x0) {
-          EditModeClientShopController::EditModeClientShopController_Initialize
-                    (this_03,(this->fields).repositoryController,(MethodInfo *)0x0);
-          this_04 = (this->fields).playerInventoryController;
-          if (this_04 != (PlayerInventoryController *)0x0) {
-            PlayerInventoryController::PlayerInventoryController_Initialize
-                      (this_04,(MethodInfo *)0x0);
-            this_05 = (this->fields).goldPurchasedTracker;
-            if (this_05 != (GoldPurchasedTracker *)0x0) {
-              GoldPurchasedTracker::GoldPurchasedTracker_Initialize(this_05,(MethodInfo *)0x0);
-              pGVar1 = (this->fields).stackBottom;
-              pRVar9 = (this->fields).notificationsManager;
-              if (pGVar1 != (GameObject *)0x0) {
-                parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
-                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                pRVar9 = (RectTransform *)
-                          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                                    ((Object *)pRVar9,parent,0,
-                                     UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
-                                    );
-                (this->fields).notificationsManager = pRVar9;
-                func_?();
-                pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
-                if (pEVar4 != (EditorStateMachine *)0x0) {
-                  pFVar10 = (this->fields).firstTimeSetupTerrainEditTutorial;
-                  pMVar6 = (this->fields).materialsController;
-                  if (pFVar10 != (FirstTimeSetupTerrainEditTutorial *)0x0) {
-                    (pFVar10->fields).cubeModelingStateMachine =
-                         (pEVar4->fields).cubeModelingStateMachine;
-                    func_?();
-                    (pFVar10->fields).materialsController = (MaterialsController *)pMVar6;
-                    func_?();
+        this_01 = (this->fields).editorWorldObjectCreation;
+        if (this_01 != (EditorWorldObjectCreation *)0x0) {
+          EditorWorldObjectCreation::EditorWorldObjectCreation_Initialize
+                    (this_01,(this->fields)._EditModeStateMachine_k__BackingField,(MethodInfo *)0x0)
+          ;
+          pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
+          if ((pEVar4 != (EditorStateMachine *)0x0) &&
+             (pMVar6 = (this->fields).materialsController,
+             pMVar6 != (MaterialsControllerEditMode *)0x0)) {
+            MaterialsController::MaterialsController_Initialize
+                      ((MaterialsController *)pMVar6,(pEVar4->fields).cubeModelingStateMachine,
+                       (MethodInfo *)0x0);
+            pMVar6 = (this->fields).materialsController;
+            this_02 = (this->fields).uiStack;
+            if (pMVar6 != (MaterialsControllerEditMode *)0x0) {
+              this_06 = (Component *)(*(code *)(pMVar6->klass->vtable).SetActive.method)();
+              if (this_06 != (Component *)0x0) {
+                pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject(this_06,(MethodInfo *)0x0);
+                if (this_02 != (UIStack *)0x0) {
+                  UIStack::UIStack_Push
+                            (this_02,pGVar1,UIPushOption__Enum_None,(UnityAction *)0x0,
+                             UIGroupFlags__Enum_MainUI,(MethodInfo *)0x0);
+                  pCVar2 = (this->fields).contextMenuController;
+                  if (pCVar2 != (ContextMenuController *)0x0) {
+                    ContextMenuController::ContextMenuController_Initialize
+                              (pCVar2,(this->fields)._EditModeStateMachine_k__BackingField,
+                               (MethodInfo *)0x0);
+                    pGVar3 = (this->fields).gizmoController;
                     pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
-                    if (pEVar4 != (EditorStateMachine *)0x0) {
-                      pSVar11 = (this->fields).setupCubeModelTutorialUI;
-                      if (pSVar11 != (SetupCubeModelTutorialUI *)0x0) {
-                        (pSVar11->fields).cubeModelingStateMachine =
-                             (pEVar4->fields).cubeModelingStateMachine;
+                    if (pGVar3 != (GizmoController *)0x0) {
+                      if (cRam_? == '\0') {
                         func_?();
-                        return;
+                        cRam_? = '\x01';
+                      }
+                      (pGVar3->fields).editorStateMachine = pEVar4;
+                      func_?();
+                      pEVar4 = (pGVar3->fields).editorStateMachine;
+                      this_07 = (SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                 *)func_?();
+                      System.dll::System::Collections::Generic::
+                      SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::Metadata::
+                      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+                      __Il2CppFullySharedGenericType]::
+                      SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                                (this_07,(SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                          *)pEVar4,(MethodInfo *)0x0);
+                      (pGVar3->fields).rotationHelper = (RotationHelper *)this_07;
+                      func_?(&(pGVar3->fields).rotationHelper);
+                      this_03 = (this->fields).clientShopController;
+                      if (this_03 != (EditModeClientShopController *)0x0) {
+                        EditModeClientShopController::EditModeClientShopController_Initialize
+                                  (this_03,(this->fields).repositoryController,(MethodInfo *)0x0);
+                        this_04 = (this->fields).playerInventoryController;
+                        if (this_04 != (PlayerInventoryController *)0x0) {
+                          PlayerInventoryController::PlayerInventoryController_Initialize
+                                    (this_04,(MethodInfo *)0x0);
+                          this_05 = (this->fields).goldPurchasedTracker;
+                          if (this_05 != (GoldPurchasedTracker *)0x0) {
+                            GoldPurchasedTracker::GoldPurchasedTracker_Initialize
+                                      (this_05,(MethodInfo *)0x0);
+                            pGVar1 = (this->fields).stackBottom;
+                            pRVar7 = (this->fields).notificationsManager;
+                            if (pGVar1 != (GameObject *)0x0) {
+                              parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                       GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+                              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor ==
+                                  0) {
+                                func_?();
+                              }
+                              pRVar7 = (RectTransform *)
+                                        UnityEngine.CoreModule.dll::UnityEngine::Object::
+                                        Object_1_Instantiate_6
+                                                  ((Object *)pRVar7,parent,0,
+                                                                                                      
+                                                  UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
+                                                  );
+                              (this->fields).notificationsManager = pRVar7;
+                              func_?();
+                              pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
+                              if (pEVar4 != (EditorStateMachine *)0x0) {
+                                pFVar8 = (this->fields).firstTimeSetupTerrainEditTutorial;
+                                pMVar6 = (this->fields).materialsController;
+                                if (pFVar8 != (FirstTimeSetupTerrainEditTutorial *)0x0) {
+                                  (pFVar8->fields).cubeModelingStateMachine =
+                                       (pEVar4->fields).cubeModelingStateMachine;
+                                  func_?();
+                                  (pFVar8->fields).materialsController =
+                                       (MaterialsController *)pMVar6;
+                                  func_?();
+                                  pEVar4 = (this->fields)._EditModeStateMachine_k__BackingField;
+                                  if ((pEVar4 != (EditorStateMachine *)0x0) &&
+                                     (pSVar9 = (this->fields).setupCubeModelTutorialUI,
+                                     pSVar9 != (SetupCubeModelTutorialUI *)0x0)) {
+                                    (pSVar9->fields).cubeModelingStateMachine =
+                                         (pEVar4->fields).cubeModelingStateMachine;
+                                    func_?();
+                                    return;
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -1029,25 +1013,11 @@ code_?:
           }
         }
       }
-      goto code_?;
     }
-    pDVar12 = (Delegate *)0x0;
-    if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
-      pDVar12 = pDVar8;
-    }
-    if (pDVar12 == (Delegate *)0x0) goto code_?;
-    *(Delegate **)(iVar7 + 8) = pDVar12;
-    pDVar12 = (Delegate *)0x0;
-    if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
-      pDVar12 = pDVar8;
-    }
-    if (pDVar12 != (Delegate *)0x0) goto code_?;
   }
   func_?();
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

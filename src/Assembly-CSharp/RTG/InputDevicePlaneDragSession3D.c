@@ -177,15 +177,15 @@ code_?:
   uVar19 = (this->fields)._plane.m_Normal.x;
   uVar20 = (this->fields)._plane.m_Normal.y;
   uStack_21 = (uint)fVar14 ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   VStack_22.x = (float)((uint)(fVar14 * (float)uVar20 + *pfVar11 * (float)uVar19 + pfVar11[2] * fVar17
                               ) ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) -
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) -
                 (this->fields)._plane.m_Distance;
   VStack_22.z = (float)((uint)fVar14 ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   VStack_22.y = (float)((uint)fVar14 ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   uStack_18 = uVar13;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Mathf);

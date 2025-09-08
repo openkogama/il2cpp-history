@@ -85,7 +85,6 @@ code_?:
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void OnClick() */
 
 void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
@@ -151,19 +150,21 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
         value = (String *)func_?(TypeInfo__UnityEngine__FilterMode,&stack0xfffffff4);
         break;
       case 4:
+        pPStack_12 = pPVar9;
         value = (String *)
                 func_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,
-                                &stack0xfffffff0);
+                                &pPStack_12);
         break;
       case 5:
+        pPStack_13 = pPVar9;
         value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,
-                                &stack0xffffffec);
+                func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,&pPStack_13);
         break;
       case 6:
+        pPStack_14 = pPVar9;
         value = (String *)
                 func_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,
-                                &stack0xffffffe8);
+                                &pPStack_14);
       }
       if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
           cctor_finished_or_no_cctor == 0) {
@@ -174,81 +175,84 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
       return;
     }
   }
+  ppMVar15 = (MethodInfo **)uVar4;
   uVar4 = func_?(uVar4);
   *(longlong *)((int)((ulonglong)uVar4 >> 0x20) + 0x23) = (longlong)ROUND(extraout_ST0);
-  bVar12 = (byte)((uint)unaff_EBX >> 8);
-  bVar13 = (byte)unaff_EBX + bVar12;
-  cVar14 = bVar13 + bVar5;
-  pPVar1 = (ProfileSettingButton *)CONCAT31((int3)((uint)unaff_EBX >> 8),cVar14);
-  if ((POPCOUNT(cVar14) & 1U) == 0) {
-    pPVar1 = (ProfileSettingButton *)0x3468fff1;
+  bVar16 = (byte)((uint)unaff_EBX >> 8);
+  bVar17 = (byte)unaff_EBX + bVar16;
+  cVar18 = bVar17 + bVar5;
+  iVar19 = CONCAT31((int3)((uint)unaff_EBX >> 8),cVar18);
+  if ((POPCOUNT(cVar18) & 1U) == 0) {
+    in(0x5e);
+    func_?();
+    ppMVar15 = &
+               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+    ;
   }
   else {
-    pcVar15 = (char *)((int)&pPVar1->klass + PVar2 * 2);
-    *pcVar15 = *pcVar15 + (char)((ulonglong)uVar4 >> 0x20) +
-              (CARRY1((byte)unaff_EBX,bVar12) || CARRY1(bVar13,bVar5));
-    unaff_EBP = &stack0xfffffffc;
+    pcVar20 = (char *)(iVar19 + PVar2 * 2);
+    *pcVar20 = *pcVar20 + (char)((ulonglong)uVar4 >> 0x20) +
+              (CARRY1((byte)unaff_EBX,bVar16) || CARRY1(bVar17,bVar5));
     if ((POPCOUNT((uint)uVar4 + 0xb9efdc85 & 0xff) & 1U) == 0) {
-      *(char *)(PVar2 + 0x7b) = *(char *)(PVar2 + 0x7b) + cVar14 + ((uint)uVar4 < 0x4610237b);
-      pcVar16 = (code *)swi(3);
-      (*pcVar16)();
+      *(char *)(PVar2 + 0x7b) = *(char *)(PVar2 + 0x7b) + cVar18 + ((uint)uVar4 < 0x4610237b);
+      pcVar21 = (code *)swi(3);
+      (*pcVar21)();
       return;
     }
   }
-  func_?();
-  func_?();
-  func_?();
-  func_?();
+  func_?(ppMVar15);
+  func_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+                 );
+  func_?(&MethodInfo__ProfileSettingButton__OnChange_System__Object_);
+  func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
   uRam_? = 1;
   if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
       cctor_finished_or_no_cctor == 0) {
-    this = (ProfileSettingButton *)
-           TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
-    func_?();
+    func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
   }
-  this = pPVar1;
   this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
             ProfileSettingsChanged;
-  key = *(Int32Enum__Enum *)(*(int *)(unaff_EBP + 8) + 0x14);
-  *(Int32Enum__Enum *)(unaff_EBP + -4) = key;
+  key = (undefined *)(this->fields).profileSettingKey;
   if (this_00 ==
       (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
-    func_?();
+    func_?(PVar2,pPVar1,iVar19);
 code_?:
     func_?();
-    pcVar16 = (code *)swi(3);
-    (*pcVar16)();
+    pcVar21 = (code *)swi(3);
+    (*pcVar21)();
     return;
   }
-  pDVar17 = (Delegate *)
+  pDVar22 = (Delegate *)
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
                       );
   this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?();
+             *)func_?(TypeInfo__System__Action<System::Object>);
   DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
   DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_01,*(Object **)(unaff_EBP + 8),
-             MethodInfo__ProfileSettingButton__OnChange_System__Object_,(MethodInfo *)0x0);
-  pDVar17 = mscorlib.dll::System::Delegate::Delegate_Remove
-                      (pDVar17,(Delegate *)this_01,(MethodInfo *)0x0);
-  *(MethodInfo **)(unaff_EBP + 8) =
-       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+            (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
+             (MethodInfo *)0x0);
+  pDVar22 = mscorlib.dll::System::Delegate::Delegate_Remove
+                      (pDVar22,(Delegate *)this_01,(MethodInfo *)0x0);
+  this = (ProfileSettingButton *)
+         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
   ;
-  if (pDVar17 == (Delegate *)0x0) {
+  if (pDVar22 == (Delegate *)0x0) {
     pOVar3 = (Object *)0x0;
   }
   else {
+    key = &UNK_?;
     pOVar3 = (Object *)func_?();
     if (pOVar3 == (Object *)0x0) goto code_?;
   }
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
   Dictionary_2_System_Int32Enum_System_Object__set_Item
-            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
-             *(Int32Enum__Enum *)(unaff_EBP + -4),pOVar3,*(MethodInfo **)(unaff_EBP + 8));
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key,pOVar3,
+             (MethodInfo *)this);
   return;
 }
 

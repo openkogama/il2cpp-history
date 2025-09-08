@@ -565,10 +565,11 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_CloneRoot
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuController____c__DisplayClass37_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__ContextMenuController____c__DisplayClass37_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
             ((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -603,22 +604,22 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_CloneRoot
              ,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    pOStack1 =
-         (Object__Class *)
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_01 != (MVWorldObjectClientManager *)0x0) {
+    pMStack1 =
          MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRoot
-                   (this_00,(this->fields).woID,(MethodInfo *)0x0);
-    if (value != (Object *)0x0) {
-      value[1].klass = pOStack1;
-      pOStack2 = value + 1;
+                   (this_01,(this->fields).woID,(MethodInfo *)0x0);
+    if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pMStack1;
+      pUStack2 = &this_00->fields;
       func_?();
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this_00
+                 ,
                  MethodInfo__ContextMenuController____c__DisplayClass37_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
@@ -666,16 +667,18 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Delete
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuController____c__DisplayClass43_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__ContextMenuController____c__DisplayClass43_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
   this_00 = (this->fields).editorStateMachine;
   if (this_00 != (EditorStateMachine *)0x0) {
     EditorStateMachine::EditorStateMachine_DeSelectAll(this_00,(MethodInfo *)0x0);
-    if (value != (Object *)0x0) {
-      value[1].klass = (Object__Class *)::StringLiteral__;
-      func_?(value + 1,::StringLiteral__);
+    if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)::StringLiteral__
+      ;
+      func_?(&this_01->fields,::StringLiteral__);
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
         pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
@@ -683,7 +686,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Delete
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMVar2 != (MVWorldObject *)0x0) {
           cVar3 = (*(code *)pMVar2->klass[2]._0.declaringType)
-                            (pMVar2,pMVar1,value + 1,pMVar2->klass[2]._0.parent);
+                            (pMVar2,pMVar1,&this_01->fields,pMVar2->klass[2]._0.parent);
           if (cVar3 != '\0') {
             pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
@@ -727,7 +730,8 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Delete
                               );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
+                     (Object *)this_01,
                      MethodInfo__ContextMenuController____c__DisplayClass43_0___Delete_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
@@ -1043,37 +1047,48 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
   if (pIVar1 != (IEditModeUI *)0x0) {
-    iVar2 = func_?(4,TypeInfo__IEditModeUI,pIVar1);
-    if (iVar2 != 0) {
-      pDVar3 = *(Delegate **)(iVar2 + 8);
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI) {
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_PlayerShopInventoryRepository)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IEditModeUI,4);
+code_?:
+    iVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+    if (iVar6 != 0) {
+      pDVar7 = *(Delegate **)(iVar6 + 8);
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_00,(Object *)this,MethodInfo__ContextMenuController__OnFailedToAddItem__,
                  (MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         (pDVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar4 = CONCAT44(TypeInfo__System__Action,pDVar3);
-      if (pDVar3 == (Delegate *)0x0) {
-        *(undefined4 *)(iVar2 + 8) = 0;
-        iStack5 = iVar2 + 8;
-        pDStack6 = (Delegate *)0x0;
+      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         (pDVar7,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar7 == (Delegate *)0x0) {
+        *(undefined4 *)(iVar6 + 8) = 0;
         func_?();
         return;
       }
-      pDVar7 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
-        pDVar7 = pDVar3;
+      pDVar8 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
+        pDVar8 = pDVar7;
       }
-      if (pDVar7 != (Delegate *)0x0) {
-        *(Delegate **)(iVar2 + 8) = pDVar7;
-        uVar4 = CONCAT44(TypeInfo__System__Action,pDVar3);
-        pDStack6 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
-          pDStack6 = pDVar3;
+      if (pDVar8 != (Delegate *)0x0) {
+        *(Delegate **)(iVar6 + 8) = pDVar8;
+        pDVar8 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
+          pDVar8 = pDVar7;
         }
-        if (pDStack6 != (Delegate *)0x0) {
-          iStack5 = iVar2 + 8;
+        if (pDVar8 != (Delegate *)0x0) {
           func_?();
           return;
         }
@@ -1081,12 +1096,11 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
       goto code_?;
     }
   }
-  uVar4 = func_?();
-code_?:
-  _iStack00000010 = uVar4;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+code_?:
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1974,36 +1988,38 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
     func_?(&StringLiteral_Delete);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuController____c__DisplayClass17_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
-    value[1].monitor = (MonitorData *)linkID;
-    *(bool *)&value[2].klass = isObjectLink;
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__ContextMenuController____c__DisplayClass17_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)this;
+    func_?(&this_00->fields,this);
+    this_00[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)linkID;
+    *(bool *)&this_00[1].monitor = isObjectLink;
     pCVar1 = (this->fields).contextMenuPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+    pLVar2 = (List_1_System_Object_ *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)pCVar1,
                         ContextMenu_MethodInfo__UnityEngine__Object__Instantiate<ContextMenu>_ContextMenu_
                        );
-    value[2].monitor = (MonitorData *)pOVar2;
-    func_?(&value[2].monitor,pOVar2);
-    pCVar1 = (ContextMenu *)value[2].monitor;
+    this_00[1].fields._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_00[1].fields,pLVar2);
+    pCVar1 = (ContextMenu *)this_00[1].fields._._defaultValue_k__BackingField;
     buttonText = TM::TM__(StringLiteral_Delete,(MethodInfo *)0x0);
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,value,
+              (this_01,(Object *)this_00,
                MethodInfo__ContextMenuController____c__DisplayClass17_0___ShowContextMenuLink_b__0__
                ,(MethodInfo *)0x0);
     if (pCVar1 != (ContextMenu *)0x0) {
-      ContextMenu::ContextMenu_AddButton(pCVar1,buttonText,(UnityAction *)this_00,(MethodInfo *)0x0)
+      ContextMenu::ContextMenu_AddButton(pCVar1,buttonText,(UnityAction *)this_01,(MethodInfo *)0x0)
       ;
       ContextMenuController_PopGizmos(this,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -2015,7 +2031,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
                           );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                  MethodInfo__ContextMenuController____c__DisplayClass17_0___ShowContextMenuLink_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -2026,7 +2042,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
                 (root,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pCVar1 = (ContextMenu *)value[2].monitor;
+      pCVar1 = (ContextMenu *)this_00[1].fields._._defaultValue_k__BackingField;
       if (pCVar1 != (ContextMenu *)0x0) {
         (pCVar1->fields).worldPosition.x = worldPos.x;
         (pCVar1->fields).worldPosition.y = worldPos.y;
@@ -2958,17 +2974,34 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController__Clone_b_
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-              (this_00,(this->fields).woID,(MethodInfo *)0x0);
+    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_00,(this->fields).woID,(MethodInfo *)0x0);
     if (handler != (ICloneHandler *)0x0) {
-      func_?(0,TypeInfo__UnityEngine__EventSystems__ICloneHandler,handler);
+      pIVar2 = handler->klass;
+      uVar3 = 0;
+      uVar4._0_1_ = (pIVar2->_1).rank;
+      uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+      if (uVar4 != 0) {
+        do {
+          if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__ICloneHandler) {
+            ppMVar5 = &(&handler->klass->vtable)[handler->klass->interfaceOffsets[uVar3].offset].
+                       Clone.method;
+            goto code_?;
+          }
+          uVar3 = uVar3 + 1;
+        } while (uVar3 < uVar4);
+      }
+      ppMVar5 = (MethodInfo **)
+                func_?(handler,TypeInfo__UnityEngine__EventSystems__ICloneHandler,0);
+code_?:
+      (*(code *)*ppMVar5)(handler,pMVar1,0,0,0,ppMVar5[1]);
       return;
     }
   }
   func_?();
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -1468,28 +1468,27 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_OnActiveProgr
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
   if (bVar1 != 0) {
-    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-              func_?(TypeInfo__GameTierProgressBar____c__DisplayClass25_0);
-    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-    UxmlObjectListAttributeDescription`1[System::Object]::
-    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+    method_00 = TypeInfo__GameTierProgressBar____c__DisplayClass25_0;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     pGVar2 = (this->fields).touristInformationPopup;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pLVar3 = (List_1_System_Object_ *)
+    pOVar3 = (Object__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)pGVar2,
                         UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                        );
-    if (this_00 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    if (value == (Object *)0x0) {
       func_?();
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    (this_00->fields)._._defaultValue_k__BackingField = pLVar3;
-    func_?(&this_00->fields);
+    value[1].klass = pOVar3;
+    func_?(value + 1);
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -1499,7 +1498,7 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_OnActiveProgr
                         );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                MethodInfo__GameTierProgressBar____c__DisplayClass25_0___OnActiveProgressBarClicked_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -2342,20 +2341,15 @@ Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_ScaleAndFadeLockFo
     func_?(&TypeInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__45);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(TypeInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__45);
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-    func_?(this_00 + 1);
-    this_00[1].monitor = (MonitorData *)tier;
-    return (IEnumerator *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__45;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  value[2].monitor = (MonitorData *)tier;
+  return (IEnumerator *)value;
 }
 
 
@@ -2780,16 +2774,16 @@ code_?:
       func_?(&TypeInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__45);
       cRam_? = '\x01';
     }
-    this_01 = (SubscribableVariable_1_System_Int32Enum_ *)
-              func_?(TypeInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__45);
-    SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-              (this_01,0,(MethodInfo *)0x0);
-    if (this_01 == (SubscribableVariable_1_System_Int32Enum_ *)0x0) goto code_?;
-    this_01[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this_00;
-    func_?(this_01 + 1);
-    this_01[1].monitor = index;
+    method_00 = TypeInfo__GameTierProgressBar___ScaleAndFadeLockForTier_d__45;
+    value = (Object *)func_?();
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    value[1].klass = (Object__Class *)0x0;
+    value[2].klass = (Object__Class *)this_00;
+    func_?(value + 2,this_00);
+    value[2].monitor = index;
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this_00,(IEnumerator *)this_01,(MethodInfo *)0x0);
+              ((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);
     GameTierProgressBar_ActivateBar(this_00,(int32_t)index,(MethodInfo *)0x0);
     pMVar4 = index + 1;
     (this_00->fields).previousProgressValue = (float)(int)pMVar4;

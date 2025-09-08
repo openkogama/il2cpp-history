@@ -19,8 +19,17 @@ public class GameSessionData
 	public const string DataPlanetID = "planetID";
 	public const string DataGameMode = "gameMode";
 	public const string DataLanguage = "language";
+	public const string DataEmbedded = "embedded";
+	public const string DataEmbeddedSite = "embeddedSite";
 	public const string DataToken = "token";
 	public const string DataSessionToken = "sessionToken";
+	public const string DataPlayButtonAdsEnabledDefault = "playButtonAdsEnabledDefault";
+	public const string DataBoostersEnabledDefault = "boostersEnabledDefault";
+	public const string DataInterstitialsAdsEnabledDefault = "interstitialsAdsEnabledDefault";
+	public const string DataRewardedAdsEnabledDefault = "rewardedAdsEnabledDefault";
+	public const string DataSessionID = "newPlanetName";
+	public const string DataPlanetName = "planetName";
+	public const string DataPlanetImageURL = "planetImageURL";
 	public string serverIP;
 	public int profileID;
 	public int planetID;
@@ -31,6 +40,8 @@ public class GameSessionData
 	public string token;
 	public string sessionToken;
 	public string newPlanetName;
+	public string planetName;
+	public string planetImageURL;
 	public string pingURL;
 	public string disconnectURL;
 	public string gameRewardURL;

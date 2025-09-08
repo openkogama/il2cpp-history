@@ -190,7 +190,7 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_C
       if (pIVar4 != (IPlayModeUI *)0x0) {
         ppMStack2 = (MVGameControllerBase__Class **)0x0;
         pIStack5 = TypeInfo__IPlayModeUI;
-        puStack6 = (undefined1 *)0x6;
+        puStack6 = (undefined1 *)0x8;
         in_stack_3 = pIVar4;
         func_?();
         return;

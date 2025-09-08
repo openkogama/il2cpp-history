@@ -660,30 +660,30 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_Start
      pMVar2 != (MVLocalPlayer *)0x0)) {
     bVar3 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)pMVar2,(MethodInfo *)0x0);
     if (bVar3 == 0) {
-      a = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged((MethodInfo *)0x0);
+      pAVar4 = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged((MethodInfo *)0x0);
       object = TypeInfo__System__Action<MVJoinState>;
       this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
                 (this_01,(Object *)object,
                  MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_,(MethodInfo *)0x0);
-      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-      if ((pDVar4 != (Delegate *)0x0) && (iVar5 = func_?(), iVar5 == 0))
+      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+      if ((pDVar5 != (Delegate *)0x0) && (iVar6 = func_?(), iVar6 == 0))
       goto code_?;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if (pMVar6 != (MVGameControllerBase *)0x0) {
-        (pMVar6->fields).onJoinStateChanged = in_stack_7;
+      pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (pMVar7 != (MVGameControllerBase *)0x0) {
+        (pMVar7->fields).onJoinStateChanged = in_stack_8;
         func_?();
-        pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
-        if (pMVar6 != (MVGameControllerBase *)0x0) {
-          if ((pMVar6->fields).onJoinStateChanged != (Action_1_MVJoinState_ *)0x0) {
-            (*(((TypeInfo__MVGameControllerBase->static_fields->instance->fields).onJoinStateChanged
-               )->fields)._._.invoke_impl)();
+        pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (pMVar7 != (MVGameControllerBase *)0x0) {
+          pAVar4 = (pMVar7->fields).onJoinStateChanged;
+          if (pAVar4 != (Action_1_MVJoinState_ *)0x0) {
+            (*(pAVar4->fields)._._.invoke_impl)();
           }
           return;
         }
@@ -707,42 +707,42 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_Start
                     ((Behaviour *)0x0,0,(MethodInfo *)0x0);
           return;
         }
-        pUVar8 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+        pUVar9 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
         this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
                   (this_00,(Object *)object_00,
                    MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__,(MethodInfo *)0x0);
-        pUStack9 =
+        pUStack10 =
              (UnityAction *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar8,(Delegate *)this_00,(MethodInfo *)0x0);
-        if (pUStack9 != (UnityAction *)0x0) {
-          pUVar8 = (UnityAction *)0x0;
-          if (pUStack9->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-            pUVar8 = pUStack9;
+                       ((Delegate *)pUVar9,(Delegate *)this_00,(MethodInfo *)0x0);
+        if (pUStack10 != (UnityAction *)0x0) {
+          pUVar9 = (UnityAction *)0x0;
+          if (pUStack10->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+            pUVar9 = pUStack10;
           }
-          pUStack10 = TypeInfo__UnityEngine__Events__UnityAction;
-          if (pUVar8 != (UnityAction *)0x0) {
-            TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar8;
-            pUStack10 = (UnityAction__Class *)(UnityAction *)0x0;
-            if (pUStack9->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-              pUStack10 = (UnityAction__Class *)pUStack9;
+          pUStack11 = TypeInfo__UnityEngine__Events__UnityAction;
+          if (pUVar9 != (UnityAction *)0x0) {
+            TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar9;
+            pUStack11 = (UnityAction__Class *)(UnityAction *)0x0;
+            if (pUStack10->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+              pUStack11 = (UnityAction__Class *)pUStack10;
             }
-            if (pUStack10 != (UnityAction__Class *)0x0) goto code_?;
-            pUStack10 = TypeInfo__UnityEngine__Events__UnityAction;
-            pUStack10 = (UnityAction__Class *)func_?();
-            pUStack9 = extraout_ECX;
+            if (pUStack11 != (UnityAction__Class *)0x0) goto code_?;
+            pUStack11 = TypeInfo__UnityEngine__Events__UnityAction;
+            pUStack11 = (UnityAction__Class *)func_?();
+            pUStack10 = extraout_ECX;
           }
           func_?();
-          pcVar11 = (code *)swi(3);
-          (*pcVar11)();
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
           return;
         }
         TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
-        pUStack10 = (UnityAction__Class *)0x0;
+        pUStack11 = (UnityAction__Class *)0x0;
 code_?:
-        pUStack9 = (UnityAction *)TypeInfo__AccessoryDataManager->static_fields;
+        pUStack10 = (UnityAction *)TypeInfo__AccessoryDataManager->static_fields;
         func_?();
         AccessoryDataManager::AccessoryDataManager_SetReady((MethodInfo *)0x0);
         return;
@@ -750,15 +750,15 @@ code_?:
     }
     func_?();
     func_?();
-    pcVar11 = (code *)swi(3);
-    (*pcVar11)();
+    pcVar12 = (code *)swi(3);
+    (*pcVar12)();
     return;
   }
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

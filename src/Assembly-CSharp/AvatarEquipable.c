@@ -660,8 +660,8 @@ void Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable__ctor
 code_?:
             (this->fields).nonWeaponPickups = (List_1_MV_Common_AvatarItemType_ *)this_00;
             func_?();
-            MVInteractableBase::MVInteractableBase__ctor
-                      ((MVInteractableBase *)this,(MethodInfo *)0x0);
+            InGameMenuStatePlayModeController::InGameMenuStatePlayModeController__ctor
+                      ((InGameMenuStatePlayModeController *)this,(MethodInfo *)0x0);
             return;
           }
           (this_00->fields)._size = uVar4 + 1;

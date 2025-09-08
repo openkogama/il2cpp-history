@@ -32,7 +32,7 @@ bool Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_CannotLeaveEdit
       }
       if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
           (IPlayModeUI *)0x0) {
-        puStack_5 = (undefined *)0x9;
+        puStack_5 = (undefined *)0xb;
         bVar4 = func_?();
         return bVar4;
       }

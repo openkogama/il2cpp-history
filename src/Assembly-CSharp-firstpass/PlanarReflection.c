@@ -160,7 +160,7 @@ Vector4 * Assembly-CSharp-firstpass.dll::PlanarReflection::PlanarReflection_Came
     __return_storage_ptr__->w =
          (float)((uint)((float)uVar6 * normal.x * sideSign + (float)uVar7 * normal.y * sideSign +
                        fVar2 * fVar9 * sideSign) ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     return __return_storage_ptr__;
   }
   func_?();
@@ -728,7 +728,7 @@ code_?:
                             ((Component *)reflectCamera,(MethodInfo *)0x0);
         unaff_retaddr =
              (float)((uint)(float)uVar27 ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         auVar29._8_4_ = cam;
         auVar29._0_8_ = CONCAT44(SUB84(uVar27,4),unaff_retaddr);
         auVar29._12_28_ = auVar28._16_28_;
@@ -782,7 +782,7 @@ code_?:
                   auVar39._20_4_ =
                        (float)((uint)(auVar35._24_4_ * (float)uVar36._4_4_ +
                                       fVar33 * (float)(undefined4)uVar36 + fVar34 * fVar37) ^
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               ) - (pPVar1->fields).clipPlaneOffset;
                   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_zero
                             ((Matrix4x4 *)&puStack_40,(MethodInfo *)0x0);
@@ -882,7 +882,7 @@ code_?:
                     fVar46 = (float)((ulonglong)*puVar65 >> 0x20);
                     fVar44 = (float)((uint)(fVar50 * auVar63._4_4_ + fVar46 * auVar63._8_4_ +
                                            fVar33 * auVar63._12_4_) ^
-                                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                     );
                     pMVar59 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                               Camera_get_projectionMatrix
@@ -932,7 +932,7 @@ code_?:
                                             ((Component *)reflectCamera,(MethodInfo *)0x0);
                         value_00.y = SUB84(uVar67,4);
                         value_00.x = (float)((uint)(float)uVar67 ^
-                                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                             );
                         if (pTVar15 != (Transform *)0x0) {
                           value_00.z = fVar33;

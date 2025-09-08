@@ -124,7 +124,7 @@ Vector4 * Assembly-CSharp-firstpass.dll::Water::Water_CameraSpacePlane
     __return_storage_ptr__->w =
          (float)((uint)((float)uVar6 * normal.x * sideSign + (float)uVar7 * normal.y * sideSign +
                        fVar2 * fVar9 * sideSign) ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     return __return_storage_ptr__;
   }
   func_?();
@@ -877,7 +877,7 @@ code_?:
             clipPlane.w = (float)((uint)((float)*(undefined8 *)*pauVar15 * fVar2 +
                                          (float)((ulonglong)*(undefined8 *)*pauVar15 >> 0x20) *
                                          fVar6 + *(float *)(*pauVar15 + 8) * fVar1) ^
-                                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                  );
             clipPlane._0_12_ = *pauVar15;
             pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_CalculateObliqueMatrix
@@ -927,7 +927,7 @@ code_?:
                         if ((((pTVar12 != (Transform *)0x0) &&
                              (value.y = (float)uVar7,
                              value.x = (float)(uVar3 ^ 
-                                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                               ), value.z = fVar2,
                              UnityEngine.CoreModule.dll::UnityEngine::Transform::
                              Transform_set_eulerAngles(pTVar12,value,(MethodInfo *)0x0),

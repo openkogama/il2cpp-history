@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_ChunkInst
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Remove_MV__WorldObject__IntVector_
                    );
-    func_?(0x1950);
+    func_?(0x7050);
     cRam_? = '\x01';
   }
   if (chunkInstancesChanged == (ChunkInstancesChanged *)0x0) goto code_?;
@@ -325,7 +325,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_OnChanged
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                    );
-    func_?(0xf030);
+    func_?(0x4804);
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
                    );
@@ -580,7 +580,10 @@ code_?:
           cVar8 = func_?();
           if (cVar8 == '\0') {
             uStack_1 = 0xffffffff;
-            func_?();
+            iVar6 = func_?();
+            if (iVar6 != 0) {
+              func_?();
+            }
             *unaff_FS_OFFSET = uStack_3;
             return;
           }
@@ -618,7 +621,6 @@ code_?:
     }
   }
 code_?:
-  func_?();
   func_?();
 code_?:
   func_?();

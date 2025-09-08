@@ -325,43 +325,52 @@ void Assembly-CSharp.dll::FirstTimeActivatableCubeTutorialPointer::
                (FirstTimeActivatableCubeTutorialPointer *this,MethodInfo *method)
 
 {
-  bVar1 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                    (FirstTimeEvent__Enum_BM_CubeTutorialDone,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-code_?:
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((this->fields)._._.eventAllowedInAnyMode == 0) {
-      MVar2 = (this->fields)._._.eventAllowedForMode;
-      MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar2 != MVar3) {
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)this,(MethodInfo *)0x0);
-        return;
-      }
-    }
-    this_02 = (EventHandler_1_Object_ *)func_?();
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (this_02,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
-    FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
-              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)this_02,(MethodInfo *)0x0);
-    return;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__FirstTimeEventManager);
+    cRam_? = '\x01';
   }
-  this_00 = (this->fields)._.button;
-  if (this_00 != (Button *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,1,(MethodInfo *)0x0);
-      goto code_?;
+  this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+  if (this_00 != (FirstTimeState *)0x0) {
+    bVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
+            FirstTimeState_HasFirstTimeEventOccured
+                      (this_00,FirstTimeEvent__Enum_BM_CubeTutorialDone,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+code_?:
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((this->fields)._._.eventAllowedInAnyMode == 0) {
+        MVar2 = (this->fields)._._.eventAllowedForMode;
+        MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar2 != MVar3) {
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                    ((Object_1 *)this,(MethodInfo *)0x0);
+          return;
+        }
+      }
+      this_03 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (this_03,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0)
+      ;
+      FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
+                ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                  *)this_03,(MethodInfo *)0x0);
+      return;
+    }
+    this_01 = (this->fields)._.button;
+    if (this_01 != (Button *)0x0) {
+      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this_01,(MethodInfo *)0x0);
+      if (this_02 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_02,1,(MethodInfo *)0x0);
+        goto code_?;
+      }
     }
   }
   func_?();
@@ -507,14 +516,22 @@ bool Assembly-CSharp.dll::FirstTimeActivatableCubeTutorialPointer::
 {
   bVar1 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
                     ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
+  if (this_01 != (GameObject *)0x0) {
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                      (this_00,(MethodInfo *)0x0);
-    bVar3 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                      (FirstTimeEvent__Enum_BM_CubeTutorialDone,(MethodInfo *)0x0);
-    return (bVar3 ^ 1) & (bVar1 ^ 1) & bVar2;
+                      (this_01,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+    if (this_00 != (FirstTimeState *)0x0) {
+      bVar3 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
+              FirstTimeState_HasFirstTimeEventOccured
+                        (this_00,FirstTimeEvent__Enum_BM_CubeTutorialDone,(MethodInfo *)0x0);
+      return (bVar3 ^ 1) & (bVar1 ^ 1) & bVar2;
+    }
   }
   func_?();
   pcVar4 = (code *)swi(3);

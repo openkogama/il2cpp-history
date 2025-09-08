@@ -495,7 +495,7 @@ code_?:
   return (float)fVar6;
 }
 
-/* decompilation failed: Exception while decompiling 105975f0: Decompiler process died */
+/* decompilation failed: Exception while decompiling 10594a30: Decompiler process died */
 
 
 /* Void MakeSliderPlane(GizmoTransform, PlaneId, GizmoLineSlider3D, GizmoLineSlider3D, Camera) */
@@ -824,7 +824,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_OnGizmoAtt
                   plane.m_Distance =
                        (float)((uint)((float)uVar13 * (float)uVar15 + fVar5 * (float)uVar14 +
                                      (float)method_00 * pVVar3->z) ^
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
                   plane.m_Normal = *pVVar3;
                   pt.z = (float)uVar17;
@@ -2298,7 +2298,7 @@ Plane * Assembly-CSharp.dll::RTG::GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_Pla
       (__return_storage_ptr__->m_Normal).z = fVar8;
       __return_storage_ptr__->m_Distance =
            (float)((uint)((float)uVar4 * (float)uVar7 + (float)uVar3 * (float)uVar6 + fVar5 * fVar8)
-                  ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       return __return_storage_ptr__;
     }
   }

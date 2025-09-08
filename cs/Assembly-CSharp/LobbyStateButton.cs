@@ -30,12 +30,6 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 	[SerializeField]
 	private ContinueButtonLockCursor continueScreenPrefab;
 	[SerializeField]
-	private Image playButtonImage;
-	[SerializeField]
-	private Sprite watchAdPlayButtonImageSprite;
-	[SerializeField]
-	private Sprite playButtonImageSprite;
-	[SerializeField]
 	private GamePassesTextBubble signupToRemoveAds;
 	[SerializeField]
 	private EmbeddedPlayerConfig embeddedPlayerConfig;
@@ -56,24 +50,24 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__30_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__38_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__39_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__27_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__34_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__35_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__36_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _PopThenLockCursor_b__30_0(IUIStack x, BaseEventData y);
-		internal void _CreateTeamMenu_b__37_0(IUIStack x, BaseEventData y);
-		internal void _CreateSpawnRoleSelectionMenu_b__38_0(IUIStack x, BaseEventData y);
-		internal void _CreateBriefing_b__39_0(IUIStack x, BaseEventData y);
+		internal void _PopThenLockCursor_b__27_0(IUIStack x, BaseEventData y);
+		internal void _CreateTeamMenu_b__34_0(IUIStack x, BaseEventData y);
+		internal void _CreateSpawnRoleSelectionMenu_b__35_0(IUIStack x, BaseEventData y);
+		internal void _CreateBriefing_b__36_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass26_0
+	private sealed class __c__DisplayClass23_0
 	{
 		// Fields
 		public LobbyStateButton __4__this;
@@ -81,61 +75,61 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 		public WinningConditionType winCon;
 
 		// Constructors
-		public __c__DisplayClass26_0();
+		public __c__DisplayClass23_0();
 
 		// Methods
-		internal void _OnPressPlay_b__0(InterstitialAdResult result);
 		internal void _OnPressPlay_b__1(InterstitialAdResult result);
+		internal void _OnPressPlay_b__0(InterstitialAdResult result);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass27_0
+	private sealed class __c__DisplayClass24_0
 	{
 		// Fields
 		public LobbyStateButton __4__this;
 		public Action<InterstitialAdResult> callback;
 
 		// Constructors
-		public __c__DisplayClass27_0();
+		public __c__DisplayClass24_0();
 
 		// Methods
 		internal void _PressPlayWithCallback_b__0(InterstitialAdResult result);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass37_0
+	private sealed class __c__DisplayClass34_0
 	{
 		// Fields
 		public TeamMenu newTeamMenu;
 
 		// Constructors
-		public __c__DisplayClass37_0();
+		public __c__DisplayClass34_0();
 
 		// Methods
 		internal void _CreateTeamMenu_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass38_0
+	private sealed class __c__DisplayClass35_0
 	{
 		// Fields
 		public SpawnRoleMenu spawnRoleMenu;
 
 		// Constructors
-		public __c__DisplayClass38_0();
+		public __c__DisplayClass35_0();
 
 		// Methods
 		internal void _CreateSpawnRoleSelectionMenu_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass39_0
+	private sealed class __c__DisplayClass36_0
 	{
 		// Fields
 		public WinningConditionBriefing winConMenu;
 
 		// Constructors
-		public __c__DisplayClass39_0();
+		public __c__DisplayClass36_0();
 
 		// Methods
 		internal void _CreateBriefing_b__1(IUIStack x, BaseEventData y);

@@ -3853,9 +3853,8 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_set_JoinSta
     (pMVar2->fields)._joinState = value;
     pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
     if (pMVar2 != (MVGameControllerBase *)0x0) {
-      if ((pMVar2->fields).onJoinStateChanged != (Action_1_MVJoinState_ *)0x0) {
-        pAVar3 = (TypeInfo__MVGameControllerBase->static_fields->instance->fields).
-                 onJoinStateChanged;
+      pAVar3 = (pMVar2->fields).onJoinStateChanged;
+      if (pAVar3 != (Action_1_MVJoinState_ *)0x0) {
         ppMStack_1 = (pAVar3->fields)._._.method;
         puStack_4 = (undefined *)value;
         pvStack_5 = (pAVar3->fields)._._.method_code;
@@ -3936,11 +3935,11 @@ void Assembly-CSharp.dll::MVGameControllerBase::MVGameControllerBase_set_OnJoinS
     func_?();
     pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
     if (pMVar2 != (MVGameControllerBase *)0x0) {
-      if ((pMVar2->fields).onJoinStateChanged != (Action_1_MVJoinState_ *)0x0) {
-        pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-        pAVar4 = (pMVar2->fields).onJoinStateChanged;
+      pAVar4 = (pMVar2->fields).onJoinStateChanged;
+      if (pAVar4 != (Action_1_MVJoinState_ *)0x0) {
         pAStack_1 = (pAVar4->fields)._._.method;
-        ppAStack_3 = (Action_1_MVJoinState_ **)(pMVar2->fields)._joinState;
+        ppAStack_3 = (Action_1_MVJoinState_ **)
+                     (TypeInfo__MVGameControllerBase->static_fields->instance->fields)._joinState;
         puStack_5 = (pAVar4->fields)._._.method_code;
         (*(pAVar4->fields)._._.invoke_impl)();
       }

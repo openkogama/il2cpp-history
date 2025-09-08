@@ -91,7 +91,7 @@ void Assembly-CSharp.dll::SessionLocatorPing::SessionLocatorPing_CloseApplicatio
     TypeInfo__SessionLocatorPing____c->static_fields->__9__12_0 = this_00;
     func_?(&TypeInfo__SessionLocatorPing____c->static_fields->__9__12_0,this_00);
   }
-  coroutine = WaitForFrames::WaitForFrames_Frames(5,this_00,(MethodInfo *)0x0);
+  coroutine = WaitForFrames::WaitForFrames_WithCallback(5,this_00,(MethodInfo *)0x0);
   Coroutines::Coroutines_Start(coroutine,(MethodInfo *)0x0);
   return;
 }
@@ -370,7 +370,7 @@ void Assembly-CSharp.dll::SessionLocatorPing::SessionLocatorPing_UpdateControlle
     TypeInfo__SessionLocatorPing____c->static_fields->__9__12_0 = this_01;
     func_?(&TypeInfo__SessionLocatorPing____c->static_fields->__9__12_0,this_01);
   }
-  WaitForFrames::WaitForFrames_Frames(5,this_01,(MethodInfo *)0x0);
+  WaitForFrames::WaitForFrames_WithCallback(5,this_01,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';

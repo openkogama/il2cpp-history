@@ -274,7 +274,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
       VStack_10.y = VVar9.y;
       VStack_11.y = VStack_10.x - VStack_8.x;
       VStack_11.x = (float)((uint)(VStack_10.y - VStack_8.y) ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       VStack_10 = VVar9;
       uVar12 = func_?(&VStack_11);
@@ -313,7 +313,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
             fStack_15 = VStack_16.x - VStack_14.x;
             VStack_16.y = VVar9.y;
             fStack_17 = (float)((uint)(VStack_16.y - VStack_14.y) ^
-                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
             pfVar18 = &fStack_17;
             uVar19 = 0;
@@ -343,7 +343,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
               fVar27 = ((VStack_10.y - fStack_22) * VStack_20.y +
                        (VStack_10.x - uStack_21._4_4_) * VStack_20.x) /
                        (float)((uint)fVar27 ^
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               if (0.0 <= fVar27) {
                 VStack_11.y = fVar26 * fVar27 + VStack_10.y;
@@ -434,7 +434,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
          (fVar25 = ((fVar27 - fStack_22) * uStack_21._4_4_ +
                    (fVar26 - VStack_8.y) * (float)uStack_21) /
                    (float)((uint)fVar25 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field),
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field),
          fVar25 < 0.0)) {
         if (pLStack_7 !=
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
@@ -504,7 +504,7 @@ code_?:
                 fVar27 = ((VStack_10.y - fStack_2) * VStack_16.y +
                          (VStack_10.x - fStack_23) * VStack_16.x) /
                          (float)((uint)fVar27 ^
-                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                 );
                 if (0.0 <= fVar27) {
                   VStack_13.y = fVar25 * fVar27 + VStack_10.y;
@@ -1137,7 +1137,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_GenerateSphereBorde
       fStack_8 = pVVar1->z;
       uStack_3 = CONCAT44((uint)(uStack_5._4_4_ * uStack_7._4_4_ +
                                   (float)uStack_5 * (float)uStack_7 + fStack_6 * fStack_8) ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field,
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
                            (undefined4)uStack_3);
       uStack_9 = uStack_7;
       fStack_10 = fStack_8;

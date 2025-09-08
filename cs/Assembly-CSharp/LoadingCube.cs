@@ -16,9 +16,12 @@ public class LoadingCube : MonoBehaviour
 	private const float cubeSpinSpeed = 0.75f;
 	[SerializeField]
 	private GameObject cube;
-	private bool visible;
 	private float time;
-	private Material cubeMaterial;
+	[CompilerGenerated]
+	private Material _CubeMaterial_k__BackingField;
+
+	// Properties
+	public Material CubeMaterial { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Constructors
 	public LoadingCube();
@@ -26,6 +29,5 @@ public class LoadingCube : MonoBehaviour
 	// Methods
 	private void Awake();
 	private void Update();
-	private void SelfDestruct();
 }
 

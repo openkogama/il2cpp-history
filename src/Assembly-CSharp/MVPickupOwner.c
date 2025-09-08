@@ -4,9 +4,7 @@
 void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_Awake(MVPickupOwner *this,MethodInfo *method)
 
 {
-  if ((this->fields)._.findWorldObjectParent != 0) {
-    MVComponent::MVComponent_FindWorldObjectParent((MVComponent *)this,(MethodInfo *)0x0);
-  }
+  MVComponent::MVComponent_Awake((MVComponent *)this,(MethodInfo *)0x0);
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).prevUpdateLineOfFireTime = fVar1;
   return;
@@ -1219,9 +1217,8 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner__ctor(MVPickupOwner *this
   (this->fields).lookDirection.x = (pVVar1->oneVector).x;
   (this->fields).lookDirection.y = fVar2;
   (this->fields).lookDirection.z = fVar3;
-  (this->fields)._.findWorldObjectParent = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  InGameMenuStatePlayModeController::InGameMenuStatePlayModeController__ctor
+            ((InGameMenuStatePlayModeController *)this,(MethodInfo *)0x0);
   return;
 }
 

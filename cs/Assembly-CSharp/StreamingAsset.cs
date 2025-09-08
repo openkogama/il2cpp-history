@@ -16,12 +16,12 @@ using UnityEngine.Networking;
 public abstract class StreamingAsset : MonoBehaviour
 {
 	// Fields
+	private static readonly HashSet<UnityWebRequest> cachedAssetBundles;
+	private static string assetBundleUrl;
 	[HideInInspector]
 	[SerializeField]
 	protected string url;
 	protected UnityAction onAssetSetAction;
-	private static HashSet<UnityWebRequest> cachedAssetBundles;
-	private static string assetBundleUrl;
 
 	// Properties
 	public string Url { get; set; }
@@ -29,7 +29,7 @@ public abstract class StreamingAsset : MonoBehaviour
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DelayedUnload_d__11 : IEnumerator<object>
+	private sealed class _DelayedUnload_d__13 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -42,7 +42,7 @@ public abstract class StreamingAsset : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _DelayedUnload_d__11(int __1__state);
+		public _DelayedUnload_d__13(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -58,6 +58,7 @@ public abstract class StreamingAsset : MonoBehaviour
 
 	// Methods
 	protected abstract void OnAssetSet();
+	protected abstract void OnDownloadFinished(UnityWebRequest www);
 	public static void ClearCache();
 	private static AssetType UnpackBundle<AssetType>(UnityWebRequest www)
 		where AssetType : UnityEngine.Object;
@@ -65,12 +66,11 @@ public abstract class StreamingAsset : MonoBehaviour
 		where AssetType : UnityEngine.Object;
 	protected static AssetType UnpackBundle_NonCached<AssetType>(UnityWebRequest www, MonoBehaviour coroutineHost)
 		where AssetType : UnityEngine.Object;
-	[IteratorStateMachine(typeof(_DelayedUnload_d__11))]
+	[IteratorStateMachine(typeof(_DelayedUnload_d__13))]
 	protected static IEnumerator DelayedUnload(UnityWebRequest www);
 	public static string DBUrlToServerUrl(string url);
 	protected void Download_Cached(string url, UnityAction onAssetSetAction);
 	protected void Download_NonCached(string url, UnityAction onAssetSetAction);
-	protected abstract void OnDownloadFinished(UnityWebRequest www);
 	protected virtual void OnDestroy();
 }
 

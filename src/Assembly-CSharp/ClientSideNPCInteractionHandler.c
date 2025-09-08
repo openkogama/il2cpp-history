@@ -66,7 +66,7 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
         func_?(TypeInfo__MV__WorldObject__InteractionData);
       }
       pBVar7 = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
-                         (&interaction,(MethodInfo *)0x0);
+                          (&interaction,(MethodInfo *)0x0);
       if ((pDVar5 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                       *)0x0) &&
          (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -86,8 +86,25 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
           }
           pIVar8 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if ((pIVar8 != (IPlayModeUI *)0x0) &&
-             (iVar9 = func_?(2,TypeInfo__IPlayModeUI,pIVar8), iVar9 != 0)) {
-            func_?(3,TypeInfo__IGUICrossHair,iVar9);
+             (piVar9 = (int *)func_?(2,TypeInfo__IPlayModeUI,pIVar8),
+             piVar9 != (int *)0x0)) {
+            uVar10 = 0;
+            uVar11 = *(ushort *)(*piVar9 + 0xb6);
+            if (uVar11 != 0) {
+              do {
+                if (*(IGUICrossHair__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
+                    TypeInfo__IGUICrossHair) {
+                  iVar12 = *piVar9;
+                  iVar13 = *(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar10 * 8) + 0x1b;
+                  (**(code **)(iVar12 + iVar13 * 8))(piVar9,*(undefined4 *)(iVar12 + 4 + iVar13 * 8))
+                  ;
+                  return 1;
+                }
+                uVar10 = uVar10 + 1;
+              } while (uVar10 < uVar11);
+            }
+            puVar14 = (undefined4 *)func_?(piVar9,TypeInfo__IGUICrossHair,3);
+            (*(code *)*puVar14)(piVar9,puVar14[1]);
             return 1;
           }
         }
@@ -124,7 +141,7 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
       func_?(TypeInfo__MV__WorldObject__InteractionData);
     }
     pBVar7 = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
-                       (&interaction,(MethodInfo *)0x0);
+                        (&interaction,(MethodInfo *)0x0);
     if ((pDVar5 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                     *)0x0) &&
        (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -139,8 +156,8 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  bVar2 = (*pcVar10)();
+  pcVar15 = (code *)swi(3);
+  bVar2 = (*pcVar15)();
   return bVar2;
 }
 
@@ -204,8 +221,9 @@ void Assembly-CSharp.dll::ClientSideNPCInteractionHandler::ClientSideNPCInteract
            (HashSet_1_MV_WorldObject_InteractionPackageType_ *)pHVar1;
       func_?(&(this->fields).friendlyInteractions,pHVar1);
       (this->fields).team = 5;
-      InGameMenuStatePlayModeController::InGameMenuStatePlayModeController__ctor
-                ((InGameMenuStatePlayModeController *)this,(MethodInfo *)0x0);
+      (this->fields)._._.findWorldObjectParent = 1;
+      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+                ((MonoBehaviour *)this,(MethodInfo *)0x0);
       return;
     }
   }

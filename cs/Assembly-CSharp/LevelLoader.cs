@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -23,6 +24,31 @@ public class LevelLoader : MonoBehaviour
 	private readonly List<AsyncOperation> pendingScenes;
 	private Action callback;
 
+	// Nested types
+	[CompilerGenerated]
+	private sealed class _WaitForLoadingScenesCoroutine_d__10 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public LevelLoader __4__this;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _WaitForLoadingScenesCoroutine_d__10(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
+	}
+
 	// Constructors
 	public LevelLoader();
 	static LevelLoader();
@@ -30,6 +56,7 @@ public class LevelLoader : MonoBehaviour
 	// Methods
 	public void LoadScenes(MVGameMode gameMode, bool tourist, bool useTouch, Action callback);
 	private void LoadScenes(ScenesForMode mode, Action callbackAction);
-	private void Update();
+	[IteratorStateMachine(typeof(_WaitForLoadingScenesCoroutine_d__10))]
+	private IEnumerator WaitForLoadingScenesCoroutine();
 }
 

@@ -75,16 +75,16 @@ void Assembly-CSharp.dll::MVCameraBase::MVCameraBase_SimulateImpact_2
     }
     fVar9 = (float)((ulonglong)uVar5 >> 0x20);
     fVar10 = (float)((uint)impactDirection.y ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     fVar11 = (float)((uint)impactDirection.z ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     this = (MVCameraBase *)
            ((float)uVar5 * fVar11 -
            fVar6 * (float)((uint)impactDirection.x ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
            );
     fVar12 = fVar9 * (float)((uint)impactDirection.x ^
-                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                              ) - (float)uVar5 * fVar10;
     fVar13 = impactDirection.x * fVar3 * _UNK_?;
     fVar14 = impactDirection.y * fVar3 * _UNK_?;
@@ -239,7 +239,7 @@ bool Assembly-CSharp.dll::MVCameraBase::MVCameraBase_get_InputActive
   pIStack_1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIStack_1 != (IPlayModeUI *)0x0) {
     pIStack_2 = TypeInfo__IPlayModeUI;
-    uStack_3 = 5;
+    uStack_3 = 7;
     cVar4 = func_?();
     if (cVar4 != '\0') {
       return 0;

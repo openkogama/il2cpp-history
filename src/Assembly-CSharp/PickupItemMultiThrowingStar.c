@@ -35,7 +35,7 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::PickupItemMultiThrowingSt
           ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
   if (iVar4 < 1) {
     cVar6 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                      (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                      (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
     if (cVar6 == '\0') {
       pMVar7 = (this->fields)._._.owner;
       if (((pMVar7 == (MVPickupOwner *)0x0) ||
@@ -670,7 +670,7 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::
             ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
     if (iVar4 < 1) {
       cVar6 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                        (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                        (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
       if (cVar6 == '\0') {
         pMVar7 = (this->fields)._._.owner;
         if (((pMVar7 == (MVPickupOwner *)0x0) ||
@@ -799,7 +799,7 @@ bool Assembly-CSharp.dll::PickupItemMultiThrowingStar::
     return 0;
   }
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                    (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                    (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

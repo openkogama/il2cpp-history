@@ -603,12 +603,12 @@ code_?:
       puStack_3 = (undefined *)pVVar2->x;
       unique0x0000a404 = pVVar2->y;
       uVar10 = (uint)unique0x0000a404 ^
-               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       fVar5 = (float)((uint)pVVar2->z ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields)._offsetDragWorkData.Axis.x =
            (float)((uint)puStack_3 ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields)._offsetDragWorkData.Axis.y = (float)uVar10;
       goto code_?;
     }
@@ -839,7 +839,7 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_OnGizmoRende
             pLVar17 = (this->fields)._targetLight;
             fVar10 = (float)((uint)(fStack_5 * fVar12 + (float)puStack_9 * fVar16 + fVar8 * fVar10
                                    ) ^
-                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
             if ((pLVar17 != (Light *)0x0) &&
                (fVar12 = fStack_5, fVar14 = (float)puStack_9,
@@ -1209,15 +1209,15 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateHandle
                     uVar19 = (pVVar10->rightVector).x;
                     uVar20 = (pVVar10->rightVector).y;
                     uVar21 = uVar20 ^ 
-                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                     ;
                     fVar4 = (float)((uint)(pVVar10->rightVector).z ^
-                                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                    );
                     if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
                       (pPVar18->fields).Normal.x =
                            (float)(uVar19 ^ 
-                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                   );
                       (pPVar18->fields).Normal.y = (float)uVar21;
                       (pPVar18->fields).Normal.z = fVar4;
@@ -1359,17 +1359,17 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateHandle
                                                   uVar28 = (pVVar10->upVector).x;
                                                   uVar29 = (pVVar10->upVector).y;
                                                   uVar21 = uVar29 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar4 = (float)((uint)(pVVar10->upVector).z ^
                                                                                                                                   
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0
                                                      ) {
                                                     (pPVar18->fields).Normal.x =
                                                          (float)(uVar28 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pPVar18->fields).Normal.y = (float)uVar21;
                                                   (pPVar18->fields).Normal.z = fVar4;
@@ -1427,17 +1427,17 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateHandle
                                                           uVar32 = (pVVar10->forwardVector).x;
                                                           uVar33 = (pVVar10->forwardVector).y;
                                                           uVar21 = uVar33 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar4 = (float)((uint)(pVVar10->forwardVector).z ^
                                                                                                                                   
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0
                                                      ) {
                                                     (pPVar18->fields).Normal.x =
                                                          (float)(uVar32 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pPVar18->fields).Normal.y = (float)uVar21;
                                                   (pPVar18->fields).Normal.z = fVar4;
@@ -2105,7 +2105,7 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateTickCo
         uStack_10 = 0;
         pPVar11 = (this->fields)._extentTicks;
         fVar6 = (float)((uint)((float)uVar5 * fVar8 + (float)uVar4 * fVar7 + fVar6 * fVar9) ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         if (pPVar11 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
           ppPVar12 = pPVar11->vector;
           while( true ) {

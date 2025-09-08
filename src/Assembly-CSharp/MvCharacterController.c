@@ -65,164 +65,116 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MvCharacterController);
     cRam_? = '\x01';
   }
-  func_?();
+  func_?(&stack0xfffffef4,0,0x48);
   if ((this->fields).collisionRecursionDepth < 8) {
     pVVar1 = MathFunctions::MathFunctions_MultiplyVector
-                        (&VStack_2,ePos,&(this->fields).elipsoidRadius,(MethodInfo *)0x0);
-    uVar3 = pVVar1->x;
-    uVar4 = pVVar1->y;
-    fStack_5 = pVVar1->z;
+                        ((Vector3 *)&stack0xfffffff0,ePos,&(this->fields).elipsoidRadius,
+                         (MethodInfo *)0x0);
+    uVar2 = pVVar1->x;
+    uVar3 = pVVar1->y;
+    fVar4 = pVVar1->z;
     pVVar1 = MathFunctions::MathFunctions_MultiplyVector
-                        (&VStack_6,eVel,&(this->fields).elipsoidRadius,(MethodInfo *)0x0);
-    fStack_7 = pVVar1->z;
-    uVar8._0_4_ = pVVar1->x;
-    uVar8._4_4_ = pVVar1->y;
-    puVar9 = &UNK_?;
-    VStack_2._0_8_ = uVar8;
-    VStack_2.z = fStack_7;
+                        ((Vector3 *)&stack0xffffffa0,eVel,&(this->fields).elipsoidRadius,
+                         (MethodInfo *)0x0);
+    fVar5 = pVVar1->z;
+    uVar6 = pVVar1->x;
+    uVar7 = pVVar1->y;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        (&VStack_6,*pVVar1,(MethodInfo *)0x0);
-    MStack_10.position.y._0_1_ = 0;
-    MStack_10.position.y._1_1_ = 0;
-    MStack_10.position.y._2_1_ = 0;
-    MStack_10.position.y._3_1_ = 0;
-    MStack_10.position.z._0_1_ = 0;
-    MStack_10.position.z._1_1_ = 0;
-    MStack_10.position.z._2_1_ = 0;
-    MStack_10.position.z._3_1_ = 0;
-    uStack_11 = CONCAT44(uVar4,uVar3);
-    MStack_10.position.x._0_1_ = SUB41(fStack_5,0);
-    MStack_10.position.x._1_1_ = (undefined1)((uint)fStack_5 >> 8);
-    MStack_10.position.x._2_1_ = (undefined1)((uint)fStack_5 >> 0x10);
-    MStack_10.position.x._3_1_ = (undefined1)((uint)fStack_5 >> 0x18);
-    MStack_10.valid = 0;
-    MStack_10._13_1_ = 0;
-    MStack_10._14_1_ = 0;
-    MStack_10._15_1_ = 0;
+                        ((Vector3 *)&stack0xffffffa0,*pVVar1,(MethodInfo *)0x0);
+    uVar8 = SUB41(fVar4,0);
+    uVar9 = (undefined1)((uint)fVar4 >> 8);
+    uVar10 = (undefined1)((uint)fVar4 >> 0x10);
+    uVar11 = (undefined1)((uint)fVar4 >> 0x18);
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        (&VStack_6,*pVVar1,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffa0,*pVVar1,(MethodInfo *)0x0);
     uVar12 = pVVar1->x;
     uVar13 = pVVar1->y;
-    fVar14 = pVVar1->z;
-    MStack_10.valid = SUB41(fVar14,0);
-    MStack_10._13_1_ = SUB41((uint)fVar14 >> 8,0);
-    MStack_10._14_1_ = SUB41((uint)fVar14 >> 0x10,0);
-    MStack_10._15_1_ = SUB41((uint)fVar14 >> 0x18,0);
-    fStack_15 = (this->fields).elipsoidRadius.z;
-    MStack_10.position.y._0_1_ = (undefined1)uVar12;
-    MStack_10.position.y._1_1_ = (undefined1)((uint)uVar12 >> 8);
-    MStack_10.position.y._2_1_ = (undefined1)((uint)uVar12 >> 0x10);
-    MStack_10.position.y._3_1_ = (undefined1)((uint)uVar12 >> 0x18);
-    MStack_10.position.z._0_1_ = (undefined1)uVar13;
-    MStack_10.position.z._1_1_ = (undefined1)((uint)uVar13 >> 8);
-    MStack_10.position.z._2_1_ = (undefined1)((uint)uVar13 >> 0x10);
-    MStack_10.position.z._3_1_ = (undefined1)((uint)uVar13 >> 0x18);
-    VStack_16.x = (this->fields).elipsoidRadius.x;
-    VStack_16.y = (this->fields).elipsoidRadius.y;
-    fVar17 = (float10)func_?();
+    uVar14._0_4_ = pVVar1->z;
+    bVar15 = SUB41((float)uVar14,0);
+    uVar16 = (undefined1)((uint)(float)uVar14 >> 8);
+    uVar17 = (undefined1)((uint)(float)uVar14 >> 0x10);
+    uVar18 = (undefined1)((uint)(float)uVar14 >> 0x18);
+    uVar14._4_4_ = (this->fields).elipsoidRadius.z;
+    uVar19 = (undefined1)uVar12;
+    uVar20 = (undefined1)((uint)uVar12 >> 8);
+    uVar21 = (undefined1)((uint)uVar12 >> 0x10);
+    uVar22 = (undefined1)((uint)uVar12 >> 0x18);
+    uVar23 = (undefined1)uVar13;
+    uVar24 = (undefined1)((uint)uVar13 >> 8);
+    uVar25 = (undefined1)((uint)uVar13 >> 0x10);
+    uVar26 = (undefined1)((uint)uVar13 >> 0x18);
+    uVar27._0_4_ = (this->fields).elipsoidRadius.x;
+    uVar27._4_4_ = (this->fields).elipsoidRadius.y;
+    fVar28 = (float10)func_?();
     ignoreWoIds = (this->fields).IgnoreWoIds;
-    pTStack_18 = (Transform *)(float)fVar17;
+    uVar14._0_4_ = (float)fVar28;
     if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    fVar19 = 0.0;
-    fVar14 = (float)TypeInfo__MvCharacterController->static_fields->layerMask;
-    voxelHit = (VoxelHit *)&stack0xfffffef4;
-    fVar20 = VStack_16.x;
-    fVar21 = VStack_16.y;
-    fVar22 = (float)uStack_11;
-    fVar23 = uStack_11._4_4_;
-    fVar24 = (float)CONCAT13(MStack_10.position.x._3_1_,
-                             CONCAT12(MStack_10.position.x._2_1_,
-                                      CONCAT11(MStack_10.position.x._1_1_,MStack_10.position.x._0_1_
-                                              )));
-    fVar25 = (float)CONCAT13(MStack_10.position.y._3_1_,
-                             CONCAT12(MStack_10.position.y._2_1_,
-                                      CONCAT11(MStack_10.position.y._1_1_,MStack_10.position.y._0_1_
-                                              )));
-    fVar26 = (float)CONCAT13(MStack_10.position.z._3_1_,
-                             CONCAT12(MStack_10.position.z._2_1_,
-                                      CONCAT11(MStack_10.position.z._1_1_,MStack_10.position.z._0_1_
-                                              )));
-    fVar27 = (float)(CONCAT17(MStack_10._15_1_,
-                              CONCAT16(MStack_10._14_1_,
-                                       CONCAT15(MStack_10._13_1_,CONCAT14(MStack_10.valid,fVar26))))
-                    >> 0x20);
-    puVar28 = &UNK_?;
-    ray.m_Origin.z = fVar24;
-    ray.m_Origin.x = (float)uStack_11;
-    ray.m_Origin.y = uStack_11._4_4_;
-    ray.m_Direction.x = fVar25;
-    ray.m_Direction.y = fVar26;
-    ray.m_Direction.z = fVar27;
-    radius.z = fStack_15;
-    radius.x = VStack_16.x;
-    radius.y = VStack_16.y;
-    fVar29 = fStack_15;
-    pTVar30 = pTStack_18;
-    bVar31 = CollisionDetection::CollisionDetection_MVElipsoidCast
-                       (ray,radius,(float)pTStack_18,voxelHit,ignoreWoIds,(int32_t)fVar14,
-                        (MethodInfo *)0x0);
-    if (bVar31 != 0) {
-      uVar32._0_4_ = (this->fields).elipsoidRadius.z;
-      VStack_16.x = (this->fields).elipsoidRadius.x;
-      VStack_16.y = (this->fields).elipsoidRadius.y;
+    ray.m_Origin.z._1_1_ = uVar9;
+    ray.m_Origin.z._0_1_ = uVar8;
+    ray.m_Origin.z._2_1_ = uVar10;
+    ray.m_Origin.z._3_1_ = uVar11;
+    ray.m_Direction.x._1_1_ = uVar20;
+    ray.m_Direction.x._0_1_ = uVar19;
+    ray.m_Direction.x._2_1_ = uVar21;
+    ray.m_Direction.x._3_1_ = uVar22;
+    uVar29 = CONCAT13(uVar26,CONCAT12(uVar25,CONCAT11(uVar24,uVar23)));
+    ray.m_Origin.y = (float)uVar3;
+    ray.m_Origin.x = (float)uVar2;
+    ray.m_Direction.y = (float)uVar29;
+    ray.m_Direction.z =
+         (float)(CONCAT17(uVar18,CONCAT16(uVar17,CONCAT15(uVar16,CONCAT14(bVar15,uVar29)))) >> 0x20);
+    radius.z = uVar14._4_4_;
+    radius.x = (float)(int)uVar27;
+    radius.y = (float)(int)((ulonglong)uVar27 >> 0x20);
+    bVar30 = CollisionDetection::CollisionDetection_MVElipsoidCast
+                       (ray,radius,(float)uVar14,(VoxelHit *)&stack0xfffffef4,ignoreWoIds,
+                        TypeInfo__MvCharacterController->static_fields->layerMask,(MethodInfo *)0x0)
+    ;
+    if (bVar30 != 0) {
+      uVar14._0_4_ = (this->fields).elipsoidRadius.z;
+      uVar31._0_4_ = (this->fields).elipsoidRadius.x;
+      uVar31._4_4_ = (this->fields).elipsoidRadius.y;
       if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      puVar33 = &UNK_?;
-      R3Dir.y = uVar8._4_4_;
-      R3Dir.x = (float)uVar8;
-      R3Dir.z = fStack_7;
-      R3Radius.z = (float)uVar32;
-      R3Radius.x = VStack_16.x;
-      R3Radius.y = VStack_16.y;
+      R3Dir.y = (float)uVar7;
+      R3Dir.x = (float)uVar6;
+      R3Dir.z = fVar5;
+      R3Radius.z = (float)uVar14;
+      R3Radius.x = (float)(int)uVar31;
+      R3Radius.y = (float)(int)((ulonglong)uVar31 >> 0x20);
       distance = (Cube *)MvCharacterController_DistanceR3SpaceToESpace
-                                   (in_stack_34,R3Dir,R3Radius,(MethodInfo *)0x0);
-      vec1 = (Cube *)&(this->fields).elipsoidRadius;
-      vec0 = (Vector3 *)&stack0xfffffef4;
-      pVVar1 = &VStack_2;
-      puVar35 = &UNK_?;
-      pVVar36 = MathFunctions::MathFunctions_DivideVector
-                          (pVVar1,vec0,(Vector3 *)vec1,(MethodInfo *)0x0);
-      uVar32._0_4_ = pVVar36->x;
-      uVar32._4_4_ = pVVar36->y;
-      pTVar37 = (Transform *)pVVar36->z;
-      method_00 = (MethodInfo *)&UNK_?;
-      VStack_6._0_8_ = uVar32;
-      VStack_6.z = (float)pTVar37;
-      VStack_16._0_8_ = uVar32;
-      pTStack_18 = pTVar37;
-      fStack_15 = MvCharacterController_GetCollisionAngle
-                            (*ePos,*eVel,(float)distance,*pVVar36,(MethodInfo *)0x0);
-      if ((fStack_15 <= _UNK_?) || ((float)distance == 0.0)) {
-        uVar38 = ePos->x;
-        uVar39 = ePos->y;
+                                   (in_stack_32,R3Dir,R3Radius,(MethodInfo *)0x0);
+      pVVar1 = MathFunctions::MathFunctions_DivideVector
+                          ((Vector3 *)&stack0xfffffff0,(Vector3 *)&stack0xfffffef4,
+                           &(this->fields).elipsoidRadius,(MethodInfo *)0x0);
+      uVar14._0_4_ = pVVar1->x;
+      uVar14._4_4_ = pVVar1->y;
+      fVar33 = pVVar1->z;
+      fVar34 = (float)uVar14;
+      fVar35 = uVar14._4_4_;
+      fVar36 = fVar33;
+      uVar27 = uVar14;
+      fVar37 = fVar33;
+      fVar38 = MvCharacterController_GetCollisionAngle
+                         (*ePos,*eVel,(float)distance,*pVVar1,(MethodInfo *)0x0);
+      if ((fVar38 <= _UNK_?) || ((float)distance == 0.0)) {
+        uVar39 = ePos->x;
         uVar40 = eVel->x;
-        uVar41 = eVel->y;
-        VStack_2.z = eVel->z + ePos->z;
-        fStack_42 = eVel->z;
-        VStack_16.z = ePos->z;
-        uVar43 = eVel->x;
-        uVar44 = eVel->y;
-        fStack_15 = eVel->z;
-        uVar45 = ePos->x;
-        uVar46 = ePos->y;
-        uVar47 = eVel->x;
-        uVar48 = eVel->y;
-        VStack_2.y = (float)uVar41 + (float)uVar39;
-        VStack_2.x = (float)uVar40 + (float)uVar38;
-        fStack_49 = (float)uVar47;
-        fStack_50 = (float)uVar48;
-        fStack_51 = (float)uVar38;
-        auStack_52._0_4_ = uVar45;
-        auStack_52._4_4_ = uVar46;
-        fStack_53 = (float)uVar40;
-        fStack_54 = (float)uVar43;
-        fStack_55 = (float)uVar44;
+        fVar38 = eVel->z;
+        fVar41 = ePos->z;
+        uVar29 = eVel->x;
+        uVar42 = eVel->y;
+        fVar43 = eVel->z;
+        uVar44 = ePos->x;
+        uVar45 = ePos->y;
+        uVar46 = eVel->x;
+        uVar47 = eVel->y;
         if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -233,257 +185,231 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_Coll
         if ((TypeInfo__MvCharacterController->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        uVar56 = 0;
-        fVar57 = VStack_16.x;
-        pCVar58 = VStack_16.y;
-        puVar59 = &UNK_?;
-        ePos_00.y = (float)auStack_52._4_4_;
-        ePos_00.x = (float)auStack_52._0_4_;
-        ePos_00.z = VStack_16.z;
-        eDir.y = fStack_50;
-        eDir.x = fStack_49;
-        eDir.z = fStack_15;
-        ePoint.z = (float)pTStack_18;
-        ePoint.x = VStack_16.x;
-        ePoint.y = VStack_16.y;
-        fVar60 = VStack_16.z;
-        fVar61 = fStack_49;
-        fVar62 = fStack_50;
-        fVar63 = fStack_15;
-        pCVar64 = distance;
-        pTVar65 = pTStack_18;
-        fVar66 = MvCharacterController_GetCollisionAngle
+        ePos_00.y = (float)uVar45;
+        ePos_00.x = (float)uVar44;
+        ePos_00.z = fVar41;
+        eDir.y = (float)uVar47;
+        eDir.x = (float)uVar46;
+        eDir.z = fVar43;
+        ePoint.z = fVar37;
+        ePoint.x = (float)(int)uVar27;
+        ePoint.y = (float)(int)((ulonglong)uVar27 >> 0x20);
+        pCVar48 = distance;
+        fVar49 = MvCharacterController_GetCollisionAngle
                            (ePos_00,eDir,(float)distance,ePoint,(MethodInfo *)0x0);
-        dVar67 = (double)(fVar66 * _UNK_?);
-        fVar66 = (float)auStack_52._0_4_;
-        uVar4 = auStack_52._4_4_;
-        auStack_52 = (undefined1  [8])dVar67;
+        dVar50 = (double)(fVar49 * _UNK_?);
         func_?();
-        VStack_16.z = _UNK_? / (float)dVar67 -
-                      (_UNK_? / (float)dVar67) * _UNK_?;
-        value.y = fStack_55;
-        value.x = fStack_54;
-        value.z = fStack_42;
-        pVVar36 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            ((Vector3 *)&MStack_10.position.y,value,(MethodInfo *)0x0);
-        uVar68 = pVVar36->x;
-        uVar69 = pVVar36->y;
-        fStack_50 = pVVar36->z;
-        fStack_70 = (float)uVar68;
-        fStack_49 = (float)uVar69;
-        if (((float)distance - VStack_16.z < 0.0) || (VStack_16.z <= 0.0)) {
-          puVar71 = (undefined8 *)func_?();
-          VStack_2._0_8_ = *puVar71;
-          VStack_2.z = *(float *)(puVar71 + 1);
-          fVar17 = (float10)func_?();
-          VStack_2.z = VStack_2.z * (float)fVar17;
-          piVar72 = &(this->fields).collisionRecursionDepth;
-          *piVar72 = *piVar72 + 1;
+        fVar51 = _UNK_? / (float)dVar50 - (_UNK_? / (float)dVar50) * _UNK_?;
+        value.y = (float)uVar42;
+        value.x = (float)uVar29;
+        value.z = fVar38;
+        pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                            ((Vector3 *)&stack0xffffffb8,value,(MethodInfo *)0x0);
+        fVar49 = pVVar1->x;
+        fVar52 = pVVar1->y;
+        fVar53 = pVVar1->z;
+        if (((float)distance - fVar51 < 0.0) || (fVar51 <= 0.0)) {
+          func_?();
+          func_?();
+          piVar54 = &(this->fields).collisionRecursionDepth;
+          *piVar54 = *piVar54 + 1;
           pVVar1 = MvCharacterController_CollideWithWorld
-                              ((Vector3 *)&MStack_10.position.y,this,ePos,
-                               (Vector3 *)&stack0xffffff58,foundValidPosition,(MethodInfo *)0x0);
-          uVar8._4_4_ = pVVar1->y;
-          uVar8._0_4_ = pVVar1->z;
+                              ((Vector3 *)&stack0xffffffb8,this,ePos,(Vector3 *)&stack0xffffff58,
+                               foundValidPosition,(MethodInfo *)0x0);
+          fVar4 = pVVar1->y;
+          uVar14._0_4_ = pVVar1->z;
           __return_storage_ptr__->x = pVVar1->x;
-          __return_storage_ptr__->y = uVar8._4_4_;
-          __return_storage_ptr__->z = (float)uVar8;
+          __return_storage_ptr__->y = fVar4;
+          __return_storage_ptr__->z = (float)uVar14;
           return __return_storage_ptr__;
         }
-        uVar73 = ePos->x;
-        uVar74 = ePos->y;
-        auStack_52._4_4_ = ePos->z;
-        uVar75 = pVVar36->x;
-        uVar76 = pVVar36->y;
-        fVar77 = (float)uVar73 + (float)uVar75 * ((float)distance - VStack_16.z);
-        fStack_55 = (float)auStack_52._4_4_ + fStack_50 * ((float)distance - VStack_16.z);
-        fVar78 = VStack_6.x - (float)uVar68 * VStack_16.z;
-        fVar79 = VStack_6.y - (float)uVar69 * VStack_16.z;
-        fVar80 = VStack_6.z - fStack_50 * VStack_16.z;
-        VStack_6.z = fVar80;
-        fStack_51 = (float)uVar73;
-        auStack_52._0_4_ = uVar74;
-        fStack_53 = (float)uVar75;
-        fStack_54 = (float)uVar76;
-        (*(code *)(this->klass->vtable).__unknown_2.method)();
-        if (SUB41(fVar62,0) != 0) {
-          func_?();
-          uVar81 = 0;
-          uVar82 = 0;
-          uVar83 = (this->fields).elipsoidRadius.x;
-          uVar84 = (this->fields).elipsoidRadius.y;
-          hit.point.y = uVar32._4_4_;
-          hit.point.x = (float)uVar32;
-          hit.point.z = (float)pTVar37;
-          hit.normal.x = (float)puVar59;
-          hit.normal.y = fVar66;
-          hit.normal.z = (float)uVar4;
-          hit.cubePos._0_4_ = fVar60;
-          hit._28_4_ = fVar61;
-          hit.face = (int32_t)fVar62;
-          hit._36_4_ = fVar63;
-          hit.woId = (int32_t)pCVar64;
-          hit.cube = (Cube *)fVar57;
-          hit.distance = (float)pCVar58;
-          hit.collider = (Collider *)pTVar65;
-          hit.transform = (Transform *)uVar56;
-          hit._60_4_ = in_stack_85;
-          hit.interactionFlags._0_4_ = uStack_86;
-          hit.interactionFlags._4_4_ = fVar78;
-          position.y = fStack_5;
-          position.x = fVar79;
-          position.z = (float)uVar83;
-          elipsoidRadius.y = (this->fields).elipsoidRadius.z;
-          elipsoidRadius.x = (float)uVar84;
-          elipsoidRadius.z = fVar80;
-          R3Velocity.y = fStack_7;
-          R3Velocity.x = fVar77;
-          R3Velocity.z = 0.0;
-          uVar32._0_4_ = fStack_7;
-          MVControllerColliderHit::MVControllerColliderHit__ctor
-                    ((MVControllerColliderHit *)&stack0xfffffe64,hit,position,elipsoidRadius,
-                     R3Velocity,0,unaff_ESI);
-          uVar32._4_4_ = 0.0;
-          puVar87 = (undefined4 *)&stack0xfffffe64;
-          puVar88 = (undefined4 *)&stack0xfffffe44;
-          for (iVar89 = 0x24; iVar89 != 0; iVar89 = iVar89 + -1) {
-            *puVar88 = *puVar87;
-            puVar87 = puVar87 + 1;
-            puVar88 = puVar88 + 1;
-          }
-          controllerColliderHit.positionTouchingHit.y = fVar77;
-          controllerColliderHit.positionTouchingHit.x = fVar80;
-          controllerColliderHit.positionTouchingHit.z = (float)uVar32;
-          controllerColliderHit.moveDirection.x = (float)uVar82;
-          controllerColliderHit.moveDirection.y = (float)uVar81;
-          controllerColliderHit.moveDirection.z = (float)unaff_ESI;
-          controllerColliderHit.elipsoidNormal.x = (float)puVar9;
-          controllerColliderHit.elipsoidNormal.y = (float)puVar28;
-          controllerColliderHit.elipsoidNormal.z = fVar22;
-          controllerColliderHit.slopeNormal.x = fVar23;
-          controllerColliderHit.slopeNormal.y = fVar24;
-          controllerColliderHit.slopeNormal.z = fVar25;
-          controllerColliderHit.impactVelocity.x = fVar26;
-          controllerColliderHit.impactVelocity.y = fVar27;
-          controllerColliderHit.impactVelocity.z = fVar20;
-          controllerColliderHit._60_4_ = fVar21;
-          controllerColliderHit.hit.point.x = fVar29;
-          controllerColliderHit.hit.point.y = (float)pTVar30;
-          controllerColliderHit.hit.point.z = (float)voxelHit;
-          controllerColliderHit.hit.normal.x = (float)ignoreWoIds;
-          controllerColliderHit.hit.normal.y = fVar14;
-          controllerColliderHit.hit.normal.z = fVar19;
-          uVar90 = in_stack_91._0_6_;
-          controllerColliderHit.hit.cubePos.x = (short)uVar90;
-          controllerColliderHit.hit.cubePos.y = (short)((uint6)uVar90 >> 0x10);
-          controllerColliderHit.hit.cubePos.z = (short)((uint6)uVar90 >> 0x20);
-          controllerColliderHit.hit._30_2_ = in_stack_91._6_2_;
-          controllerColliderHit.hit.face = in_stack_91._8_4_;
-          controllerColliderHit.hit._36_4_ = in_stack_92;
-          controllerColliderHit.hit.woId = (int32_t)in_stack_93;
-          controllerColliderHit.hit.cube = (Cube *)puVar33;
-          controllerColliderHit.hit.distance = in_stack_34;
-          controllerColliderHit.hit.collider = (Collider *)(float)uVar8;
-          controllerColliderHit.hit.transform = (Transform *)uVar8._4_4_;
-          controllerColliderHit.hit._60_4_ = puVar35;
-          controllerColliderHit.hit.interactionFlags._0_4_ = pVVar1;
-          controllerColliderHit.hit.interactionFlags._4_4_ = vec0;
-          controllerColliderHit.material = (MVMaterial *)vec1;
-          controllerColliderHit._140_4_ = uVar32._4_4_;
-          MvCharacterController_SendCharacterCollision(this,controllerColliderHit,method_00);
+        fVar55 = ePos->x;
+        uVar56 = ePos->y;
+        fVar57 = ePos->z;
+        fVar58 = pVVar1->x;
+        uVar59 = pVVar1->y;
+        fVar60 = fVar55 + fVar58 * ((float)distance - fVar51);
+        fVar61 = fVar34 - fVar49 * fVar51;
+        fVar62 = fVar35 - fVar52 * fVar51;
+        fVar36 = fVar36 - fVar53 * fVar51;
+        fVar63 = fVar36;
+        puVar64 = (undefined8 *)(*(code *)(this->klass->vtable).__unknown_2.method)();
+        method_00 = (MethodInfo *)((ulonglong)*puVar64 >> 0x20);
+        fVar65 = *(float *)(puVar64 + 1);
+        puVar66 = &UNK_?;
+        func_?();
+        fVar67 = 0.0;
+        fVar68 = 0.0;
+        uVar69 = (this->fields).elipsoidRadius.x;
+        uVar70 = (this->fields).elipsoidRadius.y;
+        hit.point.y = uVar14._4_4_;
+        hit.point.x = (float)uVar14;
+        hit.point.z = fVar33;
+        hit.normal.x = (float)uVar14;
+        hit.normal.y = uVar14._4_4_;
+        hit.normal.z = fVar33;
+        hit.cubePos._0_4_ = fVar41;
+        hit._28_4_ = uVar14._4_4_;
+        hit.face = (int32_t)fVar33;
+        hit._36_4_ = fVar41;
+        hit.woId = (int32_t)pCVar48;
+        hit.cube = (Cube *)fVar33;
+        hit.distance = fVar41;
+        hit.collider = (Collider *)pCVar48;
+        hit.transform = (Transform *)puVar66;
+        hit._60_4_ = fVar41;
+        hit.interactionFlags._0_4_ = pCVar48;
+        hit.interactionFlags._4_4_ = fVar61;
+        position.y = fVar4;
+        position.x = fVar62;
+        position.z = (float)uVar69;
+        elipsoidRadius.y = (this->fields).elipsoidRadius.z;
+        elipsoidRadius.x = (float)uVar70;
+        elipsoidRadius.z = fVar36;
+        R3Velocity.y = fVar5;
+        R3Velocity.x = fVar60;
+        R3Velocity.z = 0.0;
+        uVar14._0_4_ = fVar5;
+        MVControllerColliderHit::MVControllerColliderHit__ctor
+                  ((MVControllerColliderHit *)&stack0xfffffe64,hit,position,elipsoidRadius,
+                   R3Velocity,0,method_00);
+        uVar6 = 0;
+        puVar71 = (undefined4 *)&stack0xfffffe64;
+        puVar72 = (undefined4 *)&stack0xffffff5c;
+        for (iVar73 = 0x24; iVar73 != 0; iVar73 = iVar73 + -1) {
+          *puVar72 = *puVar71;
+          puVar71 = puVar71 + 1;
+          puVar72 = puVar72 + 1;
         }
-        piVar72 = &(this->fields).collisionRecursionDepth;
-        *piVar72 = *piVar72 + 1;
+        controllerColliderHit.positionTouchingHit.y = fVar60;
+        controllerColliderHit.positionTouchingHit.x = fVar36;
+        controllerColliderHit.positionTouchingHit.z = fVar5;
+        controllerColliderHit.moveDirection.x = fVar68;
+        controllerColliderHit.moveDirection.y = fVar67;
+        controllerColliderHit.moveDirection.z = (float)method_00;
+        controllerColliderHit.elipsoidNormal.x = fVar65;
+        controllerColliderHit.elipsoidNormal.y = (float)in_stack_74;
+        controllerColliderHit.elipsoidNormal.z = SUB84(in_stack_74,4);
+        controllerColliderHit.slopeNormal.x = in_stack_75;
+        controllerColliderHit.slopeNormal.y = fVar38;
+        controllerColliderHit.slopeNormal.z = fVar49;
+        controllerColliderHit.impactVelocity.x = fVar52;
+        controllerColliderHit.impactVelocity.y = fVar53;
+        controllerColliderHit.impactVelocity.z = fVar4;
+        controllerColliderHit._60_4_ = (float)uVar14;
+        controllerColliderHit.hit.point.x = fVar34;
+        controllerColliderHit.hit.point.y = fVar35;
+        controllerColliderHit.hit.point.z = fVar63;
+        controllerColliderHit.hit.normal.x = (float)uVar2;
+        controllerColliderHit.hit.normal.y = (float)uVar3;
+        controllerColliderHit.hit.normal.z._0_1_ = uVar8;
+        controllerColliderHit.hit.normal.z._1_1_ = uVar9;
+        controllerColliderHit.hit.normal.z._2_1_ = uVar10;
+        controllerColliderHit.hit.normal.z._3_1_ = uVar11;
+        controllerColliderHit.hit.cubePos.x._0_1_ = uVar19;
+        controllerColliderHit.hit.cubePos.x._1_1_ = uVar20;
+        controllerColliderHit.hit.cubePos.y._0_1_ = uVar21;
+        controllerColliderHit.hit.cubePos.y._1_1_ = uVar22;
+        controllerColliderHit.hit.cubePos.z._0_1_ = uVar23;
+        controllerColliderHit.hit.cubePos.z._1_1_ = uVar24;
+        controllerColliderHit.hit._30_1_ = uVar25;
+        controllerColliderHit.hit._31_1_ = uVar26;
+        controllerColliderHit.hit.face._0_1_ = bVar15;
+        controllerColliderHit.hit.face._1_1_ = uVar16;
+        controllerColliderHit.hit.face._2_1_ = uVar17;
+        controllerColliderHit.hit.face._3_1_ = uVar18;
+        controllerColliderHit.hit.isCubeHit = (char)uVar27;
+        controllerColliderHit.hit._37_3_ = (int3)((ulonglong)uVar27 >> 8);
+        controllerColliderHit.hit.woId = (int)((ulonglong)uVar27 >> 0x20);
+        controllerColliderHit.hit.cube = (Cube *)fVar51;
+        controllerColliderHit.hit.distance = fVar55;
+        controllerColliderHit.hit.collider = (Collider *)uVar56;
+        controllerColliderHit.hit.transform = (Transform *)fVar57;
+        controllerColliderHit.hit._60_4_ = fVar43;
+        controllerColliderHit.hit.interactionFlags._0_4_ = fVar37;
+        controllerColliderHit.hit.interactionFlags._4_4_ = fVar58;
+        controllerColliderHit.material = (MVMaterial *)uVar59;
+        controllerColliderHit._140_4_ = uVar6;
+        MvCharacterController_SendCharacterCollision
+                  (this,controllerColliderHit,(MethodInfo *)((float)uVar40 + (float)uVar39));
+        piVar54 = &(this->fields).collisionRecursionDepth;
+        *piVar54 = *piVar54 + 1;
         pVVar1 = MvCharacterController_CollideWithWorld
-                            ((Vector3 *)&MStack_10.position.y,this,(Vector3 *)&stack0xffffff64,
+                            ((Vector3 *)&stack0xffffffb8,this,(Vector3 *)&stack0xffffff64,
                              (Vector3 *)&stack0xffffff70,foundValidPosition,(MethodInfo *)0x0);
       }
       else {
-        puVar71 = (undefined8 *)func_?();
-        VStack_94._0_8_ = *puVar71;
-        VStack_94.z = *(float *)(puVar71 + 1);
-        fStack_55 = *(float *)(puVar71 + 1);
-        fStack_53 = (float)*puVar71;
-        fStack_54 = (float)((ulonglong)*puVar71 >> 0x20);
-        fVar17 = (float10)func_?();
-        uVar8._0_4_ = (float)fVar17;
-        VStack_94.z = fStack_55 * (float)uVar8;
-        piVar72 = &(this->fields).collisionRecursionDepth;
-        *piVar72 = *piVar72 + 1;
-        VStack_94.y = fStack_54 * (float)uVar8;
-        VStack_94.x = fStack_53 * (float)uVar8;
-        VStack_2.z = VStack_94.z;
+        func_?();
+        func_?();
+        piVar54 = &(this->fields).collisionRecursionDepth;
+        *piVar54 = *piVar54 + 1;
         pVVar1 = MvCharacterController_CollideWithWorld
-                            (&VStack_2,this,ePos,&VStack_94,foundValidPosition,(MethodInfo *)0x0);
+                            ((Vector3 *)&stack0xfffffff0,this,ePos,(Vector3 *)&stack0xffffff7c,
+                             foundValidPosition,(MethodInfo *)0x0);
       }
-      uVar8._4_4_ = pVVar1->y;
-      uVar8._0_4_ = pVVar1->z;
+      fVar4 = pVVar1->y;
+      uVar14._0_4_ = pVVar1->z;
       __return_storage_ptr__->x = pVVar1->x;
-      __return_storage_ptr__->y = uVar8._4_4_;
-      __return_storage_ptr__->z = (float)uVar8;
+      __return_storage_ptr__->y = fVar4;
+      __return_storage_ptr__->z = (float)uVar14;
       return __return_storage_ptr__;
     }
-    pMVar95 = MvCharacterController_HandleNoCollision
-                        (&MStack_10,this,*ePos,*eVel,1,(MethodInfo *)0x0);
-    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar95->position).x;
-    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 1);
-    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 2);
-    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 3);
-    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar95->position).y;
-    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 1);
-    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 2);
-    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 3);
-    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar95->position).z;
-    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 1);
-    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 2);
-    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 3);
-    if (pMVar95->valid == 0) {
-      uVar8._4_4_ = ePos->y;
-      uVar8._0_4_ = ePos->z;
+    pMVar76 = MvCharacterController_HandleNoCollision
+                        ((MvCharacterController_NoCollisionData *)&stack0xffffffb4,this,*ePos,*eVel,
+                         1,(MethodInfo *)0x0);
+    uVar8 = *(undefined1 *)&(pMVar76->position).x;
+    uVar9 = *(undefined1 *)((int)&(pMVar76->position).x + 1);
+    uVar10 = *(undefined1 *)((int)&(pMVar76->position).x + 2);
+    uVar11 = *(undefined1 *)((int)&(pMVar76->position).x + 3);
+    uVar19 = *(undefined1 *)&(pMVar76->position).y;
+    uVar20 = *(undefined1 *)((int)&(pMVar76->position).y + 1);
+    uVar21 = *(undefined1 *)((int)&(pMVar76->position).y + 2);
+    uVar22 = *(undefined1 *)((int)&(pMVar76->position).y + 3);
+    uVar23 = *(undefined1 *)&(pMVar76->position).z;
+    uVar24 = *(undefined1 *)((int)&(pMVar76->position).z + 1);
+    uVar25 = *(undefined1 *)((int)&(pMVar76->position).z + 2);
+    uVar26 = *(undefined1 *)((int)&(pMVar76->position).z + 3);
+    if (pMVar76->valid == 0) {
+      fVar4 = ePos->y;
+      uVar14._0_4_ = ePos->z;
       __return_storage_ptr__->x = ePos->x;
-      __return_storage_ptr__->y = uVar8._4_4_;
-      __return_storage_ptr__->z = (float)uVar8;
+      __return_storage_ptr__->y = fVar4;
+      __return_storage_ptr__->z = (float)uVar14;
       return __return_storage_ptr__;
     }
   }
   else {
-    pMVar95 = MvCharacterController_HandleNoCollision
-                        (&MStack_10,this,*ePos,*eVel,1,(MethodInfo *)0x0);
-    MStack_10.position.x._0_1_ = *(undefined1 *)&(pMVar95->position).x;
-    MStack_10.position.x._1_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 1);
-    MStack_10.position.x._2_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 2);
-    MStack_10.position.x._3_1_ = *(undefined1 *)((int)&(pMVar95->position).x + 3);
-    MStack_10.position.y._0_1_ = *(undefined1 *)&(pMVar95->position).y;
-    MStack_10.position.y._1_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 1);
-    MStack_10.position.y._2_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 2);
-    MStack_10.position.y._3_1_ = *(undefined1 *)((int)&(pMVar95->position).y + 3);
-    MStack_10.position.z._0_1_ = *(undefined1 *)&(pMVar95->position).z;
-    MStack_10.position.z._1_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 1);
-    MStack_10.position.z._2_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 2);
-    MStack_10.position.z._3_1_ = *(undefined1 *)((int)&(pMVar95->position).z + 3);
-    if (pMVar95->valid == 0) {
+    pMVar76 = MvCharacterController_HandleNoCollision
+                        ((MvCharacterController_NoCollisionData *)&stack0xffffffb4,this,*ePos,*eVel,
+                         1,(MethodInfo *)0x0);
+    uVar8 = *(undefined1 *)&(pMVar76->position).x;
+    uVar9 = *(undefined1 *)((int)&(pMVar76->position).x + 1);
+    uVar10 = *(undefined1 *)((int)&(pMVar76->position).x + 2);
+    uVar11 = *(undefined1 *)((int)&(pMVar76->position).x + 3);
+    uVar19 = *(undefined1 *)&(pMVar76->position).y;
+    uVar20 = *(undefined1 *)((int)&(pMVar76->position).y + 1);
+    uVar21 = *(undefined1 *)((int)&(pMVar76->position).y + 2);
+    uVar22 = *(undefined1 *)((int)&(pMVar76->position).y + 3);
+    uVar23 = *(undefined1 *)&(pMVar76->position).z;
+    uVar24 = *(undefined1 *)((int)&(pMVar76->position).z + 1);
+    uVar25 = *(undefined1 *)((int)&(pMVar76->position).z + 2);
+    uVar26 = *(undefined1 *)((int)&(pMVar76->position).z + 3);
+    if (pMVar76->valid == 0) {
       *foundValidPosition = 0;
-      uVar8._4_4_ = ePos->y;
-      uVar8._0_4_ = ePos->z;
+      fVar4 = ePos->y;
+      uVar14._0_4_ = ePos->z;
       __return_storage_ptr__->x = ePos->x;
-      __return_storage_ptr__->y = uVar8._4_4_;
-      __return_storage_ptr__->z = (float)uVar8;
+      __return_storage_ptr__->y = fVar4;
+      __return_storage_ptr__->z = (float)uVar14;
       return __return_storage_ptr__;
     }
   }
-  uVar4 = CONCAT13(MStack_10.position.x._3_1_,
-                    CONCAT12(MStack_10.position.x._2_1_,
-                             CONCAT11(MStack_10.position.x._1_1_,MStack_10.position.x._0_1_)));
-  __return_storage_ptr__->x = (float)uVar4;
+  uVar2 = CONCAT13(uVar11,CONCAT12(uVar10,CONCAT11(uVar9,uVar8)));
+  __return_storage_ptr__->x = (float)uVar2;
   __return_storage_ptr__->y =
-       (float)(int)(CONCAT17(MStack_10.position.y._3_1_,
-                             CONCAT16(MStack_10.position.y._2_1_,
-                                      CONCAT15(MStack_10.position.y._1_1_,
-                                               CONCAT14(MStack_10.position.y._0_1_,uVar4)))) >>
+       (float)(int)(CONCAT17(uVar22,CONCAT16(uVar21,CONCAT15(uVar20,CONCAT14(uVar19,uVar2)))) >>
                    0x20);
-  __return_storage_ptr__->z =
-       (float)CONCAT13(MStack_10.position.z._3_1_,
-                       CONCAT12(MStack_10.position.z._2_1_,
-                                CONCAT11(MStack_10.position.z._1_1_,MStack_10.position.z._0_1_)));
+  __return_storage_ptr__->z = (float)CONCAT13(uVar26,CONCAT12(uVar25,CONCAT11(uVar24,uVar23)));
   return __return_storage_ptr__;
 }
 
@@ -642,11 +568,11 @@ Vector3 * Assembly-CSharp.dll::MvCharacterController::MvCharacterController_GetG
                           ((Vector3 *)&stack0xffffffc8,*pVVar2,(MethodInfo *)0x0);
       uVar21 = pVVar2->x;
       uVar22 = pVVar2->y;
-      uVar23 = uVar22 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+      uVar23 = uVar22 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       fVar5 = (float)((uint)pVVar2->z ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       __return_storage_ptr__->x =
-           (float)(uVar21 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+           (float)(uVar21 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       __return_storage_ptr__->y = (float)uVar23;
       __return_storage_ptr__->z = fVar5;

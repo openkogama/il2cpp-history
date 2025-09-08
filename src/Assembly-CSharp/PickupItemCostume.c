@@ -271,11 +271,11 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_Initialize
         }
       }
 code_?:
-      (*(code *)in_stack_7->klass[2]._0.nestedTypes)();
-      pvVar12 = (void *)(*(code *)in_stack_7->klass[2]._0.properties)();
+      (*(code *)in_stack_7->klass[2].interfaceOffsets)();
+      pvVar12 = (void *)(*(code *)in_stack_7->klass[2]._0.nestedTypes)();
       in_stack_7[0x11].fields._.m_CachedPtr = pvVar12;
       func_?();
-      (*(code *)in_stack_7->klass[2].rgctx_data)();
+      (*in_stack_7->klass[2]._1.unity_user_data)();
       return;
     }
   }

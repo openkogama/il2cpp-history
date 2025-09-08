@@ -58,40 +58,41 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_OnActivated
   (this->fields)._.timeStamp = fVar1;
   func_?(&(this->fields)._.owner,target);
   pAVar2 = (this->fields)._.owner;
-  if ((((pAVar2 != (Avatar *)0x0) && (pMVar3 = (pAVar2->fields).mvAvatar, pMVar3 != (MVAvatar *)0x0)
-       ) && (pMVar4 = (pMVar3->fields).body, pMVar4 != (MVBody *)0x0)) &&
-     ((pMVar5 = (pMVar4->fields).bodyObject, pMVar5 != (MVBodyObject *)0x0 &&
-      (this_00 = (pMVar5->fields).avatarBlobShadowController,
-      this_00 != (AvatarBlobShadowController *)0x0)))) {
-    AvatarBlobShadowController::AvatarBlobShadowController_ScaleShadow
-              (this_00,(this->fields).sizeModifier,(MethodInfo *)0x0);
-    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_01 != (MVNetworkGame *)0x0) {
-      pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-      if ((pMVar6 != (MVLocalPlayer *)0x0) &&
-         (pSVar7 = (pMVar6->fields).spawnRoleDataMediator, pSVar7 != (SpawnRoleDataMediator *)0x0))
-      {
-        pVVar8 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
-                 ::SpawnRoleVariable`1[UnityEngine::Vector3]::
-                 SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                           ((Vector3 *)&stack0xfffffff0,
-                            (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
-                            (pSVar7->fields).defaultScale,
-                            MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
-                           );
-        fVar9 = pVVar8->y;
-        fVar1 = pVVar8->z;
-        (this->fields).defaultScale.x = pVVar8->x;
-        (this->fields).defaultScale.y = fVar9;
-        (this->fields).defaultScale.z = fVar1;
-        (*(code *)(this->klass->vtable).Scale.method)();
-        return;
+  if (((pAVar2 != (Avatar *)0x0) && (pMVar3 = (pAVar2->fields).mvAvatar, pMVar3 != (MVAvatar *)0x0))
+     && (this_00 = (pMVar3->fields).body, this_00 != (MVBody *)0x0)) {
+    pAVar4 = MVBody::MVBody_get_BlobShadow(this_00,(MethodInfo *)0x0);
+    if ((pAVar4 != (AvatarBlobShadowController *)0x0) &&
+       (this_01 = (pAVar4->fields).blobProjector, this_01 != (Projector *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Projector::Projector_set_orthographicSize
+                (this_01,(this->fields).sizeModifier,(MethodInfo *)0x0);
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (this_02 != (MVNetworkGame *)0x0) {
+        pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
+        if ((pMVar5 != (MVLocalPlayer *)0x0) &&
+           (pSVar6 = (pMVar5->fields).spawnRoleDataMediator, pSVar6 != (SpawnRoleDataMediator *)0x0)
+           ) {
+          pVVar7 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                   SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
+                   SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
+                             ((Vector3 *)&stack0xfffffff0,
+                              (SpawnRoleVariable_1_UnityEngine_Vector3_ *)
+                              (pSVar6->fields).defaultScale,
+                              MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+                             );
+          fVar8 = pVVar7->y;
+          fVar1 = pVVar7->z;
+          (this->fields).defaultScale.x = pVVar7->x;
+          (this->fields).defaultScale.y = fVar8;
+          (this->fields).defaultScale.z = fVar1;
+          (*(code *)(this->klass->vtable).Scale.method)();
+          return;
+        }
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -106,19 +107,20 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier_OnDeactivated
   (this->fields).isDeactivating = 1;
   func_?(&(this->fields)._.owner,target);
   pAVar1 = (this->fields)._.owner;
-  if ((((pAVar1 != (Avatar *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0)
-       ) && (pMVar3 = (pMVar2->fields).body, pMVar3 != (MVBody *)0x0)) &&
-     ((pMVar4 = (pMVar3->fields).bodyObject, pMVar4 != (MVBodyObject *)0x0 &&
-      (this_00 = (pMVar4->fields).avatarBlobShadowController,
-      this_00 != (AvatarBlobShadowController *)0x0)))) {
-    AvatarBlobShadowController::AvatarBlobShadowController_ScaleShadow
-              (this_00,1.0,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).UnScale.method)(this,(this->klass->vtable).Scale.methodPtr);
-    return;
+  if (((pAVar1 != (Avatar *)0x0) && (pMVar2 = (pAVar1->fields).mvAvatar, pMVar2 != (MVAvatar *)0x0))
+     && (this_00 = (pMVar2->fields).body, this_00 != (MVBody *)0x0)) {
+    pAVar3 = MVBody::MVBody_get_BlobShadow(this_00,(MethodInfo *)0x0);
+    if ((pAVar3 != (AvatarBlobShadowController *)0x0) &&
+       (this_01 = (pAVar3->fields).blobProjector, this_01 != (Projector *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Projector::Projector_set_orthographicSize
+                (this_01,1.0,(MethodInfo *)0x0);
+      (*(code *)(this->klass->vtable).UnScale.method)(this,(this->klass->vtable).Scale.methodPtr);
+      return;
+    }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -219,8 +221,8 @@ void Assembly-CSharp.dll::SizeModifier::SizeModifier__ctor(SizeModifier *this,Me
   (this->fields).defaultScale.x = (pVVar1->oneVector).x;
   (this->fields).defaultScale.y = fVar2;
   (this->fields).defaultScale.z = fVar3;
-  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

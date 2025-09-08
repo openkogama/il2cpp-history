@@ -546,7 +546,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
                                    (&stack0xffffffa8,pMVar1,1);
                 uStack_14 = (uint)*(undefined8 *)(iVar13 + 0x10);
                 fVar15 = (float)(uStack_14 ^
-                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                 );
                 if (pTVar5 != (Transform *)0x0) {
                   VVar4.y = (float)uVar8 + (float)uVar11 * fVar15 * _UNK_?;
@@ -683,7 +683,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::
                                    (&stack0xffffffb0,pMVar1,1);
                 uStack_17 = (uint)*(undefined8 *)(iVar16 + 0x10);
                 fVar18 = (float)(uStack_17 ^
-                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                 );
                 if (pTVar10 != (Transform *)0x0) {
                   value.y = (float)uVar12 + fVar14 * fVar18 * _UNK_?;

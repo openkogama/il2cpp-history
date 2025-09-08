@@ -25,7 +25,7 @@ public class StreamedSpriteToImageManual : StreamingAsset<Sprite, Texture2D>
 	private class StreamedAssetSpriteHandler
 	{
 		// Fields
-		private static Dictionary<string, Sprite> sprites;
+		private static readonly Dictionary<string, Sprite> sprites;
 
 		// Constructors
 		public StreamedAssetSpriteHandler();

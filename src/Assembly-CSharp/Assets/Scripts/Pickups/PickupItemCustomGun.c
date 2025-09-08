@@ -79,7 +79,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
           ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
   if (iVar7 < 1) {
     cVar8 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                      (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                      (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
     if (cVar8 == '\0') {
       pMVar2 = (this->fields)._._._.owner;
       if (pMVar2 == (MVPickupOwner *)0x0) {
@@ -175,7 +175,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
               ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
       if (iVar6 < 1) {
         cVar7 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                          (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                          (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
         if (cVar7 == '\0') {
           pMVar5 = (this->fields)._._._.owner;
           if (pMVar5 == (MVPickupOwner *)0x0) goto code_?;
@@ -1593,11 +1593,11 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         return;
       }
       fVar3 = (float)((uint)direction.x ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar4 = (float)((uint)direction.y ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar5 = (float)((uint)direction.z ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
         fVar6 = (pPVar2->fields)._.recoilStrength;
@@ -3070,11 +3070,11 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
     if (pPVar5 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
     if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon < (pPVar5->fields)._.recoilStrength) {
       fVar6 = (float)((uint)uStack_2 ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar7 = (float)(uStack_2._4_4_ ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar3 = (float)((uint)fVar3 ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
       fVar8 = (pPVar5->fields)._.recoilStrength;
@@ -5150,7 +5150,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
     return 0;
   }
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                    (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                    (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

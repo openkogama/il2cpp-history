@@ -27,79 +27,119 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform_Initialize
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
-    MVMovable::MVMovable_Initialize((MVMovable *)this,(MethodInfo *)0x0);
-    if ((this->fields)._._CubeModel_k__BackingField == (MVCubeModelInstance *)0x0) {
-      pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this->fields,(MethodInfo *)0x0)
-      ;
-      pSVar1 = mscorlib.dll::System::String::String_Concat_4
-                         (StringLiteral_Moving_platform_,pSVar1,
-                          StringLiteral__init___movable_s_cube_model_is_,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)pSVar1,(MethodInfo *)0x0);
-      return;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MovableVisualization_MethodInfo__UnityEngine__GameObject__AddComponent<MovableVisualization>__
+                     );
+      cRam_? = '\x01';
     }
-    pMStack_2 = (MonitorData *)0x0;
-    iStack_3 = 0;
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              ((IntVector *)&pMStack_2,-5,-2,-5,(MethodInfo *)0x0);
-    value[1].monitor = pMStack_2;
-    *(int16_t *)&value[2].klass = iStack_3;
-    uVar4._0_2_ = 0;
-    uVar4._2_2_ = 0;
-    iVar5 = 0;
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              ((IntVector *)&stack0xffffffe8,5,2,5,(MethodInfo *)0x0);
-    *(undefined4 *)((int)&value[2].klass + 2) = uVar4;
-    *(int16_t *)((int)&value[2].monitor + 2) = iVar5;
-    pMVar6 = (this->fields)._._CubeModel_k__BackingField;
-    pFStack_7 = (Func_1_Object_ *)func_?();
-    mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
-              (pFStack_7,value,
-               MethodInfo__MVMovingPlatform____c__DisplayClass7_0___Initialize_b__0__,
-               (MethodInfo *)0x0);
-    if (pMVar6 != (MVCubeModelInstance *)0x0) {
-      (pMVar6->fields)._._ModelingConstraintBuilder_k__BackingField =
-           (Func_1_IModelingConstraint_ *)pFStack_7;
-      func_?(&(pMVar6->fields)._._ModelingConstraintBuilder_k__BackingField,pFStack_7);
-      pMVar6 = (this->fields)._._CubeModel_k__BackingField;
-      if (pMVar6 != (MVCubeModelInstance *)0x0) {
-        piVar8 = &(pMVar6->fields)._._.interactionFlags;
-        *(uint *)piVar8 = (uint)*piVar8 & 0xfffffff7;
-        *(undefined4 *)((int)&(pMVar6->fields)._._.interactionFlags + 4) =
-             *(undefined4 *)((int)&(pMVar6->fields)._._.interactionFlags + 4);
-        pMVar6 = (this->fields)._._CubeModel_k__BackingField;
-        this_00 = (EventHandler_1_Object_ *)
-                  func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (this_00,(Object *)this,
-                   MethodInfo__MVMovingPlatform__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_
-                   ,(MethodInfo *)0x0);
-        if (pMVar6 != (MVCubeModelInstance *)0x0) {
-          MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged
-                    ((MVCubeModelBase *)pMVar6,(EventHandler_1_EditStateEventArgs_ *)this_00,
+    MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
+    MVMovable::MVMovable_InitializeCommon((MVMovable *)this,(MethodInfo *)0x0);
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if ((pMVar1 != (MVWorldObjectClientManager *)0x0) &&
+       (this_00 = (pMVar1->fields)._MoveableController_k__BackingField,
+       this_00 != (MoveableController *)0x0)) {
+      MoveableController::MoveableController_AddMovable
+                (this_00,(MVMovable *)this,0,(MethodInfo *)0x0);
+      this_01 = (this->fields)._._._._.gameObject;
+      if (this_01 != (GameObject *)0x0) {
+        pMVar2 = (MovableVisualization *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                           (this_01,
+                            MovableVisualization_MethodInfo__UnityEngine__GameObject__AddComponent<MovableVisualization>__
+                           );
+        (this->fields)._.movableVisualization = pMVar2;
+        func_?(&(this->fields)._.movableVisualization,pMVar2);
+        pMVar2 = (this->fields)._.movableVisualization;
+        if (pMVar2 != (MovableVisualization *)0x0) {
+          MovableVisualization::MovableVisualization_Init
+                    (pMVar2,(MVCubeModelBase *)(this->fields)._._CubeModel_k__BackingField,
                      (MethodInfo *)0x0);
-          pMVar6 = (this->fields)._._CubeModel_k__BackingField;
-          this_01 = (UnityAction_1_UnityEngine_Vector2_ *)
-                    func_?(
-                                   TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
-                                   );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
-          UnityAction_1_UnityEngine_Vector2___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVMovingPlatform__OnStateChanged_UnityEngine__CullingGroupEvent_,
-                     (MethodInfo *)0x0);
-          if (pMVar6 != (MVCubeModelInstance *)0x0) {
-            MVCubeModelInstance::MVCubeModelInstance_SetupCulling
-                      (pMVar6,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_01,
-                       (MethodInfo *)0x0);
-            pMVar6 = (this->fields)._._CubeModel_k__BackingField;
-            if (pMVar6 != (MVCubeModelInstance *)0x0) {
-              MVCubeModelInstance::MVCubeModelInstance_SetCullDistanceBand
-                        (pMVar6,2,(MethodInfo *)0x0);
+          pMVar3 = (this->fields)._._CubeModel_k__BackingField;
+          if (pMVar3 != (MVCubeModelInstance *)0x0) {
+            (*(code *)(pMVar3->klass->vtable).set_Visible.method)
+                      (pMVar3,0,(pMVar3->klass->vtable).GetTargetPosition.methodPtr);
+            (*(code *)(this->klass->vtable).set_Visible.method)
+                      (this,(this->fields)._.isVisible,
+                       (this->klass->vtable).GetTargetPosition.methodPtr);
+            if ((this->fields)._._CubeModel_k__BackingField == (MVCubeModelInstance *)0x0) {
+              pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
+                                 ((Int32 *)&this->fields,(MethodInfo *)0x0);
+              pSVar4 = mscorlib.dll::System::String::String_Concat_4
+                                 (StringLiteral_Moving_platform_,pSVar4,
+                                  StringLiteral__init___movable_s_cube_model_is_,(MethodInfo *)0x0);
+              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                        ((Object *)pSVar4,(MethodInfo *)0x0);
               return;
+            }
+            pMStack_5 = (MonitorData *)0x0;
+            uStack_6 = (undefined *)((uint)uStack_6._2_2_ << 0x10);
+            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+                      ((IntVector *)&pMStack_5,-5,-2,-5,(MethodInfo *)0x0);
+            value[1].monitor = pMStack_5;
+            *(int16_t *)&value[2].klass = (int16_t)uStack_6;
+            IStack_7.x = 0;
+            IStack_7.y = 0;
+            IStack_7.z = 0;
+            MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+                      (&IStack_7,5,2,5,(MethodInfo *)0x0);
+            *(undefined4 *)((int)&value[2].klass + 2) = IStack_7._0_4_;
+            *(int16_t *)((int)&value[2].monitor + 2) = IStack_7.z;
+            pMVar3 = (this->fields)._._CubeModel_k__BackingField;
+            this_02 = (Func_1_Object_ *)func_?(TypeInfo__System__Func<IModelingConstraint>)
+            ;
+            mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
+                      (this_02,value,
+                       MethodInfo__MVMovingPlatform____c__DisplayClass7_0___Initialize_b__0__,
+                       (MethodInfo *)0x0);
+            if (pMVar3 != (MVCubeModelInstance *)0x0) {
+              (pMVar3->fields)._._ModelingConstraintBuilder_k__BackingField =
+                   (Func_1_IModelingConstraint_ *)this_02;
+              func_?(&(pMVar3->fields)._._ModelingConstraintBuilder_k__BackingField,this_02
+                             );
+              pMVar3 = (this->fields)._._CubeModel_k__BackingField;
+              if (pMVar3 != (MVCubeModelInstance *)0x0) {
+                piVar8 = &(pMVar3->fields)._._.interactionFlags;
+                *(uint *)piVar8 = (uint)*piVar8 & 0xfffffff7;
+                *(undefined4 *)((int)&(pMVar3->fields)._._.interactionFlags + 4) =
+                     *(undefined4 *)((int)&(pMVar3->fields)._._.interactionFlags + 4);
+                pMVar3 = (this->fields)._._CubeModel_k__BackingField;
+                this_03 = (EventHandler_1_Object_ *)
+                          func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          (this_03,(Object *)this,
+                           MethodInfo__MVMovingPlatform__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_
+                           ,(MethodInfo *)0x0);
+                if (pMVar3 != (MVCubeModelInstance *)0x0) {
+                  MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged
+                            ((MVCubeModelBase *)pMVar3,(EventHandler_1_EditStateEventArgs_ *)this_03
+                             ,(MethodInfo *)0x0);
+                  pMVar3 = (this->fields)._._CubeModel_k__BackingField;
+                  this_04 = (UnityAction_1_UnityEngine_Vector2_ *)
+                            func_?(
+                                           TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                                           );
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::
+                  Vector2]::UnityAction_1_UnityEngine_Vector2___ctor
+                            (this_04,(Object *)this,
+                             MethodInfo__MVMovingPlatform__OnStateChanged_UnityEngine__CullingGroupEvent_
+                             ,(MethodInfo *)0x0);
+                  if (pMVar3 != (MVCubeModelInstance *)0x0) {
+                    MVCubeModelInstance::MVCubeModelInstance_SetupCulling
+                              (pMVar3,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_04,
+                               (MethodInfo *)0x0);
+                    pMVar3 = (this->fields)._._CubeModel_k__BackingField;
+                    if (pMVar3 != (MVCubeModelInstance *)0x0) {
+                      MVCubeModelInstance::MVCubeModelInstance_SetCullDistanceBand
+                                (pMVar3,2,(MethodInfo *)0x0);
+                      return;
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -202,17 +242,28 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform_OnStateChanged
 {
   this_00 = (this->fields)._._CubeModel_k__BackingField;
   if (this_00 != (MVCubeModelInstance *)0x0) {
-    newVisible = MVCubeModelInstance::MVCubeModelInstance_IsLodVisible
-                           (this_00,cullingGroupEvent,(MethodInfo *)0x0);
+    bVar1 = MVCubeModelInstance::MVCubeModelInstance_IsLodVisible
+                      (this_00,cullingGroupEvent,(MethodInfo *)0x0);
     this_01 = (this->fields)._.movableVisualization;
     if (this_01 != (MovableVisualization *)0x0) {
-      MovableVisualization::MovableVisualization_ChangeLOD(this_01,newVisible,(MethodInfo *)0x0);
+      bVar2 = (this_01->fields).isVisible;
+      if (bVar1 == 0) {
+        if (bVar2 != 0) {
+          MovableVisualization::MovableVisualization_SetMeshRenderers
+                    (this_01,0,(this_01->fields).cmbClone,(MethodInfo *)0x0);
+        }
+      }
+      else if ((bVar2 == 0) && ((this_01->fields).canBeVisible != 0)) {
+        MovableVisualization::MovableVisualization_SetMeshRenderers
+                  (this_01,1,(this_01->fields).cmbClone,(MethodInfo *)0x0);
+        return;
+      }
       return;
     }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -382,7 +433,7 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform__ctor
     func_?(TypeInfo__MVMovable);
   }
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVMovable>__List__,unaff_EBP);
+    func_?(&MethodInfo__System__Collections__Generic__List<MVMovable>__List__);
     func_?(&TypeInfo__System__Collections__Generic__List<MVMovable>);
     cRam_? = '\x01';
   }
@@ -396,71 +447,24 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform__ctor
   (this->fields)._.MoveableChildren = this_00;
   func_?(&(this->fields)._.MoveableChildren,this_00);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3,unaff_EBP);
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  bVar1 = cRam_? == '\0';
-  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar2->zeroVector).y;
-  fVar4 = (pVVar2->zeroVector).z;
-  (this->fields)._.localPos.x = (pVVar2->zeroVector).x;
-  (this->fields)._.localPos.y = fVar3;
-  (this->fields)._.localPos.z = fVar4;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar2 = (pVVar1->zeroVector).y;
+  fVar3 = (pVVar1->zeroVector).z;
+  (this->fields)._.localPos.x = (pVVar1->zeroVector).x;
+  (this->fields)._.localPos.y = fVar2;
+  (this->fields)._.localPos.z = fVar3;
   (this->fields)._.distance = 5.0;
   (this->fields)._.parentMoverID = -1;
   (this->fields)._.isVisible = 1;
-  if (bVar1) {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    cRam_? = '\x01';
-  }
-  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-            );
-  (this->fields)._._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_01;
-  func_?(&(this->fields)._._.idChildMap,this_01);
-  if (cRam_? == '\0') {
-    func_?();
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>);
-    func_?(&TypeInfo__MVWorldObjectClient);
-    cRam_? = '\x01';
-  }
-  this_02 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?();
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
-  ::TextResourceManager+FontAssetRef]::
-  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (this_02,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-            );
-  (this->fields)._._._.children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_02;
-  func_?(&(this->fields)._._._.children,this_02);
-  if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  MVWorldObjectClient::MVWorldObjectClient__ctor_2
-            ((MVWorldObjectClient *)this,(Dictionary_2_System_Object_System_Object_ *)0x0,
-             worldObjects,(MethodInfo *)0x0);
-  uVar5 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  piVar6 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar6 = (uint)*piVar6 | 0x82101;
-  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar5;
-  MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
-  uVar5 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  piVar6 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar6 = (uint)*piVar6 | 0x2000;
-  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar5;
+  MVBlueprintBase::MVBlueprintBase__ctor
+            ((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
+  uVar4 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
+  piVar5 = &(this->fields)._._._._.interactionFlags;
+  *(uint *)piVar5 = (uint)*piVar5 | 0x2000;
+  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar4;
   return;
 }
 

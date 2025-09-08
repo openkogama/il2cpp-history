@@ -1,7 +1,7 @@
 
-/* Void <Initialize>b__11_0(GameObject) */
+/* Void <Initialize>b__13_0(GameObject) */
 
-void Assembly-CSharp.dll::RequirementNotification+<>c::RequirementNotification_c__Initialize_b__11_0
+void Assembly-CSharp.dll::RequirementNotification+<>c::RequirementNotification_c__Initialize_b__13_0
                (RequirementNotification_c *this,GameObject *x,MethodInfo *method)
 
 {

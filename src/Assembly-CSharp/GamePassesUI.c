@@ -483,15 +483,25 @@ void Assembly-CSharp.dll::GamePassesUI::GamePassesUI_ReplayGainEffect
     }
     this_01 = (this->fields).gainEffectController;
     if (this_01 != (GameTierProgressBarGainEffectController *)0x0) {
-      GameTierProgressBarGainEffectController::
-      GameTierProgressBarGainEffectController_ReplayGainEffect
-                (this_01,previousGamePointAmount,newGamePointAmount,(MethodInfo *)0x0);
+      iVar3 = ((this_01->fields).gamePointsToInstantiate - previousGamePointAmount) +
+              newGamePointAmount;
+      (this_01->fields).gamePointsToInstantiate = iVar3;
+      if (10 < iVar3) {
+        (this_01->fields).gamePointsToInstantiate = 10;
+      }
+      (this_01->fields).currentGamePoints = newGamePointAmount;
+      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pfVar4 = &(this_01->fields).createGamePointTime;
+      if (*pfVar4 <= fVar1 && fVar1 != *pfVar4) {
+        GameTierProgressBarGainEffectController::
+        GameTierProgressBarGainEffectController_StartGamePointGainEffect(this_01,(MethodInfo *)0x0);
+      }
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -608,19 +618,8 @@ void Assembly-CSharp.dll::GamePassesUI::GamePassesUI_ShowGamePassesShop
                 );
       this_00 = (this->fields).highLightArrowManager;
       if (this_00 != (GamePassesHighlightArrowManager *)0x0) {
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__GamePassesHighlightArrowManager);
-          cRam_? = '\x01';
-        }
-        if ((uint8_t)tierToShow == (this_00->fields).currentGamePassTierHighlighted) {
-          GamePassesHighlightArrowManager::GamePassesHighlightArrowManager_DestroyHighlighArrow
-                    (this_00,(MethodInfo *)0x0);
-          if (TypeInfo__GamePassesHighlightArrowManager->static_fields->isHighlightingTierUnlocked
-              != 0) {
-            TypeInfo__GamePassesHighlightArrowManager->static_fields->isHighlightingTierUnlocked = 0
-            ;
-          }
-        }
+        GamePassesHighlightArrowManager::GamePassesHighlightArrowManager_OnTierBeingShown
+                  (this_00,tierToShow,(MethodInfo *)0x0);
         return;
       }
     }

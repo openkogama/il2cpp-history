@@ -361,64 +361,58 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_00 != (MVWorldObjectClientManager *)0x0) {
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_01 != (MVWorldObjectClientManager *)0x0) {
     pMVar1 = (MVRoundCube *)
              MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
-                       (this_00,
+                       (this_01,
                         MVRoundCube_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVRoundCube>__
                        );
     (this->fields).roundCube = pMVar1;
     func_?(&(this->fields).roundCube,pMVar1);
-    pGVar2 = (this->fields).mainGameObject;
+    this_00 = (this->fields).mainGameObject;
     if ((this->fields).roundCube == (MVRoundCube *)0x0) {
-      if (pGVar2 != (GameObject *)0x0) {
+      if (this_00 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,0,(MethodInfo *)0x0);
-        pTVar3 = (this->fields).roundTime;
-        if (pTVar3 != (Text *)0x0) {
-          (*(code *)(pTVar3->klass->vtable).set_text.method)
-                    (pTVar3,::StringLiteral__,
-                     (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+                  (this_00,0,(MethodInfo *)0x0);
+        pTVar2 = (this->fields).roundTime;
+        if (pTVar2 != (Text *)0x0) {
+          (*(code *)(pTVar2->klass->vtable).set_text.method)
+                    (pTVar2,::StringLiteral__,
+                     (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           return;
         }
       }
     }
-    else if (pGVar2 != (GameObject *)0x0) {
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        (pGVar2,(MethodInfo *)0x0);
-      if (bVar4 == 0) {
-        pGVar2 = (this->fields).mainGameObject;
-        if (pGVar2 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,1,(MethodInfo *)0x0);
-      }
+    else if (this_00 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_00,1,(MethodInfo *)0x0);
       pMVar1 = (this->fields).roundCube;
       if (pMVar1 != (MVRoundCube *)0x0) {
-        iVar5 = MVRoundCube::MVRoundCube_get_DurationInMilliseconds(pMVar1,(MethodInfo *)0x0);
-        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar6 != (MVNetworkGame *)0x0) {
-          iVar7 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
-                            (pMVar6,(MethodInfo *)0x0);
-          pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar6 != (MVNetworkGame *)0x0) &&
-             (pMVar8 = (pMVar6->fields)._NetworkGameStateListener_k__BackingField,
-             pMVar8 != (MVNetworkGameStateListener *)0x0)) {
-            iVar9 = ((pMVar8->fields).startTime - iVar7) + iVar5;
-            iVar10 = 0;
-            if (-1 < iVar9) {
-              iVar10 = iVar9;
+        iVar3 = MVRoundCube::MVRoundCube_get_DurationInMilliseconds(pMVar1,(MethodInfo *)0x0);
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar4 != (MVNetworkGame *)0x0) {
+          iVar5 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                            (pMVar4,(MethodInfo *)0x0);
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar4 != (MVNetworkGame *)0x0) &&
+             (pMVar6 = (pMVar4->fields)._NetworkGameStateListener_k__BackingField,
+             pMVar6 != (MVNetworkGameStateListener *)0x0)) {
+            iVar7 = ((pMVar6->fields).startTime - iVar5) + iVar3;
+            iVar8 = 0;
+            if (-1 < iVar7) {
+              iVar8 = iVar7;
             }
-            if (0 < iVar10) {
-              pTVar3 = (this->fields).roundTime;
+            if (0 < iVar8) {
+              pTVar2 = (this->fields).roundTime;
               arg0 = (Object *)func_?();
               arg1 = (Object *)func_?();
-              pSVar11 = mscorlib.dll::System::String::String_Format_1
-                                  (StringLiteral__0_00___1_00_,arg0,arg1,(MethodInfo *)0x0);
-              if (pTVar3 == (Text *)0x0) goto code_?;
-              (*(code *)(pTVar3->klass->vtable).set_text.method)
-                        (pTVar3,pSVar11,
-                         (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+              pSVar9 = mscorlib.dll::System::String::String_Format_1
+                                 (StringLiteral__0_00___1_00_,arg0,arg1,(MethodInfo *)0x0);
+              if (pTVar2 == (Text *)0x0) goto code_?;
+              (*(code *)(pTVar2->klass->vtable).set_text.method)
+                        (pTVar2,pSVar9,
+                         (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             }
             return;
           }
@@ -428,8 +422,8 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

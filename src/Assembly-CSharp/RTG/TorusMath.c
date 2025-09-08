@@ -250,7 +250,7 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
   plane.m_Distance =
        (float)((uint)(torusCenter.y * uStack_14._4_4_ + torusCenter.x * (float)uStack_14 +
                      torusCenter.z * fVar4) ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   plane.m_Normal = *pVVar17;
   auVar18._4_4_ = fVar16;
   auVar18._0_4_ = uVar15;
@@ -381,7 +381,7 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_RaycastCylindrical
   plane.m_Distance =
        (float)((uint)(torusCenter.y * fVar1 + torusCenter.x * (float)uVar18 +
                      torusCenter.z * pVVar4->z) ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   plane.m_Normal = *pVVar4;
   pt.y = (float)uVar16;
   pt.x = (float)uVar15;

@@ -1,4 +1,25 @@
 
+/* IEnumerator HitIndicatorAnimation() */
+
+IEnumerator *
+Assembly-CSharp.dll::CrossHair::CrossHair_HitIndicatorAnimation(CrossHair *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CrossHair___HitIndicatorAnimation_d__13);
+    cRam_? = '\x01';
+  }
+  method_00 = TypeInfo__CrossHair___HitIndicatorAnimation_d__13;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
+}
+
+
 /* Void ShowHasHitEffect() */
 
 void Assembly-CSharp.dll::CrossHair::CrossHair_ShowHasHitEffect(CrossHair *this,MethodInfo *method)
@@ -8,102 +29,153 @@ void Assembly-CSharp.dll::CrossHair::CrossHair_ShowHasHitEffect(CrossHair *this,
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields).crossHairHitEnemyIndicator;
+  x = (this->fields).hitIndicatorImage;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pIVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    return;
-  }
-  pIVar1 = (this->fields).crossHair;
-  if (pIVar1 != (Image *)0x0) {
-    pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
-    puVar4 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_3,pIVar1);
-    pIVar1 = (this->fields).crossHairHitEnemyIndicator;
-    uStack_5 = puVar4[1];
-    uStack_6 = puVar4[2];
-    uStack_7 = 0;
-    if (pIVar1 != (Image *)0x0) {
-      pIStack_3 = (pIVar1->klass->vtable).get_raycastTarget.methodPtr;
-      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar4,uStack_5,uStack_6,0);
-      (this->fields).hitEffectActive = 1;
-      (this->fields).timer = 0.0;
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (this_00 == (GameObject *)0x0) {
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (this_00,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
+                ((MonoBehaviour *)this,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      method_00 = TypeInfo__CrossHair___HitIndicatorAnimation_d__13;
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+      value[1].klass = (Object__Class *)0x0;
+      value[2].klass = (Object__Class *)this;
+      func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+    }
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
   return;
 }
 
 
-/* Void Update() */
+/* Void UpdateAmmoCount(PickupItem) */
 
-void Assembly-CSharp.dll::CrossHair::CrossHair_Update(CrossHair *this,MethodInfo *method)
+void Assembly-CSharp.dll::CrossHair::CrossHair_UpdateAmmoCount
+               (CrossHair *this,PickupItem *pickupItem,MethodInfo *method)
 
 {
-  if ((this->fields).hitEffectActive == 0) {
-    return;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Int32);
+    func_?(&TypeInfo__UnityEngine__RectTransform);
+    func_?(&StringLiteral__0_____1_);
+    func_?(&StringLiteral_u221E);
+    func_?(&StringLiteral__0___);
+    cRam_? = '\x01';
   }
-  fVar1 = (this->fields).timer;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  pIVar3 = (this->fields).crossHair;
-  (this->fields).timer = fVar2 + fVar1;
-  if (pIVar3 != (Image *)0x0) {
-    puVar4 = (undefined4 *)
-             (*(code *)(pIVar3->klass->vtable).get_color.method)
-                       (&uStack_5,pIVar3,(pIVar3->klass->vtable).set_color.methodPtr);
-    uStack_5 = *puVar4;
-    uStack_6 = puVar4[1];
-    uStack_7 = puVar4[2];
-    fStack_8 = (float)puVar4[3];
-    pAVar9 = (this->fields).fadeCurve;
-    if (pAVar9 != (AnimationCurve *)0x0) {
-      fStack_8 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar9,(this->fields).timer,(MethodInfo *)0x0);
-      pIVar3 = (this->fields).crossHairHitEnemyIndicator;
-      if (pIVar3 != (Image *)0x0) {
-        (*(code *)(pIVar3->klass->vtable).set_color.method)
-                  (pIVar3,uStack_5,uStack_6,uStack_7,fStack_8,
-                   (pIVar3->klass->vtable).get_raycastTarget.methodPtr);
-        fVar1 = (this->fields).timer;
-        pAVar9 = (this->fields).fadeCurve;
-        if (pAVar9 != (AnimationCurve *)0x0) {
-          pKVar10 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
-                             (pAVar9,(MethodInfo *)0x0);
-          pAVar9 = (this->fields).fadeCurve;
-          if ((pAVar9 != (AnimationCurve *)0x0) &&
-             (iVar11 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                      AnimationCurve_get_length(pAVar9,(MethodInfo *)0x0),
-             pKVar10 != (Keyframe__Array *)0x0)) {
-            if (pKVar10->max_length <= iVar11 - 1U) goto code_?;
-            fStack_12 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::
-                       Single,System::Single]::KeyValuePair_2_System_Single_System_Single__get_Key
-                                 ((KeyValuePair_2_System_Single_System_Single_ *)
-                                  (pKVar10->vector + iVar11 + -1),(MethodInfo *)0x0);
-            if (fVar1 < fStack_12) {
-              return;
-            }
-            pIVar3 = (this->fields).crossHair;
-            (this->fields).timer = 0.0;
-            if (pIVar3 != (Image *)0x0) {
-              puVar4 = (undefined4 *)
-                       (*(code *)(pIVar3->klass->vtable).get_color.method)
-                                 (&uStack_5,pIVar3,(pIVar3->klass->vtable).set_color.methodPtr);
-              pIVar3 = (this->fields).crossHairHitEnemyIndicator;
-              uStack_5 = *puVar4;
-              uStack_6 = puVar4[1];
-              uStack_7 = puVar4[2];
-              fStack_8 = 0.0;
-              if (pIVar3 != (Image *)0x0) {
-                (*(code *)(pIVar3->klass->vtable).set_color.method)
-                          (pIVar3,uStack_5,uStack_6,uStack_7,0,
-                           (pIVar3->klass->vtable).get_raycastTarget.methodPtr);
-                (this->fields).hitEffectActive = 0;
-                return;
+  if (pickupItem != (PickupItem *)0x0) {
+    fVar1 = (float)(*(code *)(pickupItem->klass->vtable).get_Quantity.method)
+                             (pickupItem,(pickupItem->klass->vtable).get_CrossHairColor.methodPtr);
+    if ((fVar1 == 0.0) &&
+       (cVar2 = (*(code *)(pickupItem->klass->vtable).get_HasUnlimitedAmmo.method)
+                          (pickupItem,(pickupItem->klass->vtable).get_HasPercentageAmmo.methodPtr),
+       cVar2 == '\0')) {
+      pTVar3 = (this->fields).ammoCount;
+      if ((pTVar3 != (Text *)0x0) &&
+         (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar3,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0))
+      {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar4,0,(MethodInfo *)0x0);
+        return;
+      }
+    }
+    else {
+      pTVar3 = (this->fields).ammoCount;
+      if ((pTVar3 != (Text *)0x0) &&
+         (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar3,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0))
+      {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar4,1,(MethodInfo *)0x0);
+        cVar2 = (*(code *)(pickupItem->klass->vtable).get_HasUnlimitedAmmo.method)
+                          (pickupItem,(pickupItem->klass->vtable).get_HasPercentageAmmo.methodPtr);
+        pSVar5 = StringLiteral_u221E;
+        if (cVar2 == '\0') {
+          cVar2 = (*(code *)(pickupItem->klass->vtable).get_HasPercentageAmmo.method)
+                            (pickupItem,(pickupItem->klass->vtable).get_CanUnequip.methodPtr);
+          if (cVar2 == '\0') {
+            fStack_6 = fVar1;
+            pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&fStack_6);
+            fStack_8 = (float)(*(code *)(pickupItem->klass->vtable).__unknown_1.method)
+                                        (pickupItem,
+                                         (pickupItem->klass->vtable).get_Quantity.methodPtr);
+            arg1 = (Object *)func_?(TypeInfo__System__Int32,&fStack_8);
+            pSVar5 = mscorlib.dll::System::String::String_Format_1
+                               (StringLiteral__0_____1_,pOVar7,arg1,(MethodInfo *)0x0);
+            pickupItem._3_1_ = '\0';
+            cVar2 = pickupItem._3_1_;
+          }
+          else {
+            afStack_9[0] = fVar1;
+            pOVar7 = (Object *)func_?(TypeInfo__System__Int32,afStack_9);
+            pSVar5 = mscorlib.dll::System::String::String_Format
+                               (StringLiteral__0___,pOVar7,(MethodInfo *)0x0);
+            pickupItem._3_1_ = '\0';
+            cVar2 = pickupItem._3_1_;
+          }
+        }
+        pickupItem._3_1_ = cVar2;
+        pTVar3 = (this->fields).ammoCount;
+        if (pTVar3 != (Text *)0x0) {
+          (*(code *)(pTVar3->klass->vtable).set_text.method)
+                    (pTVar3,pSVar5,
+                     (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+          value = 200;
+          if (pickupItem._3_1_ == '\0') {
+            value = 0x3c;
+          }
+          pTVar3 = (this->fields).ammoCount;
+          if (pTVar3 != (Text *)0x0) {
+            UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_fontSize
+                      (pTVar3,value,(MethodInfo *)0x0);
+            pTVar3 = (this->fields).ammoCount;
+            if (pTVar3 != (Text *)0x0) {
+              UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_resizeTextMaxSize
+                        (pTVar3,value,(MethodInfo *)0x0);
+              fVar1 = _UNK_?;
+              if (pickupItem._3_1_ != '\0') {
+                fVar1 = _UNK_?;
+              }
+              pGVar4 = (this->fields).ammoRoot;
+              if ((pGVar4 != (GameObject *)0x0) &&
+                 (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                           GameObject_get_transform(pGVar4,(MethodInfo *)0x0),
+                 pTVar10 != (Transform *)0x0)) {
+                this_00 = (Transform *)0x0;
+                if (pTVar10->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+                  this_00 = pTVar10;
+                }
+                if (this_00 != (Transform *)0x0) {
+                  VVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                          RectTransform_get_sizeDelta((RectTransform *)this_00,(MethodInfo *)0x0);
+                  afStack_9[0] = VVar11.y;
+                  VVar11.y = afStack_9[0];
+                  VVar11.x = fVar1;
+                  fStack_8 = afStack_9[0];
+                  UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                  RectTransform_set_sizeDelta((RectTransform *)this_00,VVar11,(MethodInfo *)0x0);
+                  return;
+                }
               }
             }
           }
@@ -112,10 +184,72 @@ void Assembly-CSharp.dll::CrossHair::CrossHair_Update(CrossHair *this,MethodInfo
     }
   }
   func_?();
-code_?:
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
+  return;
+}
+
+
+/* Void UpdateChargeState(PickupItem) */
+
+void Assembly-CSharp.dll::CrossHair::CrossHair_UpdateChargeState
+               (CrossHair *this,PickupItem *pickupItem,MethodInfo *method)
+
+{
+  if (pickupItem != (PickupItem *)0x0) {
+    fVar1 = (float10)(*(code *)(pickupItem->klass->vtable).get_ChargeState.method)
+                               (pickupItem,(pickupItem->klass->vtable).get_FirstPerson.methodPtr);
+    pIVar2 = (this->fields).chargeFill;
+    if ((float)fVar1 <= 0.0) {
+      (this->fields).isFillOn = 1;
+      if (pIVar2 != (Image *)0x0) {
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pIVar2,(MethodInfo *)0x0);
+        if (pGVar3 != (GameObject *)0x0) {
+          if (pcRam_? == (code *)0x0) {
+            pcRam_? = (code *)func_?(&UNK_?,unaff_EBP);
+          }
+          (*pcRam_?)(pGVar3,0);
+          return;
+        }
+      }
+    }
+    else if (pIVar2 != (Image *)0x0) {
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pIVar2,(MethodInfo *)0x0);
+      if (pGVar3 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar3,1,(MethodInfo *)0x0);
+        pIVar2 = (this->fields).chargeFill;
+        if (pIVar2 != (Image *)0x0) {
+          UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
+                    (pIVar2,(float)fVar1,(MethodInfo *)0x0);
+          pIVar2 = (this->fields).chargeFill;
+          if (pIVar2 != (Image *)0x0) {
+            value = (this->fields).isFillOn;
+            UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                      ((Behaviour *)pIVar2,value,(MethodInfo *)0x0);
+            if (_UNK_? <= (float)(uint)value) {
+              fVar4 = (this->fields).timeSinceLastToggle;
+              fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                                ((MethodInfo *)0x0);
+              fVar5 = fVar5 + fVar4;
+              pfVar6 = &(this->fields).toggleInterval;
+              (this->fields).timeSinceLastToggle = fVar5;
+              if (*pfVar6 <= fVar5 && fVar5 != *pfVar6) {
+                (this->fields).timeSinceLastToggle = 0.0;
+                (this->fields).isFillOn = (this->fields).isFillOn == 0;
+              }
+            }
+            return;
+          }
+        }
+      }
+    }
+  }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -126,151 +260,126 @@ void Assembly-CSharp.dll::CrossHair::CrossHair_UpdateCrossHair
                (CrossHair *this,PickupItem *pickupItem,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_u221E);
-    cRam_? = '\x01';
-  }
+  CrossHair_UpdateAmmoCount(this,pickupItem,(MethodInfo *)0x0);
   if (pickupItem == (PickupItem *)0x0) goto code_?;
-  method_00 = pickupItem;
-  IStack_1.m_value =
-       (*(code *)(pickupItem->klass->vtable).get_Quantity.method)
-                 (pickupItem,(pickupItem->klass->vtable).get_CrossHairColor.methodPtr);
-  puVar2 = (undefined4 *)
-           (*(code *)(pickupItem->klass->vtable).get_CrossHairColor.method)
-                     (&stack0xffffffe8,pickupItem,
-                      (pickupItem->klass->vtable).get_ChargeState.methodPtr);
-  uVar3 = *puVar2;
-  uVar4 = puVar2[1];
-  uVar5 = puVar2[2];
-  uVar6 = puVar2[3];
-  fVar7 = (float10)(*(code *)(pickupItem->klass->vtable).get_ChargeState.method)
-                              (pickupItem,(pickupItem->klass->vtable).get_FirstPerson.methodPtr);
-  fVar8 = (float)fVar7;
-  if (IStack_1.m_value == 0) {
-    pTVar9 = (this->fields).ammoCount;
-    if (pTVar9 == (Text *)0x0) goto code_?;
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
-                      ((Behaviour *)pTVar9,(MethodInfo *)0x0);
-    if ((bVar10 == 0) ||
-       (pTVar11 = System.dll::System::ComponentModel::ReflectPropertyDescriptor::
-                 ReflectPropertyDescriptor_ExtenderGetType
-                           ((ReflectPropertyDescriptor *)pickupItem,(IExtenderProvider *)0x0,
-                            (MethodInfo *)method_00), (char)pTVar11 != '\0')) goto code_?;
-code_?:
-    pTVar9 = (this->fields).ammoCount;
-    if (pTVar9 == (Text *)0x0) goto code_?;
-    pTVar12 = pTVar9->klass;
-    pIVar13 = (pTVar12->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-    pSVar14 = StringLiteral_u221E;
+  fVar1 = (float10)(*(code *)(pickupItem->klass->vtable).get_ChargeState.method)
+                             (pickupItem,(pickupItem->klass->vtable).get_FirstPerson.methodPtr);
+  pIVar2 = (this->fields).chargeFill;
+  fVar3 = (float)fVar1;
+  if (fVar3 <= 0.0) {
+    (this->fields).isFillOn = 1;
+    if (pIVar2 == (Image *)0x0) goto code_?;
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pIVar2,(MethodInfo *)0x0);
+    if (pGVar4 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar4,0,(MethodInfo *)0x0);
   }
   else {
+    if (pIVar2 == (Image *)0x0) goto code_?;
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pIVar2,(MethodInfo *)0x0);
+    if (pGVar4 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar4,1,(MethodInfo *)0x0);
+    pIVar2 = (this->fields).chargeFill;
+    if (pIVar2 == (Image *)0x0) goto code_?;
+    UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar2,fVar3,(MethodInfo *)0x0)
+    ;
+    pIVar2 = (this->fields).chargeFill;
+    if (pIVar2 == (Image *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+              ((Behaviour *)pIVar2,(this->fields).isFillOn,(MethodInfo *)0x0);
+    if (_UNK_? <= fVar3) {
+      fVar3 = (this->fields).timeSinceLastToggle;
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                         ((MethodInfo *)0x0);
+      fVar5 = fVar5 + fVar3;
+      pfVar6 = &(this->fields).toggleInterval;
+      (this->fields).timeSinceLastToggle = fVar5;
+      if (*pfVar6 <= fVar5 && fVar5 != *pfVar6) {
+        (this->fields).timeSinceLastToggle = 0.0;
+        (this->fields).isFillOn = (this->fields).isFillOn == 0;
+      }
+    }
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pIVar2 = (this->fields).crossHair;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pIVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar7 == 0) {
+    puVar8 = (undefined4 *)(*(code *)(pickupItem->klass->vtable).get_CrossHairColor.method)();
+    pIVar2 = (this->fields).crossHair;
+    uVar9 = *puVar8;
+    uVar10 = puVar8[1];
+    uVar11 = puVar8[2];
+    if (pIVar2 == (Image *)0x0) {
 code_?:
-    cVar15 = (*(code *)(pickupItem->klass->vtable).get_HasUnlimitedAmmo.method)
-                      (pickupItem,(pickupItem->klass->vtable).get_CanUnequip.methodPtr);
-    if (cVar15 != '\0') goto code_?;
-    pTVar9 = (this->fields).ammoCount;
-    pSVar14 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-    if (pTVar9 == (Text *)0x0) goto code_?;
-    pTVar12 = pTVar9->klass;
-    pIVar13 = (pTVar12->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-  }
-  (*(code *)(pTVar12->vtable).set_text.method)(pTVar9,pSVar14,pIVar13);
-  if (0 < IStack_1.m_value) {
-    pTVar9 = (this->fields).ammoCount;
-    if (pTVar9 == (Text *)0x0) goto code_?;
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
-                      ((Behaviour *)pTVar9,(MethodInfo *)0x0);
-    if (bVar10 == 0) {
-      pTVar9 = (this->fields).ammoCount;
-      if ((pTVar9 == (Text *)0x0) ||
-         (pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pTVar9,(MethodInfo *)0x0), pGVar16 == (GameObject *)0x0
-         )) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar16,1,(MethodInfo *)0x0);
+      func_?();
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
     }
+    iVar13 = (*(code *)(pIVar2->klass->vtable).get_color.method)
+                      (&stack0xffffffec,pIVar2,(pIVar2->klass->vtable).set_color.methodPtr);
+    (*(code *)(pIVar2->klass->vtable).set_color.method)
+              (pIVar2,uVar9,uVar10,uVar11,*(undefined4 *)(iVar13 + 0xc),
+               (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
   }
-  if (fVar8 <= 0.0) {
-    pIVar17 = (this->fields).chargeFill;
-    (this->fields).isFillOn = 1;
-    if (pIVar17 == (Image *)0x0) goto code_?;
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
-                      ((Behaviour *)pIVar17,(MethodInfo *)0x0);
-    if (bVar10 != 0) {
-      pIVar17 = (this->fields).chargeFill;
-      if ((pIVar17 == (Image *)0x0) ||
-         (pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pIVar17,(MethodInfo *)0x0), pGVar16 == (GameObject *)0x0)
-         ) goto code_?;
-      uVar4 = 0;
-      uVar3 = 0;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar16,0,(MethodInfo *)0x0);
-    }
+  return;
+}
+
+
+/* Void UpdateCrosshairColor(PickupItem) */
+
+void Assembly-CSharp.dll::CrossHair::CrossHair_UpdateCrosshairColor
+               (CrossHair *this,PickupItem *pickupItem,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
   }
-  if (0.0 < fVar8) {
-    pIVar17 = (this->fields).chargeFill;
-    if (pIVar17 == (Image *)0x0) goto code_?;
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
-                      ((Behaviour *)pIVar17,(MethodInfo *)0x0);
-    if (bVar10 == 0) {
-      pIVar17 = (this->fields).chargeFill;
-      if ((pIVar17 == (Image *)0x0) ||
-         (pGVar16 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pIVar17,(MethodInfo *)0x0), pGVar16 == (GameObject *)0x0)
-         ) goto code_?;
-      uVar4 = 0;
-      uVar3 = 1;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar16,1,(MethodInfo *)0x0);
-    }
-  }
-  pIVar17 = (this->fields).crossHair;
+  pIVar1 = (this->fields).crossHair;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pIVar17,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar10 != 0) {
-    pIVar17 = (this->fields).crossHair;
-    if (pIVar17 == (Image *)0x0) goto code_?;
-    (*(code *)(pIVar17->klass->vtable).set_color.method)
-              (pIVar17,uVar3,uVar4,uVar5,uVar6,(pIVar17->klass->vtable).get_raycastTarget.methodPtr
-              );
-  }
-  if (fVar8 <= _UNK_?) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pIVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
     return;
   }
-  pIVar17 = (this->fields).chargeFill;
-  if (pIVar17 != (Image *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar17,fVar8,(MethodInfo *)0x0)
+  if (pickupItem != (PickupItem *)0x0) {
+    pIStack_3 = (pickupItem->klass->vtable).get_ChargeState.methodPtr;
+    iVar4 = (*(code *)(pickupItem->klass->vtable).get_CrossHairColor.method)(&pIStack_3,pickupItem)
     ;
-    pIVar17 = (this->fields).chargeFill;
-    if (pIVar17 != (Image *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pIVar17,(this->fields).isFillOn,(MethodInfo *)0x0);
-      if (fVar8 < _UNK_?) {
-        return;
-      }
-      fVar8 = (this->fields).timeSinceLastToggle;
-      fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                         ((MethodInfo *)0x0);
-      fVar18 = fVar18 + fVar8;
-      pfVar19 = &(this->fields).toggleInterval;
-      (this->fields).timeSinceLastToggle = fVar18;
-      if (fVar18 < *pfVar19 || fVar18 == *pfVar19) {
-        return;
-      }
-      (this->fields).timeSinceLastToggle = 0.0;
-      (this->fields).isFillOn = (this->fields).isFillOn == 0;
+    pIVar1 = (this->fields).crossHair;
+    uStack_5 = *(undefined4 *)(iVar4 + 4);
+    uStack_6 = *(undefined4 *)(iVar4 + 8);
+    uStack_7 = *(undefined4 *)(iVar4 + 0xc);
+    if (pIVar1 != (Image *)0x0) {
+      pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
+      iVar4 = (*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_8,pIVar1);
+      pIVar9 = pIStack_3;
+      uStack_10 = *(undefined4 *)(iVar4 + 0xc);
+      pIStack_8 = pIStack_3;
+      uStack_11 = uStack_5;
+      uStack_12 = uStack_6;
+      pIStack_3 = (pIVar1->klass->vtable).get_raycastTarget.methodPtr;
+      (*(code *)(pIVar1->klass->vtable).set_color.method)
+                (pIVar1,pIVar9,uStack_5,uStack_6,uStack_10);
       return;
     }
   }
-code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -282,7 +391,6 @@ void Assembly-CSharp.dll::CrossHair::CrossHair__ctor(CrossHair *this,MethodInfo 
 {
   (this->fields).toggleInterval = 0.1;
   (this->fields).isFillOn = 1;
-  (this->fields).timer = INFINITY;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
@@ -291,6 +399,28 @@ void Assembly-CSharp.dll::CrossHair::CrossHair__ctor(CrossHair *this,MethodInfo 
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;
+}
+
+
+/* Boolean get_Visible() */
+
+bool Assembly-CSharp.dll::CrossHair::CrossHair_get_Visible(CrossHair *this,MethodInfo *method)
+
+{
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pGVar1 != (GameObject *)0x0) {
+    if (pcRam_? == (code *)0x0) {
+      pcRam_? = (code *)func_?();
+    }
+    bVar2 = (*pcRam_?)();
+    return bVar2;
+  }
+  uVar3 = func_?(&stack0xfffffff8);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  bVar2 = (*pcVar4)();
+  return bVar2;
 }
 
 
@@ -303,16 +433,25 @@ void Assembly-CSharp.dll::CrossHair::CrossHair_set_Visible
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar1,value,(MethodInfo *)0x0);
+    pGVar1 = (this->fields).ammoRoot;
+    if (pGVar1 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar1,0,(MethodInfo *)0x0);
+      pIVar2 = (this->fields).hitIndicatorImage;
+      if (pIVar2 != (Image *)0x0) {
+        pIVar3 = pIVar2->klass;
+        pIStack4 = (pIVar3->vtable).get_raycastTarget.methodPtr;
+        uStack5 = 0;
+        (*(code *)(pIVar3->vtable).set_color.method)();
+        return;
+      }
     }
-    (*pcRam_?)();
-    return;
   }
-  uVar2 = func_?(&stack0xfffffff8);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

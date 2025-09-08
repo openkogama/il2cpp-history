@@ -96,7 +96,7 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    cVar2 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
+    cVar2 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
     if (cVar2 != '\0') {
       return;
     }
@@ -143,7 +143,7 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
         fVar8 = AndroidFirstPersonCamera_EulerClamp
                           (this,(this->fields)._.targetRotation.x,
                            (float)((uint)(this->fields)._.maxLookAngleDownward ^
-                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                   ),(this->fields)._.maxLookAngleUpward,(MethodInfo *)0x0);
         (this->fields)._.targetRotation.x = fVar8;
         fVar8 = (this->fields)._.targetRotation.x;

@@ -198,7 +198,7 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
   VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   this = (JoystickVehicleThirdPerson *)
          ((uint)((float)iVar6 * value.y) ^
-         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   pJVar9 = (JoystickVehicleThirdPerson *)((float)iVar8 * VVar7.x);
   if (((float)this <= (float)pJVar4) && (this = pJVar4, (float)pJVar9 < (float)pJVar4)) {
     this = pJVar9;
@@ -223,7 +223,7 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
   }
   VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   fStack_10 = (float)((uint)((float)iVar6 * value.y) ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar11 = (float)iVar8 * VVar7.x;
   if ((fStack_10 <= fVar5) && (fStack_10 = fVar5, fVar11 < fVar5)) {
     fStack_10 = fVar11;
@@ -274,7 +274,7 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
       VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
       if (pAVar15 != (AnimationCurve *)0x0) {
         fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar15,(float)((uint)(3.985656e-29 / ((float)iVar6 * VVar7.x)) &
+                           (pAVar15,(float)((uint)(3.9793197e-29 / ((float)iVar6 * VVar7.x)) &
                                           _UNK_?),(MethodInfo *)0x0);
         fVar3 = (this_00->fields).desiredDeltaX;
         pCVar17 = (this_00->fields).m_HorizontalVirtualAxis;

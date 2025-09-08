@@ -38,26 +38,26 @@ public class LobbyStateController : LobbyFlowMenu
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass14_0
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
 		public BoostMenuController boostMenu;
 
 		// Constructors
-		public __c__DisplayClass14_0();
+		public __c__DisplayClass17_0();
 
 		// Methods
 		internal void _ShowBoostMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass15_0
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
 		public GameObject startGoldRewardPopup;
 
 		// Constructors
-		public __c__DisplayClass15_0();
+		public __c__DisplayClass18_0();
 
 		// Methods
 		internal void _CreateStartGoldRewardPopup_b__0(IUIStack x, BaseEventData y);
@@ -68,10 +68,12 @@ public class LobbyStateController : LobbyFlowMenu
 
 	// Methods
 	public override void Start();
+	private void InitializeLobbyMenuButtons(bool isTourist);
+	private void InitializeGamePassesUI();
+	private void InitializeGoldReward(bool isTourist);
 	public void SetShouldPopOnExit(bool shouldPop);
 	public void ShowBoostMenu();
 	public void CreateStartGoldRewardPopup();
 	private void OnEnable();
-	private void EnableGoldReward();
 }
 

@@ -1353,7 +1353,6 @@ code_?:
     pDVar7 = (this->fields).highScoreListDatas;
     if (pDVar7 == (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
                    *)0x0) goto code_?;
-    method_00 = (MethodInfo *)0x4;
     bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
             Int32Enum,GamePassesHighScoreList+HighScoreListData]::
             Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__ContainsKey
@@ -1377,7 +1376,6 @@ code_?:
     if (pTVar6 == (Text *)0x0) goto code_?;
     pLStack_10 = (List_1_System_String_ *)StringLiteral_Loading_Top_Players_Scores___;
     (*(code *)(pTVar6->klass->vtable).set_text.method)(pTVar6);
-    method_00 = (MethodInfo *)0x0;
     (this->fields).currentState = 2;
     pMVar11 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (pMVar11 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
@@ -1400,7 +1398,6 @@ code_?:
     pDVar7 = (this->fields).highScoreListDatas;
     if (pDVar7 == (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
                    *)0x0) goto code_?;
-    method_00 = (MethodInfo *)0x3;
     bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
             Int32Enum,GamePassesHighScoreList+HighScoreListData]::
             Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__ContainsKey
@@ -1424,7 +1421,6 @@ code_?:
       (this->fields).currentState = 1;
       pMVar11 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (pMVar11 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-      method_00 = (MethodInfo *)&UNK_?;
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetHighScoreList
                 (pMVar11,(MethodInfo *)0x0);
     }
@@ -1464,21 +1460,22 @@ code_?:
       }
       bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
       if ((bVar8 & -(uVar16 != 0)) != 0) {
-        value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (value,ExceptionArgument__Enum_obj,method_00);
+        this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+        UxmlObjectListAttributeDescription`1[System::Object]::
+        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
         original = (this->fields).touristInformationPopup;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object,uVar14,uVar15);
         }
-        pOVar17 = (Object__Class *)
+        pLVar17 = (List_1_System_Object_ *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                             ((Object *)original,
                              GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
                             );
-        if (value != (Object *)0x0) {
-          value[1].klass = pOVar17;
-          func_?(value + 1,pOVar17);
+        if (this_02 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+          (this_02->fields)._._defaultValue_k__BackingField = pLVar17;
+          func_?(&this_02->fields,pLVar17);
           pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                               ((Component *)this,(MethodInfo *)0x0);
           callbackFunction =
@@ -1488,7 +1485,8 @@ code_?:
                               );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                     (Object *)this_02,
                      MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==

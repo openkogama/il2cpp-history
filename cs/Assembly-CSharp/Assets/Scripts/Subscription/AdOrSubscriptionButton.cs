@@ -19,12 +19,6 @@ namespace Assets.Scripts.Subscription
 		[SerializeField]
 		private CooldownType cooldownType;
 		[SerializeField]
-		private GameObject countdownObject;
-		[SerializeField]
-		private Image countdownFillImage;
-		[SerializeField]
-		private UnityEngine.UI.Text countdownText;
-		[SerializeField]
 		private Image iconImage;
 		[SerializeField]
 		private Sprite adSprite;

@@ -590,18 +590,12 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
       return;
     }
   }
-  bVar2 = 0;
-  func_?();
-  pbVar3 = (byte *)(extraout_EDX + -0x2c);
-  bVar4 = *pbVar3;
-  bVar5 = (byte)((uint)extraout_EDX >> 8);
-  bVar6 = *pbVar3 + bVar5;
-  *pbVar3 = bVar6 + bVar2;
-  (&stack0xd4a6104f)[extraout_EDX * 8] =
-       (&stack0xd4a6104f)[extraout_EDX * 8] + extraout_CL +
-       (CARRY1(bVar4,bVar5) || CARRY1(bVar6,bVar2));
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  cVar2 = '\0';
+  iVar3 = func_?();
+  pcVar4 = (char *)(iVar3 * 5 + -0x6d49efb9);
+  *pcVar4 = *pcVar4 + unaff_BL + cVar2;
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

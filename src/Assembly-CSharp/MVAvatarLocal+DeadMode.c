@@ -307,7 +307,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode_OnEnter
   if (pIVar1 != (IPlayModeUI *)0x0) {
     pIStack_2 = TypeInfo__IPlayModeUI;
     pIStack_3 = pIVar1;
-    func_?(6);
+    func_?(8);
     return;
   }
   uVar4 = func_?(&pIStack_2);

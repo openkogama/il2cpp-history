@@ -496,7 +496,7 @@ void Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun__cctor(MethodInfo
     func_?(&TypeInfo__MV__WorldObject__InteractionData);
     func_?(&TypeInfo__PickupItemShotgun);
     func_?(&TypeInfo__System__Single);
-    func_?(&::_1D938725B43024CD1DE507AE64F4E512BE661FABD0876BE9FF1D6BBCE7A2774A_Field);
+    func_?(&_1D938725B43024CD1DE507AE64F4E512BE661FABD0876BE9FF1D6BBCE7A2774A_Field);
     func_?(&_6D14F76A35801E92A153C606F99E1BAEAD19C4A687AD608FCD9FADCBB41E3C25_Field);
     cRam_? = '\x01';
   }
@@ -587,7 +587,7 @@ bool Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_get_IsAmmoDeplete
     return 0;
   }
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                    (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                    (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

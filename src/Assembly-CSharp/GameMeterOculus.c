@@ -101,27 +101,26 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_SetGameMeterVisibilit
                    );
     cRam_? = '\x01';
   }
-  WStack_1 = WinningConditionType__Enum_Collectible;
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar2 != (MVNetworkGame *)0x0) &&
-     (this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField,
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar1 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
      this_00 != (WinningConditionManager *)0x0)) {
-    pOVar3 = (OculusKillLimitClient *)
+    pOVar2 = (OculusKillLimitClient *)
              MVWorldObject.dll::WinningConditionManager::
              WinningConditionManager_GetSingletonWinnerConditionByType
                        (this_00,
                         OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
                        );
-    (this->fields).oculusClient = pOVar3;
-    func_?(&(this->fields).oculusClient,pOVar3);
-    WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
-              (&WStack_1,(MethodInfo *)0x0);
-    if (WStack_1 == WinningConditionType__Enum_Oculus) {
+    (this->fields).oculusClient = pOVar2;
+    func_?(&(this->fields).oculusClient,pOVar2);
+    bVar3 = WinningConditionControl::WinningConditionControl_IsWinConditionPresent
+                      (WinningConditionType__Enum_Oculus,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
       pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,1,(MethodInfo *)0x0);
+                  (pGVar4,0,(MethodInfo *)0x0);
         return;
       }
     }
@@ -130,7 +129,7 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_SetGameMeterVisibilit
                          ((Component *)this,(MethodInfo *)0x0);
       if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,0,(MethodInfo *)0x0);
+                  (pGVar4,1,(MethodInfo *)0x0);
         return;
       }
     }

@@ -20,7 +20,7 @@ void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
     }
     pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar2 != (IPlayModeUI *)0x0) {
-      value = func_?(7,TypeInfo__IPlayModeUI,pIVar2);
+      value = func_?(9,TypeInfo__IPlayModeUI,pIVar2);
       if (pGVar1 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar1,value,(MethodInfo *)0x0);
@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
           }
           pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if (pIVar2 != (IPlayModeUI *)0x0) {
-            bVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar2);
+            bVar3 = func_?(9,TypeInfo__IPlayModeUI,pIVar2);
             if (pGVar1 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar1,bVar3 ^ 1,(MethodInfo *)0x0);
@@ -145,7 +145,7 @@ void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    func_?(8,TypeInfo__IPlayModeUI,pIVar1,0);
+    func_?(10,TypeInfo__IPlayModeUI,pIVar1,0);
     pRVar2 = (this->fields).lobbyMenu;
     if ((pRVar2 != (RectTransform *)0x0) &&
        (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -207,7 +207,7 @@ void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
         if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
             (IPlayModeUI *)0x0) goto code_?;
         pIStack_2 = TypeInfo__IPlayModeUI;
-        func_?(8);
+        func_?(10);
       }
       return;
     }
@@ -425,7 +425,7 @@ void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
             }
             pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
             if (pIVar6 != (IPlayModeUI *)0x0) {
-              func_?(8,TypeInfo__IPlayModeUI,pIVar6,0);
+              func_?(10,TypeInfo__IPlayModeUI,pIVar6,0);
               return;
             }
           }
@@ -448,7 +448,7 @@ void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
       }
       pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
       if ((pIVar6 != (IPlayModeUI *)0x0) &&
-         (bVar7 = func_?(7,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0)) {
+         (bVar7 = func_?(9,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,bVar7,(MethodInfo *)0x0);
         pIVar3 = (this->fields).inGameMenu;
@@ -461,7 +461,7 @@ void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
           }
           pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if ((pIVar6 != (IPlayModeUI *)0x0) &&
-             (bVar8 = func_?(7,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0))
+             (bVar8 = func_?(9,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0))
           {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar2,bVar8 ^ 1,(MethodInfo *)0x0);

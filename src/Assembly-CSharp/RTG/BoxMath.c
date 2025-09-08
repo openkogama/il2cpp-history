@@ -1113,11 +1113,11 @@ Vector3 * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_CalcBoxFaceNormal
     return (Vector3 *)0x0;
   }
   uRam_? = CONCAT44((uint)__return_storage_ptr___00 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field,
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
                           (uint)puVar8 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fRam00000008 = (float)((uint)boxRotation.x ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   return (Vector3 *)0x0;
 }
 
@@ -1166,10 +1166,10 @@ Plane * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_CalcBoxFacePlane
     uVar12 = pVVar4->x;
     uVar13 = pVVar4->y;
     fVar3 = pVVar4->z;
-    uVar14 = uVar12 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
-    uVar15 = uVar13 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar14 = uVar12 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    uVar15 = uVar13 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     fVar6 = (float)((uint)fVar3 ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     uVar16 = pVVar4->x;
     uVar17 = pVVar4->y;
     (__return_storage_ptr__->m_Normal).x = 0.0;
@@ -1241,15 +1241,15 @@ Plane * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_CalcBoxFacePlane
     __return_storage_ptr__->m_Distance =
          (float)((uint)((float)uVar22 * (boxCenter.y + (float)pVVar2 * fVar10) + (float)uVar21 * 0.0
                        + fVar1 * (boxCenter.z + fVar6 * fVar10)) ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     return __return_storage_ptr__;
   }
   boxRotation.w =
        (float)((uint)boxRotation.x ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   uVar15 = (uint)__return_storage_ptr___00 ^
-           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
-  uVar14 = (uint)puVar11 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+  uVar14 = (uint)puVar11 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   (__return_storage_ptr__->m_Normal).x = 0.0;
   (__return_storage_ptr__->m_Normal).y = 0.0;
   (__return_storage_ptr__->m_Normal).z = 0.0;
@@ -1403,13 +1403,13 @@ code_?:
                              (&VStack_8,(int32_t)index,(MethodInfo *)0x0);
               if (boxCenter.z <
                   (float)((uint)boxRotation.w ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field))
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field))
               {
                 puVar16 = &UNK_?;
                 fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                    (&VStack_8,(int32_t)index,(MethodInfo *)0x0);
                 boxCenter.z = (float)((uint)fVar6 ^
-                                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                      );
               }
             }

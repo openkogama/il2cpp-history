@@ -22,7 +22,7 @@ float Assembly-CSharp.dll::RTG::QuaternionEx::QuaternionEx_ConvertTo2DRotation
   if (VStack_1.y * (float)uVar5 + VStack_1.x * (float)uVar4 +
       VStack_1.z * (pVVar3->forwardVector).z < 0.0) {
     fStack_2 = (float)((uint)fStack_2 ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   }
   return fStack_2;
 }

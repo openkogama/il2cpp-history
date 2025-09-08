@@ -17,16 +17,18 @@ public class StreamPngToSprite : MonoBehaviour
 	[Header("Dependencies")]
 	[SerializeField]
 	protected RawImage rawImage;
-	private bool currentlyDownloading;
 	public Action OnDownloadFinish;
+	private bool currentlyDownloading;
+
+	// Properties
+	public RawImage RawImage { get; }
 
 	// Constructors
 	public StreamPngToSprite();
 
 	// Methods
-	public void StartDownloading(string downloadUrl);
+	public void StartDownloading(string downloadUrl, bool useStreamingAssets = true, WWWRequestPriority priority = WWWRequestPriority.WaitUntilSyncronizingIsDone);
 	public void CancelDownload();
-	public void DestroyTexture();
 	private void StreamingTextureLoaded(UnityWebRequest www);
 	public void SetImageTexture(Texture texture);
 	public void Reset();

@@ -611,7 +611,7 @@ Plane * Assembly-CSharp.dll::RTG::RightAngTriangle3D::RightAngTriangle3D_get_Pla
   __return_storage_ptr__->m_Distance =
        (float)((uint)(uStack_3._4_4_ * (float)uVar6 + (float)uStack_3 * (float)uVar5 +
                      fStack_4 * fVar7) ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   return __return_storage_ptr__;
 }
 

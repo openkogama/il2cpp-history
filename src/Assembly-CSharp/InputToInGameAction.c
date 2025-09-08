@@ -32,7 +32,7 @@ void Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_HandleInputSt
       (*pcVar2)();
       return;
     }
-    cVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
+    cVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
     if (cVar3 != '\0') {
       (this->fields).isInUI = 1;
       (this->fields).wentToGameFromUI = 0;

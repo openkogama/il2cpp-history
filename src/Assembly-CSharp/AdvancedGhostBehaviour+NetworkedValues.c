@@ -29,18 +29,18 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
   if (fVar1 < fVar2) {
     func_?();
     VStack_9.z = (float)((uint)VStack_9.z ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     fVar7 = (float)((uint)fVar7 ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     fVar8 = (float)((uint)fVar8 ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   }
   fVar2 = VStack_9.z;
   puVar10 = (undefined8 *)func_?(&VStack_9,&stack0xffffffbc,0);
   fVar11 = (float)((uint)((ulonglong)*puVar10 >> 0x20) ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar1 = (float)(*(uint *)(puVar10 + 1) ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if (transform != (Transform *)0x0) {
     position_00.y = fVar8;
     position_00.x = fVar7;

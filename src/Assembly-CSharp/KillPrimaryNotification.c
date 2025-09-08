@@ -6,16 +6,22 @@ void Assembly-CSharp.dll::KillPrimaryNotification::KillPrimaryNotification_Initi
                MethodInfo *method)
 
 {
+  pNVar1 = (this->fields).fader;
   (this->fields)._.timeSinceStart = 0.0;
-  this_00 = (this->fields).fader;
-  if (this_00 != (NotificationFade *)0x0) {
-    NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
-    return;
+  if (pNVar1 != (NotificationFade *)0x0) {
+    (pNVar1->fields).pauseAt = (pNVar1->fields).duration;
+    this_00 = (pNVar1->fields).group;
+    (pNVar1->fields).playing = 1;
+    if (this_00 != (CanvasGroup *)0x0) {
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                (this_00,0.0,(MethodInfo *)0x0);
+      (pNVar1->fields).currentTime = 0.0;
+      return;
+    }
   }
-  uVar1 = func_?(&puStack_2);
-  func_?(uVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

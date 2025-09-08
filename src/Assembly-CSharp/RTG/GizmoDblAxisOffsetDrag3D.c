@@ -33,7 +33,7 @@ Plane * Assembly-CSharp.dll::RTG::GizmoDblAxisOffsetDrag3D::
   (__return_storage_ptr__->m_Normal).z = fVar9;
   __return_storage_ptr__->m_Distance =
        (float)((uint)((float)uVar6 * (float)uVar8 + (float)uVar7 * 0.0 + fVar3 * fVar9) ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   return __return_storage_ptr__;
 }
 

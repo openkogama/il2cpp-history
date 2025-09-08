@@ -89,7 +89,7 @@ void Assembly-CSharp.dll::TierUnlockedPopupController::TierUnlockedPopupControll
                MethodInfo__System__Collections__Generic__List<TierUnlockedPopupContentBase>__Add_TierUnlockedPopupContentBase_
               );
     _wasTempUnlocked = (this->fields).PopupContentXPPrefab;
-    wasPurchased = 0xf4;
+    wasPurchased = 4;
     pCVar3 = (Component *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                        ((Object *)_wasTempUnlocked,

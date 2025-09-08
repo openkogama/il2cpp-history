@@ -202,123 +202,84 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::AdOrSubscriptionButton:
      AdOrSubscriptionButton_Update(AdOrSubscriptionButton *this,MethodInfo *method)
 
 {
-  bVar1 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
-  pIVar2 = (this->fields).iconImage;
-  (this->fields).isSubscriber = bVar1;
-  if (bVar1 == 0) {
-    if (pIVar2 != (Image *)0x0) {
+  pAVar1 = this;
+  bVar2 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
+  pIVar3 = (this->fields).iconImage;
+  (this->fields).isSubscriber = bVar2;
+  if (bVar2 == 0) {
+    if (pIVar3 != (Image *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                (pIVar2,(this->fields).adSprite,(MethodInfo *)0x0);
-      pGVar3 = (this->fields).countdownObject;
-      if (pGVar3 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar3,0,(MethodInfo *)0x0);
-        return;
-      }
+                (pIVar3,(this->fields).adSprite,(MethodInfo *)0x0);
+      return;
     }
   }
-  else if (pIVar2 != (Image *)0x0) {
+  else if (pIVar3 != (Image *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-              (pIVar2,(this->fields).subscriberSprite,(MethodInfo *)0x0);
+              (pIVar3,(this->fields).subscriberSprite,(MethodInfo *)0x0);
     pSVar4 = (this->fields).subCooldowns;
     if (pSVar4 != (SubscriberCooldownsManager *)0x0) {
-      fVar5 = SubscriberCooldownsManager::SubscriberCooldownsManager_CooldownTimeLeft
-                        (pSVar4,(this->fields).cooldownType,(MethodInfo *)0x0);
-      pGVar3 = (this->fields).countdownObject;
-      if (_UNK_? < fVar5) {
-        (this->fields).isClickReady = 0;
-        if (pGVar3 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,1,(MethodInfo *)0x0);
-          pIVar2 = (this->fields).iconImage;
-          if (pIVar2 != (Image *)0x0) {
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pIVar2,(MethodInfo *)0x0);
-            if (pGVar3 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar3,0,(MethodInfo *)0x0);
-              pIVar2 = (this->fields).buttonBackgroundImage;
-              if (pIVar2 != (Image *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                          (pIVar2,(this->fields).buttonBackgroundInactiveSprite,(MethodInfo *)0x0);
-                pSVar4 = (this->fields).subCooldowns;
-                key = (this->fields).cooldownType;
-                if (pSVar4 != (SubscriberCooldownsManager *)0x0) {
-                  if (cRam_? == '\0') {
-                    func_?();
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  puVar6 = (undefined *)
-                           UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                     ((MethodInfo *)0x0);
-                  pSVar7 = (pSVar4->fields).cooldowns;
-                  if (pSVar7 != (SubscriberCooldownsManager_Cooldown__Array *)0x0) {
-                    if (pSVar7->max_length <= key) goto code_?;
-                    fVar5 = pSVar7->vector[key].LastUseTime;
-                    if ((TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->_1).
-                        cctor_finished_or_no_cctor == 0) {
-                      puVar6 = &UNK_?;
-                      func_?();
-                    }
-                    pIVar2 = (Image *)TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager
-                                       ->static_fields->cooldownTimes;
-                    if (pIVar2 != (Image *)0x0) {
-                      fVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                               Int32Enum,System::Single]::
-                               Dictionary_2_System_Int32Enum_System_Single__get_Item
-                                         ((Dictionary_2_System_Int32Enum_System_Single_ *)pIVar2,
-                                          key,
-                                          MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_
-                                         );
-                      fVar8 = ((float)puVar6 - fVar5) / fVar8;
-                      if (_UNK_? <= fVar8) {
-                        fVar8 = _UNK_?;
-                      }
-                      if (pIVar2 != (Image *)0x0) {
-                        UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                                  (pIVar2,fVar8,(MethodInfo *)0x0);
-                        pSVar4 = (this->fields).subCooldowns;
-                        pTVar9 = (this->fields).countdownText;
-                        if (pSVar4 != (SubscriberCooldownsManager *)0x0) {
-                          SubscriberCooldownsManager::SubscriberCooldownsManager_CooldownTimeLeft
-                                    (pSVar4,(this->fields).cooldownType,(MethodInfo *)0x0);
-                          mscorlib.dll::System::Int32::Int32_ToString
-                                    ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
-                          if (pTVar9 != (Text *)0x0) {
-                            pTVar10 = pTVar9->klass;
-                            pIStack11 =
-                                 (pTVar10->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-                            (*(code *)(pTVar10->vtable).set_text.method)();
-                            return;
-                          }
-                        }
-                      }
-                    }
-                  }
+      key = (this->fields).cooldownType;
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_
+                       );
+        func_?(&TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager);
+        cRam_? = '\x01';
+      }
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pSVar6 = (pSVar4->fields).cooldowns;
+      if (pSVar6 != (SubscriberCooldownsManager_Cooldown__Array *)0x0) {
+        if (pSVar6->max_length <= key) goto code_?;
+        this = (AdOrSubscriptionButton *)(fVar5 - pSVar6->vector[key].LastUseTime);
+        if ((TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->_1).
+            cctor_finished_or_no_cctor == 0) {
+          this = (AdOrSubscriptionButton *)
+                 TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager;
+          func_?();
+        }
+        this_00 = TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->static_fields
+                  ->cooldownTimes;
+        if (this_00 != (Dictionary_2_Assets_Scripts_Subscription_CooldownType_System_Single_ *)0x0)
+        {
+          fVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                  ::Single]::Dictionary_2_System_Int32Enum_System_Single__get_Item
+                            ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,key,
+                             MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_
+                            );
+          pIVar3 = (pAVar1->fields).iconImage;
+          if (_UNK_? < fVar5 - (float)this) {
+            (pAVar1->fields).isClickReady = 0;
+            if (pIVar3 != (Image *)0x0) {
+              pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)pIVar3,(MethodInfo *)0x0);
+              if (pGVar7 != (GameObject *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar7,0,(MethodInfo *)0x0);
+                pIVar3 = (pAVar1->fields).buttonBackgroundImage;
+                if (pIVar3 != (Image *)0x0) {
+                  UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
+                            (pIVar3,(pAVar1->fields).buttonBackgroundInactiveSprite,
+                             (MethodInfo *)0x0);
+                  return;
                 }
               }
             }
           }
-        }
-      }
-      else {
-        (this->fields).isClickReady = 1;
-        if (pGVar3 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,0,(MethodInfo *)0x0);
-          pIVar2 = (this->fields).iconImage;
-          if (pIVar2 != (Image *)0x0) {
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pIVar2,(MethodInfo *)0x0);
-            if (pGVar3 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar3,1,(MethodInfo *)0x0);
-              pIVar2 = (this->fields).buttonBackgroundImage;
-              if (pIVar2 != (Image *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                          (pIVar2,(this->fields).buttonBackgroundActiveSprite,(MethodInfo *)0x0);
-                return;
+          else {
+            (pAVar1->fields).isClickReady = 1;
+            if (pIVar3 != (Image *)0x0) {
+              pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)pIVar3,(MethodInfo *)0x0);
+              if (pGVar7 != (GameObject *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar7,1,(MethodInfo *)0x0);
+                pIVar3 = (pAVar1->fields).buttonBackgroundImage;
+                if (pIVar3 != (Image *)0x0) {
+                  UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
+                            (pIVar3,(pAVar1->fields).buttonBackgroundActiveSprite,(MethodInfo *)0x0)
+                  ;
+                  return;
+                }
               }
             }
           }
@@ -329,8 +290,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::AdOrSubscriptionButton:
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

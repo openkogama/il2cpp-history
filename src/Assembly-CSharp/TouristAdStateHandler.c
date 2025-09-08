@@ -78,10 +78,10 @@ code_?:
       goto code_?;
     }
   }
-  if ((this->fields).OnAdShown == (Action *)0x0) {
+  pAVar6 = (this->fields).OnAdShown;
+  if (pAVar6 == (Action *)0x0) {
     return;
   }
-  pAVar6 = (this->fields).OnAdShown;
   (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method);
   return;
 }

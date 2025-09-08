@@ -116,7 +116,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothFocus>d__136::
                                   (pVVar8,pTVar7,(MethodInfo *)0x0);
               uVar23 = pVVar22->x;
               uVar24 = pVVar22->y;
-              if (0.0 < SUB84(uVar20,4) * (4.3700304e-29 - (float)uVar24) +
+              if (0.0 < SUB84(uVar20,4) * (4.3666504e-29 - (float)uVar24) +
                         (float)uVar20 * ((float)uVar21 - (float)uVar23) +
                         fVar5 * ((float)pVVar8 - pVVar22->z)) {
                 (this->fields).__2__current = (Object *)0x0;

@@ -355,23 +355,23 @@ Mesh * Assembly-CSharp.dll::RTG::PyramidMesh::PyramidMesh_CreatePyramid
       func_?();
       cRam_? = '\x01';
     }
-    uVar59 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar59 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar73 = (pVVar3->upVector).x;
     uVar74 = (pVVar3->upVector).y;
-    uVar60 = uVar74 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar60 = uVar74 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     fVar1 = (float)((uint)(pVVar3->upVector).z ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     iVar75 = value_01->max_length;
     if (value_01->max_length <= iVar75 - 4) goto code_?;
     value_01->vector[iVar75 - 4].x =
-         (float)(uVar73 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+         (float)(uVar73 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     value_01->vector[iVar75 - 4].y = (float)uVar60;
     value_01->vector[iVar75 - 4].z = fVar1;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
-      uVar59 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+      uVar59 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     }
     pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar76 = (pVVar3->upVector).x;
@@ -385,7 +385,7 @@ Mesh * Assembly-CSharp.dll::RTG::PyramidMesh::PyramidMesh_CreatePyramid
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
-      uVar59 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+      uVar59 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     }
     pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar78 = (pVVar3->upVector).x;
@@ -399,7 +399,7 @@ Mesh * Assembly-CSharp.dll::RTG::PyramidMesh::PyramidMesh_CreatePyramid
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
-      uVar59 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+      uVar59 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     }
     pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar80 = (pVVar3->upVector).x;
@@ -447,7 +447,7 @@ Mesh * Assembly-CSharp.dll::RTG::PyramidMesh::PyramidMesh_CreateWirePyramid
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&::_17E1E703EDA761039900D6BB1C5192E9763DE7DC9EB806A138CBA99BD3244931_Field);
+    func_?(&_17E1E703EDA761039900D6BB1C5192E9763DE7DC9EB806A138CBA99BD3244931_Field);
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }

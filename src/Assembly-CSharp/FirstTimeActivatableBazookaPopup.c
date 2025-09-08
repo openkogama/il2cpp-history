@@ -558,8 +558,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::FirstTimeActivatable
     (this->fields).priorityDictionary =
          (Dictionary_2_MVWorldObjectDocumentationType_System_Int32_ *)this_00;
     func_?();
-    FirstTimeActivatableSetEventOnShow::FirstTimeActivatableSetEventOnShow__ctor
-              ((FirstTimeActivatableSetEventOnShow *)this,(MethodInfo *)0x0);
+    FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
+              ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();

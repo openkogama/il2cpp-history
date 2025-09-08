@@ -88,7 +88,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnContinuePressed
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    MethodInfo__PlayButton____c___OnContinuePressed_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__PlayButton____c___OnContinuePressed_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__PlayButton____c);
     cRam_? = '\x01';
@@ -98,7 +98,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnContinuePressed
   if ((TypeInfo__PlayButton____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__PlayButton____c);
   }
-  callbackFunction = TypeInfo__PlayButton____c->static_fields->__9__15_0;
+  callbackFunction = TypeInfo__PlayButton____c->static_fields->__9__13_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__PlayButton____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__PlayButton____c);
@@ -112,10 +112,10 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnContinuePressed
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__PlayButton____c___OnContinuePressed_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__PlayButton____c___OnContinuePressed_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__PlayButton____c->static_fields->__9__15_0 = callbackFunction;
-    func_?(&TypeInfo__PlayButton____c->static_fields->__9__15_0,callbackFunction);
+    TypeInfo__PlayButton____c->static_fields->__9__13_0 = callbackFunction;
+    func_?(&TypeInfo__PlayButton____c->static_fields->__9__13_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -148,7 +148,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnCountDownEnd(PlayButton *this
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&TypeInfo__IPlayModeUI);
     func_?(&
-                    MethodInfo__PlayButton____c___OnCountDownEnd_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__PlayButton____c___OnCountDownEnd_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__PlayButton____c);
     cRam_? = '\x01';
@@ -170,14 +170,14 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnCountDownEnd(PlayButton *this
           }
           pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if (pIVar3 == (IPlayModeUI *)0x0) goto code_?;
-          func_?(6,TypeInfo__IPlayModeUI,pIVar3,0);
+          func_?(8,TypeInfo__IPlayModeUI,pIVar3,0);
           if ((this->fields)._.shouldPop != 0) {
             root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__PlayButton____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__PlayButton____c);
             }
-            callbackFunction = TypeInfo__PlayButton____c->static_fields->__9__21_0;
+            callbackFunction = TypeInfo__PlayButton____c->static_fields->__9__19_0;
             if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
               if ((TypeInfo__PlayButton____c->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__PlayButton____c);
@@ -192,10 +192,10 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnCountDownEnd(PlayButton *this
               Object]::UnityAction_2_System_Object_System_Object___ctor
                         ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
                          (Object *)object,
-                         MethodInfo__PlayButton____c___OnCountDownEnd_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                         MethodInfo__PlayButton____c___OnCountDownEnd_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                          ,(MethodInfo *)0x0);
-              TypeInfo__PlayButton____c->static_fields->__9__21_0 = callbackFunction;
-              func_?(&TypeInfo__PlayButton____c->static_fields->__9__21_0,callbackFunction)
+              TypeInfo__PlayButton____c->static_fields->__9__19_0 = callbackFunction;
+              func_?(&TypeInfo__PlayButton____c->static_fields->__9__19_0,callbackFunction)
               ;
             }
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
@@ -243,35 +243,31 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
+                    MethodInfo__PlayButton____c__DisplayClass17_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
                    );
-    func_?(&
-                    MethodInfo__PlayButton____c__DisplayClass19_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
-                   );
-    in_stack_1 = (MethodInfo *)&UNK_?;
-    func_?(&TypeInfo__PlayButton____c__DisplayClass19_0);
+    func_?(&TypeInfo__PlayButton____c__DisplayClass17_0);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).button;
   if (this_00 != (Button *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
               ((Selectable *)this_00,1,(MethodInfo *)0x0);
-    bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    if (bVar1 == 0) {
       return;
     }
-    pPStack_3 = TypeInfo__PlayButton____c__DisplayClass19_0;
+    pPStack_2 = TypeInfo__PlayButton____c__DisplayClass17_0;
     value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,in_stack_1);
+              (value,ExceptionArgument__Enum_obj,in_stack_3);
     this_01 = (this->fields).embeddedPlayerConfig;
     if ((this_01 != (EmbeddedPlayerConfig *)0x0) &&
        (EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                  ((EmbeddedSiteConfigData *)&pPStack_3,this_01,(MethodInfo *)0x0),
+                  ((EmbeddedSiteConfigData *)&pPStack_2,this_01,(MethodInfo *)0x0),
        value != (Object *)0x0)) {
       *(undefined1 *)&value[1].klass = 0;
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
            (ExecuteEvents_EventFunction_1_System_Object_ *)
            func_?(
@@ -280,52 +276,22 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__PlayButton____c__DisplayClass19_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
+                 MethodInfo__PlayButton____c__DisplayClass17_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar4,(BaseEventData *)0x0,callbackFunction,
+                (root,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
                 );
-      pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                         ((MethodInfo *)0x0);
-      if ((pSVar5 != (SpawnRoleDataMediator *)0x0) &&
-         (this_02 = (WebCompletionSource_1_System_Object_ *)(pSVar5->fields).spawnRoleMode,
-         this_02 != (WebCompletionSource_1_System_Object_ *)0x0)) {
-        System.dll::System::Net::WebCompletionSource`1[System::Object]::
-        WebCompletionSource_1_System_Object__get_Task
-                  (this_02,
-                   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
-                  );
-        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar6 != (MVNetworkGame *)0x0) &&
-           ((((pMVar6->fields)._NetworkGameStateListener_k__BackingField !=
-              (MVNetworkGameStateListener *)0x0 &&
-             (pIVar7 = (this->fields).playIcon, pIVar7 != (Image *)0x0)) &&
-            (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pIVar7,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0
-            )))) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,1,(MethodInfo *)0x0);
-          pIVar7 = (this->fields).adIcon;
-          if ((pIVar7 != (Image *)0x0) &&
-             (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pIVar7,(MethodInfo *)0x0),
-             pGVar4 != (GameObject *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar4,0,(MethodInfo *)0x0);
-            return;
-          }
-        }
-      }
+      return;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -356,6 +322,28 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPointerDown
 }
 
 
+/* Void OnPointerEnter(PointerEventData) */
+
+void Assembly-CSharp.dll::PlayButton::PlayButton_OnPointerEnter
+               (PlayButton *this,PointerEventData *eventData,MethodInfo *method)
+
+{
+  (this->fields).isMouseOver = 1;
+  return;
+}
+
+
+/* Void OnPointerExit(PointerEventData) */
+
+void Assembly-CSharp.dll::PlayButton::PlayButton_OnPointerExit
+               (PlayButton *this,PointerEventData *eventData,MethodInfo *method)
+
+{
+  (this->fields).isMouseOver = 0;
+  return;
+}
+
+
 /* Void OnPromotionShown(Boolean, Boolean) */
 
 void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
@@ -377,9 +365,9 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&MethodInfo__PlayButton__OnContinuePressed__);
     func_?(&
-                    MethodInfo__PlayButton____c__DisplayClass14_0___OnPromotionShown_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__PlayButton____c__DisplayClass12_0___OnPromotionShown_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
-    func_?(&TypeInfo__PlayButton____c__DisplayClass14_0);
+    func_?(&TypeInfo__PlayButton____c__DisplayClass12_0);
     cRam_? = '\x01';
   }
   if ((withAd & promotionShown) == 0) {
@@ -391,7 +379,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
     }
     return;
   }
-  method_00 = TypeInfo__PlayButton____c__DisplayClass14_0;
+  method_00 = TypeInfo__PlayButton____c__DisplayClass12_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -426,7 +414,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                 MethodInfo__PlayButton____c__DisplayClass14_0___OnPromotionShown_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 MethodInfo__PlayButton____c__DisplayClass12_0___OnPromotionShown_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -461,7 +449,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_Play(PlayButton *this,MethodInf
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
-                    MethodInfo__PlayButton___Play_b__13_0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__PlayButton___Play_b__11_0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
@@ -504,7 +492,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_Play(PlayButton *this,MethodInf
               Object]::UnityAction_2_System_Object_System_Object___ctor
                         ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
                          (Object *)this,
-                         MethodInfo__PlayButton___Play_b__13_0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
+                         MethodInfo__PlayButton___Play_b__11_0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
                          ,(MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
                   cctor_finished_or_no_cctor == 0) {
@@ -658,9 +646,9 @@ code_?:
 }
 
 
-/* Void <Play>b__13_0(IDeathPromotionSelector, BaseEventData) */
+/* Void <Play>b__11_0(IDeathPromotionSelector, BaseEventData) */
 
-void Assembly-CSharp.dll::PlayButton::PlayButton__Play_b__13_0
+void Assembly-CSharp.dll::PlayButton::PlayButton__Play_b__11_0
                (PlayButton *this,IDeathPromotionSelector *x,BaseEventData *y,MethodInfo *method)
 
 {

@@ -419,10 +419,10 @@ void Assembly-CSharp.dll::UseLever::UseLever_OnUpdate(UseLever *this,MethodInfo 
         fVar8 = fVar8 * fVar7;
         pUVar1 = (this->fields).useLeverObject;
         if ((float)((uint)fVar6 ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <=
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <=
             fVar8) {
           fVar8 = (float)((uint)fVar6 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         }
         if ((pUVar1 != (UseLeverObject *)0x0) &&
            (pTVar2 = (pUVar1->fields).plateButtonTransform, pTVar2 != (Transform *)0x0)) {

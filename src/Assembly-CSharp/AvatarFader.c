@@ -6,21 +6,27 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_AddFadeMaterial
 
 {
   if (cRam_? == '\0') {
+    pMStack_1 = (MethodInfo *)
+                &
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
+    ;
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).avatarMaterials;
-  if (this_00 != (List_1_UnityEngine_Material_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)this_00,(Object *)addRenderer,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
-              );
+  pLStack_2 = (this->fields).avatarMaterials;
+  if (pLStack_2 != (List_1_UnityEngine_Material_ *)0x0) {
+    pMStack_1 = 
+    MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
+    ;
+    pMStack_3 = addRenderer;
+    func_?();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pMStack_1 = (MethodInfo *)&stack0xfffffffc;
+  uVar4 = func_?(&pLStack_2);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -351,12 +357,12 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_Start(AvatarFader *this,Metho
               iVar5 = iVar5 + 0xc;
             } while ((int)uVar4 < (int)iVar3);
           }
-          this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)this,(MethodInfo *)0x0);
-          if (this_01 != (Transform *)0x0) {
+          if (this_00 != (Transform *)0x0) {
             pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                      Component_GetComponentsInChildren
-                               ((Component *)this_01,
+                               ((Component *)this_00,
                                 UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                                );
             uStack_7 = 0;
@@ -375,13 +381,11 @@ void Assembly-CSharp.dll::AvatarFader::AvatarFader_Start(AvatarFader *this,Metho
                 if (pMVar9 == (Material__Array *)0x0) goto code_?;
                 for (; (int)uVar4 < (int)pMVar9->max_length; uVar4 = uVar4 + 1) {
                   if (pMVar9->max_length <= uVar4) goto code_?;
-                  this_00 = (this->fields).avatarMaterials;
-                  if (this_00 == (List_1_UnityEngine_Material_ *)0x0) goto code_?;
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                  List_1_System_Object__Add
-                            ((List_1_System_Object_ *)this_00,(Object *)*ppMVar10,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
-                            );
+                  pLVar11 = (this->fields).avatarMaterials;
+                  if (pLVar11 == (List_1_UnityEngine_Material_ *)0x0) goto code_?;
+                  func_?(pLVar11,*ppMVar10,
+                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
+                                 );
                   ppMVar10 = ppMVar10 + 1;
                 }
                 uStack_7 = uStack_7 + 1;
@@ -397,8 +401,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

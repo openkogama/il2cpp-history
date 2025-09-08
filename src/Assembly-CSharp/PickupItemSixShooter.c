@@ -267,13 +267,13 @@ code_?:
                           fVar7 = (this->fields).recoilImpact;
                           if (this_03 != (MVRigidBody *)0x0) {
                             impulse.y = (float)(uVar25 ^ 
-                                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                ) * fVar7;
                             impulse.x = (float)(uVar24 ^ 
-                                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                ) * fVar7;
                             impulse.z = (float)((uint)pVVar2->z ^
-                                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                ) * fVar7;
                             MVRigidBody::MVRigidBody_AddImpulse_1
                                       (this_03,impulse,0,(MethodInfo *)0x0);
@@ -602,7 +602,7 @@ bool Assembly-CSharp.dll::PickupItemSixShooter::PickupItemSixShooter_get_IsAmmoD
     return 0;
   }
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                    (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                    (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

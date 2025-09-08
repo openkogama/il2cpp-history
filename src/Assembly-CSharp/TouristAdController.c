@@ -61,7 +61,7 @@ void Assembly-CSharp.dll::TouristAdController::TouristAdController_InterstitialA
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    MethodInfo__TouristAdController____c___InterstitialAdResult_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__TouristAdController____c___InterstitialAdResult_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__TouristAdController____c);
     func_?(&StringLiteral_TouristAdController___Interstiti);
@@ -73,7 +73,7 @@ void Assembly-CSharp.dll::TouristAdController::TouristAdController_InterstitialA
   if ((TypeInfo__TouristAdController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__TouristAdController____c);
   }
-  callbackFunction = TypeInfo__TouristAdController____c->static_fields->__9__20_0;
+  callbackFunction = TypeInfo__TouristAdController____c->static_fields->__9__19_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__TouristAdController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__TouristAdController____c);
@@ -87,10 +87,10 @@ void Assembly-CSharp.dll::TouristAdController::TouristAdController_InterstitialA
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__TouristAdController____c___InterstitialAdResult_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__TouristAdController____c___InterstitialAdResult_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__TouristAdController____c->static_fields->__9__20_0 = callbackFunction;
-    func_?(&TypeInfo__TouristAdController____c->static_fields->__9__20_0,callbackFunction);
+    TypeInfo__TouristAdController____c->static_fields->__9__19_0 = callbackFunction;
+    func_?(&TypeInfo__TouristAdController____c->static_fields->__9__19_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -421,32 +421,6 @@ code_?:
 }
 
 
-/* Boolean TouristPromotionAllowed() */
-
-bool Assembly-CSharp.dll::TouristAdController::TouristAdController_TouristPromotionAllowed
-               (MethodInfo *method)
-
-{
-  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    this = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this == (MVNetworkGame *)0x0) {
-      uVar2 = func_?(&stack0xfffffffc);
-      func_?(uVar2);
-      pcVar3 = (code *)swi(3);
-      bVar1 = (*pcVar3)();
-      return bVar1;
-    }
-    bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      MVar4 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
-      return MVar4 == MVJoinState__Enum_Playing;
-    }
-  }
-  return 0;
-}
-
-
 /* Void Update() */
 
 void Assembly-CSharp.dll::TouristAdController::TouristAdController_Update
@@ -494,27 +468,27 @@ bool Assembly-CSharp.dll::TouristAdController::TouristAdController_get_IsPromoti
      this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
     bVar2 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
                       (this_00,SpawnRoleModeType__Enum_Playing,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_01 == (MVNetworkGame *)0x0) goto code_?;
-        bVar2 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_01,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          MVar3 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
-          if (MVar3 == MVJoinState__Enum_Playing) {
-            return UNK_?;
-          }
+    bVar3 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (this_01 != (MVNetworkGame *)0x0) {
+      MVNetworkGame::MVNetworkGame_get_IsPlaying(this_01,(MethodInfo *)0x0);
+      MVar4 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0);
+      this_02 = (this->fields).embeddedPlayerConfig;
+      if (this_02 != (EmbeddedPlayerConfig *)0x0) {
+        pEVar5 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                           ((EmbeddedSiteConfigData *)&stack0xffffffe4,this_02,(MethodInfo *)0x0);
+        bVar6 = 0;
+        if (MVar4 == MVJoinState__Enum_Playing) {
+          bVar6 = bVar2 ^ 1;
         }
+        return bVar6 & pEVar5->showTouristPromotion & (byte)((uint)this_02 >> 0x18) &
+               (byte)((uint)this_02 >> 0x10) & bVar3;
       }
     }
-    return 0;
   }
-code_?:
-  uVar4 = func_?(&stack0xfffffff4);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  bVar2 = (*pcVar7)();
   return bVar2;
 }
 

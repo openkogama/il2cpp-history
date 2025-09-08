@@ -256,7 +256,7 @@ code_?:
          (pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint_1
                               (&VStack_12,pTVar10,0.0,0.0,
                                (float)((uint)(this->fields).pointDistance ^
-                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       ),(MethodInfo *)0x0), pVVar8 != (Vector3__Array *)0x0)) {
         fVar18 = pVVar11->y;
         fVar19 = pVVar11->z;

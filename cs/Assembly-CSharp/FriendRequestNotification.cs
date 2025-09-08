@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -14,10 +15,13 @@ using UnityEngine.UI;
 public class FriendRequestNotification : Notification
 {
 	// Fields
+	private const int latestFriendId = -1;
 	[SerializeField]
 	private UnityEngine.UI.Text label;
+	[FormerlySerializedAs("TertiaryNotificationUI")]
+	[SerializeField]
+	private TertiaryNotificationUI tertiaryNotificationUI;
 	private int friendId;
-	private const int latestFriendId = -1;
 
 	// Properties
 	protected override NotificationLifetime Lifetime { get; }

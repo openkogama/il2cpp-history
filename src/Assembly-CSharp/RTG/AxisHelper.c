@@ -107,12 +107,12 @@ Vector3 * Assembly-CSharp.dll::RTG::AxisHelper::AxisHelper_GetWorldAxis_1
   VStack_7.y = (float)((ulonglong)uVar4 >> 0x20);
   VStack_7.x = (float)uVar4;
   uVar8 = (uint)VStack_7.y ^
-          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   fVar3 = (float)((uint)fVar3 ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   __return_storage_ptr__->x =
        (float)((uint)VStack_7.x ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   __return_storage_ptr__->y = (float)uVar8;
   __return_storage_ptr__->z = fVar3;
   return __return_storage_ptr__;

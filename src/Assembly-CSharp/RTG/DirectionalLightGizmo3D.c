@@ -945,7 +945,7 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3D::DirectionalLightGizmo3D_
       fVar6 = pVVar3->z;
       pGVar12 = (this->fields)._._gizmo;
       fVar8 = (float)((uint)(fVar8 * (float)uVar11 + (float)uVar7 * (float)uVar10 + fVar9 * fVar6) ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       if (pGVar12 != (Gizmo *)0x0) {
         pSVar13 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
                   PointerEventBase`1[System::Object]::

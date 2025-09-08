@@ -75,10 +75,10 @@ Assembly-CSharp.dll::StreamingAsset::StreamingAsset_DelayedUnload
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__StreamingAsset___DelayedUnload_d__11);
+    func_?(&TypeInfo__StreamingAsset___DelayedUnload_d__13);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__StreamingAsset___DelayedUnload_d__11;
+  method_00 = TypeInfo__StreamingAsset___DelayedUnload_d__13;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -391,22 +391,18 @@ Object * Assembly-CSharp.dll::StreamingAsset::StreamingAsset_UnpackBundle_Cached
       func_?(method);
     }
   }
-  if (www != (UnityWebRequest *)0x0) {
-    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-    UnityWebRequest_GetUrl(www,(MethodInfo *)0x0);
-    if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__StreamingAsset);
-    }
-    pOVar1 = StreamingAsset_UnpackBundle(www,((method->field7_0x1c).rgctx_data)->method);
-    this = TypeInfo__StreamingAsset->static_fields->cachedAssetBundles;
-    if (this != (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-      HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
-                ((HashSet_1_System_Object_ *)this,(Object *)www,
-                 MethodInfo__System__Collections__Generic__HashSet<UnityEngine::Networking::UnityWebRequest>__Add_UnityEngine__Networking__UnityWebRequest_
-                );
-      return pOVar1;
-    }
+  if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__StreamingAsset);
+  }
+  pOVar1 = StreamingAsset_UnpackBundle(www,((method->field7_0x1c).rgctx_data)->method);
+  this = TypeInfo__StreamingAsset->static_fields->cachedAssetBundles;
+  if (this != (HashSet_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+    HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
+              ((HashSet_1_System_Object_ *)this,(Object *)www,
+               MethodInfo__System__Collections__Generic__HashSet<UnityEngine::Networking::UnityWebRequest>__Add_UnityEngine__Networking__UnityWebRequest_
+              );
+    return pOVar1;
   }
   func_?();
   pcVar2 = (code *)swi(3);

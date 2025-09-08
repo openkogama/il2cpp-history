@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::BriefingPlayButton::BriefingPlayButton_StartPlaying
             (IPlayModeUI *)0x0) goto code_?;
         ppMStack4 = (MVGameControllerBase__Class **)0x0;
         pIStack5 = TypeInfo__IPlayModeUI;
-        uStack6 = 6;
+        uStack6 = 8;
         func_?();
       }
       return;

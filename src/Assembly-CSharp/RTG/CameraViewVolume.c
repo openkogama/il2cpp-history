@@ -20,13 +20,13 @@ void Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume_CalculateWorld
                             (&VStack_6,this_00,(MethodInfo *)0x0);
         method_00 = (MethodInfo *)pVVar5->z;
         fVar7 = (float)((uint)SUB84(uVar3,4) ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         puVar8 = (undefined *)
                   ((uint)fVar4 ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         value_00.y = fVar7;
         value_00.x = (float)((uint)(float)uVar3 ^
-                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
         value_00.z = (float)puVar8;
         VStack_6.z = (float)puVar8;
@@ -66,13 +66,13 @@ code_?:
             }
             else {
               fVar14 = (float)((uint)fVar12 ^
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               uVar17._0_4_ = (float)((uint)fVar15 ^
-                                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                     );
               uVar17._4_4_ = (float)((uint)fVar16 ^
-                                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                     );
               VStack_6.z = fVar14;
             }

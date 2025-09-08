@@ -153,7 +153,6 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual::
                     UnityEngine__Sprite_MethodInfo__StreamingAsset__UnpackBundle_Cached<UnityEngine::Sprite>_UnityEngine__Networking__UnityWebRequest_
                    );
     func_?(&TypeInfo__StreamingAsset);
-    func_?(&StringLiteral_DelayedUnload);
     cRam_? = '\x01';
   }
   if (www != (UnityWebRequest *)0x0) {
@@ -164,19 +163,32 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual::
       if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      value_00 = StreamingAsset::StreamingAsset_UnpackBundle_Cached
-                           (www,
-                            UnityEngine__Sprite_MethodInfo__StreamingAsset__UnpackBundle_Cached<UnityEngine::Sprite>_UnityEngine__Networking__UnityWebRequest_
-                           );
+      pOVar2 = StreamingAsset::StreamingAsset_UnpackBundle_Cached
+                         (www,
+                          UnityEngine__Sprite_MethodInfo__StreamingAsset__UnpackBundle_Cached<UnityEngine::Sprite>_UnityEngine__Networking__UnityWebRequest_
+                         );
       StreamingAsset`2[System::Object,System::Object]::
       StreamingAsset_2_System_Object_System_Object__set_Asset
-                ((StreamingAsset_2_System_Object_System_Object_ *)this,value_00,
+                ((StreamingAsset_2_System_Object_System_Object_ *)this,pOVar2,
                  MethodInfo__StreamingAsset<UnityEngine::Sprite,_UnityEngine::Texture2D>__set_Asset_UnityEngine__Sprite_
                 );
       if ((this->fields)._.useCache == 0) {
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_1
-                  ((MonoBehaviour *)this,StringLiteral_DelayedUnload,(Object *)www,(MethodInfo *)0x0
-                  );
+        if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        method_00 = TypeInfo__StreamingAsset___DelayedUnload_d__13;
+        pOVar2 = (Object *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        pOVar2[1].klass = (Object__Class *)0x0;
+        pOVar2[2].klass = (Object__Class *)www;
+        func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                  ((MonoBehaviour *)this,(IEnumerator *)pOVar2,(MethodInfo *)0x0);
       }
     }
   }

@@ -485,15 +485,15 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_NotReviving
     if ((pMVar1 != (MVLocalPlayer *)0x0) &&
        (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
       BoostController::BoostController_RemoveAllBoosts(this_00,(MethodInfo *)0x0);
-      this_01 = unaff_EBX[6].klass;
+      this_01 = (TierBoostStateHandler *)unaff_EBX[5].monitor;
       this_03 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
                 (this_03,unaff_EBX,MethodInfo__DeathUIController__OnFinishPreviewTier_bool_,
                  (MethodInfo *)0x0);
-      if (this_01 != (Object__Class *)0x0) {
+      if (this_01 != (TierBoostStateHandler *)0x0) {
         TierBoostStateHandler::TierBoostStateHandler_StopPreviewTier
-                  ((TierBoostStateHandler *)this_01,(Action_1_Boolean_ *)this_03,(MethodInfo *)0x0);
+                  (this_01,(Action_1_Boolean_ *)this_03,(MethodInfo *)0x0);
         return;
       }
     }
@@ -755,7 +755,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnFadeFinished
         }
         pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
         if (pIVar4 != (IPlayModeUI *)0x0) {
-          cVar5 = func_?(5,TypeInfo__IPlayModeUI,pIVar4);
+          cVar5 = func_?(7,TypeInfo__IPlayModeUI,pIVar4);
           if (cVar5 == '\0') {
             if (cRam_? == '\0') {
               func_?(&TypeInfo__GamePassesManager);
@@ -813,14 +813,14 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnFadeFinished
                                        );
                         func_?(&TypeInfo__UnityEngine__Object);
                         func_?(&
-                                        MethodInfo__DeathUIController____c__DisplayClass28_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                                        MethodInfo__DeathUIController____c__DisplayClass27_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                                        );
-                        func_?(&TypeInfo__DeathUIController____c__DisplayClass28_0);
+                        func_?(&TypeInfo__DeathUIController____c__DisplayClass27_0);
                         cRam_? = '\x01';
                       }
                       method_00 = (MethodInfo *)&UNK_?;
                       value = (Object *)
-                              func_?(TypeInfo__DeathUIController____c__DisplayClass28_0);
+                              func_?(TypeInfo__DeathUIController____c__DisplayClass27_0);
                       mscorlib.dll::System::ThrowHelper::
                       ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                                 (value,ExceptionArgument__Enum_obj,method_00);
@@ -850,7 +850,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnFadeFinished
                         Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
                                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
                                    value,
-                                   MethodInfo__DeathUIController____c__DisplayClass28_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                                   MethodInfo__DeathUIController____c__DisplayClass27_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                                    ,(MethodInfo *)0x0);
                         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
                             cctor_finished_or_no_cctor == 0) {
@@ -1174,26 +1174,23 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnTierUnlockedPop
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                    );
     func_?(&
-                    MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__31_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__DeathUIController____c);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                   );
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                   ((Component *)in_stack_2,(MethodInfo *)0x0);
-  pGVar3 = root;
+  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     (in_stack_3,(MethodInfo *)0x0);
+  pGVar4 = pGVar2;
   if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__DeathUIController____c);
   }
-  callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__31_0;
+  callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__30_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    root = pGVar3;
+    pGVar2 = pGVar4;
     if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__DeathUIController____c);
-      root = pGVar3;
+      pGVar2 = pGVar4;
     }
     object = TypeInfo__DeathUIController____c->static_fields->__9;
     callbackFunction =
@@ -1204,76 +1201,95 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnTierUnlockedPop
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__31_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__DeathUIController____c->static_fields->__9__31_0 = callbackFunction;
-    func_?(&TypeInfo__DeathUIController____c->static_fields->__9__31_0,callbackFunction);
+    TypeInfo__DeathUIController____c->static_fields->__9__30_0 = callbackFunction;
+    func_?(&TypeInfo__DeathUIController____c->static_fields->__9__30_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,
+            (pGVar2,(BaseEventData *)0x0,
              (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+  pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
-  if ((pSVar4 == (SpawnRoleDataMediator *)0x0) ||
-     (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar4->fields).reviveState,
+  if ((pSVar5 == (SpawnRoleDataMediator *)0x0) ||
+     (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar5->fields).reviveState,
      this_00 == (WebCompletionSource_1_System_Object_ *)0x0)) goto code_?;
-  this_01 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+  this_03 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
             WebCompletionSource_1_System_Object__get_Task
                       (this_00,
                        MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                       );
-  if (this_01 == (Task *)0x0) goto code_?;
-  bVar1 = ReviveState::ReviveState_get_CanSafelySpawn((ReviveState *)this_01,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
-code_?:
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if ((pMVar5 == (MVLocalPlayer *)0x0) ||
-       (pBVar6 = (pMVar5->fields).boostController, pBVar6 == (BoostController *)0x0))
-    goto code_?;
-    this_02 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)BoostController::BoostController_GetActiveBoosts(pBVar6,(MethodInfo *)0x0);
-    if (this_02 ==
-        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) goto code_?;
-    iVar7 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-            StyleSheetCache+SheetHandleKey,System::Object]::
-            Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                      (this_02,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                      );
-    if (0 < iVar7) goto code_?;
-    uVar8 = (ushort)bVar1 << 8;
-  }
-  else {
-    pTVar9 = (in_stack_2->fields).tierHandler;
-    if (pTVar9 == (TierBoostStateHandler *)0x0) goto code_?;
-    bVar10 = TierBoostStateHandler::TierBoostStateHandler_IsInTempTier(pTVar9,(MethodInfo *)0x0);
-    if (bVar10 == 0) goto code_?;
-code_?:
-    uVar8 = CONCAT11(bVar1,bVar1) ^ 1;
-  }
-  bVar1 = (bool)uVar8;
-  bVar10 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
-  if (bVar10 == 0) {
-    bVar10 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
-    if (bVar10 != 0) goto code_?;
+  if (this_03 == (Task *)0x0) goto code_?;
+  bVar1 = ReviveState::ReviveState_get_CanSafelySpawn((ReviveState *)this_03,(MethodInfo *)0x0);
+  bVar6 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+  if (bVar6 == 0) {
+    bVar6 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
+    if (bVar6 != 0) goto code_?;
   }
   else {
 code_?:
-    bVar10 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
-    if ((bVar10 & (byte)(uVar8 >> 8)) != 0 || (bool)uVar8 != 0) {
-      DeathUIController_ShowReviveMenu(in_stack_2,bVar1,(MethodInfo *)0x0);
-      return;
+    bVar6 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
+    if ((bVar1 & bVar6) != 0) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)&UNK_?);
+      original = in_stack_3[2].fields._.m_CachedPtr;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pOVar7 = (Object__Class *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         (original,
+                          ReviveUIHandler_MethodInfo__UnityEngine__Object__Instantiate<ReviveUIHandler>_ReviveUIHandler_
+                         );
+      if (value != (Object *)0x0) {
+        value[1].klass = pOVar7;
+        func_?();
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (in_stack_3,(MethodInfo *)0x0);
+        callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                   MethodInfo__DeathUIController____c__DisplayClass19_0___ShowReviveMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar2,(BaseEventData *)0x0,callbackFunction_00,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        pOVar7 = value[1].klass;
+        this_06 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_06,(Object *)in_stack_3,
+                   MethodInfo__DeathUIController__ReviveNotClicked__,(MethodInfo *)0x0);
+        if (pOVar7 != (Object__Class *)0x0) {
+          (*(code *)(pOVar7->_0).image[5].nameToClassHashTable)();
+          return;
+        }
+      }
+      goto code_?;
     }
   }
   if (cRam_? == '\0') {
@@ -1281,29 +1297,29 @@ code_?:
     func_?();
     cRam_? = '\x01';
   }
-  this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_03 != (MVNetworkGame *)0x0) {
-    pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0);
-    if ((pMVar5 != (MVLocalPlayer *)0x0) &&
-       (pBVar6 = (pMVar5->fields).boostController, pBVar6 != (BoostController *)0x0)) {
-      BoostController::BoostController_RemoveAllBoosts(pBVar6,(MethodInfo *)0x0);
-      pTVar9 = (in_stack_2->fields).tierHandler;
-      this_04 = (UnityAction_1_System_Int32Enum_ *)func_?();
+  this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_04 != (MVNetworkGame *)0x0) {
+    pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_04,(MethodInfo *)0x0);
+    if ((pMVar8 != (MVLocalPlayer *)0x0) &&
+       (this_01 = (pMVar8->fields).boostController, this_01 != (BoostController *)0x0)) {
+      BoostController::BoostController_RemoveAllBoosts(this_01,(MethodInfo *)0x0);
+      this_02 = in_stack_3[3].fields._.m_CachedPtr;
+      this_05 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (this_04,(Object *)in_stack_2,
+                (this_05,(Object *)in_stack_3,
                  MethodInfo__DeathUIController__OnFinishPreviewTier_bool_,(MethodInfo *)0x0);
-      if (pTVar9 != (TierBoostStateHandler *)0x0) {
+      if (this_02 != (TierBoostStateHandler *)0x0) {
         TierBoostStateHandler::TierBoostStateHandler_StopPreviewTier
-                  (pTVar9,(Action_1_Boolean_ *)this_04,(MethodInfo *)0x0);
+                  (this_02,(Action_1_Boolean_ *)this_05,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1328,7 +1344,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ReboostNotClicked
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                    );
     func_?(&
-                    MethodInfo__DeathUIController____c___ReboostNotClicked_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController____c___ReboostNotClicked_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__DeathUIController____c);
     cRam_? = '\x01';
@@ -1357,7 +1373,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ReboostNotClicked
     if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__DeathUIController____c);
     }
-    callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__21_0;
+    callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__20_0;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__DeathUIController____c);
@@ -1371,11 +1387,11 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ReboostNotClicked
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                 MethodInfo__DeathUIController____c___ReboostNotClicked_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 MethodInfo__DeathUIController____c___ReboostNotClicked_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
-      TypeInfo__DeathUIController____c->static_fields->__9__21_0 = callbackFunction;
+      TypeInfo__DeathUIController____c->static_fields->__9__20_0 = callbackFunction;
       root = callbackFunction;
-      func_?(&TypeInfo__DeathUIController____c->static_fields->__9__21_0);
+      func_?(&TypeInfo__DeathUIController____c->static_fields->__9__20_0);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1448,7 +1464,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ReviveNotClicked
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                    );
     func_?(&
-                    MethodInfo__DeathUIController____c___ReviveNotClicked_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController____c___ReviveNotClicked_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__DeathUIController____c);
     cRam_? = '\x01';
@@ -1480,7 +1496,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ReviveNotClicked
   if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__22_0;
+  callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__21_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -1491,9 +1507,9 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ReviveNotClicked
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__DeathUIController____c___ReviveNotClicked_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__DeathUIController____c___ReviveNotClicked_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__DeathUIController____c->static_fields->__9__22_0 = callbackFunction;
+    TypeInfo__DeathUIController____c->static_fields->__9__21_0 = callbackFunction;
     func_?();
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -1637,7 +1653,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowBoostMenu
     func_?();
     cRam_? = '\x01';
   }
-  method_01 = TypeInfo__DeathUIController____c__DisplayClass26_0;
+  method_01 = TypeInfo__DeathUIController____c__DisplayClass25_0;
   pOVar1 = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
@@ -1669,7 +1685,7 @@ code_?:
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
             ((UnityAction_2_System_Object_System_Object_ *)pEVar7,pOVar1,
-             MethodInfo__DeathUIController____c__DisplayClass26_0___ShowBoostMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+             MethodInfo__DeathUIController____c__DisplayClass25_0___ShowBoostMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -1713,16 +1729,14 @@ code_?:
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (fRam00000058 <= 0.0) {
-    if (pCRam0000002c == (Component *)0x0) goto code_?;
-    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        (pCRam0000002c,(MethodInfo *)0x0);
-    if (pGVar5 == (GameObject *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar5,0,(MethodInfo *)0x0);
-    if (pCRam00000010 == (Component *)0x0) goto code_?;
-    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        (pCRam00000010,(MethodInfo *)0x0);
-    if (pGVar5 == (GameObject *)0x0) goto code_?;
+    if ((((pCRam0000002c == (Component *)0x0) ||
+         (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              (pCRam0000002c,(MethodInfo *)0x0), pGVar5 == (GameObject *)0x0)) ||
+        (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                   (pGVar5,0,(MethodInfo *)0x0), pCRam00000010 == (Component *)0x0)) ||
+       (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (pCRam00000010,(MethodInfo *)0x0), pGVar5 == (GameObject *)0x0))
+    goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar5,0,(MethodInfo *)0x0);
     pSVar8 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
@@ -1746,151 +1760,145 @@ code_?:
     uRam_? = 1;
   }
   fRam00000054 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if (pNRam00000018 != (NotificationFade *)0x0) {
-    NotificationFade::NotificationFade_Activate(pNRam00000018,(MethodInfo *)0x0);
-    if (pNRam00000018 != (NotificationFade *)0x0) {
-      (pNRam00000018->fields).shouldHideWhenDone = 0;
-      if (pERam00000050 != (EmbeddedPlayerConfig *)0x0) {
-        pEVar11 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                           ((EmbeddedSiteConfigData *)&stack0xffffffd4,pERam00000050,
-                            (MethodInfo *)0x0);
-        cVar12 = pEVar11->noPlayButtonVideoIcon;
-        if (pOVar1 != (Object *)0x0) {
-          *(undefined1 *)&pOVar1[1].klass = 0;
+  if (((pNRam00000018 != (NotificationFade *)0x0) &&
+      (NotificationFade::NotificationFade_Activate(pNRam00000018,(MethodInfo *)0x0),
+      pNRam00000018 != (NotificationFade *)0x0)) &&
+     ((pNRam00000018->fields).shouldHideWhenDone = 0, pERam00000050 != (EmbeddedPlayerConfig *)0x0))
+  {
+    pEVar11 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                       ((EmbeddedSiteConfigData *)&stack0xffffffd4,pERam00000050,(MethodInfo *)0x0);
+    uVar12._0_1_ = pEVar11->allowInHouseAds;
+    uVar12._1_1_ = pEVar11->removeFullscreenButton;
+    uVar12._2_1_ = pEVar11->hideSignUp;
+    uVar12._3_1_ = pEVar11->noPlayButtonVideoIcon;
+    if (pOVar1 != (Object *)0x0) {
+      *(undefined1 *)&pOVar1[1].klass = 0;
+      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)0x0,(MethodInfo *)0x0);
+      pEVar7 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+      pOVar4 = pOVar1;
+      pMVar13 = 
+      MethodInfo__DeathUIBoostMenuController____c__DisplayClass22_0___Initialize_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
+      ;
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar7,pOVar1,
+                 MethodInfo__DeathUIBoostMenuController____c__DisplayClass22_0___Initialize_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      cVar14 = (char)pOVar4;
+      cVar15 = (char)((uint)pMVar13 >> 0x10);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar5,(BaseEventData *)0x0,pEVar7,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
+                );
+      if ((cVar15 == '\0') || (cVar14 != '\0')) {
+        bVar16 = 0;
+      }
+      else {
+        pIVar17 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+        if (pIVar17 == (IAdManager *)0x0) goto code_?;
+        bVar16 = func_?();
+      }
+      bVar16 = *(byte *)&pOVar1[1].klass & bVar16;
+      if (pCRam00000048 != (Component *)0x0) {
+        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (pCRam00000048,(MethodInfo *)0x0);
+        if ((pGVar5 != (GameObject *)0x0) &&
+           (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      (pGVar5,bVar16 != 0 && uVar12._3_1_ == '\0',(MethodInfo *)0x0),
+           pCRam0000004c != (Component *)0x0)) {
           pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)0x0,(MethodInfo *)0x0);
-          pEVar7 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          pOVar4 = pOVar1;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)pEVar7,pOVar1,
-                     MethodInfo__DeathUIBoostMenuController____c__DisplayClass22_0___Initialize_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          cVar13 = (char)pOVar4;
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (pGVar5,(BaseEventData *)0x0,pEVar7,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
-                    );
-          if ((cVar12 == '\0') && (cVar13 == '\0')) {
-            pIVar14 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-            if (pIVar14 == (IAdManager *)0x0) goto code_?;
-            bVar15 = func_?();
+                              (pCRam0000004c,(MethodInfo *)0x0);
+          if (bVar16 == 0) {
+            uVar12 = 1;
           }
           else {
-            bVar15 = 0;
+            uVar12 = uVar12 >> 0x18;
           }
-          bVar15 = *(byte *)&pOVar1[1].klass & bVar15;
-          if (pCRam00000048 != (Component *)0x0) {
-            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                (pCRam00000048,(MethodInfo *)0x0);
-            if (pGVar5 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar5,bVar15,(MethodInfo *)0x0);
-              if (pCRam0000004c != (Component *)0x0) {
-                pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_gameObject(pCRam0000004c,(MethodInfo *)0x0);
-                if (pGVar5 != (GameObject *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar5,bVar15 ^ 1,(MethodInfo *)0x0);
-                  if (pCRam0000002c != (Component *)0x0) {
-                    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject(pCRam0000002c,(MethodInfo *)0x0);
-                    if (pGVar5 != (GameObject *)0x0) {
+          if (((pGVar5 != (GameObject *)0x0) &&
+              (UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                         (pGVar5,uVar12 != 0,(MethodInfo *)0x0), pCRam0000002c != (Component *)0x0)
+              ) && (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Component_get_gameObject(pCRam0000002c,(MethodInfo *)0x0),
+                   pGVar5 != (GameObject *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                      (pGVar5,bVar16 ^ 1,(MethodInfo *)0x0);
+            pPVar18 = pPRam00000034;
+            pNVar19 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (pNVar19,(Object *)0x0,MethodInfo__DeathUIBoostMenuController__OnRespawn__,
+                       (MethodInfo *)0x0);
+            if (pPVar18 != (PointerDownController *)0x0) {
+              PointerDownController::PointerDownController_Initialize
+                        (pPVar18,(UnityAction *)pNVar19,(MethodInfo *)0x0);
+              pPVar18 = pPRam00000038;
+              pNVar19 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+              NavMesh_OnNavMeshPreUpdate__ctor
+                        (pNVar19,(Object *)0x0,
+                         MethodInfo__DeathUIBoostMenuController__OnResetToSpawnPoint__,
+                         (MethodInfo *)0x0);
+              if (pPVar18 != (PointerDownController *)0x0) {
+                PointerDownController::PointerDownController_Initialize
+                          (pPVar18,(UnityAction *)pNVar19,(MethodInfo *)0x0);
+                pSVar8 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                                   ((MethodInfo *)0x0);
+                if (pSVar8 != (SpawnRoleDataMediator *)0x0) {
+                  this_02 = (pSVar8->fields).SpawnRoleModeTypeWrapper;
+                  this_03 = (UnityAction_1_System_Int32Enum_ *)func_?();
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]
+                  ::UnityAction_1_System_Int32Enum___ctor
+                            (this_03,(Object *)0x0,
+                             MethodInfo__DeathUIBoostMenuController__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_
+                             ,(MethodInfo *)0x0);
+                  if ((this_02 != (SpawnRoleModeTypeWrapper *)0x0) &&
+                     (SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add_OnChange
+                                (this_02,(Action_1_MV_Common_SpawnRoleModeType_ *)this_03,
+                                 (MethodInfo *)0x0), pBRam0000003c != (BoostMenuController *)0x0)) {
+                    BoostMenuController::BoostMenuController_Initialize
+                              (pBRam0000003c,(MethodInfo *)0x0);
+                    this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0)
+                    ;
+                    if ((((this_04 != (MVNetworkGame *)0x0) &&
+                         ((this_05 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                                               (this_04,(MethodInfo *)0x0),
+                          this_05 != (MVLocalPlayer *)0x0 &&
+                          (pMVar20 = MVPlayer::MVPlayer_GetCheckpoint
+                                               ((MVPlayer *)this_05,(MethodInfo *)0x0),
+                          pNRam0000001c != (NotificationFade *)0x0)))) &&
+                        (NotificationFade::NotificationFade_Activate
+                                   (pNRam0000001c,(MethodInfo *)0x0),
+                        pNRam0000001c != (NotificationFade *)0x0)) &&
+                       ((pNRam0000001c->fields).pauseAt = 0.0, pGRam00000030 != (GameObject *)0x0))
+                    {
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                (pGVar5,bVar15 ^ 1,(MethodInfo *)0x0);
-                      pPVar16 = pPRam00000034;
-                      pNVar17 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                      NavMesh_OnNavMeshPreUpdate__ctor
-                                (pNVar17,(Object *)0x0,
-                                 MethodInfo__DeathUIBoostMenuController__OnRespawn__,
-                                 (MethodInfo *)0x0);
-                      if (pPVar16 != (PointerDownController *)0x0) {
-                        PointerDownController::PointerDownController_Initialize
-                                  (pPVar16,(UnityAction *)pNVar17,(MethodInfo *)0x0);
-                        pPVar16 = pPRam00000038;
-                        pNVar17 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                        NavMesh_OnNavMeshPreUpdate__ctor
-                                  (pNVar17,(Object *)0x0,
-                                   MethodInfo__DeathUIBoostMenuController__OnResetToSpawnPoint__,
-                                   (MethodInfo *)0x0);
-                        if (pPVar16 != (PointerDownController *)0x0) {
-                          PointerDownController::PointerDownController_Initialize
-                                    (pPVar16,(UnityAction *)pNVar17,(MethodInfo *)0x0);
-                          pSVar8 = MVGameControllerBase::
-                                   MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                                             ((MethodInfo *)0x0);
-                          if (pSVar8 != (SpawnRoleDataMediator *)0x0) {
-                            this_02 = (pSVar8->fields).SpawnRoleModeTypeWrapper;
-                            this_03 = (UnityAction_1_System_Int32Enum_ *)func_?();
-                            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
-                            Int32Enum]::UnityAction_1_System_Int32Enum___ctor
-                                      (this_03,(Object *)0x0,
-                                       MethodInfo__DeathUIBoostMenuController__OnAvatarStateChanged_MV__Common__SpawnRoleModeType_
-                                       ,(MethodInfo *)0x0);
-                            if (this_02 != (SpawnRoleModeTypeWrapper *)0x0) {
-                              SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add_OnChange
-                                        (this_02,(Action_1_MV_Common_SpawnRoleModeType_ *)this_03,
-                                         (MethodInfo *)0x0);
-                              if (pBRam0000003c != (BoostMenuController *)0x0) {
-                                BoostMenuController::BoostMenuController_Initialize
-                                          (pBRam0000003c,(MethodInfo *)0x0);
-                                this_04 = MVGameControllerBase::MVGameControllerBase_get_Game
-                                                    ((MethodInfo *)0x0);
-                                if (this_04 != (MVNetworkGame *)0x0) {
-                                  this_05 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                                      (this_04,(MethodInfo *)0x0);
-                                  if (this_05 != (MVLocalPlayer *)0x0) {
-                                    pMVar18 = MVPlayer::MVPlayer_GetCheckpoint
-                                                        ((MVPlayer *)this_05,(MethodInfo *)0x0);
-                                    if (pNRam0000001c != (NotificationFade *)0x0) {
-                                      NotificationFade::NotificationFade_Activate
-                                                (pNRam0000001c,(MethodInfo *)0x0);
-                                      if (pNRam0000001c != (NotificationFade *)0x0) {
-                                        (pNRam0000001c->fields).pauseAt = 0.0;
-                                        if (pGRam00000030 != (GameObject *)0x0) {
-                                          UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                          GameObject_SetActive(pGRam00000030,0,(MethodInfo *)0x0);
-                                          if (pMVar18 == (MVCheckpoint *)0x0) {
-                                            if (pCRam00000020 != (Component *)0x0) {
-                                              pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                        Component::Component_get_gameObject
-                                                                  (pCRam00000020,(MethodInfo *)0x0);
-                                              if (pGVar5 != (GameObject *)0x0) {
-                                                UnityEngine.CoreModule.dll::UnityEngine::GameObject
-                                                ::GameObject_SetActive(pGVar5,0,(MethodInfo *)0x0);
-                                                if (piRam_? != (int *)0x0) {
-                                                  iVar19 = *piRam_?;
-                                                  goto code_?;
-                                                }
-                                              }
-                                            }
-                                          }
-                                          else if (piRam_? != (int *)0x0) {
-                                            iVar19 = *piRam_?;
+                                (pGRam00000030,0,(MethodInfo *)0x0);
+                      if (pMVar20 == (MVCheckpoint *)0x0) {
+                        if (((pCRam00000020 != (Component *)0x0) &&
+                            (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                       Component_get_gameObject(pCRam00000020,(MethodInfo *)0x0),
+                            pGVar5 != (GameObject *)0x0)) &&
+                           (UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_SetActive(pGVar5,0,(MethodInfo *)0x0),
+                           piRam_? != (int *)0x0)) {
+                          iVar21 = *piRam_?;
 code_?:
-                                            (**(code **)(iVar19 + 0x318))();
-                                            if (cRam_? == '\0') {
-                                              func_?();
-                                              cRam_? = '\x01';
-                                            }
-                                            return;
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
+                          (**(code **)(iVar21 + 0x318))();
+                          if (cRam_? == '\0') {
+                            func_?();
+                            cRam_? = '\x01';
                           }
+                          return;
                         }
+                      }
+                      else if (piRam_? != (int *)0x0) {
+                        iVar21 = *piRam_?;
+                        goto code_?;
                       }
                     }
                   }
@@ -1928,26 +1936,23 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowDeadmodeUI
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                    );
     func_?(&
-                    MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__31_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__DeathUIController____c);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                   );
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                   ((Component *)this,(MethodInfo *)0x0);
-  pGVar1 = root;
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  pGVar2 = pGVar1;
   if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__DeathUIController____c);
   }
-  callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__31_0;
+  callbackFunction = TypeInfo__DeathUIController____c->static_fields->__9__30_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    root = pGVar1;
+    pGVar1 = pGVar2;
     if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__DeathUIController____c);
-      root = pGVar1;
+      pGVar1 = pGVar2;
     }
     object = TypeInfo__DeathUIController____c->static_fields->__9;
     callbackFunction =
@@ -1958,76 +1963,95 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowDeadmodeUI
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-               MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__31_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__DeathUIController____c___ShowDeadmodeUI_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__DeathUIController____c->static_fields->__9__31_0 = callbackFunction;
-    func_?(&TypeInfo__DeathUIController____c->static_fields->__9__31_0,callbackFunction);
+    TypeInfo__DeathUIController____c->static_fields->__9__30_0 = callbackFunction;
+    func_?(&TypeInfo__DeathUIController____c->static_fields->__9__30_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,
+            (pGVar1,(BaseEventData *)0x0,
              (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+  pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
-  if ((pSVar2 == (SpawnRoleDataMediator *)0x0) ||
-     (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar2->fields).reviveState,
+  if ((pSVar3 == (SpawnRoleDataMediator *)0x0) ||
+     (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar3->fields).reviveState,
      this_00 == (WebCompletionSource_1_System_Object_ *)0x0)) goto code_?;
-  this_01 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+  this_03 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
             WebCompletionSource_1_System_Object__get_Task
                       (this_00,
                        MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
                       );
-  if (this_01 == (Task *)0x0) goto code_?;
-  bVar3 = ReviveState::ReviveState_get_CanSafelySpawn((ReviveState *)this_01,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
-code_?:
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if ((pMVar4 == (MVLocalPlayer *)0x0) ||
-       (pBVar5 = (pMVar4->fields).boostController, pBVar5 == (BoostController *)0x0))
-    goto code_?;
-    this_02 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)BoostController::BoostController_GetActiveBoosts(pBVar5,(MethodInfo *)0x0);
-    if (this_02 ==
-        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) goto code_?;
-    iVar6 = mscorlib.dll::System::Collections::Generic::
-            Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-            StyleSheetCache+SheetHandleKey,System::Object]::
-            Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                      (this_02,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__get_Count__
-                      );
-    if (0 < iVar6) goto code_?;
-    uVar7 = (ushort)bVar3 << 8;
-  }
-  else {
-    pTVar8 = (this->fields).tierHandler;
-    if (pTVar8 == (TierBoostStateHandler *)0x0) goto code_?;
-    bVar9 = TierBoostStateHandler::TierBoostStateHandler_IsInTempTier(pTVar8,(MethodInfo *)0x0);
-    if (bVar9 == 0) goto code_?;
-code_?:
-    uVar7 = CONCAT11(bVar3,bVar3) ^ 1;
-  }
-  bVar3 = (bool)uVar7;
-  bVar9 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
-  if (bVar9 == 0) {
-    bVar9 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
-    if (bVar9 != 0) goto code_?;
+  if (this_03 == (Task *)0x0) goto code_?;
+  bVar4 = ReviveState::ReviveState_get_CanSafelySpawn((ReviveState *)this_03,(MethodInfo *)0x0);
+  bVar5 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
+  if (bVar5 == 0) {
+    bVar5 = MVClientSettings::MVClientSettings_get_IsSubscriber((MethodInfo *)0x0);
+    if (bVar5 != 0) goto code_?;
   }
   else {
 code_?:
-    bVar9 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
-    if ((bVar9 & (byte)(uVar7 >> 8)) != 0 || (bool)uVar7 != 0) {
-      DeathUIController_ShowReviveMenu(this,bVar3,(MethodInfo *)0x0);
-      return;
+    bVar5 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
+    if ((bVar4 & bVar5) != 0) {
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                (value,ExceptionArgument__Enum_obj,(MethodInfo *)&UNK_?);
+      original = (this->fields).reviveHandler;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pOVar6 = (Object__Class *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)original,
+                          ReviveUIHandler_MethodInfo__UnityEngine__Object__Instantiate<ReviveUIHandler>_ReviveUIHandler_
+                         );
+      if (value != (Object *)0x0) {
+        value[1].klass = pOVar6;
+        func_?();
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+                   MethodInfo__DeathUIController____c__DisplayClass19_0___ShowReviveMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  (pGVar1,(BaseEventData *)0x0,callbackFunction_00,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                  );
+        pOVar6 = value[1].klass;
+        this_06 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_06,(Object *)this,MethodInfo__DeathUIController__ReviveNotClicked__,
+                   (MethodInfo *)0x0);
+        if (pOVar6 != (Object__Class *)0x0) {
+          (*(code *)(pOVar6->_0).image[5].nameToClassHashTable)();
+          return;
+        }
+      }
+      goto code_?;
     }
   }
   if (cRam_? == '\0') {
@@ -2035,41 +2059,40 @@ code_?:
     func_?();
     cRam_? = '\x01';
   }
-  this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_03 != (MVNetworkGame *)0x0) {
-    pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0);
-    if ((pMVar4 != (MVLocalPlayer *)0x0) &&
-       (pBVar5 = (pMVar4->fields).boostController, pBVar5 != (BoostController *)0x0)) {
-      BoostController::BoostController_RemoveAllBoosts(pBVar5,(MethodInfo *)0x0);
-      pTVar8 = (this->fields).tierHandler;
-      this_04 = (UnityAction_1_System_Int32Enum_ *)func_?();
+  this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_04 != (MVNetworkGame *)0x0) {
+    pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_04,(MethodInfo *)0x0);
+    if ((pMVar7 != (MVLocalPlayer *)0x0) &&
+       (this_01 = (pMVar7->fields).boostController, this_01 != (BoostController *)0x0)) {
+      BoostController::BoostController_RemoveAllBoosts(this_01,(MethodInfo *)0x0);
+      this_02 = (this->fields).tierHandler;
+      this_05 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (this_04,(Object *)this,MethodInfo__DeathUIController__OnFinishPreviewTier_bool_,
+                (this_05,(Object *)this,MethodInfo__DeathUIController__OnFinishPreviewTier_bool_,
                  (MethodInfo *)0x0);
-      if (pTVar8 != (TierBoostStateHandler *)0x0) {
+      if (this_02 != (TierBoostStateHandler *)0x0) {
         TierBoostStateHandler::TierBoostStateHandler_StopPreviewTier
-                  (pTVar8,(Action_1_Boolean_ *)this_04,(MethodInfo *)0x0);
+                  (this_02,(Action_1_Boolean_ *)this_05,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
 
-/* Void ShowReviveMenu(Boolean) */
+/* Void ShowReviveMenu() */
 
 void Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowReviveMenu
-               (DeathUIController *this,bool reboostOnly,MethodInfo *method)
+               (DeathUIController *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__DeathUIController__ReboostNotClicked__);
     func_?(&MethodInfo__DeathUIController__ReviveNotClicked__);
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
@@ -2079,112 +2102,66 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowReviveMenu
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    ReviveUIHandlerBoosts_MethodInfo__UnityEngine__Object__Instantiate<ReviveUIHandlerBoosts>_ReviveUIHandlerBoosts_
-                   );
-    func_?(&
                     ReviveUIHandler_MethodInfo__UnityEngine__Object__Instantiate<ReviveUIHandler>_ReviveUIHandler_
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
-                    MethodInfo__DeathUIController____c__DisplayClass20_0___ShowReviveMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController____c__DisplayClass19_0___ShowReviveMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
-    func_?(&TypeInfo__DeathUIController____c__DisplayClass20_0);
-    func_?(&
-                    MethodInfo__DeathUIController____c__DisplayClass20_1___ShowReviveMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__DeathUIController____c__DisplayClass20_1);
+    func_?(&TypeInfo__DeathUIController____c__DisplayClass19_0);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  if (reboostOnly == 0) {
-    method_00 = TypeInfo__DeathUIController____c__DisplayClass20_1;
-    pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    original = (this->fields).reviveHandler;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pOVar2 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original,
-                        ReviveUIHandler_MethodInfo__UnityEngine__Object__Instantiate<ReviveUIHandler>_ReviveUIHandler_
-                       );
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    pOVar1[1].klass = pOVar2;
-    func_?(pOVar1 + 1,pOVar2);
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                            );
+  method_00 = TypeInfo__DeathUIController____c__DisplayClass19_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  original = (this->fields).reviveHandler;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = (Object__Class *)
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                     ((Object *)original,
+                      ReviveUIHandler_MethodInfo__UnityEngine__Object__Instantiate<ReviveUIHandler>_ReviveUIHandler_
+                     );
+  if (value != (Object *)0x0) {
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+    callbackFunction =
+         (ExecuteEvents_EventFunction_1_System_Object_ *)
+         func_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)pEVar4,pOVar1,
-               MethodInfo__DeathUIController____c__DisplayClass20_1___ShowReviveMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+               MethodInfo__DeathUIController____c__DisplayClass19_0___ShowReviveMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar3,(BaseEventData *)0x0,pEVar4,
+              (root,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    pOVar2 = pOVar1[1].klass;
+    pOVar1 = value[1].klass;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    method_1 = MethodInfo__DeathUIController__ReviveNotClicked__;
-  }
-  else {
-    method_01 = TypeInfo__DeathUIController____c__DisplayClass20_0;
-    pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    original_00 = (this->fields).reviveHandlerBoosts;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__DeathUIController__ReviveNotClicked__,
+               (MethodInfo *)0x0);
+    if (pOVar1 != (Object__Class *)0x0) {
+      pIVar2 = (pOVar1->_0).image;
+      (*(code *)pIVar2[5].nameToClassHashTable)(pOVar1,this_00,pIVar2[5].codeGenModule);
+      return;
     }
-    pOVar2 = (Object__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original_00,
-                        ReviveUIHandlerBoosts_MethodInfo__UnityEngine__Object__Instantiate<ReviveUIHandlerBoosts>_ReviveUIHandlerBoosts_
-                       );
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    pOVar1[1].klass = pOVar2;
-    func_?(pOVar1 + 1,pOVar2);
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                            );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)pEVar4,pOVar1,
-               MethodInfo__DeathUIController____c__DisplayClass20_0___ShowReviveMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar3,(BaseEventData *)0x0,pEVar4,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
-    pOVar2 = pOVar1[1].klass;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    method_1 = MethodInfo__DeathUIController__ReboostNotClicked__;
   }
-  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-  NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,method_1,(MethodInfo *)0x0);
-  if (pOVar2 != (Object__Class *)0x0) {
-    pIVar5 = (pOVar2->_0).image;
-    (*(code *)pIVar5[5].nameToClassHashTable)(pOVar2,this_00,pIVar5[5].codeGenModule);
-    return;
-  }
-code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -2208,12 +2185,12 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowTierUnlockedP
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
-                    MethodInfo__DeathUIController____c__DisplayClass28_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController____c__DisplayClass27_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
-    func_?(&TypeInfo__DeathUIController____c__DisplayClass28_0);
+    func_?(&TypeInfo__DeathUIController____c__DisplayClass27_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DeathUIController____c__DisplayClass28_0;
+  method_00 = TypeInfo__DeathUIController____c__DisplayClass27_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -2241,7 +2218,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowTierUnlockedP
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-               MethodInfo__DeathUIController____c__DisplayClass28_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               MethodInfo__DeathUIController____c__DisplayClass27_0___ShowTierUnlockedPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -2289,12 +2266,12 @@ bool Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowingClaimGold
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
-                    MethodInfo__DeathUIController____c__DisplayClass30_0___ShowingClaimGold_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController____c__DisplayClass29_0___ShowingClaimGold_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
-    func_?(&TypeInfo__DeathUIController____c__DisplayClass30_0);
+    func_?(&TypeInfo__DeathUIController____c__DisplayClass29_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DeathUIController____c__DisplayClass30_0;
+  method_00 = TypeInfo__DeathUIController____c__DisplayClass29_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -2331,7 +2308,7 @@ bool Assembly-CSharp.dll::DeathUIController::DeathUIController_ShowingClaimGold
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
                     ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                     MethodInfo__DeathUIController____c__DisplayClass30_0___ShowingClaimGold_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     MethodInfo__DeathUIController____c__DisplayClass29_0___ShowingClaimGold_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
               0) {
@@ -2364,7 +2341,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_StartDeathBriefin
 {
   if (cRam_? == '\0') {
     func_?(&
-                    MethodInfo__DeathUIController___StartDeathBriefing_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__DeathUIController___StartDeathBriefing_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
@@ -2386,7 +2363,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_StartDeathBriefin
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
             ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-             MethodInfo__DeathUIController___StartDeathBriefing_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+             MethodInfo__DeathUIController___StartDeathBriefing_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -2821,9 +2798,9 @@ code_?:
 }
 
 
-/* Void <StartDeathBriefing>b__37_0(IUIStack, BaseEventData) */
+/* Void <StartDeathBriefing>b__36_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DeathUIController::DeathUIController__StartDeathBriefing_b__37_0
+void Assembly-CSharp.dll::DeathUIController::DeathUIController__StartDeathBriefing_b__36_0
                (DeathUIController *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {

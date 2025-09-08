@@ -910,7 +910,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint
     fStack_10 = pVVar3->z;
     fVar5 = (float)((uint)(VStack_7.y * uStack_9._4_4_ + VStack_7.x * (float)uStack_9 +
                            VStack_7.z * fStack_10) ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     uStack_11 = uStack_9;
     fStack_12 = fStack_10;
     if (objectHit != (GameObjectRayHit *)0x0) {
@@ -968,7 +968,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint
       fStack_10 = 0.0;
       fStack_16 = 0.0;
       fStack_2 = (float)((uint)(fVar14 * VStack_1.y + fVar5 * VStack_1.x + fVar19 * VStack_1.z)
-                         ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                         ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       fStack_15 = fStack_2;
       uStack_9 = uVar18;
@@ -1033,7 +1033,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint
       fStack_15 = pVVar3->z;
       fVar5 = (float)((uint)(VStack_7.y * (float)uStack_4._4_4_ +
                               VStack_7.x * (float)(undefined4)uStack_4 + VStack_7.z * fStack_15)
-                      ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       pXVar13 = (this->fields)._settings;
       uStack_9 = uStack_4;
       fStack_10 = fStack_15;
@@ -1490,7 +1490,7 @@ Plane * Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_get_WorldPlane
     __return_storage_ptr__->m_Distance =
          (float)((uint)((float)uVar7 * (float)uVar2 * fVar6 + (float)uVar8 * (float)uVar3 * fVar6 +
                        fVar9 * fVar4 * fVar6) ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     return __return_storage_ptr__;
   }
   func_?();

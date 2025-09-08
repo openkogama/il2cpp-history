@@ -61,7 +61,6 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
           VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_pivot
                              (pRVar2,(MethodInfo *)0x0);
           fVar7 = VVar6.x;
-          unaff_EDI = camera;
           if (camera != (Camera *)0x0) {
             iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelWidth
                               (camera,(MethodInfo *)0x0);
@@ -153,8 +152,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                 if ((this->fields).KeepInView != 0) {
                                   adjustedPosition.x = (float)&UNK_?;
                                   puVar5 = puVar9;
-                                  if ((3.5677296e-29 < (float)puVar9) ||
-                                     (puVar5 = puVar15, (float)puVar15 < 3.5677296e-29)) {
+                                  if ((3.5645758e-29 < (float)puVar9) ||
+                                     (puVar5 = puVar15, (float)puVar15 < 3.5645758e-29)) {
                                     adjustedPosition.x = (float)puVar5;
                                   }
                                   adjustedPosition.y = fVar7;
@@ -219,10 +218,13 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
     }
   }
 code_?:
-  uVar19 = func_?();
-  *(undefined1 *)&unaff_EDI->klass = uVar19;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  iVar19 = func_?();
+  *(int *)(iVar19 + -0x3eefcb3f) = *(int *)(iVar19 + -0x3eefcb3f) << 0xd;
+  *(int *)(iVar19 + -0x3eefcb3f) = *(int *)(iVar19 + -0x3eefcb3f) << 0x19;
+  *(int *)(iVar19 + -0x3eefcb3f) = *(int *)(iVar19 + -0x3eefcb3f) << 0xc;
+  pcVar20 = (code *)swi(3);
+  pVVar12 = (Vector3 *)(*pcVar20)();
+  return pVVar12;
 }
 
 

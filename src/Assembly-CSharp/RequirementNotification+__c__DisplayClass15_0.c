@@ -1,8 +1,8 @@
 
-/* Void <ShowLevelRequirement>b__0(INotificationRequirementPanel, BaseEventData) */
+/* Void <ShowStarRequirement>b__0(INotificationRequirementPanel, BaseEventData) */
 
 void Assembly-CSharp.dll::RequirementNotification+<>c__DisplayClass15_0::
-     RequirementNotification_c_DisplayClass15_0__ShowLevelRequirement_b__0
+     RequirementNotification_c_DisplayClass15_0__ShowStarRequirement_b__0
                (RequirementNotification_c_DisplayClass15_0 *this,INotificationRequirementPanel *x,
                BaseEventData *y,MethodInfo *method)
 
@@ -13,7 +13,7 @@ void Assembly-CSharp.dll::RequirementNotification+<>c__DisplayClass15_0::
     cRam_? = '\x01';
   }
   pRVar1 = this;
-  this = (RequirementNotification_c_DisplayClass15_0 *)(this->fields).level;
+  this = (RequirementNotification_c_DisplayClass15_0 *)(this->fields).stars;
   uVar2 = func_?(TypeInfo__System__Int32,&this);
   if (x != (INotificationRequirementPanel *)0x0) {
     func_?(0,TypeInfo__INotificationRequirementPanel,x,uVar2,(pRVar1->fields).checkMark,

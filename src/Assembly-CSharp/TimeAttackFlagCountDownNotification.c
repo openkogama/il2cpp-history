@@ -12,8 +12,8 @@ void Assembly-CSharp.dll::TimeAttackFlagCountDownNotification::
     func_?(&MethodInfo__TimeAttackFlagCountDownNotification__DestroyNotification__);
     cRam_? = '\x01';
   }
+  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
   pNVar1 = (this->fields).countDownFader;
-  (this->fields)._.timeSinceStart = 0.0;
   if (pNVar1 == (NotificationFade *)0x0) {
 code_?:
     pAStack2 = (Action *)func_?();
@@ -24,7 +24,7 @@ code_?:
     pNVar1 = (this->fields).countDownFader;
     if (pNVar1 == (NotificationFade *)0x0) goto code_?;
     pAVar4 = (pNVar1->fields).OnFinished;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)this,

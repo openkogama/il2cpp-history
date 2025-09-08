@@ -18,11 +18,11 @@ void Assembly-CSharp.dll::LookAtMainCameraForWorldObject::LookAtMainCameraForWor
       uVar3 = pVVar1->y;
       if (this_01 != (Transform *)0x0) {
         value.y = (float)(uVar3 ^ 
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         value.x = (float)(uVar2 ^ 
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         value.z = (float)((uint)pVVar1->z ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
                   (this_01,value,(MethodInfo *)0x0);
         return;

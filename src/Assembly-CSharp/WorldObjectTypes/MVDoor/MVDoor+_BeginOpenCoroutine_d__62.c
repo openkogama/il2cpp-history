@@ -23,7 +23,7 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor+<BeginOpenCoroutine>d
     value = (pMVar2->fields).doorConfig.openValue;
     if ((pMVar2->fields).doorConfig.reverseOpenDirection != 0) {
       value = (float)((uint)value ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     this_00 = (pMVar2->fields).doorObject;
     if (this_00 != (MVDoorObject *)0x0) {

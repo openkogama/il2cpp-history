@@ -22,6 +22,7 @@ public class PickupItemHand : PickupItemWithDelay
 	public override bool CanUnequip { get; }
 	public override bool CanHolster { get; }
 	public override int MaxAmmo { get; }
+	public override bool HasUnlimitedAmmo { get; }
 	public override int Quantity { get; }
 
 	// Constructors

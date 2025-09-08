@@ -11,7 +11,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_AddCube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x46e0);
+    func_?(0x9a34);
     cRam_? = '\x01';
   }
   pCVar4 = (this->fields)._SelectedCube_k__BackingField;
@@ -50,7 +50,7 @@ code_?:
             IVar14.x = uVar12;
             this._2_2_ = (pCVar4->fields).iLocalPos.z;
             if (cRam_? == '\0') {
-              this._2_2_ = 0x11b4;
+              this._2_2_ = 0x11b5;
               func_?();
               func_?();
               cRam_? = '\x01';
@@ -457,7 +457,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x4760);
+    func_?(0x9ab4);
     cRam_? = '\x01';
   }
   if (action == AudioActions__Enum_CubeAdded) {
@@ -598,7 +598,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Upd
   }
   pCVar1 = CubeModelingStateMachine_DoPicking(this,(MethodInfo *)0x0);
   (this->fields)._SelectedCube_k__BackingField = pCVar1;
-  func_?(&(this->fields)._SelectedCube_k__BackingField,pCVar1);
+  func_?(&(this->fields)._SelectedCube_k__BackingField);
   FSMEntity::FSMEntity_Update((FSMEntity *)this,(MethodInfo *)0x0);
   if (((this->fields)._TargetCubeModel_k__BackingField != (MVCubeModelBase *)0x0) &&
      (rpcm = *(RuntimePrototypeCubeModel **)(in_stack_2 + 0xd8),
@@ -643,7 +643,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Upd
       pDVar3 = (rpcm->fields).deltaCubes;
     }
   }
-  uVar5 = func_?(&stack0xfffffff8);
+  uVar5 = func_?(&stack0xfffffff4);
   func_?(uVar5);
   pcVar6 = (code *)swi(3);
   (*pcVar6)();

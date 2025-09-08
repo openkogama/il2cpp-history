@@ -1,8 +1,8 @@
 
-/* Void <InterstitialAdResult>b__20_0(IUIStack, BaseEventData) */
+/* Void <InterstitialAdResult>b__19_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::TouristAdController+<>c::
-     TouristAdController_c__InterstitialAdResult_b__20_0
+     TouristAdController_c__InterstitialAdResult_b__19_0
                (TouristAdController_c *this,IUIStack *x,BaseEventData *_,MethodInfo *method)
 
 {

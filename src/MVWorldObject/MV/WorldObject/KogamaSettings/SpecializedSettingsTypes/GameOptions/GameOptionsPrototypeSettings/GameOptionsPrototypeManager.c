@@ -31,7 +31,7 @@ GameOptionsPrototypeManager_CreateOptionSettingPrototypes(MethodInfo *method)
                            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
                            );
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase__ctor
-            (this_00,StringLiteral_AllowRevive,1,this,(MethodInfo *)0x0);
+            (this_00,StringLiteral_AllowRevive,0,this,(MethodInfo *)0x0);
   if (this != (KogamaSettingsCollectionBase *)0x0) {
     pIStack1 = (this->klass->vtable).CopyWithOutChildren.methodPtr;
     pKStack2 = this;

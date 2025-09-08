@@ -109,8 +109,8 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Awake
         if (this_03 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_03,0,(MethodInfo *)0x0);
-        this_02[1].fields._.m_CachedPtr = this;
-        RVar8 = (RegexCharClass_SingleRange)&this_02[1].fields;
+        this_02[1].monitor = (MonitorData *)this;
+        RVar8 = (RegexCharClass_SingleRange)&this_02[1].monitor;
         func_?();
         this_01 = (this->fields).Instances;
         if (this_01 == (List_1_Notification_ *)0x0) goto code_?;
@@ -152,16 +152,17 @@ bool Assembly-CSharp.dll::NotificationObjectPool::
     func_?(&TypeInfo__NotificationObjectPool____c__DisplayClass6_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__NotificationObjectPool____c__DisplayClass6_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)notificationType;
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__NotificationObjectPool____c__DisplayClass6_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)notificationType;
     pLVar1 = (this->fields).Instances;
     pPVar2 = (Predicate_1_Object_ *)func_?(TypeInfo__System__Predicate<Notification>);
     mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-              (pPVar2,value,
+              (pPVar2,(Object *)this_00,
                MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__0_Notification_
                ,(MethodInfo *)0x0);
     if (pLVar1 != (List_1_Notification_ *)0x0) {
@@ -182,7 +183,7 @@ bool Assembly-CSharp.dll::NotificationObjectPool::
       pLVar1 = (this->fields).ActiveInstances;
       pPVar2 = (Predicate_1_Object_ *)func_?();
       mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                (pPVar2,value,
+                (pPVar2,(Object *)this_00,
                  MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__1_Notification_
                  ,(MethodInfo *)0x0);
       if (pLVar1 != (List_1_Notification_ *)0x0) {
@@ -233,21 +234,22 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_CreateTempPa
     func_?(&StringLiteral_Couldn_t_find_temp_panel_type_);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__NotificationObjectPool____c__DisplayClass11_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)type;
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__NotificationObjectPool____c__DisplayClass11_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)type;
     source = (this->fields).Elements;
-    this_00 = (Func_2_Object_Boolean_ *)
+    this_01 = (Func_2_Object_Boolean_ *)
               func_?(TypeInfo__System__Func<NotificationObjectPoolElement,_bool>);
     mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-              (this_00,value,
+              (this_01,(Object *)this_00,
                MethodInfo__NotificationObjectPool____c__DisplayClass11_0___CreateTempPanel_b__0_NotificationObjectPoolElement_
                ,(MethodInfo *)0x0);
     pOVar1 = System.Core.dll::System::Linq::Enumerable::Enumerable_First_4
-                       ((IEnumerable_1_System_Object_ *)source,this_00,
+                       ((IEnumerable_1_System_Object_ *)source,this_01,
                         NotificationObjectPoolElement_MethodInfo__System__Linq__Enumerable__First<NotificationObjectPoolElement>_System__Collections__Generic__IEnumerable<NotificationObjectPoolElement>__System__Func<NotificationObjectPoolElement,_bool>_
                        );
     if (pOVar1 != (Object *)0x0) {
@@ -264,7 +266,7 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_CreateTempPa
                         ((Object_1 *)pNVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar3 != 0) {
         EStack_4.klass = (Enum__Class *)TypeInfo__MV__Common__NotificationType;
-        pOStack_5 = value[1].klass;
+        pLStack_5 = (this_00->fields)._._defaultValue_k__BackingField;
         EStack_4.monitor = (MonitorData *)0xffffffff;
         pSVar6 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_4,(MethodInfo *)0x0);
         pSVar6 = mscorlib.dll::System::String::String_Concat_3
@@ -280,11 +282,11 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_CreateTempPa
         (pNVar2->fields).pool = this;
         func_?(&(pNVar2->fields).pool,this);
         NotificationObjectPool_AddToActiveInstances(this,pNVar2,(MethodInfo *)0x0);
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)pNVar2,(MethodInfo *)0x0);
-        if (this_01 != (GameObject *)0x0) {
+        if (this_02 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (this_01,1,(MethodInfo *)0x0);
+                    (this_02,1,(MethodInfo *)0x0);
           return pNVar2;
         }
       }
@@ -327,16 +329,17 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_GetPanel
     func_?(&StringLiteral_Could_not_find_notification_type);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__NotificationObjectPool____c__DisplayClass9_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)type;
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__NotificationObjectPool____c__DisplayClass9_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)type;
     pLVar1 = (this->fields).Instances;
     pPVar2 = (Predicate_1_Object_ *)func_?(TypeInfo__System__Predicate<Notification>);
     mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-              (pPVar2,value,
+              (pPVar2,(Object *)this_00,
                MethodInfo__NotificationObjectPool____c__DisplayClass9_0___GetPanel_b__0_Notification_
                ,(MethodInfo *)0x0);
     if (pLVar1 != (List_1_Notification_ *)0x0) {
@@ -363,14 +366,16 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_GetPanel
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)pSVar4,(MethodInfo *)0x0);
         pNVar5 = NotificationObjectPool_CreateTempPanel
-                           (this,(NotificationType__Enum)value[1].klass,(MethodInfo *)0x0);
+                           (this,(NotificationType__Enum)
+                                 (this_00->fields)._._defaultValue_k__BackingField,(MethodInfo *)0x0
+                           );
         return pNVar5;
       }
       pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).Instances;
       pPVar2 = (Predicate_1_Object_ *)func_?();
       mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                (pPVar2,value,
+                (pPVar2,(Object *)this_00,
                  MethodInfo__NotificationObjectPool____c__DisplayClass9_0___GetPanel_b__1_Notification_
                  ,(MethodInfo *)0x0);
       if (pLVar6 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -384,20 +389,20 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_GetPanel
         pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).Instances;
         if (pLVar6 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          this_00 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               (pLVar6,index,
                                MethodInfo__System__Collections__Generic__List<Notification>__get_Item_int_
                               );
-          if (this_00 != (RegexCharClass_SingleRange)0x0) {
-            *(NotificationObjectPool **)((int)this_00 + 0x14) = this;
-            func_?((int)this_00 + 0x14,this);
-            this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this_00,(MethodInfo *)0x0);
-            if (this_01 != (GameObject *)0x0) {
+          if (this_01 != (RegexCharClass_SingleRange)0x0) {
+            *(NotificationObjectPool **)((int)this_01 + 0x10) = this;
+            func_?((int)this_01 + 0x10,this);
+            this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)this_01,(MethodInfo *)0x0);
+            if (this_02 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (this_01,1,(MethodInfo *)0x0);
+                        (this_02,1,(MethodInfo *)0x0);
               pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                        (this->fields).Instances;
               if (pLVar6 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
@@ -417,7 +422,7 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_GetPanel
                             ((List_1_System_Object_ *)pLVar1,index,
                              MethodInfo__System__Collections__Generic__List<Notification>__RemoveAt_int_
                             );
-                  return (Notification *)this_00;
+                  return (Notification *)this_01;
                 }
               }
             }

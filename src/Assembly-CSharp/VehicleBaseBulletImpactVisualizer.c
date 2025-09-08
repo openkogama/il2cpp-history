@@ -13,11 +13,11 @@ void Assembly-CSharp.dll::VehicleBaseBulletImpactVisualizer::
   }
   lineOfFire.m_Direction.y =
        (float)((uint)lineOfFire.m_Direction.y ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   forward.y = (float)((uint)lineOfFire.m_Direction.x ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   forward.x = (float)((uint)lineOfFire.m_Origin.z ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   forward.z = lineOfFire.m_Direction.y;
   pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
                      ((Quaternion *)&lineOfFire.m_Origin.y,forward,(MethodInfo *)0x0);

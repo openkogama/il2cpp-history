@@ -530,7 +530,7 @@ bool Assembly-CSharp.dll::PickupItemThrowingStar::PickupItemThrowingStar_get_IsA
     return 0;
   }
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                    (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                    (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

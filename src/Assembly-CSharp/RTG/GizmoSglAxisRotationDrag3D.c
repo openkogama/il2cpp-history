@@ -197,16 +197,16 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
           uVar10 = (this->fields)._rotationPlane.m_Normal.x;
           uVar11 = (this->fields)._rotationPlane.m_Normal.y;
           VStack_12.y = (float)((uint)fVar3 ^
-                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
           VStack_12.z = (float)((uint)fVar3 ^
-                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
           uStack_13 = (uint)fVar3 ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           VStack_12.x = (float)((uint)(fVar3 * (float)uVar11 + *pfVar2 * (float)uVar10 +
                                       pfVar2[2] * VStack_6.z) ^
-                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                ) - (this->fields)._rotationPlane.m_Distance;
           VStack_6.x = (float)uVar10;
           VStack_6.y = (float)uVar11;
@@ -251,7 +251,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
               VStack_6.z = uStack_21._4_4_ - VStack_6.y;
               VStack_6.y = (float)uStack_21 - VStack_6.x;
               uVar23 = func_?();
-              uVar24 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+              uVar24 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
               VStack_6.y = (float)uVar23;
               (this->fields)._screenDragCircleTangent.x = (float)(int)uVar23;
               (this->fields)._screenDragCircleTangent.y = (float)(int)((ulonglong)uVar23 >> 0x20);
@@ -265,7 +265,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
-                uVar24 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                uVar24 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
               }
               fStack_22 = (this->fields)._screenDragCircleTangent.z;
               uStack_21._0_4_ = (this->fields)._screenDragCircleTangent.x;
@@ -286,7 +286,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
                 uStack_21._0_4_ = (this->fields)._screenDragCircleTangent.x;
                 uStack_21._4_4_ = (this->fields)._screenDragCircleTangent.y;
                 fStack_22 = (this->fields)._screenDragCircleTangent.z;
-                uVar24 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                uVar24 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
               }
               (this->fields)._screenDragCircleTangent.x = (float)((uint)(float)uStack_21 ^ uVar24);
               (this->fields)._screenDragCircleTangent.y = (float)((uint)uStack_21._4_4_ ^ uVar24);
@@ -428,7 +428,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
     fVar8 = pVVar4->z;
     fVar9 = (float)((uint)(uStack_3._4_4_ * (float)uVar7 + (float)uStack_3 * (float)uVar6 +
                           fStack_2 * fVar8) ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     (this->fields)._rotationPlane.m_Normal.x = (float)uVar6;
     (this->fields)._rotationPlane.m_Normal.y = (float)uVar7;
     (this->fields)._rotationPlane.m_Normal.z = fVar8;

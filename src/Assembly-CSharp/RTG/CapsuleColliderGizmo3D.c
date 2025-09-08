@@ -688,9 +688,9 @@ code_?:
             cRam_? = '\x01';
           }
           uVar14 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).y;
-          uVar15 = uVar14 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar15 = uVar14 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           uVar16 = (uint)(TypeInfo__UnityEngine__Vector3->static_fields->rightVector).z ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
@@ -883,12 +883,12 @@ code_?:
     if (handleId == (pGVar24->fields)._id) {
 code_?:
       uVar25 = (uint)fVar3 ^
-               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       fVar15 = (float)((uint)fVar19 ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields)._offsetDragWorkData.Axis.x =
            (float)((uint)puVar22 ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields)._offsetDragWorkData.Axis.y = (float)uVar25;
       goto code_?;
     }
@@ -1239,7 +1239,7 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                                    CapsuleCollider_get_height(this_00,(MethodInfo *)0x0);
                           fVar12 = CapsuleColliderGizmo3D_CalcHeightScale(this,(MethodInfo *)0x0);
                           pGVar2 = (this->fields)._offsetDrag;
-                          fVar7 = fVar12 * fVar7 - 4.1711965e-29;
+                          fVar7 = fVar12 * fVar7 - 4.1677443e-29;
                           if (pGVar2 != (GizmoSglAxisOffsetDrag3D *)0x0) {
                             pVVar10 = GizmoSglAxisOffsetDrag3D::GizmoSglAxisOffsetDrag3D_get_Axis
                                                 ((Vector3 *)&stack0xffffffc0,pGVar2,
@@ -1465,10 +1465,10 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                       startPoint.y = ((float)this_01 - (float)uVar21 * (float)puVar16) -
                                      fVar9 * fVar25 * _UNK_?;
                       startPoint.x = (float)camera;
-                      startPoint.z = (fVar12 - (float)puVar16 * 4.1715158e-29) -
+                      startPoint.z = (fVar12 - (float)puVar16 * 4.1680636e-29) -
                                      fVar11 * fVar25 * _UNK_?;
                       endPoint.z = fVar11 * fVar25 * _UNK_? +
-                                   (fVar12 - (float)puVar16 * 4.1715158e-29);
+                                   (fVar12 - (float)puVar16 * 4.1680636e-29);
                       GLRenderer::GLRenderer_DrawLine3D(startPoint,endPoint,(MethodInfo *)0x0);
                       startPoint_00.y =
                            ((float)uVar21 * (float)puVar16 + (float)this_01) -
@@ -1477,7 +1477,7 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                            ((float)uVar20 * (float)puVar16 + (float)puVar17) -
                            fVar8 * fVar25 * _UNK_?;
                       startPoint_00.z =
-                           ((float)puVar16 * 4.1715158e-29 + fVar12) -
+                           ((float)puVar16 * 4.1680636e-29 + fVar12) -
                            fVar11 * fVar25 * _UNK_?;
                       endPoint_00.y =
                            fVar9 * fVar25 * _UNK_? +
@@ -1486,7 +1486,7 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                            fVar8 * fVar25 * _UNK_? +
                            (float)uVar20 * (float)puVar16 + (float)puVar17;
                       endPoint_00.z =
-                           fVar11 * fVar25 * _UNK_? + (float)puVar16 * 4.1715158e-29 + fVar12
+                           fVar11 * fVar25 * _UNK_? + (float)puVar16 * 4.1680636e-29 + fVar12
                       ;
                       GLRenderer::GLRenderer_DrawLine3D(startPoint_00,endPoint_00,(MethodInfo *)0x0)
                       ;
@@ -1529,20 +1529,20 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                     fVar24 = pQVar5->y;
                     fVar25 = pQVar5->z;
                     fVar26 = pQVar5->w;
-                    fStack_3 = (fVar26 * 4.17148e-29 + fVar10 * fVar7 + fVar25 * (float)pVVar14) -
-                                fVar24 * (float)puStack_35;
+                    fStack_3 = (fVar26 * 4.1680278e-29 + fVar10 * fVar7 + fVar25 * (float)pVVar14)
+                                - fVar24 * (float)puStack_35;
                     puStack_36 = (undefined *)
                                  ((fVar24 * fVar7 + fVar26 * (float)pVVar14 +
-                                  fVar10 * (float)puStack_35) - fVar25 * 4.17148e-29);
+                                  fVar10 * (float)puStack_35) - fVar25 * 4.1680278e-29);
                     pos_00.y = fVar29;
                     pos_00.x = fVar31;
                     pos_00.z = fVar30;
                     q_00.y = (float)puStack_36;
                     q_00.x = fStack_3;
-                    q_00.z = (fVar26 * (float)puStack_35 + fVar25 * fVar7 + fVar24 * 4.17148e-29) -
-                             fVar10 * (float)pVVar14;
-                    q_00.w = ((fVar26 * fVar7 - fVar10 * 4.17148e-29) - fVar24 * (float)pVVar14) -
-                             fVar25 * (float)puStack_35;
+                    q_00.z = (fVar26 * (float)puStack_35 + fVar25 * fVar7 + fVar24 * 4.1680278e-29)
+                             - fVar10 * (float)pVVar14;
+                    q_00.w = ((fVar26 * fVar7 - fVar10 * 4.1680278e-29) - fVar24 * (float)pVVar14)
+                             - fVar25 * (float)puStack_35;
                     s_00.y = (float)puVar18;
                     s_00.x = (float)puVar16;
                     s_00.z = fVar28;
@@ -1571,13 +1571,13 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                     pos_01.x = fVar31;
                     pos_01.z = fVar30;
                     q_01.y = (fVar24 * fVar7 + fVar26 * (float)pVVar14 + fVar10 * (float)puStack_35
-                             ) - fVar25 * 4.17148e-29;
-                    q_01.x = (fVar26 * 4.17148e-29 + fVar10 * fVar7 + fVar25 * (float)pVVar14) -
+                             ) - fVar25 * 4.1680278e-29;
+                    q_01.x = (fVar26 * 4.1680278e-29 + fVar10 * fVar7 + fVar25 * (float)pVVar14) -
                              fVar24 * (float)puStack_35;
-                    q_01.z = (fVar26 * (float)puStack_35 + fVar25 * fVar7 + fVar24 * 4.17148e-29) -
-                             fVar10 * (float)pVVar14;
-                    q_01.w = ((fVar26 * fVar7 - fVar10 * 4.17148e-29) - fVar24 * (float)pVVar14) -
-                             fVar25 * (float)puStack_35;
+                    q_01.z = (fVar26 * (float)puStack_35 + fVar25 * fVar7 + fVar24 * 4.1680278e-29)
+                             - fVar10 * (float)pVVar14;
+                    q_01.w = ((fVar26 * fVar7 - fVar10 * 4.1680278e-29) - fVar24 * (float)pVVar14)
+                             - fVar25 * (float)puStack_35;
                     s_01.y = (float)puVar32;
                     s_01.x = (float)puVar32;
                     s_01.z = (float)puVar32;
@@ -1605,12 +1605,12 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                     pos_02.x = fVar23;
                     pos_02.z = fVar12;
                     q_02.y = (fVar9 * fVar7 + fVar11 * (float)pVVar14 + fVar8 * (float)puStack_35)
-                             - fVar10 * 4.17148e-29;
-                    q_02.x = (fVar11 * 4.17148e-29 + fVar8 * fVar7 + fVar10 * (float)pVVar14) -
+                             - fVar10 * 4.1680278e-29;
+                    q_02.x = (fVar11 * 4.1680278e-29 + fVar8 * fVar7 + fVar10 * (float)pVVar14) -
                              fVar9 * (float)puStack_35;
-                    q_02.z = (fVar11 * (float)puStack_35 + fVar10 * fVar7 + fVar9 * 4.17148e-29) -
-                             fVar8 * (float)pVVar14;
-                    q_02.w = ((fVar11 * fVar7 - fVar8 * 4.17148e-29) - fVar9 * (float)pVVar14) -
+                    q_02.z = (fVar11 * (float)puStack_35 + fVar10 * fVar7 + fVar9 * 4.1680278e-29)
+                             - fVar8 * (float)pVVar14;
+                    q_02.w = ((fVar11 * fVar7 - fVar8 * 4.1680278e-29) - fVar9 * (float)pVVar14) -
                              fVar10 * (float)puStack_35;
                     s_02.y = (float)puVar18;
                     s_02.x = (float)puVar16;
@@ -1634,13 +1634,13 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                     fVar9 = pQVar5->y;
                     fVar10 = pQVar5->z;
                     fVar11 = pQVar5->w;
-                    fVar25 = (fVar11 * 4.17148e-29 + fVar8 * fVar7 + fVar10 * (float)pVVar14) -
+                    fVar25 = (fVar11 * 4.1680278e-29 + fVar8 * fVar7 + fVar10 * (float)pVVar14) -
                              fVar9 * (float)puStack_35;
                     fVar26 = (fVar9 * fVar7 + fVar11 * (float)pVVar14 + fVar8 * (float)puStack_35)
-                             - fVar10 * 4.17148e-29;
-                    fVar30 = (fVar11 * (float)puStack_35 + fVar10 * fVar7 + fVar9 * 4.17148e-29) -
-                             fVar8 * (float)pVVar14;
-                    fVar29 = ((fVar11 * fVar7 - fVar8 * 4.17148e-29) - fVar9 * (float)pVVar14) -
+                             - fVar10 * 4.1680278e-29;
+                    fVar30 = (fVar11 * (float)puStack_35 + fVar10 * fVar7 + fVar9 * 4.1680278e-29)
+                             - fVar8 * (float)pVVar14;
+                    fVar29 = ((fVar11 * fVar7 - fVar8 * 4.1680278e-29) - fVar9 * (float)pVVar14) -
                              fVar10 * (float)puStack_35;
                     pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                               Quaternion_Internal_FromEulerRad
@@ -1684,12 +1684,12 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_On
                     pos_04.x = fVar23;
                     pos_04.z = fVar12;
                     q_04.y = (fVar9 * fVar7 + fVar11 * (float)pVVar14 + fVar8 * (float)puStack_35)
-                             - fVar10 * 4.17148e-29;
-                    q_04.x = (fVar11 * 4.17148e-29 + fVar8 * fVar7 + fVar10 * (float)pVVar14) -
+                             - fVar10 * 4.1680278e-29;
+                    q_04.x = (fVar11 * 4.1680278e-29 + fVar8 * fVar7 + fVar10 * (float)pVVar14) -
                              fVar9 * (float)puStack_35;
-                    q_04.z = (fVar11 * (float)puStack_35 + fVar10 * fVar7 + fVar9 * 4.17148e-29) -
-                             fVar8 * (float)pVVar14;
-                    q_04.w = ((fVar11 * fVar7 - fVar8 * 4.17148e-29) - fVar9 * (float)pVVar14) -
+                    q_04.z = (fVar11 * (float)puStack_35 + fVar10 * fVar7 + fVar9 * 4.1680278e-29)
+                             - fVar8 * (float)pVVar14;
+                    q_04.w = ((fVar11 * fVar7 - fVar8 * 4.1680278e-29) - fVar9 * (float)pVVar14) -
                              fVar10 * (float)puStack_35;
                     s_04.y = (float)puVar32;
                     s_04.x = (float)puVar32;
@@ -1925,15 +1925,15 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
                               if (pCVar29->max_length < 3) goto code_?;
                               pCVar30 = pCVar29->vector[2];
                               uVar31 = (uint)fVar3 ^
-                                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               ;
                               fVar23 = (float)((uint)fVar6 ^
-                                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                               );
                               if (pCVar30 != (CapsuleColliderGizmo3D_ExtentTick *)0x0) {
                                 (pCVar30->fields).Normal.x =
                                      (float)((uint)pVVar5 ^
-                                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                             );
                                 (pCVar30->fields).Normal.y = (float)uVar31;
                                 (pCVar30->fields).Normal.z = fVar23;
@@ -1973,10 +1973,10 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
                                           (pCVar30->fields).Normal.x = (float)(undefined4)uVar9;
                                           (pCVar30->fields).Normal.y = (float)uStack_10;
                                           (pCVar30->fields).Normal.z = (float)&UNK_?;
-                                          fVar6 = fVar16 * 4.1731742e-29 * _UNK_? + fVar13;
-                                          fVar23 = fVar11 + (float)(undefined4)uVar15 * 4.1731742e-29
-                                                           * _UNK_?;
-                                          fVar3 = fVar12 + (float)uVar15._4_4_ * 4.1731742e-29 *
+                                          fVar6 = fVar16 * 4.169722e-29 * _UNK_? + fVar13;
+                                          fVar23 = fVar11 + (float)(undefined4)uVar15 * 4.169722e-29 *
+                                                           _UNK_?;
+                                          fVar3 = fVar12 + (float)uVar15._4_4_ * 4.169722e-29 *
                                                            _UNK_?;
                                           pGVar24 = (this->fields)._topTick;
                                           position_00.y = fVar3;
@@ -2017,10 +2017,10 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
                                                          (float)(int)((ulonglong)uVar17 >> 0x20);
                                                     (pCVar30->fields).Normal.z = fVar16;
                                                     fVar23 = fVar11 - (float)(undefined4)uVar15 *
-                                                                     4.1731742e-29 * _UNK_?;
+                                                                     4.169722e-29 * _UNK_?;
                                                     fVar6 = fVar12 - (float)uVar15._4_4_ *
-                                                                    4.1731742e-29 * _UNK_?;
-                                                    fVar3 = fVar13 - fVar16 * 4.1731742e-29 *
+                                                                    4.169722e-29 * _UNK_?;
+                                                    fVar3 = fVar13 - fVar16 * 4.169722e-29 *
                                                                       _UNK_?;
                                                     pGVar24 = (this->fields)._bottomTick;
                                                     position_01.y = fVar6;
@@ -2061,19 +2061,19 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
                                                     goto code_?;
                                                     uVar31 = uVar15._4_4_ ^
                                                                                                                           
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   pCVar30 = pCVar29->vector[4];
                                                   fVar16 = (float)((uint)fVar16 ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pCVar30 !=
                                                       (CapsuleColliderGizmo3D_ExtentTick *)0x0) {
                                                     (pCVar30->fields).Normal.x =
                                                          (float)((undefined4)uVar15 ^
                                                                                                                                 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pCVar30->fields).Normal.y = (float)uVar31;
                                                   (pCVar30->fields).Normal.z = fVar16;
@@ -2118,18 +2118,18 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
                                                     pCVar30 = pCVar29->vector[0];
                                                     uVar31 = (uint)fVar26 ^
                                                                                                                           
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar3 = (float)((uint)fVar27 ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pCVar30 !=
                                                       (CapsuleColliderGizmo3D_ExtentTick *)0x0) {
                                                     (pCVar30->fields).Normal.x =
                                                          (float)((uint)fVar25 ^
                                                                                                                                 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pCVar30->fields).Normal.y = (float)uVar31;
                                                   (pCVar30->fields).Normal.z = fVar3;
@@ -2458,7 +2458,7 @@ void Assembly-CSharp.dll::RTG::CapsuleColliderGizmo3D::CapsuleColliderGizmo3D_Up
         uStack_4 = CONCAT44(pCVar14,(undefined4)uStack_4);
         fStack_15 = (float)((uint)(fStack_10 * (float)uVar12 + fStack_9 * (float)uVar11 +
                                   fStack_8 * fVar5) ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         fStack_16 = (float)uVar11;
         fStack_17 = (float)uVar12;

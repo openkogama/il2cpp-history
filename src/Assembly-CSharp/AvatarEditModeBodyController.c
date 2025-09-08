@@ -2340,39 +2340,81 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pAVar1 = this;
+  pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).bodies;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar1,(this->fields).currentBodyIndex,
-                       MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-    if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-      woID = *(int32_t *)((int)RVar2 + 8);
-      if (cRam_? == '\0') {
-        func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-        cRam_? = '\x01';
-      }
-      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).bodies;
-      if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+  if ((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+     (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (pLVar2,(this->fields).currentBodyIndex,
+                         MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+     RVar3 != (RegexCharClass_SingleRange)0x0)) {
+    woID = *(int32_t *)((int)RVar3 + 8);
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+      cRam_? = '\x01';
+    }
+    pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (pAVar1->fields).bodies;
+    if ((pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
+       (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar1,(this->fields).currentBodyIndex,
-                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-        if (avatarSeller != (SellAvatarController *)0x0) {
-          SellAvatarController::SellAvatarController_Initialize
-                    (avatarSeller,woID,(MVBody *)RVar2,(MethodInfo *)0x0);
-          return;
+                          (pLVar2,(pAVar1->fields).currentBodyIndex,
+                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
+       pSVar4 = avatarSeller, avatarSeller != (SellAvatarController *)0x0)) {
+      if (cRam_? == '\0') {
+        this = (AvatarEditModeBodyController *)&StringLiteral_Update;
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      this = (AvatarEditModeBodyController *)0x0;
+      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar5 != (MVNetworkGame *)0x0) &&
+         (this_00 = (pMVar5->fields)._AvatarMetaDataWoMap_k__BackingField,
+         this_00 != (MvAvatarMetaDataWoMap *)0x0)) {
+        MVWorldObject.dll::MV::WorldObject::MvAvatarMetaDataWoMap::MvAvatarMetaDataWoMap_TryGetValue
+                  (this_00,woID,(MvAvatarMetaData **)&this,(MethodInfo *)0x0);
+        (pSVar4->fields).body = (MVBody *)RVar3;
+        func_?(&(pSVar4->fields).body,RVar3);
+        (pSVar4->fields).metaData = (MvAvatarMetaData *)this;
+        func_?(&(pSVar4->fields).metaData,this);
+        (pSVar4->fields).woID = woID;
+        pTVar6 = (pSVar4->fields).sellButtonText;
+        if (this != (AvatarEditModeBodyController *)0x0) {
+          pSVar7 = StringLiteral_Sell;
+          if (*(char *)&(this->fields).bodySpawnPoint != '\0') {
+            pSVar7 = StringLiteral_Update;
+          }
+          pSVar7 = TM::TM__(pSVar7,(MethodInfo *)0x0);
+          if (pTVar6 != (Text *)0x0) {
+            (*(code *)(pTVar6->klass->vtable).set_text.method)
+                      (pTVar6,pSVar7,
+                       (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            this_01 = (pSVar4->fields).removeButton;
+            if ((((this_01 != (Button *)0x0) &&
+                 (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0),
+                 this != (AvatarEditModeBodyController *)0x0)) && (this_03 != (GameObject *)0x0)) &&
+               ((UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                           (this_03,*(bool *)&(this->fields).bodySpawnPoint,(MethodInfo *)0x0),
+                this != (AvatarEditModeBodyController *)0x0 &&
+                (this_02 = (pSVar4->fields).nameField, this_02 != (InputField *)0x0)))) {
+              UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
+                        (this_02,(String *)(this->fields)._.m_CancellationTokenSource,
+                         (MethodInfo *)0x0);
+              return;
+            }
+          }
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -2967,7 +3009,7 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     func_?(&StringLiteral_Purchase_Avatar_);
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__(StringLiteral_Purchase_Avatar_,(MethodInfo *)0x0);
+  TM::TM__(StringLiteral_Purchase_Avatar_,(MethodInfo *)0x0);
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
@@ -2975,33 +3017,14 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
             (this_00,(Object *)this,
              MethodInfo__AvatarEditModeBodyController__OnPurchaseAvatarConfirmation_bool__ConfirmationPopup_
              ,(MethodInfo *)0x0);
-  pSVar2 = TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
-  if (x == (IModalPopupCreator *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    func_?(3);
     return;
   }
-  pIVar4 = x->klass;
-  uVar5 = 0;
-  uVar6._0_1_ = (pIVar4->_1).rank;
-  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar7 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
-        goto code_?;
-      }
-      uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
-  }
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)&UNK_?;
-  pSVar2 = (String *)x;
-  ppMVar7 = (MethodInfo **)
-            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-code_?:
-  (*(code *)*ppMVar7)(x,pSVar1,this_00,pSVar2);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

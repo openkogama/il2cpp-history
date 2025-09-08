@@ -27,8 +27,6 @@ public class DeathUIController : MonoBehaviour
 	[SerializeField]
 	private ReviveUIHandler reviveHandler;
 	[SerializeField]
-	private ReviveUIHandlerBoosts reviveHandlerBoosts;
-	[SerializeField]
 	private TierOnDeathProgress tierOnDeathProgress;
 	[SerializeField]
 	private GameObject claimGoldRewardPopupPrefab;
@@ -48,84 +46,71 @@ public class DeathUIController : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static UnityAction __9__20_2;
+		public static UnityAction __9__19_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
 		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__22_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__31_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__30_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _ShowReviveMenu_b__20_2();
-		internal void _ReboostNotClicked_b__21_0(IUIStack x, BaseEventData y);
-		internal void _ReviveNotClicked_b__22_0(IUIStack x, BaseEventData y);
-		internal void _ShowDeadmodeUI_b__31_0(IUIStack x, BaseEventData y);
+		internal void _ShowReviveMenu_b__19_1();
+		internal void _ReboostNotClicked_b__20_0(IUIStack x, BaseEventData y);
+		internal void _ReviveNotClicked_b__21_0(IUIStack x, BaseEventData y);
+		internal void _ShowDeadmodeUI_b__30_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass20_0
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
-		public ReviveUIHandlerBoosts revivePopup;
+		public ReviveUIHandler revivePopup;
 
 		// Constructors
-		public __c__DisplayClass20_0();
+		public __c__DisplayClass19_0();
 
 		// Methods
 		internal void _ShowReviveMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass20_1
-	{
-		// Fields
-		public ReviveUIHandler revivePopup;
-
-		// Constructors
-		public __c__DisplayClass20_1();
-
-		// Methods
-		internal void _ShowReviveMenu_b__1(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass26_0
+	private sealed class __c__DisplayClass25_0
 	{
 		// Fields
 		public DeathUIBoostMenuController boostMenu;
 
 		// Constructors
-		public __c__DisplayClass26_0();
+		public __c__DisplayClass25_0();
 
 		// Methods
 		internal void _ShowBoostMenu_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass28_0
+	private sealed class __c__DisplayClass27_0
 	{
 		// Fields
 		public TierUnlockedPopupController tierUnlockedPopupController;
 		public DeathUIController __4__this;
 
 		// Constructors
-		public __c__DisplayClass28_0();
+		public __c__DisplayClass27_0();
 
 		// Methods
 		internal void _ShowTierUnlockedPopup_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass30_0
+	private sealed class __c__DisplayClass29_0
 	{
 		// Fields
 		public DeathUIController __4__this;
 		public GameObject claimGoldRewardPopup;
 
 		// Constructors
-		public __c__DisplayClass30_0();
+		public __c__DisplayClass29_0();
 
 		// Methods
 		internal void _ShowingClaimGold_b__0(IUIStack x, BaseEventData y);
@@ -142,7 +127,7 @@ public class DeathUIController : MonoBehaviour
 	private void Update();
 	private void TierProgress();
 	private void OnDestroy();
-	private void ShowReviveMenu(bool reboostOnly);
+	private void ShowReviveMenu();
 	private void ReboostNotClicked();
 	private void ReviveNotClicked();
 	private void NotReviving();
@@ -163,6 +148,6 @@ public class DeathUIController : MonoBehaviour
 	private void OnRoundEnd(IWinningCondition winningCondition);
 	public void OnPressPlay();
 	[CompilerGenerated]
-	private void _StartDeathBriefing_b__37_0(IUIStack x, BaseEventData y);
+	private void _StartDeathBriefing_b__36_0(IUIStack x, BaseEventData y);
 }
 

@@ -434,18 +434,19 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::
     func_?(&StringLiteral_Material_unlocked);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MaterialPurchasePopup____c__DisplayClass13_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value == (Object *)0x0) {
+  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__MaterialPurchasePopup____c__DisplayClass13_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+  if (this_01 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
 code_?:
     func_?();
   }
   else {
-    value[1].monitor = (MonitorData *)this;
-    value[1].klass = (Object__Class *)returnCode;
-    func_?(&value[1].monitor,this);
+    this_01[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)this;
+    (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)returnCode;
+    func_?(this_01 + 1,this);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
@@ -454,17 +455,17 @@ code_?:
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
     source = (pMVar1->fields).PurchaseProductResponseHandler;
-    this_01 = (UnityAction_2_System_Int32_System_Int32_ *)
+    this_02 = (UnityAction_2_System_Int32_System_Int32_ *)
               func_?(
                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                              );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
-              (this_01,(Object *)this,
+              (this_02,(Object *)this,
                MethodInfo__MaterialPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
     pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
+                       ((Delegate *)source,(Delegate *)this_02,(MethodInfo *)0x0);
     if (pDVar2 == (Delegate *)0x0) {
       (pMVar1->fields).PurchaseProductResponseHandler =
            (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
@@ -502,7 +503,7 @@ code_?:
                 (pGVar3,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar4,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      if (value[1].klass != (Object__Class *)0x0) {
+      if ((this_01->fields)._._defaultValue_k__BackingField != (List_1_System_Object_ *)0x0) {
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -512,7 +513,7 @@ code_?:
                             );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_01,
                    MethodInfo__MaterialPurchasePopup____c__DisplayClass13_0___ProductPurchaseResponseHandler_b__2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
@@ -605,7 +606,7 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup__OnPurcha
     func_?(&StringLiteral_Confirm);
     cRam_? = '\x01';
   }
-  TM::TM__(StringLiteral_Purchase_Material_,(MethodInfo *)0x0);
+  pSVar1 = TM::TM__(StringLiteral_Purchase_Material_,(MethodInfo *)0x0);
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
@@ -613,14 +614,33 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup__OnPurcha
             (this_00,(Object *)this,
              MethodInfo__MaterialPurchasePopup__OnConfirmed_bool__ConfirmationPopup_,
              (MethodInfo *)0x0);
-  TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
-  if (x != (IModalPopupCreator *)0x0) {
-    func_?(3);
+  pSVar2 = TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
+  if (x == (IModalPopupCreator *)0x0) {
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pIVar4 = x->klass;
+  uVar5 = 0;
+  uVar6._0_1_ = (pIVar4->_1).rank;
+  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+  if (uVar6 != 0) {
+    do {
+      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+        ppMVar7 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
+        goto code_?;
+      }
+      uVar5 = uVar5 + 1;
+    } while (uVar5 < uVar6);
+  }
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)&UNK_?;
+  pSVar2 = (String *)x;
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+code_?:
+  (*(code *)*ppMVar7)(x,pSVar1,this_00,pSVar2);
   return;
 }
 

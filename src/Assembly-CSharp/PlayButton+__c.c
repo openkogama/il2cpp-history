@@ -1,7 +1,7 @@
 
-/* Void <OnContinuePressed>b__15_0(IUIStack, BaseEventData) */
+/* Void <OnContinuePressed>b__13_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::PlayButton+<>c::PlayButton_c__OnContinuePressed_b__15_0
+void Assembly-CSharp.dll::PlayButton+<>c::PlayButton_c__OnContinuePressed_b__13_0
                (PlayButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -26,9 +26,9 @@ void Assembly-CSharp.dll::PlayButton+<>c::PlayButton_c__OnContinuePressed_b__15_
 }
 
 
-/* Void <OnCountDownEnd>b__21_0(IUIStack, BaseEventData) */
+/* Void <OnCountDownEnd>b__19_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::PlayButton+<>c::PlayButton_c__OnCountDownEnd_b__21_0
+void Assembly-CSharp.dll::PlayButton+<>c::PlayButton_c__OnCountDownEnd_b__19_0
                (PlayButton_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {

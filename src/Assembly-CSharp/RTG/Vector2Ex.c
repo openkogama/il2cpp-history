@@ -180,7 +180,7 @@ Vector2 Assembly-CSharp.dll::RTG::Vector2Ex::Vector2Ex_GetNormal(Vector2 vec,Met
 
 {
   fVar1 = (float)((uint)vec.y ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   vec.y = vec.x;
   vec.x = fVar1;
   VVar2 = (Vector2)func_?(&vec,0);

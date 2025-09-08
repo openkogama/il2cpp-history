@@ -13,6 +13,8 @@ void Assembly-CSharp.dll::AvatarModifier::AvatarModifier_Activate
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* AvatarModifier CreateFromType(AvatarModifierPackageType, Avatar) */
 
 AvatarModifier *
@@ -129,16 +131,18 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
     goto code_?;
   case AvatarModifierPackageType__Enum_SpawnProtection:
     iVar1 = func_?(0);
-    if ((iVar1 == 0) || (*(EnumPoolManager **)(iVar1 + 0x10) == (EnumPoolManager *)0x0))
-    goto code_?;
-    pAVar2 = (AvatarModifier *)
-             EnumPoolManager::EnumPoolManager_Instantiate
-                       (*(EnumPoolManager **)(iVar1 + 0x10),PoolEnums__Enum_InvulnerabilityModifier,
-                        InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
-                       );
-    unaff_ESI = (byte *)0x0;
-    if (pAVar2 == (AvatarModifier *)0x0) goto code_?;
-    pAVar2[1].fields._._._._.m_CachedPtr = (void *)0x11;
+    if ((iVar1 != 0) && (*(EnumPoolManager **)(iVar1 + 0x10) != (EnumPoolManager *)0x0)) {
+      pAVar2 = (AvatarModifier *)
+               EnumPoolManager::EnumPoolManager_Instantiate
+                         (*(EnumPoolManager **)(iVar1 + 0x10),
+                          PoolEnums__Enum_InvulnerabilityModifier,
+                          InvulnerabilityModifier_MethodInfo__EnumPoolManager__Instantiate<InvulnerabilityModifier>_PoolEnums_
+                         );
+      unaff_ESI = 0;
+      if (pAVar2 == (AvatarModifier *)0x0) goto code_?;
+      pAVar2[1].fields._._._._.m_CachedPtr = (void *)0x11;
+      goto code_?;
+    }
     goto code_?;
   case AvatarModifierPackageType__Enum_Lethal:
     method_00 = (MethodInfo *)0x0;
@@ -163,93 +167,64 @@ Assembly-CSharp.dll::AvatarModifier::AvatarModifier_CreateFromType
   }
   pAVar2 = (AvatarModifier *)EnumPoolManager::EnumPoolManager_Instantiate(this,pEnum,method_00);
 code_?:
-  unaff_ESI = (byte *)0x0;
-  if (pAVar2 == (AvatarModifier *)0x0) {
+  unaff_ESI = 0;
+  if (pAVar2 != (AvatarModifier *)0x0) {
 code_?:
-    bVar3 = 0;
-    uVar4 = func_?();
-    iVar1 = (int)((ulonglong)uVar4 >> 0x20);
-    bVar5 = *unaff_EDI;
-    bVar6 = (byte)((ulonglong)uVar4 >> 0x20);
-    bVar7 = *unaff_EDI;
-    *unaff_EDI = (bVar7 - bVar6) - bVar3;
-    bVar8 = (byte)uVar4;
-    in_AF = 9 < (bVar8 & 0xf) | in_AF;
-    uVar9 = (undefined3)((ulonglong)uVar4 >> 8);
-    bVar10 = 0x99 < bVar8 || (bVar5 < bVar6 || (byte)(bVar7 - bVar6) < bVar3);
-    bVar8 = bVar8 + in_AF * -6 + bVar10 * -0x60;
-    pbVar11 = (byte *)(iVar1 + 0x17);
-    bVar5 = *pbVar11;
-    bVar7 = *pbVar11;
-    *pbVar11 = bVar7 + bVar8 + bVar10;
-    in_AF = 9 < (bVar8 & 0xf) | in_AF;
-    bVar10 = 0x99 < bVar8 || (CARRY1(bVar5,bVar8) || CARRY1(bVar7 + bVar8,bVar10));
-    bVar8 = bVar8 + in_AF * -6 + bVar10 * -0x60;
-    pbVar11 = (byte *)(extraout_ECX + 0x19);
-    bVar7 = *pbVar11;
-    bVar5 = *pbVar11;
-    *pbVar11 = bVar5 + bVar8 + bVar10;
-    in_AF = 9 < (bVar8 & 0xf) | in_AF;
-    bVar10 = 0x99 < bVar8 || (CARRY1(bVar7,bVar8) || CARRY1(bVar5 + bVar8,bVar10));
-    bVar8 = bVar8 + in_AF * -6 + bVar10 * -0x60;
-    pbVar11 = unaff_EDI + iVar1 + 0x2f;
-    bVar3 = (byte)((uint)extraout_ECX >> 8);
-    bVar12 = CARRY1(*pbVar11,bVar3) || CARRY1(*pbVar11 + bVar3,bVar10);
-    *pbVar11 = *pbVar11 + bVar3 + bVar10;
-    pbVar11 = unaff_ESI + -0x3fefd0e9;
-    bVar7 = *pbVar11;
-    bVar5 = *pbVar11;
-    *pbVar11 = bVar5 + bVar6 + bVar12;
-    in_AF = 9 < (bVar8 & 0xf) | in_AF;
-    bVar10 = 0x99 < bVar8 || (CARRY1(bVar7,bVar6) || CARRY1(bVar5 + bVar6,bVar12));
-    bVar7 = bVar8 + in_AF * -6 + bVar10 * -0x60;
-    bVar13 = bVar6 + bVar3 + bVar10;
-    piVar14 = (int *)CONCAT31((int3)((ulonglong)uVar4 >> 0x28),bVar13);
-    in_AF = 9 < (bVar7 & 0xf) | in_AF;
-    bVar10 = 0x99 < bVar7 || (CARRY1(bVar6,bVar3) || CARRY1(bVar6 + bVar3,bVar10));
-    bVar8 = bVar7 + in_AF * -6 + bVar10 * -0x60;
-    pbVar11 = (byte *)(CONCAT31(uVar9,bVar8) + unaff_EBX);
-    bVar7 = *pbVar11;
-    bVar5 = *pbVar11;
-    *pbVar11 = bVar5 + bVar13 + bVar10;
-    in_AF = 9 < (bVar8 & 0xf) | in_AF;
-    bVar10 = 0x99 < bVar8 || (CARRY1(bVar7,bVar13) || CARRY1(bVar5 + bVar13,bVar10));
-    bVar8 = bVar8 + in_AF * -6 + bVar10 * -0x60;
-    bVar6 = (byte)((uint)unaff_EBX >> 8);
-    bVar12 = CARRY1(*unaff_ESI,bVar6) || CARRY1(*unaff_ESI + bVar6,bVar10);
-    *unaff_ESI = *unaff_ESI + bVar6 + bVar10;
-    bVar10 = *unaff_EDI < bVar3 || (byte)(*unaff_EDI - bVar3) < bVar12;
-    *unaff_EDI = (*unaff_EDI - bVar3) - bVar12;
-    pbVar11 = unaff_ESI + 0x18;
-    bVar7 = *pbVar11;
-    bVar5 = *pbVar11;
-    *pbVar11 = bVar5 + bVar6 + bVar10;
-    bVar10 = 0x99 < bVar8 || (CARRY1(bVar7,bVar6) || CARRY1(bVar5 + bVar6,bVar10));
-    cVar15 = bVar8 + (9 < (bVar8 & 0xf) | in_AF) * -6 + bVar10 * -0x60;
-    pcVar16 = (char *)CONCAT31(uVar9,cVar15);
-    pbVar11 = unaff_EDI + -0x21efd0e8;
-    bVar12 = CARRY1(*pbVar11,bVar6) || CARRY1(*pbVar11 + bVar6,bVar10);
-    *pbVar11 = *pbVar11 + bVar6 + bVar10;
-    bVar10 = *unaff_EDI < bVar3 || (byte)(*unaff_EDI - bVar3) < bVar12;
-    *unaff_EDI = (*unaff_EDI - bVar3) - bVar12;
-    bVar12 = CARRY1(bVar3,bVar6) || CARRY1(bVar3 + bVar6,bVar10);
-    bVar8 = bVar3 + bVar6 + bVar10;
-    pbVar11 = (byte *)CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                               CONCAT11(bVar8,(byte)extraout_ECX));
-    bVar7 = *unaff_EDI;
-    bVar5 = *unaff_EDI;
-    *unaff_EDI = (bVar5 - bVar8) - bVar12;
-    *pcVar16 = *pcVar16 + cVar15 + (bVar7 < bVar8 || (byte)(bVar5 - bVar8) < bVar12);
-    *piVar14 = (int)(pcVar16 + *piVar14);
-    *(char *)piVar14 = (char)*piVar14 + cVar15 + (char)*piVar14 + (char)*piVar14;
-    *pbVar11 = *pbVar11 | (byte)extraout_ECX;
-    pcVar17 = (code *)swi(3);
-    pAVar2 = (AvatarModifier *)(*pcVar17)();
+    (pAVar2->fields).owner = owner;
+    func_?(&(pAVar2->fields).owner);
     return pAVar2;
   }
 code_?:
-  (pAVar2->fields).owner = owner;
-  func_?(&(pAVar2->fields).owner);
+  uVar3 = func_?();
+  pbVar4 = (byte *)((ulonglong)uVar3 >> 0x20);
+  bVar5 = (byte)extraout_ECX;
+  bVar6 = (byte)((ulonglong)uVar3 >> 8);
+  pbVar7 = pbVar4 + -0x1f;
+  bVar8 = CARRY1(*pbVar7,bVar6) || CARRY1(*pbVar7 + bVar6,bVar5 < bVar6);
+  *pbVar7 = *pbVar7 + bVar6 + (bVar5 < bVar6);
+  pbVar7 = (byte *)(extraout_ECX + -0x1d);
+  bVar9 = CARRY1(*pbVar7,bVar6) || CARRY1(*pbVar7 + bVar6,bVar8);
+  *pbVar7 = *pbVar7 + bVar6 + bVar8;
+  pbVar7 = (byte *)(extraout_ECX + -0x1e49efd2);
+  bVar8 = CARRY1(*pbVar7,bVar5) || CARRY1(*pbVar7 + bVar5,bVar9);
+  *pbVar7 = *pbVar7 + bVar5 + bVar9;
+  bVar5 = (byte)uVar3 + bVar6;
+  bVar9 = CARRY1((byte)uVar3,bVar6) || CARRY1(bVar5,bVar8);
+  if (extraout_ECX + -1 == 0 || (byte)(bVar5 + bVar8) != '\0') {
+    bVar6 = (byte)(extraout_ECX + -1);
+    bVar5 = *pbVar4 + bVar6;
+    bVar8 = CARRY1(*pbVar4,bVar6) || CARRY1(bVar5,bVar9);
+    *pbVar4 = bVar5 + bVar9;
+    if (extraout_ECX == 2) {
+      bVar6 = (byte)((ulonglong)uVar3 >> 0x28);
+      bVar5 = *pbVar4 + bVar6;
+      bVar9 = CARRY1(*pbVar4,bVar6) || CARRY1(bVar5,bVar8);
+      *pbVar4 = bVar5 + bVar8;
+      pbVar7 = (byte *)(unaff_ESI + -0x1e);
+      bVar5 = *pbVar7;
+      bVar10 = (byte)unaff_EBX;
+      bVar6 = *pbVar7;
+      *pbVar7 = bVar6 + bVar10 + bVar9;
+      *(char *)(unaff_ESI + -0x20efd11e) =
+           *(char *)(unaff_ESI + -0x20efd11e) + bVar10 +
+           (CARRY1(bVar5,bVar10) || CARRY1(bVar6 + bVar10,bVar9));
+      *(undefined1 *)(unaff_EBX + 0x1441c601) = 0xff;
+      pcVar11 = (code *)CONCAT31((int3)((ulonglong)uVar3 >> 8),4);
+      *(code **)pcVar11 = pcVar11 + *(int *)pcVar11;
+      pcVar12 = (char *)(CONCAT22((short)(unaff_EBX >> 0x10),
+                                 CONCAT11((char)(unaff_EBX >> 8) * '\x02',bVar10)) + 0x10080);
+      *pcVar12 = *pcVar12 + -1;
+      if ((unaff_EBX & 0x3f00) == 0) {
+        pAVar2 = (AvatarModifier *)(*pcVar11)();
+        return pAVar2;
+      }
+      pcVar11 = (code *)swi(3);
+      pAVar2 = (AvatarModifier *)(*pcVar11)();
+      return pAVar2;
+    }
+  }
+  pcVar11 = (code *)swi(3);
+  pAVar2 = (AvatarModifier *)(*pcVar11)();
   return pAVar2;
 }
 

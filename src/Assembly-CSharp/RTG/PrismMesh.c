@@ -278,23 +278,23 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
           func_?();
           cRam_? = '\x01';
         }
-        uVar42 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+        uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
         uVar43 = (pVVar41->upVector).x;
         uVar44 = (pVVar41->upVector).y;
-        uVar45 = uVar44 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+        uVar45 = uVar44 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         fVar3 = (float)((uint)(pVVar41->upVector).z ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         if (value_02->max_length < 4) goto code_?;
         value_02->vector[3].x =
              (float)(uVar43 ^ 
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         value_02->vector[3].y = (float)uVar45;
         value_02->vector[3].z = fVar3;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
         pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
         uVar46 = (pVVar41->upVector).x;
@@ -307,7 +307,7 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
         pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
         uVar48 = (pVVar41->upVector).x;
@@ -320,7 +320,7 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
         pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
         uVar50 = (pVVar41->forwardVector).x;
@@ -333,7 +333,7 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
         pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
         uVar52 = (pVVar41->forwardVector).x;
@@ -346,7 +346,7 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
         pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
         uVar54 = (pVVar41->forwardVector).x;
@@ -359,7 +359,7 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
         pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
         uVar56 = (pVVar41->forwardVector).x;

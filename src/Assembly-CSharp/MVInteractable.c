@@ -202,7 +202,7 @@ code_?:
             pAVar2 = (this->fields).modifierPackages;
             if (pAVar2 != (AvatarModifierPackages *)0x0) {
               AVar1 = AvatarModifierPackages::AvatarModifierPackages_GetPackageToActWith
-                                (pAVar2,AVar1,action,(MethodInfo *)0x0);
+                                 (pAVar2,AVar1,action,(MethodInfo *)0x0);
               (*(code *)(this->klass->vtable).RemoveModifier.method)
                         (this,AVar1,id,(this->klass->vtable).HasModifierEffect.methodPtr);
               return;
@@ -224,9 +224,16 @@ code_?:
   }
   uVar9 = func_?();
 code_?:
-  func_?(uVar9);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  piVar13 = (int *)func_?(uVar9);
+  *(char *)piVar13 = (char)*piVar13 - extraout_DL;
+  lVar14 = (longlong)((int)piVar13 * *piVar13) * (longlong)*(int *)((int)piVar13 * *piVar13);
+  pcVar15 = (char *)CONCAT22((short)((ulonglong)lVar14 >> 0x10),
+                             CONCAT11((char)((ulonglong)lVar14 >> 8) + extraout_CL +
+                                      ((int)lVar14 != lVar14),(char)lVar14));
+  *pcVar15 = *pcVar15 - (char)((ulonglong)lVar14 >> 0x20);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
+  return;
 }
 
 
@@ -1010,8 +1017,9 @@ void Assembly-CSharp.dll::MVInteractable::MVInteractable__ctor
   AvatarModifierPackages::AvatarModifierPackages__ctor(this_00,(MethodInfo *)0x0);
   (this->fields).modifierPackages = this_00;
   func_?(&(this->fields).modifierPackages,this_00);
-  InGameMenuStatePlayModeController::InGameMenuStatePlayModeController__ctor
-            ((InGameMenuStatePlayModeController *)this,(MethodInfo *)0x0);
+  (this->fields)._._.findWorldObjectParent = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

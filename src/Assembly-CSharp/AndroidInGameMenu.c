@@ -199,37 +199,37 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_OnEnable
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar3,bVar2 != 0,(MethodInfo *)0x0);
   }
-  method_00 = (MethodInfo *)
-              MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-  if (method_00 != (MethodInfo *)0x0) {
-    bVar2 = GoldRewardManager::GoldRewardManager_CanGetGoldReward
-                      ((GoldRewardManager *)method_00,(MethodInfo *)0x0);
+  pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+  if (pGVar4 != (GoldRewardManager *)0x0) {
+    bVar2 = GoldRewardManager::GoldRewardManager_CanGetGoldReward(pGVar4,(MethodInfo *)0x0);
     if (bVar2 != 0) {
-      this_00 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-      if (this_00 == (GoldRewardManager *)0x0) goto code_?;
-      fVar4 = GoldRewardManager::GoldRewardManager_GetGoldRewardTimeLeft(this_00,(MethodInfo *)0x0);
-      if (fVar4 <= 0.0) {
-        value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (value,ExceptionArgument__Enum_obj,method_00);
+      pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+      if (pGVar4 == (GoldRewardManager *)0x0) goto code_?;
+      fVar5 = GoldRewardManager::GoldRewardManager_GetGoldRewardTimeLeft(pGVar4,(MethodInfo *)0x0);
+      if (fVar5 <= 0.0) {
+        this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+        UxmlObjectListAttributeDescription`1[System::Object]::
+        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
         pGVar3 = (this->fields).claimGoldRewardPopupPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pOVar5 = (Object__Class *)
+        pLVar6 = (List_1_System_Object_ *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                            ((Object *)pGVar3,
                             UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                            );
-        if (value == (Object *)0x0) goto code_?;
-        value[1].klass = pOVar5;
+        if (this_00 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)
+        goto code_?;
+        (this_00->fields)._._defaultValue_k__BackingField = pLVar6;
         func_?();
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                    MethodInfo__AndroidInGameMenu____c__DisplayClass10_0___OnEnable_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
@@ -246,8 +246,8 @@ void Assembly-CSharp.dll::AndroidInGameMenu::AndroidInGameMenu_OnEnable
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

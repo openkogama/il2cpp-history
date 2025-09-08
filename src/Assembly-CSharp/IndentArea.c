@@ -279,7 +279,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x22a8);
+    func_?(0x7cbc);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);

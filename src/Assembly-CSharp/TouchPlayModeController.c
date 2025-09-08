@@ -410,26 +410,6 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_DeAct
 }
 
 
-/* IGUICrossHair GetCrossHair() */
-
-IGUICrossHair *
-Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_GetCrossHair
-          (TouchPlayModeController *this,MethodInfo *method)
-
-{
-  puStack_1 = &stack0xfffffffc;
-  pPVar2 = (this->fields).playModeControlsBase;
-  if (pPVar2 != (PlayModeControlsBase *)0x0) {
-    return (IGUICrossHair *)(pPVar2->fields).crossHair;
-  }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  pIVar6 = (IGUICrossHair *)(*pcVar5)();
-  return pIVar6;
-}
-
-
 /* Void HideEUseIcon() */
 
 void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_HideEUseIcon
@@ -775,14 +755,14 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Leave
                (TouchPlayModeController *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).timeAttackFlagDebriefing;
-  if (this_00 != (TimeAttackFlagDebriefing *)0x0) {
+  this_01 = (this->fields).timeAttackFlagDebriefing;
+  if (this_01 != (TimeAttackFlagDebriefing *)0x0) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
-                      ((Behaviour *)this_00,(MethodInfo *)0x0);
+                      ((Behaviour *)this_01,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       return;
     }
@@ -799,19 +779,19 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Leave
       if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
           (IPlayModeUI *)0x0) {
         func_?();
-        (this_00->fields).isDebriefingOn = 0;
-        (this_00->fields).isWaitingForStart = 0;
+        (this_01->fields).isDebriefingOn = 0;
+        (this_01->fields).isWaitingForStart = 0;
         this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0);
+                            ((Component *)this_01,(MethodInfo *)0x0);
         if (this_02 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (this_02,0,(MethodInfo *)0x0);
           fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-          this_01 = (this_00->fields).scoreBoardCanvasGroup;
-          (this_00->fields).countdownEndTime = fVar3;
-          if (this_01 != (CanvasGroup *)0x0) {
+          this_00 = (this_01->fields).scoreBoardCanvasGroup;
+          (this_01->fields).countdownEndTime = fVar3;
+          if (this_00 != (CanvasGroup *)0x0) {
             UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                      (this_01,0.0,(MethodInfo *)0x0);
+                      (this_00,0.0,(MethodInfo *)0x0);
             pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                                ((MethodInfo *)0x0);
             if (pFVar2 != (FlagDebriefingControl *)0x0) {
@@ -838,7 +818,7 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Leave
       }
     }
   }
-  uVar6 = func_?(&stack0xfffffff4);
+  uVar6 = func_?(&stack0xfffffff0);
   func_?(uVar6);
   pcVar7 = (code *)swi(3);
   (*pcVar7)();

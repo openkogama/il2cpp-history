@@ -83,45 +83,50 @@ void Assembly-CSharp.dll::SentryGunBeam::SentryGunBeam_SetBeamPositions
 {
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  puVar1 = (undefined8 *)func_?(&stack0xffffffe4,&stack0xfffffff0,0);
-  fVar2 = *(float *)(puVar1 + 1);
-  uVar3 = (undefined4)*puVar1;
-  uVar4 = (undefined4)((ulonglong)*puVar1 >> 0x20);
+  VVar1.y = end.y - start.y;
+  VVar1.x = end.x - start.x;
+  VVar1.z = end.z - start.z;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffe4,VVar1,(MethodInfo *)0x0);
+  VVar1 = *pVVar2;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    func_?();
     cRam_? = '\x01';
   }
-  forward.y = (float)uVar4;
-  forward.x = (float)uVar3;
-  forward.z = fVar2;
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                     ((Quaternion *)&puStack_6,forward,
+  pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                     ((Quaternion *)&stack0xffffffe0,VVar1,
                       TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
+    fVar4 = pQVar3->w;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-              (this_00,*pQVar5,(MethodInfo *)0x0);
-    pLVar7 = (this->fields).lineRenderer;
-    (this->fields)._StartPosition_k__BackingField.x = (float)(int)start._0_8_;
-    (this->fields)._StartPosition_k__BackingField.y = (float)(int)((ulonglong)start._0_8_ >> 0x20);
+              (this_00,*pQVar3,(MethodInfo *)0x0);
+    pLVar5 = (this->fields).lineRenderer;
+    (this->fields)._StartPosition_k__BackingField.x = (float)(int)(ulonglong)(uint)fVar4;
+    (this->fields)._StartPosition_k__BackingField.y = (float)(int)((ulonglong)(uint)fVar4 >> 0x20);
     (this->fields)._EndPosition_k__BackingField.x = (float)(int)end._0_8_;
     (this->fields)._EndPosition_k__BackingField.y = (float)(int)((ulonglong)end._0_8_ >> 0x20);
     (this->fields)._StartPosition_k__BackingField.z = start.z;
     (this->fields)._EndPosition_k__BackingField.z = end.z;
-    if (pLVar7 != (LineRenderer *)0x0) {
+    if (pLVar5 != (LineRenderer *)0x0) {
+      position.y = 0.0;
+      position.x = fVar4;
+      position.z = start.z;
       UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                (pLVar7,0,start,(MethodInfo *)0x0);
-      pLVar7 = (this->fields).lineRenderer;
-      if (pLVar7 != (LineRenderer *)0x0) {
-        fStack8 = end.z;
+                (pLVar5,0,position,(MethodInfo *)0x0);
+      pLVar5 = (this->fields).lineRenderer;
+      if (pLVar5 != (LineRenderer *)0x0) {
+        auVar6._4_4_ = end.z;
+        auVar6._0_4_ = fVar4;
+        auVar6._8_4_ = 0;
         UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                  (pLVar7,1,end,(MethodInfo *)0x0);
+                  (pLVar5,1,(Vector3)(auVar6 << 0x20),(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

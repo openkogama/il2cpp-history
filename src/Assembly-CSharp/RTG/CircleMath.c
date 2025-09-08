@@ -288,7 +288,7 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Contains3DPoint
   fVar5 = pVVar1->z;
   fVar6 = (float)((uint)(circleCenter.y * (float)uVar4 + circleCenter.x * (float)uVar3 +
                         circleCenter.z * fVar5) ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if ((checkOnPlane != 0) &&
      (epsilon._extrudeEps <
       (float)((uint)((float)uVar3 * point.x + (float)uVar4 * point.y + fVar5 * point.z + fVar6) &
@@ -344,7 +344,7 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Raycast
   PStack_1.m_Distance =
        (float)((uint)(circleCenter.y * PStack_1.m_Normal.y + circleCenter.x * PStack_1.m_Normal.x
                      + circleCenter.z * PStack_1.m_Normal.z) ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   ray_00.m_Direction.z = ray.m_Direction.z;
   ray_00.m_Direction.y = ray.m_Direction.y;
   ray_00.m_Origin.y = ray.m_Origin.y;

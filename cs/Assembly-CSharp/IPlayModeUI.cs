@@ -12,6 +12,7 @@ public interface IPlayModeUI
 {
 	// Properties
 	Action<bool> IsPausedStateChange { get; set; }
+	Action<ChatConsoleMode> IsChatConsoleStateChange { get; set; }
 	bool IsInPauseMenu { get; set; }
 	bool IsInLobby { get; set; }
 	bool IsDying { get; set; }

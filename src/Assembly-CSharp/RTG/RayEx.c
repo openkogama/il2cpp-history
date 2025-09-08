@@ -78,11 +78,11 @@ Ray * Assembly-CSharp.dll::RTG::RayEx::RayEx_Mirror
   (__return_storage_ptr__->m_Origin).y = mirrorPoint.y + ray.m_Direction.y * fStack_5;
   (__return_storage_ptr__->m_Origin).z = mirrorPoint.z + ray.m_Direction.z * fStack_5;
   VStack_1.z = (float)((uint)ray.m_Direction.z ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   value.y = (float)((uint)ray.m_Direction.y ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   value.x = (float)((uint)ray.m_Direction.x ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   value.z = VStack_1.z;
   pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                      (&VStack_1,value,(MethodInfo *)0x0);

@@ -114,7 +114,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
                    );
-    func_?(0xd7e0);
+    func_?(0x36f4);
     func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }
@@ -352,7 +352,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<ChunkInstancesChanged>);
+    func_?(0x1190);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
@@ -371,7 +371,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
     cRam_? = '\x01';
   }
   this_00 = (List_1_MVTerrainLOD_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<MVTerrainLOD>);
+            func_?((short)TypeInfo__System__Collections__Generic__List<MVTerrainLOD>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
@@ -379,46 +379,32 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
              MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__List__);
   (this->fields).LODBookkeeping = this_00;
   func_?(&this->fields,this_00);
-  value = (TerrainLODComponent_TriangleCounter *)
-          func_?(TypeInfo__TerrainLODComponent__TriangleCounter);
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  this_01 = (HashSet_1_MV_WorldObject_IntVector_ *)func_?();
-  System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::IntVector]::
-  HashSet_1_MV_WorldObject_IntVector___ctor
-            (this_01,
-             MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
-            );
-  (value->fields).enabledChunks = this_01;
-  pMVar4 = (MethodInfo *)&value->fields;
-  func_?();
+  this_01 = (TerrainLODComponent_TriangleCounter *)
+            func_?(TypeInfo__TerrainLODComponent__TriangleCounter);
+  TerrainLODComponent+TriangleCounter::TerrainLODComponent_TriangleCounter__ctor
+            (this_01,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&(this->fields).triangleCounter;
+  (this->fields).triangleCounter = this_01;
+  func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,pMVar4);
-  pMVar4 = (MethodInfo *)&(this->fields).triangleCounter;
-  (this->fields).triangleCounter = value;
-  func_?(pMVar4,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,pMVar4);
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).prototypeCubeModel = prototypeCubeModel;
   func_?(&(this->fields).prototypeCubeModel,prototypeCubeModel);
   (this->fields).chunkInstances = chunkInstances;
   func_?(&(this->fields).chunkInstances,chunkInstances);
   (this->fields).dynamicLodDistance = dynamicLodDistance;
-  func_?(&(this->fields).dynamicLodDistance,dynamicLodDistance);
+  func_?();
   (this->fields).scale = scale;
   (this->fields).debug = debug;
   if (chunkInstances != (ChunkInstances *)0x0) {
-    piVar5 = (int *)func_?();
+    piVar4 = (int *)func_?();
     uStack_1 = 1;
-    while (piVar5 != (int *)0x0) {
-      cVar6 = func_?();
-      if (cVar6 == '\0') {
+    while (piVar4 != (int *)0x0) {
+      cVar5 = func_?();
+      if (cVar5 == '\0') {
         uStack_1 = 0xffffffff;
-        iVar7 = func_?();
-        if (iVar7 != 0) {
+        iVar6 = func_?();
+        if (iVar6 != 0) {
           func_?();
         }
         uStack_1 = 0xffffffff;
@@ -433,39 +419,39 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (piVar5 == (int *)0x0) break;
-      uVar8 = 0;
-      uVar9 = *(ushort *)(*piVar5 + 0xb6);
-      if (uVar9 != 0) {
+      if (piVar4 == (int *)0x0) break;
+      uVar7 = 0;
+      uVar8 = *(ushort *)(*piVar4 + 0xb6);
+      if (uVar8 != 0) {
         do {
-          if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) ==
+          if (*(IEnumerator__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar7 * 8) ==
               TypeInfo__System__Collections__IEnumerator) {
-            puVar10 = (undefined4 *)
-                     (*piVar5 +
-                     (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) + 0x19) * 8);
+            puVar9 = (undefined4 *)
+                     (*piVar4 +
+                     (*(int *)(*(int *)(*piVar4 + 0x58) + 4 + (uint)uVar7 * 8) + 0x19) * 8);
             goto code_?;
           }
-          uVar8 = uVar8 + 1;
-        } while (uVar8 < uVar9);
+          uVar7 = uVar7 + 1;
+        } while (uVar7 < uVar8);
       }
-      puVar10 = (undefined4 *)func_?();
+      puVar9 = (undefined4 *)func_?();
 code_?:
-      piVar11 = (int *)(*(code *)*puVar10)();
-      if (piVar11 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar11 + 0x20) !=
+      piVar10 = (int *)(*(code *)*puVar9)();
+      if (piVar10 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar10 + 0x20) !=
           (
           TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
           ->_0).element_class) {
         func_?();
         break;
       }
-      pIVar12 = (IntVector *)func_?();
-      TerrainLODComponent_AddToLOD(this,*pIVar12,(MethodInfo *)0x0);
+      pIVar11 = (IntVector *)func_?();
+      TerrainLODComponent_AddToLOD(this,*pIVar11,(MethodInfo *)0x0);
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

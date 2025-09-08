@@ -966,7 +966,7 @@ void Assembly-CSharp.dll::SpawnRoleUnlockedPopupController::
           uVar8 = uVar8 + 1;
         } while (uVar8 < uVar9);
       }
-      ppMVar10 = (MethodInfo **)func_?(pIVar6,TypeInfo__IPlayModeUI,6);
+      ppMVar10 = (MethodInfo **)func_?(pIVar6,TypeInfo__IPlayModeUI,8);
 code_?:
       (*(code *)*ppMVar10)(pIVar6,0,ppMVar10[1]);
       pSVar11 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal

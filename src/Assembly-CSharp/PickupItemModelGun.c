@@ -377,8 +377,8 @@ code_?:
                   goto code_?;
                   if (*(Il2CppClass **)(*piVar12 + 0x20) != (TypeInfo__Edge->_0).element_class)
                   goto code_?;
-                  uVar33 = 0x13b4;
-                  uStack_34 = 0x106a;
+                  uVar33 = 0xecd4;
+                  uStack_34 = 0x1069;
                   pfVar35 = (float *)func_?();
                   face = *pfVar35;
                   if (face != 0.0) {
@@ -654,7 +654,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0xdd04);
+    func_?(0x3058);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
@@ -1149,8 +1149,8 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
             VStack_6.z = pVVar5->y;
             fVar24 = pVVar5->z;
             if (cRam_? == '\0') {
-              RStack_7.m_Origin.x = 4.6174634e-29;
-              RStack_7.m_Origin.y = 2.8519768e-28;
+              RStack_7.m_Origin.x = 4.6144686e-29;
+              RStack_7.m_Origin.y = 2.857143e-28;
               func_?();
               cRam_? = '\x01';
             }
@@ -1593,7 +1593,7 @@ bool Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_get_IsAmmoDeple
     return 0;
   }
   cVar1 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
-                    (this,(this->klass->vtable).get_CanUnequip.methodPtr);
+                    (this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar1 == '\0';
 }
 

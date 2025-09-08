@@ -13,38 +13,6 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_CancelDownload
                    );
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  pRVar1 = (this->fields).rawImage;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pRVar1 = (this->fields).rawImage;
-    if (pRVar1 != (RawImage *)0x0) {
-      obj = (pRVar1->fields).m_Texture;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)obj,(MethodInfo *)0x0);
-      pRVar1 = (this->fields).rawImage;
-      if (pRVar1 != (RawImage *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                  (pRVar1,(Texture *)0x0,(MethodInfo *)0x0);
-        goto code_?;
-      }
-    }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-code_?:
   (this->fields).currentlyDownloading = 0;
   this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
              *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
@@ -63,47 +31,6 @@ code_?:
 }
 
 
-/* Void DestroyTexture() */
-
-void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_DestroyTexture
-               (StreamPngToSprite *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  pRVar1 = (this->fields).rawImage;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    return;
-  }
-  pRVar1 = (this->fields).rawImage;
-  if (pRVar1 != (RawImage *)0x0) {
-    obj = (pRVar1->fields).m_Texture;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)obj,(MethodInfo *)0x0);
-    pRVar1 = (this->fields).rawImage;
-    if (pRVar1 != (RawImage *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                (pRVar1,(Texture *)0x0,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
-}
-
-
 /* Void OnDestroy() */
 
 void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_OnDestroy
@@ -118,38 +45,6 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_OnDestroy
                    );
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  pRVar1 = (this->fields).rawImage;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pRVar1 = (this->fields).rawImage;
-    if (pRVar1 != (RawImage *)0x0) {
-      obj = (pRVar1->fields).m_Texture;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)obj,(MethodInfo *)0x0);
-      pRVar1 = (this->fields).rawImage;
-      if (pRVar1 != (RawImage *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                  (pRVar1,(Texture *)0x0,(MethodInfo *)0x0);
-        goto code_?;
-      }
-    }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-code_?:
   (this->fields).currentlyDownloading = 0;
   this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
              *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
@@ -247,30 +142,35 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_SetImageTexture
 }
 
 
-/* Void StartDownloading(String) */
+/* Void StartDownloading(String, Boolean, WWWRequestPriority) */
 
 void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StartDownloading
-               (StreamPngToSprite *this,String *downloadUrl,MethodInfo *method)
+               (StreamPngToSprite *this,String *downloadUrl,bool useStreamingAssets,
+               WWWRequestPriority__Enum priority,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
     func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&TypeInfo__CachedGetRequest);
+    func_?(&TypeInfo__CachedTextureRequest);
     func_?(&
                     MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
                    );
     func_?(&TypeInfo__MV__Common__Urls);
+    func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
   if ((this->fields).currentlyDownloading != 0) {
     StreamPngToSprite_CancelDownload(this,(MethodInfo *)0x0);
   }
   (this->fields).currentlyDownloading = 1;
-  if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__Common__Urls);
+  pSVar1 = ::StringLiteral__;
+  if (useStreamingAssets != 0) {
+    if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MV__Common__Urls);
+    }
+    pSVar1 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
   }
-  pSVar1 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
   pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,downloadUrl,(MethodInfo *)0x0);
   this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
              *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
@@ -280,10 +180,10 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StartDownloading
             (this_00,(Object *)this,
              MethodInfo__StreamPngToSprite__StreamingTextureLoaded_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
-  this_01 = (AssetBundleRequest *)func_?(TypeInfo__CachedGetRequest);
-  AssetBundleRequest::AssetBundleRequest__ctor
-            (this_01,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
-             WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+  this_01 = (CachedTextureRequest *)func_?(TypeInfo__CachedTextureRequest);
+  CachedTextureRequest::CachedTextureRequest__ctor
+            (this_01,pSVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,priority,0,
+             (MethodInfo *)0x0);
   if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -336,8 +236,9 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StreamingTextureL
         UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
                   (pRVar3,(Texture *)value,(MethodInfo *)0x0);
       }
-      if ((this->fields).OnDownloadFinish != (Action *)0x0) {
-        (*(((this->fields).OnDownloadFinish)->fields)._._.invoke_impl)();
+      pAVar4 = (this->fields).OnDownloadFinish;
+      if (pAVar4 != (Action *)0x0) {
+        (*(pAVar4->fields)._._.invoke_impl)();
       }
       return;
     }
@@ -359,8 +260,8 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StreamingTextureL
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

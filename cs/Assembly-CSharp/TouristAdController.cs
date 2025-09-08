@@ -43,14 +43,14 @@ public class TouristAdController : MonoBehaviour, ITouristAdController, IPromoti
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__19_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _InterstitialAdResult_b__20_0(IUIStack x, BaseEventData _);
+		internal void _InterstitialAdResult_b__19_0(IUIStack x, BaseEventData _);
 	}
 
 	[CompilerGenerated]
@@ -90,7 +90,6 @@ public class TouristAdController : MonoBehaviour, ITouristAdController, IPromoti
 	private void OnPromotionPopped();
 	public void ShowPromotion(UnityAction<bool, bool> onPop);
 	private void ShowAdWithoutPromotion(InterstitialAdResult obj);
-	private static bool TouristPromotionAllowed();
 	public void ShowAd();
 	private void InterstitialAdResult(InterstitialAdResult obj);
 	private void Update();

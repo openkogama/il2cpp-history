@@ -239,7 +239,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::
       }
       (this->fields).currentDistanceToAvatar =
            (float)((uint)fVar2 ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) +
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
            (this->fields).currentDistanceToAvatar;
       return;
     }
@@ -406,7 +406,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Upd
         fVar2 = (float)((uint)fVar1 & _UNK_?);
       }
       fVar2 = (float)((uint)fVar2 ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
   }
   (this->fields).currentDistanceToAvatar = fVar2 + (this->fields).currentDistanceToAvatar;
@@ -623,7 +623,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Upd
       uVar10 = uVar10 + 1;
     } while (uVar10 < uVar12);
   }
-  ppMVar13 = (MethodInfo **)func_?(pIVar7,TypeInfo__IPlayModeUI,5);
+  ppMVar13 = (MethodInfo **)func_?(pIVar7,TypeInfo__IPlayModeUI,7);
 code_?:
   cVar14 = (*(code *)*ppMVar13)(pIVar7,ppMVar13[1]);
   if ((cVar14 == '\0') && (((this->fields)._.ignoreInputTypes & 1) == 0)) {

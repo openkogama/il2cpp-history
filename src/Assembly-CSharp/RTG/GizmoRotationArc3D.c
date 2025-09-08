@@ -114,7 +114,7 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_SetArcData
     plane.m_Normal.y = (float)(int)((ulonglong)uVar4 >> 0x20);
     plane.m_Distance =
          (float)((uint)(arcOrigin.x * fStack_6 + arcOrigin.y * fStack_7 + arcOrigin.z * fVar3) ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     ArcShape3D::ArcShape3D_SetArcData(this_00,plane,arcOrigin,arcStart,radius,(MethodInfo *)0x0);
     return;
   }

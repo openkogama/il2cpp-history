@@ -237,7 +237,7 @@ code_?:
             }
             pMVar16 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if (pMVar16 != (MVNetworkGame *)0x0) {
-              value_00 = 0x69;
+              value_00 = 0xc9;
               pMVar20 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar16,(MethodInfo *)0x0);
               if ((pMVar20 != (MVLocalPlayer *)0x0) &&
                  (this_01 = (pMVar20->fields)._._SubscriptionRules_k__BackingField,

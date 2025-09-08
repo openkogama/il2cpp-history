@@ -1312,16 +1312,16 @@ Assembly-CSharp.dll::RTG::RTScene::RTScene_RaycastMeshObjectReverseIfFail
   fVar4 = ray.m_Origin.x;
   if (pGVar1 == (GameObjectRayHit *)0x0) {
     value.y = (float)((uint)ray.m_Direction.y ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     value.x = (float)((uint)ray.m_Direction.x ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     value.z = (float)((uint)ray.m_Direction.z ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                        (&ray.m_Direction,value,
                         (MethodInfo *)
                         ((uint)ray.m_Direction.z ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field));
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field));
     uVar6 = pVVar5->x;
     uVar7 = pVVar5->y;
     ray.m_Origin.y = 0.0;
@@ -1558,16 +1558,16 @@ Assembly-CSharp.dll::RTG::RTScene::RTScene_RaycastTerrainObjectReverseIfFail
   fVar4 = ray.m_Origin.x;
   if (pGVar1 == (GameObjectRayHit *)0x0) {
     value.y = (float)((uint)ray.m_Direction.y ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     value.x = (float)((uint)ray.m_Direction.x ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     value.z = (float)((uint)ray.m_Direction.z ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                        (&ray.m_Direction,value,
                         (MethodInfo *)
                         ((uint)ray.m_Direction.z ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field));
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field));
     uVar6 = pVVar5->x;
     uVar7 = pVVar5->y;
     ray.m_Origin.y = 0.0;

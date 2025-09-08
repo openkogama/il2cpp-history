@@ -26,7 +26,6 @@ namespace MV.WorldObject.Subscription.SubscriptionRules
 		public XpBooster(int baseBoost, int firstOtherMemberBoost, int otherMembersBoost, int maxMemberBoost);
 	
 		// Methods
-		public int GetBoostedXp(int xp, int membersCount);
 		public int GetTotalXPBoost(int membersCount);
 	}
 }

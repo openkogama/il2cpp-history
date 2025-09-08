@@ -28,6 +28,10 @@ void Assembly-CSharp.dll::Notification::Notification_Initialize
 void Assembly-CSharp.dll::Notification::Notification_Update(Notification *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
   fVar1 = (this->fields).timeSinceStart;
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = fVar2 + fVar1;
@@ -35,15 +39,25 @@ void Assembly-CSharp.dll::Notification::Notification_Update(Notification *this,M
   (this->fields).timeSinceStart = fVar2;
   iVar4 = (*(code *)(pNVar3->vtable).__unknown.method)(this,(pNVar3->vtable).Initialize.methodPtr);
   if ((float)iVar4 <= fVar2) {
-    this_00 = (this->fields).pool;
-    if (this_00 == (NotificationObjectPool *)0x0) {
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
+    pNVar5 = (this->fields).pool;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    NotificationObjectPool::NotificationObjectPool_Return(this_00,this,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).OnReturn.method)(this,this->klass[1]._0.image);
+    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pNVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar6 != 0) {
+      pNVar5 = (this->fields).pool;
+      if (pNVar5 == (NotificationObjectPool *)0x0) {
+        func_?();
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
+        return;
+      }
+      NotificationObjectPool::NotificationObjectPool_Return(pNVar5,this,(MethodInfo *)0x0);
+    }
+    pIStack8 = this->klass[1]._0.image;
+    pNStack9 = this;
+    (*(code *)(this->klass->vtable).OnReturn.method)();
   }
   return;
 }

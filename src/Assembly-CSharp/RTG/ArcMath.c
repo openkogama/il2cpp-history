@@ -194,7 +194,7 @@ OBB * Assembly-CSharp.dll::RTG::ArcMath::ArcMath_CalcSh3DArcOBB
   uVar17 = pVVar5->y;
   fVar2 = epsilon._extrudeEps * _UNK_?;
   fVar3 = (float)((uint)((float)uVar17 * (float)puVar15 + (float)uVar16 * angle +
-                        pVVar5->z * 4.3781952e-29) & _UNK_?) +
+                        pVVar5->z * 4.37482e-29) & _UNK_?) +
           (float)((uint)(fVar12 * fVar11 + fVar10 * fVar8 + fVar7 * fVar3) & _UNK_?) + fVar13;
   fVar18 = (float10)func_?();
   (__return_storage_ptr__->_size).x = fVar3;
@@ -317,7 +317,7 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_Is3DPointOnLgArcWire
      ((float)((uint)((float)uVar7 * point.y + (float)uVar6 * point.x + pVVar5->z * point.z +
                     (float)((uint)(arcOrigin.y * (float)uVar7 + arcOrigin.x * (float)uVar6 +
                                   arcOrigin.z * pVVar5->z) ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
                     ) & _UNK_?) <= epsilon._extrudeEps)) {
     pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
                        ((Quaternion *)&stack0xffffff80,degreesFromStart,arcPlaneNormal,
@@ -401,7 +401,7 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_Is3DPointOnShArcWire
       (float)((uint)((float)uVar9 * point.y + (float)uVar8 * point.x + pVVar7->z * point.z +
                     (float)((uint)(arcOrigin.y * (float)uVar9 + arcOrigin.x * (float)uVar8 +
                                   arcOrigin.z * pVVar7->z) ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
                     ) & _UNK_?))) {
     return 0;
   }
@@ -999,7 +999,7 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_ShArcContains3DPoint
        ((float)((uint)((float)uVar8 * point.y + (float)uVar7 * point.x + pVVar6->z * point.z +
                       (float)((uint)(arcOrigin.y * (float)uVar8 + arcOrigin.x * (float)uVar7 +
                                     arcOrigin.z * pVVar6->z) ^
-                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                              )) & _UNK_?) <= epsilon._extrudeEps)) {
       from.y = fVar2;
       from.x = fVar1;

@@ -1252,12 +1252,13 @@ code_?:
   default:
     return;
   }
-  func_?();
-  *(char *)(unaff_EBX + -0x36) =
-       *(char *)(unaff_EBX + -0x36) + extraout_CH +
-       (unaff_ESI->klass < (MVWorldObjectClient__Class *)unaff_EDI->klass);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)(0x68c9c510);
+  cVar5 = '\0';
+  uVar6 = func_?();
+  out(0xa3,uVar6);
+  *(char *)(unaff_EBX + -0x42ef975c) = *(char *)(unaff_EBX + -0x42ef975c) + extraout_CH + cVar5;
+  *(undefined1 *)&unaff_EDI->klass = *(undefined1 *)&unaff_ESI->klass;
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

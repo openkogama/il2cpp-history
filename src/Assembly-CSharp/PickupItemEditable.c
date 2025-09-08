@@ -424,17 +424,17 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnStateChanged
                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                       );
     if (IVar2 == IVar3) {
-      uStack4 = *(undefined4 *)(*unaff_ESI + 500);
-      cVar5 = (**(code **)(*unaff_ESI + 0x1f0))();
+      uStack4 = *(undefined4 *)(*unaff_ESI + 0x1fc);
+      cVar5 = (**(code **)(*unaff_ESI + 0x1f8))();
       if (cVar5 != '\0') {
         return;
       }
     }
-    uStack4 = *(undefined4 *)(*unaff_ESI + 0x23c);
-    (**(code **)(*unaff_ESI + 0x238))();
-    (**(code **)(*unaff_ESI + 0x1f8))();
-    (**(code **)(*unaff_ESI + 0x218))();
+    uStack4 = *(undefined4 *)(*unaff_ESI + 0x244);
+    (**(code **)(*unaff_ESI + 0x240))();
+    (**(code **)(*unaff_ESI + 0x200))();
     (**(code **)(*unaff_ESI + 0x220))();
+    (**(code **)(*unaff_ESI + 0x228))();
   }
   return;
 }

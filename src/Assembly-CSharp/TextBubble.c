@@ -298,7 +298,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionAndSize
                         ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
     uVar11 = pVVar4->x;
     uVar12 = pVVar4->y;
-    fVar2 = (float)uVar11 + 3.67508e-29;
+    fVar2 = (float)uVar11 + 3.6305332e-29;
     fVar1 = (float)uVar12 + fVar1;
   }
   else {
@@ -463,84 +463,15 @@ void Assembly-CSharp.dll::TextBubble::TextBubble__OnDestroy_b__16_0
                (TextBubble *this,TextBubbleController *x,BaseEventData *y,MethodInfo *method)
 
 {
-  key = (this->fields).bubbleId;
   if (x != (TextBubbleController *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                     );
-      cRam_? = '\x01';
-    }
-    pDVar1 = (x->fields).textBubbles;
-    if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
-              ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,key,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
-                        );
-      if (bVar2 == 0) {
-        return;
-      }
-      pDVar1 = (x->fields).textBubbles;
-      if ((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-         (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                             ), pOVar3 != (Object *)0x0)) {
-        pOVar3[1].klass = (Object__Class *)0x0;
-        pDVar1 = (x->fields).textBubbles;
-        if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-          pTVar4 = (TextBubbleController_BubbleTracker *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                             );
-          TextBubbleController::TextBubbleController_UpdateBubble(x,pTVar4,(MethodInfo *)0x0);
-          pDVar1 = (x->fields).textBubbles;
-          if (((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-              (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                                   MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                  ), pOVar3 != (Object *)0x0)) &&
-             (pOVar3[2].klass != (Object__Class *)0x0)) {
-            TextBubble_OnRemoved((TextBubble *)pOVar3[2].klass,(MethodInfo *)0x0);
-            pDVar1 = (x->fields).textBubbles;
-            if ((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-               (pTVar4 = (TextBubbleController_BubbleTracker *)
-                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                   ), pTVar4 != (TextBubbleController_BubbleTracker *)0x0)) {
-              TextBubbleController+BubbleTracker::TextBubbleController_BubbleTracker_Clear
-                        (pTVar4,(MethodInfo *)0x0);
-              pDVar1 = (x->fields).textBubbles;
-              if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Object]::Dictionary_2_System_Int32_System_Object__Remove
-                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
-                          );
-                return;
-              }
-            }
-          }
-        }
-      }
-    }
+    TextBubbleController::TextBubbleController_ClearBubblesOfTypeImmediately
+              (x,(this->fields).bubbleId,(MethodInfo *)0x0);
+    return;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

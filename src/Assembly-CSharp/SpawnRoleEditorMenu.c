@@ -348,18 +348,17 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
     colorStyle = ColorStyle__Enum_OffGray;
   }
   pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
-  bVar4 = 0;
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
-    func_?();
-    bVar5 = *unaff_EDI;
-    bVar6 = *unaff_EDI;
-    *unaff_EDI = bVar6 + extraout_CL + bVar4;
-    unaff_EDI[-0x60] =
-         unaff_EDI[-0x60] + extraout_CL +
-         (CARRY1(bVar5,extraout_CL) || CARRY1(bVar6 + extraout_CL,bVar4));
-    pcVar7 = (code *)swi(3);
-    (*pcVar7)();
+    uVar4 = func_?();
+    in_AF = 9 < ((byte)uVar4 & 0xf) | in_AF;
+    uVar5 = CONCAT31((int3)((uint)uVar4 >> 8),(byte)uVar4 + in_AF * '\x06') & 0xffffff0f;
+    CStack_3.r = (float)CONCAT22((short)(uVar5 >> 0x10),
+                                  CONCAT11((char)((uint)uVar4 >> 8) + in_AF,(char)uVar5));
+    *(char *)(unaff_EDI + -0x50efc1b0) = *(char *)(unaff_EDI + -0x50efc1b0) + extraout_CL + in_AF;
+    pcVar6 = (code *)swi(3);
+    CStack_3.g = CStack_3.r;
+    (*pcVar6)();
     return;
   }
   CStack_3.r = pCVar2->a;

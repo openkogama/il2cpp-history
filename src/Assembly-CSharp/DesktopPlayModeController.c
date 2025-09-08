@@ -427,13 +427,15 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_H
 
 {
   pDVar1 = (this->fields).inGameController;
-  if (((pDVar1 != (DesktopInGameGUIController *)0x0) &&
-      (this_00 = (pDVar1->fields).use, this_00 != (ShowUse *)0x0)) &&
-     (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this_00,(MethodInfo *)0x0), this_01 != (GameObject *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_01,0,(MethodInfo *)0x0);
-    return;
+  if ((pDVar1 != (DesktopInGameGUIController *)0x0) &&
+     (this_00 = (pDVar1->fields).use, this_00 != (ShowUse *)0x0)) {
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_01,0,(MethodInfo *)0x0);
+      return;
+    }
   }
   uVar2 = func_?(&stack0xfffffff8);
   func_?(uVar2);
@@ -822,18 +824,151 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_L
     }
     TypeInfo__MVGameControllerBase->static_fields->_LeavingEditPlayMode_k__BackingField = 1;
     this_00 = (this->fields).timeAttackFlagDebriefing;
-    if (this_00 == (TimeAttackFlagDebriefing *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+    if (this_00 == (TimeAttackFlagDebriefing *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__IPlayModeUI);
+      cRam_? = '\x01';
     }
-    TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_EndDebriefingEarly(this_00,(MethodInfo *)0x0)
-    ;
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
+                      ((Behaviour *)this_00,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                         ((MethodInfo *)0x0);
+      if (pFVar2 == (FlagDebriefingControl *)0x0) {
+code_?:
+        func_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      if ((pFVar2->fields).OnFlagDebriefingEnd != (Action *)0x0) {
+        (*(((pFVar2->fields).OnFlagDebriefingEnd)->fields)._._.invoke_impl)();
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+      if (pIVar4 == (IPlayModeUI *)0x0) goto code_?;
+      func_?(8,TypeInfo__IPlayModeUI,pIVar4,0);
+      (this_00->fields).isDebriefingOn = 0;
+      (this_00->fields).isWaitingForStart = 0;
+      this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this_00,(MethodInfo *)0x0);
+      if (this_03 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_03,0,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      this_01 = (this_00->fields).scoreBoardCanvasGroup;
+      (this_00->fields).countdownEndTime = fVar5;
+      if (this_01 == (CanvasGroup *)0x0) goto code_?;
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                (this_01,0.0,(MethodInfo *)0x0);
+      pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                         ((MethodInfo *)0x0);
+      if (pFVar2 == (FlagDebriefingControl *)0x0) goto code_?;
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (pFVar2->fields).IsInFlagDebriefing = 0;
+      (pFVar2->fields).RunStartTime = fVar5;
+      if ((pFVar2->fields).OnFlagCountDownEnd != (Action *)0x0) {
+        pAVar6 = (pFVar2->fields).OnFlagCountDownEnd;
+        (*(pAVar6->fields)._._.invoke_impl)
+                  ((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method);
+      }
+      pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar7 == (GameEventManager *)0x0) ||
+         (this_02 = (pGVar7->fields).AvatarCommandsPlayMode,
+         this_02 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
+      GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
+                ((RewardedAd *)this_02,(MethodInfo *)0x0);
+    }
     if ((this->fields).OnLeaveEditPlayMode != (UnityAction *)0x0) {
       (*(((this->fields).OnLeaveEditPlayMode)->fields)._._.invoke_impl)();
     }
   }
+  return;
+}
+
+
+/* Void LeavePlayMode() */
+
+void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_LeavePlayMode
+               (DesktopPlayModeController *this,MethodInfo *method)
+
+{
+  this_00 = (this->fields).timeAttackFlagDebriefing;
+  if (this_00 != (TimeAttackFlagDebriefing *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__IPlayModeUI);
+      cRam_? = '\x01';
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
+                      ((Behaviour *)this_00,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return;
+    }
+    pvVar2 = (void *)0x0;
+    pFVar3 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
+    ;
+    if (pFVar3 != (FlagDebriefingControl *)0x0) {
+      if ((pFVar3->fields).OnFlagDebriefingEnd != (Action *)0x0) {
+        pAVar4 = (pFVar3->fields).OnFlagDebriefingEnd;
+        pvVar2 = (pAVar4->fields)._._.method_code;
+        (*(pAVar4->fields)._._.invoke_impl)(pvVar2);
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MVGameControllerBase);
+        cRam_? = '\x01';
+      }
+      pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+      if (pIVar5 != (IPlayModeUI *)0x0) {
+        func_?(8,TypeInfo__IPlayModeUI,pIVar5,0);
+        (this_00->fields).isDebriefingOn = 0;
+        (this_00->fields).isWaitingForStart = 0;
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this_00,(MethodInfo *)0x0);
+        if (this_02 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (this_02,0,(MethodInfo *)0x0);
+          fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+          this_01 = (this_00->fields).scoreBoardCanvasGroup;
+          (this_00->fields).countdownEndTime = fVar6;
+          if (this_01 != (CanvasGroup *)0x0) {
+            UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                      (this_01,0.0,(MethodInfo *)0x0);
+            pFVar3 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                               ((MethodInfo *)0x0);
+            if (pFVar3 != (FlagDebriefingControl *)0x0) {
+              fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                ((MethodInfo *)0x0);
+              (pFVar3->fields).IsInFlagDebriefing = 0;
+              (pFVar3->fields).RunStartTime = fVar6;
+              if ((pFVar3->fields).OnFlagCountDownEnd != (Action *)0x0) {
+                pAVar4 = (pFVar3->fields).OnFlagCountDownEnd;
+                (*(pAVar4->fields)._._.invoke_impl)
+                          ((pAVar4->fields)._._.method_code,(pAVar4->fields)._._.method);
+              }
+              pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+                                 ((MethodInfo *)0x0);
+              if ((pGVar7 != (GameEventManager *)0x0) &&
+                 (pGVar8 = (pGVar7->fields).AvatarCommandsPlayMode,
+                 pGVar8 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+                if ((pGVar8->fields).OnEnterPlaymode != (Action *)0x0) {
+                  pAVar4 = (pGVar8->fields).OnEnterPlaymode;
+                  (*(pAVar4->fields)._._.invoke_impl)
+                            ((pAVar4->fields)._._.method_code,(pAVar4->fields)._._.method,pvVar2);
+                }
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -888,26 +1023,58 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_O
     }
     pTVar1 = (this->fields).timeAttackFlagDebriefing;
     if (pTVar1 != (TimeAttackFlagDebriefing *)0x0) {
-      TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnRoundEnd(pTVar1,(MethodInfo *)0x0);
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_isActiveAndEnabled
+                        ((Behaviour *)pTVar1,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        pFVar3 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                           ((MethodInfo *)0x0);
+        if (pFVar3 == (FlagDebriefingControl *)0x0) goto code_?;
+        if ((pFVar3->fields).OnFlagDebriefingEnd != (Action *)0x0) {
+          (*(((pFVar3->fields).OnFlagDebriefingEnd)->fields)._._.invoke_impl)();
+        }
+        (pTVar1->fields).isDebriefingOn = 0;
+        (pTVar1->fields).isWaitingForStart = 0;
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pTVar1,(MethodInfo *)0x0);
+        if (pGVar4 == (GameObject *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar4,0,(MethodInfo *)0x0);
+        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        this_00 = (pTVar1->fields).scoreBoardCanvasGroup;
+        (pTVar1->fields).countdownEndTime = fVar5;
+        if (this_00 == (CanvasGroup *)0x0) goto code_?;
+        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                  (this_00,0.0,(MethodInfo *)0x0);
+        pFVar3 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                           ((MethodInfo *)0x0);
+        if (pFVar3 == (FlagDebriefingControl *)0x0) goto code_?;
+        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        (pFVar3->fields).IsInFlagDebriefing = 0;
+        (pFVar3->fields).RunStartTime = fVar5;
+        if ((pFVar3->fields).OnFlagCountDownEnd != (Action *)0x0) {
+          (*(((pFVar3->fields).OnFlagCountDownEnd)->fields)._._.invoke_impl)();
+        }
+        (pTVar1->fields).previousAvatarModeType = 4;
+      }
       pTVar1 = (this->fields).timeAttackFlagDebriefing;
       if (pTVar1 != (TimeAttackFlagDebriefing *)0x0) {
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pTVar1,(MethodInfo *)0x0);
-        if (pGVar3 != (GameObject *)0x0) {
+        if (pGVar4 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,0,(MethodInfo *)0x0);
-          this_00 = (this->fields).lobbyStateRect;
-          if (this_00 != (RectTransform *)0x0) {
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this_00,(MethodInfo *)0x0);
-            if (pGVar3 != (GameObject *)0x0) {
+                    (pGVar4,0,(MethodInfo *)0x0);
+          this_01 = (this->fields).lobbyStateRect;
+          if (this_01 != (RectTransform *)0x0) {
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this_01,(MethodInfo *)0x0);
+            if (pGVar4 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar3,1,(MethodInfo *)0x0);
-              this_01 = (this->fields).inGameMenu;
-              if (this_01 != (InGameMenu *)0x0) {
-                pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
-                if (pGVar3 != (GameObject *)0x0) {
+                        (pGVar4,1,(MethodInfo *)0x0);
+              this_02 = (this->fields).inGameMenu;
+              if (this_02 != (InGameMenu *)0x0) {
+                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0);
+                if (pGVar4 != (GameObject *)0x0) {
                   if (pcRam_? == (code *)0x0) {
                     pcRam_? = (code *)func_?();
                   }
@@ -921,9 +1088,10 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_O
       }
     }
   }
+code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1211,22 +1379,23 @@ void Assembly-CSharp.dll::DesktopPlayModeController::DesktopPlayModeController_S
 
 {
   pDVar1 = (this->fields).inGameController;
-  if (((pDVar1 != (DesktopInGameGUIController *)0x0) &&
-      (pSVar2 = (pDVar1->fields).use, pSVar2 != (ShowUse *)0x0)) &&
-     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pSVar2,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,1,(MethodInfo *)0x0);
-    pSVar2 = (pDVar1->fields).use;
-    if (pSVar2 != (ShowUse *)0x0) {
-      (*(code *)(pSVar2->klass->vtable).__unknown.method)();
-      return;
+  if ((pDVar1 != (DesktopInGameGUIController *)0x0) &&
+     (pSVar2 = (pDVar1->fields).use, pSVar2 != (ShowUse *)0x0)) {
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pSVar2,(MethodInfo *)0x0);
+    if (this_00 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_00,1,(MethodInfo *)0x0);
+      pSVar2 = (pDVar1->fields).use;
+      if (pSVar2 != (ShowUse *)0x0) {
+        (*(code *)(pSVar2->klass->vtable).__unknown.method)();
+        return;
+      }
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

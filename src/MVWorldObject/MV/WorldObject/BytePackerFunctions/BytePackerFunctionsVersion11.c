@@ -51,7 +51,6 @@ BytePackerFunctionsVersion11_GetDataParameters
                func_?(TypeInfo__MV__WorldObject__LinkDataParameter,
                                (byte *)((int)&kogamaDataType + 3));
       pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-      bp = (BytePacker *)0x0;
       if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -117,7 +116,6 @@ code_?:
                                (byte *)((int)&kogamaDataType + 3));
       puStack_7 = puVar2;
       pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&puStack_7);
-      bp = (BytePacker *)0x0;
       if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -145,19 +143,12 @@ code_?:
   default:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
-  bVar9 = 0;
-  bVar10 = func_?();
-  bVar11 = extraout_CL + extraout_DH + bVar9;
-  *(byte *)&bp->klass =
-       *(char *)&bp->klass + extraout_CH +
-       (CARRY1(bVar11,extraout_DH) ||
-       CARRY1(bVar11 + extraout_DH,
-              CARRY1(bVar10,extraout_CH) ||
-              CARRY1(bVar10 + extraout_CH,
-                     CARRY1(extraout_CL,extraout_DH) || CARRY1(extraout_CL + extraout_DH,bVar9))));
-  pcVar12 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar12)();
-  return pDVar1;
+  cVar9 = '\0';
+  func_?();
+  *(char *)(extraout_ECX + -0x47ef0e9e) =
+       *(char *)(extraout_ECX + -0x47ef0e9e) + extraout_AH + cVar9;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

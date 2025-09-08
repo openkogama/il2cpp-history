@@ -14,33 +14,39 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_Initial
     func_?(&TypeInfo__NotificationLifetime);
     cRam_? = '\x01';
   }
-  this_00 = data;
+  this_01 = data;
   Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
   data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(2,data._0_3_);
   key = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar1.m_Index != 0) {
-      data = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__NotificationLifetime;
-      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
-          (TypeInfo__NotificationLifetime->_0).element_class) {
-        data = (Dictionary_2_System_Object_System_Object_ *)TVar1;
-        piVar2 = (int32_t *)func_?();
-        (this->fields).lifeTime = *piVar2;
+  if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    data = (Dictionary_2_System_Object_System_Object_ *)
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+           UIElements::TextureId]::
+           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,key,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+    if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pNVar1 = TypeInfo__NotificationLifetime;
+      if (*(Il2CppClass **)(*(int *)data + 0x20) !=
+          (TypeInfo__NotificationLifetime->_0).element_class) goto code_?;
+      piVar2 = (int32_t *)func_?();
+      this_00 = (this->fields).tertiaryNotificationUI;
+      (this->fields).lifeTime = *piVar2;
+      l = (*(code *)(this->klass->vtable).get_Lifetime.method)();
+      if (this_00 != (TertiaryNotificationUI *)0x0) {
+        data = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        TertiaryNotificationUI::TertiaryNotificationUI_Initialize
+                  (this_00,(Notification *)this,l,1,(MethodInfo *)0x0);
         return;
       }
-      goto code_?;
     }
   }
   data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
   func_?();
-  data = (Dictionary_2_System_Object_System_Object_ *)extraout_EDX;
+  pNVar1 = extraout_EDX;
 code_?:
+  data = (Dictionary_2_System_Object_System_Object_ *)pNVar1;
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();

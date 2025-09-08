@@ -441,7 +441,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
           if (pCVar32 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
           (pCVar32->fields).m_Value =
                (float)((uint)((fVar29 - fStack_30) * (float)pTStack_4) ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         }
         if (((this->fields).state & 2) == 0) {
           return;
@@ -602,7 +602,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::TouchPadAbsol
           if (pCVar32 == (CrossPlatformInputManager_VirtualAxis *)0x0) goto code_?;
           (pCVar32->fields).m_Value =
                (float)((uint)((fVar29 - fStack_30) * (float)pTStack_4) ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         }
         if (((this->fields).state & 2) == 0) {
           return;

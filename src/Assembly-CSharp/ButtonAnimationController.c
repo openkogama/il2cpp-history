@@ -7,32 +7,22 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_H
 {
   pBVar1 = (this->fields).button;
   if (pBVar1 != (Button *)0x0) {
-    if ((pBVar1->fields)._.m_Interactable != 0) {
-      return;
+    if ((pBVar1->fields)._.m_Interactable == 0) {
+      this_00 = (this->fields).transformToMove;
+      if (this_00 == (RectTransform *)0x0) goto code_?;
+      VVar2 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+              RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
+      value.y = (this->fields).originalValue + (this->fields).disableMoveAmount;
+      value.x = VVar2.x;
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                (this_00,value,(MethodInfo *)0x0);
     }
-    this_00 = (this->fields).transformToMove;
-    if (this_00 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         (&VStack_3,this_00,(MethodInfo *)0x0);
-      fVar4 = pVVar2->x;
-      this_01 = (this->fields).transformToMove;
-      if (this_01 != (Transform *)0x0) {
-        fStack_5 = (this->fields).originalValue + (this->fields).disableMoveAmount;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                           (&VStack_3,this_01,(MethodInfo *)0x0);
-        VStack_3.z = pVVar2->z;
-        value.y = fStack_5;
-        value.x = fVar4;
-        value.z = VStack_3.z;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (this_00,value,(MethodInfo *)0x0);
-        return;
-      }
-    }
+    return;
   }
+code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -43,28 +33,32 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_O
                (ButtonAnimationController *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).transformToMove;
+  pRVar1 = (this->fields).transformToMove;
   (this->fields).buttonPressedState = 0;
   (this->fields).buttonHighlightedState = 0;
-  if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       (&VStack_2,this_00,(MethodInfo *)0x0);
-    fVar3 = pVVar1->x;
-    this_01 = (this->fields).transformToMove;
-    if (this_01 != (Transform *)0x0) {
-      fStack_4 = (this->fields).originalValue;
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         (&VStack_2,this_01,(MethodInfo *)0x0);
-      VStack_2.z = pVVar1->z;
-      value.y = fStack_4;
-      value.x = fVar3;
-      value.z = VStack_2.z;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (this_00,value,(MethodInfo *)0x0);
-      ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
+  if (pRVar1 != (RectTransform *)0x0) {
+    VVar2 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+            RectTransform_get_anchoredPosition(pRVar1,(MethodInfo *)0x0);
+    VVar3.y = (this->fields).originalValue;
+    VVar3.x = VVar2.x;
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+              (pRVar1,VVar3,(MethodInfo *)0x0);
+    pBVar4 = (this->fields).button;
+    if (pBVar4 != (Button *)0x0) {
+      if ((pBVar4->fields)._.m_Interactable == 0) {
+        pRVar1 = (this->fields).transformToMove;
+        if (pRVar1 == (RectTransform *)0x0) goto code_?;
+        VVar3 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                RectTransform_get_anchoredPosition(pRVar1,(MethodInfo *)0x0);
+        VVar2.y = (this->fields).originalValue + (this->fields).disableMoveAmount;
+        VVar2.x = VVar3.x;
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                  (pRVar1,VVar2,(MethodInfo *)0x0);
+      }
       return;
     }
   }
+code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -78,42 +72,30 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_O
                (ButtonAnimationController *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  if (eventData != (PointerEventData *)0x0) {
-    if ((eventData->fields)._button_k__BackingField != 0) {
-      return;
-    }
-    pBVar1 = (this->fields).button;
-    if (pBVar1 != (Button *)0x0) {
-      if ((pBVar1->fields)._.m_Interactable == 0) {
-        return;
-      }
+  if (eventData == (PointerEventData *)0x0) {
+code_?:
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if ((eventData->fields)._button_k__BackingField == 0) {
+    pBVar2 = (this->fields).button;
+    if (pBVar2 == (Button *)0x0) goto code_?;
+    if ((pBVar2->fields)._.m_Interactable != 0) {
       this_00 = (this->fields).transformToMove;
-      piVar2 = &(this->fields).buttonPressedState;
-      *piVar2 = *piVar2 + 1;
-      if (this_00 != (Transform *)0x0) {
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                           (&VStack_4,this_00,(MethodInfo *)0x0);
-        fVar5 = pVVar3->x;
-        this_01 = (this->fields).transformToMove;
-        if (this_01 != (Transform *)0x0) {
-          fStack_6 = (this->fields).originalValue + (this->fields).pressedMoveAmount;
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                             (&VStack_4,this_01,(MethodInfo *)0x0);
-          VStack_4.z = pVVar3->z;
-          value.y = fStack_6;
-          value.x = fVar5;
-          value.z = VStack_4.z;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (this_00,value,(MethodInfo *)0x0);
-          ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
-          return;
-        }
-      }
+      piVar3 = &(this->fields).buttonPressedState;
+      *piVar3 = *piVar3 + 1;
+      if (this_00 == (RectTransform *)0x0) goto code_?;
+      VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+              RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
+      value.y = (this->fields).originalValue + (this->fields).pressedMoveAmount;
+      value.x = VVar4.x;
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                (this_00,value,(MethodInfo *)0x0);
+      ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
   return;
 }
 
@@ -129,59 +111,41 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_O
   if ((pBVar1->fields)._.m_Interactable != 0) {
     (this->fields).buttonHighlightedState = (this->fields).buttonHighlightedState + 1;
     if ((this->fields).buttonPressedState == 0) {
-      pTVar2 = (this->fields).transformToMove;
-      if (pTVar2 == (Transform *)0x0) {
-code_?:
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
-      }
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffd8,pTVar2,(MethodInfo *)0x0);
-      fVar5 = pVVar4->x;
-      pTVar6 = (this->fields).transformToMove;
-      if (pTVar6 == (Transform *)0x0) goto code_?;
-      fVar7 = (this->fields).originalValue;
-      fVar8 = (this->fields).hoverMoveAmount;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
-      value_00.y = fVar7 + fVar8;
-      value_00.x = fVar5;
-      value_00.z = pVVar4->z;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar2,value_00,(MethodInfo *)0x0);
+      pRVar2 = (this->fields).transformToMove;
+      if (pRVar2 == (RectTransform *)0x0) goto code_?;
+      VVar3 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+              RectTransform_get_anchoredPosition(pRVar2,(MethodInfo *)0x0);
+      VVar4.y = (this->fields).originalValue + (this->fields).hoverMoveAmount;
+      VVar4.x = VVar3.x;
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                (pRVar2,VVar4,(MethodInfo *)0x0);
     }
     else {
-      sVar9 = (this->fields).buttonPressedState;
-      (this->fields).buttonPressedState = sVar9 + -1;
+      sVar5 = (this->fields).buttonPressedState;
+      (this->fields).buttonPressedState = sVar5 + -1;
       if (eventData == (PointerEventData *)0x0) goto code_?;
       if ((eventData->fields)._button_k__BackingField == 0) {
         pBVar1 = (this->fields).button;
-        if (pBVar1 == (Button *)0x0) goto code_?;
+        if (pBVar1 == (Button *)0x0) {
+code_?:
+          func_?();
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
         if ((pBVar1->fields)._.m_Interactable != 0) {
-          pTVar2 = (this->fields).transformToMove;
-          (this->fields).buttonPressedState = sVar9;
-          if (pTVar2 != (Transform *)0x0) {
-            pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                               ((Vector3 *)&stack0xffffffd8,pTVar2,(MethodInfo *)0x0);
-            fVar5 = pVVar4->x;
-            pTVar6 = (this->fields).transformToMove;
-            if (pTVar6 != (Transform *)0x0) {
-              fVar7 = (this->fields).originalValue;
-              fVar8 = (this->fields).pressedMoveAmount;
-              pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                       Transform_get_localPosition
-                                 ((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
-              value.y = fVar7 + fVar8;
-              value.x = fVar5;
-              value.z = pVVar4->z;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        (pTVar2,value,(MethodInfo *)0x0);
-              ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
-              ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
-              return;
-            }
+          pRVar2 = (this->fields).transformToMove;
+          (this->fields).buttonPressedState = sVar5;
+          if (pRVar2 != (RectTransform *)0x0) {
+            VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                    RectTransform_get_anchoredPosition(pRVar2,(MethodInfo *)0x0);
+            VVar3.y = (this->fields).originalValue + (this->fields).pressedMoveAmount;
+            VVar3.x = VVar4.x;
+            UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+            RectTransform_set_anchoredPosition(pRVar2,VVar3,(MethodInfo *)0x0);
+            ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
+            ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
+            return;
           }
           goto code_?;
         }
@@ -200,43 +164,49 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_O
 
 {
   pBVar1 = (this->fields).button;
-  if (pBVar1 == (Button *)0x0) goto code_?;
-  if (((pBVar1->fields)._.m_Interactable == 0) && ((this->fields).buttonHighlightedState == 0)) {
-    return;
-  }
-  piVar2 = &(this->fields).buttonHighlightedState;
-  *piVar2 = *piVar2 + -1;
-  (this->fields).buttonPressedState = 0;
-  if (*piVar2 == 0) {
-    this_00 = (this->fields).transformToMove;
-    if (this_00 == (Transform *)0x0) goto code_?;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffd8,this_00,(MethodInfo *)0x0);
-    fVar4 = pVVar3->x;
-    this_01 = (this->fields).transformToMove;
-    if (this_01 == (Transform *)0x0) goto code_?;
-    fVar5 = (this->fields).originalValue;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
-    value.y = fVar5;
-    value.x = fVar4;
-    value.z = pVVar3->z;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (this_00,value,(MethodInfo *)0x0);
-  }
-  ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
-  pBVar1 = (this->fields).button;
   if (pBVar1 != (Button *)0x0) {
-    (*(code *)(pBVar1->klass->vtable).OnDeselect_1.method)();
+    if (((pBVar1->fields)._.m_Interactable == 0) && ((this->fields).buttonHighlightedState == 0)) {
+      return;
+    }
+    piVar2 = &(this->fields).buttonHighlightedState;
+    *piVar2 = *piVar2 + -1;
+    (this->fields).buttonPressedState = 0;
+    if (*piVar2 == 0) {
+      pRVar3 = (this->fields).transformToMove;
+      if (pRVar3 == (RectTransform *)0x0) goto code_?;
+      VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+              RectTransform_get_anchoredPosition(pRVar3,(MethodInfo *)0x0);
+      VVar5.y = (this->fields).originalValue;
+      VVar5.x = VVar4.x;
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                (pRVar3,VVar5,(MethodInfo *)0x0);
+    }
     pBVar1 = (this->fields).button;
     if (pBVar1 != (Button *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pBVar1,0,(MethodInfo *)0x0);
+      if ((pBVar1->fields)._.m_Interactable == 0) {
+        pRVar3 = (this->fields).transformToMove;
+        if (pRVar3 == (RectTransform *)0x0) goto code_?;
+        VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                RectTransform_get_anchoredPosition(pRVar3,(MethodInfo *)0x0);
+        VVar4.y = (this->fields).originalValue + (this->fields).disableMoveAmount;
+        VVar4.x = VVar5.x;
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                  (pRVar3,VVar4,(MethodInfo *)0x0);
+      }
       pBVar1 = (this->fields).button;
       if (pBVar1 != (Button *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)pBVar1,1,(MethodInfo *)0x0);
-        return;
+        (*(code *)(pBVar1->klass->vtable).OnDeselect_1.method)(pBVar1);
+        pBVar1 = (this->fields).button;
+        if (pBVar1 != (Button *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                    ((Behaviour *)pBVar1,0,(MethodInfo *)0x0);
+          pBVar1 = (this->fields).button;
+          if (pBVar1 != (Button *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                      ((Behaviour *)pBVar1,1,(MethodInfo *)0x0);
+            return;
+          }
+        }
       }
     }
   }
@@ -254,97 +224,70 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_O
                (ButtonAnimationController *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  if (eventData == (PointerEventData *)0x0) goto code_?;
-  if ((eventData->fields)._button_k__BackingField == 0) {
-    pBVar1 = (this->fields).button;
-    if (pBVar1 == (Button *)0x0) goto code_?;
-    if ((pBVar1->fields)._.m_Interactable == 0) {
-      return;
-    }
-    if ((this->fields).buttonPressedState == 0) {
-      return;
-    }
-    piVar2 = &(this->fields).buttonPressedState;
-    *piVar2 = *piVar2 + -1;
-    if (*piVar2 == 0) {
-      pTVar3 = (this->fields).transformToMove;
-      if (pTVar3 == (Transform *)0x0) goto code_?;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-      fVar5 = pVVar4->x;
-      pTVar6 = (this->fields).transformToMove;
-      if (pTVar6 == (Transform *)0x0) goto code_?;
-      fVar7 = (this->fields).originalValue;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
-      value.y = fVar7;
-      value.x = fVar5;
-      value.z = pVVar4->z;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar3,value,(MethodInfo *)0x0);
-    }
-    if (((this->fields).buttonPressedState == 0) && (0 < (this->fields).buttonHighlightedState)) {
-      sVar8 = (this->fields).buttonHighlightedState;
-      pBVar1 = (this->fields).button;
-      (this->fields).buttonHighlightedState = sVar8 + -1;
-      if (pBVar1 == (Button *)0x0) goto code_?;
-      if ((pBVar1->fields)._.m_Interactable != 0) {
-        (this->fields).buttonHighlightedState = sVar8;
-        if ((this->fields).buttonPressedState == 0) {
-          pTVar3 = (this->fields).transformToMove;
-          if (pTVar3 == (Transform *)0x0) {
+  if (eventData == (PointerEventData *)0x0) {
 code_?:
-            func_?();
-            pcVar9 = (code *)swi(3);
-            (*pcVar9)();
-            return;
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if ((eventData->fields)._button_k__BackingField == 0) {
+    pBVar2 = (this->fields).button;
+    if (pBVar2 == (Button *)0x0) goto code_?;
+    if (((pBVar2->fields)._.m_Interactable != 0) && ((this->fields).buttonPressedState != 0)) {
+      piVar3 = &(this->fields).buttonPressedState;
+      *piVar3 = *piVar3 + -1;
+      if (*piVar3 == 0) {
+        pRVar4 = (this->fields).transformToMove;
+        if (pRVar4 == (RectTransform *)0x0) goto code_?;
+        VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                RectTransform_get_anchoredPosition(pRVar4,(MethodInfo *)0x0);
+        VVar6.y = (this->fields).originalValue;
+        VVar6.x = VVar5.x;
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                  (pRVar4,VVar6,(MethodInfo *)0x0);
+      }
+      if (((this->fields).buttonPressedState == 0) && (0 < (this->fields).buttonHighlightedState)) {
+        sVar7 = (this->fields).buttonHighlightedState;
+        pBVar2 = (this->fields).button;
+        (this->fields).buttonHighlightedState = sVar7 + -1;
+        if (pBVar2 == (Button *)0x0) goto code_?;
+        if ((pBVar2->fields)._.m_Interactable != 0) {
+          (this->fields).buttonHighlightedState = sVar7;
+          if ((this->fields).buttonPressedState == 0) {
+            pRVar4 = (this->fields).transformToMove;
+            if (pRVar4 == (RectTransform *)0x0) goto code_?;
+            VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                    RectTransform_get_anchoredPosition(pRVar4,(MethodInfo *)0x0);
+            VVar5.y = (this->fields).originalValue + (this->fields).hoverMoveAmount;
+            VVar5.x = VVar6.x;
+            UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+            RectTransform_set_anchoredPosition(pRVar4,VVar5,(MethodInfo *)0x0);
           }
-          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                             ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-          fVar5 = pVVar4->x;
-          pTVar6 = (this->fields).transformToMove;
-          if (pTVar6 == (Transform *)0x0) goto code_?;
-          fVar7 = (this->fields).originalValue + (this->fields).hoverMoveAmount;
-          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                             ((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
-          value_01.y = fVar7;
-          value_01.x = fVar5;
-          value_01.z = pVVar4->z;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar3,value_01,(MethodInfo *)0x0);
-        }
-        else {
-          sVar8 = (this->fields).buttonPressedState;
-          (this->fields).buttonPressedState = sVar8 + -1;
-          if ((eventData->fields)._button_k__BackingField == 0) {
-            if (pBVar1 == (Button *)0x0) goto code_?;
-            if ((pBVar1->fields)._.m_Interactable != 0) {
-              pTVar3 = (this->fields).transformToMove;
-              (this->fields).buttonPressedState = sVar8;
-              if (pTVar3 == (Transform *)0x0) goto code_?;
-              pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                       Transform_get_localPosition
-                                 ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-              fVar5 = pVVar4->x;
-              pTVar6 = (this->fields).transformToMove;
-              if (pTVar6 == (Transform *)0x0) goto code_?;
-              fVar7 = (this->fields).originalValue + (this->fields).pressedMoveAmount;
-              pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                       Transform_get_localPosition
-                                 ((Vector3 *)&stack0xffffffd8,pTVar6,(MethodInfo *)0x0);
-              value_00.y = fVar7;
-              value_00.x = fVar5;
-              value_00.z = pVVar4->z;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        (pTVar3,value_00,(MethodInfo *)0x0);
-              ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
+          else {
+            sVar7 = (this->fields).buttonPressedState;
+            (this->fields).buttonPressedState = sVar7 + -1;
+            if ((eventData->fields)._button_k__BackingField == 0) {
+              if (pBVar2 == (Button *)0x0) goto code_?;
+              if ((pBVar2->fields)._.m_Interactable != 0) {
+                pRVar4 = (this->fields).transformToMove;
+                (this->fields).buttonPressedState = sVar7;
+                if (pRVar4 == (RectTransform *)0x0) goto code_?;
+                VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                        RectTransform_get_anchoredPosition(pRVar4,(MethodInfo *)0x0);
+                value.y = (this->fields).originalValue + (this->fields).pressedMoveAmount;
+                value.x = VVar6.x;
+                UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                RectTransform_set_anchoredPosition(pRVar4,value,(MethodInfo *)0x0);
+                ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
+              }
             }
           }
+          ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
         }
-        ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
       }
+      ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
     }
-    ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
   }
   return;
 }
@@ -378,29 +321,42 @@ void Assembly-CSharp.dll::ButtonAnimationController::ButtonAnimationController_S
                (ButtonAnimationController *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).transformToMove;
-  if (this_00 == (Transform *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+  pRVar1 = (this->fields).transformToMove;
+  if (pRVar1 != (RectTransform *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition
+              (pRVar1,(MethodInfo *)0x0);
+    pBVar2 = (this->fields).button;
+    (this->fields).originalValue = fStack_3;
+    if (pBVar2 != (Button *)0x0) {
+      if ((pBVar2->fields)._.m_Interactable == 0) {
+        pRVar1 = (this->fields).transformToMove;
+        if (pRVar1 == (RectTransform *)0x0) goto code_?;
+        VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
+                RectTransform_get_anchoredPosition(pRVar1,(MethodInfo *)0x0);
+        value.y = (this->fields).originalValue + (this->fields).disableMoveAmount;
+        value.x = VVar4.x;
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
+                  (pRVar1,value,(MethodInfo *)0x0);
+      }
+      uVar5 = (this->fields).buttonType;
+      if (uVar5 == 0) {
+        (this->fields).pressedMoveAmount = -15.0;
+        (this->fields).hoverMoveAmount = 0.0;
+        (this->fields).disableMoveAmount = -10.0;
+      }
+      else if (uVar5 == 1) {
+        (this->fields).pressedMoveAmount = -3.0;
+        (this->fields).hoverMoveAmount = 0.0;
+        (this->fields).disableMoveAmount = -1.0;
+        return;
+      }
+      return;
+    }
   }
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                     (&VStack_3,this_00,(MethodInfo *)0x0);
-  (this->fields).originalValue = pVVar2->y;
-  ButtonAnimationController_HandleButtonDisabled(this,(MethodInfo *)0x0);
-  uVar4 = (this->fields).buttonType;
-  if (uVar4 == 0) {
-    (this->fields).pressedMoveAmount = -15.0;
-    (this->fields).hoverMoveAmount = 0.0;
-    (this->fields).disableMoveAmount = -10.0;
-  }
-  else if (uVar4 == 1) {
-    (this->fields).pressedMoveAmount = -3.0;
-    (this->fields).hoverMoveAmount = 0.0;
-    (this->fields).disableMoveAmount = -1.0;
-    return;
-  }
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

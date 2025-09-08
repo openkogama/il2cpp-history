@@ -318,7 +318,7 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_Update
     }
     pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar2 == (IPlayModeUI *)0x0) goto code_?;
-    bVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar2);
+    bVar3 = func_?(9,TypeInfo__IPlayModeUI,pIVar2);
     bVar3 = bVar3 ^ 1;
   }
   else {

@@ -273,13 +273,14 @@ bool Assembly-CSharp.dll::PickupGUI::PickupGUI_IsInJetpack(PickupGUI *this,Metho
     if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
       pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (pMVar1,id,(MethodInfo *)0x0);
-      if (pMVar2 != (MVWorldObject *)0x0) {
-        if (((TypeInfo__MVJetPack->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment) &&
-           ((MVJetPack__Class *)
-            (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVJetPack->_1).naturalAligment - 1] ==
-            TypeInfo__MVJetPack)) {
-          return 1;
-        }
+      if (pMVar2 == (MVWorldObject *)0x0) {
+        return 0;
+      }
+      if (((TypeInfo__MVJetPack->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment) &&
+         ((MVJetPack__Class *)
+          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVJetPack->_1).naturalAligment - 1] ==
+          TypeInfo__MVJetPack)) {
+        return pMVar2 != (MVWorldObject *)0x0;
       }
       return 0;
     }
@@ -681,7 +682,7 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_UpdateCrossHairVisibility
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    cVar2 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
+    cVar2 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
     if ((cVar2 == '\0') && ((this->fields).canBeVisible != 0)) {
       pMVar3 = (this->fields).pickupOwner;
       if (pMVar3 == (MVPickupOwner *)0x0) goto code_?;

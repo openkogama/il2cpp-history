@@ -41,11 +41,11 @@ void Assembly-CSharp.dll::RTG::GizmoPyramidCap3DController::
     if ((pGVar2 != (GizmoCap3D *)0x0) &&
        (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
       axis.y = (float)((uint)sliderDirection.y ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       axis.x = (float)((uint)sliderDirection.x ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       axis.z = (float)((uint)sliderDirection.z ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       GizmoTransform::GizmoTransform_AlignAxis3D
                 (pGVar3,1,AxisSign__Enum_Positive,axis,(MethodInfo *)0x0);
       pGVar1 = (this->fields)._._data;

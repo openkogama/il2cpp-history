@@ -65,6 +65,19 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_LoadScenes_1
       pOVar3 = pOVar1 + 2;
       while( true ) {
         if ((int)pOVar1[1].monitor <= (int)pMVar2) {
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__LevelLoader___WaitForLoadingScenesCoroutine_d__10);
+            cRam_? = '\x01';
+          }
+          method_00 = TypeInfo__LevelLoader___WaitForLoadingScenesCoroutine_d__10;
+          pOVar1 = (Object *)func_?();
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          pOVar1[1].klass = (Object__Class *)0x0;
+          pOVar1[2].klass = (Object__Class *)this;
+          func_?(pOVar1 + 2,this);
+          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                    ((MonoBehaviour *)this,(IEnumerator *)pOVar1,(MethodInfo *)0x0);
           return;
         }
         this_01 = (this->fields).pendingScenes;
@@ -86,9 +99,11 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_LoadScenes_1
         pMVar2 = pMVar2 + 1;
         pOVar3 = (Object *)&pOVar3->monitor;
       }
-      func_?();
+      goto code_?;
     }
   }
+code_?:
+  func_?();
 code_?:
   func_?();
   pcVar4 = (code *)swi(3);
@@ -97,65 +112,25 @@ code_?:
 }
 
 
-/* Void Update() */
+/* IEnumerator WaitForLoadingScenesCoroutine() */
 
-void Assembly-CSharp.dll::LevelLoader::LevelLoader_Update(LevelLoader *this,MethodInfo *method)
+IEnumerator *
+Assembly-CSharp.dll::LevelLoader::LevelLoader_WaitForLoadingScenesCoroutine
+          (LevelLoader *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__RemoveAt_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__get_Item_int_
-                   );
+    func_?(&TypeInfo__LevelLoader___WaitForLoadingScenesCoroutine_d__10);
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).pendingScenes;
-  if (pLVar1 != (List_1_UnityEngine_AsyncOperation_ *)0x0) {
-    index = (pLVar1->fields)._size;
-    while (index = index + -1, -1 < index) {
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).pendingScenes;
-      if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_00,index,
-                               MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__get_Item_int_
-                              ), this_01 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::AsyncOperation::AsyncOperation_get_isDone
-                        ((AsyncOperation *)this_01,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        pLVar1 = (this->fields).pendingScenes;
-        if (pLVar1 == (List_1_UnityEngine_AsyncOperation_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__RemoveAt
-                  ((List_1_System_Object_ *)pLVar1,index,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__RemoveAt_int_
-                  );
-      }
-    }
-    pLVar1 = (this->fields).pendingScenes;
-    if (pLVar1 != (List_1_UnityEngine_AsyncOperation_ *)0x0) {
-      if (((pLVar1->fields)._size < 1) && ((this->fields).callback != (Action *)0x0)) {
-        pAVar3 = (this->fields).callback;
-        (*(pAVar3->fields)._._.invoke_impl)
-                  ((pAVar3->fields)._._.method_code,(pAVar3->fields)._._.method);
-        (this->fields).callback = (Action *)0x0;
-        func_?(&(this->fields).callback,0);
-      }
-      return;
-    }
-  }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
+  method_00 = TypeInfo__LevelLoader___WaitForLoadingScenesCoroutine_d__10;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 

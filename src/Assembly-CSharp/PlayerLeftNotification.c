@@ -15,7 +15,7 @@ void Assembly-CSharp.dll::PlayerLeftNotification::PlayerLeftNotification_Initial
     func_?(&StringLiteral__left_);
     cRam_? = '\x01';
   }
-  this_01 = data;
+  this_02 = data;
   PlayerNotification::PlayerNotification_Initialize
             ((PlayerNotification *)this,data,(MethodInfo *)0x0);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -23,11 +23,11 @@ void Assembly-CSharp.dll::PlayerLeftNotification::PlayerLeftNotification_Initial
     this_00 = (pMVar1->fields).playerContainer;
     data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,data._0_3_);
     key = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-    if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,key
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,key
                          ,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
@@ -45,7 +45,14 @@ void Assembly-CSharp.dll::PlayerLeftNotification::PlayerLeftNotification_Initial
           pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,str1,(MethodInfo *)0x0);
           if (pTVar5 != (Text *)0x0) {
             (*(code *)(pTVar5->klass->vtable).set_text.method)(pTVar5,pSVar7);
-            return;
+            this_01 = (this->fields)._.tertiaryNotificationUI;
+            l = (*(code *)(this->klass->vtable).get_Lifetime.method)
+                          (this,(this->klass->vtable).Initialize.methodPtr);
+            if (this_01 != (TertiaryNotificationUI *)0x0) {
+              TertiaryNotificationUI::TertiaryNotificationUI_Initialize
+                        (this_01,(Notification *)this,l,1,(MethodInfo *)0x0);
+              return;
+            }
           }
         }
       }

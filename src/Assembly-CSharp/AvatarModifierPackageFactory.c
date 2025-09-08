@@ -84,15 +84,16 @@ Assembly-CSharp.dll::AvatarModifierPackageFactory::AvatarModifierPackageFactory_
     func_?(&TypeInfo__AvatarModifierPackageFactory____c__DisplayClass0_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AvatarModifierPackageFactory____c__DisplayClass0_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)c;
+  this = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+         func_?(TypeInfo__AvatarModifierPackageFactory____c__DisplayClass0_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this,(MethodInfo *)0x0);
+  if (this != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)c;
     pFVar1 = (Func_1_Single_ *)func_?(TypeInfo__System__Func<float>);
     mscorlib.dll::System::Func`1[Single]::Func_1_Single___ctor
-              (pFVar1,value,
+              (pFVar1,(Object *)this,
                MethodInfo__AvatarModifierPackageFactory____c__DisplayClass0_0___Const_b__0__,
                (MethodInfo *)0x0);
     return pFVar1;

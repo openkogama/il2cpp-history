@@ -139,8 +139,8 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
              MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
   (this->fields).pushOptions = this_00;
   func_?(&(this->fields).pushOptions,this_00);
-  FirstTimeActivatableSetEventOnShow::FirstTimeActivatableSetEventOnShow__ctor
-            ((FirstTimeActivatableSetEventOnShow *)this,(MethodInfo *)0x0);
+  FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
+            ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;
 }
 

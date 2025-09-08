@@ -110,8 +110,8 @@ void Assembly-CSharp.dll::RegisteredPromotionController::
                (RegisteredPromotionController *this,MethodInfo *method)
 
 {
-  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
-    pUVar1 = (this->fields).onPromotionWasPopped;
+  pUVar1 = (this->fields).onPromotionWasPopped;
+  if (pUVar1 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,1,1,(pUVar1->fields)._._.method);
   }
@@ -240,8 +240,8 @@ void Assembly-CSharp.dll::RegisteredPromotionController::RegisteredPromotionCont
     }
   }
 code_?:
-  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
-    pUVar6 = (this->fields).onPromotionWasPopped;
+  pUVar6 = (this->fields).onPromotionWasPopped;
+  if (pUVar6 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
     (*(pUVar6->fields)._._.invoke_impl)
               ((pUVar6->fields)._._.method_code,0,0,(pUVar6->fields)._._.method);
   }
@@ -341,8 +341,8 @@ void Assembly-CSharp.dll::RegisteredPromotionController::
     }
   }
 code_?:
-  if ((this->fields).onPromotionWasPopped != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
-    pUVar6 = (this->fields).onPromotionWasPopped;
+  pUVar6 = (this->fields).onPromotionWasPopped;
+  if (pUVar6 != (UnityAction_2_System_Boolean_System_Boolean_ *)0x0) {
     (*(pUVar6->fields)._._.invoke_impl)
               ((pUVar6->fields)._._.method_code,0,0,(pUVar6->fields)._._.method);
   }
@@ -377,9 +377,16 @@ bool Assembly-CSharp.dll::RegisteredPromotionController::
                (RegisteredPromotionController *this,MethodInfo *method)
 
 {
-  if (((this->fields).embedded != 0) && ((this->fields).showTouristPromotion == 0)) {
+  if ((this->fields).embedded != 0) {
+    if ((this->fields).showTouristPromotion == 0) {
+      return 0;
+    }
+    if ((this->fields).embedded != 0) goto code_?;
+  }
+  if ((this->fields).subscriber != 0) {
     return 0;
   }
+code_?:
   return (this->fields).timeBeforeShownPromotion <= (this->fields).timer;
 }
 

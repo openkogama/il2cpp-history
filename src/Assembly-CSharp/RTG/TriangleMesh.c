@@ -47,24 +47,24 @@ Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateEqXY
       func_?();
       cRam_? = '\x01';
     }
-    uVar6 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar6 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar8 = (pVVar7->forwardVector).x;
     uVar9 = (pVVar7->forwardVector).y;
-    uVar10 = uVar9 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar10 = uVar9 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     fVar4 = (float)((uint)(pVVar7->forwardVector).z ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     if (value_00 != (Vector3__Array *)0x0) {
       if (value_00->max_length == 0) goto code_?;
       value_00->vector[0].x =
-           (float)(uVar8 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+           (float)(uVar8 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       value_00->vector[0].y = (float)uVar10;
       value_00->vector[0].z = fVar4;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
-        uVar6 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+        uVar6 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       }
       pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
       uVar11 = (pVVar7->forwardVector).x;
@@ -77,7 +77,7 @@ Mesh * Assembly-CSharp.dll::RTG::TriangleMesh::TriangleMesh_CreateEqXY
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
-        uVar6 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+        uVar6 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       }
       pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
       uVar13 = (pVVar7->forwardVector).x;

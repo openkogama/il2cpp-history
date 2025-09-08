@@ -18,9 +18,9 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_AlignAxis2D
     fVar3 = pVVar1->vector[axisIndex].y;
     if (axisSign == AxisSign__Enum_Negative) {
       fVar2 = (float)((uint)fVar2 ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar3 = (float)((uint)fVar3 ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     from.y = fVar3;
     from.x = fVar2;
@@ -653,9 +653,9 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetAxis2D
                         );
       if (bVar5 != 0) {
         fStack_3 = (float)((uint)fStack_3 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fStack_4 = (float)((uint)fStack_4 ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       }
       VVar6.y = fStack_4;
       VVar6.x = fStack_3;
@@ -685,9 +685,9 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetAxis2D_1
     fStack_3 = pVVar1->vector[axisIndex].y;
     if (axisSign == AxisSign__Enum_Negative) {
       fStack_2 = (float)((uint)fStack_2 ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fStack_3 = (float)((uint)fStack_3 ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     VVar4.y = fStack_3;
     VVar4.x = fStack_2;
@@ -729,12 +729,12 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetAxis3D
       if (bVar5 != 0) {
         uVar6 = __return_storage_ptr__->x;
         uVar7 = __return_storage_ptr__->y;
-        uVar2 = uVar7 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+        uVar2 = uVar7 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         fVar4 = (float)((uint)__return_storage_ptr__->z ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         __return_storage_ptr__->x =
              (float)(uVar6 ^ 
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         __return_storage_ptr__->y = (float)uVar2;
         __return_storage_ptr__->z = fVar4;
       }
@@ -771,10 +771,10 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetAxis3D_1
     __return_storage_ptr__->z = fVar4;
     if (axisSign == AxisSign__Enum_Negative) {
       fVar4 = (float)((uint)fVar4 ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
-      uVar5 = uVar3 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+      uVar5 = uVar3 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       __return_storage_ptr__->x =
-           (float)(uVar2 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+           (float)(uVar2 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       __return_storage_ptr__->y = (float)uVar5;
       __return_storage_ptr__->z = fVar4;
@@ -833,7 +833,7 @@ Plane * Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetPlane3D
   (__return_storage_ptr__->m_Normal).z = fVar4;
   __return_storage_ptr__->m_Distance =
        (float)((uint)(fVar8 * (float)uVar10 + fVar5 * (float)uVar9 + fVar3 * fVar4) ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   return __return_storage_ptr__;
 }
 
@@ -878,7 +878,7 @@ Plane * Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_GetPlane3D_1
   (__return_storage_ptr__->m_Normal).z = fVar3;
   __return_storage_ptr__->m_Distance =
        (float)((uint)(fVar7 * (float)uVar9 + fVar4 * (float)uVar8 + fVar2 * fVar3) ^
-              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   return __return_storage_ptr__;
 }
 

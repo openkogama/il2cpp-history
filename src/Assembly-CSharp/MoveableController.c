@@ -158,7 +158,7 @@ Assembly-CSharp.dll::MoveableController::MoveableController_GetRotationQuat
                   pVVar12 = (Vector3 *)func_?();
                   pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
                                      ((Quaternion *)&stack0xffffffcc,
-                                      (float)fVar11 * _UNK_? * 3.562986e-29,*pVVar12,
+                                      (float)fVar11 * _UNK_? * 3.5314778e-29,*pVVar12,
                                       (MethodInfo *)0x0);
                   fVar4 = pQVar7->x;
                   fVar5 = pQVar7->y;
@@ -626,7 +626,7 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateMoveables
   }
   fVar4 = (this->fields).time;
   fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
-                     ((MethodInfo *)0x0);
+                    ((MethodInfo *)0x0);
   source = (this->fields).MoveControllers;
   (this->fields).time = fVar5 + fVar4;
   if ((TypeInfo__MoveableController____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -658,56 +658,37 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateMoveables
                       System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>_MethodInfo__System__Linq__Enumerable__Where<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>__System__Func<System::Collections::Generic::KeyValuePair<int,_MVMovable>,_bool>_
                      );
   if (pIVar6 != (IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
-    pIVar7 = pIVar6->klass;
-    uVar8 = 0;
-    uVar9._0_1_ = (pIVar7->_1).rank;
-    uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
-    if (uVar9 != 0) {
-      do {
-        if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
-            (Il2CppClass *)
-            TypeInfo__System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>
-           ) {
-          ppMVar10 = &(&pIVar6->klass->vtable)[pIVar6->klass->interfaceOffsets[uVar8].offset].
-                     GetEnumerator.method;
-          goto code_?;
-        }
-        uVar8 = uVar8 + 1;
-      } while (uVar8 < uVar9);
-    }
-    ppMVar10 = (MethodInfo **)func_?();
-code_?:
-    piVar11 = (int *)(*(code *)*ppMVar10)();
+    piVar7 = (int *)func_?();
     uStack_1 = 1;
-    while (piVar11 != (int *)0x0) {
-      cVar12 = func_?();
-      if (cVar12 == '\0') {
+    while (piVar7 != (int *)0x0) {
+      cVar8 = func_?();
+      if (cVar8 == '\0') {
         uStack_1 = 0xffffffff;
-        if (piVar11 != (int *)0x0) {
+        if (piVar7 != (int *)0x0) {
           func_?();
         }
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (piVar11 == (int *)0x0) break;
-      iVar13 = *piVar11;
-      uVar9 = 0;
-      if (*(ushort *)(iVar13 + 0xb6) != 0) {
+      if (piVar7 == (int *)0x0) break;
+      iVar9 = *piVar7;
+      uVar10 = 0;
+      if (*(ushort *)(iVar9 + 0xb6) != 0) {
         do {
           if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MVMovable___Class **)
-               (*(int *)(iVar13 + 0x58) + (uint)uVar9 * 8) ==
+               (*(int *)(iVar9 + 0x58) + (uint)uVar10 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>
              ) {
-            puVar14 = (undefined4 *)
-                     (iVar13 + (*(int *)(*(int *)(iVar13 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
+            puVar11 = (undefined4 *)
+                     (iVar9 + (*(int *)(*(int *)(iVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
-          uVar9 = uVar9 + 1;
-        } while (uVar9 < *(ushort *)(iVar13 + 0xb6));
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < *(ushort *)(iVar9 + 0xb6));
       }
-      puVar14 = (undefined4 *)func_?();
+      puVar11 = (undefined4 *)func_?();
 code_?:
-      (*(code *)*puVar14)();
+      (*(code *)*puVar11)();
       if (this_02 == (MVMovable *)0x0) break;
       if ((this_02->fields).parentMover == (MVMovable *)0x0) {
         MVMovable::MVMovable_Move(this_02,directionFactor,0,(MethodInfo *)0x0);
@@ -720,8 +701,8 @@ code_?:
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

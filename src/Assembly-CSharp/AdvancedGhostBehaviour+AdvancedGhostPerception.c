@@ -396,7 +396,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
   this_00 = (this->fields).syncedInterval;
   if (this_00 != (DeterministicSyncedInterval *)0x0) {
     bVar1 = DeterministicSyncedInterval::DeterministicSyncedInterval_Update
-                       (this_00,(MethodInfo *)0x0);
+                      (this_00,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       return;
     }
@@ -404,111 +404,18 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
     if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) &&
        (pAVar3 = (pAVar2->fields).networkedValues,
        pAVar3 != (AdvancedGhostBehaviour_NetworkedValues *)0x0)) {
-      fVar4 = (pAVar3->fields).nextPosition.y;
-      fVar5 = (pAVar3->fields).nextPosition.z;
-      fVar6 = (((this->fields).ghostBehaviour)->fields).perceptionRadius;
-      pOVar7 = (this->fields).perception;
-      if (pOVar7 != (OptimizedPerception *)0x0) {
-        (pOVar7->fields).position.x = (pAVar3->fields).nextPosition.x;
-        (pOVar7->fields).position.y = fVar4;
-        (pOVar7->fields).position.z = fVar5;
-        (pOVar7->fields).radius = fVar6;
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__CollisionDetectionGlobalBuffers);
-          func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-          func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-          func_?(&TypeInfo__UnityEngine__Object);
-          func_?(&TypeInfo__UnityEngine__Physics);
-          func_?(&StringLiteral_Player);
-          cRam_? = '\x01';
-        }
-        if (*(HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)
-             (in_stack_8 + 0x18) !=
-            (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
-                    (*(HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)
-                      (in_stack_8 + 0x18),
-                     MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-          fVar5 = *(float *)(in_stack_8 + 0x10);
-          uVar9 = *(undefined8 *)(in_stack_8 + 8);
-          fVar6 = *(float *)(in_stack_8 + 0x14);
-          if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__CollisionDetectionGlobalBuffers);
-          }
-          pCVar10 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
-          iVar11 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                             (StringLiteral_Player,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Physics);
-          }
-          position.z = fVar5;
-          position.x = (float)(int)uVar9;
-          position.y = (float)(int)((ulonglong)uVar9 >> 0x20);
-          iVar11 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::
-                   Physics_OverlapSphereNonAlloc_1
-                             (position,fVar6,pCVar10,1 << ((byte)iVar11 & 0x1f),(MethodInfo *)0x0);
-          uVar12 = 0;
-          if (0 < iVar11) {
-            iVar13 = 0x10;
-            do {
-              if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__CollisionDetectionGlobalBuffers);
-              }
-              pCVar10 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
-              if (pCVar10 == (Collider__Array *)0x0) goto code_?;
-              if (pCVar10->max_length <= uVar12) goto code_?;
-              this_01 = *(Component **)((int)pCVar10->vector + iVar13 + -0x10);
-              if (this_01 == (Component *)0x0) goto code_?;
-              t = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            (this_01,(MethodInfo *)0x0);
-              this_02 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
-                                  (t,(MethodInfo *)0x0);
-              if (this_02 != (MVWorldObjectClient *)0x0) {
-                item = (Object_1__Class *)(this_02->fields)._.id;
-                this_03 = MVWorldObjectClient::MVWorldObjectClient_get_InteractionDataHandlerBase
-                                    (this_02,(MethodInfo *)0x0);
-                pOVar14 = TypeInfo__UnityEngine__Object;
-                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                  item = pOVar14;
-                }
-                bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                   ((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
-                if (bVar1 != 0) {
-                  if (this_03 == (InteractionDataHandlerBase *)0x0) goto code_?;
-                  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                                     ((Behaviour *)this_03,(MethodInfo *)0x0);
-                  if (bVar1 != 0) {
-                    if (*(HashSet_1_System_Int32_ **)(in_stack_8 + 0x18) ==
-                        (HashSet_1_System_Int32_ *)0x0) goto code_?;
-                    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-                    HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                              (*(HashSet_1_System_Int32_ **)(in_stack_8 + 0x18),(int32_t)item
-                               ,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-                  }
-                }
-              }
-              uVar12 = uVar12 + 1;
-              iVar13 = iVar13 + 4;
-            } while ((int)uVar12 < iVar11);
-          }
-          return;
-        }
-code_?:
-        func_?();
-code_?:
-        func_?();
-        pcVar15 = (code *)swi(3);
-        (*pcVar15)();
+      this_01 = (this->fields).perception;
+      if (this_01 != (OptimizedPerception *)0x0) {
+        OptimizedPerception::OptimizedPerception_Update
+                  (this_01,(pAVar3->fields).nextPosition,
+                   (((this->fields).ghostBehaviour)->fields).perceptionRadius,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -533,48 +440,16 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).ghostBehaviour = ghostBehaviour;
   func_?(&(this->fields).ghostBehaviour,ghostBehaviour);
-  value = (OptimizedPerception *)func_?(TypeInfo__OptimizedPerception);
-  if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
-    cRam_? = '\x01';
-  }
-  pHVar1 = (HashSet_1_System_Int32_ *)
-           func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (value->fields).potentialTargets = pHVar1;
-  func_?(&(value->fields).potentialTargets,pHVar1);
-  pHVar1 = (HashSet_1_System_Int32_ *)
-           func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (value->fields).removeSet = pHVar1;
-  func_?(&(value->fields).removeSet,pHVar1);
-  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)func_?(TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this_00,0x10,
-             MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_);
-  (value->fields).targets = (List_1_WorldObjectClientRef_ *)this_00;
-  func_?(&(value->fields).targets,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,in_stack_2);
-  (this->fields).perception = value;
-  func_?();
+  this_00 = (OptimizedPerception *)func_?(TypeInfo__OptimizedPerception);
+  OptimizedPerception::OptimizedPerception__ctor(this_00,(MethodInfo *)0x0);
+  (this->fields).perception = this_00;
+  func_?(&(this->fields).perception,this_00);
   range = (this->fields).perceptionIntervalMilliseconds;
-  this_01 = (DeterministicSyncedInterval *)func_?();
+  this_01 = (DeterministicSyncedInterval *)func_?(TypeInfo__DeterministicSyncedInterval);
   DeterministicSyncedInterval::DeterministicSyncedInterval__ctor
-            (this_01,(int32_t)&(this->fields).perception,range,(MethodInfo *)0x0);
+            (this_01,woID,range,(MethodInfo *)0x0);
   (this->fields).syncedInterval = this_01;
-  func_?();
+  func_?(&(this->fields).syncedInterval,this_01);
   return;
 }
 

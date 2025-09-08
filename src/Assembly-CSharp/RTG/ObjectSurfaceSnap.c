@@ -120,14 +120,14 @@ Vector3 * Assembly-CSharp.dll::RTG::ObjectSurfaceSnap::ObjectSurfaceSnap_Calcula
       }
       uStack_29 = CONCAT44(LStack_8._current.FirstAxisSign,LStack_8._current.Quadrant);
       fStack_30 = (float)((uint)embedDirection.z ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       pMStack_31 = (MethodInfo *)LStack_8._current.SecondAxisSign;
       pMStack_32 = (MethodInfo *)LStack_8._current.SecondAxisSign;
       pMStack_10 = (MethodInfo *)LStack_8._current.SecondAxisSign;
       value.y = (float)((uint)embedDirection.y ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       value.x = (float)((uint)embedDirection.x ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       value.z = fStack_30;
       uStack_9 = uStack_29;
       pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
@@ -524,13 +524,13 @@ code_?:
                 fVar20 = Vector3Ex::Vector3Ex_GetMaxAbsComp(*pVVar14,(MethodInfo *)0x0);
                 fVar20 = fVar20 * _UNK_?;
                 fVar39 = (float)((uint)(float)uVar21 ^
-                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
                 uVar38._4_4_ = (float)((uint)fVar35 ^
-                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       );
                 uVar38._0_4_ = (float)((uint)fVar23 ^
-                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       );
                 if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                   puVar22 = &UNK_?;
@@ -670,11 +670,11 @@ code_?:
           fVar30 = fVar30 + fVar40;
           fVar31 = fVar31 + fVar6;
           fVar3 = (float)((uint)(float)*(undefined8 *)(iVar54 + 0x1c) ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           fVar8 = (float)((uint)(float)((ulonglong)*(undefined8 *)(iVar54 + 0x1c) >> 0x20) ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           fVar6 = (float)(*(uint *)(iVar54 + 0x24) ^
-                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
@@ -705,13 +705,13 @@ code_?:
           uVar58 = pVVar14->y;
           embedDirection.y =
                (float)(uVar58 ^ 
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           embedDirection.x =
                (float)(uVar57 ^ 
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           embedDirection.z =
                (float)((uint)pVVar14->z ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           pVVar14 = ObjectSurfaceSnap_CalculateEmbedVector
                               ((Vector3 *)&stack0xffffffd0,pLVar46,snapConfig.SurfaceObject,
                                embedDirection,snapConfig.SurfaceType,(MethodInfo *)0x0);
@@ -847,13 +847,13 @@ code_?:
             uVar53 = *(undefined4 *)&pOVar28->_isValid;
             if ((char)uVar53 != '\0') {
               fVar70 = (float)((uint)fVar30 ^
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               fVar71 = (float)((uint)fVar31 ^
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               fVar72 = (float)((uint)fVar10 ^
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
               fVar40 = fVar39;
               fVar44 = fVar37;
@@ -982,13 +982,13 @@ code_?:
       fVar6 = (pOVar28->_rotation).w;
       if ((char)*(undefined4 *)&pOVar28->_isValid == '\0') goto code_?;
       fVar30 = (float)((uint)snapConfig.SurfaceHitNormal.z ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       uVar79._4_4_ =
            (float)((uint)snapConfig.SurfaceHitNormal.y ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       uVar79._0_4_ =
            (float)((uint)snapConfig.SurfaceHitNormal.x ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -1232,12 +1232,12 @@ code_?:
       uVar111 = pVVar14->x;
       uVar112 = pVVar14->y;
       fVar30 = (float)((uint)pVVar14->z ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       uVar74._4_4_ =
-           (float)(uVar112 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+           (float)(uVar112 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                   );
       uVar74._0_4_ =
-           (float)(uVar111 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+           (float)(uVar111 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                   );
       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -1378,14 +1378,14 @@ code_?:
           uVar117 = pVVar14->x;
           uVar118 = pVVar14->y;
           uVar82 = uVar117 ^ 
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           embedDirection_00.y =
                (float)(uVar118 ^ 
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           embedDirection_00.x = (float)uVar82;
           embedDirection_00.z =
                (float)((uint)pVVar14->z ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           pVVar14 = ObjectSurfaceSnap_CalculateEmbedVector
                               ((Vector3 *)&stack0xffffff60,pLVar46,snapConfig.SurfaceObject,
                                embedDirection_00,snapConfig.SurfaceType,(MethodInfo *)0x0);

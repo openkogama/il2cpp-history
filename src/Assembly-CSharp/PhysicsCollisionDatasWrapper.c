@@ -17,22 +17,52 @@ void Assembly-CSharp.dll::PhysicsCollisionDatasWrapper::PhysicsCollisionDatasWra
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields).physicsCollisionDatas;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,(this->fields).length,
-                           MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__get_Item_int_
-                          );
-      if (this_01 != (RegexCharClass_SingleRange)0x0) {
-        PhysicsCollisionData::PhysicsCollisionData_Set
-                  ((PhysicsCollisionData *)this_01,hit,(MethodInfo *)0x0);
-        (this->fields).length = (this->fields).length + 1;
-        return;
+      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,(this->fields).length,
+                         MethodInfo__System__Collections__Generic__List<PhysicsCollisionData>__get_Item_int_
+                        );
+      if (RVar1 != (RegexCharClass_SingleRange)0x0) {
+        pRVar2 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
+                 RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                 KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
+                           ((Regex_CachedCodeEntryKey *)&MStack_3,
+                            (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                             *)&stack0xffffffc4,(MethodInfo *)0x0);
+        pSVar4 = pRVar2->_pattern;
+        *(undefined8 *)((int)RVar1 + 8) = *(undefined8 *)pRVar2;
+        *(String **)((int)RVar1 + 0x10) = pSVar4;
+        pCVar5 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
+                           ((RaycastHit *)&stack0xffffffc4,(MethodInfo *)0x0);
+        if (pCVar5 != (Collider *)0x0) {
+          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pCVar5,(MethodInfo *)0x0);
+          *(Transform **)((int)RVar1 + 0x14) = pTVar6;
+          func_?();
+          *(undefined1 *)((int)RVar1 + 0x18) = 0;
+          fVar7 = RTG::SphereTreeNode`1[System::Object]::SphereTreeNode_1_System_Object__get_Radius
+                            ((SphereTreeNode_1_System_Object_ *)&stack0xffffffc4,(MethodInfo *)0x0);
+          *(float *)((int)RVar1 + 0x1c) = fVar7;
+          pMVar8 = mscorlib.dll::System::Tuple`3[Object,Memory`1[Byte],Object]::
+                   Tuple_3_Object_Memory_1_Byte_Object__get_Item2
+                             (&MStack_3,(Tuple_3_Object_Memory_1_Byte_Object_ *)&stack0xffffffc4,
+                              (MethodInfo *)0x0);
+          iVar9 = pMVar8->_length;
+          *(undefined8 *)((int)RVar1 + 0x20) = *(undefined8 *)pMVar8;
+          *(int32_t *)((int)RVar1 + 0x28) = iVar9;
+          pCVar5 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
+                             ((RaycastHit *)&stack0xffffffc4,(MethodInfo *)0x0);
+          *(Collider **)((int)RVar1 + 0x2c) = pCVar5;
+          func_?();
+          (this->fields).length = (this->fields).length + 1;
+          return;
+        }
       }
     }
     func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {

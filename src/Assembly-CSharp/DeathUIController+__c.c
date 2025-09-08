@@ -1,7 +1,7 @@
 
-/* Void <ReboostNotClicked>b__21_0(IUIStack, BaseEventData) */
+/* Void <ReboostNotClicked>b__20_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReboostNotClicked_b__21_0
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReboostNotClicked_b__20_0
                (DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -26,9 +26,9 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReboostNot
 }
 
 
-/* Void <ReviveNotClicked>b__22_0(IUIStack, BaseEventData) */
+/* Void <ReviveNotClicked>b__21_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReviveNotClicked_b__22_0
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReviveNotClicked_b__21_0
                (DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -53,9 +53,9 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReviveNotC
 }
 
 
-/* Void <ShowDeadmodeUI>b__31_0(IUIStack, BaseEventData) */
+/* Void <ShowDeadmodeUI>b__30_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowDeadmodeUI_b__31_0
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowDeadmodeUI_b__30_0
                (DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -80,9 +80,9 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowDeadmo
 }
 
 
-/* Void <ShowReviveMenu>b__20_2() */
+/* Void <ShowReviveMenu>b__19_1() */
 
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowReviveMenu_b__20_2
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowReviveMenu_b__19_1
                (DeathUIController_c *this,MethodInfo *method)
 
 {

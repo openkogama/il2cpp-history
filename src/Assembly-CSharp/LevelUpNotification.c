@@ -120,7 +120,15 @@ code_?:
     if (pTVar2 != (Text *)0x0) {
       (*(code *)(pTVar2->klass->vtable).set_text.method)
                 (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      return;
+      this_00 = (this->fields).tertiaryNotificationUI;
+      l = (*(code *)(this->klass->vtable).get_Lifetime.method)
+                    (this,(this->klass->vtable).Initialize.methodPtr);
+      unaff_ESI.m_Index = 0;
+      if (this_00 != (TertiaryNotificationUI *)0x0) {
+        TertiaryNotificationUI::TertiaryNotificationUI_Initialize
+                  (this_00,(Notification *)this,l,1,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
   else {
@@ -134,14 +142,14 @@ code_?:
                              key,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
-      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                  *)func_?(
                                   TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
                                   );
       DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
       DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_00,(Object *)this,
+                (this_01,(Object *)this,
                  MethodInfo__LevelUpNotification__BadgeCallback_UnityEngine__Networking__UnityWebRequest_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -153,7 +161,7 @@ code_?:
             (TypeInfo__System__Int32->_0).element_class) goto code_?;
         piVar5 = (int32_t *)func_?(unaff_ESI.m_Index);
         BadgeManager::BadgeManager_GetBadgeTexture
-                  (*piVar5,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+                  (*piVar5,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
                    (MethodInfo *)0x0);
         goto code_?;
       }

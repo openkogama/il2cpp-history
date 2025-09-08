@@ -186,7 +186,7 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
     TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->localRadiusReducedSquared =
          (float)CONCAT22(cm._2_2_,cm._0_2_) * (float)CONCAT22(cm._2_2_,cm._0_2_);
     if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-      uVar1 = 0x1038;
+      uVar1 = 0x1037;
       func_?();
     }
     uVar7 = (TypeInfo__MV__WorldObject__IntVector->static_fields->One).x;
@@ -314,7 +314,7 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
     iVar3 = 1;
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    uVar2 = 0x1038;
+    uVar2 = 0x1037;
     func_?();
   }
   method_00 = (MethodInfo *)((uint)uVar2 << 0x10);
@@ -340,8 +340,8 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pos.z = 0x32d5;
-  uStack9 = 0x1038;
+  pos.z = 0x2de5;
+  uStack9 = 0x1037;
   bVar10 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
                     ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);
   if ((bVar10 == 0) &&
@@ -374,7 +374,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius::
 {
   uVar1 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0xca2c);
+    func_?(0x2124);
     cRam_? = '\x01';
   }
   TypeInfo__RemoveCubes__RemoveCubesWithinRadius->static_fields->centerDamage = centerDamage;
@@ -742,8 +742,8 @@ code_?:
                   sVar14 = sVar5;
                   uVar29 = uVar6;
                   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-                    uVar29 = 0x3978;
-                    uVar30 = 0x1038;
+                    uVar29 = 0x3488;
+                    uVar30 = 0x1037;
                     func_?();
                     x = CONCAT22(uVar30,uVar29);
                     sVar14 = sVar5;
@@ -752,11 +752,11 @@ code_?:
                   y = (Cube *)(int)sVar20;
                   x_00 = (undefined *)(int)iVar10;
                   this = (IntVector *)&stack0xffffffc0;
-                  iVar12 = 0x3993;
+                  iVar12 = 0x34a3;
                   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
                             (this,(int32_t)x_00,(int32_t)y,sVar19 + -1,(MethodInfo *)0x0);
                   pFVar8 = (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)
-                            CONCAT22(0x1038,iVar12);
+                            CONCAT22(0x1037,iVar12);
                   iVar10 = (int16_t)this;
                   iVar4 = CONCAT22(uVar29,sVar14);
                   iVar13 = (int16_t)pFVar2;

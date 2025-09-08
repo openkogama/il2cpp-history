@@ -71,7 +71,7 @@ bool Assembly-CSharp.dll::RTG::MathEx::MathEx_SolveQuadratic
     fVar2 = a + a;
     if (fVar2 != 0.0) {
       fVar3 = (float)((uint)b ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       if (fVar1 != 0.0) {
         dVar4 = (double)fVar1;
         if (dVar4 < 0.0) {
@@ -82,7 +82,7 @@ bool Assembly-CSharp.dll::RTG::MathEx::MathEx_SolveQuadratic
         }
         *t1 = (fVar3 + (float)dVar4) / fVar2;
         fVar2 = ((float)((uint)b ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) -
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) -
                 (float)dVar4) / fVar2;
         *t2 = fVar2;
         fVar1 = *t1;

@@ -29,12 +29,12 @@ Assembly-CSharp.dll::RTG::PrismMath::PrismMath_CalcTriangPrismCornerPoints
   pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar6 = (pVVar5->forwardVector).x;
   uVar7 = (pVVar5->forwardVector).y;
-  fVar8 = (float)(uVar6 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+  fVar8 = (float)(uVar6 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
   ;
-  fVar9 = (float)(uVar7 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+  fVar9 = (float)(uVar7 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                   );
   fVar10 = (float)((uint)(pVVar5->forwardVector).z ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
@@ -311,7 +311,7 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint
     uVar41 = pVVar14->y;
     if ((float)uVar16 * (float)uVar41 + (float)uVar15 * (float)uVar40 + fVar17 * pVVar14->z +
         (float)((uint)(fVar32 * (float)uVar39 + fVar31 * (float)uVar38 + (float)pVVar34 * pVVar14->z)
-               ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <=
+               ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <=
         epsilon._ptContainEps) {
       if (cRam_? == '\0') {
         func_?();
@@ -323,11 +323,11 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint
       pVVar14 = &VStack_37;
       puVar44 = &UNK_?;
       value.y = (float)(uVar43 ^ 
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       value.x = (float)(uVar42 ^ 
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       value.z = (float)((uint)(pVVar18->upVector).z ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       pVVar45 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                           (pVVar14,value,(MethodInfo *)0x0);
       uVar46._0_4_ = pVVar45->x;
@@ -337,7 +337,7 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint
       uVar48 = pVVar45->y;
       fVar21 = (float)((uint)(fVar26 * (float)uVar46._4_4_ + fVar21 * (float)(undefined4)uVar46 +
                             (float)pVVar28 * fVar31) ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       if ((float)uVar16 * (float)uVar48 + (float)uVar15 * (float)uVar47 + fVar17 * fVar31 + fVar21 <=
           epsilon._ptContainEps) {
         uVar46 = uVar46 & 0xffffffff00000000;
@@ -385,7 +385,7 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint
             c_00.z = (float)pVVar29;
             UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor_2
                       ((Plane *)baseCenter.x,a,(Vector3)(auVar50 << 0x20),c_00,(MethodInfo *)0x0);
-            if ((float)puVar44 * fVar26 + (float)this_00 * (float)pVVar33 + fVar32 * 4.4001345e-29 +
+            if ((float)puVar44 * fVar26 + (float)this_00 * (float)pVVar33 + fVar32 * 4.3967642e-29 +
                 (float)pVVar24 <= epsilon._ptContainEps) {
               return 1;
             }

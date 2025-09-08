@@ -1,7 +1,7 @@
 
-/* Void <CreateBriefing>b__39_0(IUIStack, BaseEventData) */
+/* Void <CreateBriefing>b__36_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateBriefing_b__39_0
+void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateBriefing_b__36_0
                (LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -26,10 +26,10 @@ void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateBriefi
 }
 
 
-/* Void <CreateSpawnRoleSelectionMenu>b__38_0(IUIStack, BaseEventData) */
+/* Void <CreateSpawnRoleSelectionMenu>b__35_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::LobbyStateButton+<>c::
-     LobbyStateButton_c__CreateSpawnRoleSelectionMenu_b__38_0
+     LobbyStateButton_c__CreateSpawnRoleSelectionMenu_b__35_0
                (LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -54,9 +54,9 @@ void Assembly-CSharp.dll::LobbyStateButton+<>c::
 }
 
 
-/* Void <CreateTeamMenu>b__37_0(IUIStack, BaseEventData) */
+/* Void <CreateTeamMenu>b__34_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateTeamMenu_b__37_0
+void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateTeamMenu_b__34_0
                (LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -81,9 +81,9 @@ void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateTeamMe
 }
 
 
-/* Void <PopThenLockCursor>b__30_0(IUIStack, BaseEventData) */
+/* Void <PopThenLockCursor>b__27_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__PopThenLockCursor_b__30_0
+void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__PopThenLockCursor_b__27_0
                (LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {

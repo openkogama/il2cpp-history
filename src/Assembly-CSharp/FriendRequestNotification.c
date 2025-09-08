@@ -75,14 +75,13 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_I
     func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__System__String);
     func_?(&StringLiteral__Accept__0__as_friend_);
-    func_?(&StringLiteral___R_);
     cRam_? = '\x01';
   }
-  this_00 = data;
+  this_01 = data;
   Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
   data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(1,data._0_3_);
   pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
     uVar2 = func_?();
   }
@@ -90,7 +89,7 @@ code_?:
     TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
                        pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
@@ -105,7 +104,7 @@ code_?:
     TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
                        pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
@@ -123,16 +122,12 @@ code_?:
         (*(code *)(pTVar5->klass->vtable).set_text.method)
                   (pTVar5,pSVar6,(pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
         ;
-        pTVar5 = (this->fields).label;
-        if (pTVar5 != (Text *)0x0) {
-          pSVar6 = (String *)
-                   (*(code *)(pTVar5->klass->vtable).get_text.method)
-                             (pTVar5,(pTVar5->klass->vtable).set_text.methodPtr);
-          pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                             (pSVar6,StringLiteral___R_,(MethodInfo *)0x0);
-          (*(code *)(pTVar5->klass->vtable).set_text.method)
-                    (pTVar5,pSVar6,
-                     (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+        this_00 = (this->fields).tertiaryNotificationUI;
+        l = (*(code *)(this->klass->vtable).get_Lifetime.method)
+                      (this,(this->klass->vtable).Initialize.methodPtr);
+        if (this_00 != (TertiaryNotificationUI *)0x0) {
+          TertiaryNotificationUI::TertiaryNotificationUI_Initialize
+                    (this_00,(Notification *)this,l,0,(MethodInfo *)0x0);
           return;
         }
       }

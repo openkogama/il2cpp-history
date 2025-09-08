@@ -605,9 +605,9 @@ code_?:
             cRam_? = '\x01';
           }
           uVar14 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).y;
-          uVar15 = uVar14 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar15 = uVar14 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           uVar16 = (uint)(TypeInfo__UnityEngine__Vector3->static_fields->rightVector).z ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
@@ -772,11 +772,11 @@ code_?:
 code_?:
       uVar11 = pVVar5->x;
       uVar12 = pVVar5->y;
-      uVar13 = uVar12 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+      uVar13 = uVar12 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       fVar3 = (float)((uint)pVVar5->z ^
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields)._offsetDragWorkData.Axis.x =
-           (float)(uVar11 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+           (float)(uVar11 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
       (this->fields)._offsetDragWorkData.Axis.y = (float)uVar13;
       goto code_?;
@@ -1964,15 +1964,15 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
                                   if (pCVar33->max_length < 3) goto code_?;
                                   pCVar34 = pCVar33->vector[2];
                                   uVar35 = (uint)fVar14 ^
-                                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                   ;
                                   fVar30 = (float)((uint)fVar15 ^
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                   if (pCVar34 != (CharacterControllerGizmo3D_ExtentTick *)0x0) {
                                     (pCVar34->fields).Normal.x =
                                          (float)((uint)fVar13 ^
-                                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                 );
                                     (pCVar34->fields).Normal.y = (float)uVar35;
                                     (pCVar34->fields).Normal.z = fVar30;
@@ -2018,12 +2018,12 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
                                               (pCVar34->fields).Normal.y =
                                                    (float)(int)((ulonglong)uVar9 >> 0x20);
                                               (pCVar34->fields).Normal.z = fVar10;
-                                              fVar14 = fVar22 * 4.178817e-29 * _UNK_? +
+                                              fVar14 = fVar22 * 4.1753743e-29 * _UNK_? +
                                                        fVar18;
-                                              fVar13 = fVar23 * 4.178817e-29 * _UNK_? +
+                                              fVar13 = fVar23 * 4.1753743e-29 * _UNK_? +
                                                       (float)puVar11;
-                                              fVar10 = fVar21 * 4.178817e-29 * _UNK_? + fVar12
-                                              ;
+                                              fVar10 = fVar21 * 4.1753743e-29 * _UNK_? +
+                                                       fVar12;
                                               pGVar31 = (this->fields)._topTick;
                                               position_01.y = fVar13;
                                               position_01.x = fVar14;
@@ -2066,11 +2066,11 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
                                                     (pCVar34->fields).Normal.x = (float)uVar19;
                                                     (pCVar34->fields).Normal.y = (float)uVar20;
                                                     (pCVar34->fields).Normal.z = fVar24;
-                                                    fVar14 = fVar18 - fVar22 * 4.178817e-29 *
+                                                    fVar14 = fVar18 - fVar22 * 4.1753743e-29 *
                                                                       _UNK_?;
                                                     fVar13 = (float)puVar11 -
-                                                            fVar23 * 4.178817e-29 * _UNK_?;
-                                                    fVar10 = fVar12 - fVar21 * 4.178817e-29 *
+                                                            fVar23 * 4.1753743e-29 * _UNK_?;
+                                                    fVar10 = fVar12 - fVar21 * 4.1753743e-29 *
                                                                      _UNK_?;
                                                     pGVar31 = (this->fields)._bottomTick;
                                                     position_02.y = fVar13;
@@ -2111,19 +2111,19 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
                                                     goto code_?;
                                                     uVar35 = (uint)fVar23 ^
                                                                                                                           
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   pCVar34 = pCVar33->vector[4];
                                                   fVar21 = (float)((uint)fVar21 ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pCVar34 != (
                                                   CharacterControllerGizmo3D_ExtentTick *)0x0) {
                                                     (pCVar34->fields).Normal.x =
                                                          (float)((uint)fVar22 ^
                                                                                                                                 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pCVar34->fields).Normal.y = (float)uVar35;
                                                   (pCVar34->fields).Normal.z = fVar21;
@@ -2170,15 +2170,15 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
                                                     pCVar34 = pCVar33->vector[0];
                                                     VStack_2.x = (float)((uint)pCVar17 ^
                                                                                                                                                   
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   VStack_2.y = (float)((uint)VStack_2.z ^
                                                                                                                                               
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   fVar1 = (float)((uint)puStack_7 ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pCVar34 != (
                                                   CharacterControllerGizmo3D_ExtentTick *)0x0) {
@@ -2521,7 +2521,7 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::
         uStack_4 = CONCAT44(pCVar14,(undefined4)uStack_4);
         fStack_15 = (float)((uint)(fStack_10 * (float)uVar12 + fStack_9 * (float)uVar11 +
                                   fStack_8 * fVar5) ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         fStack_16 = (float)uVar11;
         fStack_17 = (float)uVar12;

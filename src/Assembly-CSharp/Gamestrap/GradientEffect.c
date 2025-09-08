@@ -289,32 +289,3 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_SetVertexCol
   return;
 }
 
-
-/* GradientEffect() */
-
-void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect__ctor
-               (GradientEffect *this,MethodInfo *method)
-
-{
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
-  (this->fields).top.r = _UNK_?;
-  (this->fields).top.g = fVar3;
-  (this->fields).top.b = fVar2;
-  (this->fields).top.a = fVar1;
-  (this->fields).bottom.r = fVar4;
-  (this->fields).bottom.g = fVar3;
-  (this->fields).bottom.b = fVar2;
-  (this->fields).bottom.a = fVar1;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  return;
-}
-

@@ -584,7 +584,7 @@ bool Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_RayCast
       fStack_7 = (float)((uint)(ray.m_Origin.y * (float)uStack_6._4_4_ +
                                  ray.m_Origin.x * (float)(undefined4)uStack_6 +
                                 ray.m_Origin.z * fStack_4) ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) -
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) -
                   (this->fields).editorPlane.m_Distance;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Mathf,0);
@@ -1127,7 +1127,7 @@ void Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_UpdateEdito
       (this->fields).editorPlane.m_Distance =
            (float)((uint)((float)uVar11 * VStack_5.x + (float)uVar12 * VStack_5.y +
                          fVar8 * VStack_5.z) ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       return;
     }
   }

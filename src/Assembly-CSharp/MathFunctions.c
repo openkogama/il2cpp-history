@@ -977,10 +977,10 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_LineFacet
   if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= (float)((uint)fVar4 & _UNK_?))
   {
     fVar4 = (float)((uint)((((float)((uint)fVar1 ^
-                                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                     ) * pa.x - pa.y * fVar2) - pa.z * fVar3) + p1.x * fVar1 +
                            p1.y * fVar2 + p1.z * fVar3) ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) / fVar4
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) / fVar4
     ;
     fVar2 = (p2.x - p1.x) * fVar4 + p1.x;
     fVar1 = (p2.y - p1.y) * fVar4 + p1.y;
@@ -1043,10 +1043,10 @@ bool Assembly-CSharp.dll::MathFunctions::MathFunctions_LineFacetCollision
     if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon <= (float)((uint)fVar4 & _UNK_?)
        ) {
       fVar4 = (float)((uint)((((float)((uint)n->x ^
-                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       ) * pa.x - pa.y * n->y) - pa.z * n->z) + p1.x * n->x +
                              p1.y * n->y + p1.z * n->z) ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) /
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) /
               fVar4;
       fVar5 = (p2.x - p1.x) * fVar4 + p1.x;
       fVar6 = (p2.y - p1.y) * fVar4 + p1.y;
@@ -1283,7 +1283,7 @@ double Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedDistanceTo
   uVar6 = (plane->m_Normal).y;
   return (double)((float)((uint)((float)uVar6 * planeOrigin->y + (float)uVar5 * planeOrigin->x +
                                 (plane->m_Normal).z * planeOrigin->z) ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) +
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
                  (float)uVar4 * (float)uVar2 + (float)uVar3 * (float)uVar1 +
                  point->z * (plane->m_Normal).z);
 }
@@ -1301,7 +1301,7 @@ double Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedDistanceTo_1
   uVar4 = point->y;
   return (double)((float)((uint)(planeNormal->y * planeOrigin->y + planeNormal->x * planeOrigin->x +
                                 planeNormal->z * planeOrigin->z) ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) +
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) +
                  (float)uVar4 * (float)uVar2 + (float)uVar3 * (float)uVar1 +
                  point->z * planeNormal->z);
 }
@@ -1349,7 +1349,7 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedYawFromLocalDirect
       fStack_5 * (pVVar6->rightVector).z < 0.0) {
     localDirection.z =
          (float)((uint)localDirection.z ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   }
   return localDirection.z;
 }

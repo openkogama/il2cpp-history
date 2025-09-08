@@ -10,10 +10,10 @@ void Assembly-CSharp.dll::PhysicalBasedCanvasScaling::PhysicalBasedCanvasScaling
   (this->fields).storedScreen.x = 0.0;
   (this->fields).storedScreen.y = 0.0;
   if (bVar1) {
-    func_?(&TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__5);
+    func_?(&TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__6);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__5;
+  method_00 = TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__6;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -107,10 +107,10 @@ Assembly-CSharp.dll::PhysicalBasedCanvasScaling::PhysicalBasedCanvasScaling_SetC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__5);
+    func_?(&TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__6);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__5;
+  method_00 = TypeInfo__PhysicalBasedCanvasScaling___SetCanvasScaleCoroutine_d__6;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);

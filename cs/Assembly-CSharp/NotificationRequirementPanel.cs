@@ -17,7 +17,7 @@ public class NotificationRequirementPanel : MonoBehaviour, INotificationRequirem
 	[SerializeField]
 	protected Image checkmark;
 	[SerializeField]
-	protected UnityEngine.UI.Text textField;
+	public UnityEngine.UI.Text textField;
 
 	// Constructors
 	public NotificationRequirementPanel();

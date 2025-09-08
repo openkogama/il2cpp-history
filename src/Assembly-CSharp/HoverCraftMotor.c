@@ -287,7 +287,7 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_GetVehicleInputV
         uVar36 = pVVar1->y;
         fVar17 = (float)((uint)((float)((uint)(fVar19 * (float)uVar36 + fVar16 * (float)uVar35 +
                                               fVar17 * pVVar1->z) & _UNK_?) * _UNK_?)
-                        ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         fVar16 = fVar17 * _UNK_?;
         pMVar37 = (this->fields)._.interactableLocal;
         if (pMVar37 != (MVInteractableBase *)0x0) {
@@ -597,7 +597,7 @@ Vector3 * Assembly-CSharp.dll::HoverCraftMotor::HoverCraftMotor_HullRotationDrag
       fVar3 = (float)((uint)((float)((uint)(fVar6 * (float)uVar10 + fVar7 * (float)uVar9 +
                                            velocityNormal.z * pVVar8->z) & _UNK_?) *
                             hullRotationFactor) ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar2 = fVar3 * _UNK_?;
       __return_storage_ptr__->x = velocityNormal.x * fVar3 * velocitySquareMagnitude;
       __return_storage_ptr__->y = fVar2 * velocitySquareMagnitude;

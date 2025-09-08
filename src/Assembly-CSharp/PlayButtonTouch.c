@@ -202,7 +202,7 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_StartPlaying
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    func_?(6,TypeInfo__IPlayModeUI,pIVar1,0);
+    func_?(8,TypeInfo__IPlayModeUI,pIVar1,0);
     pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                        ((MethodInfo *)0x0);
     if ((pSVar2 != (SpawnRoleDataMediator *)0x0) &&

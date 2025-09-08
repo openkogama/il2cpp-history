@@ -61,9 +61,9 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane
         uVar14 = pVVar2->x;
         uVar15 = pVVar2->y;
         fVar3 = pVVar2->z;
-        fVar4 = (float)((uint)((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.3936204e-29
+        fVar4 = (float)((uint)((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.3902452e-29
                               + (float)uVar13 * fVar3) ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         (__return_storage_ptr__->m_Normal).x = (float)uVar14;
         (__return_storage_ptr__->m_Normal).y = (float)uVar15;
         (__return_storage_ptr__->m_Normal).z = fVar3;
@@ -285,11 +285,11 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_InvertNormal
 
 {
   uVar1 = (uint)plane.m_Normal.x ^
-          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   uVar2 = (uint)plane.m_Normal.y ^
-          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   VStack_3.z = (float)((uint)plane.m_Normal.z ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   (__return_storage_ptr__->m_Normal).x = 0.0;
   (__return_storage_ptr__->m_Normal).y = 0.0;
   (__return_storage_ptr__->m_Normal).z = 0.0;
@@ -304,7 +304,7 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_InvertNormal
   (__return_storage_ptr__->m_Normal).x = pVVar4->x;
   (__return_storage_ptr__->m_Normal).y = fVar5;
   fVar5 = (float)((uint)plane.m_Distance ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   (__return_storage_ptr__->m_Normal).z = fVar6;
   __return_storage_ptr__->m_Distance = fVar5;
   return __return_storage_ptr__;

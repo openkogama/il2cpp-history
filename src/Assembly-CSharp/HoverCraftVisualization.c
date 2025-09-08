@@ -158,14 +158,14 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Anima
                          ((Quaternion *)&stack0xffffffc0,pTVar5,(MethodInfo *)0x0);
       pHVar13 = (HoverCraftVisualization *)
                ((uint)(this->fields).angleDiff ^
-               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar1 = pQVar6->y;
       fVar2 = pQVar6->z;
       fVar3 = pQVar6->w;
       pTVar5 = (this->fields).hoverCraftHullRoot;
       pHVar14 = (HoverCraftVisualization *)
                ((uint)(this->fields).rollMax ^
-               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields).prevWorldRot.x = pQVar6->x;
       (this->fields).prevWorldRot.y = fVar1;
       (this->fields).prevWorldRot.z = fVar2;
@@ -270,7 +270,7 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Anima
       pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                          ((Quaternion *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
       fVar3 = (float)((uint)(this->fields).pitchMax ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar4 = pQVar2->x;
       fVar5 = pQVar2->y;
       fVar6 = pQVar2->z;
@@ -948,7 +948,7 @@ code_?:
       ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startSizeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.5148122e-29,
+                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.512506e-29,
                  (MethodInfo *)0x0);
       return;
     }

@@ -20,8 +20,8 @@ void Assembly-CSharp.dll::LoadingCube::LoadingCube_Awake(LoadingCube *this,Metho
     if (this_01 != (Renderer *)0x0) {
       pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                          (this_01,(MethodInfo *)0x0);
-      (this->fields).cubeMaterial = pMVar1;
-      func_?(&(this->fields).cubeMaterial,pMVar1);
+      (this->fields)._CubeMaterial_k__BackingField = pMVar1;
+      func_?(&(this->fields)._CubeMaterial_k__BackingField,pMVar1);
       return;
     }
   }
@@ -32,43 +32,22 @@ void Assembly-CSharp.dll::LoadingCube::LoadingCube_Awake(LoadingCube *this,Metho
 }
 
 
-/* Void SelfDestruct() */
-
-void Assembly-CSharp.dll::LoadingCube::LoadingCube_SelfDestruct
-               (LoadingCube *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                  ((Component *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-            ((Object_1 *)obj,(MethodInfo *)0x0);
-  return;
-}
-
-
 /* Void Update() */
 
 void Assembly-CSharp.dll::LoadingCube::LoadingCube_Update(LoadingCube *this,MethodInfo *method)
 
 {
-  fVar1 = 0.0;
+  fStack_1 = 0.0;
   fStack_2 = 0.0;
-  puStack_3 = (undefined *)0x0;
+  fStack_3 = 0.0;
   pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar4 == (MVNetworkGame *)0x0) {
     return;
   }
-  fVar5 = (this->fields).time;
+  fStack_5 = (this->fields).time;
   fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   pGVar7 = (this->fields).cube;
-  (this->fields).time = fVar6 + fVar5;
+  (this->fields).time = fVar6 + fStack_5;
   if (pGVar7 != (GameObject *)0x0) {
     pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar7,(MethodInfo *)0x0);
@@ -76,14 +55,21 @@ void Assembly-CSharp.dll::LoadingCube::LoadingCube_Update(LoadingCube *this,Meth
       func_?();
       cRam_? = '\x01';
     }
-    VVar9 = TypeInfo__UnityEngine__Vector3->static_fields->upVector;
-    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    CStack_10.b = (pVVar9->upVector).x;
+    CStack_10.a = (pVVar9->upVector).y;
+    fVar6 = (pVVar9->upVector).z;
+    fStack_5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                          ((MethodInfo *)0x0);
     if (pTVar8 != (Transform *)0x0) {
-      dVar10 = (double)(this->fields).time;
+      dVar11 = (double)(this->fields).time;
       func_?();
+      axis_00.z = fVar6;
+      axis_00.x = CStack_10.b;
+      axis_00.y = CStack_10.a;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-                (pTVar8,VVar9,(float)dVar10 * _UNK_? + fVar5 * _UNK_?,
-                 in_stack_11);
+                (pTVar8,axis_00,(float)dVar11 * _UNK_? + fStack_5 * _UNK_?,
+                 in_stack_12);
       pGVar7 = (this->fields).cube;
       if (pGVar7 != (GameObject *)0x0) {
         pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -92,16 +78,22 @@ void Assembly-CSharp.dll::LoadingCube::LoadingCube_Update(LoadingCube *this,Meth
           func_?();
           cRam_? = '\x01';
         }
-        VVar9 = TypeInfo__UnityEngine__Vector3->static_fields->rightVector;
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                           ((MethodInfo *)0x0);
+        pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+        CStack_10.b = (pVVar9->rightVector).x;
+        CStack_10.a = (pVVar9->rightVector).y;
+        fVar6 = (pVVar9->rightVector).z;
+        fStack_5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                              ((MethodInfo *)0x0);
         if (pTVar8 != (Transform *)0x0) {
-          fVar6 = (this->fields).time;
-          dVar10 = (double)(fVar6 + fVar6);
+          fVar13 = (this->fields).time;
+          dVar11 = (double)(fVar13 + fVar13);
           func_?();
+          axis_01.z = fVar6;
+          axis_01.x = CStack_10.b;
+          axis_01.y = CStack_10.a;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-                    (pTVar8,VVar9,(float)dVar10 * _UNK_? + fVar5 * _UNK_?,
-                     in_stack_11);
+                    (pTVar8,axis_01,(float)dVar11 * _UNK_? + fStack_5 * _UNK_?,
+                     in_stack_12);
           pGVar7 = (this->fields).cube;
           if (pGVar7 != (GameObject *)0x0) {
             pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -110,53 +102,52 @@ void Assembly-CSharp.dll::LoadingCube::LoadingCube_Update(LoadingCube *this,Meth
               func_?();
               cRam_? = '\x01';
             }
-            VVar9 = TypeInfo__UnityEngine__Vector3->static_fields->forwardVector;
-            fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                               ((MethodInfo *)0x0);
+            pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+            CStack_10.b = (pVVar9->forwardVector).x;
+            CStack_10.a = (pVVar9->forwardVector).y;
+            fVar6 = (pVVar9->forwardVector).z;
+            fStack_5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                                  ((MethodInfo *)0x0);
             if (pTVar8 != (Transform *)0x0) {
-              dVar10 = (double)((this->fields).time * _UNK_?);
+              dVar11 = (double)((this->fields).time * _UNK_?);
               func_?();
+              axis.z = fVar6;
+              axis.x = CStack_10.b;
+              axis.y = CStack_10.a;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-                        (pTVar8,VVar9,(float)dVar10 * _UNK_? + fVar5 * _UNK_?,
-                         in_stack_12);
-              pMVar13 = (this->fields).cubeMaterial;
-              if (pMVar13 != (Material *)0x0) {
-                pCVar14 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                                   ((Color *)&stack0xffffffdc,pMVar13,(MethodInfo *)0x0);
+                        (pTVar8,axis,(float)dVar11 * _UNK_? + fStack_5 * _UNK_?,
+                         in_stack_14);
+              pMVar15 = (this->fields)._CubeMaterial_k__BackingField;
+              if (pMVar15 != (Material *)0x0) {
+                pCVar16 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
+                                   (&CStack_10,pMVar15,(MethodInfo *)0x0);
                 UnityEngine.CoreModule.dll::UnityEngine::Color::Color_RGBToHSV
-                          (*pCVar14,(float *)&stack0xfffffff8,&fStack_2,(float *)&puStack_3,
-                           (MethodInfo *)0x0);
-                pMVar13 = (this->fields).cubeMaterial;
-                fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                                   ((MethodInfo *)0x0);
-                pCVar14 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_HSVToRGB_1
-                                   ((Color *)&stack0xffffffdc,fVar5 * _UNK_? + fVar1,
-                                    fStack_2,(float)puStack_3,1,(MethodInfo *)0x0);
-                if (pMVar13 != (Material *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                            (pMVar13,*pCVar14,(MethodInfo *)0x0);
-                  MVar15 = MVGameControllerBase::MVGameControllerBase_get_JoinState
-                                    ((MethodInfo *)0x0);
-                  if (MVar15 != MVJoinState__Enum_Playing) {
+                          (*pCVar16,&fStack_1,&fStack_2,&fStack_3,(MethodInfo *)0x0);
+                CStack_10.a = fStack_1;
+                fStack_5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                                      ((MethodInfo *)0x0);
+                pCVar16 = UnityEngine.CoreModule.dll::UnityEngine::Color::Color_HSVToRGB_1
+                                   (&CStack_10,fStack_5 * _UNK_? + CStack_10.a,fStack_2,
+                                    fStack_3,1,(MethodInfo *)0x0);
+                CStack_10.r = pCVar16->r;
+                CStack_10.g = pCVar16->g;
+                CStack_10.b = pCVar16->b;
+                CStack_10.a = pCVar16->a;
+                pMVar15 = (this->fields)._CubeMaterial_k__BackingField;
+                if (pMVar15 != (Material *)0x0) {
+                  pCVar16 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
+                                     ((Color *)&stack0xffffffcc,pMVar15,(MethodInfo *)0x0);
+                  pMVar15 = (this->fields)._CubeMaterial_k__BackingField;
+                  CStack_10.a = pCVar16->a;
+                  if (pMVar15 != (Material *)0x0) {
+                    value.g = CStack_10.g;
+                    value.r = CStack_10.r;
+                    value.b = CStack_10.b;
+                    value.a = pCVar16->a;
+                    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                              (pMVar15,value,(MethodInfo *)0x0);
                     return;
                   }
-                  if ((this->fields).visible == 0) {
-                    return;
-                  }
-                  bVar16 = cRam_? == '\0';
-                  (this->fields).visible = 0;
-                  if (bVar16) {
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                            ((Object_1 *)pGVar7,(MethodInfo *)0x0);
-                  return;
                 }
               }
             }
@@ -168,23 +159,6 @@ void Assembly-CSharp.dll::LoadingCube::LoadingCube_Update(LoadingCube *this,Meth
   func_?();
   pcVar17 = (code *)swi(3);
   (*pcVar17)();
-  return;
-}
-
-
-/* LoadingCube() */
-
-void Assembly-CSharp.dll::LoadingCube::LoadingCube__ctor(LoadingCube *this,MethodInfo *method)
-
-{
-  (this->fields).visible = 1;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
   return;
 }
 

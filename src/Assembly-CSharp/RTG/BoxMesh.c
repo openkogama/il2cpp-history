@@ -19,15 +19,15 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
   fVar2 = height * _UNK_?;
   fVar3 = depth * _UNK_?;
   value = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,0x18);
-  uVar4 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
-  uVar5 = (uint)fVar2 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+  uVar4 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+  uVar5 = (uint)fVar2 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   fVar6 = (float)((uint)fVar3 ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if (value == (Vector3__Array *)0x0) goto code_?;
   if (value->max_length != 0) {
     value->vector[0].x =
          (float)((uint)fVar1 ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     value->vector[0].y = (float)uVar5;
     value->vector[0].z = fVar6;
     if (1 < value->max_length) {
@@ -134,18 +134,18 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar8 = pVVar7->x;
                                                   uVar9 = pVVar7->y;
                                                   uVar4 = uVar9 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (value_00 == (Vector3__Array *)0x0)
                                                   goto code_?;
                                                   if (value_00->max_length != 0) {
                                                     value_00->vector[0].x =
                                                          (float)(uVar8 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0].y = (float)uVar4;
                                                   value_00->vector[0].z = fVar6;
@@ -156,16 +156,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar10 = pVVar7->x;
                                                   uVar11 = pVVar7->y;
                                                   uVar4 = uVar11 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (1 < value_00->max_length) {
                                                     value_00->vector[1].x =
                                                          (float)(uVar10 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[1].y = (float)uVar4;
                                                   value_00->vector[1].z = fVar6;
@@ -176,16 +176,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar12 = pVVar7->x;
                                                   uVar13 = pVVar7->y;
                                                   uVar4 = uVar13 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (2 < value_00->max_length) {
                                                     value_00->vector[2].x =
                                                          (float)(uVar12 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[2].y = (float)uVar4;
                                                   value_00->vector[2].z = fVar6;
@@ -196,16 +196,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar14 = pVVar7->x;
                                                   uVar15 = pVVar7->y;
                                                   uVar4 = uVar15 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (3 < value_00->max_length) {
                                                     value_00->vector[3].x =
                                                          (float)(uVar14 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[3].y = (float)uVar4;
                                                   value_00->vector[3].z = fVar6;
@@ -302,16 +302,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                       uVar16 = pVVar7->x;
                                                       uVar17 = pVVar7->y;
                                                       uVar4 = uVar17 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xc < value_00->max_length) {
                                                     value_00->vector[0xc].x =
                                                          (float)(uVar16 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xc].y = (float)uVar4;
                                                   value_00->vector[0xc].z = fVar6;
@@ -322,16 +322,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar18 = pVVar7->x;
                                                   uVar19 = pVVar7->y;
                                                   uVar4 = uVar19 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xd < value_00->max_length) {
                                                     value_00->vector[0xd].x =
                                                          (float)(uVar18 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xd].y = (float)uVar4;
                                                   value_00->vector[0xd].z = fVar6;
@@ -342,16 +342,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar20 = pVVar7->x;
                                                   uVar21 = pVVar7->y;
                                                   uVar4 = uVar21 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xe < value_00->max_length) {
                                                     value_00->vector[0xe].x =
                                                          (float)(uVar20 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xe].y = (float)uVar4;
                                                   value_00->vector[0xe].z = fVar6;
@@ -362,16 +362,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar22 = pVVar7->x;
                                                   uVar23 = pVVar7->y;
                                                   uVar4 = uVar23 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xf < value_00->max_length) {
                                                     value_00->vector[0xf].x =
                                                          (float)(uVar22 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xf].y = (float)uVar4;
                                                   value_00->vector[0xf].z = fVar6;
@@ -382,16 +382,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar24 = pVVar7->x;
                                                   uVar25 = pVVar7->y;
                                                   uVar4 = uVar25 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x10 < value_00->max_length) {
                                                     value_00->vector[0x10].x =
                                                          (float)(uVar24 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x10].y = (float)uVar4;
                                                   value_00->vector[0x10].z = fVar6;
@@ -402,16 +402,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar26 = pVVar7->x;
                                                   uVar27 = pVVar7->y;
                                                   uVar4 = uVar27 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x11 < value_00->max_length) {
                                                     value_00->vector[0x11].x =
                                                          (float)(uVar26 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x11].y = (float)uVar4;
                                                   value_00->vector[0x11].z = fVar6;
@@ -422,16 +422,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar28 = pVVar7->x;
                                                   uVar29 = pVVar7->y;
                                                   uVar4 = uVar29 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x12 < value_00->max_length) {
                                                     value_00->vector[0x12].x =
                                                          (float)(uVar28 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x12].y = (float)uVar4;
                                                   value_00->vector[0x12].z = fVar6;
@@ -442,16 +442,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateBox
                                                   uVar30 = pVVar7->x;
                                                   uVar31 = pVVar7->y;
                                                   uVar4 = uVar31 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x13 < value_00->max_length) {
                                                     value_00->vector[0x13].x =
                                                          (float)(uVar30 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x13].y = (float)uVar4;
                                                   value_00->vector[0x13].z = fVar6;
@@ -613,15 +613,15 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
   fVar2 = height * _UNK_?;
   fVar3 = depth * _UNK_?;
   value = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,0x18);
-  uVar4 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
-  uVar5 = (uint)fVar2 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+  uVar4 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+  uVar5 = (uint)fVar2 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   fVar6 = (float)((uint)fVar3 ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if (value == (Vector3__Array *)0x0) goto code_?;
   if (value->max_length != 0) {
     value->vector[0].x =
          (float)((uint)fVar1 ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     value->vector[0].y = (float)uVar5;
     value->vector[0].z = fVar6;
     if (1 < value->max_length) {
@@ -728,18 +728,18 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar8 = pVVar7->x;
                                                   uVar9 = pVVar7->y;
                                                   uVar4 = uVar9 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (value_00 == (Vector3__Array *)0x0)
                                                   goto code_?;
                                                   if (value_00->max_length != 0) {
                                                     value_00->vector[0].x =
                                                          (float)(uVar8 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0].y = (float)uVar4;
                                                   value_00->vector[0].z = fVar6;
@@ -750,16 +750,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar10 = pVVar7->x;
                                                   uVar11 = pVVar7->y;
                                                   uVar4 = uVar11 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (1 < value_00->max_length) {
                                                     value_00->vector[1].x =
                                                          (float)(uVar10 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[1].y = (float)uVar4;
                                                   value_00->vector[1].z = fVar6;
@@ -770,16 +770,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar12 = pVVar7->x;
                                                   uVar13 = pVVar7->y;
                                                   uVar4 = uVar13 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (2 < value_00->max_length) {
                                                     value_00->vector[2].x =
                                                          (float)(uVar12 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[2].y = (float)uVar4;
                                                   value_00->vector[2].z = fVar6;
@@ -790,16 +790,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar14 = pVVar7->x;
                                                   uVar15 = pVVar7->y;
                                                   uVar4 = uVar15 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (3 < value_00->max_length) {
                                                     value_00->vector[3].x =
                                                          (float)(uVar14 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[3].y = (float)uVar4;
                                                   value_00->vector[3].z = fVar6;
@@ -896,16 +896,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                       uVar16 = pVVar7->x;
                                                       uVar17 = pVVar7->y;
                                                       uVar4 = uVar17 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xc < value_00->max_length) {
                                                     value_00->vector[0xc].x =
                                                          (float)(uVar16 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xc].y = (float)uVar4;
                                                   value_00->vector[0xc].z = fVar6;
@@ -916,16 +916,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar18 = pVVar7->x;
                                                   uVar19 = pVVar7->y;
                                                   uVar4 = uVar19 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xd < value_00->max_length) {
                                                     value_00->vector[0xd].x =
                                                          (float)(uVar18 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xd].y = (float)uVar4;
                                                   value_00->vector[0xd].z = fVar6;
@@ -936,16 +936,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar20 = pVVar7->x;
                                                   uVar21 = pVVar7->y;
                                                   uVar4 = uVar21 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xe < value_00->max_length) {
                                                     value_00->vector[0xe].x =
                                                          (float)(uVar20 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xe].y = (float)uVar4;
                                                   value_00->vector[0xe].z = fVar6;
@@ -956,16 +956,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar22 = pVVar7->x;
                                                   uVar23 = pVVar7->y;
                                                   uVar4 = uVar23 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0xf < value_00->max_length) {
                                                     value_00->vector[0xf].x =
                                                          (float)(uVar22 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0xf].y = (float)uVar4;
                                                   value_00->vector[0xf].z = fVar6;
@@ -976,16 +976,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar24 = pVVar7->x;
                                                   uVar25 = pVVar7->y;
                                                   uVar4 = uVar25 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x10 < value_00->max_length) {
                                                     value_00->vector[0x10].x =
                                                          (float)(uVar24 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x10].y = (float)uVar4;
                                                   value_00->vector[0x10].z = fVar6;
@@ -996,16 +996,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar26 = pVVar7->x;
                                                   uVar27 = pVVar7->y;
                                                   uVar4 = uVar27 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x11 < value_00->max_length) {
                                                     value_00->vector[0x11].x =
                                                          (float)(uVar26 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x11].y = (float)uVar4;
                                                   value_00->vector[0x11].z = fVar6;
@@ -1016,16 +1016,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar28 = pVVar7->x;
                                                   uVar29 = pVVar7->y;
                                                   uVar4 = uVar29 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x12 < value_00->max_length) {
                                                     value_00->vector[0x12].x =
                                                          (float)(uVar28 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x12].y = (float)uVar4;
                                                   value_00->vector[0x12].z = fVar6;
@@ -1036,16 +1036,16 @@ Mesh * Assembly-CSharp.dll::RTG::BoxMesh::BoxMesh_CreateWireBox
                                                   uVar30 = pVVar7->x;
                                                   uVar31 = pVVar7->y;
                                                   uVar4 = uVar31 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar6 = (float)((uint)pVVar7->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (0x13 < value_00->max_length) {
                                                     value_00->vector[0x13].x =
                                                          (float)(uVar30 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   value_00->vector[0x13].y = (float)uVar4;
                                                   value_00->vector[0x13].z = fVar6;

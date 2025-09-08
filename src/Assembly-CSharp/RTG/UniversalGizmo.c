@@ -1634,8 +1634,8 @@ void Assembly-CSharp.dll::RTG::UniversalGizmo::UniversalGizmo_OnGizmoAttemptHand
           }
           uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).x;
           uVar7 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).y;
-          uVar8 = uVar6 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
-          uVar9 = uVar7 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar8 = uVar6 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar9 = uVar7 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';

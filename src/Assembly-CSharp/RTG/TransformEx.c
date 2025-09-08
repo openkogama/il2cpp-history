@@ -33,11 +33,11 @@ code_?:
       uVar7 = pVVar3->x;
       uVar8 = pVVar3->y;
       fStack_4 = (float)(uVar7 ^ 
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fStack_5 = (float)(uVar8 ^ 
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fStack_6 = (float)((uint)pVVar3->z ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     else if (alignmentAxis == TransformAxis__Enum_NegativeY) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
@@ -45,11 +45,11 @@ code_?:
       uVar9 = pVVar3->x;
       uVar10 = pVVar3->y;
       fStack_4 = (float)(uVar9 ^ 
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fStack_5 = (float)(uVar10 ^ 
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fStack_6 = (float)((uint)pVVar3->z ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     else {
       if (alignmentAxis == TransformAxis__Enum_PositiveZ) {
@@ -65,13 +65,13 @@ code_?:
         uVar11 = pVVar3->x;
         uVar12 = pVVar3->y;
         fStack_4 = (float)(uVar11 ^ 
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         fStack_5 = (float)(uVar12 ^ 
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         fStack_6 = (float)((uint)pVVar3->z ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
       }
     }
@@ -150,15 +150,15 @@ code_?:
             uVar21 = pVVar3->x;
             uVar22 = pVVar3->y;
             uStack_19 = uVar21 ^ 
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
             fVar15 = (float)((uint)pVVar3->z ^
-                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
             uVar18 = CONCAT44(uVar22 ^ 
-                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               ,uStack_19);
             uVar20 = uVar22 ^ 
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           }
           goto code_?;
         }
@@ -169,13 +169,13 @@ code_?:
     }
     uVar23 = pVVar3->x;
     uVar24 = pVVar3->y;
-    uStack_19 = uVar23 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uStack_19 = uVar23 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     fVar15 = (float)((uint)pVVar3->z ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     uVar18 = CONCAT44(uVar24 ^ 
-                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field,
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
                       uStack_19);
-    uVar20 = uVar24 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar20 = uVar24 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   }
 code_?:
   from.y = 0.0;
@@ -447,11 +447,11 @@ code_?:
   if ((axisDesc->fields)._sign == 1) {
     uVar5 = __return_storage_ptr__->x;
     uVar6 = __return_storage_ptr__->y;
-    uVar7 = uVar6 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar7 = uVar6 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     fVar4 = (float)((uint)__return_storage_ptr__->z ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     __return_storage_ptr__->x =
-         (float)(uVar5 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+         (float)(uVar5 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     __return_storage_ptr__->y = (float)uVar7;
     __return_storage_ptr__->z = fVar4;
   }
@@ -510,7 +510,7 @@ Plane * Assembly-CSharp.dll::RTG::TransformEx::TransformEx_GetLocalPlane
     (__return_storage_ptr__->m_Normal).z = fVar3;
     __return_storage_ptr__->m_Distance =
          (float)((uint)(fVar12 * (float)uVar14 + fVar5 * (float)uVar13 + fVar4 * fVar3) ^
-                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     return __return_storage_ptr__;
   }
   puStack_9 = (undefined *)uVar10;

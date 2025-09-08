@@ -100,18 +100,19 @@ void Assembly-CSharp.dll::PlayerNotification::PlayerNotification_Initialize
                    );
     cRam_? = '\x01';
   }
-  object = this;
-  (this->fields)._.timeSinceStart = 0.0;
+  this_02 = data;
+  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     this_00 = (pMVar1->fields).playerContainer;
-    this = (PlayerNotification *)CONCAT13(9,this._0_3_);
-    key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-    if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,data._0_3_);
+    key = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
+    if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
       TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,key
+                         ,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
       if ((this_00 != (MVPlayerContainer *)0x0) && (TVar2.m_Index != 0)) {
@@ -119,73 +120,40 @@ void Assembly-CSharp.dll::PlayerNotification::PlayerNotification_Initialize
             (TypeInfo__System__Int32->_0).element_class) {
           piVar3 = (int32_t *)func_?(TVar2.m_Index);
           pMVar4 = MVPlayerContainer::MVPlayerContainer_get_Item(this_00,*piVar3,(MethodInfo *)0x0);
-          (object->fields).player = pMVar4;
-          func_?(&(object->fields).player,pMVar4);
-          pMVar4 = (object->fields).player;
+          (this->fields).player = pMVar4;
+          func_?(&(this->fields).player,pMVar4);
+          pMVar4 = (this->fields).player;
           if (pMVar4 != (MVPlayer *)0x0) {
-            pRVar5 = (object->fields).PrestigiousPlayerFrame;
-            if ((pMVar4->fields).level < 0x19) {
-              if (pRVar5 == (RectTransform *)0x0) goto code_?;
-              pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pRVar5,(MethodInfo *)0x0);
-              if (pGVar6 == (GameObject *)0x0) goto code_?;
-              iVar7 = 2;
-              this = (PlayerNotification *)((uint)this & 0xffffff00);
+            iVar5 = 2;
+            if (0x18 < (pMVar4->fields).level) {
+              iVar5 = 8;
             }
-            else {
-              if (pRVar5 == (RectTransform *)0x0) goto code_?;
-              pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pRVar5,(MethodInfo *)0x0);
-              if (pGVar6 == (GameObject *)0x0) goto code_?;
-              iVar7 = 8;
-              this = (PlayerNotification *)CONCAT31(this._1_3_,1);
-            }
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar6,(bool)this,(MethodInfo *)0x0);
-            (object->fields).lifeTime = iVar7;
+            (this->fields).lifeTime = iVar5;
             pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if (((pMVar1 != (MVNetworkGame *)0x0) &&
-                (pMVar4 = (object->fields).player, pMVar4 != (MVPlayer *)0x0)) &&
+                (pMVar4 = (this->fields).player, pMVar4 != (MVPlayer *)0x0)) &&
                (this_01 = (pMVar1->fields)._Friends_k__BackingField, this_01 != (FriendList *)0x0))
             {
-              this = (PlayerNotification *)0x0;
-              pFVar8 = FriendList::FriendList_GetFriendByProfileID
+              pFVar6 = FriendList::FriendList_GetFriendByProfileID
                                  (this_01,(pMVar4->fields)._ProfileID_k__BackingField,
                                   (MethodInfo *)0x0);
-              if ((pFVar8 != (Friend *)0x0) && ((pFVar8->fields).status == 2)) {
-                this_02 = (MethodInfo *)(object->fields).PrestigiousPlayerFrame;
-                if (this_02 == (MethodInfo *)0x0) goto code_?;
-                data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-                method = this_02;
-                pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0);
-                if (pGVar6 == (GameObject *)0x0) goto code_?;
-                method = (MethodInfo *)&UNK_?;
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar6,0,(MethodInfo *)0x0);
-                pRVar5 = (object->fields).FriendPlayerFrame;
-                if (pRVar5 == (RectTransform *)0x0) goto code_?;
-                pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pRVar5,(MethodInfo *)0x0);
-                if (pGVar6 == (GameObject *)0x0) goto code_?;
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar6,1,(MethodInfo *)0x0);
-                (object->fields).lifeTime = 8;
+              if ((pFVar6 != (Friend *)0x0) && ((pFVar6->fields).status == 2)) {
+                (this->fields).lifeTime = 8;
               }
               if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
+                func_?(TypeInfo__LevelingManager);
               }
               if (cRam_? == '\0') {
-                func_?();
+                func_?(&TypeInfo__LevelingManager);
                 cRam_? = '\x01';
               }
               if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
+                func_?(TypeInfo__LevelingManager);
               }
               if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField != 0) {
-                pMVar4 = (object->fields).player;
+                pMVar4 = (this->fields).player;
                 if (pMVar4 == (MVPlayer *)0x0) goto code_?;
-                iVar7 = (pMVar4->fields).level;
+                iVar5 = (pMVar4->fields).level;
                 this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                            *)func_?(
                                             TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
@@ -194,14 +162,18 @@ void Assembly-CSharp.dll::PlayerNotification::PlayerNotification_Initialize
                 Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
                 __Il2CppFullySharedGenericType]::
                 DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                          (this_03,(Object *)object,
+                          (this_03,(Object *)this,
                            MethodInfo__PlayerNotification__BadgeCallback_UnityEngine__Networking__UnityWebRequest_
                            ,(MethodInfo *)0x0);
                 if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+                  method = (MethodInfo *)TypeInfo__BadgeManager;
+                  data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
                   func_?();
                 }
+                method = (MethodInfo *)0x0;
+                data = (Dictionary_2_System_Object_System_Object_ *)this_03;
                 BadgeManager::BadgeManager_GetBadgeTexture
-                          (iVar7,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
+                          (iVar5,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
                            (MethodInfo *)0x0);
               }
               return;
@@ -216,8 +188,8 @@ void Assembly-CSharp.dll::PlayerNotification::PlayerNotification_Initialize
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

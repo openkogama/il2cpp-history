@@ -77,39 +77,38 @@ void Assembly-CSharp.dll::MVCubeModelFineGrainedTerrain::MVCubeModelFineGrainedT
                (MVCubeModelFineGrainedTerrain *this,MethodInfo *method)
 
 {
-  this_01 = (this->fields)._.prototypeCubeModel;
-  if (this_01 != (RuntimePrototypeCubeModel *)0x0) {
+  this_00 = (this->fields)._.prototypeCubeModel;
+  if (this_00 != (RuntimePrototypeCubeModel *)0x0) {
     RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveAllCubesLocal
-              (this_01,(MethodInfo *)0x0);
-    if ((this->fields).cullingTerrainManager != (CullingTerrainManager *)0x0) {
+              (this_00,(MethodInfo *)0x0);
+    this_01 = (this->fields).cullingTerrainManager;
+    if (this_01 != (CullingTerrainManager *)0x0) {
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Clear__
+                       );
         cRam_? = '\x01';
       }
       CullingTerrainManager::CullingTerrainManager_DestroyCullingSubscribers
-                (in_stack_1,(MethodInfo *)0x0);
-      this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                 *)(in_stack_1->fields).terrainCullingSubscriberBases;
-      if (this_00 !=
+                (this_01,(MethodInfo *)0x0);
+      this_02 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                 *)(this_01->fields).terrainCullingSubscriberBases;
+      if (this_02 !=
           (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
            *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
         StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
         Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-                  (this_00,
+                  (this_02,
                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Clear__
                   );
         return;
       }
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

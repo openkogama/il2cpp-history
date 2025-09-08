@@ -328,8 +328,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
             (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (this->fields).firstTimeGuiHandler = (FirstTimeGuiHandler *)value_00;
   func_?(&(this->fields).firstTimeGuiHandler,value_00);
-  FirstTimeActivatableSetEventOnShow::FirstTimeActivatableSetEventOnShow__ctor
-            ((FirstTimeActivatableSetEventOnShow *)this,(MethodInfo *)0x0);
+  FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
+            ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -19,10 +20,9 @@ public class PlayerNotification : Notification
 	protected UnityEngine.UI.Text NameLabel;
 	[SerializeField]
 	private Image BadgeImage;
+	[FormerlySerializedAs("TertiaryNotificationUI")]
 	[SerializeField]
-	private RectTransform PrestigiousPlayerFrame;
-	[SerializeField]
-	private RectTransform FriendPlayerFrame;
+	protected TertiaryNotificationUI tertiaryNotificationUI;
 	private MVPlayer player;
 	private Texture2D badgeTextureAsset;
 	private const int PrestigiousLevelRequirement = 25;

@@ -658,11 +658,11 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoAtt
                         ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
     uVar22 = pVVar7->x;
     uVar23 = pVVar7->y;
-    uVar24 = uVar23 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+    uVar24 = uVar23 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     fVar9 = (float)((uint)pVVar7->z ^
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     (this->fields)._offsetDragWorkData.Axis.x =
-         (float)(uVar22 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+         (float)(uVar22 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     (this->fields)._offsetDragWorkData.Axis.y = (float)uVar24;
 code_?:
     (this->fields)._offsetDragWorkData.Axis.z = fVar9;
@@ -728,12 +728,12 @@ code_?:
                             ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
         uVar25 = pVVar7->x;
         uVar26 = pVVar7->y;
-        uVar24 = uVar26 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+        uVar24 = uVar26 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         fVar9 = (float)((uint)pVVar7->z ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         (this->fields)._offsetDragWorkData.Axis.x =
              (float)(uVar25 ^ 
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         (this->fields)._offsetDragWorkData.Axis.y = (float)uVar24;
         goto code_?;
       }
@@ -751,12 +751,12 @@ code_?:
                             ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
         uVar27 = pVVar7->x;
         uVar28 = pVVar7->y;
-        uVar24 = uVar28 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+        uVar24 = uVar28 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         fVar9 = (float)((uint)pVVar7->z ^
-                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         (this->fields)._offsetDragWorkData.Axis.x =
              (float)(uVar27 ^ 
-                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         (this->fields)._offsetDragWorkData.Axis.y = (float)uVar24;
 code_?:
         (this->fields)._offsetDragWorkData.Axis.z = fVar9;
@@ -1709,7 +1709,7 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
         uStack_4 = CONCAT44(pBVar14,(undefined4)uStack_4);
         fStack_15 = (float)((uint)(fStack_10 * (float)uVar12 + fStack_9 * (float)uVar11 +
                                   fStack_8 * fVar5) ^
-                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
         fStack_16 = (float)uVar11;
         fStack_17 = (float)uVar12;
@@ -1942,15 +1942,15 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                       uVar24 = pVVar2->x;
                       uVar25 = pVVar2->y;
                       uVar26 = uVar25 ^ 
-                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                       ;
                       fVar4 = (float)((uint)pVVar2->z ^
-                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       );
                       if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0) {
                         (pBVar23->fields).FaceNormal.x =
                              (float)(uVar24 ^ 
-                                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                     );
                         (pBVar23->fields).FaceNormal.y = (float)uVar26;
                         (pBVar23->fields).FaceNormal.z = fVar4;
@@ -2135,17 +2135,17 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                     uVar27 = pVVar2->x;
                                                     uVar28 = pVVar2->y;
                                                     uVar26 = uVar28 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar4 = (float)((uint)pVVar2->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0)
                                                   {
                                                     (pBVar23->fields).FaceNormal.x =
                                                          (float)(uVar27 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pBVar23->fields).FaceNormal.y = (float)uVar26;
                                                   (pBVar23->fields).FaceNormal.z = fVar4;
@@ -2215,17 +2215,17 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                   uVar29 = pVVar2->x;
                                                   uVar30 = pVVar2->y;
                                                   uVar26 = uVar30 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   ;
                                                   fVar4 = (float)((uint)pVVar2->z ^
                                                                                                                                     
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0)
                                                   {
                                                     (pBVar23->fields).FaceNormal.x =
                                                          (float)(uVar29 ^ 
-                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                                   );
                                                   (pBVar23->fields).FaceNormal.y = (float)uVar26;
                                                   (pBVar23->fields).FaceNormal.z = fVar4;

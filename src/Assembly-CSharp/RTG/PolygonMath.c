@@ -40,7 +40,7 @@ code_?:
       fStack_6 = VStack_5.x - VStack_7.x;
       VStack_7.y = VVar4.y;
       uStack_8 = (uint)(VStack_5.y - VStack_7.y) ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       VStack_7 = VVar4;
       VVar4 = (Vector2)func_?(&uStack_8,0);
       VStack_9 = VVar4;
@@ -74,7 +74,7 @@ code_?:
       fStack_6 = VStack_9.x - VStack_10.x;
       VStack_10.y = VVar4.y;
       uStack_8 = (uint)(VStack_9.y - VStack_10.y) ^
-                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
       VStack_10 = VVar4;
       VVar4 = (Vector2)func_?(&uStack_8,0);
       VStack_5 = VVar4;
@@ -138,7 +138,7 @@ bool Assembly-CSharp.dll::RTG::PolygonMath::PolygonMath_Contains3DPoint
           (float)((uint)(point.x * (float)uVar8 + point.y * (float)uVar9 + point.z * pVVar5->z +
                         (float)((uint)((float)uVar3 * (float)uVar7 + (float)uVar2 * (float)uVar6 +
                                       (float)pVVar4 * pVVar5->z) ^
-                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                )) & _UNK_?)) {
         return 0;
       }
@@ -568,7 +568,7 @@ bool Assembly-CSharp.dll::RTG::PolygonMath::PolygonMath_Is3DPointOnBorder
       fVar6 = (float)((uint)(uStack_3._4_4_ * (float)VStack_2.path +
                              (float)uStack_3 * (float)VStack_2.alias +
                             (float)pVStack_4 * (float)VStack_2.asset) ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       if (checkOnPlane == 0) {
         fVar6 = (float)VStack_2.path * point.y + (float)VStack_2.alias * point.x +
                 (float)VStack_2.asset * point.z + fVar6;

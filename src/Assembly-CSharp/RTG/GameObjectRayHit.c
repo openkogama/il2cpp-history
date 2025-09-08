@@ -225,7 +225,7 @@ code_?:
         pSStack_30 = (String *)
                      ((uint)((float)pTStack_43 * (float)pTStack_47 +
                             uStack_41._4_4_ * uStack_46._4_4_ + (float)uStack_41 * (float)uStack_46)
-                     ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         pOVar32[5].klass = (Object__Class *)(float)uStack_46;
         pOVar32[5].monitor = (MonitorData *)uStack_46._4_4_;
         pOVar32[6].klass = (Object__Class *)pTStack_47;
@@ -346,7 +346,7 @@ code_?:
         pSStack_30 = (String *)
                      ((uint)(uStack_46._4_4_ * uStack_41._4_4_ + (float)uStack_46 * (float)uStack_41
                             + (float)pTStack_47 * (float)pTStack_43) ^
-                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         pOVar32[5].klass = (Object__Class *)(float)uStack_41;
         pOVar32[5].monitor = (MonitorData *)uStack_41._4_4_;
         pOVar32[6].klass = (Object__Class *)pTStack_43;
@@ -417,7 +417,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor
     uVar13 = pVVar11->y;
     fVar14 = pVVar11->z;
     fVar6 = (float)((uint)(fVar8 * (float)uVar13 + fVar6 * (float)uVar12 + (float)method_00 * fVar14)
-                   ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                   ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     (this->fields)._hitPlane.m_Normal.x = (float)uVar12;
     (this->fields)._hitPlane.m_Normal.y = (float)uVar13;
     (this->fields)._hitPlane.m_Normal.z = fVar14;
@@ -478,7 +478,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor_1
     fVar10 = pVVar7->z;
     fVar1 = (float)((uint)((float)uVar6 * (float)uVar9 + (float)method_00 * (float)uVar8 +
                           fVar1 * fVar10) ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     (this->fields)._hitPlane.m_Normal.x = (float)uVar8;
     (this->fields)._hitPlane.m_Normal.y = (float)uVar9;
     (this->fields)._hitPlane.m_Normal.z = fVar10;
@@ -521,7 +521,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor_2
   uVar6 = pVVar1->y;
   fVar7 = pVVar1->z;
   fVar4 = (float)((uint)((float)uVar3 * (float)uVar6 + (float)uVar2 * (float)uVar5 + fVar4 * fVar7)
-                 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   (this->fields)._hitPlane.m_Normal.x = (float)uVar5;
   (this->fields)._hitPlane.m_Normal.y = (float)uVar6;
   (this->fields)._hitPlane.m_Normal.z = fVar7;
@@ -564,7 +564,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor_3
     (this->fields)._meshRayHit = meshRayHit;
     fVar5 = (float)((uint)(uStack_1._4_4_ * (float)uStack_7._4_4_ +
                            (float)uStack_1 * (float)(undefined4)uStack_7 + fStack_2 * fStack_8) ^
-                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     (this->fields)._hitPlane.m_Normal.x = (float)(undefined4)uStack_7;
     (this->fields)._hitPlane.m_Normal.y = (float)uStack_7._4_4_;
     (this->fields)._hitPlane.m_Normal.z = fStack_8;

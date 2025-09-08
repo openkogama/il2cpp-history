@@ -13,7 +13,7 @@ public abstract class PlayModeControlsBase : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private CrossHairAndroid crossHair;
+	private CrossHair crossHair;
 	[SerializeField]
 	private GameObject crossHairGO;
 	[SerializeField]

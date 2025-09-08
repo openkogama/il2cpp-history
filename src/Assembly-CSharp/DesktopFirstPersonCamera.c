@@ -16,7 +16,7 @@ void Assembly-CSharp.dll::DesktopFirstPersonCamera::DesktopFirstPersonCamera_Upd
   }
   fVar1 = MVInputWrapper::MVInputWrapper_GetAxisRaw(StringLiteral_Mouse_Y,(MethodInfo *)0x0);
   fVar1 = (float)((uint)fVar1 ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   fVar2 = MVInputWrapper::MVInputWrapper_GetAxisRaw(StringLiteral_Mouse_X,(MethodInfo *)0x0);
   (this->fields)._.targetRotation.x =
        fVar1 * (this->fields)._.pitchSensitivity + (this->fields)._.targetRotation.x;
@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::DesktopFirstPersonCamera::DesktopFirstPersonCamera_Upd
   }
   fVar1 = (this->fields)._.targetRotation.x;
   fVar2 = (float)((uint)(this->fields)._.maxLookAngleDownward ^
-                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if ((fVar1 < fVar2) || (fVar2 = (this->fields)._.maxLookAngleUpward, fVar2 < fVar1)) {
     fVar1 = fVar2;
   }

@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMele
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
                            ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
         value.y = (float)((uint)(fVar3 * pVVar5->y * _UNK_?) ^
-                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         value.x = fVar4;
         value.z = -0.16;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition

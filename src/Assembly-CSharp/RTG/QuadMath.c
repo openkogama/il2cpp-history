@@ -730,7 +730,7 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Raycast
   VVar3 = *pVVar4;
   QStack_2.w = (float)((uint)(quadCenter.y * QStack_2.y + quadCenter.x * QStack_2.x +
                               quadCenter.z * QStack_2.z) ^
-                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   ray_01.m_Origin.y = ray.m_Origin.y;
   ray_01.m_Origin.x = ray.m_Origin.x;
   ray_01.m_Origin.z = ray.m_Origin.z;

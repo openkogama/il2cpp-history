@@ -20,15 +20,15 @@ public class ButtonAnimationController : MonoBehaviour, IPointerUpHandler, IPoin
 	private const float pressedSmallMoveAmount = -3f;
 	private const float hoverSmallMoveAmount = 0f;
 	private const float disableSmallMoveAmount = -1f;
-	private float pressedMoveAmount;
-	private float hoverMoveAmount;
-	private float disableMoveAmount;
 	[SerializeField]
-	private Transform transformToMove;
+	private RectTransform transformToMove;
 	[SerializeField]
 	private Button button;
 	[SerializeField]
 	private ButtonType buttonType;
+	private float pressedMoveAmount;
+	private float hoverMoveAmount;
+	private float disableMoveAmount;
 	private float originalValue;
 	private short buttonPressedState;
 	private short buttonHighlightedState;
