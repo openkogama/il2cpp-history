@@ -532,7 +532,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost(AvatarMot
       if (pOStack3 != (Object *)0x0) {
         if ((pOStack3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
           piVar5 = (int *)func_?();
-          (this->fields).walkSpeed = ((float)*piVar5 / 100.0 + 1.0) * 3.427368e-29;
+          (this->fields).walkSpeed = ((float)*piVar5 / 100.0 + 1.0) * 3.4202807e-29;
           return;
         }
         goto code_?;
@@ -1273,7 +1273,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_Reset(AvatarMotor *this,Metho
     if ((this->fields).smoothCharacterController != (SmoothCharacterController *)0x0) {
       iVar5 = *(int *)(in_stack_6 + 0x10);
       if (cRam_? == '\0') {
-        func_?();
+        func_?(&TypeInfo__UnityEngine__Vector3,unaff_EBP,unaff_retaddr);
         cRam_? = '\x01';
       }
       fVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
@@ -1282,7 +1282,6 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_Reset(AvatarMotor *this,Metho
         *(float *)(iVar5 + 0x5c) = fVar4;
         this_00 = *(Component **)(in_stack_6 + 0x14);
         if (this_00 != (Component *)0x0) {
-          uStack7 = 0;
           if (cRam_? == '\0') {
             func_?(&MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Clear__,unaff_EBP,unaff_retaddr);
             cRam_? = '\x01';
@@ -1293,39 +1292,35 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_Reset(AvatarMotor *this,Metho
             func_?(&this_00[2].fields,0);
             this_00[2].monitor = (MonitorData *)0x0;
             func_?(&this_00[2].monitor,0);
-            pCVar8 = this_00[3].klass;
-            pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_00,(MethodInfo *)0x0);
-            if (pTVar9 != (Transform *)0x0) {
-              pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xfffffff8,pTVar9,(MethodInfo *)0x0);
-              if (pCVar8 != (Component__Class *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position((Transform *)pCVar8,*pVVar10,(MethodInfo *)0x0);
-                pCVar8 = this_00[3].klass;
-                pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_00,(MethodInfo *)0x0);
-                if (pTVar9 != (Transform *)0x0) {
-                  pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xfffffff4,pTVar9,(MethodInfo *)0x0);
-                  if (pCVar8 != (Component__Class *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation((Transform *)pCVar8,*pQVar11,(MethodInfo *)0x0);
+            pCVar7 = this_00[3].klass;
+            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_00,(MethodInfo *)0x0);
+            if (pTVar8 != (Transform *)0x0) {
+              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xfffffff8,pTVar8,(MethodInfo *)0x0);
+              if (pCVar7 != (Component__Class *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position((Transform *)pCVar7,*pVVar9,(MethodInfo *)0x0);
+                pCVar7 = this_00[3].klass;
+                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform(this_00,(MethodInfo *)0x0);
+                if (pTVar8 != (Transform *)0x0) {
+                  pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xfffffff4,pTVar8,(MethodInfo *)0x0);
+                  if (pCVar7 != (Component__Class *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation((Transform *)pCVar7,*pQVar10,(MethodInfo *)0x0);
                     return;
                   }
                 }
               }
             }
           }
-          func_?();
-          pcVar12 = (code *)swi(3);
-          (*pcVar12)();
-          return;
         }
       }
       func_?();
-      pcVar12 = (code *)swi(3);
-      (*pcVar12)();
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
       return;
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

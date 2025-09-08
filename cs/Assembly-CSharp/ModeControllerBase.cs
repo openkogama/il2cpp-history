@@ -25,12 +25,15 @@ public abstract class ModeControllerBase : MonoBehaviour, IToggleFps, ITogglePla
 	[CompilerGenerated]
 	private Action<bool> _IsPausedStateChange_k__BackingField;
 	[CompilerGenerated]
+	private Action<ChatConsoleMode> _IsChatConsoleStateChange_k__BackingField;
+	[CompilerGenerated]
 	private bool _IsDying_k__BackingField;
 	[CompilerGenerated]
 	private bool _IsInLobby_k__BackingField;
 
 	// Properties
 	public Action<bool> IsPausedStateChange { [CompilerGenerated] get; [CompilerGenerated] set; }
+	public Action<ChatConsoleMode> IsChatConsoleStateChange { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public bool IsDying { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public bool IsInLobby { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public virtual bool IsInPauseMenu { get; set; }

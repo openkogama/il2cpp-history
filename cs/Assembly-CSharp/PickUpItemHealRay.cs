@@ -15,11 +15,11 @@ using UnityEngine;
 public class PickUpItemHealRay : PickupItem
 {
 	// Fields
-	private float passedLerpTime;
-	private Quaternion lerpStartRotation;
+	private const string stuckObjectIDString = "S";
+	private static readonly Color lockOnColorHealing;
+	private static readonly Color lockOnColorDamaging;
 	[SerializeField]
 	private ParticleSystem rayParticles;
-	private ParticleSystem hitParticles;
 	[SerializeField]
 	private float maxRayRange;
 	[SerializeField]
@@ -28,6 +28,18 @@ public class PickUpItemHealRay : PickupItem
 	private float rayMinimumChargeTime;
 	[SerializeField]
 	private AudioSource audioSource;
+	[SerializeField]
+	[Tooltip("How many seconds the healrays ammo lasts.")]
+	private ObscuredFloat maxAmmoTime;
+	[SerializeField]
+	private Material ZIgnoreMaterial;
+	[SerializeField]
+	private Transform localMuzzePoint;
+	[SerializeField]
+	private ParticleSystem localRayParticles;
+	private float passedLerpTime;
+	private Quaternion lerpStartRotation;
+	private ParticleSystem hitParticles;
 	private float rayStartTime;
 	private GameObject stuckObject;
 	private bool damageRay;
@@ -37,29 +49,18 @@ public class PickUpItemHealRay : PickupItem
 	private const float updateWaitTime = 0.05f;
 	private float elapsedUpdateWaitTime;
 	private Vector3 hitOffset;
-	[SerializeField]
-	[Tooltip("How many seconds the healrays ammo lasts.")]
-	private ObscuredFloat maxAmmoTime;
 	private LayerMask layers;
 	private const float hitGroundStartPositionMidifier = 0.6f;
-	[SerializeField]
-	private Material ZIgnoreMaterial;
-	[SerializeField]
-	private Transform localMuzzePoint;
-	[SerializeField]
-	private ParticleSystem localRayParticles;
 	private Transform remoteMuzzlePoint;
 	private ParticleSystem remoteParticleSystem;
 	private Material normalRayMaterial;
 	private ParticleSystemRenderer particleRenderer;
-	private const string stuckObjectIDString = "S";
-	private static readonly Color lockOnColorHealing;
-	private static readonly Color lockOnColorDamaging;
 
 	// Properties
 	public override AvatarItemType Type { get; }
 	public override int Quantity { get; }
 	public override int MaxAmmo { get; }
+	public override bool HasPercentageAmmo { get; }
 
 	// Nested types
 	private struct RayCastData

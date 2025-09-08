@@ -88,7 +88,7 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
   (this->fields).pushOptions = this_00;
   func_?(&(this->fields).pushOptions,this_00);
-  FirstTimeActivatableSetEventOnShow::FirstTimeActivatableSetEventOnShow__ctor((FirstTimeActivatableSetEventOnShow *)this,(MethodInfo *)0x0);
+  FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;
 }
 

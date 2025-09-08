@@ -1,33 +1,7 @@
 
-/* Void <CreateBriefing>b__39_0(IUIStack, BaseEventData) */
+/* Void <CreateBriefing>b__36_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateBriefing_b__39_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
-    return;
-  }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <CreateSpawnRoleSelectionMenu>b__38_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateSpawnRoleSelectionMenu_b__38_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateBriefing_b__36_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -51,9 +25,9 @@ void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateSpawnR
 }
 
 
-/* Void <CreateTeamMenu>b__37_0(IUIStack, BaseEventData) */
+/* Void <CreateSpawnRoleSelectionMenu>b__35_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateTeamMenu_b__37_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateSpawnRoleSelectionMenu_b__35_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -77,9 +51,35 @@ void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateTeamMe
 }
 
 
-/* Void <PopThenLockCursor>b__30_0(IUIStack, BaseEventData) */
+/* Void <CreateTeamMenu>b__34_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__PopThenLockCursor_b__30_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__CreateTeamMenu_b__34_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (x != (IUIStack *)0x0) {
+    pIStack_1 = x;
+    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    uStack_3 = 2;
+    func_?();
+    return;
+  }
+  pIStack_1 = (IUIStack *)&stack0xfffffffc;
+  uVar4 = func_?(&uStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <PopThenLockCursor>b__27_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::LobbyStateButton+<>c::LobbyStateButton_c__PopThenLockCursor_b__27_0(LobbyStateButton_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

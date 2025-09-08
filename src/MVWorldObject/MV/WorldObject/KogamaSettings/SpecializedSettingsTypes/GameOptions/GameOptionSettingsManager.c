@@ -52,7 +52,7 @@ List_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_Kogam
   this_00 = (KogamaSettingsCollectionBase *)func_?(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase);
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingsCollectionBase::KogamaSettingsCollectionBase__ctor(this_00,StringLiteral_GameOptionsRoot,(KogamaSettingsCollectionBase *)0x0,(MethodInfo *)0x0);
   this_01 = (KogamaSettingBoolBase *)func_?(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase);
-  KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase__ctor(this_01,StringLiteral_AllowRevive,1,this_00,(MethodInfo *)0x0);
+  KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase__ctor(this_01,StringLiteral_AllowRevive,0,this_00,(MethodInfo *)0x0);
   if (this_00 != (KogamaSettingsCollectionBase *)0x0) {
     pOStack1 = (Object__Class *)(this_00->klass->vtable).CopyWithOutChildren.methodPtr;
     (*(code *)(this_00->klass->vtable).AddChild.method)();

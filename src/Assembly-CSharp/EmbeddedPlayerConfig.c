@@ -430,7 +430,7 @@ bool Assembly-CSharp.dll::EmbeddedPlayerConfig::EmbeddedPlayerConfig_IsValidHost
   if (host != (String *)0x0) {
     iVar1 = mscorlib.dll::System::String::String_IndexOf_3(host,::StringLiteral____,(MethodInfo *)0x0);
     if (0 < iVar1) {
-      host = mscorlib.dll::System::String::String_Substring(host,iVar1 + 3,(MethodInfo *)0x0);
+      host = mscorlib.dll::System::String::String_Substring_1(host,iVar1 + 3,(host->fields)._stringLength - (iVar1 + 3),(MethodInfo *)0x0);
     }
     this = (UriBuilder *)func_?(TypeInfo__System__UriBuilder);
     System.dll::System::UriBuilder::UriBuilder__ctor_2(this,StringLiteral_https,host,(MethodInfo *)0x0);

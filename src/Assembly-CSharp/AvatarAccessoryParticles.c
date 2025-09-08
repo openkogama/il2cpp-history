@@ -46,6 +46,7 @@ Bounds * Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles
 void Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles_Update(AvatarAccessoryParticles *this,MethodInfo *method)
 
 {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   pAVar1 = AvatarAccessoryParticles_get_AccessoryParticlesSettings(this,(MethodInfo *)0x0);
   if (pAVar1 != (AccessoryParticlesSettings *)0x0) {
     if ((pAVar1->fields).useEmissionMovement == 0) {
@@ -56,26 +57,27 @@ void Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles_Upd
     fVar3 = (this->fields).prevPosition.z;
     pTVar4 = AvatarAccessory::AvatarAccessory_get_Transform((AvatarAccessory *)this,(MethodInfo *)0x0);
     if (pTVar4 != (Transform *)0x0) {
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd0,pTVar4,(MethodInfo *)0x0);
-      uVar6 = pVVar5->x;
-      uVar7 = pVVar5->y;
-      fVar8 = (float)uVar2 - (float)uVar6;
-      fVar9 = (float)((ulonglong)uVar2 >> 0x20) - (float)uVar7;
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&puStack_6,pTVar4,(MethodInfo *)0x0);
+      uVar7 = pVVar5->x;
+      uVar8 = pVVar5->y;
+      fVar9 = (float)uVar2 - (float)uVar7;
+      fVar10 = (float)((ulonglong)uVar2 >> 0x20) - (float)uVar8;
       fVar3 = fVar3 - pVVar5->z;
-      if (9.9999994e-11 <= fVar9 * fVar9 + fVar8 * fVar8 + fVar3 * fVar3) {
-        pPVar10 = AvatarAccessoryParticles_get_RootParticleSystem(this,(MethodInfo *)0x0);
-        if (pPVar10 != (ParticleSystem *)0x0) {
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar10,(MethodInfo *)0x0);
-          pAVar1 = AvatarAccessoryParticles_get_AccessoryParticlesSettings(this,(MethodInfo *)0x0);
+      if (9.9999994e-11 <= fVar10 * fVar10 + fVar9 * fVar9 + fVar3 * fVar3) {
+        pPVar11 = AvatarAccessoryParticles_get_RootParticleSystem(this,(MethodInfo *)0x0);
+        if (pPVar11 != (ParticleSystem *)0x0) {
+          method_00 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar11,(MethodInfo *)0x0);
+          pAVar1 = AvatarAccessoryParticles_get_AccessoryParticlesSettings(this,(MethodInfo *)method_00.m_ParticleSystem);
           if (pAVar1 != (AccessoryParticlesSettings *)0x0) {
+            PStack_12.m_ParticleSystem = (ParticleSystem *)&UNK_?;
             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_rateOverTimeMultiplier_Injected((ParticleSystem_EmissionModule *)&stack0xfffffff4,(pAVar1->fields).EmitRateMoving,(MethodInfo *)0x0);
             pTVar4 = AvatarAccessory::AvatarAccessory_get_Transform((AvatarAccessory *)this,(MethodInfo *)0x0);
             if (pTVar4 != (Transform *)0x0) {
-              pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd0,pTVar4,(MethodInfo *)0x0);
-              fVar8 = pVVar5->y;
+              pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&puStack_6,pTVar4,(MethodInfo *)0x0);
+              fVar9 = pVVar5->y;
               fVar3 = pVVar5->z;
               (this->fields).prevPosition.x = pVVar5->x;
-              (this->fields).prevPosition.y = fVar8;
+              (this->fields).prevPosition.y = fVar9;
               (this->fields).prevPosition.z = fVar3;
               return;
             }
@@ -83,12 +85,13 @@ void Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles_Upd
         }
       }
       else {
-        pPVar10 = AvatarAccessoryParticles_get_RootParticleSystem(this,(MethodInfo *)0x0);
-        if (pPVar10 != (ParticleSystem *)0x0) {
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar10,(MethodInfo *)0x0);
+        pPVar11 = AvatarAccessoryParticles_get_RootParticleSystem(this,(MethodInfo *)0x0);
+        if (pPVar11 != (ParticleSystem *)0x0) {
+          PStack_12.m_ParticleSystem = (ParticleSystem *)UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision(pPVar11,(MethodInfo *)0x0);
           pAVar1 = AvatarAccessoryParticles_get_AccessoryParticlesSettings(this,(MethodInfo *)0x0);
           if (pAVar1 != (AccessoryParticlesSettings *)0x0) {
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_rateOverTimeMultiplier_Injected((ParticleSystem_EmissionModule *)&stack0xfffffff8,(pAVar1->fields).EmitRateNormal,(MethodInfo *)0x0);
+            PStack_12.m_ParticleSystem = (ParticleSystem *)&UNK_?;
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::ParticleSystem_EmissionModule_set_rateOverTimeMultiplier_Injected(&PStack_12,(pAVar1->fields).EmitRateNormal,(MethodInfo *)0x0);
             return;
           }
         }
@@ -96,8 +99,8 @@ void Assembly-CSharp.dll::AvatarAccessoryParticles::AvatarAccessoryParticles_Upd
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

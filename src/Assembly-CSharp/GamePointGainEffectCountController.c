@@ -144,7 +144,8 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     }
   }
   func_?();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

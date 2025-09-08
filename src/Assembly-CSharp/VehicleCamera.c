@@ -275,7 +275,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateTargetRotation(Vehi
     }
     pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar6 != (IPlayModeUI *)0x0) {
-      bVar7 = func_?(5,TypeInfo__IPlayModeUI,pIVar6);
+      bVar7 = func_?(7,TypeInfo__IPlayModeUI,pIVar6);
       (pVVar1->fields)._.autoRotate = bVar7 ^ 1;
       fVar8 = fStack_5;
       if (((bVar7 ^ 1) != 0) && (((pVVar1->fields)._._._.ignoreInputTypes & 1) == 0)) {

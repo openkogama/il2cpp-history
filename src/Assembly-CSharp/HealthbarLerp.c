@@ -27,7 +27,7 @@ void Assembly-CSharp.dll::HealthbarLerp::HealthbarLerp_ExecuteEffect(HealthbarLe
           func_?();
           cRam_? = '\x01';
         }
-        method_00 = TypeInfo__HealthbarLerp___LerpProgress_d__10;
+        method_00 = TypeInfo__HealthbarLerp___LerpProgress_d__8;
         value = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
         value[1].klass = (Object__Class *)0x0;
@@ -51,10 +51,10 @@ IEnumerator * Assembly-CSharp.dll::HealthbarLerp::HealthbarLerp_LerpProgress(Hea
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__HealthbarLerp___LerpProgress_d__10);
+    func_?(&TypeInfo__HealthbarLerp___LerpProgress_d__8);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__HealthbarLerp___LerpProgress_d__10;
+  method_00 = TypeInfo__HealthbarLerp___LerpProgress_d__8;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
@@ -71,13 +71,24 @@ void Assembly-CSharp.dll::HealthbarLerp::HealthbarLerp_OnDisable(HealthbarLerp *
 {
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines((MonoBehaviour *)this,(MethodInfo *)0x0);
   pPVar1 = (this->fields).targetProgressBar;
-  if ((pPVar1 != (ProgressBar *)0x0) && (this_00 = (ProgressBarAndroid *)(this->fields).progressBar, this_00 != (ProgressBarAndroid *)0x0)) {
-    ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,(pPVar1->fields).progress,(MethodInfo *)0x0);
-    return;
+  if ((pPVar1 != (ProgressBar *)0x0) && (pPVar2 = (this->fields).progressBar, pPVar2 != (ProgressBar *)0x0)) {
+    value = (pPVar1->fields).progress;
+    if (value < 0.0) {
+      value = 0.0;
+    }
+    else if (1.0 < value) {
+      value = 1.0;
+    }
+    (pPVar2->fields).progress = value;
+    this_00 = (pPVar2->fields).progressBar;
+    if (this_00 != (Scrollbar *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size(this_00,value,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -88,32 +99,25 @@ void Assembly-CSharp.dll::HealthbarLerp::HealthbarLerp_OnEnable(HealthbarLerp *t
 
 {
   pPVar1 = (this->fields).targetProgressBar;
-  if ((pPVar1 != (ProgressBar *)0x0) && (this_00 = (ProgressBarAndroid *)(this->fields).progressBar, this_00 != (ProgressBarAndroid *)0x0)) {
-    ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,(pPVar1->fields).progress,(MethodInfo *)0x0);
-    (this->fields).isInitialized = 1;
-    return;
+  if ((pPVar1 != (ProgressBar *)0x0) && (pPVar2 = (this->fields).progressBar, pPVar2 != (ProgressBar *)0x0)) {
+    value = (pPVar1->fields).progress;
+    if (value < 0.0) {
+      value = 0.0;
+    }
+    else if (1.0 < value) {
+      value = 1.0;
+    }
+    (pPVar2->fields).progress = value;
+    this_00 = (pPVar2->fields).progressBar;
+    if (this_00 != (Scrollbar *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size(this_00,value,(MethodInfo *)0x0);
+      (this->fields).isInitialized = 1;
+      return;
+    }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
-}
-
-
-/* HealthbarLerp() */
-
-void Assembly-CSharp.dll::HealthbarLerp::HealthbarLerp__ctor(HealthbarLerp *this,MethodInfo *method)
-
-{
-  (this->fields).lerpForSeconds = 1.0;
-  (this->fields).lerpDelay = 0.4;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

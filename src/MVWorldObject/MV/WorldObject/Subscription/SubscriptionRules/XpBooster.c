@@ -1,26 +1,4 @@
 
-/* Int32 GetBoostedXp(Int32, Int32) */
-
-int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::XpBooster_GetBoostedXp(XpBooster *this,int32_t xp,int32_t membersCount,MethodInfo *method)
-
-{
-  auVar1 = ZEXT812(0);
-  if (0 < membersCount) {
-    auVar1._4_8_ = 0;
-    auVar1._0_4_ = ((float)(this->fields).firstOtherMemberBoost / 100.0) * (float)xp + 0.0;
-  }
-  if (1 < membersCount) {
-    auVar1._4_8_ = auVar1._4_8_;
-    auVar1._0_4_ = auVar1._0_4_ + ((float)(this->fields).otherMembersBoost / 100.0) * (float)xp * (float)(membersCount + -1);
-  }
-  fVar2 = auVar1._0_4_;
-  if (((float)(this->fields).maxMemberBoost / 100.0) * (float)xp < fVar2) {
-    fVar2 = ((float)(this->fields).maxMemberBoost / 100.0) * (float)xp;
-  }
-  return (int)((float)xp + ((float)(this->fields).baseBoost / 100.0) * (float)xp + fVar2);
-}
-
-
 /* Int32 GetTotalXPBoost(Int32) */
 
 int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::XpBooster_GetTotalXPBoost(XpBooster *this,int32_t membersCount,MethodInfo *method)

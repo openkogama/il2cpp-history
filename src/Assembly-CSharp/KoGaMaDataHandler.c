@@ -135,7 +135,7 @@ void Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_Execute(MethodInf
   if (bVar1 == 0) {
     pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar2,(Object *)0x0,MethodInfo__KoGaMaDataHandler__Execute__,(MethodInfo *)0x0);
-    pIVar3 = WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
+    pIVar3 = WaitForFrames::WaitForFrames_WithCallback(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -201,7 +201,7 @@ code_?:
 code_?:
   pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar2,(Object *)0x0,MethodInfo__KoGaMaDataHandler__Execute__,(MethodInfo *)0x0);
-  pIVar3 = WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
+  pIVar3 = WaitForFrames::WaitForFrames_WithCallback(1,(UnityAction *)pNVar2,(MethodInfo *)0x0);
   Coroutines::Coroutines_Start(pIVar3,(MethodInfo *)0x0);
   return;
 }

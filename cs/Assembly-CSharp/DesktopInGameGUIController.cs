@@ -16,13 +16,11 @@ public class DesktopInGameGUIController : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private GameObject winningConditionLayoutGroup;
+	private Transform GameMetersTransform;
 	[SerializeField]
 	private ShowUse3D use3DPrefab;
 	[SerializeField]
 	private CrossHair crossHair;
-	[SerializeField]
-	private GameObject touristLogo;
 	[SerializeField]
 	private Image logo;
 	[SerializeField]

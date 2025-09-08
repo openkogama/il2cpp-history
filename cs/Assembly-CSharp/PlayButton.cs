@@ -23,10 +23,6 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 	[SerializeField]
 	private ContinueButtonLockCursor continueButtonPrefab;
 	[SerializeField]
-	private Image adIcon;
-	[SerializeField]
-	private Image playIcon;
-	[SerializeField]
 	private EmbeddedPlayerConfig embeddedPlayerConfig;
 	private bool isMouseOver;
 	public Action OnPlayButtonPressed;
@@ -38,39 +34,39 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__15_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__21_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__13_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__19_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _OnContinuePressed_b__15_0(IUIStack x, BaseEventData y);
-		internal void _OnCountDownEnd_b__21_0(IUIStack handler, BaseEventData data);
+		internal void _OnContinuePressed_b__13_0(IUIStack x, BaseEventData y);
+		internal void _OnCountDownEnd_b__19_0(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass14_0
+	private sealed class __c__DisplayClass12_0
 	{
 		// Fields
 		public ContinueButtonLockCursor continueBtn;
 
 		// Constructors
-		public __c__DisplayClass14_0();
+		public __c__DisplayClass12_0();
 
 		// Methods
 		internal void _OnPromotionShown_b__0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass19_0
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
 		public bool readyForAd;
 
 		// Constructors
-		public __c__DisplayClass19_0();
+		public __c__DisplayClass17_0();
 
 		// Methods
 		internal void _OnEnable_b__0(IDeathPromotionSelector x, BaseEventData y);
@@ -94,6 +90,6 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 	protected virtual bool HandlePlayAvailable();
 	protected override void OnCountDownEnd();
 	[CompilerGenerated]
-	private void _Play_b__13_0(IDeathPromotionSelector x, BaseEventData y);
+	private void _Play_b__11_0(IDeathPromotionSelector x, BaseEventData y);
 }
 

@@ -656,8 +656,8 @@ void Assembly-CSharp.dll::MVJetPack::MVJetPack__ctor(MVJetPack *this,Dictionary_
   MVar1 = MVJetPack_GetJetPackType(data,(MethodInfo *)0x0);
   data = (Dictionary_2_System_Object_System_Object_ *)CONCAT31(data._1_3_,(char)MVar1);
   if (this_01 != (Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_ *)0x0) {
-    vehiclePrefab = (ObjectPrefab *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item((Dictionary_2_System_ByteEnum_System_Object_ *)this_01,(ByteEnum__Enum)data,MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__get_Item_MVJetPack__JetPackType_);
-    MVVehicleBase::MVVehicleBase__ctor((MVVehicleBase *)this,data_00,vehiclePrefab,worldObjects,(MethodInfo *)0x0);
+    _vehiclePrefab = (VehicleBaseObject *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item((Dictionary_2_System_ByteEnum_System_Object_ *)this_01,(ByteEnum__Enum)data,MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__get_Item_MVJetPack__JetPackType_);
+    MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle__ctor((MVSimpleOneSeatVehicle *)this,data_00,_vehiclePrefab,worldObjects,(MethodInfo *)0x0);
     uVar2 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
     piVar3 = &(this->fields)._._._._.interactionFlags;
     *(uint *)piVar3 = (uint)*piVar3 | 0x9000;

@@ -1303,7 +1303,7 @@ code_?:
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)&UNK_?,MethodInfo__GamePassesSpawnRoleRewardInfo____c__DisplayClass53_0___OnPlayerPlanetDataUpdated_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar6,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
-      SpawnRoleUnlockedPopupController::SpawnRoleUnlockedPopupController_Initialize((SpawnRoleUnlockedPopupController *)0x17680d8b,(uint)(this->fields).tierRequirment,0,1,(this->fields).woid,(MethodInfo *)0x0);
+      SpawnRoleUnlockedPopupController::SpawnRoleUnlockedPopupController_Initialize((SpawnRoleUnlockedPopupController *)0x6bec0d8b,(uint)(this->fields).tierRequirment,0,1,(this->fields).woid,(MethodInfo *)0x0);
       pSVar11 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&(this->fields).woid,(MethodInfo *)0x0);
       pSVar11 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_PLAY_WOID_,pSVar11,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -1870,7 +1870,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
           uVar8 = uVar8 + 1;
         } while (uVar8 < uVar9);
       }
-      ppMVar10 = (MethodInfo **)func_?(pIVar6,TypeInfo__IPlayModeUI,6);
+      ppMVar10 = (MethodInfo **)func_?(pIVar6,TypeInfo__IPlayModeUI,8);
 code_?:
       (*(code *)*ppMVar10)(pIVar6,0,ppMVar10[1]);
       pSVar11 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);

@@ -14,14 +14,14 @@ using UnityEngine;
 public abstract class Notification : MonoBehaviour
 {
 	// Fields
-	public NotificationType Type;
 	[HideInInspector]
 	public NotificationObjectPool pool;
+	public NotificationType Type;
 	protected float timeSinceStart;
 
 	// Properties
-	protected abstract NotificationLifetime Lifetime { get; }
 	public float Progress { get; }
+	protected abstract NotificationLifetime Lifetime { get; }
 
 	// Constructors
 	protected Notification();

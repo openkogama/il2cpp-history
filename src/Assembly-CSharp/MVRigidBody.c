@@ -348,7 +348,8 @@ void Assembly-CSharp.dll::MVRigidBody::MVRigidBody__ctor(MVRigidBody *this,Metho
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
   (this->fields).impulseVectors = this_01;
   func_?(&(this->fields).impulseVectors,this_01);
-  InGameMenuStatePlayModeController::InGameMenuStatePlayModeController__ctor((InGameMenuStatePlayModeController *)this,(MethodInfo *)0x0);
+  (this->fields)._.findWorldObjectParent = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -31,7 +31,7 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::PickupItemMultiThrowingSt
   value._12_4_ = uVar5;
   iVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
   if (iVar4 < 1) {
-    cVar6 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
+    cVar6 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
     if (cVar6 == '\0') {
       pMVar7 = (this->fields)._._.owner;
       if (((pMVar7 == (MVPickupOwner *)0x0) || (pMVar8 = (pMVar7->fields)._.worldObjectParent, pMVar8 == (MVWorldObjectClient *)0x0)) || (this_00 = (pMVar8->fields).gameObject, this_00 == (GameObject *)0x0)) {
@@ -554,7 +554,7 @@ void Assembly-CSharp.dll::PickupItemMultiThrowingStar::PickupItemMultiThrowingSt
     value._13_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
     iVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
     if (iVar4 < 1) {
-      cVar6 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
+      cVar6 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
       if (cVar6 == '\0') {
         pMVar7 = (this->fields)._._.owner;
         if (((pMVar7 == (MVPickupOwner *)0x0) || (pMVar8 = (pMVar7->fields)._.worldObjectParent, pMVar8 == (MVWorldObjectClient *)0x0)) || (this_00 = (pMVar8->fields).gameObject, this_00 == (GameObject *)0x0)) {
@@ -666,7 +666,7 @@ bool Assembly-CSharp.dll::PickupItemMultiThrowingStar::PickupItemMultiThrowingSt
   if (0 < iVar3) {
     return 0;
   }
-  cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
+  cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

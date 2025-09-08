@@ -357,7 +357,7 @@ void Assembly-CSharp.dll::ThirdPersonCamera::ThirdPersonCamera_UpdateTargetRotat
     }
     pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar7 != (IPlayModeUI *)0x0) {
-      bVar8 = func_?(5,TypeInfo__IPlayModeUI,pIVar7);
+      bVar8 = func_?(7,TypeInfo__IPlayModeUI,pIVar7);
       (this->fields)._.autoRotate = bVar8 ^ 1;
       if (((bVar8 ^ 1) != 0) && (((this->fields)._._._.ignoreInputTypes & 1) == 0)) {
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {

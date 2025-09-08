@@ -540,7 +540,7 @@ void Assembly-CSharp.dll::AndroidThirdPersonCamera::AndroidThirdPersonCamera_Upd
       uVar10 = uVar10 + 1;
     } while (uVar10 < uVar12);
   }
-  ppMVar13 = (MethodInfo **)func_?(pIVar7,TypeInfo__IPlayModeUI,5);
+  ppMVar13 = (MethodInfo **)func_?(pIVar7,TypeInfo__IPlayModeUI,7);
 code_?:
   cVar14 = (*(code *)*ppMVar13)(pIVar7,ppMVar13[1]);
   if ((cVar14 == '\0') && (((this->fields)._.ignoreInputTypes & 1) == 0)) {

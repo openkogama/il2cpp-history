@@ -205,13 +205,13 @@ void Assembly-CSharp.dll::BodyClone::BodyClone_RefreshAccessories(BodyClone *thi
             cRam_? = '\x01';
           }
           pDVar9 = (this_01->fields).accessoryMap;
-          if (((pDVar9 == (Dictionary_2_MV_Common_AccessorySlotType_AvatarAccessory_ *)0x0) || (unaff_EBP = MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_, this_03 = (AvatarAccessory *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,(Int32Enum__Enum)key,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_), this_03 == (AvatarAccessory *)0x0)) || (in_stack_10 = (MethodInfo *)AvatarAccessory::AvatarAccessory_get_Transform(this_03,(MethodInfo *)0x0), in_stack_10 == (MethodInfo *)0x0)) goto code_?;
+          if (((pDVar9 == (Dictionary_2_MV_Common_AccessorySlotType_AvatarAccessory_ *)0x0) || (unaff_EBP = MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_, this_02 = (AvatarAccessory *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,(Int32Enum__Enum)key,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_), this_02 == (AvatarAccessory *)0x0)) || (in_stack_10 = (MethodInfo *)AvatarAccessory::AvatarAccessory_get_Transform(this_02,(MethodInfo *)0x0), in_stack_10 == (MethodInfo *)0x0)) goto code_?;
           this = (BodyClone *)&UNK_?;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent((Transform *)in_stack_10,(Transform *)0x0,(MethodInfo *)0x0);
           pDVar9 = (this_01->fields).accessoryMap;
           if (pDVar9 == (Dictionary_2_MV_Common_AccessorySlotType_AvatarAccessory_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Remove((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,(Int32Enum__Enum)in_stack_10,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__Remove_MV__Common__AccessorySlotType_);
-          obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_03,(MethodInfo *)0x0);
+          obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_02,(MethodInfo *)0x0);
           key = RVar8;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -219,7 +219,7 @@ void Assembly-CSharp.dll::BodyClone::BodyClone_RefreshAccessories(BodyClone *thi
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
         }
-        key_00 = (Object *)&UNK_?;
+        key_00 = (List_1_System_Object_ *)&UNK_?;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&pOStack_2,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::Common::AccessorySlotType>__Dispose__,unaff_EBP);
         if (this[1].klass != (BodyClone__Class *)0x0) {
           pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffb0,(Dictionary_2_System_UInt32_System_Object_ *)this[1].klass,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__);
@@ -228,7 +228,6 @@ void Assembly-CSharp.dll::BodyClone::BodyClone_RefreshAccessories(BodyClone *thi
           DStack_3._index = pDVar5->_index;
           DStack_3._current.key = (Object *)(pDVar5->_current).key;
           DStack_3._16_8_ = *(undefined8 *)&(pDVar5->_current).value;
-          pAVar11 = (AvatarAccessoryData__Enum__Class *)0x7;
 code_?:
           while( true ) {
             bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext(&DStack_3,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__);
@@ -237,16 +236,16 @@ code_?:
               *unaff_FS_OFFSET = key_00;
               return;
             }
-            pSVar12 = (String *)0x0;
-            iVar13 = -1;
+            pSVar11 = (String *)0x0;
+            pLVar12 = (List_1_System_Object_ *)0xffffffff;
             if ((String *)DStack_3._current.key != (String *)0x0) {
               if ((String__Class *)(DStack_3._current.key)->klass == TypeInfo__System__String) {
-                pSVar12 = (String *)DStack_3._current.key;
+                pSVar11 = (String *)DStack_3._current.key;
               }
-              if (pSVar12 == (String *)0x0) goto code_?;
+              if (pSVar11 == (String *)0x0) goto code_?;
             }
-            pOVar14 = DStack_3._current.value;
-            bVar6 = mscorlib.dll::System::Int32::Int32_TryParse(pSVar12,(int32_t *)&stack0xffffffe4,(MethodInfo *)0x0);
+            pOVar13 = DStack_3._current.value;
+            bVar6 = mscorlib.dll::System::Int32::Int32_TryParse(pSVar11,(int32_t *)&stack0xffffffe4,(MethodInfo *)0x0);
             if (bVar6 != 0) break;
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
@@ -254,83 +253,80 @@ code_?:
             in_stack_10 = (MethodInfo *)&UNK_?;
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_Failed_to_parse_slot,(MethodInfo *)0x0);
           }
-          value = (Object *)func_?();
-          key_00 = value;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)pAVar11);
-          if (value == (Object *)0x0) goto code_?;
-          value[1].monitor = (MonitorData *)&UNK_?;
+          this_03 = (List_1_System_Object_ *)func_?();
+          key_00 = this_03;
+          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor((UxmlObjectListAttributeDescription_1_System_Object_ *)this_03,(MethodInfo *)0x0);
+          if (this_03 == (List_1_System_Object_ *)0x0) goto code_?;
+          ((UxmlObjectListAttributeDescription_1_System_Object___Fields *)&this_03->fields)[1] = (UxmlObjectListAttributeDescription_1_System_Object___Fields)&UNK_?;
           func_?();
-          value[1].klass = (Object__Class *)iVar13;
-          if (pOVar14 != (Object *)0x0) {
+          (((UxmlObjectListAttributeDescription_1_System_Object___Fields *)&this_03->fields)->_)._defaultValue_k__BackingField = pLVar12;
+          if (pOVar13 != (Object *)0x0) {
             accessoryData = (Dictionary_2_System_Object_System_Object_ *)func_?();
             if (accessoryData != (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
 code_?:
             func_?();
 code_?:
             func_?();
-            pcVar15 = (code *)swi(3);
-            (*pcVar15)();
+            pcVar14 = (code *)swi(3);
+            (*pcVar14)();
             return;
           }
           accessoryData = (Dictionary_2_System_Object_System_Object_ *)0x0;
 code_?:
-          pAVar11 = TypeInfo__MV__Common__AvatarAccessoryData;
-          pEVar16 = (Enum *)func_?();
-          pSVar12 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar16,StringLiteral_d,(MethodInfo *)0x0);
+          pEVar15 = (Enum *)func_?();
+          pSVar11 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar15,StringLiteral_d,(MethodInfo *)0x0);
           if (accessoryData == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-          TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)accessoryData,(Object *)pSVar12,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-          if (TVar17.m_Index == 0) {
+          TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)accessoryData,(Object *)pSVar11,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+          if (TVar16.m_Index == 0) {
 code_?:
-            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey((Dictionary_2_System_Int32Enum_System_Single_ *)0x4d8b8445,(Int32Enum__Enum)value[1].klass,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__ContainsKey_MV__Common__AccessorySlotType_);
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey((Dictionary_2_System_Int32Enum_System_Single_ *)0x4d8b8445,(Int32Enum__Enum)(((UxmlObjectListAttributeDescription_1_System_Object___Fields *)&this_03->fields)->_)._defaultValue_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__ContainsKey_MV__Common__AccessorySlotType_);
             if (bVar6 != 0) {
-              pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)0x4d8b8445,(Int32Enum__Enum)value[1].klass,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_);
-              if (pOVar14 == (Object *)0x0) goto code_?;
-              bVar6 = mscorlib.dll::System::String::String_op_Inequality((String *)pOVar14[2].klass,(String *)TVar17.m_Index,(MethodInfo *)0x0);
+              pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)0x4d8b8445,(Int32Enum__Enum)(((UxmlObjectListAttributeDescription_1_System_Object___Fields *)&this_03->fields)->_)._defaultValue_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_);
+              if (pOVar13 == (Object *)0x0) goto code_?;
+              bVar6 = mscorlib.dll::System::String::String_op_Inequality((String *)pOVar13[2].klass,(String *)TVar16.m_Index,(MethodInfo *)0x0);
               if (bVar6 == 0) {
-                bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey((Dictionary_2_System_Int32Enum_System_Single_ *)0x4d8b8445,(Int32Enum__Enum)value[1].klass,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__ContainsKey_MV__Common__AccessorySlotType_);
+                bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey((Dictionary_2_System_Int32Enum_System_Single_ *)0x4d8b8445,(Int32Enum__Enum)(((UxmlObjectListAttributeDescription_1_System_Object___Fields *)&this_03->fields)->_)._defaultValue_k__BackingField,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__ContainsKey_MV__Common__AccessorySlotType_);
                 if (bVar6 == 0) goto code_?;
-                key_00 = (Object *)value[1].klass;
-                pSVar12 = (String *)&UNK_?;
-                pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)0x4d8b8445,(Int32Enum__Enum)key_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_);
-                if (pOVar14 == (Object *)0x0) goto code_?;
-                pAVar11 = (AvatarAccessoryData__Enum__Class *)pOVar14[2].klass;
-                bVar6 = mscorlib.dll::System::String::String_op_Equality((String *)pAVar11,pSVar12,(MethodInfo *)0x0);
-                this_02 = TypeInfo__MV__Common__AvatarAccessoryData;
+                key_00 = (((UxmlObjectListAttributeDescription_1_System_Object___Fields *)&this_03->fields)->_)._defaultValue_k__BackingField;
+                pSVar11 = (String *)&UNK_?;
+                pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)0x4d8b8445,(Int32Enum__Enum)key_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Item_MV__Common__AccessorySlotType_);
+                if (pOVar13 == (Object *)0x0) goto code_?;
+                bVar6 = mscorlib.dll::System::String::String_op_Equality((String *)pOVar13[2].klass,pSVar11,(MethodInfo *)0x0);
+                pAVar17 = TypeInfo__MV__Common__AvatarAccessoryData;
                 if (bVar6 == 0) goto code_?;
-                pEVar16 = (Enum *)func_?();
-                pSVar12 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar16,StringLiteral_d,(MethodInfo *)0x0);
-                TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,(Object *)pSVar12,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                if (TVar17.m_Index == 0) goto code_?;
-                if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
+                pEVar15 = (Enum *)func_?();
+                pSVar11 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar15,StringLiteral_d,(MethodInfo *)0x0);
+                TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pAVar17,(Object *)pSVar11,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                if (TVar16.m_Index == 0) goto code_?;
+                if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) != (TypeInfo__System__Single->_0).element_class) goto code_?;
                 pfVar18 = (float *)func_?();
-                BodyAccessoriesController::BodyAccessoriesController_ApplyAccessoryOffset((BodyAccessoriesController *)&UNK_?,*pfVar18,(AccessorySlotType__Enum)value[1].klass,(MethodInfo *)0x0);
-                pAVar11 = TypeInfo__MV__Common__AvatarAccessoryData;
-                pEVar16 = (Enum *)func_?();
-                pSVar12 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar16,StringLiteral_d,(MethodInfo *)0x0);
-                TVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pAVar11,(Object *)pSVar12,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
-                if (TVar17.m_Index == 0) goto code_?;
-                if (*(Il2CppClass **)(*(int *)TVar17.m_Index + 0x20) == (TypeInfo__System__Single->_0).element_class) {
+                BodyAccessoriesController::BodyAccessoriesController_ApplyAccessoryOffset((BodyAccessoriesController *)&UNK_?,*pfVar18,(AccessorySlotType__Enum)(this_03->fields)._items,(MethodInfo *)0x0);
+                pAVar17 = TypeInfo__MV__Common__AvatarAccessoryData;
+                pEVar15 = (Enum *)func_?();
+                pSVar11 = mscorlib.dll::System::Enum::Enum_ToString_2(pEVar15,StringLiteral_d,(MethodInfo *)0x0);
+                TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pAVar17,(Object *)pSVar11,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+                if (TVar16.m_Index == 0) goto code_?;
+                if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) == (TypeInfo__System__Single->_0).element_class) {
                   pfVar18 = (float *)func_?();
-                  pAVar11 = (AvatarAccessoryData__Enum__Class *)value[1].klass;
-                  key_00 = (Object *)&UNK_?;
-                  BodyAccessoriesController::BodyAccessoriesController_ApplySizeChange((BodyAccessoriesController *)&UNK_?,*pfVar18,(AccessorySlotType__Enum)pAVar11,(MethodInfo *)0x0);
+                  key_00 = (List_1_System_Object_ *)&UNK_?;
+                  BodyAccessoriesController::BodyAccessoriesController_ApplySizeChange((BodyAccessoriesController *)&UNK_?,*pfVar18,(AccessorySlotType__Enum)(this_03->fields)._items,(MethodInfo *)0x0);
                   goto code_?;
                 }
                 goto code_?;
               }
             }
-            key_00 = (Object *)0xf4158b80;
-            pAVar11 = (AvatarAccessoryData__Enum__Class *)func_?();
+            key_00 = (List_1_System_Object_ *)0xc8158b80;
+            this_04 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
             pMVar4 = MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_;
-            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pAVar11,value,MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_,(MethodInfo *)0x0);
-            Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory((AccessoryLoader *)0xf4158b80,(String *)pMVar4,(Action_1_AvatarAccessory_ *)pAVar11,(MethodInfo *)0x0);
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_04,(Object *)this_03,MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_,(MethodInfo *)0x0);
+            Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory((AccessoryLoader *)0xc8158b80,(String *)pMVar4,(Action_1_AvatarAccessory_ *)this_04,(MethodInfo *)0x0);
             goto code_?;
           }
           TVar19.m_Index = (int32_t)(String *)0x0;
-          if (*(String__Class **)TVar17.m_Index == TypeInfo__System__String) {
-            TVar19 = TVar17;
+          if (*(String__Class **)TVar16.m_Index == TypeInfo__System__String) {
+            TVar19 = TVar16;
           }
-          TVar17.m_Index = TVar19.m_Index;
+          TVar16.m_Index = TVar19.m_Index;
           if ((String *)TVar19.m_Index != (String *)0x0) goto code_?;
 code_?:
           func_?();
@@ -342,8 +338,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

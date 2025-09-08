@@ -5,10 +5,10 @@ IEnumerator * Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrowe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemFlamethrower___DoFlaming_d__18);
+    func_?(&TypeInfo__PickupItemFlamethrower___DoFlaming_d__21);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemFlamethrower___DoFlaming_d__18;
+  method_00 = TypeInfo__PickupItemFlamethrower___DoFlaming_d__21;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
@@ -24,10 +24,10 @@ IEnumerator * Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrowe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__19);
+    func_?(&TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__22);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__19;
+  method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__22;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
@@ -110,12 +110,12 @@ code_?:
       if (pMVar4 != (MVPickupOwner *)0x0) {
         if ((pMVar4->fields)._IsLocal_k__BackingField != 0) {
           if (cRam_? == '\0') {
-            instigatorActorNr = (int32_t)&TypeInfo__PickupItemFlamethrower___DoFlaming_d__18;
+            instigatorActorNr = (int32_t)&TypeInfo__PickupItemFlamethrower___DoFlaming_d__21;
             this = (PickupItemFlamethrower *)&UNK_?;
             func_?();
             cRam_? = '\x01';
           }
-          this = (PickupItemFlamethrower *)TypeInfo__PickupItemFlamethrower___DoFlaming_d__18;
+          this = (PickupItemFlamethrower *)TypeInfo__PickupItemFlamethrower___DoFlaming_d__21;
           pOVar5 = (Object *)func_?();
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar5,ExceptionArgument__Enum_obj,(MethodInfo *)this);
           pOVar5[1].klass = (Object__Class *)0x0;
@@ -126,7 +126,7 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__19;
+          method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__22;
           pOVar5 = (Object *)func_?();
           method = (MethodInfo *)&UNK_?;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar5,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);

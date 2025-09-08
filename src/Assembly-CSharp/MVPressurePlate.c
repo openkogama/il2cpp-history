@@ -466,14 +466,18 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_SetupTierInventory(MV
 
 {
   pMVar1 = (this->fields).plateObject;
-  if ((pMVar1 != (MVPressurePlateObject *)0x0) && (this_00 = (pMVar1->fields).plateLogicModel, this_00 != (GameObject *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_00,0,(MethodInfo *)0x0);
-    MVLogicObject::MVLogicObject_SetupTierInventory((MVLogicObject *)this,(MethodInfo *)0x0);
-    return;
+  if ((pMVar1 != (MVPressurePlateObject *)0x0) && (pGVar2 = (pMVar1->fields).plateLogicModel, pGVar2 != (GameObject *)0x0)) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0,(MethodInfo *)0x0);
+    MVWorldObjectClient::MVWorldObjectClient_SetupTierInventory((MVWorldObjectClient *)this,(MethodInfo *)0x0);
+    pGVar2 = (this->fields)._.lodGameObject;
+    if (pGVar2 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,1,(MethodInfo *)0x0);
+      return;
+    }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

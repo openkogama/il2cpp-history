@@ -1,33 +1,7 @@
 
-/* Void <ReboostNotClicked>b__21_0(IUIStack, BaseEventData) */
+/* Void <ReboostNotClicked>b__20_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReboostNotClicked_b__21_0(DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (x != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x6;
-    pIStack_2 = x;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <ReviveNotClicked>b__22_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReviveNotClicked_b__22_0(DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReboostNotClicked_b__20_0(DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -51,9 +25,35 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReviveNotC
 }
 
 
-/* Void <ShowDeadmodeUI>b__31_0(IUIStack, BaseEventData) */
+/* Void <ReviveNotClicked>b__21_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowDeadmodeUI_b__31_0(DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ReviveNotClicked_b__21_0(DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (x != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x6;
+    pIStack_2 = x;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <ShowDeadmodeUI>b__30_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowDeadmodeUI_b__30_0(DeathUIController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -77,9 +77,9 @@ void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowDeadmo
 }
 
 
-/* Void <ShowReviveMenu>b__20_2() */
+/* Void <ShowReviveMenu>b__19_1() */
 
-void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowReviveMenu_b__20_2(DeathUIController_c *this,MethodInfo *method)
+void Assembly-CSharp.dll::DeathUIController+<>c::DeathUIController_c__ShowReviveMenu_b__19_1(DeathUIController_c *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

@@ -229,14 +229,28 @@ void Assembly-CSharp.dll::DeleteWoidController::DeleteWoidController__OnPick_b__
   mscorlib.dll::System::String::String_Concat_4(StringLiteral_Are_you_sure_you_wish_to_delete_,str1,::StringLiteral__,(MethodInfo *)0x0);
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__DeleteWoidController__DeleteWorldObject_bool__ConfirmationPopup_,(MethodInfo *)0x0);
-  if (x != (IModalPopupCreator *)0x0) {
-    pSStack1 = ::StringLiteral__;
+  if (x == (IModalPopupCreator *)0x0) {
     func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = 0;
+  pIVar3 = x->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+        ppMVar5 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar2].offset].method;
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  ppMVar5 = (MethodInfo **)func_?();
+code_?:
+  (*(code *)*ppMVar5)(x);
   return;
 }
 

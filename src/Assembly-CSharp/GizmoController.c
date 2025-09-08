@@ -185,8 +185,19 @@ joined_?:
     return;
   }
   func_?();
-  pcVar10 = (code *)swi(1);
-  (*pcVar10)();
+  bVar10 = pSStack_1 < *(Single__Class **)action || (uint)((int)pSStack_1 - *(int *)action) < (uint)(method < (MethodInfo *)*in_stack_11);
+  pbVar12 = (byte *)(in_stack_13 + -0x4defc4e4);
+  bVar14 = *pbVar12 + (byte)in_stack_13;
+  bVar15 = CARRY1(*pbVar12,(byte)in_stack_13) || CARRY1(bVar14,bVar10);
+  *pbVar12 = bVar14 + bVar10;
+  bVar14 = (byte)in_stack_11 - 0x3b;
+  bVar10 = (byte)in_stack_11 < 0x3b || bVar14 < bVar15;
+  bVar14 = bVar14 - bVar15;
+  bVar16 = (byte)action;
+  bVar15 = CARRY1(bVar16,bVar16) || CARRY1(bVar16 * '\x02',bVar10);
+  bVar17 = bVar14 - 0x3b;
+  pcVar18 = (char *)(CONCAT31((int3)(action >> 8),bVar16 * '\x02' + bVar10) + 0x1d23103b);
+  *pcVar18 = *pcVar18 + (bVar17 - bVar15) + (bVar14 < 0x3b || bVar17 < bVar15);
   return;
 }
 

@@ -295,7 +295,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup::FirstTimeActivatable
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32]::Dictionary_2_System_Int32Enum_System_Int32__Add((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,9,100,MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_int>__Add_MVWorldObjectDocumentationType__int_);
     (this->fields).priorityDictionary = (Dictionary_2_MVWorldObjectDocumentationType_System_Int32_ *)this_00;
     func_?();
-    FirstTimeActivatableSetEventOnShow::FirstTimeActivatableSetEventOnShow__ctor((FirstTimeActivatableSetEventOnShow *)this,(MethodInfo *)0x0);
+    FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();

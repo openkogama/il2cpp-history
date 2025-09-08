@@ -16,6 +16,7 @@ public class WinningConditionControl : MonoBehaviour
 
 	// Methods
 	public static bool TryGetPrioritizedWinCondition(out WinningConditionType condition);
+	public static bool IsWinConditionPresent(WinningConditionType condition);
 	public static bool TryGetPrioritizedStat(out GameStatCounterType statType);
 	public static int GetPrioritizedStatLimit(GameStatCounterType gameStatType);
 	public static bool IsNewScoreBetter(int newScore, int oldScore, GameStatCounterType statType);

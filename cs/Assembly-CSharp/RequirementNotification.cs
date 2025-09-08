@@ -10,6 +10,8 @@ using MV.Common;
 using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -32,6 +34,11 @@ public class RequirementNotification : Notification
 	private NotificationRequirementPanel TeamPanel;
 	[SerializeField]
 	private NotificationRequirementPanel GameTierPanel;
+	[FormerlySerializedAs("TertiaryNotificationUI")]
+	[SerializeField]
+	private TertiaryNotificationUI tertiaryNotificationUI;
+	[SerializeField]
+	private UnityEngine.UI.Text Label;
 	private List<GameObject> PanelsToDestroy;
 
 	// Properties
@@ -44,18 +51,18 @@ public class RequirementNotification : Notification
 	{
 		// Fields
 		public static readonly __c __9;
-		public static Action<GameObject> __9__11_0;
+		public static Action<GameObject> __9__13_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Initialize_b__11_0(GameObject x);
+		internal void _Initialize_b__13_0(GameObject x);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass12_0
+	private sealed class __c__DisplayClass14_0
 	{
 		// Fields
 		public int gameCoins;
@@ -63,14 +70,14 @@ public class RequirementNotification : Notification
 		public bool enabled;
 
 		// Constructors
-		public __c__DisplayClass12_0();
+		public __c__DisplayClass14_0();
 
 		// Methods
 		internal void _ShowGameCoinRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass13_0
+	private sealed class __c__DisplayClass15_0
 	{
 		// Fields
 		public int stars;
@@ -78,14 +85,14 @@ public class RequirementNotification : Notification
 		public bool enabled;
 
 		// Constructors
-		public __c__DisplayClass13_0();
+		public __c__DisplayClass15_0();
 
 		// Methods
 		internal void _ShowStarRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass14_0
+	private sealed class __c__DisplayClass16_0
 	{
 		// Fields
 		public MVTeam team;
@@ -93,14 +100,14 @@ public class RequirementNotification : Notification
 		public bool enabled;
 
 		// Constructors
-		public __c__DisplayClass14_0();
+		public __c__DisplayClass16_0();
 
 		// Methods
 		internal void _ShowTeamRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass15_0
+	private sealed class __c__DisplayClass17_0
 	{
 		// Fields
 		public int level;
@@ -108,14 +115,14 @@ public class RequirementNotification : Notification
 		public bool enabled;
 
 		// Constructors
-		public __c__DisplayClass15_0();
+		public __c__DisplayClass17_0();
 
 		// Methods
 		internal void _ShowLevelRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass16_0
+	private sealed class __c__DisplayClass18_0
 	{
 		// Fields
 		public GamePassTier tier;
@@ -123,7 +130,7 @@ public class RequirementNotification : Notification
 		public bool enabled;
 
 		// Constructors
-		public __c__DisplayClass16_0();
+		public __c__DisplayClass18_0();
 
 		// Methods
 		internal void _ShowGameTierRequirement_b__0(INotificationRequirementPanel x, BaseEventData y);

@@ -66,7 +66,7 @@ void Assembly-CSharp.dll::SprayCubes::SprayCubes_Execute(SprayCubes *this,CubeMo
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0x47a0);
+    func_?(0x9af4);
     func_?(&TypeInfo__Cube);
     func_?(&TypeInfo__MV__WorldObject__IntVector);
     func_?(&TypeInfo__MVInputWrapper);
@@ -119,7 +119,7 @@ code_?:
         if ((bVar8 != 0) && (IVar10.y = iVar3, IVar10.x = iVar2, IVar10.z = iVar4, CVar11 = CubeModelingStateMachine::CubeModelingStateMachine_CanAddCubeAt_1(e,IVar10,(MethodInfo *)0x0), CVar11 == CanPerformCubeActionResult__Enum_Yes)) {
           pos.y = iVar3;
           pos.x = iVar4;
-          iVar4 = -0x4217;
+          iVar4 = 0x7939;
           iVar2 = 0x1046;
           pos.z = (int16_t)e;
           pCVar12 = e;

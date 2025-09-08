@@ -142,10 +142,8 @@ code_?:
     return 0;
   }
   func_?();
-  func_?();
-  pcVar16 = (code *)swi(1);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

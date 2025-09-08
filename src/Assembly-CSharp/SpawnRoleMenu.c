@@ -2080,7 +2080,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_StartPlaying(SpawnRoleMen
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField != (IPlayModeUI *)0x0) {
-      func_?(6);
+      func_?(8);
       pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
       if ((pSVar5 != (SpawnRoleDataMediator *)0x0) && (this_00 = (pSVar5->fields).SpawnRoleModeTypeWrapper, this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
         bVar6 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode(this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);

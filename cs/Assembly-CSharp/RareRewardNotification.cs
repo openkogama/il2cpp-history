@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -21,6 +22,9 @@ public class RareRewardNotification : Notification
 	private GameObject LegendaryPanel;
 	[SerializeField]
 	private UnityEngine.UI.Text text;
+	[FormerlySerializedAs("TertiaryNotificationUI")]
+	[SerializeField]
+	private TertiaryNotificationUI tertiaryNotificationUI;
 
 	// Properties
 	protected override NotificationLifetime Lifetime { get; }

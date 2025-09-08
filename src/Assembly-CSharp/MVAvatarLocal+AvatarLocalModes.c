@@ -34,7 +34,7 @@ AvatarRuntimeState__Enum Assembly-CSharp.dll::MVAvatarLocal+AvatarLocalModes::MV
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField != (IPlayModeUI *)0x0) {
-    puStack_1 = (undefined *)0x5;
+    puStack_1 = (undefined *)0x7;
     pMVar2 = (MVNetworkGameStateListener *)func_?();
     if ((char)pMVar2 == '\0') {
       pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);

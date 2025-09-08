@@ -5,13 +5,40 @@ void Assembly-CSharp.dll::CullingApiTest::CullingApiTest_OnDestroy(CullingApiTes
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CullingApiWrapper);
+    func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CullingApiWrapper);
+    func_?();
   }
-  CullingApiWrapper::CullingApiWrapper_Destroy((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (TypeInfo__CullingApiWrapper->static_fields->cullingGroup == (CullingGroup *)0x0) {
+    return;
+  }
+  if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  this_00 = (PostProcessEffectRenderer_1_System_Object_ *)TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+  if (this_00 != (PostProcessEffectRenderer_1_System_Object_ *)0x0) {
+    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::PostProcessEffectRenderer`1[System::Object]::PostProcessEffectRenderer_1_System_Object__set_settings(this_00,(Object *)0x0,(MethodInfo *)0x0);
+    this_01 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;
+    if (this_01 != (CullingGroup *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_Dispose(this_01,(MethodInfo *)0x0);
+      TypeInfo__CullingApiWrapper->static_fields->cullingGroup = (CullingGroup *)0x0;
+      func_?();
+      return;
+    }
+  }
+  uVar1 = func_?(&stack0xfffffff4);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -52,10 +79,11 @@ void Assembly-CSharp.dll::CullingApiTest::CullingApiTest_Subscribe(CullingApiTes
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).testClasses;
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__CullingApiTest__TestClass);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  method_00 = TypeInfo__CullingApiTest__TestClass;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (pLVar1 != (List_1_CullingApiTest_TestClass_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLVar1,(Object *)this_00,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__Add_CullingApiTest__TestClass_);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLVar1,value,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__Add_CullingApiTest__TestClass_);
     pLVar1 = (this->fields).testClasses;
     if (pLVar1 != (List_1_CullingApiTest_TestClass_ *)0x0) {
       iCullingGroupSubscriber = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).testClasses,(pLVar1->fields)._size + -1,MethodInfo__System__Collections__Generic__List<CullingApiTest::TestClass>__get_Item_int_);

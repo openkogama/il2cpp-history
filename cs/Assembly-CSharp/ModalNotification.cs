@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -20,6 +21,9 @@ public class ModalNotification : Notification
 	private Image image;
 	[SerializeField]
 	private Sprite defaultSprite;
+	[FormerlySerializedAs("TertiaryNotificationUI")]
+	[SerializeField]
+	private TertiaryNotificationUI tertiaryNotificationUI;
 	private NotificationLifetime lifeTime;
 
 	// Properties

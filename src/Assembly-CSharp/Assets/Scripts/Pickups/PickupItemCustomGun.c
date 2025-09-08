@@ -66,7 +66,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
   value._12_4_ = uVar6;
   iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
   if (iVar7 < 1) {
-    cVar8 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
+    cVar8 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
     if (cVar8 == '\0') {
       pMVar2 = (this->fields)._._._.owner;
       if (pMVar2 == (MVPickupOwner *)0x0) {
@@ -151,7 +151,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
       value._13_3_ = *(undefined3 *)&(this->fields).currentAmmo.field_0xd;
       iVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
       if (iVar6 < 1) {
-        cVar7 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
+        cVar7 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
         if (cVar7 == '\0') {
           pMVar5 = (this->fields)._._._.owner;
           if (pMVar5 == (MVPickupOwner *)0x0) goto code_?;
@@ -3711,7 +3711,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
   if (0 < iVar3) {
     return 0;
   }
-  cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
+  cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

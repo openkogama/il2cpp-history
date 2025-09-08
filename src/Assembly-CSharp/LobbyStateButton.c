@@ -10,13 +10,13 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateBriefing(Lobb
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&WinningConditionBriefing_MethodInfo__UnityEngine__Object__Instantiate<WinningConditionBriefing>_WinningConditionBriefing_);
     func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__LobbyStateButton____c___CreateBriefing_b__39_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass39_0___CreateBriefing_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass39_0);
+    func_?(&MethodInfo__LobbyStateButton____c___CreateBriefing_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass36_0___CreateBriefing_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass36_0);
     func_?(&TypeInfo__LobbyStateButton____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass39_0;
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass36_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if ((this->fields).shouldPop != 0) {
@@ -24,16 +24,16 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateBriefing(Lobb
     if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__LobbyStateButton____c);
     }
-    callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__39_0;
+    callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__36_0;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__LobbyStateButton____c);
       }
       object = TypeInfo__LobbyStateButton____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___CreateBriefing_b__39_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-      TypeInfo__LobbyStateButton____c->static_fields->__9__39_0 = callbackFunction;
-      func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__39_0,callbackFunction);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___CreateBriefing_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      TypeInfo__LobbyStateButton____c->static_fields->__9__36_0 = callbackFunction;
+      func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__36_0,callbackFunction);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -51,7 +51,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateBriefing(Lobb
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     winConType = TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>;
     callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__LobbyStateButton____c__DisplayClass39_0___CreateBriefing_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__LobbyStateButton____c__DisplayClass36_0___CreateBriefing_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
@@ -79,13 +79,13 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateSpawnRoleSele
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&SpawnRoleMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleMenu>_SpawnRoleMenu_);
     func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__LobbyStateButton____c___CreateSpawnRoleSelectionMenu_b__38_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass38_0___CreateSpawnRoleSelectionMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass38_0);
+    func_?(&MethodInfo__LobbyStateButton____c___CreateSpawnRoleSelectionMenu_b__35_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass35_0___CreateSpawnRoleSelectionMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass35_0);
     func_?(&TypeInfo__LobbyStateButton____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass38_0;
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass35_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if ((this->fields).shouldPop != 0) {
@@ -93,16 +93,16 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateSpawnRoleSele
     if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__LobbyStateButton____c);
     }
-    callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__38_0;
+    callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__35_0;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__LobbyStateButton____c);
       }
       object = TypeInfo__LobbyStateButton____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___CreateSpawnRoleSelectionMenu_b__38_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-      TypeInfo__LobbyStateButton____c->static_fields->__9__38_0 = callbackFunction;
-      func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__38_0,callbackFunction);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___CreateSpawnRoleSelectionMenu_b__35_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      TypeInfo__LobbyStateButton____c->static_fields->__9__35_0 = callbackFunction;
+      func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__35_0,callbackFunction);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -123,7 +123,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateSpawnRoleSele
       SpawnRoleMenu::SpawnRoleMenu_Initialize((SpawnRoleMenu *)pOVar1,(pMVar2->fields)._._Team_k__BackingField,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__LobbyStateButton____c__DisplayClass38_0___CreateSpawnRoleSelectionMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__LobbyStateButton____c__DisplayClass35_0___CreateSpawnRoleSelectionMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -149,13 +149,13 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateTeamMenu(Lobb
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&TeamMenu_MethodInfo__UnityEngine__Object__Instantiate<TeamMenu>_TeamMenu_);
     func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__LobbyStateButton____c___CreateTeamMenu_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass37_0___CreateTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass37_0);
+    func_?(&MethodInfo__LobbyStateButton____c___CreateTeamMenu_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass34_0___CreateTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass34_0);
     func_?(&TypeInfo__LobbyStateButton____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass37_0;
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass34_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if ((this->fields).isInAd == 0) {
@@ -164,16 +164,16 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateTeamMenu(Lobb
       if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__LobbyStateButton____c);
       }
-      callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__37_0;
+      callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__34_0;
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
         if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__LobbyStateButton____c);
         }
         object = TypeInfo__LobbyStateButton____c->static_fields->__9;
         callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___CreateTeamMenu_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-        TypeInfo__LobbyStateButton____c->static_fields->__9__37_0 = callbackFunction;
-        func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__37_0,callbackFunction);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___CreateTeamMenu_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+        TypeInfo__LobbyStateButton____c->static_fields->__9__34_0 = callbackFunction;
+        func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__34_0,callbackFunction);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -196,7 +196,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_CreateTeamMenu(Lobb
     func_?();
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__LobbyStateButton____c__DisplayClass37_0___CreateTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__LobbyStateButton____c__DisplayClass34_0___CreateTeamMenu_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -214,14 +214,6 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_DoLockCursor(LobbyS
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 != (MVNetworkGameStateListener *)0x0)) {
     if ((pMVar2->fields).currentGameState == 2) {
-      this_00 = (this->fields).lobbyStateButton;
-      if (this_00 != (Button *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable((Selectable *)this_00,0,(MethodInfo *)0x0);
-        MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(1,1,(MethodInfo *)0x0);
-        return;
-      }
-    }
-    else {
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -281,6 +273,14 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_DoLockCursor(LobbyS
             }
           }
         }
+      }
+    }
+    else {
+      this_00 = (this->fields).lobbyStateButton;
+      if (this_00 != (Button *)0x0) {
+        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable((Selectable *)this_00,0,(MethodInfo *)0x0);
+        MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(1,1,(MethodInfo *)0x0);
+        return;
       }
     }
   }
@@ -411,12 +411,12 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_OnPressPlay(LobbySt
     func_?(&MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__);
     func_?(&MethodInfo__LobbyStateButton__OnShowAdFinishedEnterPlaymode_Assets__Scripts__AdIntegration__InterstitialAdResult_);
     func_?(&MethodInfo__LobbyStateButton__OnShowAdFinishedSpawnRolesPresent_Assets__Scripts__AdIntegration__InterstitialAdResult_);
-    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass26_0___OnPressPlay_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_);
-    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass26_0___OnPressPlay_b__1_Assets__Scripts__AdIntegration__InterstitialAdResult_);
-    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass26_0);
+    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass23_0___OnPressPlay_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_);
+    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass23_0___OnPressPlay_b__1_Assets__Scripts__AdIntegration__InterstitialAdResult_);
+    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass23_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass26_0;
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass23_0;
   value = (LobbyStateButton *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (LobbyStateButton *)0x0) {
@@ -453,12 +453,12 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_OnPressPlay(LobbySt
             }
             else {
               this_03 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>);
-              method_1 = MethodInfo__LobbyStateButton____c__DisplayClass26_0___OnPressPlay_b__1_Assets__Scripts__AdIntegration__InterstitialAdResult_;
+              method_1 = MethodInfo__LobbyStateButton____c__DisplayClass23_0___OnPressPlay_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_;
             }
           }
           else {
             this_03 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>);
-            method_1 = MethodInfo__LobbyStateButton____c__DisplayClass26_0___OnPressPlay_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_;
+            method_1 = MethodInfo__LobbyStateButton____c__DisplayClass23_0___OnPressPlay_b__1_Assets__Scripts__AdIntegration__InterstitialAdResult_;
           }
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_03,(Object *)value,method_1,(MethodInfo *)0x0);
           LobbyStateButton_PressPlayWithCallback(this,(Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)this_03,(MethodInfo *)0x0);
@@ -482,7 +482,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_OnShowAdFinishedEnt
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 != (MVNetworkGameStateListener *)0x0)) {
-    if ((pMVar2->fields).currentGameState != 2) {
+    if ((pMVar2->fields).currentGameState == 2) {
       LobbyStateButton_StartPlaying(this,(MethodInfo *)0x0);
       return;
     }
@@ -595,7 +595,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PopThenLockCursor(L
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__LobbyStateButton____c___PopThenLockCursor_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__LobbyStateButton____c___PopThenLockCursor_b__27_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__LobbyStateButton____c);
     cRam_? = '\x01';
   }
@@ -603,16 +603,16 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PopThenLockCursor(L
   if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__LobbyStateButton____c);
   }
-  callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__30_0;
+  callbackFunction = TypeInfo__LobbyStateButton____c->static_fields->__9__27_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__LobbyStateButton____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__LobbyStateButton____c);
     }
     object = TypeInfo__LobbyStateButton____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___PopThenLockCursor_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__LobbyStateButton____c->static_fields->__9__30_0 = callbackFunction;
-    func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__30_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__LobbyStateButton____c___PopThenLockCursor_b__27_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__LobbyStateButton____c->static_fields->__9__27_0 = callbackFunction;
+    func_?(&TypeInfo__LobbyStateButton____c->static_fields->__9__27_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -620,7 +620,7 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PopThenLockCursor(L
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 != (MVNetworkGameStateListener *)0x0)) {
-    if ((pMVar2->fields).currentGameState != 2) {
+    if ((pMVar2->fields).currentGameState == 2) {
       LobbyStateButton_StartPlaying(this,(MethodInfo *)0x0);
       return;
     }
@@ -646,11 +646,11 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PressPlayWithCallba
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>);
     func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
-    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass27_0___PressPlayWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_);
-    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass27_0);
+    func_?(&MethodInfo__LobbyStateButton____c__DisplayClass24_0___PressPlayWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_);
+    func_?(&TypeInfo__LobbyStateButton____c__DisplayClass24_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass27_0;
+  method_00 = TypeInfo__LobbyStateButton____c__DisplayClass24_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value == (Object *)0x0) goto code_?;
@@ -659,44 +659,47 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_PressPlayWithCallba
   value[1].monitor = (MonitorData *)callback;
   func_?(&value[1].monitor,callback);
   bVar1 = MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled((MethodInfo *)0x0);
-  if (bVar1 != 0) {
+  if (bVar1 == 0) {
+code_?:
+    (this->fields).isInAd = 0;
+  }
+  else {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField == (IEditModeUI *)0x0) {
-      this_00 = (this->fields).embeddedPlayerConfig;
-      if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
-      pEVar2 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
-      if (pEVar2->showPlayButtonAd != 0) {
-        (this->fields).isInAd = 1;
-        pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-        this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,value,MethodInfo__LobbyStateButton____c__DisplayClass27_0___PressPlayWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_,(MethodInfo *)0x0);
-        if (pIVar3 != (IAdManager *)0x0) {
-          pIVar4 = pIVar3->klass;
-          uVar5 = 0;
-          uVar6._0_1_ = (pIVar4->_1).rank;
-          uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-          if (uVar6 != 0) {
-            do {
-              if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-                ppMVar7 = &(&(pIVar3->klass->vtable).RequestInterstitial)[pIVar3->klass->interfaceOffsets[uVar5].offset].method;
-                goto code_?;
-              }
-              uVar5 = uVar5 + 1;
-            } while (uVar5 < uVar6);
-          }
-          ppMVar7 = (MethodInfo **)func_?(pIVar3,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,7);
-code_?:
-          (*(code *)*ppMVar7)(pIVar3,this_01,7,ppMVar7[1]);
-          return;
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField != (IEditModeUI *)0x0) goto code_?;
+    this_00 = (this->fields).embeddedPlayerConfig;
+    if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+    pEVar2 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
+    bVar1 = pEVar2->showPlayButtonAd;
+    (this->fields).isInAd = bVar1 != 0;
+    if (bVar1 != 0) {
+      pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,value,MethodInfo__LobbyStateButton____c__DisplayClass24_0___PressPlayWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_,(MethodInfo *)0x0);
+      if (pIVar3 != (IAdManager *)0x0) {
+        pIVar4 = pIVar3->klass;
+        uVar5 = 0;
+        uVar6._0_1_ = (pIVar4->_1).rank;
+        uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+        if (uVar6 != 0) {
+          do {
+            if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
+              ppMVar7 = &(&(pIVar3->klass->vtable).RequestInterstitial)[pIVar3->klass->interfaceOffsets[uVar5].offset].method;
+              goto code_?;
+            }
+            uVar5 = uVar5 + 1;
+          } while (uVar5 < uVar6);
         }
-        goto code_?;
+        ppMVar7 = (MethodInfo **)func_?(pIVar3,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,7);
+code_?:
+        (*(code *)*ppMVar7)(pIVar3,this_01,7,ppMVar7[1]);
+        return;
       }
+      goto code_?;
     }
   }
-  (this->fields).isInAd = 0;
   pMVar8 = value[1].monitor;
   if (pMVar8 != (MonitorData *)0x0) {
     (**(code **)(pMVar8 + 0xc))(*(undefined4 *)(pMVar8 + 0x20),3,*(undefined4 *)(pMVar8 + 0x14));
@@ -768,12 +771,8 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Start(LobbyStateBut
               if (uVar10 != '\0') {
                 return;
               }
-              pIVar3 = (this->fields).playButtonImage;
               (this->fields).showingAdSprite = 1;
-              if (pIVar3 != (Image *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite(pIVar3,(this->fields).watchAdPlayButtonImageSprite,(MethodInfo *)0x0);
-                return;
-              }
+              return;
             }
           }
         }
@@ -873,75 +872,76 @@ void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_Update(LobbyStateBu
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 != (MVNetworkGameStateListener *)0x0)) {
-    iVar3 = (pMVar2->fields).currentGameState;
-    bVar4 = MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled((MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      uVar5 = 0;
-    }
-    else {
-      pIVar6 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-      if (pIVar6 == (IAdManager *)0x0) goto code_?;
-      cVar7 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar6);
-      if (cVar7 == '\0') {
-        uVar5 = 0;
+  if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 == (MVNetworkGameStateListener *)0x0)) goto code_?;
+  iVar3 = (pMVar2->fields).currentGameState;
+  bVar4 = MVClientSettings::MVClientSettings_get_PlayButtonAdsEnabled((MethodInfo *)0x0);
+  if (bVar4 == 0) {
+    bVar5 = false;
+  }
+  else {
+    pIVar6 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+    if (pIVar6 == (IAdManager *)0x0) goto code_?;
+    cVar7 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar6);
+    if (cVar7 != '\0') {
+      pEVar8 = (this->fields).embeddedPlayerConfig;
+      if (pEVar8 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+      pEVar9 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&stack0xffffffe4,pEVar8,(MethodInfo *)0x0);
+      if (pEVar9->showPlayButtonAd != 0) {
+        pEVar8 = (this->fields).embeddedPlayerConfig;
+        if (pEVar8 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+        pEVar9 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&stack0xffffffe4,pEVar8,(MethodInfo *)0x0);
+        uVar10 = pEVar9->noPlayButtonVideoIcon;
+        bVar5 = uVar10 == '\0';
+        goto code_?;
       }
-      else {
-        this_00 = (this->fields).embeddedPlayerConfig;
-        if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
-        pEVar8 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
-        uVar9 = pEVar8->noPlayButtonVideoIcon;
-        uVar5 = (uint)(uVar9 == '\0');
-      }
     }
-    bVar10 = iVar3 != 2;
-    if ((bool)uVar5 != (this->fields).showingAdSprite) {
-      pIVar11 = (this->fields).playButtonImage;
-      if (pIVar11 == (Image *)0x0) goto code_?;
-      UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite(pIVar11,(&(this->fields).watchAdPlayButtonImageSprite)[uVar5 ^ 1],(MethodInfo *)0x0);
-      (this->fields).showingAdSprite = (bool)uVar5;
-    }
-    if ((bVar10) || ((this->fields).shouldUpdateFillImage == 0)) {
-      pIVar11 = (this->fields).countdownFill;
-      if ((pIVar11 != (Image *)0x0) && (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar11,(MethodInfo *)0x0), pGVar12 != (GameObject *)0x0)) {
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
-          pIVar11 = (this->fields).countdownFill;
-          if ((pIVar11 == (Image *)0x0) || (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar11,(MethodInfo *)0x0), pGVar12 == (GameObject *)0x0)) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar12,0,(MethodInfo *)0x0);
-        }
-        if (!bVar10) {
-          return;
-        }
+    bVar5 = false;
+  }
+code_?:
+  bVar11 = iVar3 != 2;
+  if (bVar5 != (bool)(this->fields).showingAdSprite) {
+    (this->fields).showingAdSprite = bVar5;
+  }
+  if ((bVar11) || ((this->fields).shouldUpdateFillImage == 0)) {
+    pIVar12 = (this->fields).countdownFill;
+    if ((pIVar12 != (Image *)0x0) && (pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar12,(MethodInfo *)0x0), pGVar13 != (GameObject *)0x0)) {
+      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar13,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
         LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
+        pIVar12 = (this->fields).countdownFill;
+        if ((pIVar12 == (Image *)0x0) || (pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar12,(MethodInfo *)0x0), pGVar13 == (GameObject *)0x0)) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar13,0,(MethodInfo *)0x0);
+      }
+      if (!bVar11) {
         return;
       }
+      LobbyStateButton_OnCountDownEnd(this,(MethodInfo *)0x0);
+      return;
     }
-    else {
-      pIVar11 = (this->fields).countdownFill;
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 != (MVNetworkGameStateListener *)0x0)) && (value = MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInPercentage(pMVar2,(MethodInfo *)0x0), pIVar11 != (Image *)0x0)) {
-        UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar11,value,(MethodInfo *)0x0);
-        pIVar11 = (this->fields).countdownFill;
-        if ((pIVar11 != (Image *)0x0) && (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar11,(MethodInfo *)0x0), pGVar12 != (GameObject *)0x0)) {
-          bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar12,(MethodInfo *)0x0);
-          if (bVar4 != 0) {
-            return;
-          }
-          pIVar11 = (this->fields).countdownFill;
-          if ((pIVar11 != (Image *)0x0) && (pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar11,(MethodInfo *)0x0), pGVar12 != (GameObject *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar12,1,(MethodInfo *)0x0);
-            return;
-          }
+  }
+  else {
+    pIVar12 = (this->fields).countdownFill;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar1 != (MVNetworkGame *)0x0) && (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField, pMVar2 != (MVNetworkGameStateListener *)0x0)) && (value = MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInPercentage(pMVar2,(MethodInfo *)0x0), pIVar12 != (Image *)0x0)) {
+      UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar12,value,(MethodInfo *)0x0);
+      pIVar12 = (this->fields).countdownFill;
+      if ((pIVar12 != (Image *)0x0) && (pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar12,(MethodInfo *)0x0), pGVar13 != (GameObject *)0x0)) {
+        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf(pGVar13,(MethodInfo *)0x0);
+        if (bVar4 != 0) {
+          return;
+        }
+        pIVar12 = (this->fields).countdownFill;
+        if ((pIVar12 != (Image *)0x0) && (pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar12,(MethodInfo *)0x0), pGVar13 != (GameObject *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar13,1,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -960,15 +960,5 @@ bool Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_get_IsRoundEnded(Lo
   pcVar5 = (code *)swi(3);
   bVar6 = (*pcVar5)();
   return bVar6;
-}
-
-
-/* Void set_ShouldPop(Boolean) */
-
-void Assembly-CSharp.dll::LobbyStateButton::LobbyStateButton_set_ShouldPop(LobbyStateButton *this,bool value,MethodInfo *method)
-
-{
-  (this->fields).shouldPop = value;
-  return;
 }
 

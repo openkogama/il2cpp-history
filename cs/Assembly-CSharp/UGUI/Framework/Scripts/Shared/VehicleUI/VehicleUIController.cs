@@ -6,7 +6,6 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -17,8 +16,6 @@ namespace UGUI.Framework.Scripts.Shared.VehicleUI
 		// Fields
 		[SerializeField]
 		private RectTransform rectTransform;
-		[SerializeField]
-		private LayoutElement layoutElement;
 		[SerializeField]
 		private SpeedOMeter speedOMeter;
 		[SerializeField]

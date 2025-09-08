@@ -108,8 +108,31 @@ code_?:
 bool Assembly-CSharp.dll::Assets::Scripts::Subscription::SubscriberCooldownsManager::SubscriberCooldownsManager_IsInCooldown(SubscriberCooldownsManager *this,CooldownType__Enum type,MethodInfo *method)
 
 {
-  fVar1 = SubscriberCooldownsManager_CooldownTimeLeft(this,type,(MethodInfo *)0x0);
-  return 0.0 < fVar1;
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_);
+    func_?(&TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager);
+    cRam_? = '\x01';
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  pSVar1 = (this->fields).cooldowns;
+  if (pSVar1 != (SubscriberCooldownsManager_Cooldown__Array *)0x0) {
+    if (pSVar1->max_length <= type) goto code_?;
+    fVar2 = pSVar1->vector[type].LastUseTime;
+    if ((TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager);
+    }
+    this_00 = TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->static_fields->cooldownTimes;
+    if (this_00 != (Dictionary_2_Assets_Scripts_Subscription_CooldownType_System_Single_ *)0x0) {
+      fVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::Dictionary_2_System_Int32Enum_System_Single__get_Item((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,type,MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_);
+      return 0.0 < fVar3 - (unaff_ESI - fVar2);
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 

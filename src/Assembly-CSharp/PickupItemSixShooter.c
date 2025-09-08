@@ -460,7 +460,7 @@ bool Assembly-CSharp.dll::PickupItemSixShooter::PickupItemSixShooter_get_IsAmmoD
   if (0 < iVar3) {
     return 0;
   }
-  cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
+  cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_HasPercentageAmmo.methodPtr);
   return cVar5 == '\0';
 }
 

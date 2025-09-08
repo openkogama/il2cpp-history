@@ -49,7 +49,7 @@ Vector3 * Assembly-CSharp.dll::JumpState::JumpState_ApplyJumping(Vector3 *__retu
       func_?((char)TypeInfo__MVPhysics);
     }
     if (cRam_? == '\0') {
-      func_?(0x1c);
+      func_?(0xb4);
       cRam_? = '\x01';
     }
     if ((TypeInfo__MVPhysics->_1).cctor_finished_or_no_cctor == 0) {
@@ -117,8 +117,8 @@ code_?:
   pMVar5 = (interactableLocal->klass->vtable).__unknown_8.method;
   fVar15 = 2.52234e-44;
   uStack_22 = CONCAT44(uStack_22._4_4_,pMVar5);
-  cVar23 = '{';
-  uVar24 = 0x94;
+  cVar23 = -0x15;
+  uVar24 = 0x3e;
   bVar25 = 0x2e;
   cVar26 = '\x10';
   pMVar27 = interactableLocal;
@@ -203,7 +203,7 @@ code_?:
   bVar21 = cRam_? == '\0';
   (this->fields).accExtraHeight = (this->fields).extraHeight - fVar2 * (this->fields).extraHeight;
   if (bVar21) {
-    func_?(0x2f1c);
+    func_?(0x82b4);
     cRam_? = '\x01';
   }
   pIVar19 = (interactableLocal->klass->vtable).__unknown_9.methodPtr;
@@ -246,7 +246,7 @@ code_?:
       if ((byte)((byte)((uint)fVar2 >> 0x18) & (bVar3 ^ 1)) == 0) {
 code_?:
         if (cRam_? == '\0') {
-          func_?(0xe8);
+          func_?(0xbc);
           cRam_? = '\x01';
         }
         pVVar42 = TypeInfo__UnityEngine__Vector3->static_fields;
@@ -300,7 +300,7 @@ code_?:
         stack0xffffffb4 = CONCAT44((float)pMStack_7 * (float)auStack_4._4_4_,(float)auStack_4._8_4_ * (float)auStack_4._4_4_);
         uStack_16 = CONCAT44(uStack_16._4_4_,(float)uStack_16 * (float)auStack_4._4_4_);
         if (cRam_? == '\0') {
-          func_?(0x40c4);
+          func_?(0x9460);
           cRam_? = '\x01';
         }
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
@@ -322,7 +322,7 @@ code_?:
   }
   else {
     if (cRam_? == '\0') {
-      func_?(0xb9e8);
+      func_?(0xdbc);
       cRam_? = '\x01';
     }
     iVar40 = 2;

@@ -882,7 +882,7 @@ code_?:
     StatHatWrapper::StatHatWrapper_Count(StringLiteral_GameSnapshotDataReceived,1,(MethodInfo *)0x0);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__MVNetworkGame__CreateGame__,(MethodInfo *)0x0);
-    coroutine = WaitForFrames::WaitForFrames_Frames(3,(UnityAction *)this_00,(MethodInfo *)0x0);
+    coroutine = WaitForFrames::WaitForFrames_WithCallback(3,(UnityAction *)this_00,(MethodInfo *)0x0);
     Coroutines::Coroutines_Start(coroutine,(MethodInfo *)0x0);
   }
   return;
@@ -1880,7 +1880,7 @@ code_?:
       object = pWVar1[9].fields._.worldObjectClientManager;
       this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_01,(Object *)object,MethodInfo__MVNetworkGame__EventHandling__UncacheEventsFromJoin__,(MethodInfo *)0x0);
-      coroutine = WaitForFrames::WaitForFrames_Frames(1,(UnityAction *)this_01,(MethodInfo *)0x0);
+      coroutine = WaitForFrames::WaitForFrames_WithCallback(1,(UnityAction *)this_01,(MethodInfo *)0x0);
       Coroutines::Coroutines_Start(coroutine,(MethodInfo *)0x0);
       return;
     }
@@ -4239,7 +4239,7 @@ code_?:
         TypeInfo__MVNetworkGame_StatusChangedHandling____c->static_fields->__9__5_0 = this_02;
         func_?();
       }
-      coroutine = WaitForFrames::WaitForFrames_Frames(5,this_02,(MethodInfo *)0x0);
+      coroutine = WaitForFrames::WaitForFrames_WithCallback(5,this_02,(MethodInfo *)0x0);
       Coroutines::Coroutines_Start(coroutine,(MethodInfo *)0x0);
       return;
     }

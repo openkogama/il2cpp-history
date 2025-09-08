@@ -663,7 +663,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_HandleF
         cRam_? = '\x01';
       }
       if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField != (IPlayModeUI *)0x0) {
-        cVar4 = func_?(5,TypeInfo__IPlayModeUI);
+        cVar4 = func_?(7,TypeInfo__IPlayModeUI);
         if (cVar4 != '\0') goto code_?;
         pMVar5 = (this->fields)._.mvAvatar;
         unaff_ESI = (LobbyStateCamera *)this;
@@ -705,7 +705,7 @@ code_?:
           cRam_? = '\x01';
         }
         if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField != (IPlayModeUI *)0x0) {
-          cVar4 = func_?(5,TypeInfo__IPlayModeUI);
+          cVar4 = func_?(7,TypeInfo__IPlayModeUI);
           if (cVar4 == '\0') {
             return;
           }
