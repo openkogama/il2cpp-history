@@ -661,9 +661,13 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::
   (this->fields)._offsetDragWorkData.DragOrigin.x = pVVar2->x;
   (this->fields)._offsetDragWorkData.DragOrigin.y = fVar3;
   (this->fields)._offsetDragWorkData.DragOrigin.z = fVar4;
-  pSVar5 = (&(this->fields)._settings)
-           [(this->fields)._sharedSettings != (SphereColliderGizmoSettings *)0x0];
-  if (pSVar5 == (SphereColliderGizmoSettings *)0x0) goto code_?;
+  if ((this->fields)._sharedSettings == (SphereColliderGizmoSettings *)0x0) {
+    pSVar5 = (this->fields)._settings;
+    if (pSVar5 == (SphereColliderGizmoSettings *)0x0) goto code_?;
+  }
+  else {
+    pSVar5 = (this->fields)._sharedSettings;
+  }
   (this->fields)._offsetDragWorkData.SnapStep = (pSVar5->fields)._radiusSnapStep;
   pGVar6 = (this->fields)._leftTick;
   if (pGVar6 == (GizmoCap2D *)0x0) goto code_?;
@@ -898,11 +902,15 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_OnGizmoD
   }
   pGVar2 = (this->fields)._offsetDrag;
   if ((this->fields)._isSnapEnabled == 0) {
-    pSVar3 = (&(this->fields)._hotkeys)
-              [(this->fields)._sharedHotkeys != (SphereColliderGizmoHotkeys *)0x0];
-    if ((pSVar3 == (SphereColliderGizmoHotkeys *)0x0) ||
-       (pHVar4 = (pSVar3->fields)._enableSnapping, pHVar4 == (Hotkeys *)0x0))
-    goto code_?;
+    if ((this->fields)._sharedHotkeys == (SphereColliderGizmoHotkeys *)0x0) {
+      pSVar3 = (this->fields)._hotkeys;
+      if (pSVar3 == (SphereColliderGizmoHotkeys *)0x0) goto code_?;
+    }
+    else {
+      pSVar3 = (this->fields)._sharedHotkeys;
+    }
+    pHVar4 = (pSVar3->fields)._enableSnapping;
+    if (pHVar4 == (Hotkeys *)0x0) goto code_?;
     bVar1 = Hotkeys::Hotkeys_IsActive(pHVar4,1,(MethodInfo *)0x0);
   }
   else {
@@ -947,10 +955,15 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_OnGizmoD
               fVar7 = pVVar15->z + (pGVar2->fields)._workData.Axis.z * fVar6;
               uVar20._4_4_ = (float)uVar17 + (float)uVar19 * fVar6;
               uVar20._0_4_ = (float)uVar16 + (float)uVar18 * fVar6;
-              pSVar3 = (&(this->fields)._hotkeys)
-                        [(this->fields)._sharedHotkeys != (SphereColliderGizmoHotkeys *)0x0];
-              if ((pSVar3 != (SphereColliderGizmoHotkeys *)0x0) &&
-                 (pHVar4 = (pSVar3->fields)._scaleFromCenter, pHVar4 != (Hotkeys *)0x0)) {
+              if ((this->fields)._sharedHotkeys == (SphereColliderGizmoHotkeys *)0x0) {
+                pSVar3 = (this->fields)._hotkeys;
+                if (pSVar3 == (SphereColliderGizmoHotkeys *)0x0) goto code_?;
+              }
+              else {
+                pSVar3 = (this->fields)._sharedHotkeys;
+              }
+              pHVar4 = (pSVar3->fields)._scaleFromCenter;
+              if (pHVar4 != (Hotkeys *)0x0) {
                 bVar1 = Hotkeys::Hotkeys_IsActive(pHVar4,1,(MethodInfo *)0x0);
                 if ((bVar1 == 0) && ((this->fields)._scaleFromCenter == 0)) {
                   pSVar5 = (this->fields)._targetCollider;
@@ -1033,78 +1046,80 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_OnGizmoR
                         (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
     if (this_02 != (GizmoLineMaterial *)0x0) {
       GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_02,(MethodInfo *)0x0);
-      pSVar7 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (SphereColliderGizmoLookAndFeel *)0x0];
-      if (pSVar7 != (SphereColliderGizmoLookAndFeel *)0x0) {
-        GizmoLineMaterial::GizmoLineMaterial_SetColor
-                  (this_02,(pSVar7->fields)._sphereBorderColor,(MethodInfo *)0x0);
-        GizmoLineMaterial::GizmoLineMaterial_SetPass(this_02,0,(MethodInfo *)0x0);
-        this_00 = (this->fields)._targetCollider;
-        pPVar8 = (this->fields)._sphereBorderPoly;
-        if (this_00 != (SphereCollider *)0x0) {
-          fVar9 = UnityEngine.PhysicsModule.dll::UnityEngine::SphereCollider::
-                   SphereCollider_get_radius(this_00,(MethodInfo *)0x0);
-          fVar10 = SphereColliderGizmo_CalcMaxTransformAbsScale(this,(MethodInfo *)0x0);
+      if ((this->fields)._sharedLookAndFeel == (SphereColliderGizmoLookAndFeel *)0x0) {
+        pSVar7 = (this->fields)._lookAndFeel;
+        if (pSVar7 == (SphereColliderGizmoLookAndFeel *)0x0) goto code_?;
+      }
+      else {
+        pSVar7 = (this->fields)._sharedLookAndFeel;
+      }
+      GizmoLineMaterial::GizmoLineMaterial_SetColor
+                (this_02,(pSVar7->fields)._sphereBorderColor,(MethodInfo *)0x0);
+      GizmoLineMaterial::GizmoLineMaterial_SetPass(this_02,0,(MethodInfo *)0x0);
+      this_00 = (this->fields)._targetCollider;
+      pPVar8 = (this->fields)._sphereBorderPoly;
+      if (this_00 != (SphereCollider *)0x0) {
+        fVar9 = UnityEngine.PhysicsModule.dll::UnityEngine::SphereCollider::
+                 SphereCollider_get_radius(this_00,(MethodInfo *)0x0);
+        fVar10 = SphereColliderGizmo_CalcMaxTransformAbsScale(this,(MethodInfo *)0x0);
+        if (pPVar8 != (PolygonShape2D *)0x0) {
+          sphereCenter.z = fVar6;
+          uStack_5 = (undefined4)((ulonglong)uVar4 >> 0x20);
+          sphereCenter.x = (float)(undefined4)uVar4;
+          sphereCenter.y = (float)uStack_5;
+          PolygonShape2D::PolygonShape2D_MakeSphereBorder
+                    (pPVar8,sphereCenter,fVar10 * fVar9,100,camera,(MethodInfo *)0x0);
+          pPVar8 = (this->fields)._sphereBorderPoly;
           if (pPVar8 != (PolygonShape2D *)0x0) {
-            sphereCenter.z = fVar6;
-            uStack_5 = (undefined4)((ulonglong)uVar4 >> 0x20);
-            sphereCenter.x = (float)(undefined4)uVar4;
-            sphereCenter.y = (float)uStack_5;
-            PolygonShape2D::PolygonShape2D_MakeSphereBorder
-                      (pPVar8,sphereCenter,fVar10 * fVar9,100,camera,(MethodInfo *)0x0);
-            pPVar8 = (this->fields)._sphereBorderPoly;
-            if (pPVar8 != (PolygonShape2D *)0x0) {
-              pPVar11 = pPVar8->klass;
-              pIStack12 = (pPVar11->vtable).ContainsPoint.methodPtr;
-              (*(code *)(pPVar11->vtable).RenderBorder.method)();
-              pGVar13 = (this->fields)._axialCircleXY;
+            pPVar11 = pPVar8->klass;
+            pIStack12 = (pPVar11->vtable).ContainsPoint.methodPtr;
+            (*(code *)(pPVar11->vtable).RenderBorder.method)();
+            pGVar13 = (this->fields)._axialCircleXY;
+            if (pGVar13 != (GizmoPlaneSlider3D *)0x0) {
+              pGVar14 = pGVar13->klass;
+              pIStack12 = (pGVar14->vtable).OnVisibilityStateChanged.methodPtr;
+              (*(code *)(pGVar14->vtable).Render_1.method)();
+              pGVar13 = (this->fields)._axialCircleYZ;
               if (pGVar13 != (GizmoPlaneSlider3D *)0x0) {
                 pGVar14 = pGVar13->klass;
                 pIStack12 = (pGVar14->vtable).OnVisibilityStateChanged.methodPtr;
                 (*(code *)(pGVar14->vtable).Render_1.method)();
-                pGVar13 = (this->fields)._axialCircleYZ;
+                pGVar13 = (this->fields)._axialCircleZX;
                 if (pGVar13 != (GizmoPlaneSlider3D *)0x0) {
                   pGVar14 = pGVar13->klass;
                   pIStack12 = (pGVar14->vtable).OnVisibilityStateChanged.methodPtr;
                   (*(code *)(pGVar14->vtable).Render_1.method)();
-                  pGVar13 = (this->fields)._axialCircleZX;
-                  if (pGVar13 != (GizmoPlaneSlider3D *)0x0) {
-                    pGVar14 = pGVar13->klass;
-                    pIStack12 = (pGVar14->vtable).OnVisibilityStateChanged.methodPtr;
-                    (*(code *)(pGVar14->vtable).Render_1.method)();
-                    pGVar15 = (this->fields)._leftTick;
+                  pGVar15 = (this->fields)._leftTick;
+                  if (pGVar15 != (GizmoCap2D *)0x0) {
+                    pGVar16 = pGVar15->klass;
+                    pIStack12 = (pGVar16->vtable).OnVisibilityStateChanged.methodPtr;
+                    (*(code *)(pGVar16->vtable).Render_1.method)();
+                    pGVar15 = (this->fields)._rightTick;
                     if (pGVar15 != (GizmoCap2D *)0x0) {
                       pGVar16 = pGVar15->klass;
                       pIStack12 = (pGVar16->vtable).OnVisibilityStateChanged.methodPtr;
                       (*(code *)(pGVar16->vtable).Render_1.method)();
-                      pGVar15 = (this->fields)._rightTick;
+                      pGVar15 = (this->fields)._topTick;
                       if (pGVar15 != (GizmoCap2D *)0x0) {
                         pGVar16 = pGVar15->klass;
                         pIStack12 = (pGVar16->vtable).OnVisibilityStateChanged.methodPtr;
                         (*(code *)(pGVar16->vtable).Render_1.method)();
-                        pGVar15 = (this->fields)._topTick;
+                        pGVar15 = (this->fields)._bottomTick;
                         if (pGVar15 != (GizmoCap2D *)0x0) {
                           pGVar16 = pGVar15->klass;
                           pIStack12 = (pGVar16->vtable).OnVisibilityStateChanged.methodPtr;
                           (*(code *)(pGVar16->vtable).Render_1.method)();
-                          pGVar15 = (this->fields)._bottomTick;
+                          pGVar15 = (this->fields)._frontTick;
                           if (pGVar15 != (GizmoCap2D *)0x0) {
                             pGVar16 = pGVar15->klass;
                             pIStack12 = (pGVar16->vtable).OnVisibilityStateChanged.methodPtr;
                             (*(code *)(pGVar16->vtable).Render_1.method)();
-                            pGVar15 = (this->fields)._frontTick;
+                            pGVar15 = (this->fields)._backTick;
                             if (pGVar15 != (GizmoCap2D *)0x0) {
                               pGVar16 = pGVar15->klass;
                               pIStack12 = (pGVar16->vtable).OnVisibilityStateChanged.methodPtr;
                               (*(code *)(pGVar16->vtable).Render_1.method)();
-                              pGVar15 = (this->fields)._backTick;
-                              if (pGVar15 != (GizmoCap2D *)0x0) {
-                                pGVar16 = pGVar15->klass;
-                                pIStack12 =
-                                     (pGVar16->vtable).OnVisibilityStateChanged.methodPtr;
-                                (*(code *)(pGVar16->vtable).Render_1.method)();
-                                return;
-                              }
+                              return;
                             }
                           }
                         }
@@ -1119,6 +1134,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_OnGizmoR
       }
     }
   }
+code_?:
   func_?();
   pcVar17 = (code *)swi(3);
   (*pcVar17)();
@@ -1180,563 +1196,415 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
       fVar6 = SphereColliderGizmo_CalcMaxTransformAbsScale(this,(MethodInfo *)0x0);
       fVar6 = fVar6 * value.y;
       pSVar5 = (this->fields)._targetCollider;
-      if (pSVar5 != (SphereCollider *)0x0) {
-        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pSVar5,(MethodInfo *)0x0);
-        if (pTVar7 != (Transform *)0x0) {
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                              ((Vector3 *)&stack0xffffff90,pTVar7,(MethodInfo *)0x0);
-          uVar8 = pVVar2->x;
-          uVar9 = pVVar2->y;
-          pGVar10 = (this->fields)._leftTick;
-          if (pCVar1 != (Camera *)0x0) {
-            position_03.y = (float)uVar4 - (float)uVar9 * fVar6;
-            position_03.x = (float)uVar3 - (float)uVar8 * fVar6;
-            position_03.z = value.x - pVVar2->z * fVar6;
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                                ((Vector3 *)&stack0xffffffd0,pCVar1,position_03,(MethodInfo *)0x0);
-            value.x = pVVar2->x;
-            value.y = pVVar2->y;
-            if (pGVar10 != (GizmoCap2D *)0x0) {
-              fVar11 = 0.0;
-              GizmoCap2D::GizmoCap2D_set_Position(pGVar10,value,(MethodInfo *)0x0);
-              pSVar12 = (this->fields)._extentTicks;
-              if (pSVar12 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
-                if (pSVar12->max_length < 3) goto code_?;
+      if ((pSVar5 != (SphereCollider *)0x0) &&
+         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pSVar5,(MethodInfo *)0x0), pTVar7 != (Transform *)0x0)
+         ) {
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                            ((Vector3 *)&stack0xffffff90,pTVar7,(MethodInfo *)0x0);
+        uVar8 = pVVar2->x;
+        uVar9 = pVVar2->y;
+        pGVar10 = (this->fields)._leftTick;
+        if (pCVar1 != (Camera *)0x0) {
+          position_03.y = (float)uVar4 - (float)uVar9 * fVar6;
+          position_03.x = (float)uVar3 - (float)uVar8 * fVar6;
+          position_03.z = value.x - pVVar2->z * fVar6;
+          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                              ((Vector3 *)&stack0xffffffd0,pCVar1,position_03,(MethodInfo *)0x0);
+          value.x = pVVar2->x;
+          value.y = pVVar2->y;
+          if (pGVar10 != (GizmoCap2D *)0x0) {
+            fVar11 = 0.0;
+            GizmoCap2D::GizmoCap2D_set_Position(pGVar10,value,(MethodInfo *)0x0);
+            pSVar12 = (this->fields)._extentTicks;
+            if (pSVar12 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
+              if (2 < pSVar12->max_length) {
                 pSVar13 = pSVar12->vector[2];
-                if (pSVar13 != (SphereColliderGizmo_ExtentTick *)0x0) {
-                  (pSVar13->fields).Position.x = value.x;
-                  (pSVar13->fields).Position.y = value.y;
-                  (pSVar13->fields).Position.z = fVar11;
+                if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0) goto code_?;
+                (pSVar13->fields).Position.x = value.x;
+                (pSVar13->fields).Position.y = value.y;
+                (pSVar13->fields).Position.z = fVar11;
+                pSVar12 = (this->fields)._extentTicks;
+                if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0) goto code_?;
+                if (2 < pSVar12->max_length) {
+                  pSVar13 = pSVar12->vector[2];
+                  pSVar5 = (this->fields)._targetCollider;
+                  if (pSVar5 == (SphereCollider *)0x0) goto code_?;
+                  pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_transform((Component *)pSVar5,(MethodInfo *)0x0);
+                  if (pTVar7 == (Transform *)0x0) goto code_?;
+                  uVar14._4_4_ = (float)&stack0xffffff90;
+                  uVar14._0_4_ = (float)&UNK_?;
+                  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                                      ((Vector3 *)&stack0xffffff90,pTVar7,(MethodInfo *)0x0);
+                  uVar15 = pVVar2->x;
+                  uVar16 = pVVar2->y;
+                  value.y = (float)(uVar16 ^ 
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                   );
+                  value.x = (float)((uint)pVVar2->z ^
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                   );
+                  if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0) goto code_?;
+                  (pSVar13->fields).Normal.x =
+                       (float)(uVar15 ^ 
+                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                              );
+                  (pSVar13->fields).Normal.y = value.y;
+                  (pSVar13->fields).Normal.z = value.x;
+                  pSVar5 = (this->fields)._targetCollider;
+                  if ((pSVar5 == (SphereCollider *)0x0) ||
+                     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                Component_get_transform((Component *)pSVar5,(MethodInfo *)0x0),
+                     pTVar7 == (Transform *)0x0)) goto code_?;
+                  this_01 = (Camera *)0x0;
+                  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                                      ((Vector3 *)&stack0xffffff90,pTVar7,(MethodInfo *)0x0);
+                  uVar17 = pVVar2->x;
+                  uVar18 = pVVar2->y;
+                  pCVar19 = (Camera *)((float)uVar17 * fVar6 + 0.0);
+                  value.y = (float)uVar18 * fVar6 + (float)uVar4;
+                  fVar6 = pVVar2->z * fVar6 + 4.2021884e-29;
+                  pGVar10 = (this->fields)._rightTick;
+                  pVVar2 = (Vector3 *)&stack0xffffffd0;
+                  position_04.y = value.y;
+                  position_04.x = (float)pCVar19;
+                  position_04.z = fVar6;
+                  pCVar1 = pCVar19;
+                  value.x = value.y;
+                  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                            Camera_WorldToScreenPoint_1
+                                      (pVVar2,this_01,position_04,(MethodInfo *)0x0);
+                  value_00.x = pVVar20->x;
+                  value_00.y = pVVar20->y;
+                  if (pGVar10 == (GizmoCap2D *)0x0) goto code_?;
+                  GizmoCap2D::GizmoCap2D_set_Position(pGVar10,value_00,(MethodInfo *)0x0);
                   pSVar12 = (this->fields)._extentTicks;
-                  if (pSVar12 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
-                    if (pSVar12->max_length < 3) goto code_?;
-                    pSVar13 = pSVar12->vector[2];
-                    pSVar5 = (this->fields)._targetCollider;
-                    if (pSVar5 != (SphereCollider *)0x0) {
-                      pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_transform((Component *)pSVar5,(MethodInfo *)0x0);
-                      if (pTVar7 != (Transform *)0x0) {
-                        uVar14._4_4_ = (float)&stack0xffffff90;
-                        uVar14._0_4_ = (float)&UNK_?;
-                        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_right((Vector3 *)&stack0xffffff90,pTVar7,
-                                                      (MethodInfo *)0x0);
-                        uVar15 = pVVar2->x;
-                        uVar16 = pVVar2->y;
-                        value.y = (float)(uVar16 ^ 
-                                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                         );
-                        value.x = (float)((uint)pVVar2->z ^
-                                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                         );
-                        if (pSVar13 != (SphereColliderGizmo_ExtentTick *)0x0) {
-                          (pSVar13->fields).Normal.x =
-                               (float)(uVar15 ^ 
-                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                      );
-                          (pSVar13->fields).Normal.y = value.y;
-                          (pSVar13->fields).Normal.z = value.x;
+                  if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                  goto code_?;
+                  if (3 < pSVar12->max_length) {
+                    pSVar13 = pSVar12->vector[3];
+                    if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0) goto code_?;
+                    (pSVar13->fields).Position.x = (float)pCVar19;
+                    (pSVar13->fields).Position.y = value.y;
+                    (pSVar13->fields).Position.z = fVar6;
+                    pSVar12 = (this->fields)._extentTicks;
+                    if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                    goto code_?;
+                    if (3 < pSVar12->max_length) {
+                      pSVar13 = pSVar12->vector[3];
+                      pSVar5 = (this->fields)._targetCollider;
+                      if ((pSVar5 == (SphereCollider *)0x0) ||
+                         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                    Component_get_transform((Component *)pSVar5,(MethodInfo *)0x0),
+                         pTVar7 == (Transform *)0x0)) goto code_?;
+                      pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_get_right((Vector3 *)&stack0xffffff90,pTVar7,
+                                                    (MethodInfo *)0x0);
+                      value.y = pVVar20->y;
+                      fVar6 = pVVar20->z;
+                      if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0) goto code_?;
+                      (pSVar13->fields).Normal.x = pVVar20->x;
+                      (pSVar13->fields).Normal.y = value.y;
+                      (pSVar13->fields).Normal.z = fVar6;
+                      pSVar5 = (this->fields)._targetCollider;
+                      if ((pSVar5 == (SphereCollider *)0x0) ||
+                         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                    Component_get_transform((Component *)pSVar5,(MethodInfo *)0x0),
+                         pTVar7 == (Transform *)0x0)) goto code_?;
+                      pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                                          ((Vector3 *)&stack0xffffff90,pTVar7,(MethodInfo *)0x0);
+                      uVar21 = pVVar20->x;
+                      uVar22 = pVVar20->y;
+                      fVar11 = (float)uVar21 * value.x + 0.0;
+                      value.y = (float)uVar22 * value.x + (float)uVar4;
+                      fVar6 = pVVar20->z * value.x + 4.2021884e-29;
+                      pGVar10 = (this->fields)._topTick;
+                      position.y = value.y;
+                      position.x = fVar11;
+                      position.z = fVar6;
+                      pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                                Camera_WorldToScreenPoint_1
+                                          ((Vector3 *)&stack0xffffffd0,pCVar1,position,
+                                           (MethodInfo *)0x0);
+                      value_01.x = pVVar20->x;
+                      value_01.y = pVVar20->y;
+                      if (pGVar10 == (GizmoCap2D *)0x0) goto code_?;
+                      GizmoCap2D::GizmoCap2D_set_Position(pGVar10,value_01,(MethodInfo *)0x0);
+                      pSVar12 = (this->fields)._extentTicks;
+                      if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                      goto code_?;
+                      if (5 < pSVar12->max_length) {
+                        pSVar13 = pSVar12->vector[5];
+                        if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0) goto code_?;
+                        (pSVar13->fields).Position.x = fVar11;
+                        (pSVar13->fields).Position.y = value.y;
+                        (pSVar13->fields).Position.z = fVar6;
+                        pSVar12 = (this->fields)._extentTicks;
+                        if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                        goto code_?;
+                        if (5 < pSVar12->max_length) {
+                          pSVar13 = pSVar12->vector[5];
                           pSVar5 = (this->fields)._targetCollider;
-                          if (pSVar5 != (SphereCollider *)0x0) {
-                            pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                      Component_get_transform
-                                                ((Component *)pSVar5,(MethodInfo *)0x0);
-                            if (pTVar7 != (Transform *)0x0) {
-                              this_01 = (Camera *)0x0;
-                              pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                        Transform_get_right((Vector3 *)&stack0xffffff90,pTVar7,
-                                                            (MethodInfo *)0x0);
-                              uVar17 = pVVar2->x;
-                              uVar18 = pVVar2->y;
-                              pCVar19 = (Camera *)((float)uVar17 * fVar6 + 0.0);
-                              value.y = (float)uVar4 + (float)uVar18 * fVar6;
-                              fVar6 = pVVar2->z * fVar6 + 4.207687e-29;
-                              pGVar10 = (this->fields)._rightTick;
-                              pVVar2 = (Vector3 *)&stack0xffffffd0;
-                              position_04.y = value.y;
-                              position_04.x = (float)pCVar19;
-                              position_04.z = fVar6;
-                              pCVar1 = pCVar19;
-                              value.x = value.y;
+                          if ((pSVar5 == (SphereCollider *)0x0) ||
+                             (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                        Component_get_transform
+                                                  ((Component *)pSVar5,(MethodInfo *)0x0),
+                             pTVar7 == (Transform *)0x0)) goto code_?;
+                          pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                    Transform_get_up((Vector3 *)&stack0xffffff90,pTVar7,
+                                                     (MethodInfo *)0x0);
+                          value.y = pVVar20->y;
+                          fVar6 = pVVar20->z;
+                          if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0)
+                          goto code_?;
+                          (pSVar13->fields).Normal.x = pVVar20->x;
+                          (pSVar13->fields).Normal.y = value.y;
+                          (pSVar13->fields).Normal.z = fVar6;
+                          pSVar5 = (this->fields)._targetCollider;
+                          if ((pSVar5 == (SphereCollider *)0x0) ||
+                             (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                        Component_get_transform
+                                                  ((Component *)pSVar5,(MethodInfo *)0x0),
+                             pTVar7 == (Transform *)0x0)) goto code_?;
+                          pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                    Transform_get_up((Vector3 *)&stack0xffffff90,pTVar7,
+                                                     (MethodInfo *)0x0);
+                          uVar23 = pVVar20->x;
+                          uVar24 = pVVar20->y;
+                          fVar11 = 0.0 - (float)uVar23 * value.x;
+                          value.y = (float)uVar4 - (float)uVar24 * value.x;
+                          fVar6 = 4.2021884e-29 - pVVar20->z * value.x;
+                          pGVar10 = (this->fields)._bottomTick;
+                          position_00.y = value.y;
+                          position_00.x = fVar11;
+                          position_00.z = fVar6;
+                          pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                                    Camera_WorldToScreenPoint_1
+                                              ((Vector3 *)&stack0xffffffd0,pCVar1,position_00,
+                                               (MethodInfo *)0x0);
+                          value_02.x = pVVar20->x;
+                          value_02.y = pVVar20->y;
+                          if (pGVar10 == (GizmoCap2D *)0x0) goto code_?;
+                          GizmoCap2D::GizmoCap2D_set_Position(pGVar10,value_02,(MethodInfo *)0x0);
+                          pSVar12 = (this->fields)._extentTicks;
+                          if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                          goto code_?;
+                          if (4 < pSVar12->max_length) {
+                            pSVar13 = pSVar12->vector[4];
+                            if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0)
+                            goto code_?;
+                            (pSVar13->fields).Position.x = fVar11;
+                            (pSVar13->fields).Position.y = value.y;
+                            (pSVar13->fields).Position.z = fVar6;
+                            pSVar12 = (this->fields)._extentTicks;
+                            if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                            goto code_?;
+                            if (4 < pSVar12->max_length) {
+                              pSVar13 = pSVar12->vector[4];
+                              pSVar5 = (this->fields)._targetCollider;
+                              if ((pSVar5 == (SphereCollider *)0x0) ||
+                                 (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                            Component_get_transform
+                                                      ((Component *)pSVar5,(MethodInfo *)0x0),
+                                 pTVar7 == (Transform *)0x0)) goto code_?;
+                              pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                        Transform_get_up((Vector3 *)&stack0xffffff90,pTVar7,
+                                                         (MethodInfo *)0x0);
+                              uVar25 = pVVar20->x;
+                              uVar26 = pVVar20->y;
+                              value.y = (float)(uVar26 ^ 
+                                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                               );
+                              fVar6 = (float)((uint)pVVar20->z ^
+                                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                              );
+                              if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0)
+                              goto code_?;
+                              (pSVar13->fields).Normal.x =
+                                   (float)(uVar25 ^ 
+                                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                          );
+                              (pSVar13->fields).Normal.y = value.y;
+                              (pSVar13->fields).Normal.z = fVar6;
+                              pSVar5 = (this->fields)._targetCollider;
+                              if ((pSVar5 == (SphereCollider *)0x0) ||
+                                 (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                            Component_get_transform
+                                                      ((Component *)pSVar5,(MethodInfo *)0x0),
+                                 pTVar7 == (Transform *)0x0)) goto code_?;
+                              pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                        Transform_get_forward
+                                                  ((Vector3 *)&stack0xffffff90,pTVar7,
+                                                   (MethodInfo *)0x0);
+                              uVar27 = pVVar20->x;
+                              uVar28 = pVVar20->y;
+                              fVar11 = 0.0 - (float)uVar27 * value.x;
+                              value.y = (float)uVar4 - (float)uVar28 * value.x;
+                              fVar6 = 4.2021884e-29 - pVVar20->z * value.x;
+                              pGVar10 = (this->fields)._frontTick;
+                              position_01.y = value.y;
+                              position_01.x = fVar11;
+                              position_01.z = fVar6;
                               pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                         Camera_WorldToScreenPoint_1
-                                                  (pVVar2,this_01,position_04,(MethodInfo *)0x0);
-                              value_00.x = pVVar20->x;
-                              value_00.y = pVVar20->y;
-                              if (pGVar10 != (GizmoCap2D *)0x0) {
-                                GizmoCap2D::GizmoCap2D_set_Position
-                                          (pGVar10,value_00,(MethodInfo *)0x0);
+                                                  ((Vector3 *)&stack0xffffffd0,pCVar1,position_01,
+                                                   (MethodInfo *)0x0);
+                              value_03.x = pVVar20->x;
+                              value_03.y = pVVar20->y;
+                              if (pGVar10 == (GizmoCap2D *)0x0) goto code_?;
+                              GizmoCap2D::GizmoCap2D_set_Position
+                                        (pGVar10,value_03,(MethodInfo *)0x0);
+                              pSVar12 = (this->fields)._extentTicks;
+                              if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                              goto code_?;
+                              if (pSVar12->max_length != 0) {
+                                pSVar13 = pSVar12->vector[0];
+                                if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0)
+                                goto code_?;
+                                (pSVar13->fields).Position.x = fVar11;
+                                (pSVar13->fields).Position.y = value.y;
+                                (pSVar13->fields).Position.z = fVar6;
                                 pSVar12 = (this->fields)._extentTicks;
-                                if (pSVar12 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
-                                  if (pSVar12->max_length < 4) goto code_?;
-                                  pSVar13 = pSVar12->vector[3];
-                                  if (pSVar13 != (SphereColliderGizmo_ExtentTick *)0x0) {
-                                    (pSVar13->fields).Position.x = (float)pCVar19;
+                                if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                                goto code_?;
+                                if (pSVar12->max_length != 0) {
+                                  pSVar13 = pSVar12->vector[0];
+                                  pSVar5 = (this->fields)._targetCollider;
+                                  if ((pSVar5 == (SphereCollider *)0x0) ||
+                                     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                                Component_get_transform
+                                                          ((Component *)pSVar5,(MethodInfo *)0x0),
+                                     pTVar7 == (Transform *)0x0)) goto code_?;
+                                  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                            Transform_get_forward
+                                                      ((Vector3 *)&stack0xffffff90,pTVar7,
+                                                       (MethodInfo *)0x0);
+                                  uVar29 = pVVar20->x;
+                                  uVar30 = pVVar20->y;
+                                  value.y = (float)(uVar30 ^ 
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  );
+                                  fVar6 = (float)((uint)pVVar20->z ^
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  );
+                                  if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0)
+                                  goto code_?;
+                                  (pSVar13->fields).Normal.x =
+                                       (float)(uVar29 ^ 
+                                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                              );
+                                  (pSVar13->fields).Normal.y = value.y;
+                                  (pSVar13->fields).Normal.z = fVar6;
+                                  pSVar5 = (this->fields)._targetCollider;
+                                  if ((pSVar5 == (SphereCollider *)0x0) ||
+                                     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                                Component_get_transform
+                                                          ((Component *)pSVar5,(MethodInfo *)0x0),
+                                     pTVar7 == (Transform *)0x0)) goto code_?;
+                                  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                            Transform_get_forward
+                                                      ((Vector3 *)&stack0xffffff90,pTVar7,
+                                                       (MethodInfo *)0x0);
+                                  uVar31 = pVVar20->x;
+                                  uVar32 = pVVar20->y;
+                                  fVar11 = (float)uVar31 * value.x + 0.0;
+                                  value.y = (float)uVar32 * value.x + (float)uVar4;
+                                  fVar6 = pVVar20->z * value.x + 4.2021884e-29;
+                                  pGVar10 = (this->fields)._backTick;
+                                  position_02.y = value.y;
+                                  position_02.x = fVar11;
+                                  position_02.z = fVar6;
+                                  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                                            Camera_WorldToScreenPoint_1
+                                                      ((Vector3 *)&stack0xffffffa0,pCVar1,
+                                                       position_02,(MethodInfo *)0x0);
+                                  value_04.x = pVVar20->x;
+                                  value_04.y = pVVar20->y;
+                                  if (pGVar10 == (GizmoCap2D *)0x0) goto code_?;
+                                  GizmoCap2D::GizmoCap2D_set_Position
+                                            (pGVar10,value_04,(MethodInfo *)0x0);
+                                  pSVar12 = (this->fields)._extentTicks;
+                                  if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                                  goto code_?;
+                                  if (1 < pSVar12->max_length) {
+                                    pSVar13 = pSVar12->vector[1];
+                                    if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0)
+                                    goto code_?;
+                                    (pSVar13->fields).Position.x = fVar11;
                                     (pSVar13->fields).Position.y = value.y;
                                     (pSVar13->fields).Position.z = fVar6;
                                     pSVar12 = (this->fields)._extentTicks;
-                                    if (pSVar12 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
-                                      if (pSVar12->max_length < 4) goto code_?;
-                                      pSVar13 = pSVar12->vector[3];
+                                    if (pSVar12 == (SphereColliderGizmo_ExtentTick__Array *)0x0)
+                                    goto code_?;
+                                    if (1 < pSVar12->max_length) {
+                                      pSVar13 = pSVar12->vector[1];
                                       pSVar5 = (this->fields)._targetCollider;
-                                      if (pSVar5 != (SphereCollider *)0x0) {
-                                        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component
-                                                  ::Component_get_transform
-                                                            ((Component *)pSVar5,(MethodInfo *)0x0)
-                                        ;
-                                        if (pTVar7 != (Transform *)0x0) {
-                                          pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                    Transform::Transform_get_right
-                                                              ((Vector3 *)&stack0xffffff90,pTVar7,
-                                                               (MethodInfo *)0x0);
-                                          value.y = pVVar20->y;
-                                          fVar6 = pVVar20->z;
-                                          if (pSVar13 != (SphereColliderGizmo_ExtentTick *)0x0) {
-                                            (pSVar13->fields).Normal.x = pVVar20->x;
-                                            (pSVar13->fields).Normal.y = value.y;
-                                            (pSVar13->fields).Normal.z = fVar6;
-                                            pSVar5 = (this->fields)._targetCollider;
-                                            if (pSVar5 != (SphereCollider *)0x0) {
-                                              pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                        Component::Component_get_transform
-                                                                  ((Component *)pSVar5,
-                                                                   (MethodInfo *)0x0);
-                                              if (pTVar7 != (Transform *)0x0) {
-                                                pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                          Transform::Transform_get_up
-                                                                    ((Vector3 *)&stack0xffffff90,
-                                                                     pTVar7,(MethodInfo *)0x0);
-                                                uVar21 = pVVar20->x;
-                                                uVar22 = pVVar20->y;
-                                                fVar11 = (float)uVar21 * value.x + 0.0;
-                                                value.y = (float)uVar22 * value.x + (float)uVar4;
-                                                fVar6 = pVVar20->z * value.x + 4.207687e-29;
-                                                pGVar10 = (this->fields)._topTick;
-                                                position.y = value.y;
-                                                position.x = fVar11;
-                                                position.z = fVar6;
-                                                pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                          Camera::Camera_WorldToScreenPoint_1
-                                                                    ((Vector3 *)&stack0xffffffd0,
-                                                                     pCVar1,position,
-                                                                     (MethodInfo *)0x0);
-                                                value_01.x = pVVar20->x;
-                                                value_01.y = pVVar20->y;
-                                                if (pGVar10 != (GizmoCap2D *)0x0) {
-                                                  GizmoCap2D::GizmoCap2D_set_Position
-                                                            (pGVar10,value_01,(MethodInfo *)0x0);
-                                                  pSVar12 = (this->fields)._extentTicks;
-                                                  if (pSVar12 !=
-                                                      (SphereColliderGizmo_ExtentTick__Array *)0x0)
-                                                  {
-                                                    if (pSVar12->max_length < 6)
-                                                    goto code_?;
-                                                    pSVar13 = pSVar12->vector[5];
-                                                    if (pSVar13 !=
-                                                        (SphereColliderGizmo_ExtentTick *)0x0) {
-                                                      (pSVar13->fields).Position.x = fVar11;
-                                                      (pSVar13->fields).Position.y = value.y;
-                                                      (pSVar13->fields).Position.z = fVar6;
-                                                      pSVar12 = (this->fields)._extentTicks;
-                                                      if (pSVar12 !=
-                                                          (SphereColliderGizmo_ExtentTick__Array *)
-                                                          0x0) {
-                                                        if (pSVar12->max_length < 6)
-                                                        goto code_?;
-                                                        pSVar13 = pSVar12->vector[5];
-                                                        pSVar5 = (this->fields)._targetCollider;
-                                                        if (pSVar5 != (SphereCollider *)0x0) {
-                                                          pTVar7 = UnityEngine.CoreModule.dll::
-                                                                    UnityEngine::Component::
-                                                                    Component_get_transform
-                                                                              ((Component *)pSVar5,
-                                                                               (MethodInfo *)0x0);
-                                                          if (pTVar7 != (Transform *)0x0) {
-                                                            pVVar20 = UnityEngine.CoreModule.dll::
-                                                                      UnityEngine::Transform::
-                                                                      Transform_get_up((Vector3 *)
-                                                                                       &
-                                                  stack0xffffff90,pTVar7,(MethodInfo *)0x0);
-                                                  value.y = pVVar20->y;
-                                                  fVar6 = pVVar20->z;
-                                                  if (pSVar13 !=
-                                                      (SphereColliderGizmo_ExtentTick *)0x0) {
-                                                    (pSVar13->fields).Normal.x = pVVar20->x;
-                                                    (pSVar13->fields).Normal.y = value.y;
-                                                    (pSVar13->fields).Normal.z = fVar6;
-                                                    pSVar5 = (this->fields)._targetCollider;
-                                                    if (pSVar5 != (SphereCollider *)0x0) {
-                                                      pTVar7 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Component::
-                                                                Component_get_transform
-                                                                          ((Component *)pSVar5,
-                                                                           (MethodInfo *)0x0);
-                                                      if (pTVar7 != (Transform *)0x0) {
-                                                        pVVar20 = UnityEngine.CoreModule.dll::
-                                                                  UnityEngine::Transform::
-                                                                  Transform_get_up((Vector3 *)
-                                                                                   &stack0xffffff90,
-                                                                                   pTVar7,(
-                                                  MethodInfo *)0x0);
-                                                  uVar23 = pVVar20->x;
-                                                  uVar24 = pVVar20->y;
-                                                  fVar11 = 0.0 - (float)uVar23 * value.x;
-                                                  value.y = (float)uVar4 - (float)uVar24 * value.x;
-                                                  fVar6 = 4.207687e-29 - pVVar20->z * value.x;
-                                                  pGVar10 = (this->fields)._bottomTick;
-                                                  position_00.y = value.y;
-                                                  position_00.x = fVar11;
-                                                  position_00.z = fVar6;
-                                                  pVVar20 = UnityEngine.CoreModule.dll::UnityEngine
-                                                            ::Camera::Camera_WorldToScreenPoint_1
-                                                                      ((Vector3 *)&stack0xffffffd0,
-                                                                       pCVar1,position_00,
-                                                                       (MethodInfo *)0x0);
-                                                  value_02.x = pVVar20->x;
-                                                  value_02.y = pVVar20->y;
-                                                  if (pGVar10 != (GizmoCap2D *)0x0) {
-                                                    GizmoCap2D::GizmoCap2D_set_Position
-                                                              (pGVar10,value_02,(MethodInfo *)0x0);
-                                                    pSVar12 = (this->fields)._extentTicks;
-                                                    if (pSVar12 !=
-                                                        (SphereColliderGizmo_ExtentTick__Array *)0x0
-                                                       ) {
-                                                      if (pSVar12->max_length < 5)
-                                                      goto code_?;
-                                                      pSVar13 = pSVar12->vector[4];
-                                                      if (pSVar13 !=
-                                                          (SphereColliderGizmo_ExtentTick *)0x0) {
-                                                        (pSVar13->fields).Position.x = fVar11;
-                                                        (pSVar13->fields).Position.y = value.y;
-                                                        (pSVar13->fields).Position.z = fVar6;
-                                                        pSVar12 = (this->fields)._extentTicks;
-                                                        if (pSVar12 !=
-                                                            (SphereColliderGizmo_ExtentTick__Array *
-                                                            )0x0) {
-                                                          if (pSVar12->max_length < 5)
-                                                          goto code_?;
-                                                          pSVar13 = pSVar12->vector[4];
-                                                          pSVar5 = (this->fields)._targetCollider;
-                                                          if (pSVar5 != (SphereCollider *)0x0) {
-                                                            pTVar7 = UnityEngine.CoreModule.dll::
-                                                                      UnityEngine::Component::
-                                                                      Component_get_transform
-                                                                                ((Component *)
-                                                                                 pSVar5,(MethodInfo
-                                                                                          *)0x0);
-                                                            if (pTVar7 != (Transform *)0x0) {
-                                                              pVVar20 = UnityEngine.CoreModule.dll::
-                                                                        UnityEngine::Transform::
-                                                                        Transform_get_up((Vector3 *)
-                                                                                         &
-                                                  stack0xffffff90,pTVar7,(MethodInfo *)0x0);
-                                                  uVar25 = pVVar20->x;
-                                                  uVar26 = pVVar20->y;
-                                                  value.y = (float)(uVar26 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  fVar6 = (float)((uint)pVVar20->z ^
-                                                                                                                                    
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  if (pSVar13 !=
-                                                      (SphereColliderGizmo_ExtentTick *)0x0) {
-                                                    (pSVar13->fields).Normal.x =
-                                                         (float)(uVar25 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  (pSVar13->fields).Normal.y = value.y;
-                                                  (pSVar13->fields).Normal.z = fVar6;
-                                                  pSVar5 = (this->fields)._targetCollider;
-                                                  if (pSVar5 != (SphereCollider *)0x0) {
-                                                    pTVar7 = UnityEngine.CoreModule.dll::
-                                                              UnityEngine::Component::
-                                                              Component_get_transform
-                                                                        ((Component *)pSVar5,
-                                                                         (MethodInfo *)0x0);
-                                                    if (pTVar7 != (Transform *)0x0) {
-                                                      pVVar20 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Transform::
-                                                                Transform_get_forward
-                                                                          ((Vector3 *)
-                                                                           &stack0xffffff90,pTVar7,
-                                                                           (MethodInfo *)0x0);
-                                                      uVar27 = pVVar20->x;
-                                                      uVar28 = pVVar20->y;
-                                                      fVar11 = 0.0 - (float)uVar27 * value.x;
-                                                      value.y = (float)uVar4 -
-                                                                (float)uVar28 * value.x;
-                                                      fVar6 = 4.207687e-29 - pVVar20->z * value.x;
-                                                      pGVar10 = (this->fields)._frontTick;
-                                                      position_01.y = value.y;
-                                                      position_01.x = fVar11;
-                                                      position_01.z = fVar6;
-                                                      pVVar20 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Camera::
-                                                                Camera_WorldToScreenPoint_1
-                                                                          ((Vector3 *)
-                                                                           &stack0xffffffd0,pCVar1,
-                                                                           position_01,
-                                                                           (MethodInfo *)0x0);
-                                                      value_03.x = pVVar20->x;
-                                                      value_03.y = pVVar20->y;
-                                                      if (pGVar10 != (GizmoCap2D *)0x0) {
-                                                        GizmoCap2D::GizmoCap2D_set_Position
-                                                                  (pGVar10,value_03,
-                                                                   (MethodInfo *)0x0);
-                                                        pSVar12 = (this->fields)._extentTicks;
-                                                        if (pSVar12 !=
-                                                            (SphereColliderGizmo_ExtentTick__Array *
-                                                            )0x0) {
-                                                          if (pSVar12->max_length == 0)
-                                                          goto code_?;
-                                                          pSVar13 = pSVar12->vector[0];
-                                                          if (pSVar13 !=
-                                                              (SphereColliderGizmo_ExtentTick *)0x0)
-                                                          {
-                                                            (pSVar13->fields).Position.x = fVar11;
-                                                            (pSVar13->fields).Position.y = value.y;
-                                                            (pSVar13->fields).Position.z = fVar6;
-                                                            pSVar12 = (this->fields)._extentTicks;
-                                                            if (pSVar12 !=
-                                                                (
-                                                  SphereColliderGizmo_ExtentTick__Array *)0x0) {
-                                                    if (pSVar12->max_length == 0)
-                                                    goto code_?;
-                                                    pSVar13 = pSVar12->vector[0];
-                                                    pSVar5 = (this->fields)._targetCollider;
-                                                    if (pSVar5 != (SphereCollider *)0x0) {
-                                                      pTVar7 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Component::
-                                                                Component_get_transform
-                                                                          ((Component *)pSVar5,
-                                                                           (MethodInfo *)0x0);
-                                                      if (pTVar7 != (Transform *)0x0) {
-                                                        pVVar20 = UnityEngine.CoreModule.dll::
-                                                                  UnityEngine::Transform::
-                                                                  Transform_get_forward
-                                                                            ((Vector3 *)
-                                                                             &stack0xffffff90,
-                                                                             pTVar7,(MethodInfo *)
-                                                                                     0x0);
-                                                        uVar29 = pVVar20->x;
-                                                        uVar30 = pVVar20->y;
-                                                        value.y = (float)(uVar30 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  fVar6 = (float)((uint)pVVar20->z ^
-                                                                                                                                    
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  if (pSVar13 !=
-                                                      (SphereColliderGizmo_ExtentTick *)0x0) {
-                                                    (pSVar13->fields).Normal.x =
-                                                         (float)(uVar29 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  (pSVar13->fields).Normal.y = value.y;
-                                                  (pSVar13->fields).Normal.z = fVar6;
-                                                  pSVar5 = (this->fields)._targetCollider;
-                                                  if (pSVar5 != (SphereCollider *)0x0) {
-                                                    pTVar7 = UnityEngine.CoreModule.dll::
-                                                              UnityEngine::Component::
-                                                              Component_get_transform
-                                                                        ((Component *)pSVar5,
-                                                                         (MethodInfo *)0x0);
-                                                    if (pTVar7 != (Transform *)0x0) {
-                                                      pVVar20 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Transform::
-                                                                Transform_get_forward
-                                                                          ((Vector3 *)
-                                                                           &stack0xffffff90,pTVar7,
-                                                                           (MethodInfo *)0x0);
-                                                      uVar31 = pVVar20->x;
-                                                      uVar32 = pVVar20->y;
-                                                      fVar11 = (float)uVar31 * value.x + 0.0;
-                                                      value.y = (float)uVar32 * value.x +
-                                                                (float)uVar4;
-                                                      fVar6 = pVVar20->z * value.x + 4.207687e-29;
-                                                      pGVar10 = (this->fields)._backTick;
-                                                      position_02.y = value.y;
-                                                      position_02.x = fVar11;
-                                                      position_02.z = fVar6;
-                                                      pVVar20 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Camera::
-                                                                Camera_WorldToScreenPoint_1
-                                                                          ((Vector3 *)
-                                                                           &stack0xffffffa0,pCVar1,
-                                                                           position_02,
-                                                                           (MethodInfo *)0x0);
-                                                      value_04.x = pVVar20->x;
-                                                      value_04.y = pVVar20->y;
-                                                      if (pGVar10 != (GizmoCap2D *)0x0) {
-                                                        GizmoCap2D::GizmoCap2D_set_Position
-                                                                  (pGVar10,value_04,
-                                                                   (MethodInfo *)0x0);
-                                                        pSVar12 = (this->fields)._extentTicks;
-                                                        if (pSVar12 !=
-                                                            (SphereColliderGizmo_ExtentTick__Array *
-                                                            )0x0) {
-                                                          if (pSVar12->max_length < 2)
-                                                          goto code_?;
-                                                          pSVar13 = pSVar12->vector[1];
-                                                          if (pSVar13 !=
-                                                              (SphereColliderGizmo_ExtentTick *)0x0)
-                                                          {
-                                                            (pSVar13->fields).Position.x = fVar11;
-                                                            (pSVar13->fields).Position.y = value.y;
-                                                            (pSVar13->fields).Position.z = fVar6;
-                                                            pSVar12 = (this->fields)._extentTicks;
-                                                            if (pSVar12 !=
-                                                                (
-                                                  SphereColliderGizmo_ExtentTick__Array *)0x0) {
-                                                    if (pSVar12->max_length < 2)
-                                                    goto code_?;
-                                                    pSVar13 = pSVar12->vector[1];
-                                                    pSVar5 = (this->fields)._targetCollider;
-                                                    if (pSVar5 != (SphereCollider *)0x0) {
-                                                      pTVar7 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Component::
-                                                                Component_get_transform
-                                                                          ((Component *)pSVar5,
-                                                                           (MethodInfo *)0x0);
-                                                      if (pTVar7 != (Transform *)0x0) {
-                                                        pVVar20 = UnityEngine.CoreModule.dll::
-                                                                  UnityEngine::Transform::
-                                                                  Transform_get_forward
-                                                                            ((Vector3 *)
-                                                                             &stack0xffffff90,
-                                                                             pTVar7,(MethodInfo *)
-                                                                                     0x0);
-                                                        value.y = pVVar20->y;
-                                                        fVar6 = pVVar20->z;
-                                                        if (pSVar13 !=
-                                                            (SphereColliderGizmo_ExtentTick *)0x0) {
-                                                          (pSVar13->fields).Normal.x = pVVar20->x;
-                                                          (pSVar13->fields).Normal.y = value.y;
-                                                          (pSVar13->fields).Normal.z = fVar6;
-                                                          pGVar33 = (this->fields)._axialCircleXY;
-                                                          if (pGVar33 != (GizmoPlaneSlider3D *)0x0)
-                                                          {
-                                                            value_05.z = (float)pVVar2;
-                                                            value_05.x = (float)uVar14;
-                                                            value_05.y = SUB84(uVar14,4);
-                                                            GizmoPlaneSlider3D::
-                                                            GizmoPlaneSlider3D_set_Position
-                                                                      (pGVar33,value_05,
-                                                                       (MethodInfo *)0x0);
-                                                            pGVar33 = (this->fields)._axialCircleYZ;
-                                                            if (pGVar33 != (GizmoPlaneSlider3D *)0x0
-                                                               ) {
-                                                              value_06.z = (float)pVVar2;
-                                                              value_06.x = (float)uVar14;
-                                                              value_06.y = SUB84(uVar14,4);
-                                                              GizmoPlaneSlider3D::
-                                                              GizmoPlaneSlider3D_set_Position
-                                                                        (pGVar33,value_06,
-                                                                         (MethodInfo *)0x0);
-                                                              pGVar33 = (this->fields).
-                                                                        _axialCircleZX;
-                                                              if (pGVar33 !=
-                                                                  (GizmoPlaneSlider3D *)0x0) {
-                                                                value_07.z = (float)pVVar2;
-                                                                value_07.x = (float)uVar14;
-                                                                value_07.y = SUB84(uVar14,4);
-                                                                GizmoPlaneSlider3D::
-                                                                GizmoPlaneSlider3D_set_Position
-                                                                          (pGVar33,value_07,
-                                                                           (MethodInfo *)0x0);
-                                                                pSVar5 = (this->fields).
-                                                                          _targetCollider;
-                                                                pGVar33 = (this->fields).
-                                                                          _axialCircleXY;
-                                                                if (pSVar5 != (SphereCollider *)0x0
-                                                                   ) {
-                                                                  pTVar7 = 
-                                                  UnityEngine.CoreModule.dll::UnityEngine::Component
-                                                  ::Component_get_transform
-                                                            ((Component *)pSVar5,(MethodInfo *)0x0)
-                                                  ;
-                                                  if (pTVar7 != (Transform *)0x0) {
-                                                    pQVar34 = UnityEngine.CoreModule.dll::
+                                      if ((pSVar5 != (SphereCollider *)0x0) &&
+                                         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                    Component::Component_get_transform
+                                                              ((Component *)pSVar5,
+                                                               (MethodInfo *)0x0),
+                                         pTVar7 != (Transform *)0x0)) {
+                                        pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Transform
+                                                  ::Transform_get_forward
+                                                            ((Vector3 *)&stack0xffffff90,pTVar7,
+                                                             (MethodInfo *)0x0);
+                                        value.y = pVVar20->y;
+                                        fVar6 = pVVar20->z;
+                                        if (pSVar13 != (SphereColliderGizmo_ExtentTick *)0x0) {
+                                          (pSVar13->fields).Normal.x = pVVar20->x;
+                                          (pSVar13->fields).Normal.y = value.y;
+                                          (pSVar13->fields).Normal.z = fVar6;
+                                          pGVar33 = (this->fields)._axialCircleXY;
+                                          if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
+                                            value_05.z = (float)pVVar2;
+                                            value_05.x = (float)uVar14;
+                                            value_05.y = SUB84(uVar14,4);
+                                            GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_Position
+                                                      (pGVar33,value_05,(MethodInfo *)0x0);
+                                            pGVar33 = (this->fields)._axialCircleYZ;
+                                            if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
+                                              value_06.z = (float)pVVar2;
+                                              value_06.x = (float)uVar14;
+                                              value_06.y = SUB84(uVar14,4);
+                                              GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_Position
+                                                        (pGVar33,value_06,(MethodInfo *)0x0);
+                                              pGVar33 = (this->fields)._axialCircleZX;
+                                              if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
+                                                value_07.z = (float)pVVar2;
+                                                value_07.x = (float)uVar14;
+                                                value_07.y = SUB84(uVar14,4);
+                                                GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_Position
+                                                          (pGVar33,value_07,(MethodInfo *)0x0);
+                                                pSVar5 = (this->fields)._targetCollider;
+                                                pGVar33 = (this->fields)._axialCircleXY;
+                                                if (((pSVar5 != (SphereCollider *)0x0) &&
+                                                    (pTVar7 = UnityEngine.CoreModule.dll::
+                                                               UnityEngine::Component::
+                                                               Component_get_transform
+                                                                         ((Component *)pSVar5,
+                                                                          (MethodInfo *)0x0),
+                                                    pTVar7 != (Transform *)0x0)) &&
+                                                   (pQVar34 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
                                                               Transform_get_rotation
                                                                         ((Quaternion *)
                                                                          &stack0xffffff80,pTVar7,
-                                                                         (MethodInfo *)0x0);
-                                                    if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                      GizmoPlaneSlider3D::
-                                                      GizmoPlaneSlider3D_set_Rotation
-                                                                (pGVar33,*pQVar34,(MethodInfo *)0x0)
-                                                      ;
-                                                      pSVar5 = (this->fields)._targetCollider;
-                                                      pGVar33 = (this->fields)._axialCircleYZ;
-                                                      if (pSVar5 != (SphereCollider *)0x0) {
-                                                        pTVar7 = UnityEngine.CoreModule.dll::
-                                                                  UnityEngine::Component::
-                                                                  Component_get_transform
-                                                                            ((Component *)pSVar5,
-                                                                             (MethodInfo *)0x0);
-                                                        if (pTVar7 != (Transform *)0x0) {
-                                                          pQVar34 = UnityEngine.CoreModule.dll::
-                                                                    UnityEngine::Transform::
-                                                                    Transform_get_rotation
-                                                                              ((Quaternion *)
-                                                                               &stack0xffffff80,
-                                                                               pTVar7,(MethodInfo *
-                                                                                       )0x0);
-                                                          fVar35 = pQVar34->x;
-                                                          fVar36 = pQVar34->y;
-                                                          fVar37 = pQVar34->z;
-                                                          fVar38 = pQVar34->w;
-                                                          auVar39._4_8_ = 0;
-                                                          auVar39._0_4_ = _UNK_?;
-                                                          fVar40 = _UNK_?;
-                                                          pQVar34 = UnityEngine.CoreModule.dll::
-                                                                    UnityEngine::Quaternion::
-                                                                    Quaternion_Internal_FromEulerRad
-                                                                              ((Quaternion *)
-                                                                               &stack0xffffffc0,
-                                                                               (Vector3)(auVar39 <<
-                                                                                        0x20),
-                                                                               (MethodInfo *)0x0);
-                                                          fVar6 = pQVar34->y;
-                                                          value.y = pQVar34->z;
-                                                          fVar11 = pQVar34->w;
-                                                          if (pGVar33 != (GizmoPlaneSlider3D *)0x0)
-                                                          {
-                                                            value_08.y = (fVar36 * fVar11 +
-                                                                          fVar6 * fVar38 +
-                                                                         fVar37 * pQVar34->x) -
-                                                                         value.y * fVar35;
-                                                            value_08.x = (fVar11 * fVar35 +
-                                                                          pQVar34->x * fVar38 +
-                                                                         value.y * fVar36) -
-                                                                         fVar6 * fVar37;
-                                                            value_08.z = (fVar37 * fVar11 +
-                                                                          value.y * fVar38 +
-                                                                         fVar6 * fVar35) -
-                                                                         fVar36 * pQVar34->x;
-                                                            value_08.w = ((fVar11 * fVar38 -
-                                                                          fVar35 * pQVar34->x) -
-                                                                         fVar6 * fVar36) -
-                                                                         fVar37 * value.y;
-                                                            GizmoPlaneSlider3D::
-                                                            GizmoPlaneSlider3D_set_Rotation
-                                                                      (pGVar33,value_08,
-                                                                       (MethodInfo *)0x0);
-                                                            pSVar5 = (this->fields)._targetCollider
-                                                            ;
-                                                            pGVar33 = (this->fields)._axialCircleZX;
-                                                            if (pSVar5 != (SphereCollider *)0x0) {
-                                                              pTVar7 = UnityEngine.CoreModule.dll::
-                                                                        UnityEngine::Component::
-                                                                        Component_get_transform
-                                                                                  ((Component *)
-                                                                                   pSVar5,(
-                                                  MethodInfo *)0x0);
-                                                  if (pTVar7 != (Transform *)0x0) {
+                                                                         (MethodInfo *)0x0),
+                                                   pGVar33 != (GizmoPlaneSlider3D *)0x0)) {
+                                                  GizmoPlaneSlider3D::
+                                                  GizmoPlaneSlider3D_set_Rotation
+                                                            (pGVar33,*pQVar34,(MethodInfo *)0x0);
+                                                  pSVar5 = (this->fields)._targetCollider;
+                                                  pGVar33 = (this->fields)._axialCircleYZ;
+                                                  if ((pSVar5 != (SphereCollider *)0x0) &&
+                                                     (pTVar7 = UnityEngine.CoreModule.dll::
+                                                                UnityEngine::Component::
+                                                                Component_get_transform
+                                                                          ((Component *)pSVar5,
+                                                                           (MethodInfo *)0x0),
+                                                     pTVar7 != (Transform *)0x0)) {
                                                     pQVar34 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Transform::
                                                               Transform_get_rotation
@@ -1747,154 +1615,226 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                     fVar36 = pQVar34->y;
                                                     fVar37 = pQVar34->z;
                                                     fVar38 = pQVar34->w;
-                                                    euler.y = 0.0;
-                                                    euler.z = 0.0;
-                                                    euler.x = fVar40;
+                                                    auVar39._4_8_ = 0;
+                                                    auVar39._0_4_ = _UNK_?;
+                                                    fVar40 = _UNK_?;
                                                     pQVar34 = UnityEngine.CoreModule.dll::
                                                               UnityEngine::Quaternion::
                                                               Quaternion_Internal_FromEulerRad
                                                                         ((Quaternion *)
-                                                                         &stack0xffffffb0,euler,
+                                                                         &stack0xffffffc0,
+                                                                         (Vector3)(auVar39 << 0x20),
                                                                          (MethodInfo *)0x0);
                                                     fVar6 = pQVar34->y;
                                                     value.y = pQVar34->z;
                                                     fVar11 = pQVar34->w;
                                                     if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                      value_09.y = (fVar36 * fVar11 +
+                                                      value_08.y = (fVar36 * fVar11 +
                                                                     fVar6 * fVar38 +
                                                                    fVar37 * pQVar34->x) -
                                                                    value.y * fVar35;
-                                                      value_09.x = (fVar11 * fVar35 +
+                                                      value_08.x = (fVar11 * fVar35 +
                                                                     pQVar34->x * fVar38 +
                                                                    value.y * fVar36) -
                                                                    fVar6 * fVar37;
-                                                      value_09.z = (fVar37 * fVar11 +
+                                                      value_08.z = (fVar37 * fVar11 +
                                                                     value.y * fVar38 +
                                                                    fVar6 * fVar35) -
                                                                    fVar36 * pQVar34->x;
-                                                      value_09.w = ((fVar11 * fVar38 -
+                                                      value_08.w = ((fVar11 * fVar38 -
                                                                     fVar35 * pQVar34->x) -
                                                                    fVar6 * fVar36) -
                                                                    fVar37 * value.y;
                                                       GizmoPlaneSlider3D::
                                                       GizmoPlaneSlider3D_set_Rotation
-                                                                (pGVar33,value_09,(MethodInfo *)0x0)
+                                                                (pGVar33,value_08,(MethodInfo *)0x0)
                                                       ;
-                                                      pGVar33 = (this->fields)._axialCircleXY;
-                                                      if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                        pGVar41 = GizmoPlaneSlider3D::
-                                                                  GizmoPlaneSlider3D_get_LookAndFeel
-                                                                            (pGVar33,(MethodInfo *)
-                                                                                     0x0);
-                                                        pSVar42 = (&(this->fields)._lookAndFeel)
-                                                                  [(this->fields)._sharedLookAndFeel
-                                                                   != (
-                                                  SphereColliderGizmoLookAndFeel *)0x0];
-                                                  if (pSVar42 !=
-                                                      (SphereColliderGizmoLookAndFeel *)0x0) {
-                                                    fVar6 = (pSVar42->fields)._wireColor.g;
-                                                    value.y = (pSVar42->fields)._wireColor.b;
-                                                    fVar11 = (pSVar42->fields)._wireColor.a;
-                                                    if (pGVar41 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                                      (pGVar41->fields)._borderColor.r =
-                                                           (pSVar42->fields)._wireColor.r;
-                                                      (pGVar41->fields)._borderColor.g = fVar6;
-                                                      (pGVar41->fields)._borderColor.b = value.y;
-                                                      (pGVar41->fields)._borderColor.a = fVar11;
-                                                      pGVar33 = (this->fields)._axialCircleYZ;
-                                                      if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                        pGVar41 = GizmoPlaneSlider3D::
-                                                                  GizmoPlaneSlider3D_get_LookAndFeel
-                                                                            (pGVar33,(MethodInfo *)
-                                                                                     0x0);
-                                                        pSVar42 = (&(this->fields)._lookAndFeel)
-                                                                  [(this->fields)._sharedLookAndFeel
-                                                                   != (
-                                                  SphereColliderGizmoLookAndFeel *)0x0];
-                                                  if (pSVar42 !=
-                                                      (SphereColliderGizmoLookAndFeel *)0x0) {
-                                                    fVar6 = (pSVar42->fields)._wireColor.g;
-                                                    value.y = (pSVar42->fields)._wireColor.b;
-                                                    fVar11 = (pSVar42->fields)._wireColor.a;
-                                                    if (pGVar41 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                                      (pGVar41->fields)._borderColor.r =
-                                                           (pSVar42->fields)._wireColor.r;
-                                                      (pGVar41->fields)._borderColor.g = fVar6;
-                                                      (pGVar41->fields)._borderColor.b = value.y;
-                                                      (pGVar41->fields)._borderColor.a = fVar11;
+                                                      pSVar5 = (this->fields)._targetCollider;
                                                       pGVar33 = (this->fields)._axialCircleZX;
-                                                      if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                        pGVar41 = GizmoPlaneSlider3D::
-                                                                  GizmoPlaneSlider3D_get_LookAndFeel
-                                                                            (pGVar33,(MethodInfo *)
+                                                      if ((pSVar5 != (SphereCollider *)0x0) &&
+                                                         (pTVar7 = UnityEngine.CoreModule.dll::
+                                                                    UnityEngine::Component::
+                                                                    Component_get_transform
+                                                                              ((Component *)pSVar5,
+                                                                               (MethodInfo *)0x0),
+                                                         pTVar7 != (Transform *)0x0)) {
+                                                        pQVar34 = UnityEngine.CoreModule.dll::
+                                                                  UnityEngine::Transform::
+                                                                  Transform_get_rotation
+                                                                            ((Quaternion *)
+                                                                             &stack0xffffff80,
+                                                                             pTVar7,(MethodInfo *)
                                                                                      0x0);
-                                                        pSVar42 = (&(this->fields)._lookAndFeel)
-                                                                  [(this->fields)._sharedLookAndFeel
-                                                                   != (
-                                                  SphereColliderGizmoLookAndFeel *)0x0];
-                                                  if (pSVar42 !=
+                                                        fVar35 = pQVar34->x;
+                                                        fVar36 = pQVar34->y;
+                                                        fVar37 = pQVar34->z;
+                                                        fVar38 = pQVar34->w;
+                                                        euler.y = 0.0;
+                                                        euler.z = 0.0;
+                                                        euler.x = fVar40;
+                                                        pQVar34 = UnityEngine.CoreModule.dll::
+                                                                  UnityEngine::Quaternion::
+                                                                  Quaternion_Internal_FromEulerRad
+                                                                            ((Quaternion *)
+                                                                             &stack0xffffffb0,euler,
+                                                                             (MethodInfo *)0x0);
+                                                        fVar6 = pQVar34->y;
+                                                        value.y = pQVar34->z;
+                                                        fVar11 = pQVar34->w;
+                                                        if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
+                                                          value_09.y = (fVar36 * fVar11 +
+                                                                        fVar6 * fVar38 +
+                                                                       fVar37 * pQVar34->x) -
+                                                                       value.y * fVar35;
+                                                          value_09.x = (fVar11 * fVar35 +
+                                                                        pQVar34->x * fVar38 +
+                                                                       value.y * fVar36) -
+                                                                       fVar6 * fVar37;
+                                                          value_09.z = (fVar37 * fVar11 +
+                                                                        value.y * fVar38 +
+                                                                       fVar6 * fVar35) -
+                                                                       fVar36 * pQVar34->x;
+                                                          value_09.w = ((fVar11 * fVar38 -
+                                                                        fVar35 * pQVar34->x) -
+                                                                       fVar6 * fVar36) -
+                                                                       fVar37 * value.y;
+                                                          GizmoPlaneSlider3D::
+                                                          GizmoPlaneSlider3D_set_Rotation
+                                                                    (pGVar33,value_09,
+                                                                     (MethodInfo *)0x0);
+                                                          pGVar33 = (this->fields)._axialCircleXY;
+                                                          if (pGVar33 != (GizmoPlaneSlider3D *)0x0)
+                                                          {
+                                                            pGVar41 = GizmoPlaneSlider3D::
+                                                                                                                                            
+                                                  GizmoPlaneSlider3D_get_LookAndFeel
+                                                            (pGVar33,(MethodInfo *)0x0);
+                                                  if ((this->fields)._sharedLookAndFeel ==
                                                       (SphereColliderGizmoLookAndFeel *)0x0) {
-                                                    fVar6 = (pSVar42->fields)._wireColor.g;
-                                                    value.y = (pSVar42->fields)._wireColor.b;
-                                                    fVar11 = (pSVar42->fields)._wireColor.a;
-                                                    if (pGVar41 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                                      (pGVar41->fields)._borderColor.r =
-                                                           (pSVar42->fields)._wireColor.r;
-                                                      (pGVar41->fields)._borderColor.g = fVar6;
-                                                      (pGVar41->fields)._borderColor.b = value.y;
-                                                      (pGVar41->fields)._borderColor.a = fVar11;
-                                                      pGVar33 = (this->fields)._axialCircleXY;
-                                                      if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                        pGVar41 = GizmoPlaneSlider3D::
+                                                    pSVar42 = (this->fields)._lookAndFeel;
+                                                    if (pSVar42 ==
+                                                        (SphereColliderGizmoLookAndFeel *)0x0)
+                                                    goto code_?;
+                                                  }
+                                                  else {
+                                                    pSVar42 = (this->fields)._sharedLookAndFeel;
+                                                  }
+                                                  fVar6 = (pSVar42->fields)._wireColor.g;
+                                                  value.y = (pSVar42->fields)._wireColor.b;
+                                                  fVar11 = (pSVar42->fields)._wireColor.a;
+                                                  if (pGVar41 !=
+                                                      (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                    (pGVar41->fields)._borderColor.r =
+                                                         (pSVar42->fields)._wireColor.r;
+                                                    (pGVar41->fields)._borderColor.g = fVar6;
+                                                    (pGVar41->fields)._borderColor.b = value.y;
+                                                    (pGVar41->fields)._borderColor.a = fVar11;
+                                                    pGVar33 = (this->fields)._axialCircleYZ;
+                                                    if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
+                                                      pGVar41 = GizmoPlaneSlider3D::
+                                                                GizmoPlaneSlider3D_get_LookAndFeel
+                                                                          (pGVar33,(MethodInfo *)0x0
+                                                                          );
+                                                      if ((this->fields)._sharedLookAndFeel ==
+                                                          (SphereColliderGizmoLookAndFeel *)0x0) {
+                                                        pSVar42 = (this->fields)._lookAndFeel;
+                                                        if (pSVar42 ==
+                                                            (SphereColliderGizmoLookAndFeel *)0x0)
+                                                        goto code_?;
+                                                      }
+                                                      else {
+                                                        pSVar42 = (this->fields)._sharedLookAndFeel;
+                                                      }
+                                                      fVar6 = (pSVar42->fields)._wireColor.g;
+                                                      value.y = (pSVar42->fields)._wireColor.b;
+                                                      fVar11 = (pSVar42->fields)._wireColor.a;
+                                                      if (pGVar41 !=
+                                                          (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                        (pGVar41->fields)._borderColor.r =
+                                                             (pSVar42->fields)._wireColor.r;
+                                                        (pGVar41->fields)._borderColor.g = fVar6;
+                                                        (pGVar41->fields)._borderColor.b = value.y;
+                                                        (pGVar41->fields)._borderColor.a = fVar11;
+                                                        pGVar33 = (this->fields)._axialCircleZX;
+                                                        if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
+                                                          pGVar41 = GizmoPlaneSlider3D::
+                                                                                                                                        
+                                                  GizmoPlaneSlider3D_get_LookAndFeel
+                                                            (pGVar33,(MethodInfo *)0x0);
+                                                  if ((this->fields)._sharedLookAndFeel ==
+                                                      (SphereColliderGizmoLookAndFeel *)0x0) {
+                                                    pSVar42 = (this->fields)._lookAndFeel;
+                                                    if (pSVar42 ==
+                                                        (SphereColliderGizmoLookAndFeel *)0x0)
+                                                    goto code_?;
+                                                  }
+                                                  else {
+                                                    pSVar42 = (this->fields)._sharedLookAndFeel;
+                                                  }
+                                                  fVar6 = (pSVar42->fields)._wireColor.g;
+                                                  value.y = (pSVar42->fields)._wireColor.b;
+                                                  fVar11 = (pSVar42->fields)._wireColor.a;
+                                                  if (pGVar41 !=
+                                                      (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                    (pGVar41->fields)._borderColor.r =
+                                                         (pSVar42->fields)._wireColor.r;
+                                                    (pGVar41->fields)._borderColor.g = fVar6;
+                                                    (pGVar41->fields)._borderColor.b = value.y;
+                                                    (pGVar41->fields)._borderColor.a = fVar11;
+                                                    pGVar33 = (this->fields)._axialCircleXY;
+                                                    if ((pGVar33 != (GizmoPlaneSlider3D *)0x0) &&
+                                                       (pGVar41 = GizmoPlaneSlider3D::
                                                                   GizmoPlaneSlider3D_get_LookAndFeel
                                                                             (pGVar33,(MethodInfo *)
-                                                                                     0x0);
-                                                        if (pGVar41 !=
-                                                            (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                                          GizmoPlaneSlider3DLookAndFeel::
-                                                                                                                    
-                                                  GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
-                                                            (pGVar41,value.x,(MethodInfo *)0x0);
-                                                  pGVar33 = (this->fields)._axialCircleYZ;
-                                                  if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                    pGVar41 = GizmoPlaneSlider3D::
-                                                              GizmoPlaneSlider3D_get_LookAndFeel
-                                                                        (pGVar33,(MethodInfo *)0x0);
-                                                    if (pGVar41 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                                                     0x0),
+                                                       pGVar41 !=
+                                                       (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
                                                       GizmoPlaneSlider3DLookAndFeel::
                                                       GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
                                                                 (pGVar41,value.x,(MethodInfo *)0x0);
-                                                      pGVar33 = (this->fields)._axialCircleZX;
+                                                      pGVar33 = (this->fields)._axialCircleYZ;
+                                                      if ((pGVar33 != (GizmoPlaneSlider3D *)0x0) &&
+                                                         (pGVar41 = GizmoPlaneSlider3D::
+                                                                                                                                        
+                                                  GizmoPlaneSlider3D_get_LookAndFeel
+                                                            (pGVar33,(MethodInfo *)0x0),
+                                                  pGVar41 != (GizmoPlaneSlider3DLookAndFeel *)0x0))
+                                                  {
+                                                    GizmoPlaneSlider3DLookAndFeel::
+                                                    GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
+                                                              (pGVar41,value.x,(MethodInfo *)0x0);
+                                                    pGVar33 = (this->fields)._axialCircleZX;
+                                                    if ((pGVar33 != (GizmoPlaneSlider3D *)0x0) &&
+                                                       (pGVar41 = GizmoPlaneSlider3D::
+                                                                  GizmoPlaneSlider3D_get_LookAndFeel
+                                                                            (pGVar33,(MethodInfo *)
+                                                                                     0x0),
+                                                       pGVar41 !=
+                                                       (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
+                                                      GizmoPlaneSlider3DLookAndFeel::
+                                                      GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
+                                                                (pGVar41,value.x,(MethodInfo *)0x0);
+                                                      pGVar33 = (this->fields)._axialCircleXY;
                                                       if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
                                                         pGVar41 = GizmoPlaneSlider3D::
                                                                   GizmoPlaneSlider3D_get_LookAndFeel
                                                                             (pGVar33,(MethodInfo *)
                                                                                      0x0);
+                                                        if ((this->fields)._sharedLookAndFeel ==
+                                                            (SphereColliderGizmoLookAndFeel *)0x0) {
+                                                          pSVar42 = (this->fields)._lookAndFeel;
+                                                          if (pSVar42 ==
+                                                              (SphereColliderGizmoLookAndFeel *)0x0)
+                                                          goto code_?;
+                                                        }
+                                                        else {
+                                                          pSVar42 = (this->fields).
+                                                                    _sharedLookAndFeel;
+                                                        }
                                                         if (pGVar41 !=
                                                             (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                                                           GizmoPlaneSlider3DLookAndFeel::
                                                                                                                     
-                                                  GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
-                                                            (pGVar41,value.x,(MethodInfo *)0x0);
-                                                  pGVar33 = (this->fields)._axialCircleXY;
-                                                  if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                    pGVar41 = GizmoPlaneSlider3D::
-                                                              GizmoPlaneSlider3D_get_LookAndFeel
-                                                                        (pGVar33,(MethodInfo *)0x0);
-                                                    pSVar42 = (&(this->fields)._lookAndFeel)
-                                                              [(this->fields)._sharedLookAndFeel !=
-                                                               (SphereColliderGizmoLookAndFeel *)0x0
-                                                              ];
-                                                    if ((pSVar42 !=
-                                                         (SphereColliderGizmoLookAndFeel *)0x0) &&
-                                                       (pGVar41 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
-                                                      GizmoPlaneSlider3DLookAndFeel::
-                                                                                                            
                                                   GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
                                                             (pGVar41,(pSVar42->fields).
                                                                      _axialCircleCullAlphaScale,
@@ -1904,14 +1844,18 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                     pGVar41 = GizmoPlaneSlider3D::
                                                               GizmoPlaneSlider3D_get_LookAndFeel
                                                                         (pGVar33,(MethodInfo *)0x0);
-                                                    pSVar42 = (&(this->fields)._lookAndFeel)
-                                                              [(this->fields)._sharedLookAndFeel !=
-                                                               (SphereColliderGizmoLookAndFeel *)0x0
-                                                              ];
-                                                    if ((pSVar42 !=
-                                                         (SphereColliderGizmoLookAndFeel *)0x0) &&
-                                                       (pGVar41 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
+                                                    if ((this->fields)._sharedLookAndFeel ==
+                                                        (SphereColliderGizmoLookAndFeel *)0x0) {
+                                                      pSVar42 = (this->fields)._lookAndFeel;
+                                                      if (pSVar42 ==
+                                                          (SphereColliderGizmoLookAndFeel *)0x0)
+                                                      goto code_?;
+                                                    }
+                                                    else {
+                                                      pSVar42 = (this->fields)._sharedLookAndFeel;
+                                                    }
+                                                    if (pGVar41 !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                                                       GizmoPlaneSlider3DLookAndFeel::
                                                                                                             
                                                   GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
@@ -1923,14 +1867,18 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                     pGVar41 = GizmoPlaneSlider3D::
                                                               GizmoPlaneSlider3D_get_LookAndFeel
                                                                         (pGVar33,(MethodInfo *)0x0);
-                                                    pSVar42 = (&(this->fields)._lookAndFeel)
-                                                              [(this->fields)._sharedLookAndFeel !=
-                                                               (SphereColliderGizmoLookAndFeel *)0x0
-                                                              ];
-                                                    if ((pSVar42 !=
-                                                         (SphereColliderGizmoLookAndFeel *)0x0) &&
-                                                       (pGVar41 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
+                                                    if ((this->fields)._sharedLookAndFeel ==
+                                                        (SphereColliderGizmoLookAndFeel *)0x0) {
+                                                      pSVar42 = (this->fields)._lookAndFeel;
+                                                      if (pSVar42 ==
+                                                          (SphereColliderGizmoLookAndFeel *)0x0)
+                                                      goto code_?;
+                                                    }
+                                                    else {
+                                                      pSVar42 = (this->fields)._sharedLookAndFeel;
+                                                    }
+                                                    if (pGVar41 !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                                                       GizmoPlaneSlider3DLookAndFeel::
                                                                                                             
                                                   GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
@@ -1939,72 +1887,20 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                                              (MethodInfo *)0x0);
                                                   pGVar33 = (this->fields)._axialCircleXY;
                                                   if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                    GizmoPlaneSlider3D::
-                                                    GizmoPlaneSlider3D_OnGizmoPostEnabled
-                                                              (pGVar33,(Gizmo *)0x0,
-                                                               in_stack_43);
+                                                    GizmoPlaneSlider3D::GizmoPlaneSlider3D_Refresh
+                                                              (pGVar33,(MethodInfo *)0x0);
                                                     pGVar33 = (this->fields)._axialCircleYZ;
                                                     if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
-                                                      GizmoPlaneSlider3D::
-                                                      GizmoPlaneSlider3D_OnGizmoPostEnabled
-                                                                (pGVar33,(Gizmo *)0x0,
-                                                                 in_stack_44);
+                                                      GizmoPlaneSlider3D::GizmoPlaneSlider3D_Refresh
+                                                                (pGVar33,(MethodInfo *)0x0);
                                                       pGVar33 = (this->fields)._axialCircleZX;
                                                       if (pGVar33 != (GizmoPlaneSlider3D *)0x0) {
                                                         GizmoPlaneSlider3D::
-                                                        GizmoPlaneSlider3D_OnGizmoPostEnabled
-                                                                  (pGVar33,(Gizmo *)0x0,
-                                                                   in_stack_45);
+                                                        GizmoPlaneSlider3D_Refresh
+                                                                  (pGVar33,(MethodInfo *)0x0);
                                                         return;
                                                       }
                                                     }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
                                                   }
                                                   }
                                                   }
@@ -2031,6 +1927,7 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                                           }
                                         }
                                       }
+                                      goto code_?;
                                     }
                                   }
                                 }
@@ -2043,17 +1940,17 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateHa
                   }
                 }
               }
+              func_?();
             }
           }
         }
       }
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar46 = (code *)swi(3);
-  (*pcVar46)();
+  pcVar43 = (code *)swi(3);
+  (*pcVar43)();
   return;
 }
 
@@ -2110,8 +2007,10 @@ code_?:
                 pSVar1 = (this->fields)._extentTicks;
                 if (pSVar1 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
                   if (pSVar1->max_length < 6) goto code_?;
+                  pSVar2 = (this->fields)._extentTicks;
                   pSVar3 = pSVar1->vector[5];
-                  pSVar4 = ((this->fields)._extentTicks)->vector[4];
+                  if (pSVar2->max_length < 5) goto code_?;
+                  pSVar4 = pSVar2->vector[4];
                   if ((pSVar3 != (SphereColliderGizmo_ExtentTick *)0x0) &&
                      (pGVar5 = (pSVar3->fields).Tick, pGVar5 != (GizmoCap2D *)0x0)) {
                     pSVar6 = Newtonsoft.Json.dll::Newtonsoft::Json::Converters::
@@ -2307,127 +2206,130 @@ void Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_UpdateTi
     func_?(&TypeInfo__RTG__CameraEx);
     cRam_? = '\x01';
   }
-  if (camera != (Camera *)0x0) {
+  if ((camera != (Camera *)0x0) &&
+     (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)camera,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                        ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
+    VVar3 = *pVVar2;
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)camera,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                          ((Vector3 *)&stack0xffffffb4,pTVar1,(MethodInfo *)0x0);
-      VVar3 = *pVVar2;
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)camera,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffb4,pTVar1,(MethodInfo *)0x0);
-        uVar4 = pVVar2->x;
-        uVar5 = pVVar2->y;
-        fVar6 = pVVar2->z;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            ((Vector3 *)&stack0xffffffb4,VVar3,(MethodInfo *)0x0);
-        fVar7 = pVVar2->x;
-        fVar8 = pVVar2->y;
-        fVar9 = pVVar2->z;
-        uStack_10 = 0;
-        pSVar11 = (this->fields)._extentTicks;
-        fVar6 = (float)((uint)((float)uVar5 * fVar8 + (float)uVar4 * fVar7 + fVar6 * fVar9) ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        if (pSVar11 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
-          ppSVar12 = pSVar11->vector;
-          while( true ) {
-            if ((int)pSVar11->max_length <= (int)uStack_10) {
-              return;
-            }
-            if (pSVar11->max_length <= uStack_10) break;
-            pSVar13 = *ppSVar12;
-            if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0) goto code_?;
-            pGVar14 = (this->fields)._._gizmo;
-            this_00 = (pSVar13->fields).Tick;
-            if ((pGVar14 == (Gizmo *)0x0) ||
-               (pvVar15 = (void *)(pGVar14->fields)._hoverInfo._handleId,
-               this_00 == (GizmoCap2D *)0x0)) goto code_?;
-            pvVar16 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-                      AndroidJavaObject__GetRawClass((AndroidJavaObject *)this_00,(MethodInfo *)0x0)
-            ;
-            if (pvVar15 == pvVar16) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
+      uVar4 = pVVar2->x;
+      uVar5 = pVVar2->y;
+      fVar6 = pVVar2->z;
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                          ((Vector3 *)&stack0xffffffb0,VVar3,(MethodInfo *)0x0);
+      fVar7 = pVVar2->x;
+      fVar8 = pVVar2->y;
+      fVar9 = pVVar2->z;
+      uStack_10 = 0;
+      pSVar11 = (this->fields)._extentTicks;
+      fVar6 = (float)((uint)((float)uVar5 * fVar8 + (float)uVar4 * fVar7 + fVar6 * fVar9) ^
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+      if (pSVar11 != (SphereColliderGizmo_ExtentTick__Array *)0x0) {
+        ppSVar12 = pSVar11->vector;
+        do {
+          if ((int)pSVar11->max_length <= (int)uStack_10) {
+            return;
+          }
+          if (pSVar11->max_length <= uStack_10) goto code_?;
+          pSVar13 = *ppSVar12;
+          if (pSVar13 == (SphereColliderGizmo_ExtentTick *)0x0) break;
+          this_00 = (pSVar13->fields).Tick;
+          pGVar14 = (this->fields)._._gizmo;
+          if ((pGVar14 == (Gizmo *)0x0) ||
+             (pvVar15 = (void *)(pGVar14->fields)._hoverInfo._handleId, this_00 == (GizmoCap2D *)0x0)
+             ) break;
+          pvVar16 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
+                    AndroidJavaObject__GetRawClass((AndroidJavaObject *)this_00,(MethodInfo *)0x0);
+          if (pvVar15 == pvVar16) {
 code_?:
-              pGVar17 = (this_00->fields)._overrideFillColor;
-              if (pGVar17 == (GizmoOverrideColor *)0x0) goto code_?;
-              (pGVar17->fields)._isActive = 0;
-              pGVar17 = (this_00->fields)._overrideBorderColor;
-              if (pGVar17 == (GizmoOverrideColor *)0x0) goto code_?;
-              (pGVar17->fields)._isActive = 0;
+            pGVar17 = (this_00->fields)._overrideFillColor;
+            if (pGVar17 == (GizmoOverrideColor *)0x0) break;
+            (pGVar17->fields)._isActive = 0;
+            pGVar17 = (this_00->fields)._overrideBorderColor;
+            if (pGVar17 == (GizmoOverrideColor *)0x0) break;
+            (pGVar17->fields)._isActive = 0;
+          }
+          else {
+            VVar3 = (pSVar13->fields).Position;
+            pointNormal = (pSVar13->fields).Normal;
+            if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__RTG__CameraEx);
+            }
+            bVar18 = CameraEx::CameraEx_IsPointFacingCamera
+                               (camera,VVar3,pointNormal,(MethodInfo *)0x0);
+            if (bVar18 != 0) goto code_?;
+            pGVar17 = (this_00->fields)._overrideFillColor;
+            if (pGVar17 == (GizmoOverrideColor *)0x0) break;
+            (pGVar17->fields)._isActive = 1;
+            pGVar17 = (this_00->fields)._overrideBorderColor;
+            if (pGVar17 == (GizmoOverrideColor *)0x0) break;
+            (pGVar17->fields)._isActive = 1;
+            pGVar19 = (this_00->fields)._sharedLookAndFeel;
+            if (pGVar19 == (GizmoCap2DLookAndFeel *)0x0) break;
+            pGVar17 = (this_00->fields)._overrideFillColor;
+            if ((this->fields)._sharedLookAndFeel == (SphereColliderGizmoLookAndFeel *)0x0) {
+              pSVar20 = (this->fields)._lookAndFeel;
+              if (pSVar20 == (SphereColliderGizmoLookAndFeel *)0x0) break;
             }
             else {
-              VVar3 = (pSVar13->fields).Position;
-              pointNormal = (pSVar13->fields).Normal;
-              if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__RTG__CameraEx);
-              }
-              bVar18 = CameraEx::CameraEx_IsPointFacingCamera
-                                 (camera,VVar3,pointNormal,(MethodInfo *)0x0);
-              if (bVar18 != 0) goto code_?;
-              pGVar17 = (this_00->fields)._overrideFillColor;
-              if (pGVar17 == (GizmoOverrideColor *)0x0) goto code_?;
-              (pGVar17->fields)._isActive = 1;
-              pGVar17 = (this_00->fields)._overrideBorderColor;
-              if (pGVar17 == (GizmoOverrideColor *)0x0) goto code_?;
-              (pGVar17->fields)._isActive = 1;
-              pGVar19 = (this_00->fields)._sharedLookAndFeel;
-              if (pGVar19 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-              pGVar17 = (this_00->fields)._overrideFillColor;
-              pSVar20 = (&(this->fields)._lookAndFeel)
-                        [(this->fields)._sharedLookAndFeel != (SphereColliderGizmoLookAndFeel *)0x0]
-              ;
-              if (pSVar20 == (SphereColliderGizmoLookAndFeel *)0x0) goto code_?;
-              pCVar21 = ColorEx::ColorEx_KeepAllButAlpha
-                                  ((Color *)&stack0xffffff94,(pGVar19->fields)._color,
-                                   (pGVar19->fields)._color.a *
-                                   (pSVar20->fields)._tickCullAlphaScale,(MethodInfo *)0x0);
-              fVar7 = pCVar21->g;
-              fVar8 = pCVar21->b;
-              fVar9 = pCVar21->a;
-              if (pGVar17 == (GizmoOverrideColor *)0x0) goto code_?;
-              (pGVar17->fields)._color.r = pCVar21->r;
-              (pGVar17->fields)._color.g = fVar7;
-              (pGVar17->fields)._color.b = fVar8;
-              (pGVar17->fields)._color.a = fVar9;
-              pGVar19 = (this_00->fields)._sharedLookAndFeel;
-              if (pGVar19 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-              pGVar17 = (this_00->fields)._overrideBorderColor;
-              pSVar20 = (&(this->fields)._lookAndFeel)
-                        [(this->fields)._sharedLookAndFeel != (SphereColliderGizmoLookAndFeel *)0x0]
-              ;
-              if (pSVar20 == (SphereColliderGizmoLookAndFeel *)0x0) goto code_?;
-              fVar7 = (pGVar19->fields)._borderColor.g;
-              fVar8 = (pGVar19->fields)._borderColor.b;
-              fVar9 = (pGVar19->fields)._borderColor.a;
-              pCVar21 = ColorEx::ColorEx_KeepAllButAlpha
-                                  ((Color *)&stack0xffffff84,(pGVar19->fields)._borderColor,
-                                   (pGVar19->fields)._borderColor.a *
-                                   (pSVar20->fields)._tickCullAlphaScale,(MethodInfo *)0x0);
-              fVar22 = pCVar21->g;
-              fVar23 = pCVar21->b;
-              fVar24 = pCVar21->a;
-              if (pGVar17 == (GizmoOverrideColor *)0x0) goto code_?;
-              (pGVar17->fields)._color.r = pCVar21->r;
-              (pGVar17->fields)._color.g = fVar22;
-              (pGVar17->fields)._color.b = fVar23;
-              (pGVar17->fields)._color.a = fVar24;
+              pSVar20 = (this->fields)._sharedLookAndFeel;
             }
-            uVar25 = (pSVar13->fields).Position.x;
-            uVar26 = (pSVar13->fields).Position.y;
-            GizmoCap::GizmoCap_SetVisible
-                      ((GizmoCap *)this_00,
-                       0.0 < fVar8 * (float)uVar26 + fVar7 * (float)uVar25 +
-                             fVar9 * (pSVar13->fields).Position.z + fVar6,(MethodInfo *)0x0);
-            uStack_10 = uStack_10 + 1;
-            ppSVar12 = ppSVar12 + 1;
+            pCVar21 = ColorEx::ColorEx_KeepAllButAlpha
+                                ((Color *)&stack0xffffff90,(pGVar19->fields)._color,
+                                 (pGVar19->fields)._color.a * (pSVar20->fields)._tickCullAlphaScale,
+                                 (MethodInfo *)0x0);
+            fVar7 = pCVar21->g;
+            fVar8 = pCVar21->b;
+            fVar9 = pCVar21->a;
+            if (pGVar17 == (GizmoOverrideColor *)0x0) break;
+            (pGVar17->fields)._color.r = pCVar21->r;
+            (pGVar17->fields)._color.g = fVar7;
+            (pGVar17->fields)._color.b = fVar8;
+            (pGVar17->fields)._color.a = fVar9;
+            pGVar19 = (this_00->fields)._sharedLookAndFeel;
+            if (pGVar19 == (GizmoCap2DLookAndFeel *)0x0) break;
+            pGVar17 = (this_00->fields)._overrideBorderColor;
+            if ((this->fields)._sharedLookAndFeel == (SphereColliderGizmoLookAndFeel *)0x0) {
+              pSVar20 = (this->fields)._lookAndFeel;
+              if (pSVar20 == (SphereColliderGizmoLookAndFeel *)0x0) break;
+            }
+            else {
+              pSVar20 = (this->fields)._sharedLookAndFeel;
+            }
+            fVar7 = (pGVar19->fields)._borderColor.g;
+            fVar8 = (pGVar19->fields)._borderColor.b;
+            fVar9 = (pGVar19->fields)._borderColor.a;
+            pCVar21 = ColorEx::ColorEx_KeepAllButAlpha
+                                ((Color *)&stack0xffffff80,(pGVar19->fields)._borderColor,
+                                 (pGVar19->fields)._borderColor.a *
+                                 (pSVar20->fields)._tickCullAlphaScale,(MethodInfo *)0x0);
+            fVar22 = pCVar21->g;
+            fVar23 = pCVar21->b;
+            fVar24 = pCVar21->a;
+            if (pGVar17 == (GizmoOverrideColor *)0x0) break;
+            (pGVar17->fields)._color.r = pCVar21->r;
+            (pGVar17->fields)._color.g = fVar22;
+            (pGVar17->fields)._color.b = fVar23;
+            (pGVar17->fields)._color.a = fVar24;
           }
-          func_?();
-        }
+          uVar25 = (pSVar13->fields).Position.x;
+          uVar26 = (pSVar13->fields).Position.y;
+          GizmoCap::GizmoCap_SetVisible
+                    ((GizmoCap *)this_00,
+                     0.0 < fVar8 * (float)uVar26 + fVar7 * (float)uVar25 +
+                           fVar9 * (pSVar13->fields).Position.z + fVar6,(MethodInfo *)0x0);
+          uStack_10 = uStack_10 + 1;
+          ppSVar12 = ppSVar12 + 1;
+        } while( true );
       }
     }
   }
+  func_?();
 code_?:
   func_?();
   pcVar27 = (code *)swi(3);
@@ -2539,13 +2441,19 @@ bool Assembly-CSharp.dll::RTG::SphereColliderGizmo::SphereColliderGizmo_get_IsSn
   if ((this->fields)._isSnapEnabled != 0) {
     return 1;
   }
-  pSVar1 = (&(this->fields)._hotkeys)
-           [(this->fields)._sharedHotkeys != (SphereColliderGizmoHotkeys *)0x0];
-  if ((pSVar1 != (SphereColliderGizmoHotkeys *)0x0) &&
-     (this_00 = (pSVar1->fields)._enableSnapping, this_00 != (Hotkeys *)0x0)) {
+  if ((this->fields)._sharedHotkeys == (SphereColliderGizmoHotkeys *)0x0) {
+    pSVar1 = (this->fields)._hotkeys;
+    if (pSVar1 == (SphereColliderGizmoHotkeys *)0x0) goto code_?;
+  }
+  else {
+    pSVar1 = (this->fields)._sharedHotkeys;
+  }
+  this_00 = (pSVar1->fields)._enableSnapping;
+  if (this_00 != (Hotkeys *)0x0) {
     bVar2 = Hotkeys::Hotkeys_IsActive(this_00,1,(MethodInfo *)0x0);
     return bVar2;
   }
+code_?:
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
   pcVar4 = (code *)swi(3);

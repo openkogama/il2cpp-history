@@ -70,8 +70,8 @@ int32_t Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
+  puStack_4 = &stack0xffffff94;
+  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
@@ -137,7 +137,7 @@ int32_t Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
       pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                          &stack0xffffffa4,
+                          &stack0xffffffa0,
                           (Dictionary_2_System_UInt32_System_Object_ *)pKVar9[1].klass,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                          );
@@ -175,48 +175,43 @@ int32_t Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                                );
         if (iVar14 == 0) goto code_?;
-        pGStack_15 = (GamePassesSpawnRoleRewardInfo__Class *)
-                     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-        ;
         this = (GamePassesSpawnRoleRewardInfo *)
-               func_?(pOVar6,
-                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                              );
-        if (this == (GamePassesSpawnRoleRewardInfo *)0x0) goto code_?;
-        pGStack_15 = this->klass;
+               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+        ;
+        piStack_15 = (int *)func_?(pOVar6,
+                                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                           );
+        if (piStack_15 == (int *)0x0) goto code_?;
+        iVar14 = *piStack_15;
         uVar16 = 0;
         uStack_17 = 0;
-        sVar18._0_1_ = (pGStack_15->_1).rank;
-        sVar18._1_1_ = (pGStack_15->_1).minimumAlignment;
-        if (sVar18 != 0) {
+        uVar18 = *(ushort *)(iVar14 + 0xb6);
+        uStack_19 = (uint)uVar18;
+        if (uVar18 != 0) {
           do {
-            if (pGStack_15->interfaceOffsets[uVar16].interfaceType ==
-                (Il2CppClass *)
+            if (*(IAttributeSetting__Class **)(*(int *)(iVar14 + 0x58) + (uint)uVar16 * 8) ==
                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                ) {
-              ppMVar19 = &(&(this->klass->vtable).Equals)
-                         [this->klass->interfaceOffsets[uVar16].offset].method;
+              puVar20 = (undefined4 *)
+                       (iVar14 + (*(int *)(*(int *)(iVar14 + 0x58) + 4 + (uint)uVar16 * 8) + 0x18) * 8
+                       );
               goto code_?;
             }
             uVar16 = uVar16 + 1;
-            uVar20._0_1_ = (this->klass->_1).rank;
-            uVar20._1_1_ = (this->klass->_1).minimumAlignment;
-          } while (uVar16 < uVar20);
+          } while (uVar16 < uVar18);
         }
-        ppMVar19 = (MethodInfo **)
-                  func_?(this,
-                                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                  ,0);
+        puVar20 = (undefined4 *)
+                 func_?(piStack_15,
+                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                 ,0);
 code_?:
-        iVar14 = (*(code *)*ppMVar19)(this,ppMVar19[1]);
+        iVar14 = (*(code *)*puVar20)(piStack_15,puVar20[1]);
         pOVar6 = (Object *)((int)&pOStack_8->klass + iVar14);
         pOStack_8 = pOVar6;
       }
     }
   }
   func_?();
-code_?:
-  func_?(pOVar6,pGStack_15);
 code_?:
   uVar21 = func_?(pOVar6,this);
   func_?(uVar21);
@@ -292,7 +287,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0x92,(MethodInfo *)0x0);
+                  (pGVar1,0xd2,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {

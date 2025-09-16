@@ -117,69 +117,74 @@ void Assembly-CSharp.dll::PickHelper::PickHelper_Update(PickHelper *this,MethodI
   if (((this->fields).pickCallback != (UnityAction_2_MVWorldObjectClient_MVWorldObjectClient_ *)0x0)
      && (bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyUp
                            (KeyCode__Enum_Mouse0,(MethodInfo *)0x0), bVar1 != 0)) {
-    func_?(&stack0xffffffb0,0,0x48);
+    fStack_2 = 1.00893e-43;
+    fStack_3 = 0.0;
+    func_?(&fStack_3);
     bVar1 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                      ((VoxelHit *)&stack0xffffffb0,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+                      ((VoxelHit *)&fStack_3,(HashSet_1_System_Int32_ *)0x0,-0x40005,
                        (MethodInfo *)0x0);
     if (bVar1 != 0) {
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar4 != (MVWorldObjectClientManager *)0x0) {
         bVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_IsType
-                          (pMVar2,iStack_3,WorldObjectType__Enum_CubeModelPrototypeTerrain,
+                          (pMVar4,in_stack_5,WorldObjectType__Enum_CubeModelPrototypeTerrain,
                            (MethodInfo *)0x0);
         if (bVar1 != 0) {
           return;
         }
-        if (iStack_3 == -1) {
+        if (in_stack_5 == -1) {
           return;
         }
-        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        if ((pMVar2 != (MVWorldObjectClientManager *)0x0) &&
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if ((pMVar4 != (MVWorldObjectClientManager *)0x0) &&
            (this_00 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                (pMVar2,0,(MethodInfo *)0x0), this_00 != (MVWorldObject *)0x0)) {
+                                (pMVar4,0,(MethodInfo *)0x0), this_00 != (MVWorldObject *)0x0)) {
           bVar1 = PickHelper_MVObjectIsType
-                            (this,(Transform *)this_00[1].fields.ownerActorNr,(Type *)0x0,&iStack_4,
-                             (MethodInfo *)0x0);
+                            (this,(Transform *)this_00[1].fields.ownerActorNr,(Type *)0x0,
+                             (int32_t *)&stack0xfffffff8,(MethodInfo *)0x0);
           if (bVar1 == 0) {
-            pTVar5 = mscorlib.dll::System::Object::Object_GetType
+            pTVar6 = mscorlib.dll::System::Object::Object_GetType
                                ((Object *)this_00,(MethodInfo *)0x0);
-            pSVar6 = StringLiteral_tried_to_pick_something_else__;
-            if (pTVar5 == (Type *)0x0) {
+            pSVar7 = StringLiteral_tried_to_pick_something_else__;
+            if (pTVar6 == (Type *)0x0) {
               str1 = (String *)0x0;
             }
             else {
               str1 = (String *)func_?();
             }
-            pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
+            pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,str1,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                      ((Object *)pSVar6,(MethodInfo *)0x0);
+                      ((Object *)pSVar7,(MethodInfo *)0x0);
             return;
           }
-          pTVar7 = (Transform *)this_00[1].fields.ownerActorNr;
-          if (pTVar7 != (Transform *)0x0) {
-            pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                               (pTVar7,(MethodInfo *)0x0);
-            pUVar8 = (this->fields).pickCallback;
-            pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-            if (((pTVar7 != (Transform *)0x0) &&
+          pTVar8 = (Transform *)this_00[1].fields.ownerActorNr;
+          if (pTVar8 != (Transform *)0x0) {
+            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                               (pTVar8,(MethodInfo *)0x0);
+            pUVar9 = (this->fields).pickCallback;
+            pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            if (((pTVar8 != (Transform *)0x0) &&
                 (goId = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                                  ((Object_1 *)pTVar7,(MethodInfo *)0x0),
-                pMVar2 != (MVWorldObjectClientManager *)0x0)) &&
-               (MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectByGoId
-                          (pMVar2,goId,(MethodInfo *)0x0),
-               pUVar8 != (UnityAction_2_MVWorldObjectClient_MVWorldObjectClient_ *)0x0)) {
-              (*(pUVar8->fields)._._.invoke_impl)();
+                                  ((Object_1 *)pTVar8,(MethodInfo *)0x0),
+                pMVar4 != (MVWorldObjectClientManager *)0x0)) &&
+               (pMStack10 =
+                     MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectByGoId
+                               (pMVar4,goId,(MethodInfo *)0x0),
+               pUVar9 != (UnityAction_2_MVWorldObjectClient_MVWorldObjectClient_ *)0x0)) {
+              puStack11 = (pUVar9->fields)._._.method;
+              pMStack12 = this_00;
+              (*(pUVar9->fields)._._.invoke_impl)();
               return;
             }
           }
         }
       }
       func_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
       return;
     }
   }

@@ -149,8 +149,8 @@ int32_t Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_CalculateS
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
+  puStack_4 = &stack0xffffff94;
+  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
@@ -249,40 +249,37 @@ int32_t Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_CalculateS
                                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                                  );
           if (iVar15 == 0) goto code_?;
-          pSStack_16 = (SpawnRoleEditorMenu__Class *)
-                       TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-          ;
           this = (SpawnRoleEditorMenu *)
-                 func_?(pOVar6,
-                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                );
-          if (this == (SpawnRoleEditorMenu *)0x0) goto code_?;
-          pSStack_16 = this->klass;
+                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+          ;
+          piStack_16 = (int *)func_?(pOVar6,
+                                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                             );
+          if (piStack_16 == (int *)0x0) goto code_?;
+          iVar15 = *piStack_16;
           uVar17 = 0;
           uStack_18 = 0;
-          sVar19._0_1_ = (pSStack_16->_1).rank;
-          sVar19._1_1_ = (pSStack_16->_1).minimumAlignment;
-          if (sVar19 != 0) {
+          uVar19 = *(ushort *)(iVar15 + 0xb6);
+          uStack_20 = (uint)uVar19;
+          if (uVar19 != 0) {
             do {
-              if (pSStack_16->interfaceOffsets[uVar17].interfaceType ==
-                  (Il2CppClass *)
+              if (*(IAttributeSetting__Class **)(*(int *)(iVar15 + 0x58) + (uint)uVar17 * 8) ==
                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                  ) {
-                ppMVar20 = &(&(this->klass->vtable).Equals)
-                           [this->klass->interfaceOffsets[uVar17].offset].method;
+                puVar21 = (undefined4 *)
+                         (iVar15 + (*(int *)(*(int *)(iVar15 + 0x58) + 4 + (uint)uVar17 * 8) + 0x18) *
+                                  8);
                 goto code_?;
               }
               uVar17 = uVar17 + 1;
-              uVar21._0_1_ = (this->klass->_1).rank;
-              uVar21._1_1_ = (this->klass->_1).minimumAlignment;
-            } while (uVar17 < uVar21);
+            } while (uVar17 < uVar19);
           }
-          ppMVar20 = (MethodInfo **)
-                    func_?(this,
-                                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                    ,0);
+          puVar21 = (undefined4 *)
+                   func_?(piStack_16,
+                                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                   ,0);
 code_?:
-          iVar15 = (*(code *)*ppMVar20)(this,ppMVar20[1]);
+          iVar15 = (*(code *)*puVar21)(piStack_16,puVar21[1]);
           pOVar6 = (Object *)((int)&pOStack_8->klass + iVar15);
           pOStack_8 = pOVar6;
         }
@@ -290,8 +287,6 @@ code_?:
     }
   }
   func_?();
-code_?:
-  func_?(pOVar6,pSStack_16);
 code_?:
   uVar22 = func_?(pOVar6,this);
   func_?(uVar22);
@@ -350,15 +345,10 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
   pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
-    uVar4 = func_?();
-    in_AF = 9 < ((byte)uVar4 & 0xf) | in_AF;
-    uVar5 = CONCAT31((int3)((uint)uVar4 >> 8),(byte)uVar4 + in_AF * '\x06') & 0xffffff0f;
-    CStack_3.r = (float)CONCAT22((short)(uVar5 >> 0x10),
-                                  CONCAT11((char)((uint)uVar4 >> 8) + in_AF,(char)uVar5));
-    *(char *)(unaff_EDI + -0x50efc1b0) = *(char *)(unaff_EDI + -0x50efc1b0) + extraout_CL + in_AF;
-    pcVar6 = (code *)swi(3);
-    CStack_3.g = CStack_3.r;
-    (*pcVar6)();
+    func_?();
+    *(char *)(unaff_EDI + -0x20efc1f4) = *(char *)(unaff_EDI + -0x20efc1f4) + unaff_BH;
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
   CStack_3.r = pCVar2->a;

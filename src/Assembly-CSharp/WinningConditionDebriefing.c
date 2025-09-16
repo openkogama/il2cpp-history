@@ -122,30 +122,35 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
   if (winningCondition != (IWinningCondition *)0x0) {
     iVar1 = func_?(winningCondition,TypeInfo__IWinningConditionBriefing);
     pIVar3 = TypeInfo__IWinningConditionBriefing;
-    if ((iVar1 != 0) &&
-       (piVar4 = (int *)func_?(winningCondition,TypeInfo__IWinningConditionBriefing),
-       pIVar2 = pIVar3, piVar4 != (int *)0x0)) {
-      uVar5 = 0;
-      uVar6 = *(ushort *)(*piVar4 + 0xb6);
-      if (uVar6 != 0) {
-        do {
-          if (*(IWinningConditionBriefing__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar5 * 8) ==
-              TypeInfo__IWinningConditionBriefing) {
-            iVar1 = *piVar4;
-            iVar7 = *(int *)(*(int *)(iVar1 + 0x58) + 4 + (uint)uVar5 * 8) + 0x19;
-            (**(code **)(iVar1 + iVar7 * 8))(piVar4,this,*(undefined4 *)(iVar1 + 4 + iVar7 * 8));
-            return;
-          }
-          uVar5 = uVar5 + 1;
-        } while (uVar5 < uVar6);
+    if (iVar1 != 0) {
+      piVar4 = (int *)func_?(winningCondition,TypeInfo__IWinningConditionBriefing);
+      unaff_EBX = pIVar3;
+      if (piVar4 != (int *)0x0) {
+        uVar5 = 0;
+        uVar6 = *(ushort *)(*piVar4 + 0xb6);
+        if (uVar6 != 0) {
+          do {
+            if (*(IWinningConditionBriefing__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar5 * 8)
+                == TypeInfo__IWinningConditionBriefing) {
+              iVar1 = *piVar4;
+              iVar7 = *(int *)(*(int *)(iVar1 + 0x58) + 4 + (uint)uVar5 * 8) + 0x19;
+              (**(code **)(iVar1 + iVar7 * 8))(piVar4,this,*(undefined4 *)(iVar1 + 4 + iVar7 * 8));
+              return;
+            }
+            uVar5 = uVar5 + 1;
+          } while (uVar5 < uVar6);
+        }
+        puVar8 = (undefined4 *)func_?(piVar4,TypeInfo__IWinningConditionBriefing,1);
+        (*(code *)*puVar8)(piVar4,this,puVar8[1]);
+        return;
       }
-      puVar8 = (undefined4 *)func_?(piVar4,TypeInfo__IWinningConditionBriefing,1);
-      (*(code *)*puVar8)(piVar4,this,puVar8[1]);
-      return;
+      goto code_?;
     }
     func_?(winningCondition,pIVar2);
   }
   func_?();
+code_?:
+  func_?(winningCondition,unaff_EBX);
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;

@@ -763,20 +763,23 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::Injecti
   }
   uVar1 = 0;
   pSVar2 = ::StringLiteral__;
-  while (bytes != (Byte__Array *)0x0) {
-    if (bytes->max_length <= uVar1) goto code_?;
-    pSVar3 = (this->fields).hexTable;
-    if (pSVar3 == (String__Array *)0x0) break;
-    if (pSVar3->max_length <= (uint)bytes->vector[uVar1]) goto code_?;
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                       (pSVar2,pSVar3->vector[bytes->vector[uVar1]],(MethodInfo *)0x0);
-    uVar1 = uVar1 + 1;
-    if (7 < (int)uVar1) {
-      return pSVar2;
+  if (bytes == (Byte__Array *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    while (uVar1 < bytes->max_length) {
+      pSVar3 = (this->fields).hexTable;
+      if (pSVar3 == (String__Array *)0x0) goto code_?;
+      if (pSVar3->max_length <= (uint)bytes->vector[uVar1]) break;
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (pSVar2,pSVar3->vector[bytes->vector[uVar1]],(MethodInfo *)0x0);
+      uVar1 = uVar1 + 1;
+      if (7 < (int)uVar1) {
+        return pSVar2;
+      }
     }
   }
-  func_?();
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   pSVar2 = (String *)(*pcVar4)();

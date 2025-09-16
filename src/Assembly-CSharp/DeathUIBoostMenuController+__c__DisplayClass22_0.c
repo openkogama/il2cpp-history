@@ -1,30 +1,29 @@
 
-/* Void <Initialize>b__0(IDeathPromotionSelector, BaseEventData) */
+/* Void <Update>b__0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c__DisplayClass22_0::
-     DeathUIBoostMenuController_c_DisplayClass22_0__Initialize_b__0
-               (DeathUIBoostMenuController_c_DisplayClass22_0 *this,IDeathPromotionSelector *x,
-               BaseEventData *y,MethodInfo *method)
+     DeathUIBoostMenuController_c_DisplayClass22_0__Update_b__0
+               (DeathUIBoostMenuController_c_DisplayClass22_0 *this,IUIStack *x,BaseEventData *y,
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IDeathPromotionSelector *)&TypeInfo__IDeathPromotionSelector;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
     cRam_? = '\x01';
   }
-  if (x != (IDeathPromotionSelector *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__IDeathPromotionSelector;
-    uStack_3 = 0;
-    bVar4 = func_?();
-    (this->fields).readyForAd = bVar4;
-    return;
+  this_00 = (this->fields).__4__this;
+  if (this_00 != (DeathUIBoostMenuController *)0x0) {
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this_00,(MethodInfo *)0x0);
+    if (x != (IUIStack *)0x0) {
+      bVar2 = func_?(6,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1);
+      (this->fields).isBlocked = bVar2;
+      return;
+    }
   }
-  pIStack_1 = (IDeathPromotionSelector *)&stack0xfffffffc;
-  uVar5 = func_?(&uStack_3);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

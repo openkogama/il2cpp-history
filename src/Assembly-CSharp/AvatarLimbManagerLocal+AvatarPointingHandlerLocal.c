@@ -182,19 +182,15 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
           func_?(&TypeInfo__UnityEngine__Quaternion);
           cRam_? = '\x01';
         }
-        pvVar5 = (pAVar4->fields)._._.method;
-        pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
-        rotation.x = (pQVar6->identityQuaternion).x;
-        rotation.y = (pQVar6->identityQuaternion).y;
-        rotation.z = (pQVar6->identityQuaternion).z;
-        rotation.w = (pQVar6->identityQuaternion).w;
-      }
-      else {
-        pvVar5 = (pAVar4->fields)._._.method;
+        pQVar5 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        rotation.x = (pQVar5->identityQuaternion).x;
+        rotation.y = (pQVar5->identityQuaternion).y;
+        rotation.z = (pQVar5->identityQuaternion).z;
+        rotation.w = (pQVar5->identityQuaternion).w;
       }
       (*(pAVar4->fields)._._.invoke_impl)
-                ((pAVar4->fields)._._.method_code,rotation.x,rotation.y,rotation.z,rotation.w,pvVar5
-                );
+                ((pAVar4->fields)._._.method_code,rotation.x,rotation.y,rotation.z,rotation.w,
+                 (pAVar4->fields)._._.method);
     }
     (this->fields).networkMessageCooldown = (this->fields)._.pointingDuration;
   }
@@ -238,18 +234,15 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
             func_?(&TypeInfo__UnityEngine__Quaternion);
             cRam_? = '\x01';
           }
-          pvVar12 = (pAVar11->fields)._._.method;
-          pQVar13 = TypeInfo__UnityEngine__Quaternion->static_fields;
-          fVar8 = (pQVar13->identityQuaternion).x;
-          fVar9 = (pQVar13->identityQuaternion).y;
-          fVar10 = (pQVar13->identityQuaternion).z;
-          fVar2 = (pQVar13->identityQuaternion).w;
-        }
-        else {
-          pvVar12 = (pAVar11->fields)._._.method;
+          pQVar12 = TypeInfo__UnityEngine__Quaternion->static_fields;
+          fVar8 = (pQVar12->identityQuaternion).x;
+          fVar9 = (pQVar12->identityQuaternion).y;
+          fVar10 = (pQVar12->identityQuaternion).z;
+          fVar2 = (pQVar12->identityQuaternion).w;
         }
         (*(pAVar11->fields)._._.invoke_impl)
-                  ((pAVar11->fields)._._.method_code,fVar8,fVar9,fVar10,fVar2,pvVar12);
+                  ((pAVar11->fields)._._.method_code,fVar8,fVar9,fVar10,fVar2,
+                   (pAVar11->fields)._._.method);
       }
       (this->fields).networkMessageCooldown = (this->fields)._.pointingDuration;
     }
@@ -277,16 +270,16 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
         func_?(&TypeInfo__UnityEngine__Quaternion);
         cRam_? = '\x01';
       }
-      pQVar13 = TypeInfo__UnityEngine__Quaternion->static_fields;
+      pQVar12 = TypeInfo__UnityEngine__Quaternion->static_fields;
       (*(pAVar11->fields)._._.invoke_impl)
-                ((pAVar11->fields)._._.method_code,(pQVar13->identityQuaternion).x,
-                 (pQVar13->identityQuaternion).y,(pQVar13->identityQuaternion).z,
-                 (pQVar13->identityQuaternion).w,(pAVar11->fields)._._.method);
+                ((pAVar11->fields)._._.method_code,(pQVar12->identityQuaternion).x,
+                 (pQVar12->identityQuaternion).y,(pQVar12->identityQuaternion).z,
+                 (pQVar12->identityQuaternion).w,(pAVar11->fields)._._.method);
     }
-    pAVar14 = (this->fields).OnIsPointingChange;
-    if (pAVar14 != (Action_1_Boolean_ *)0x0) {
-      (*(pAVar14->fields)._._.invoke_impl)
-                ((pAVar14->fields)._._.method_code,0,(pAVar14->fields)._._.method);
+    pAVar13 = (this->fields).OnIsPointingChange;
+    if (pAVar13 != (Action_1_Boolean_ *)0x0) {
+      (*(pAVar13->fields)._._.invoke_impl)
+                ((pAVar13->fields)._._.method_code,0,(pAVar13->fields)._._.method);
     }
   }
   AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_UpdatePointing

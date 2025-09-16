@@ -1,30 +1,53 @@
 
-/* Void Initialize(String, Int32) */
+/* Void Initialize(String, Int32, MVTeam, Boolean) */
 
 void Assembly-CSharp.dll::SettingsButton::SettingsButton_Initialize
-               (SettingsButton *this,String *key,int32_t value,MethodInfo *method)
+               (SettingsButton *this,String *key,int32_t value,MVTeam__Enum team,bool hasTeam,
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
+    func_?(&
+                    ColorStyleObject_MethodInfo__UnityEngine__Component__GetComponentInChildren<ColorStyleObject>__
+                   );
     func_?(&MethodInfo__SettingsButton__ValueChanged__);
+    func_?(&TypeInfo__Styles);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  (this->fields).key = key;
-  func_?(&(this->fields).key,key);
   pBVar1 = (this->fields).button;
-  (this->fields).value = value;
   if (pBVar1 != (Button *)0x0) {
-    this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)
-              func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_01,(Object *)this,MethodInfo__SettingsButton__ValueChanged__,(MethodInfo *)0x0);
-    if (this_00 != (UnityEvent *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
-      return;
+    UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
+              ((Selectable *)pBVar1,hasTeam,(MethodInfo *)0x0);
+    this_01 = (ColorStyleObject *)
+              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInChildren_1
+                        ((Component *)this,
+                         ColorStyleObject_MethodInfo__UnityEngine__Component__GetComponentInChildren<ColorStyleObject>__
+                        );
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    colorStyle = (String *)Styles::Styles_GetTeamColorStyle(team,hasTeam ^ 1,(MethodInfo *)0x0);
+    if (this_01 != (ColorStyleObject *)0x0) {
+      ColorStyleObject::ColorStyleObject_UpdateColorStyle
+                (this_01,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
+      (this->fields).key = colorStyle;
+      func_?();
+      pBVar1 = (this->fields).button;
+      (this->fields).value = (int32_t)colorStyle;
+      if (pBVar1 != (Button *)0x0) {
+        this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+        this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_02,(Object *)this,MethodInfo__SettingsButton__ValueChanged__,
+                   (MethodInfo *)0x0);
+        if (this_00 != (UnityEvent *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
+                    (this_00,(UnityAction *)this_02,(MethodInfo *)0x0);
+          return;
+        }
+      }
     }
   }
   func_?();

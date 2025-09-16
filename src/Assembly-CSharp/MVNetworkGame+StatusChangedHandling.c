@@ -188,16 +188,15 @@ code_?:
     if ((pMVar4 != (MVNetworkGame *)0x0) &&
        (pPVar5 = (pMVar4->fields)._Peer_k__BackingField, pPVar5 != (PhotonPeer *)0x0)) {
       (pPVar5->fields).DebugOut = (pMVar4->fields).photonLoggingConfig.defaultDebugLevel;
-      this = (MVNetworkGame_StatusChangedHandling *)
-             MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if ((MVNetworkGame_OperationRequests *)this != (MVNetworkGame_OperationRequests *)0x0) {
+      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (pMVar6 != (MVNetworkGame_OperationRequests *)0x0) {
         if (cRam_? == '\0') {
           func_?();
           func_?();
           func_?();
           cRam_? = '\x01';
         }
-        pMVar4 = (((MVNetworkGame_OperationRequests *)this)->fields).networkGame;
+        pMVar4 = (pMVar6->fields).networkGame;
         if (pMVar4 != (MVNetworkGame *)0x0) {
           (pMVar4->fields).connState = 3;
           this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
@@ -206,12 +205,11 @@ code_?:
                     (this_01,
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                     );
-          pPVar5 = (((MVNetworkGame_OperationRequests *)this)->fields).peer;
+          pPVar5 = (pMVar6->fields).peer;
           if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0
              ) {
             func_?();
           }
-          this = (MVNetworkGame_StatusChangedHandling *)0x0;
           if (pPVar5 != (PhotonPeer *)0x0) {
             (*(code *)(pPVar5->klass->vtable).SendOperation.method)();
             return;
@@ -250,21 +248,9 @@ code_?:
   }
 code_?:
   func_?();
-  pbVar6 = (byte *)segment(in_SS,(short)&stack0xfffffffc + (short)this + 0x673f);
-  bVar7 = *pbVar6;
-  bVar8 = (byte)((uint)unaff_EBX >> 8);
-  *pbVar6 = *pbVar6 + bVar8;
-  cRam_? = cRam_? + '>' + CARRY1(bVar7,bVar8);
-  *extraout_ECX = *extraout_ECX + '>';
-  piVar9 = (int *)(CONCAT31(0x3f1067,cRam_? + '>') + *unaff_EBX);
-  pcVar10 = (char *)((int)piVar9 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar9);
-  cVar11 = (char)pcVar10;
-  *pcVar10 = *pcVar10 + cVar11;
-  *pcVar10 = *pcVar10 + cVar11;
-  *pcVar10 = *pcVar10 + cVar11;
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
-  return;
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

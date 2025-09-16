@@ -523,7 +523,7 @@ code_?:
       switch(iVar2) {
       case 0:
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
+                           ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -565,7 +565,7 @@ code_?:
           if (this_01 != (ThemeMenuController *)0x0) {
             ThemeMenuController::ThemeMenuController_OpenSettings(this_01,pTVar6,(MethodInfo *)0x0);
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this,(MethodInfo *)0x0);
+                               ((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -591,7 +591,7 @@ code_?:
         goto code_?;
       case 1:
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
+                           ((Component *)this,(MethodInfo *)0x0);
         callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
@@ -611,7 +611,7 @@ code_?:
       case 3:
       case 4:
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
+                           ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -641,7 +641,7 @@ code_?:
         return;
       case 6:
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
+                           ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -676,34 +676,38 @@ code_?:
       return;
     }
 code_?:
-    cVar7 = '\0';
     func_?();
   }
   else {
-    pTVar8 = unaff_EBX;
+    pTVar7 = unaff_EBX;
     pTVar6 = (Theme *)func_?();
-    cVar7 = '\0';
     unaff_EBX = this;
     if (pTVar6 == (Theme *)0x0) goto code_?;
-    pTVar8[2].fields.previewTheme = pTVar6;
+    pTVar7[2].fields.previewTheme = pTVar6;
     iVar2 = func_?();
-    cVar7 = '\0';
     if (iVar2 != 0) goto code_?;
   }
   func_?();
 code_?:
-  uVar9 = func_?();
-  uVar10 = (uint)uVar9;
-  *(int *)(uVar10 + 0x38) = *(int *)(uVar10 + 0x38) + 1;
-  pcVar11 = (char *)((int)((ulonglong)uVar9 >> 0x20) + 0x42fb1038 + uVar10 * 2);
-  *pcVar11 = *pcVar11 + (char)((ulonglong)uVar9 >> 8) + cVar7;
-  puVar12 = (uint *)((int)&(((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->fields)._._.
-                          m_target + uVar10);
-  *puVar12 = *puVar12 | uVar10;
-  ppTVar13 = &(unaff_EBX->fields).menuController;
-  *(char *)ppTVar13 = *(char *)ppTVar13 + '\x10';
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  uVar8 = func_?();
+  in_AF = 9 < ((byte)uVar8 & 0xf) | in_AF;
+  bVar9 = 9 < ((byte)uVar8 + in_AF * -6 & 0xf) | in_AF;
+  bVar10 = ((char)((ushort)uVar8 >> 8) - in_AF) + bVar9;
+  bVar11 = CARRY1(bVar10,bVar10) || CARRY1(bVar10 * '\x02',bVar9);
+  *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass =
+       *(char *)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + '\x01';
+  bVar12 = (byte)((uint)unaff_EBX >> 8);
+  bVar9 = *(char *)&unaff_EBX->klass + bVar12;
+  bVar13 = CARRY1(*(byte *)&unaff_EBX->klass,bVar12) || CARRY1(bVar9,bVar11);
+  *(byte *)&unaff_EBX->klass = bVar9 + bVar11;
+  bVar9 = *(char *)&unaff_EBX->klass + bVar12;
+  bVar11 = CARRY1(*(byte *)&unaff_EBX->klass,bVar12) || CARRY1(bVar9,bVar13);
+  *(byte *)&unaff_EBX->klass = bVar9 + bVar13;
+  bVar9 = *(byte *)&unaff_EBX->klass;
+  bVar10 = *(char *)&unaff_EBX->klass + bVar12;
+  *(byte *)&unaff_EBX->klass = bVar10 + bVar11;
+  *extraout_ECX =
+       *extraout_ECX + (char)extraout_ECX + (CARRY1(bVar9,bVar12) || CARRY1(bVar10,bVar11));
   return;
 }
 

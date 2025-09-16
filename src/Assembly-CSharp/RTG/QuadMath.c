@@ -543,42 +543,45 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Contains3DPoint
                Vector3 quadRight,Vector3 quadUp,QuadEpsilon epsilon,MethodInfo *method)
 
 {
-  VVar1.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
-  VVar1.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
-  VVar1.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&puStack_3,VVar1,(MethodInfo *)0x0);
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_4,*pVVar2,(MethodInfo *)0x0);
-  uVar5 = pVVar2->x;
-  uVar6 = pVVar2->y;
-  plane.m_Normal.y = (float)uVar6;
-  plane.m_Normal.x = (float)uVar5;
-  puStack_3 = (undefined *)uVar5;
+  VStack_1.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
+  VVar2.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
+  VVar2.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
+  VVar2.z = VStack_1.z;
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_1,VVar2,(MethodInfo *)0x0);
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffc0,*pVVar3,(MethodInfo *)0x0);
+  VStack_1.x = pVVar3->x;
+  VStack_1.y = pVVar3->y;
+  VStack_1.z = pVVar3->z;
   if ((checkOnPlane != 0) &&
-     (plane.m_Normal.z = point.x, plane.m_Distance = point.y,
-     fVar7 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0),
-     epsilon._extrudeEps < fVar7)) {
+     (plane.m_Normal.z = point.x, plane.m_Normal.x = VStack_1.x, plane.m_Normal.y = VStack_1.y,
+     plane.m_Distance = point.y,
+     fVar4 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0),
+     epsilon._extrudeEps < fVar4)) {
     return 0;
   }
-  fVar8 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]
-          ::KeyValuePair_2_System_Single_System_Single__get_Key
-                    ((KeyValuePair_2_System_Single_System_Single_ *)&epsilon,(MethodInfo *)0x0);
-  fVar9 = mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
-                    ((Nullable_1_Single_ *)&epsilon,(MethodInfo *)0x0);
-  fVar10 = point.x - quadCenter.x;
+  mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]::
+  KeyValuePair_2_System_Single_System_Single__get_Key
+            ((KeyValuePair_2_System_Single_System_Single_ *)&epsilon,(MethodInfo *)0x0);
+  mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
+            ((Nullable_1_Single_ *)&epsilon,(MethodInfo *)0x0);
+  fVar5 = point.z - quadCenter.z;
+  fVar6 = point.x - quadCenter.x;
   fVar7 = point.y - quadCenter.y;
+  VStack_1.z = (float)&UNK_?;
   v1.y = fVar7;
-  v1.x = fVar10;
-  v1.z = point.z - quadCenter.z;
-  fVar11 = Vector3Ex::Vector3Ex_AbsDot(v1,quadRight,(MethodInfo *)0x0);
+  v1.x = fVar6;
+  v1.z = fVar5;
+  fVar4 = fVar5;
+  fVar8 = Vector3Ex::Vector3Ex_AbsDot(v1,quadRight,(MethodInfo *)0x0);
   stack0xfffffffc = fVar7;
-  fStack_12 = fVar10;
-  VVar1.z = point.z - quadCenter.z;
-  VVar1 = (Vector3)CONCAT48(VVar1.z,uVar13);
-  fVar7 = Vector3Ex::Vector3Ex_AbsDot(VVar1,quadUp,(MethodInfo *)0x0);
-  if ((fVar11 <= (fVar8 + quadWidth) * _UNK_?) &&
-     (fVar7 <= (fVar9 + quadHeight) * _UNK_?)) {
+  fStack_9 = fVar6;
+  VVar2.z = fVar5;
+  VVar2 = (Vector3)CONCAT48(VVar2.z,uVar10);
+  fVar5 = Vector3Ex::Vector3Ex_AbsDot(VVar2,quadUp,(MethodInfo *)0x0);
+  if ((fVar8 <= (quadRight.y + quadWidth) * _UNK_?) &&
+     (fVar5 <= (fVar4 + quadHeight) * _UNK_?)) {
     return 1;
   }
   return 0;

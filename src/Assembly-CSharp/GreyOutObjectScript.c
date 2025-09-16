@@ -279,27 +279,33 @@ void Assembly-CSharp.dll::GreyOutObjectScript::GreyOutObjectScript_GreyOutExec
         if (pMVar1->max_length <= uVar2) break;
         this_01 = *ppMVar3;
         if (this_01 == (Material *)0x0) goto code_?;
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader
-                            (this_01,(MethodInfo *)0x0);
-        if (this_02 == (Shader *)0x0) goto code_?;
-        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                            ((Object_1 *)this_02,(MethodInfo *)0x0);
-        pSVar4 = StringLiteral_CubeModel;
-        if (this_03 == (String *)0x0) goto code_?;
-        bVar5 = mscorlib.dll::System::String::String_Contains
-                          (this_03,StringLiteral_CubeModel,(MethodInfo *)0x0);
+        pSVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_shader
+                           (this_01,(MethodInfo *)0x0);
+        if (pSVar4 == (Shader *)0x0) goto code_?;
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+                            ((Object_1 *)pSVar4,(MethodInfo *)0x0);
+        pSVar5 = StringLiteral_CubeModel;
+        if (this_02 == (String *)0x0) goto code_?;
+        bVar6 = mscorlib.dll::System::String::String_Contains
+                          (this_02,StringLiteral_CubeModel,(MethodInfo *)0x0);
+        if (bVar6 == 0) {
+          pSVar4 = (Shader *)pSVar5[1].fields._stringLength;
+        }
+        else {
+          pSVar4 = (Shader *)pSVar5[1].monitor;
+        }
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_shader
-                  (this_01,(Shader *)(&pSVar4[1].monitor)[bVar5 ^ 1],(MethodInfo *)0x0);
+                  (this_01,pSVar4,(MethodInfo *)0x0);
         uVar2 = uVar2 + 1;
-        ppMVar3 = (Material **)0x4;
+        ppMVar3 = (Material **)&UNK_?;
       }
       func_?();
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

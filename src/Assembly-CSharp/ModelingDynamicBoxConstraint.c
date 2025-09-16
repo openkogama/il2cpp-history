@@ -106,7 +106,7 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
         dStack_13._6_2_ = IStack_1.y;
         iStack_25 = IStack_1.z;
         if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-          uVar17 = 0x1046;
+          uVar17 = 0x1045;
           func_?(TypeInfo__MV__WorldObject__IntVector);
         }
         IVar26.z = (int16_t)uVar23;
@@ -158,7 +158,7 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
                             (&IStack_1,index,(MethodInfo *)0x0);
           iVar32 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                             (&IStack_2,index,(MethodInfo *)0x0);
-          uVar33 = 0x1046;
+          uVar33 = 0x1045;
           in_stack_16 = iStack_8;
           iVar34 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                             (&IStack_1,iStack_8,(MethodInfo *)0x0);
@@ -373,8 +373,8 @@ code_?:
             pVVar7 = (Vector3 *)&stack0xffffff8c;
             uVar38 = (undefined2)uVar37;
             uVar39 = (undefined2)((uint)uVar37 >> 0x10);
-            uVar16 = 0x472a;
-            uVar34 = 0x1046;
+            uVar16 = 0xfe2a;
+            uVar34 = 0x1045;
             fVar29 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                (pVVar7,index,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
@@ -419,7 +419,7 @@ code_?:
         pos.z = (int16_t)uVar3;
         in_stack_35 = SUB42(uVar3,2);
         if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-          uVar39 = 0x1046;
+          uVar39 = 0x1045;
           func_?();
         }
         IVar43.z = iVar1;
@@ -573,16 +573,16 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstr
   uVar1 = SUB42(in_stack_2,2);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x5764);
-    in_stack_4 = 0x11b4;
-    func_?(0x3450);
+    func_?(0x6884);
+    in_stack_4 = 0x11b5;
+    func_?(0xd990);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0xc1b0);
-    in_stack_4 = 0x11b4;
-    func_?(0x3058);
-    func_?(0xcc40);
+    func_?(0xd2d0);
+    in_stack_4 = 0x11b5;
+    func_?(0xd55c);
+    func_?(0xdda0);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {

@@ -482,23 +482,20 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
     }
   }
   bVar5 = 0;
-  iVar6 = func_?();
-  pbVar7 = (byte *)(iVar6 + 0x34);
-  bVar8 = (byte)((uint)((int)&callbackFunction_00[-1].fields.screensize.y + 3) >> 8);
-  bVar9 = *pbVar7 + bVar8;
-  bVar10 = CARRY1(*pbVar7,bVar8) || CARRY1(bVar9,bVar5);
-  *pbVar7 = bVar9 + bVar5;
-  bVar5 = (char)callbackFunction_00 - 2;
-  pbVar7 = (byte *)((int)&value[6].monitor + 1);
-  bVar9 = *pbVar7;
-  bVar8 = *pbVar7 + bVar5;
-  *pbVar7 = bVar8 + bVar10;
-  *(char *)&value->klass =
-       *(char *)&value->klass + (char)callbackFunction_00 + -3 +
-       (CARRY1(bVar9,bVar5) || CARRY1(bVar8,bVar10));
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
-  return;
+  uVar6 = func_?();
+  pbVar7 = (byte *)uVar6;
+  bVar8 = *pbVar7 + (byte)callbackFunction_00;
+  bVar9 = CARRY1(*pbVar7,(byte)callbackFunction_00) || CARRY1(bVar8,bVar5);
+  *pbVar7 = bVar8 + bVar5;
+  out((short)((ulonglong)uVar6 >> 0x20) + -1,(char)uVar6);
+  iVar10 = (int)((ulonglong)uVar6 >> 0x20) + -2;
+  bVar5 = (byte)((uint)iVar10 >> 8);
+  bVar8 = bVar5 - 0x11;
+  out(CONCAT11(bVar8 + bVar9,(char)iVar10),(char)uVar6);
+  pcVar11 = (char *)((int)&value[0xfc2095d].monitor + 3);
+  *pcVar11 = *pcVar11 + -0x11 + (0x10 < bVar5 || CARRY1(bVar8,bVar9));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

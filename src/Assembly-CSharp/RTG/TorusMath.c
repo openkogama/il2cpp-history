@@ -195,6 +195,7 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
   RStack_1.m_Direction.z = 0.0;
   fVar2 = epsilon._tubeRadiusEps + torusTubeRadius;
   *t = 0.0;
+  cylinderRadius = torusCoreRadius + fVar2;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
@@ -205,15 +206,14 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
   fVar4 = pVVar3->x;
   fVar5 = pVVar3->y;
   fVar6 = pVVar3->z;
-  fVar7 = torusCenter.x - fVar4 * fVar2;
-  cylinderRadius = torusCenter.y - fVar5 * fVar2;
-  uVar8 = pVVar3->x;
-  uVar9 = pVVar3->y;
-  method_00 = (MethodInfo *)(torusCenter.x + (float)uVar8 * fVar2);
-  fVar10 = torusCenter.y + (float)uVar9 * fVar2;
+  uVar7 = pVVar3->x;
+  uVar8 = pVVar3->y;
+  method_00 = (MethodInfo *)(torusCenter.x + (float)uVar7 * fVar2);
+  fVar9 = torusCenter.y + (float)uVar8 * fVar2;
+  fVar10 = torusCenter.z + fVar6 * fVar2;
   fVar11 = 0.0;
   fVar12 = 0.0;
-  cylinderAxisPt1.y = fVar10;
+  cylinderAxisPt1.y = fVar9;
   cylinderAxisPt1.x = (float)method_00;
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
@@ -221,10 +221,10 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
   ray_00.m_Direction.x = ray.m_Direction.x;
   ray_00.m_Direction.y = ray.m_Direction.y;
   ray_00.m_Direction.z = ray.m_Direction.z;
-  cylinderAxisPt0.y = cylinderRadius;
-  cylinderAxisPt0.x = fVar7;
+  cylinderAxisPt0.y = torusCenter.y - fVar5 * fVar2;
+  cylinderAxisPt0.x = torusCenter.x - fVar4 * fVar2;
   cylinderAxisPt0.z = torusCenter.z - fVar6 * fVar2;
-  cylinderAxisPt1.z = fVar7;
+  cylinderAxisPt1.z = fVar10;
   bVar13 = CylinderMath::CylinderMath_Raycast
                      (ray_00,t,cylinderAxisPt0,cylinderAxisPt1,cylinderRadius,(CylinderEpsilon)0x0,
                       method_00);
@@ -270,11 +270,11 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
     mirrorPoint.z = fVar16;
     pRVar21 = RayEx::RayEx_Mirror((Ray *)&stack0xffffff78,ray_01,mirrorPoint,(MethodInfo *)0x0);
     ray.m_Origin.x = fVar12;
+    ray.m_Origin.y = 0.0;
     RStack_1.m_Origin.x = (pRVar21->m_Origin).x;
     RStack_1.m_Origin.y = (pRVar21->m_Origin).y;
     RStack_1.m_Origin.z = (pRVar21->m_Origin).z;
     RStack_1.m_Direction.x = (pRVar21->m_Direction).x;
-    ray.m_Origin.y = 0.0;
     RStack_1.m_Direction.y = (pRVar21->m_Direction).y;
     RStack_1.m_Direction.z = (pRVar21->m_Direction).z;
     uVar22 = (pRVar21->m_Direction).z;
@@ -290,9 +290,9 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
     ray_02.m_Direction.x = (float)uVar26;
     ray_02.m_Direction.z = (float)uVar22;
     cylinderAxisPt0_00.y = cylinderRadius;
-    cylinderAxisPt0_00.x = fVar7;
+    cylinderAxisPt0_00.x = fVar10;
     cylinderAxisPt0_00.z = (float)pVVar3;
-    cylinderAxisPt1_00.y = fVar10;
+    cylinderAxisPt1_00.y = fVar9;
     cylinderAxisPt1_00.x = (float)method_00;
     cylinderAxisPt1_00.z = fVar4;
     epsilon_00._vertEps = ray.m_Origin.x;
@@ -330,6 +330,7 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_RaycastCylindrical
   RStack_2.m_Direction.z = 0.0;
   fVar3 = epsilon._cylHrzRadius + torusHrzRadius;
   *t = 0.0;
+  cylinderRadius = torusCoreRadius + fVar3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
@@ -340,15 +341,14 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_RaycastCylindrical
   fVar5 = pVVar4->x;
   fVar6 = pVVar4->y;
   fVar7 = pVVar4->z;
-  fVar8 = torusCenter.x - fVar5 * fVar1;
-  cylinderRadius = torusCenter.y - fVar6 * fVar1;
-  uVar9 = pVVar4->x;
-  uVar10 = pVVar4->y;
-  method_00 = (MethodInfo *)(torusCenter.x + (float)uVar9 * fVar1);
-  fVar11 = torusCenter.y + (float)uVar10 * fVar1;
+  uVar8 = pVVar4->x;
+  uVar9 = pVVar4->y;
+  method_00 = (MethodInfo *)(torusCenter.x + (float)uVar8 * fVar1);
+  fVar10 = torusCenter.y + (float)uVar9 * fVar1;
+  fVar11 = torusCenter.z + fVar7 * fVar1;
   fVar12 = 0.0;
   fVar13 = 0.0;
-  cylinderAxisPt1.y = fVar11;
+  cylinderAxisPt1.y = fVar10;
   cylinderAxisPt1.x = (float)method_00;
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
@@ -356,10 +356,10 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_RaycastCylindrical
   ray_00.m_Direction.x = ray.m_Direction.x;
   ray_00.m_Direction.y = ray.m_Direction.y;
   ray_00.m_Direction.z = ray.m_Direction.z;
-  cylinderAxisPt0.y = cylinderRadius;
-  cylinderAxisPt0.x = fVar8;
+  cylinderAxisPt0.y = torusCenter.y - fVar6 * fVar1;
+  cylinderAxisPt0.x = torusCenter.x - fVar5 * fVar1;
   cylinderAxisPt0.z = torusCenter.z - fVar7 * fVar1;
-  cylinderAxisPt1.z = fVar8;
+  cylinderAxisPt1.z = fVar11;
   bVar14 = CylinderMath::CylinderMath_Raycast
                      (ray_00,t,cylinderAxisPt0,cylinderAxisPt1,cylinderRadius,(CylinderEpsilon)0x0,
                       method_00);
@@ -419,9 +419,9 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_RaycastCylindrical
     ray_02.m_Direction.x = (float)uVar26;
     ray_02.m_Direction.z = (float)uVar22;
     cylinderAxisPt0_00.y = cylinderRadius;
-    cylinderAxisPt0_00.x = fVar8;
+    cylinderAxisPt0_00.x = fVar11;
     cylinderAxisPt0_00.z = (float)puVar20;
-    cylinderAxisPt1_00.y = fVar11;
+    cylinderAxisPt1_00.y = fVar10;
     cylinderAxisPt1_00.x = (float)method_00;
     cylinderAxisPt1_00.z = fVar1;
     epsilon_00._vertEps = fVar13;

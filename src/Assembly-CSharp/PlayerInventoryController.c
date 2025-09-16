@@ -377,7 +377,7 @@ void Assembly-CSharp.dll::PlayerInventoryController::
         pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                  Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                            &stack0xffffffac,this_01,
+                            &stack0xffffffa4,this_01,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__GetEnumerator__
                            );
         uVar5 = *(undefined8 *)&(pDVar4->_current).value;
@@ -389,7 +389,7 @@ void Assembly-CSharp.dll::PlayerInventoryController::
                   Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                             ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                             &stack0xffffffc4,
+                             &stack0xffffffbc,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_System::String>__MoveNext__
                             );
           pMVar9 = (MethodInfo *)uVar5;
@@ -403,7 +403,7 @@ void Assembly-CSharp.dll::PlayerInventoryController::
 code_?:
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc4,
+                  ((Object *)&stack0xffffffbc,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_System::String>__Dispose__
                    ,pMVar9);
@@ -1098,7 +1098,7 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_O
         pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                  Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                            &stack0xffffffac,this_01,
+                            &stack0xffffffa4,this_01,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__GetEnumerator__
                            );
         uVar5 = *(undefined8 *)&(pDVar4->_current).value;
@@ -1110,25 +1110,27 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_O
                   Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                             ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                             &stack0xffffffc4,
+                             &stack0xffffffbc,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_System::String>__MoveNext__
                             );
-          pMVar9 = (MethodInfo *)uVar5;
+          method_00 = (MethodInfo *)uVar5;
           if (bVar8 == 0) goto code_?;
           uVar6 = 0;
           bVar8 = mscorlib.dll::System::String::String_op_Equality
-                            (a,(String *)pMVar9,(MethodInfo *)0x0);
-          pMVar9 = (MethodInfo *)uVar5;
+                            (a,(String *)method_00,(MethodInfo *)0x0);
+          method_00 = (MethodInfo *)uVar5;
         } while (bVar8 == 0);
         (this->fields).selectedTab = uVar7;
 code_?:
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc4,
+                  ((Object *)&stack0xffffffbc,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_System::String>__Dispose__
-                   ,pMVar9);
+                   ,method_00);
         uStack_1 = 0xffffffff;
+        iVar9 = (this->fields).numberOfSlotsPrPage;
+        fVar10 = (float)slotPosition + _UNK_?;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -1146,10 +1148,9 @@ code_?:
                                MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
                               );
           if (this_04 != (TabState *)0x0) {
-            pMVar9 = (MethodInfo *)0x0;
             func_?();
             page = func_?();
-            TabState::TabState_SetPage(this_04,page,pMVar9);
+            TabState::TabState_SetPage(this_04,page,SUB84((double)(fVar10 / (float)iVar9),0));
             PlayerInventoryController_UpdateContent(this,(MethodInfo *)0x0);
             *unaff_FS_OFFSET = uStack_3;
             return;
@@ -1160,8 +1161,8 @@ code_?:
   }
   func_?();
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -1222,7 +1223,7 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_O
         pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                  Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                            &stack0xffffffac,this_01,
+                            &stack0xffffffa4,this_01,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__GetEnumerator__
                            );
         uVar5 = *(undefined8 *)&(pDVar4->_current).value;
@@ -1234,25 +1235,26 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_O
                   Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                             ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                             &stack0xffffffc4,
+                             &stack0xffffffbc,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_System::String>__MoveNext__
                             );
-          pMVar9 = (MethodInfo *)uVar5;
+          method_00 = (MethodInfo *)uVar5;
           if (bVar8 == 0) goto code_?;
           uVar6 = 0;
           bVar8 = mscorlib.dll::System::String::String_op_Equality
-                            (a,(String *)pMVar9,(MethodInfo *)0x0);
-          pMVar9 = (MethodInfo *)uVar5;
+                            (a,(String *)method_00,(MethodInfo *)0x0);
+          method_00 = (MethodInfo *)uVar5;
         } while (bVar8 == 0);
         (this->fields).selectedTab = uVar7;
 code_?:
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc4,
+                  ((Object *)&stack0xffffffbc,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_System::String>__Dispose__
-                   ,pMVar9);
+                   ,method_00);
         uStack_1 = 0xffffffff;
+        fVar9 = _UNK_? / (float)(this->fields).numberOfSlotsPrPage;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -1270,10 +1272,9 @@ code_?:
                                MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
                               );
           if (this_04 != (TabState *)0x0) {
-            pMVar9 = (MethodInfo *)0x0;
             func_?();
             page = func_?();
-            TabState::TabState_SetPage(this_04,page,pMVar9);
+            TabState::TabState_SetPage(this_04,page,SUB84((double)fVar9,0));
             PlayerInventoryController_UpdateContent(this,(MethodInfo *)0x0);
             *unaff_FS_OFFSET = uStack_3;
             return;

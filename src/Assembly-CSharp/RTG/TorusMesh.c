@@ -363,7 +363,8 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateTorus
   iStack_4 = iVar2;
   pVVar5 = TypeInfo__UnityEngine__Vector3;
   pVStack_6 = (Vector3__Array *)func_?();
-  pVStack_7 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,iVar2,pVVar5,iVar3);
+  pVStack_7 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,iVar2,pVVar5,iVar3)
+  ;
   iVar3 = 0;
   iStack_8 = 0;
   fStack_9 = _UNK_? / (float)(numSlices + -1);
@@ -404,57 +405,59 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateTorus
     } while (iVar2 <= numSlices);
     iStack_8 = iStack_8 + 1;
   } while (iStack_8 <= numTubeSlices);
+  uVar25 = 0;
   indices = (Int32__Array *)func_?();
   coreRadius = 0.0;
   iStack_8 = 1;
-  uVar25 = 0;
   do {
     iVar2 = 0;
     iVar3 = iStack_8;
+    uVar26 = uVar25;
     if (indices == (Int32__Array *)0x0) goto code_?;
     do {
-      if (indices->max_length <= uVar25) {
+      if (indices->max_length <= uVar26) {
 code_?:
         func_?();
         goto code_?;
       }
-      indices->vector[uVar25] = iVar3 + -1;
-      if (indices->max_length <= uVar25 + 1) goto code_?;
-      indices->vector[uVar25 + 1] = iVar3;
-      if (indices->max_length <= uVar25 + 2) goto code_?;
-      indices->vector[uVar25 + 2] = iVar3 + -1 + iStack_1;
-      if (indices->max_length <= uVar25 + 3) goto code_?;
-      indices->vector[uVar25 + 3] = iVar3;
-      if (indices->max_length <= uVar25 + 4) goto code_?;
-      indices->vector[uVar25 + 4] = iVar3 + iStack_1;
-      uVar26 = uVar25 + 6;
-      if (indices->max_length <= uVar25 + 5) goto code_?;
+      indices->vector[uVar26] = iVar3 + -1;
+      if (indices->max_length <= uVar26 + 1) goto code_?;
+      indices->vector[uVar26 + 1] = iVar3;
+      if (indices->max_length <= uVar26 + 2) goto code_?;
+      indices->vector[uVar26 + 2] = iVar3 + -1 + iStack_1;
+      if (indices->max_length <= uVar26 + 3) goto code_?;
+      indices->vector[uVar26 + 3] = iVar3;
+      if (indices->max_length <= uVar26 + 4) goto code_?;
+      indices->vector[uVar26 + 4] = iVar3 + iStack_1;
+      uVar25 = uVar26 + 6;
+      if (indices->max_length <= uVar26 + 5) goto code_?;
       iVar2 = iVar2 + 1;
-      indices->vector[uVar25 + 5] = iStack_1 + -1 + iVar3;
+      iVar27 = iStack_1 + -1 + iVar3;
       iVar3 = iVar3 + 1;
-      uVar25 = uVar26;
+      indices->vector[uVar26 + 5] = iVar27;
+      uVar26 = uVar25;
     } while (iVar2 < numSlices);
     coreRadius = (float)((int)coreRadius + 1);
     iStack_8 = iStack_8 + iStack_1;
   } while ((int)coreRadius < numTubeSlices);
-  pMVar27 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
-  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar27,(MethodInfo *)0x0);
-  if (pMVar27 != (Mesh *)0x0) {
+  pMVar28 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
+  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar28,(MethodInfo *)0x0);
+  if (pMVar28 != (Mesh *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-              (pMVar27,pVStack_6,(MethodInfo *)0x0);
+              (pMVar28,pVStack_6,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_normals
-              (pMVar27,pVStack_7,(MethodInfo *)0x0);
+              (pMVar28,pVStack_7,(MethodInfo *)0x0);
     value = ColorEx::ColorEx_GetFilledColorArray(iStack_4,color,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar27,value,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar28,value,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices
-              (pMVar27,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar27,0,(MethodInfo *)0x0);
-    return pMVar27;
+              (pMVar28,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar28,0,(MethodInfo *)0x0);
+    return pMVar28;
   }
 code_?:
   func_?();
-  pcVar28 = (code *)swi(3);
-  pMVar27 = (Mesh *)(*pcVar28)();
-  return pMVar27;
+  pcVar29 = (code *)swi(3);
+  pMVar28 = (Mesh *)(*pcVar29)();
+  return pMVar28;
 }
 

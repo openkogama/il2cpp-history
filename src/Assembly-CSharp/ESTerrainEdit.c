@@ -55,79 +55,72 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Execute
 {
   func_?(auStack_1,0,0x48);
   bVar2 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                     ((VoxelHit *)auStack_1,(HashSet_1_System_Int32_ *)0x0,-0x40005,
-                      (MethodInfo *)0x0);
+                    ((VoxelHit *)auStack_1,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+                     (MethodInfo *)0x0);
   iStack_3 = CONCAT31(iStack_3._1_3_,bVar2);
   if (bVar2 != 0) {
     pMVar4 = (this->fields).terrain;
     if (pMVar4 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
-    if ((iStack_5 == (pMVar4->fields)._._._.id) || (iStack_5 == -1)) {
+    if ((pMStack_5 == (MethodInfo *)(pMVar4->fields)._._._.id) ||
+       (pMStack_5 == (MethodInfo *)0xffffffff)) {
       bVar2 = 0;
       iStack_3 = (uint)iStack_3._1_3_ << 8;
     }
   }
-  method_00 = (MethodInfo *)auStack_1._12_4_;
-  fVar6 = (float)auStack_1._16_4_;
-  fVar7 = (float)auStack_1._20_4_;
-  method_01 = (MethodInfo *)auStack_1._24_4_;
-  uVar8 = auStack_1._28_4_;
-  bVar9 = ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnabled
-                     (iStack_5,(MethodInfo *)auStack_1._0_4_);
-  iVar10 = iStack_11;
-  uVar12 = uStack_13;
-  pTVar14 = pTStack_15;
-  pCVar16 = pCStack_17;
-  fVar18 = fStack_19;
-  iVar20 = iStack_5;
-  uVar21 = uStack_22;
-  iVar23 = iStack_24;
+  bVar6 = ESStateBase::ESStateBase_SelectionIsAllowedByLogicEnabled
+                    ((int32_t)pMStack_5,(MethodInfo *)0x0);
+  uVar7 = auStack_1._12_4_;
+  uVar8 = auStack_1._8_4_;
+  uVar9 = auStack_1._4_4_;
+  _bStack_c = CONCAT31(uStack_10,bVar6);
+  iStack_11 = iStack_12;
+  ppMVar13 = ppMStack_14;
+  ppMVar15 = (MVInputWrapper__Class **)pCStack_16;
+  method_00 = pMStack_17;
+  puVar18 = (undefined *)auStack_1._32_4_;
+  pCVar19 = (CubeModelingStateMachine *)auStack_1._36_4_;
+  method_01 = pMStack_5;
+  pCVar20 = pCStack_21;
+  fVar22 = (float)auStack_1._16_4_;
+  fVar23 = (float)auStack_1._20_4_;
+  uVar24 = auStack_1._24_4_;
   uVar25 = auStack_1._28_4_;
-  uVar26 = auStack_1._24_4_;
-  uVar27 = auStack_1._20_4_;
-  uVar28 = auStack_1._12_4_;
-  uVar29 = auStack_1._8_4_;
-  uVar30 = auStack_1._4_4_;
-  _bStack_c = CONCAT31(uStack_31,bVar9);
-  pCVar32 = pCStack_33;
-  fVar34 = (float)auStack_1._16_4_;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent,method_00,fVar6,fVar7,method_01,uVar8);
-    func_?(&TypeInfo__MVInputWrapper);
-    func_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__)
-    ;
+    func_?(&TypeInfo__EditorEvent);
+    ppMVar15 = &TypeInfo__MVInputWrapper;
+    func_?();
+    ppMVar13 = &MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__;
+    func_?();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase,method_00,fVar6,fVar7,method_01,uVar8);
+    ppMVar15 = (MVInputWrapper__Class **)&UNK_?;
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  uVar8 = auStack_1._28_4_;
   this_00 = esm;
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    hit.point.y = (float)uVar29;
-    hit.point.x = (float)uVar30;
-    hit.point.z = (float)uVar28;
-    hit.normal.x = fVar34;
-    hit.normal.y = (float)uVar27;
-    hit.normal.z = (float)uVar26;
-    auStack_1._28_2_ = (undefined2)uVar25;
-    auStack_1._30_2_ = SUB42(uVar25,2);
-    hit.cubePos.x = auStack_1._28_2_;
-    hit.cubePos.y = auStack_1._30_2_;
-    hit._28_4_ = iVar23;
-    hit.face = uVar21;
-    hit._36_4_ = iVar20;
-    hit.woId = (int32_t)pCVar32;
-    hit.cube = (Cube *)fVar18;
-    hit.distance = (float)pCVar16;
-    hit.collider = (Collider *)pTVar14;
-    hit.transform = (Transform *)uVar12;
-    hit._60_4_ = (int)iVar10;
-    hit.interactionFlags._0_4_ = (int)((ulonglong)iVar10 >> 0x20);
+    hit.point.y = (float)uVar8;
+    hit.point.x = (float)uVar9;
+    hit.point.z = (float)uVar7;
+    hit.normal.x = fVar22;
+    hit.normal.y = fVar23;
+    hit.normal.z = (float)uVar24;
+    hit.cubePos.x = (int16_t)uVar25;
+    hit.cubePos.y = SUB42(uVar25,2);
+    hit._28_4_ = puVar18;
+    hit.face = (int32_t)pCVar19;
+    hit._36_4_ = method_01;
+    hit.woId = (int32_t)pCVar20;
+    hit.cube = (Cube *)ppMVar13;
+    hit.distance = (float)ppMVar15;
+    hit.collider = (Collider *)0x0;
+    hit.transform = (Transform *)method_00;
+    hit._60_4_ = (int)iStack_11;
+    hit.interactionFlags._0_4_ = (int)((ulonglong)iStack_11 >> 0x20);
     hit.interactionFlags._4_4_ = 0;
-    auStack_1._28_4_ = uVar8;
     ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
-              ((ESStateBase *)this,esm,bVar9 & bVar2,hit,method_00);
+              ((ESStateBase *)this,esm,bVar6 & bVar2,hit,method_00);
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
@@ -140,7 +133,7 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Execute
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                     (KogamaControls__Enum_PointerSelect,KeyState__Enum_Down,(MethodInfo *)0x0);
+                    (KogamaControls__Enum_PointerSelect,KeyState__Enum_Down,(MethodInfo *)0x0);
   if (bVar2 == 0) {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
@@ -153,24 +146,23 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Execute
       func_?(TypeInfo__MVInputWrapper);
     }
     bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                       (KogamaControls__Enum_PointerSelectAlt,KeyState__Enum_Down,(MethodInfo *)0x0)
-    ;
+                      (KogamaControls__Enum_PointerSelectAlt,KeyState__Enum_Down,(MethodInfo *)0x0);
     if (bVar2 != 0) goto code_?;
   }
   else {
 code_?:
-    if (bVar9 != 0) {
+    if (bVar6 != 0) {
       if (this_00 == (EditorStateMachine *)0x0) goto code_?;
       this_01 = EditorStateMachine::EditorStateMachine_Select(this_00,0,-5,(MethodInfo *)0x0);
       if ((this_01 != (WorldObjectClientRef *)0x0) &&
-         (pOVar35 = WorldObjectClientRef`1[System::Object]::
-                    WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                              ((WorldObjectClientRef_1_System_Object_ *)this_01,
-                               MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                              ), pOVar35 != (Object *)0x0)) {
+         (pOVar26 = WorldObjectClientRef`1[System::Object]::
+                   WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                             ((WorldObjectClientRef_1_System_Object_ *)this_01,
+                              MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                             ), pOVar26 != (Object *)0x0)) {
         esm = (EditorStateMachine *)0xc;
-        pOVar35 = (Object *)func_?(TypeInfo__EditorEvent,&esm);
-        FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,pOVar35,(MethodInfo *)0x0);
+        pOVar26 = (Object *)func_?(TypeInfo__EditorEvent,&esm);
+        FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,pOVar26,(MethodInfo *)0x0);
         return;
       }
     }
@@ -183,47 +175,50 @@ code_?:
   targetHit.normal.z = (float)auStack_1._24_4_;
   targetHit.cubePos.x = auStack_1._28_2_;
   targetHit.cubePos.y = auStack_1._30_2_;
-  targetHit._28_4_ = iStack_24;
-  targetHit.face = uStack_22;
-  targetHit._36_4_ = iStack_5;
-  targetHit.woId = (int32_t)pCStack_33;
-  targetHit.cube = (Cube *)fStack_19;
-  targetHit.distance = (float)pCStack_17;
-  targetHit.collider = (Collider *)pTStack_15;
-  targetHit.transform = (Transform *)uStack_13;
-  targetHit._60_4_ = (int)iStack_11;
-  targetHit.interactionFlags._0_4_ = (int)((ulonglong)iStack_11 >> 0x20);
+  targetHit._28_4_ = auStack_1._32_4_;
+  targetHit.face = auStack_1._36_4_;
+  targetHit._36_4_ = pMStack_5;
+  targetHit.woId = (int32_t)pCStack_21;
+  targetHit.cube = (Cube *)ppMStack_14;
+  targetHit.distance = (float)pCStack_16;
+  targetHit.collider = (Collider *)pTStack_27;
+  targetHit.transform = (Transform *)pMStack_17;
+  targetHit._60_4_ = (int)iStack_12;
+  targetHit.interactionFlags._0_4_ = (int)((ulonglong)iStack_12 >> 0x20);
   targetHit.interactionFlags._4_4_ = 0;
   bVar2 = ESTerrainEdit_ResettingTerrain(this,targetHit,method_01);
   if (bVar2 != 0) {
     return;
   }
   if ((this_00 != (EditorStateMachine *)0x0) &&
-     (pCVar36 = (this_00->fields).cubeModelingStateMachine, pCVar36 != (CubeModelingStateMachine *)0x0
-     )) {
-    (*(code *)(pCVar36->klass->vtable).Update.method)(pCVar36,pCVar36->klass[1]._0.image);
-    if (iStack_5 == 0) {
-      bVar37 = false;
+     (pCVar19 = (this_00->fields).cubeModelingStateMachine,
+     pCVar19 != (CubeModelingStateMachine *)0x0)) {
+    pMStack_5 = (MethodInfo *)pCVar19->klass[1]._0.image;
+    auStack_1._32_4_ = &UNK_?;
+    auStack_1._36_4_ = pCVar19;
+    (*(code *)(pCVar19->klass->vtable).Update.method)();
+    if (pMStack_5 == (MethodInfo *)0x0) {
+      bVar28 = false;
     }
     else {
       pMVar4 = (this->fields).terrain;
       if (pMVar4 == (MVCubeModelPrototypeTerrain *)0x0) goto code_?;
-      bVar37 = iStack_5 != (pMVar4->fields)._._._.id;
+      bVar28 = pMStack_5 != (MethodInfo *)(pMVar4->fields)._._._.id;
     }
-    if ((bVar37 & bVar9) != 0) {
-      pCVar36 = (this_00->fields).cubeModelingStateMachine;
-      if (pCVar36 == (CubeModelingStateMachine *)0x0) goto code_?;
+    if ((bVar28 & bVar6) != 0) {
+      pCVar19 = (this_00->fields).cubeModelingStateMachine;
+      if (pCVar19 == (CubeModelingStateMachine *)0x0) goto code_?;
       CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
-                (pCVar36,0,(MethodInfo *)0x0);
+                (pCVar19,0,(MethodInfo *)0x0);
     }
     ESTerrainEdit_SelectedObjectLink
-              (this,this_00,(bool)iStack_3,fStack_19,(bool)_bStack_c,(MethodInfo *)0x0);
+              (this,this_00,(bool)iStack_3,(float)ppMStack_14,(bool)_bStack_c,(MethodInfo *)0x0);
     return;
   }
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  (*pcVar38)();
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 }
 

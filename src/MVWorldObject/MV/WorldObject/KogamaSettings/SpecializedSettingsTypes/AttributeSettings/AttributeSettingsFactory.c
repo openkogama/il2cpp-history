@@ -71,10 +71,10 @@ AttributeSettingsFactory::AttributeSettingsFactory_KogamaSettingValueFactoryAttr
         KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase__ctor
                   ((KogamaSettingBoolBase *)kogamaSettingBasePrototype,pSVar5,*pbVar7,parent,
                    (MethodInfo *)0x0);
-        (((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.data = _Var1;
+        (((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.data = _Var1;
         *(KogamaSettingsCollectionBase **)
-         &(((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
-        return (KogamaSettingValueWrapperBase *)(Int32__Class *)kogamaSettingBasePrototype;
+         &(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
+        return (KogamaSettingValueWrapperBase *)(Single__Class *)kogamaSettingBasePrototype;
       }
 code_?:
       func_?((int)((ulonglong)uVar6 >> 0x20),(int)uVar6);
@@ -203,11 +203,11 @@ code_?:
             KogamaSettingEnumBase__ctor
                       ((KogamaSettingEnumBase *)kogamaSettingBasePrototype,pSVar5,*piVar12,
                        (int32_t)piVar9,(int32_t)piVar10,parent,(MethodInfo *)0x0);
-            (((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.data.dummy = pMVar13;
-            func_?(&(((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg,pMVar13);
+            (((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.data.dummy = pMVar13;
+            func_?(&(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg,pMVar13);
             *(KogamaSettingsCollectionBase **)
-             &(((Int32__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
-            return (KogamaSettingValueWrapperBase *)(Int32__Class *)kogamaSettingBasePrototype;
+             &(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
+            return (KogamaSettingValueWrapperBase *)(Single__Class *)kogamaSettingBasePrototype;
           }
           goto code_?;
         }

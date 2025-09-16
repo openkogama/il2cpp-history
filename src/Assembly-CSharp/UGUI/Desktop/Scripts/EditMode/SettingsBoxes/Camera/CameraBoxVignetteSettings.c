@@ -592,7 +592,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
     }
   }
   func_?();
-  pSVar9 = (Single__Class *)extraout_ECX;
+  pSVar9 = extraout_ECX;
 code_?:
   func_?(value,pSVar9);
   pcVar24 = (code *)swi(3);

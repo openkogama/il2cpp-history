@@ -5,6 +5,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using MV.WorldObject;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -24,7 +25,7 @@ public class SettingsButton : MonoBehaviour
 	public SettingsButton();
 
 	// Methods
-	public void Initialize(string key, int value);
+	public void Initialize(string key, int value, MVTeam team, bool hasTeam);
 	private void ValueChanged();
 	[CompilerGenerated]
 	private void _ValueChanged_b__4_0(IHandleSettingChanged handler, BaseEventData data);

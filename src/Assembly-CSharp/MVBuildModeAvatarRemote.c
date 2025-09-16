@@ -364,10 +364,10 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Initi
       }
       func_?();
       pAVar7 = (AvatarLimbManager *)func_?();
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-      UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor
-                ((UxmlObjectListAttributeDescription_1_System_Object_ *)pAVar7,(MethodInfo *)0x0);
+      ThemeAttributes::ThemeAttribute`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pAVar7,
+                 (MethodInfo *)0x0);
       (this->fields)._.limbManager = pAVar7;
       func_?();
       pAVar1 = (this->fields).avatarRemoteBuildMode;

@@ -1218,7 +1218,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
       pSVar2 = (this->fields)._.colorB;
       if (pSVar2 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize
-                  (pSVar2,StringLiteral_colorB,4.040691e-29,0.0,1.0,(MethodInfo *)0x0);
+                  (pSVar2,StringLiteral_colorB,4.0352695e-29,0.0,1.0,(MethodInfo *)0x0);
         pSVar2 = (this->fields)._.colorA;
         if (pSVar2 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize

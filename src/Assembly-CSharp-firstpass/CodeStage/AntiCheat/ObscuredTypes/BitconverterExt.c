@@ -88,11 +88,11 @@ Decimal * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Bi
       uVar1 = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
                         (bytes,startIndex,(MethodInfo *)0x0);
       if (bits == (Int32__Array *)0x0) break;
-      uVar2 = startIndex >> 2;
+      uVar2 = (int)(startIndex + (startIndex >> 0x1f & 3U)) >> 2;
       if (bits->max_length <= uVar2) goto code_?;
       startIndex = startIndex + 4;
       bits->vector[uVar2] = uVar1;
-      if (0xf < (int)startIndex) {
+      if (0xf < startIndex) {
         __return_storage_ptr__->flags = 0;
         __return_storage_ptr__->hi = 0;
         __return_storage_ptr__->lo = 0;

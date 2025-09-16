@@ -82,18 +82,12 @@ code_?:
     }
   }
 code_?:
-  bVar9 = 0;
   func_?();
-  pbVar10 = (byte *)(unaff_EBX + 0x46);
-  bVar11 = *pbVar10;
-  bVar12 = *pbVar10;
-  *pbVar10 = bVar12 + extraout_CL + bVar9;
-  *(char *)(extraout_EDX + -0x30efbcba) =
-       *(char *)(extraout_EDX + -0x30efbcba) + (char)((uint)(unaff_EBX + 1) >> 8) +
-       (CARRY1(bVar11,extraout_CL) || CARRY1(bVar12 + extraout_CL,bVar9));
-  pcVar13 = (code *)swi(3);
-  bVar14 = (*pcVar13)();
-  return bVar14;
+  *(char *)(unaff_EBX + -0x17) =
+       *(char *)(unaff_EBX + -0x17) + (char)((uint)extraout_ECX >> 8) +
+       ((longlong)(int)((longlong)extraout_ECX * 0x42) != (longlong)extraout_ECX * 0x42);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

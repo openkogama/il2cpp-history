@@ -16,8 +16,6 @@ public class DeathUIBoostMenuController : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Image timerFill;
-	[SerializeField]
 	private UnityEngine.UI.Text restartText;
 	[SerializeField]
 	private NotificationFade fader;
@@ -32,8 +30,6 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	[SerializeField]
 	private Image readyToPlayTimerFill;
 	[SerializeField]
-	private GameObject readyToPlayTimerObject;
-	[SerializeField]
 	private PointerDownController respawnButton;
 	[SerializeField]
 	private PointerDownController resetButton;
@@ -45,8 +41,6 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	private ContinueButtonLockCursor continueButtonLockCursor;
 	[SerializeField]
 	private Image adIcon;
-	[SerializeField]
-	private Image playIcon;
 	[SerializeField]
 	private EmbeddedPlayerConfig embeddedPlayerConfig;
 	private float startTime;
@@ -62,46 +56,46 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__23_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__25_1;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__25_2;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__29_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__30_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__22_1;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__22_2;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__26_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__27_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _OpenMenu_b__23_0(IUIStack x, BaseEventData y);
-		internal void _Update_b__25_1(IUIStack x, BaseEventData y);
-		internal void _Update_b__25_2(IUIStack x, BaseEventData y);
-		internal void _ReadyToSpawn_b__29_0(IUIStack x, BaseEventData y);
-		internal void _LockCursorAndPop_b__30_0(IUIStack x, BaseEventData y);
+		internal void _OpenMenu_b__20_0(IUIStack x, BaseEventData y);
+		internal void _Update_b__22_1(IUIStack x, BaseEventData y);
+		internal void _Update_b__22_2(IUIStack x, BaseEventData y);
+		internal void _ReadyToSpawn_b__26_0(IUIStack x, BaseEventData y);
+		internal void _LockCursorAndPop_b__27_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass22_0
+	private sealed class __c__DisplayClass19_0
 	{
 		// Fields
 		public bool readyForAd;
 
 		// Constructors
-		public __c__DisplayClass22_0();
+		public __c__DisplayClass19_0();
 
 		// Methods
 		internal void _Initialize_b__0(IDeathPromotionSelector x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass25_0
+	private sealed class __c__DisplayClass22_0
 	{
 		// Fields
 		public bool isBlocked;
 		public DeathUIBoostMenuController __4__this;
 
 		// Constructors
-		public __c__DisplayClass25_0();
+		public __c__DisplayClass22_0();
 
 		// Methods
 		internal void _Update_b__0(IUIStack x, BaseEventData y);
@@ -122,6 +116,6 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	private void LockCursorAndPop();
 	private void OnAvatarStateChanged(SpawnRoleModeType mode);
 	[CompilerGenerated]
-	private void _OnRespawn_b__28_0(IDeathPromotionSelector x, BaseEventData y);
+	private void _OnRespawn_b__25_0(IDeathPromotionSelector x, BaseEventData y);
 }
 

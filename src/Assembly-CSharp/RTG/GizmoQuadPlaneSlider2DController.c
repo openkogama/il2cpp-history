@@ -74,12 +74,16 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Quad;
     pGVar2 = (pGVar1->fields).Slider;
-    if ((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-       (pGVar3 = (&(pGVar2->fields)._settings)
-                 [(pGVar2->fields)._sharedSettings != (GizmoPlaneSlider2DSettings *)0x0],
-       pGVar3 != (GizmoPlaneSlider2DSettings *)0x0)) {
+    this_00 = (pGVar1->fields).Quad;
+    if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+        pGVar3 = (pGVar2->fields)._settings;
+        if (pGVar3 == (GizmoPlaneSlider2DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar3 = (pGVar2->fields)._sharedSettings;
+      }
       value = Vector2Ex::Vector2Ex_FromValue((pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
       if (this_00 != (QuadShape2D *)0x0) {
         QuadShape2D::QuadShape2D_set_SizeEps(this_00,value,(MethodInfo *)0x0);
@@ -87,6 +91,7 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
       }
     }
   }
+code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();

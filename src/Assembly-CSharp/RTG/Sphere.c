@@ -8,8 +8,8 @@ bool Assembly-CSharp.dll::RTG::Sphere::Sphere_ContainsPoint
   uVar1 = (this->_center).x;
   uVar2 = (this->_center).y;
   fVar3 = (this->_center).z - point.z;
-  return ((float)uVar1 - point.x) * ((float)uVar1 - point.x) +
-         ((float)uVar2 - point.y) * ((float)uVar2 - point.y) + fVar3 * fVar3 <=
+  return ((float)uVar2 - point.y) * ((float)uVar2 - point.y) +
+         ((float)uVar1 - point.x) * ((float)uVar1 - point.x) + fVar3 * fVar3 <=
          this->_radius * this->_radius;
 }
 
@@ -40,29 +40,30 @@ void Assembly-CSharp.dll::RTG::Sphere::Sphere_Encapsulate
   fStack_12 = sphere._center.z + sphere._radius * fStack_6;
   uVar13 = (this->_center).x;
   uVar14 = (this->_center).y;
-  fVar15 = (float)uVar13 - fVar10;
-  fVar16 = (this->_center).z - fStack_12;
+  fVar15 = (this->_center).z;
+  fVar16 = (float)uVar13 - fVar10;
+  fVar17 = fVar15 - fStack_12;
   if (this->_radius * this->_radius <
-      ((float)uVar14 - fStack_11) * ((float)uVar14 - fStack_11) + fVar15 * fVar15 + fVar16 * fVar16) {
-    uVar17 = (this->_center).x;
-    uVar18 = (this->_center).y;
+      fVar16 * fVar16 + ((float)uVar14 - fStack_11) * ((float)uVar14 - fStack_11) + fVar17 * fVar17) {
+    uVar18 = (this->_center).x;
+    uVar19 = (this->_center).y;
     uStack_4._0_4_ = pVVar7->x;
     uStack_4._4_4_ = pVVar7->y;
-    fVar16 = this->_radius;
-    fStack_19 = fStack_12 - ((this->_center).z - fStack_6 * fVar16);
-    fVar15 = 0.0;
-    uStack_20 = CONCAT44(fStack_11 - ((float)uVar18 - (float)uStack_4._4_4_ * fVar16),
-                         fVar10 - ((float)uVar17 - (float)(undefined4)uStack_4 * fVar16));
-    fStack_5 = fStack_19;
-    fVar21 = (float10)func_?(&uStack_20,0,uVar1,uVar2,uVar3);
+    fVar17 = this->_radius;
+    fStack_20 = fStack_12 - (fVar15 - fStack_6 * fVar17);
     fVar16 = 0.0;
-    if (0.0 <= (float)(fVar21 * (float10)_UNK_?)) {
-      fVar16 = (float)(fVar21 * (float10)_UNK_?);
+    uStack_21 = CONCAT44(fStack_11 - ((float)uVar19 - (float)uStack_4._4_4_ * fVar17),
+                         fVar10 - ((float)uVar18 - (float)(undefined4)uStack_4 * fVar17));
+    fStack_5 = fStack_20;
+    fVar22 = (float10)func_?(&uStack_21,0,uVar1,uVar2,uVar3);
+    fVar15 = 0.0;
+    if (0.0 <= (float)(fVar22 * (float10)_UNK_?)) {
+      fVar15 = (float)(fVar22 * (float10)_UNK_?);
     }
-    this->_radius = fVar16;
-    (this->_center).x = fVar15 - (float)uStack_9 * fVar16;
-    (this->_center).y = fStack_11 - uStack_9._4_4_ * fVar16;
-    (this->_center).z = fStack_12 - fStack_6 * fVar16;
+    this->_radius = fVar15;
+    (this->_center).x = fVar16 - (float)uStack_9 * fVar15;
+    (this->_center).y = fStack_11 - uStack_9._4_4_ * fVar15;
+    (this->_center).z = fStack_12 - fStack_6 * fVar15;
   }
   return;
 }

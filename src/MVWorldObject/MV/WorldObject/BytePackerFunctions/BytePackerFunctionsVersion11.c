@@ -143,12 +143,10 @@ code_?:
   default:
     return (Dictionary_2_System_Object_System_Object_ *)0x0;
   }
-  cVar9 = '\0';
   func_?();
-  *(char *)(extraout_ECX + -0x47ef0e9e) =
-       *(char *)(extraout_ECX + -0x47ef0e9e) + extraout_AH + cVar9;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  pcVar9 = (code *)swi(1);
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
+  return pDVar1;
 }
 
 

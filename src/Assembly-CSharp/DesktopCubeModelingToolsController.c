@@ -209,13 +209,9 @@ code_?:
       return;
     }
   }
-  uVar7 = func_?();
-  *unaff_EBX = *unaff_EBX | uVar7;
-  *(char *)unaff_EBX = (char)*unaff_EBX + extraout_DL;
-  *(char *)(uVar7 ^ 0x35030e10) =
-       *(char *)(uVar7 ^ 0x35030e10) + (char)unaff_EBX + CARRY4((uint)this,uRam_?);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

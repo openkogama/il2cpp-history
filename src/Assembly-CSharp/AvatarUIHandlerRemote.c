@@ -21,9 +21,15 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Activate
          (pBVar4 = (pMVar3->fields).boostController, pBVar4 != (BoostController *)0x0)) {
         bVar5 = BoostController::BoostController_IsBoostActive
                           (pBVar4,BoostType__Enum_XRayVision,(MethodInfo *)0x0);
+        if (bVar5 == 0) {
+          value = (this->fields).enemyIconMaterial;
+        }
+        else {
+          value = (this->fields).enemyIconMaterialVisibleThroughWalls;
+        }
         if (this_00 != (Renderer *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                    (this_00,(&(this->fields).enemyIconMaterial)[bVar5],(MethodInfo *)0x0);
+                    (this_00,value,(MethodInfo *)0x0);
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar2 != (MVNetworkGame *)0x0) {
             pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
@@ -474,9 +480,15 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_OnXRayBoo
        (this_01 = (pMVar1->fields).boostController, this_01 != (BoostController *)0x0)) {
       bVar2 = BoostController::BoostController_IsBoostActive
                         (this_01,BoostType__Enum_XRayVision,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        value = (this->fields).enemyIconMaterial;
+      }
+      else {
+        value = (this->fields).enemyIconMaterialVisibleThroughWalls;
+      }
       if (this_00 != (Renderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                  (this_00,(&(this->fields).enemyIconMaterial)[bVar2],(MethodInfo *)0x0);
+                  (this_00,value,(MethodInfo *)0x0);
         return;
       }
     }
@@ -719,8 +731,6 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateHea
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void UpdateNameTag() */
 
 void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag
@@ -728,81 +738,80 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) {
-    bVar3 = MVPlayerContainer::MVPlayerContainer_ContainsKey
-                      (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      return;
-    }
+  if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+  pMVar2 = (pMVar1->fields).playerContainer;
+  if (pMVar2 == (MVPlayerContainer *)0x0) goto code_?;
+  bVar3 = MVPlayerContainer::MVPlayerContainer_ContainsKey
+                    (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    in_stack_4 = (MVPlayerContainer *)&UNK_?;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((((pMVar1 != (MVNetworkGame *)0x0) &&
-         (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) &&
-        (unaff_EDI = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                               (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0),
-        unaff_EDI != (MVPlayer *)0x0)) &&
-       ((pUVar4 = (unaff_EDI->fields)._UserProfileData_k__BackingField,
-        pUVar4 != (UserProfileData *)0x0 &&
-        (this_00 = (this->fields).avatarName, this_00 != (TextMesh *)0x0)))) {
-      UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
-                (this_00,(pUVar4->fields).UserName,(MethodInfo *)0x0);
-      uVar5 = _UNK_?;
-      uVar6 = _UNK_?;
-      uVar7 = _UNK_?;
-      fVar8 = _UNK_?;
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 != (MVNetworkGame *)0x0) &&
-         (this_01 = (pMVar1->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
-        fStack9 = fVar8;
-        iVar10 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
-        if (1 < iVar10) {
-          switch((unaff_EDI->fields)._Team_k__BackingField) {
-          case 0:
-            uVar5 = 0;
-            uVar6 = 0;
-            break;
-          case 1:
-            uVar6 = 0;
-            uVar7 = 0;
-            break;
-          case 2:
-            uVar5 = 0;
-            uVar7 = 0;
-            break;
-          case 3:
-            uVar6 = 0x3f6bebec;
-            uVar7 = 0x3c808081;
-          }
-        }
-        this_02 = (this->fields).avatarNameMaterial;
-        if (this_02 != (Material *)0x0) {
-          value.g = (float)uVar6;
-          value.r = (float)uVar5;
-          value.b = (float)uVar7;
-          value.a = fStack9;
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                    (this_02,value,(MethodInfo *)0x0);
-          return;
-        }
+    unaff_ESI = this;
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    pMVar2 = (pMVar1->fields).playerContainer;
+    if (pMVar2 == (MVPlayerContainer *)0x0) goto code_?;
+    pMVar5 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                       (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0);
+    in_stack_4 = pMVar2;
+    if (pMVar5 == (MVPlayer *)0x0) goto code_?;
+    pUVar6 = (pMVar5->fields)._UserProfileData_k__BackingField;
+    if (pUVar6 == (UserProfileData *)0x0) goto code_?;
+    this_00 = (this->fields).avatarName;
+    if (this_00 == (TextMesh *)0x0) goto code_?;
+    UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
+              (this_00,(pUVar6->fields).UserName,(MethodInfo *)0x0);
+    in_stack_4 = _UNK_?;
+    uVar7 = _UNK_?;
+    uVar8 = _UNK_?;
+    in_stack_9 = _UNK_?;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+    this_01 = (pMVar1->fields).teamManager;
+    if (this_01 == (MVTeamManager *)0x0) goto code_?;
+    iVar10 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
+    fStack11 = in_stack_9;
+    if (1 < iVar10) {
+      switch((pMVar5->fields)._Team_k__BackingField) {
+      case 0:
+        in_stack_4 = (MVPlayerContainer *)0x0;
+        uVar7 = 0;
+        break;
+      case 1:
+        uVar7 = 0;
+        uVar8 = 0;
+        break;
+      case 2:
+        in_stack_4 = (MVPlayerContainer *)0x0;
+        uVar8 = 0;
+        break;
+      case 3:
+        goto code_?;
       }
     }
+    while (this_02 = (unaff_ESI->fields).avatarNameMaterial, in_stack_9 = fStack11,
+          this_02 == (Material *)0x0) {
+code_?:
+      bVar12 = false;
+      cVar13 = '\0';
+      cVar14 = func_?();
+      if (bVar12) {
+        *(char *)(extraout_ECX + -0x6eefd13a) =
+             *(char *)(extraout_ECX + -0x6eefd13a) + cVar14 + cVar13;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+code_?:
+      uVar7 = 0x3f6bebec;
+      uVar8 = 0x3c808081;
+      fStack11 = in_stack_9;
+    }
+    value.g = (float)uVar7;
+    value.r = (float)in_stack_4;
+    value.b = (float)uVar8;
+    value.a = fStack11;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+              (this_02,value,(MethodInfo *)0x0);
   }
-  bVar11 = false;
-  bVar12 = 0;
-  uVar13 = func_?();
-  if (!bVar11) {
-    uVar13 = (undefined2)uRam_?;
-  }
-  bVar14 = (byte)uVar13;
-  *(char *)(extraout_ECX + -0x6eefd0f6) =
-       *(char *)(extraout_ECX + -0x6eefd0f6) +
-       bVar14 + (9 < (bVar14 & 0xf) | in_AF) * -6 + (0x99 < bVar14 | bVar12) * -0x5f;
-  pcVar15 = (char *)(CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                             CONCAT11((byte)((uint)extraout_ECX >> 8) | *(byte *)&unaff_EDI->klass,
-                                      (char)extraout_ECX)) + -0x33efd0f6);
-  *pcVar15 = *pcVar15 + (char)((ushort)uVar13 >> 8);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
   return;
 }
 

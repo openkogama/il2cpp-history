@@ -93,8 +93,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                               (((float)iVar8 - fVar11 * fVar13 * (_UNK_? - fVar7)) -
                               _UNK_?);
                     if ((pCVar1 != (ChatBubble *)0x0) &&
-                       (pRVar14 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0)
-                       , pRVar14 != (RectTransform *)0x0)) {
+                       (pRVar14 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0),
+                       pRVar14 != (RectTransform *)0x0)) {
                       pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                                RectTransform_get_rect
                                          ((Rect *)&stack0xffffffd0,pRVar14,(MethodInfo *)0x0);
@@ -112,7 +112,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                         pCVar1 = (this->fields).AttachedBubble;
                         if ((pCVar1 != (ChatBubble *)0x0) &&
                            (pRVar14 = ChatBubble::ChatBubble_get_rectTransform
-                                                (pCVar1,(MethodInfo *)0x0),
+                                               (pCVar1,(MethodInfo *)0x0),
                            pRVar14 != (RectTransform *)0x0)) {
                           VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                                    RectTransform_get_pivot(pRVar14,(MethodInfo *)0x0);
@@ -122,7 +122,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                           pCVar1 = (this->fields).AttachedBubble;
                           if ((pCVar1 != (ChatBubble *)0x0) &&
                              (pRVar14 = ChatBubble::ChatBubble_get_rectTransform
-                                                  (pCVar1,(MethodInfo *)0x0),
+                                                 (pCVar1,(MethodInfo *)0x0),
                              pRVar14 != (RectTransform *)0x0)) {
                             pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                                      RectTransform_get_rect
@@ -141,7 +141,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                               pCVar1 = (this->fields).AttachedBubble;
                               if ((pCVar1 != (ChatBubble *)0x0) &&
                                  (pRVar14 = ChatBubble::ChatBubble_get_rectTransform
-                                                      (pCVar1,(MethodInfo *)0x0),
+                                                     (pCVar1,(MethodInfo *)0x0),
                                  pRVar14 != (RectTransform *)0x0)) {
                                 UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                                 RectTransform_get_pivot(pRVar14,(MethodInfo *)0x0);
@@ -152,8 +152,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                 if ((this->fields).KeepInView != 0) {
                                   adjustedPosition.x = (float)&UNK_?;
                                   puVar5 = puVar9;
-                                  if ((3.5645758e-29 < (float)puVar9) ||
-                                     (puVar5 = puVar15, (float)puVar15 < 3.5645758e-29)) {
+                                  if ((3.5593518e-29 < (float)puVar9) ||
+                                     (puVar5 = puVar15, (float)puVar15 < 3.5593518e-29)) {
                                     adjustedPosition.x = (float)puVar5;
                                   }
                                   adjustedPosition.y = fVar7;
@@ -218,13 +218,9 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
     }
   }
 code_?:
-  iVar19 = func_?();
-  *(int *)(iVar19 + -0x3eefcb3f) = *(int *)(iVar19 + -0x3eefcb3f) << 0xd;
-  *(int *)(iVar19 + -0x3eefcb3f) = *(int *)(iVar19 + -0x3eefcb3f) << 0x19;
-  *(int *)(iVar19 + -0x3eefcb3f) = *(int *)(iVar19 + -0x3eefcb3f) << 0xc;
-  pcVar20 = (code *)swi(3);
-  pVVar12 = (Vector3 *)(*pcVar20)();
-  return pVVar12;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

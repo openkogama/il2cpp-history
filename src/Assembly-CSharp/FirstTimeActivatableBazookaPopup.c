@@ -202,7 +202,7 @@ code_?:
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
                      ,(MethodInfo *)method_00.methodMetadataHandle);
-          if ((InvokerMethod)(object_00->_0).name == (InvokerMethod)0x0) {
+          if ((object_00->_0).name == (char *)0x0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -454,7 +454,7 @@ code_?:
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
                      ,(MethodInfo *)method_00.methodMetadataHandle);
-          if ((InvokerMethod)(object_00->_0).name == (InvokerMethod)0x0) {
+          if ((object_00->_0).name == (char *)0x0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }

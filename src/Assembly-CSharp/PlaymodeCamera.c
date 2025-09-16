@@ -482,10 +482,10 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera_UpdateCamera
         value.y = (float)uVar13 + (float)uVar30;
         ProtectedTransform::ProtectedTransform_set_position(targetTransform,value,(MethodInfo *)0x0)
         ;
-        value_00.y = (fVar4 * fVar22 + fVar8 * 3.2502373e-29 + fVar9 * fVar3) - fVar5 * fVar7;
-        value_00.x = (fVar22 * fVar3 + fVar7 * 3.2502373e-29 + fVar8 * fVar5) - fVar9 * fVar4;
-        value_00.z = (fVar5 * fVar22 + fVar9 * 3.2502373e-29 + fVar4 * fVar7) - fVar8 * fVar3;
-        value_00.w = ((fVar22 * 3.2502373e-29 - fVar3 * fVar7) - fVar4 * fVar8) -
+        value_00.y = (fVar4 * fVar22 + fVar8 * 3.2454514e-29 + fVar9 * fVar3) - fVar5 * fVar7;
+        value_00.x = (fVar22 * fVar3 + fVar7 * 3.2454514e-29 + fVar8 * fVar5) - fVar9 * fVar4;
+        value_00.z = (fVar5 * fVar22 + fVar9 * 3.2454514e-29 + fVar4 * fVar7) - fVar8 * fVar3;
+        value_00.w = ((fVar22 * 3.2454514e-29 - fVar3 * fVar7) - fVar4 * fVar8) -
                      fVar9 * fVar5;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (targetTransform,value_00,(MethodInfo *)0x0);
@@ -649,12 +649,12 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera_UpdatePosition
             auStack_11._0_4_ = fVar26;
             fStack_45 = (fVar37 - fVar26) * uStack_34._4_4_;
             fStack_6 = (((float)uVar40 - (float)auStack_3._4_4_) - fStack_30) * uStack_34._4_4_;
-            fVar18 = (((float)uVar41 - fStack_42) - fStack_22) * uStack_34._4_4_;
+            uStack_34._0_4_ = (((float)uVar41 - fStack_42) - fStack_22) * uStack_34._4_4_;
             uStack_16 = 0;
             auStack_3._0_4_ = 0.0;
-            uStack_34 = CONCAT44(fStack_45,fVar18);
-            uStack_23 = CONCAT44(fVar18,fStack_6);
+            uStack_23 = CONCAT44((float)uStack_34,fStack_6);
             _fStack_8 = uVar39;
+            uStack_34._4_4_ = fStack_45;
             pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                                 ((Vector3 *)(auStack_3 + 4),this_00,(MethodInfo *)0x0);
             uVar46 = pVVar2->x;
@@ -662,59 +662,64 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera_UpdatePosition
             in_stack_48 = pVVar2->z - fStack_49;
             uStack_23 = CONCAT44(in_stack_48,(float)uStack_23);
             pfVar50 = &fStack_1;
-            fVar37 = 0.0;
+            fVar51 = 0.0;
             _method = CONCAT44((float)uVar47 - fStack_12,(float)uVar46 - (float)auStack_11._4_4_);
-            fVar51 = (float10)func_?();
-            fVar52 = 0.0;
-            fStack_20 = (float)fVar51;
-            puVar53 = (undefined8 *)func_?(auStack_10 + 4,&fStack_1);
-            _fStack_8 = *puVar53;
-            puVar53 = (undefined8 *)func_?(auStack_10 + 4,&method,0);
-            fStack_6 = *(float *)(puVar53 + 1);
-            fStack_8 = (float)*puVar53;
-            fStack_9 = (float)((ulonglong)*puVar53 >> 0x20);
+            fVar52 = (float10)func_?();
+            fVar53 = 0.0;
+            pfVar54 = &fStack_1;
+            puVar55 = auStack_10 + 4;
+            fStack_20 = (float)fVar52;
+            puVar56 = (undefined8 *)func_?(puVar55,pfVar54);
+            _fStack_8 = *puVar56;
+            puVar56 = (undefined8 *)func_?(auStack_10 + 4,&method,0);
+            fStack_8 = (float)*puVar56;
+            fStack_9 = (float)((ulonglong)*puVar56 >> 0x20);
             fVar21 = (this->fields).distance;
             fVar26 = (this->fields).distance;
-            dVar54 = (double)((fVar21 * fVar21 + fVar32 * fVar32) -
-                             (fStack_9 * fStack_12 + fStack_8 * (float)auStack_11._4_4_ +
-                             fStack_6 * fStack_49) * (fVar26 + fVar26) * fVar32);
-            if (dVar54 < 0.0) {
-              func_?();
-            }
-            else {
-              dVar54 = SQRT(dVar54);
-            }
-            fVar37 = uStack_24._4_4_ + fVar37;
-            fVar21 = (float)dVar54;
-            uStack_24._4_4_ = fVar37;
-            fStack_6 = (float)pfVar50 + fVar17;
-            (this->fields).actualLookAt.x = fVar37;
-            (this->fields).actualLookAt.y = fVar52 + fVar15;
-            (this->fields).currentLookAt.x = fVar37;
-            (this->fields).currentLookAt.y = fVar52 + fVar15;
-            (this->fields).actualLookAt.z = fStack_6;
-            (this->fields).currentLookAt.z = fStack_6;
+            fVar51 = uStack_24._4_4_ + fVar51;
+            uStack_24._4_4_ = fVar51;
+            fVar37 = (float)pfVar50 + fVar17;
+            fVar21 = (fVar32 * fVar32 + fVar21 * fVar21) -
+                     (fStack_9 * fStack_12 + fStack_8 * (float)auStack_11._4_4_ +
+                     *(float *)(puVar56 + 1) * fStack_49) * (fVar26 + fVar26) * fVar32;
+            fVar53 = fVar53 + fVar15;
+            (this->fields).actualLookAt.x = fVar51;
+            (this->fields).actualLookAt.y = fVar53;
+            (this->fields).currentLookAt.x = fVar51;
+            (this->fields).currentLookAt.y = fVar53;
+            (this->fields).actualLookAt.z = fVar37;
+            (this->fields).currentLookAt.z = fVar37;
+            fStack_6 = fVar37;
             pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
                                 ((Vector3 *)(auStack_11 + 4),this_00,(MethodInfo *)0x0);
             uStack_16._0_4_ = pVVar2->x;
             uStack_16._4_4_ = pVVar2->y;
-            auStack_3._0_4_ = fVar17 - pVVar2->z * (float)puVar28;
-            value.y = fVar15 - uStack_16._4_4_ * (float)puVar28;
-            value.x = (float)uStack_34 - (float)uStack_16 * (float)puVar28;
+            auStack_3._0_4_ = pVVar2->z;
+            dVar57 = (double)(float)puVar28;
+            if (dVar57 < 0.0) {
+              func_?(puVar55,pfVar54,fVar53,fVar37);
+            }
+            else {
+              dVar57 = SQRT(dVar57);
+            }
+            fVar26 = (float)dVar57;
+            auStack_3._0_4_ = fVar17 - (float)auStack_3._0_4_ * fVar26;
+            value.y = fVar15 - uStack_16._4_4_ * fVar26;
+            value.x = (float)uStack_34 - (float)uStack_16 * fVar26;
             value.z = (float)auStack_3._0_4_;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                       (this_00,value,(MethodInfo *)0x0);
             pMVar38 = (this->fields).avatarLocal;
             if (pMVar38 != (MVAvatarLocal *)0x0) {
-              puVar53 = (undefined8 *)
+              puVar56 = (undefined8 *)
                         (*(code *)(pMVar38->klass->vtable).get_VelocityRelative.method)
                                   ((int)&uStack_16 + 4,pMVar38,
                                    (pMVar38->klass->vtable).get_VelocityAbsolute.methodPtr,fVar15,
                                    fVar17,fVar21);
-              auStack_10 = (undefined1  [8])*puVar53;
-              uStack_23 = CONCAT44(uStack_23._4_4_,*(undefined4 *)(puVar53 + 1));
-              fVar51 = (float10)func_?(auStack_10,0);
-              VStack_33.z = (float)fVar51;
+              auStack_10 = (undefined1  [8])*puVar56;
+              uStack_23 = CONCAT44(uStack_23._4_4_,*(undefined4 *)(puVar56 + 1));
+              fVar52 = (float10)func_?(auStack_10,0);
+              VStack_33.z = (float)fVar52;
               MVPlaymodeCameraBase::MVPlaymodeCameraBase_Shake
                         ((MVPlaymodeCameraBase *)this,VStack_33.z,(MethodInfo *)0x0);
               (this->fields).prevLookAtTransformPos.x = (float)auStack_11._0_4_;
@@ -728,8 +733,8 @@ void Assembly-CSharp.dll::PlaymodeCamera::PlaymodeCamera_UpdatePosition
     }
   }
   func_?();
-  pcVar55 = (code *)swi(3);
-  (*pcVar55)();
+  pcVar58 = (code *)swi(3);
+  (*pcVar58)();
   return;
 }
 

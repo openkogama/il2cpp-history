@@ -498,10 +498,9 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    method_00 = unaff_EDI;
     value = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+              (value,ExceptionArgument__Enum_obj,unaff_EDI);
     if (value != (Object *)0x0) {
       value[1].monitor = (MonitorData *)this;
       func_?(&value[1].monitor,this);
@@ -516,16 +515,15 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
                          );
       value[1].klass = pOVar1;
       func_?(value + 1,pOVar1);
-      unaff_EBX = value[1].klass;
+      pOVar1 = value[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-      unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)
                func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
         header = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-        if (unaff_EBX != (Object__Class *)0x0) {
+        if (pOVar1 != (Object__Class *)0x0) {
           NotificationPopup::NotificationPopup_Initialize
-                    ((NotificationPopup *)unaff_EBX,text,header,(MethodInfo *)0x0);
+                    ((NotificationPopup *)pOVar1,text,header,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
           callbackFunction =
@@ -565,9 +563,7 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
     return;
   }
   func_?();
-  *(char *)&unaff_EDI[-0xb5ff67].monitor =
-       *(char *)&unaff_EDI[-0xb5ff67].monitor + extraout_CL + '\x01';
-  cRam_? = cRam_? + (char)((uint)unaff_EBX >> 8);
+  func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

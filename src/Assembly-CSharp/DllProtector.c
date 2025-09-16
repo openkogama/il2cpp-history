@@ -86,9 +86,9 @@ Assembly-CSharp.dll::DllProtector::DllProtector_GetCRCData(MethodInfo *method)
           mscorlib.dll::System::Array::Array_Copy_3
                     ((Array *)pBStack_2,startIndex + 2,(Array *)pBVar1,0,uVar10,(MethodInfo *)0x0);
           startIndex_00 = startIndex + 2 + uVar10;
+          startIndex = startIndex_00 + 4;
           crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
                           (pBStack_2,startIndex_00,(MethodInfo *)0x0);
-          startIndex = startIndex_00 + 4;
           pFStack_14 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
           MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor
                     (pFStack_14,pBVar1,crc,(MethodInfo *)0x0);
@@ -186,9 +186,9 @@ Assembly-CSharp.dll::DllProtector::DllProtector_ParseCrcData
       mscorlib.dll::System::Array::Array_Copy_3
                 ((Array *)crcData,startIndex + 2,(Array *)name,0,length,(MethodInfo *)0x0);
       startIndex_00 = startIndex + 2 + length;
+      startIndex = startIndex_00 + 4;
       crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
                       (crcData,startIndex_00,(MethodInfo *)0x0);
-      startIndex = startIndex_00 + 4;
       this_00 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
       MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor
                 (this_00,name,crc,(MethodInfo *)0x0);

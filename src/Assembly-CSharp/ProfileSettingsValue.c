@@ -175,16 +175,8 @@ code_?:
   func_?(value,pAVar5);
 code_?:
   func_?();
-  *unaff_EBX = *unaff_EBX & 0x10;
-  cVar9 = (char)((uint)unaff_EBX >> 8);
-  *unaff_EBX = *unaff_EBX + cVar9;
-  pcVar20 = (char *)(CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                             CONCAT11((char)((uint)extraout_ECX >> 8) + cVar9,(char)extraout_ECX)) +
-                   -0x2befdc7b);
-  *pcVar20 = *pcVar20 + (char)extraout_ECX;
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

@@ -190,7 +190,12 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::
   func_?(&(this->fields).generalPromotionAd,pGVar1);
   _uStack_c = 0;
   bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  pPStack_3 = (&(this->fields).touristLooksData)[bVar2 ^ 1];
+  if (bVar2 == 0) {
+    pPStack_3 = (this->fields).registeredLooksData;
+  }
+  else {
+    pPStack_3 = (this->fields).touristLooksData;
+  }
   func_?(&pPStack_3,pPStack_3);
   pGVar1 = (this->fields).generalPromotionAd;
   uStack_4 = (uint5)(uint)timeout;

@@ -829,10 +829,12 @@ joined_?:
                                 );
             (this->fields).avatarRemoteMovementCalculator = pAVar18;
             func_?();
-            method_00 = TypeInfo__AvatarLimbManagerRemote;
             pAVar19 = (AvatarLimbManager *)func_?();
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)pAVar19,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            ThemeAttributes::ThemeAttribute`1[Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                      ((ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                       pAVar19,(MethodInfo *)0x0);
             (this->fields)._.limbManager = pAVar19;
             func_?(&(this->fields)._.limbManager,pAVar19);
             if (((this->fields)._.avatar != (Avatar *)0x0) &&

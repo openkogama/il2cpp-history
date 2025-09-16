@@ -320,7 +320,7 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize
                                                      this_02 != (BoneAnimation *)0x0)) {
                                                     BoneAnimation::BoneAnimation_StartAnimation
                                                               (this_02,StringLiteral_Idle,
-                                                               iVar17 + (-500 - iVar4),
+                                                               (iVar17 + -500) - iVar4,
                                                                (MethodInfo *)0x0);
                                                     return;
                                                   }
@@ -567,7 +567,7 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_StartInactiveAn
     if ((pMVar1 != (MVBodyObject *)0x0) &&
        (this_00 = (pMVar1->fields).boneAnimation, this_00 != (BoneAnimation *)0x0)) {
       BoneAnimation::BoneAnimation_StartAnimation
-                (this_00,StringLiteral_Idle,iVar4 + (-500 - iVar3),(MethodInfo *)0x0);
+                (this_00,StringLiteral_Idle,(iVar4 + -500) - iVar3,(MethodInfo *)0x0);
       return;
     }
   }

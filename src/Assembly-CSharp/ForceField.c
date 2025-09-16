@@ -80,7 +80,6 @@ void Assembly-CSharp.dll::ForceField::ForceField_ApplyForceTo
                           (fVar9 - fVar6) * *(float *)(puVar13 + 1) <= 0.0) {
                         fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::
                                  Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
-                        fVar9 = 1.0 / fVar9;
                         puVar13 = (undefined8 *)func_?();
                         fVar6 = *(float *)(puVar13 + 1);
                         fVar14 = (float)*puVar13;
@@ -90,9 +89,10 @@ void Assembly-CSharp.dll::ForceField::ForceField_ApplyForceTo
                         puStack17 = &stack0xffffffd0;
                         fVar18 = (float10)func_?();
                         fVar5 = (float)fVar18;
-                        fVar19 = fVar14 * fVar5 * fVar9;
-                        fVar14 = fVar15 * fVar5 * fVar9;
-                        fVar9 = fVar6 * fVar5 * fVar9;
+                        fVar9 = _UNK_? / fVar9;
+                        fVar19 = fVar9 * fVar14 * fVar5;
+                        fVar14 = fVar9 * fVar15 * fVar5;
+                        fVar9 = fVar9 * fVar6 * fVar5;
                         impulse.y = fVar14 + fVar14;
                         impulse.x = fVar19 + fVar19;
                         impulse.z = fVar9 + fVar9;

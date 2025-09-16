@@ -292,15 +292,16 @@ Vector3 * Assembly-CSharp.dll::CameraCollisionWithSliding::
   fVar4 = pVVar1->z;
   hitPoint.y = targetPosition.x;
   hitPoint.z = baseDistance;
+  uVar5 = pVVar1->x;
   hitPoint.x = newPos.z;
   targetPosition_00.y = baseDistance;
   targetPosition_00.x = targetPosition.x;
   targetPosition_00.z = targetPosition.z;
-  fVar5 = CameraCollisionWithSliding_GetSlideVectorLength
+  fVar6 = CameraCollisionWithSliding_GetSlideVectorLength
                     (*pVVar1,newPos,targetPosition_00,baseDistance,(MethodInfo *)0x0);
-  *(ulonglong *)uVar2 = CONCAT44((float)uVar3 * fVar5,(float)uVar2 * fVar5);
-  *(float *)(uVar2 + 8) = fVar4 * fVar5;
-  return (Vector3 *)uVar2;
+  *(ulonglong *)uVar5 = CONCAT44((float)uVar3 * fVar6,(float)uVar2 * fVar6);
+  *(float *)(uVar5 + 8) = fVar4 * fVar6;
+  return (Vector3 *)uVar5;
 }
 
 

@@ -8,9 +8,11 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
 {
   iVar1 = i - this->zeroValue;
   if ((float)iVar1 < _UNK_?) {
-    this = (APIntCalcZeroValueLinear *)&this->exchangeRateNegative;
+    fVar2 = this->exchangeRateNegative;
   }
-  fVar2 = this->exchangeRatePositive;
+  else {
+    fVar2 = this->exchangeRatePositive;
+  }
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';

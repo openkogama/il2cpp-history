@@ -293,22 +293,26 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
     cRam_? = '\x01';
   }
   if (headPitch != (Object *)0x0) {
-    if ((headPitch->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar1 = (float *)func_?();
-      (this->fields).newHeadPitchValue = *pfVar1;
-      AvatarLimbManagerRemote_AvatarLimbDataManagerRemote_UpdateHeadRotation(this,(MethodInfo *)0x0)
-      ;
+    if ((headPitch->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    pfVar2 = (float *)func_?();
+    pitch = *pfVar2;
+    this_00 = (this->fields).limbManager;
+    (this->fields).newHeadPitchValue = pitch;
+    if (this_00 != (AvatarLimbManagerRemote *)0x0) {
+      AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdateHeadRotationRemotely
+                (this_00,(this->fields).newHeadYawValue,pitch,(MethodInfo *)0x0);
+      return;
+    }
   }
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -326,22 +330,26 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
     cRam_? = '\x01';
   }
   if (headYaw != (Object *)0x0) {
-    if ((headYaw->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar1 = (float *)func_?();
-      (this->fields).newHeadYawValue = *pfVar1;
-      AvatarLimbManagerRemote_AvatarLimbDataManagerRemote_UpdateHeadRotation(this,(MethodInfo *)0x0)
-      ;
+    if ((headYaw->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    pfVar2 = (float *)func_?();
+    yaw = *pfVar2;
+    this_00 = (this->fields).limbManager;
+    (this->fields).newHeadYawValue = yaw;
+    if (this_00 != (AvatarLimbManagerRemote *)0x0) {
+      AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdateHeadRotationRemotely
+                (this_00,yaw,(this->fields).newHeadPitchValue,(MethodInfo *)0x0);
+      return;
+    }
   }
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -359,22 +367,27 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
     cRam_? = '\x01';
   }
   if (pointPitch != (Object *)0x0) {
-    if ((pointPitch->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar1 = (float *)func_?();
-      (this->fields).newPointPitchValue = *pfVar1;
-      AvatarLimbManagerRemote_AvatarLimbDataManagerRemote_UpdatePointRotation
-                (this,(MethodInfo *)0x0);
+    if ((pointPitch->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    pfVar2 = (float *)func_?();
+    pitch = *pfVar2;
+    this_00 = (this->fields).limbManager;
+    (this->fields).newPointPitchValue = pitch;
+    if (this_00 != (AvatarLimbManagerRemote *)0x0) {
+      AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdatePointingRemotely
+                (this_00,(this->fields).newPointYawValue,pitch,(this->fields).newPointingWeaponValue
+                 ,(MethodInfo *)0x0);
+      return;
+    }
   }
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -392,22 +405,27 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
     cRam_? = '\x01';
   }
   if (pointYaw != (Object *)0x0) {
-    if ((pointYaw->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar1 = (float *)func_?();
-      (this->fields).newPointYawValue = *pfVar1;
-      AvatarLimbManagerRemote_AvatarLimbDataManagerRemote_UpdatePointRotation
-                (this,(MethodInfo *)0x0);
+    if ((pointYaw->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    pfVar2 = (float *)func_?();
+    yaw = *pfVar2;
+    this_00 = (this->fields).limbManager;
+    (this->fields).newPointYawValue = yaw;
+    if (this_00 != (AvatarLimbManagerRemote *)0x0) {
+      AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdatePointingRemotely
+                (this_00,yaw,(this->fields).newPointPitchValue,(this->fields).newPointingWeaponValue
+                 ,(MethodInfo *)0x0);
+      return;
+    }
   }
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -456,71 +474,17 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
                (AvatarLimbManagerRemote_AvatarLimbDataManagerRemote *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).limbManager;
-  if (pAVar1 != (AvatarLimbManagerRemote *)0x0) {
-    fVar2 = (this->fields).newHeadYawValue;
-    this_00 = (pAVar1->fields).headRotationHandler;
-    if (this_00 != (AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote *)0x0) {
-      AvatarLimbManager+AvatarHeadRotationHandler::
-      AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer
-                ((AvatarLimbManager_AvatarHeadRotationHandler *)this_00,(MethodInfo *)0x0);
-      auVar3._4_8_ = 0;
-      auVar3._0_4_ = fVar2 * _UNK_?;
-      pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                         ((Quaternion *)&stack0xffffffd8,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0
-                         );
-      fVar2 = pQVar4->y;
-      fVar5 = pQVar4->z;
-      fVar6 = pQVar4->w;
-      QVar7 = *pQVar4;
-      (this_00->fields).remoteYawRotation.x = pQVar4->x;
-      (this_00->fields).remoteYawRotation.y = fVar2;
-      (this_00->fields).remoteYawRotation.z = fVar5;
-      (this_00->fields).remoteYawRotation.w = fVar6;
-      pQVar4 = AvatarLimbManager+AvatarHeadRotationHandler::
-               AvatarLimbManager_AvatarHeadRotationHandler_ClampQuaternion
-                         ((Quaternion *)&stack0xffffffd8,
-                          (AvatarLimbManager_AvatarHeadRotationHandler *)this_00,QVar7,
-                          (MethodInfo *)0x0);
-      fVar5 = fVar5 * _UNK_?;
-      fVar2 = pQVar4->y;
-      fVar6 = pQVar4->z;
-      fVar8 = pQVar4->w;
-      (this_00->fields).remoteYawRotation.x = pQVar4->x;
-      (this_00->fields).remoteYawRotation.y = fVar2;
-      (this_00->fields).remoteYawRotation.z = fVar6;
-      (this_00->fields).remoteYawRotation.w = fVar8;
-      euler.y = 0.0;
-      euler.z = 0.0;
-      euler.x = fVar5;
-      pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                         ((Quaternion *)&stack0xffffffc0,euler,(MethodInfo *)0x0);
-      fVar2 = pQVar4->y;
-      fVar5 = pQVar4->z;
-      fVar6 = pQVar4->w;
-      QVar7 = *pQVar4;
-      (this_00->fields).remotePitchRotation.x = pQVar4->x;
-      (this_00->fields).remotePitchRotation.y = fVar2;
-      (this_00->fields).remotePitchRotation.z = fVar5;
-      (this_00->fields).remotePitchRotation.w = fVar6;
-      pQVar4 = AvatarLimbManager+AvatarHeadRotationHandler::
-               AvatarLimbManager_AvatarHeadRotationHandler_ClampQuaternion
-                         ((Quaternion *)&stack0xffffffc0,
-                          (AvatarLimbManager_AvatarHeadRotationHandler *)this_00,QVar7,
-                          (MethodInfo *)0x0);
-      fVar2 = pQVar4->y;
-      fVar5 = pQVar4->z;
-      fVar6 = pQVar4->w;
-      (this_00->fields).remotePitchRotation.x = pQVar4->x;
-      (this_00->fields).remotePitchRotation.y = fVar2;
-      (this_00->fields).remotePitchRotation.z = fVar5;
-      (this_00->fields).remotePitchRotation.w = fVar6;
-      return;
-    }
+  this_00 = (this->fields).limbManager;
+  if (this_00 != (AvatarLimbManagerRemote *)0x0) {
+    AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdateHeadRotationRemotely
+              (this_00,(this->fields).newHeadYawValue,(this->fields).newHeadPitchValue,
+               (MethodInfo *)0x0);
+    return;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -532,80 +496,17 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
                (AvatarLimbManagerRemote_AvatarLimbDataManagerRemote *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).limbManager;
-  if (pAVar1 != (AvatarLimbManagerRemote *)0x0) {
-    pAVar2 = (pAVar1->fields).pointingHandler;
-    fStack_3 = (this->fields).newPointYawValue;
-    fVar4 = (this->fields).newPointPitchValue;
-    bVar5 = (this->fields).newPointingWeaponValue;
-    if (pAVar2 != (AvatarLimbManagerRemote_AvatarPointingHandlerRemote *)0x0) {
-      if ((pAVar2->fields)._.isActive == 0) {
-        return;
-      }
-      (pAVar2->fields)._.pointState = (bVar5 != 0) + 1;
-      if (bVar5 == 0) {
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__Quaternion);
-          cRam_? = '\x01';
-        }
-        pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
-        QStack_7.x = (pQVar6->identityQuaternion).x;
-        QStack_7.y = (pQVar6->identityQuaternion).y;
-        QStack_7.z = (pQVar6->identityQuaternion).z;
-        QStack_7.w = (pQVar6->identityQuaternion).w;
-        iVar8 = func_?(auStack_9,&QStack_7,0);
-        if (fStack_3 == *(float *)(iVar8 + 4)) {
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__UnityEngine__Quaternion);
-            cRam_? = '\x01';
-          }
-          pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
-          QStack_7.x = (pQVar6->identityQuaternion).x;
-          QStack_7.y = (pQVar6->identityQuaternion).y;
-          QStack_7.z = (pQVar6->identityQuaternion).z;
-          QStack_7.w = (pQVar6->identityQuaternion).w;
-          pfVar10 = (float *)func_?(auStack_9,&QStack_7,0);
-          if (fVar4 == *pfVar10) {
-            (pAVar2->fields)._.pointState = 0;
-            return;
-          }
-        }
-      }
-      uStack_11 = 0;
-      auVar12._4_8_ = 0;
-      auVar12._0_4_ = fStack_3 * _UNK_?;
-      pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                Quaternion_Internal_FromEulerRad
-                          (&QStack_7,(Vector3)(auVar12 << 0x20),(MethodInfo *)0x0);
-      fVar4 = fVar4 * _UNK_?;
-      uStack_11 = 0;
-      fVar14 = pQVar13->y;
-      fVar15 = pQVar13->z;
-      fVar16 = pQVar13->w;
-      (pAVar2->fields).remoteYawRotation.x = pQVar13->x;
-      (pAVar2->fields).remoteYawRotation.y = fVar14;
-      (pAVar2->fields).remoteYawRotation.z = fVar15;
-      (pAVar2->fields).remoteYawRotation.w = fVar16;
-      euler.y = 0.0;
-      euler.z = 0.0;
-      euler.x = fVar4;
-      pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                Quaternion_Internal_FromEulerRad
-                          ((Quaternion *)&stack0xffffffb0,euler,(MethodInfo *)0x0);
-      fVar4 = pQVar13->y;
-      fVar14 = pQVar13->z;
-      fVar15 = pQVar13->w;
-      (pAVar2->fields).remotePitchRotation.x = pQVar13->x;
-      (pAVar2->fields).remotePitchRotation.y = fVar4;
-      (pAVar2->fields).remotePitchRotation.z = fVar14;
-      (pAVar2->fields).remotePitchRotation.w = fVar15;
-      (pAVar2->fields)._.elapsedPointingTime = (pAVar2->fields)._.pointingDuration;
-      return;
-    }
+  this_00 = (this->fields).limbManager;
+  if (this_00 != (AvatarLimbManagerRemote *)0x0) {
+    AvatarLimbManagerRemote::AvatarLimbManagerRemote_UpdatePointingRemotely
+              (this_00,(this->fields).newPointYawValue,(this->fields).newPointPitchValue,
+               (this->fields).newPointingWeaponValue,(MethodInfo *)0x0);
+    return;
   }
-  func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

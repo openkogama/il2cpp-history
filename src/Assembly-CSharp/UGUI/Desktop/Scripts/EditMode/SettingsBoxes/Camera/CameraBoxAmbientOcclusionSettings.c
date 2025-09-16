@@ -465,7 +465,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
     }
   }
   func_?();
-  pIVar8 = extraout_ECX;
+  pIVar8 = (Int32__Class *)extraout_ECX;
 code_?:
   func_?(value,pIVar8);
   pcVar21 = (code *)swi(3);

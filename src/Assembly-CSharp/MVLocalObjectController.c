@@ -1858,8 +1858,8 @@ MVLocalObjectController_get_LocalControlledWorldObjects
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
+  puStack_4 = &stack0xffffffa8;
+  puVar5 = &stack0xffffffa8;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVLocalObjectController::DismountedPlayerControlledObject>__get_Keys__
@@ -1913,7 +1913,7 @@ MVLocalObjectController_get_LocalControlledWorldObjects
                          (&LStack_10,this_01,
                           MethodInfo__System__Collections__Generic__List<ILocalObject>__GetEnumerator__
                          );
-      LStack_10._current = (RegexCharClass_SingleRange)&stack0xffffffb8;
+      LStack_10._current = (RegexCharClass_SingleRange)&stack0xffffffb4;
       method_00 = (MethodInfo *)pLVar9->_version;
       RVar11 = pLVar9->_current;
       LStack_10._version = 0;
@@ -1921,13 +1921,13 @@ MVLocalObjectController_get_LocalControlledWorldObjects
       while( true ) {
         bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb8,
+                          ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb4,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ILocalObject>__MoveNext__
                           );
         if (bVar12 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffb8,
+                    ((Object *)&stack0xffffffb4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ILocalObject>__Dispose__
                      ,method_00);
@@ -1938,21 +1938,24 @@ MVLocalObjectController_get_LocalControlledWorldObjects
         if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
         iStack_14 = *(int *)RVar11;
         uVar15 = 0;
-        if (*(short *)(iStack_14 + 0xb6) != 0) {
+        uVar16 = *(ushort *)(iStack_14 + 0xb6);
+        uStack_17 = (uint)uVar16;
+        if (uVar16 != 0) {
           do {
             if (*(ILocalObject__Class **)(*(int *)(iStack_14 + 0x58) + (uint)uVar15 * 8) ==
                 TypeInfo__ILocalObject) {
-              puVar16 = (undefined4 *)
+              puVar18 = (undefined4 *)
                        (*(int *)RVar11 +
-                       (*(int *)(*(int *)(*(int *)RVar11 + 0x58) + 4 + (uint)uVar15 * 8) + 0x18) * 8);
+                       (*(int *)(*(int *)(*(int *)RVar11 + 0x58) + 4 + (uint)uVar15 * 8) + 0x18) * 8)
+              ;
               goto code_?;
             }
             uVar15 = uVar15 + 1;
-          } while (uVar15 < *(ushort *)(*(int *)RVar11 + 0xb6));
+          } while (uVar15 < uVar16);
         }
-        puVar16 = (undefined4 *)func_?();
+        puVar18 = (undefined4 *)func_?();
 code_?:
-        item = (*(code *)*puVar16)(RVar11,puVar16[1]);
+        item = (*(code *)*puVar18)(RVar11,puVar18[1]);
         pHVar6 = pHStack_7;
         if (pHStack_7 == (HashSet_1_System_Int32_ *)0x0) break;
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
@@ -1962,10 +1965,10 @@ code_?:
       }
     }
   }
-  uVar17 = func_?();
-  func_?(uVar17);
-  pcVar18 = (code *)swi(3);
-  pHVar6 = (HashSet_1_System_Int32_ *)(*pcVar18)();
+  uVar19 = func_?();
+  func_?(uVar19);
+  pcVar20 = (code *)swi(3);
+  pHVar6 = (HashSet_1_System_Int32_ *)(*pcVar20)();
   return pHVar6;
 }
 

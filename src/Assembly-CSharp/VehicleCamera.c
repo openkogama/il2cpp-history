@@ -271,10 +271,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position
                   (in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar3 * fVar24 + fVar22 * 3.2502373e-29 + fVar23 * fVar2) - fVar4 * fVar21;
-        value_00.x = (fVar24 * fVar2 + fVar21 * 3.2502373e-29 + fVar22 * fVar4) - fVar23 * fVar3;
-        value_00.z = (fVar4 * fVar24 + fVar23 * 3.2502373e-29 + fVar3 * fVar21) - fVar22 * fVar2;
-        value_00.w = ((fVar24 * 3.2502373e-29 - fVar2 * fVar21) - fVar3 * fVar22) -
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.2454514e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.2454514e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.2454514e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.2454514e-29 - fVar2 * fVar21) - fVar3 * fVar22) -
                      fVar23 * fVar4;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (in_stack_33,value_00,(MethodInfo *)0x0);

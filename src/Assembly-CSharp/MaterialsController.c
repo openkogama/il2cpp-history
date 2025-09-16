@@ -353,92 +353,57 @@ void Assembly-CSharp.dll::MaterialsController::MaterialsController_ShowInventory
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__MaterialsController____c__DisplayClass17_0;
-  pOVar1 = (Object *)func_?();
+  value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  original_00 = (Delegate *)0x0;
-  if (pOVar1 == (Object *)0x0) {
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value == (Object *)0x0) {
 code_?:
     func_?();
   }
   else {
-    pOVar1[1].klass = (Object__Class *)this;
-    func_?(pOVar1 + 1,this);
-    pOVar1[1].monitor = (MonitorData *)pushOption;
-    original_00 = (Delegate *)(this->fields).inventoryControllerPrefab;
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    value[1].monitor = (MonitorData *)pushOption;
+    pIVar1 = (this->fields).inventoryControllerPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pIVar2 = (InventoryController *)
+    pIVar1 = (InventoryController *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)original_00,
+                       ((Object *)pIVar1,
                         InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController_
                        );
-    (this->fields).inventoryController = pIVar2;
-    func_?(&(this->fields).inventoryController,pIVar2);
-    pIVar2 = (this->fields).inventoryController;
-    if (pIVar2 == (InventoryController *)0x0) goto code_?;
-    a = (pIVar2->fields).OnPageTurned;
-    this_02 = (UnityAction_1_System_Int32Enum_ *)
+    (this->fields).inventoryController = pIVar1;
+    func_?(&(this->fields).inventoryController,pIVar1);
+    pIVar1 = (this->fields).inventoryController;
+    if (pIVar1 == (InventoryController *)0x0) goto code_?;
+    pUVar2 = (pIVar1->fields).OnPageTurned;
+    this_01 = (UnityAction_1_System_Int32Enum_ *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (this_02,(Object *)this,MethodInfo__MaterialsController__PageTurned_int_,
+              (this_01,(Object *)this,MethodInfo__MaterialsController__PageTurned_int_,
                (MethodInfo *)0x0);
-    original_00 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
-    if (original_00 == (Delegate *)0x0) {
-      (pIVar2->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      (pIVar1->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
-      func_?(&(pIVar2->fields).OnPageTurned);
-      pIVar2 = (this->fields).inventoryController;
-      iVar3 = (this->fields).numberOfSlotsPrPage;
-      if (pIVar2 != (InventoryController *)0x0) {
-        (pIVar2->fields).numberOfSlots = iVar3;
-        this_00 = (pIVar2->fields).inventorySlots;
+      func_?();
+      pIVar1 = (this->fields).inventoryController;
+      numberOfSlots = (this->fields).numberOfSlotsPrPage;
+      if (pIVar1 != (InventoryController *)0x0) {
+        (pIVar1->fields).numberOfSlots = numberOfSlots;
+        this_00 = (pIVar1->fields).inventorySlots;
         if (this_00 != (InventorySlots *)0x0) {
-          if (cRam_? == '\0') {
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                           );
-            func_?(&
-                            InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                           );
-            func_?(&TypeInfo__UnityEngine__Object);
-            cRam_? = '\x01';
-          }
-          original_00 = (Delegate *)0x0;
-          (this_00->fields)._SlotCountPerPage_k__BackingField = iVar3;
-          if (0 < iVar3) {
-            do {
-              original = (this_00->fields).inventorySlotPrefab;
-              parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)this_00,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__UnityEngine__Object);
-              }
-              pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                                 ((Object *)original,parent,0,
-                                  InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                                 );
-              this_01 = (this_00->fields).inventorySlots;
-              if (this_01 == (Dictionary_2_System_Int32_InventorySlot_ *)0x0) goto code_?;
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-              ::Dictionary_2_System_Int32_System_Object__Add
-                        ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)original_00,
-                         pOVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                        );
-              original_00 = (Delegate *)((int)&original_00->klass + 1);
-            } while ((int)original_00 < iVar3);
-          }
+          InventorySlots::InventorySlots_Initialize(this_00,numberOfSlots,(MethodInfo *)0x0);
           pTVar4 = (this->fields).tab;
           if (pTVar4 != (TabState *)0x0) {
             (pTVar4->fields).currentPage = page;
             pTVar4 = (this->fields).tab;
             if (((pTVar4 != (TabState *)0x0) &&
-                (pIVar2 = (this->fields).inventoryController, pIVar2 != (InventoryController *)0x0))
-               && (pTVar5 = (pIVar2->fields).tabMenu, pTVar5 != (TabMenuBase *)0x0)) {
+                (pIVar1 = (this->fields).inventoryController, pIVar1 != (InventoryController *)0x0))
+               && (pTVar5 = (pIVar1->fields).tabMenu, pTVar5 != (TabMenuBase *)0x0)) {
               (*(code *)(pTVar5->klass->vtable).__unknown.method)
                         (pTVar5,0,(pTVar4->fields).name,
                          (pTVar5->klass->vtable).__unknown_1.methodPtr);
@@ -504,18 +469,17 @@ code_?:
       }
       goto code_?;
     }
-    iVar3 = func_?(original_00);
-    if (iVar3 == 0) goto code_?;
-    pIVar2 = (InventoryController *)&UNK_?;
-    _UNK_? = iVar3;
-    iVar3 = func_?(original_00);
-    if (iVar3 != 0) goto code_?;
+    pUVar2 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar2 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+    (pIVar1->fields).OnPageTurned = pUVar2;
+    iVar7 = func_?();
+    if (iVar7 != 0) goto code_?;
   }
-  func_?(original_00);
+  func_?();
 code_?:
-  func_?(original_00);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

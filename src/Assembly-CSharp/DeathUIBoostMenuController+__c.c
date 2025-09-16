@@ -1,8 +1,8 @@
 
-/* Void <LockCursorAndPop>b__30_0(IUIStack, BaseEventData) */
+/* Void <LockCursorAndPop>b__27_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
-     DeathUIBoostMenuController_c__LockCursorAndPop_b__30_0
+     DeathUIBoostMenuController_c__LockCursorAndPop_b__27_0
                (DeathUIBoostMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -27,10 +27,10 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
 }
 
 
-/* Void <OpenMenu>b__23_0(IUIStack, BaseEventData) */
+/* Void <OpenMenu>b__20_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
-     DeathUIBoostMenuController_c__OpenMenu_b__23_0
+     DeathUIBoostMenuController_c__OpenMenu_b__20_0
                (DeathUIBoostMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -55,10 +55,10 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
 }
 
 
-/* Void <ReadyToSpawn>b__29_0(IUIStack, BaseEventData) */
+/* Void <ReadyToSpawn>b__26_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
-     DeathUIBoostMenuController_c__ReadyToSpawn_b__29_0
+     DeathUIBoostMenuController_c__ReadyToSpawn_b__26_0
                (DeathUIBoostMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -83,10 +83,10 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
 }
 
 
-/* Void <Update>b__25_1(IUIStack, BaseEventData) */
+/* Void <Update>b__22_1(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
-     DeathUIBoostMenuController_c__Update_b__25_1
+     DeathUIBoostMenuController_c__Update_b__22_1
                (DeathUIBoostMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -111,10 +111,10 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
 }
 
 
-/* Void <Update>b__25_2(IUIStack, BaseEventData) */
+/* Void <Update>b__22_2(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DeathUIBoostMenuController+<>c::
-     DeathUIBoostMenuController_c__Update_b__25_2
+     DeathUIBoostMenuController_c__Update_b__22_2
                (DeathUIBoostMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {

@@ -306,10 +306,10 @@ code_?:
              (iVar5 = ((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex, iVar5 == 0))
           break;
           pIStack_1 = *(IAttributeSetting__Class **)(iVar5 + 0xc);
-          skillDataManager =
-               *(SpawnRolesSkillDataManager **)
-                (((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex + 8);
-          if (unaff_EDI == (IAttributeSetting__Class *)0x0) break;
+          iVar5 = ((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex;
+          if ((iVar5 == 0) ||
+             (skillDataManager = *(SpawnRolesSkillDataManager **)(iVar5 + 8),
+             unaff_EDI == (IAttributeSetting__Class *)0x0)) break;
           pSVar25 = TypeInfo__System__Single;
           if ((Il2CppClass *)((unaff_EDI->_0).image)->codeGenModule !=
               (TypeInfo__System__Single->_0).element_class) goto code_?;
@@ -369,10 +369,10 @@ code_?:
            (pIVar29 = ((skillSetting[1].klass)->_0).byval_arg.data.array,
            pIVar29 == (Il2CppArrayType *)0x0)) break;
         pIStack_24 = (IAttributeSetting__Class *)(float)(int)pIVar29->lobounds;
-        skillDataManager =
-             (SpawnRolesSkillDataManager *)
-             (float)(int)(((skillSetting[1].klass)->_0).byval_arg.data.array)->sizes;
-        if (unaff_EDI == (IAttributeSetting__Class *)0x0) break;
+        pIVar29 = ((skillSetting[1].klass)->_0).byval_arg.data.array;
+        if ((pIVar29 == (Il2CppArrayType *)0x0) ||
+           (skillDataManager = (SpawnRolesSkillDataManager *)(float)(int)pIVar29->sizes,
+           unaff_EDI == (IAttributeSetting__Class *)0x0)) break;
         pSVar25 = (Single__Class *)TypeInfo__System__Int32;
         if ((Il2CppClass *)((unaff_EDI->_0).image)->codeGenModule !=
             (TypeInfo__System__Int32->_0).element_class) goto code_?;
@@ -529,7 +529,7 @@ code_?:
   }
 code_?:
   func_?();
-  pSVar25 = (Single__Class *)extraout_ECX;
+  pSVar25 = extraout_ECX;
 code_?:
   func_?(unaff_EDI,pSVar25);
   pAVar23 = extraout_EDX;

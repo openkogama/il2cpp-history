@@ -242,12 +242,8 @@ void Assembly-CSharp.dll::ScoreBoardTeamBase::ScoreBoardTeamBase_Initialize
                (ScoreBoardTeamBase *this,GameStatCounterType__Enum statType,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  pIStack_2 = (Il2CppMethodPointer)&DAT_?;
-  iStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = (int32_t)&iStack_3;
-  pMVar4 = (MethodInfo *)&stack0xffffffb8;
-  method_00 = (MethodInfo *)&stack0xffffffb8;
+  method_00 = (MethodInfo *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = (int32_t)&stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
@@ -262,60 +258,56 @@ void Assembly-CSharp.dll::ScoreBoardTeamBase::ScoreBoardTeamBase_Initialize
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                    );
     cRam_? = '\x01';
-    method_00 = pMVar4;
   }
-  pOStack_5 = (Object__Class *)0x0;
+  pOStack_1 = (Object__Class *)0x0;
   ScoreBoardBase::ScoreBoardBase_Initialize((ScoreBoardBase *)this,statType,(MethodInfo *)0x0);
   ScoreBoardTeamBase_AddTeamsToScoreBoard(this,(MethodInfo *)0x0);
-  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar6 != (MVNetworkGame *)0x0) &&
-     (this_00 = (pMVar6->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
     this_01 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
     if (this_01 !=
         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      pDVar7 = mscorlib.dll::System::Collections::Generic::
+      pDVar3 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)&stack0xffffffd4,this_01,
+                           *)&stack0xffffffd8,this_01,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
-      pOStack_5 = (Object__Class *)pDVar7->_dictionary;
-      this_02 = (MVPlayer *)pDVar7->_currentValue;
-      uStack_1 = 1;
+      pOStack_1 = (Object__Class *)pDVar3->_dictionary;
+      this_02 = (MVPlayer *)pDVar3->_currentValue;
       while( true ) {
-        bVar8 = mscorlib.dll::System::Collections::Generic::
+        bVar4 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&pOStack_5,
+                            *)&pOStack_1,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                           );
-        if (bVar8 == 0) {
-          uStack_1 = 0xffffffff;
+        if (bVar4 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_5,
+                    ((Object *)&pOStack_1,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                      ,method_00);
-          *unaff_FS_OFFSET = iStack_3;
+          *unaff_FS_OFFSET = (int32_t)method_00;
           return;
         }
         if (this_02 == (MVPlayer *)0x0) break;
         method_00 = (MethodInfo *)(this_02->fields)._ActorNr_k__BackingField;
-        iStack_3 = MVPlayer::MVPlayer_GetGameStat(this_02,statType,method_00);
-        pIStack_2 = (this->klass->vtable).Initialize.methodPtr;
+        MVPlayer::MVPlayer_GetGameStat(this_02,statType,(MethodInfo *)0x0);
         (*(code *)(this->klass->vtable).OnStatsChange.method)();
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

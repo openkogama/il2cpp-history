@@ -566,10 +566,10 @@ code_?:
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar3,(MethodInfo *)0x0);
     pTVar6 = (TimeAttackFlagDebriefing *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                        ((Object *)pTVar6,pTVar2,0,
-                         TimeAttackFlagDebriefing_MethodInfo__UnityEngine__Object__Instantiate<TimeAttackFlagDebriefing>_TimeAttackFlagDebriefing__UnityEngine__Transform__bool_
-                        );
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                       ((Object *)pTVar6,pTVar2,0,
+                        TimeAttackFlagDebriefing_MethodInfo__UnityEngine__Object__Instantiate<TimeAttackFlagDebriefing>_TimeAttackFlagDebriefing__UnityEngine__Transform__bool_
+                       );
     (this->fields).timeAttackFlagDebriefing = pTVar6;
     func_?(&(this->fields).timeAttackFlagDebriefing,pTVar6);
     pFVar7 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
@@ -678,13 +678,14 @@ code_?:
         cRam_? = '\x01';
       }
       bVar17 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-      ppRVar18 = &(pDVar16->fields).registeredAdController;
-      if (bVar17 != 0) {
-        ppRVar18 = (RegisteredPromotionController **)&(pDVar16->fields).touristAdController;
+      if (bVar17 == 0) {
+        pRVar18 = (pDVar16->fields).registeredAdController;
       }
-      pRVar19 = *ppRVar18;
-      (pDVar16->fields).adController = (IPromotionController *)*ppRVar18;
-      func_?(&(pDVar16->fields).adController,pRVar19);
+      else {
+        pRVar18 = (RegisteredPromotionController *)(pDVar16->fields).touristAdController;
+      }
+      (pDVar16->fields).adController = (IPromotionController *)pRVar18;
+      func_?(&(pDVar16->fields).adController,pRVar18);
       if ((pDVar16->fields).adController != (IPromotionController *)0x0) {
         func_?(0,TypeInfo__IPromotionController,(pDVar16->fields).adController);
       }
@@ -704,16 +705,16 @@ code_?:
       func_?(&TypeInfo__MVInputWrapper->static_fields->inputMap);
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
-      pGVar20 = pGVar3;
+      pGVar19 = pGVar3;
       if ((TypeInfo__DesktopPlayModeController____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__DesktopPlayModeController____c);
       }
       callbackFunction = TypeInfo__DesktopPlayModeController____c->static_fields->__9__35_0;
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        pGVar3 = pGVar20;
+        pGVar3 = pGVar19;
         if ((TypeInfo__DesktopPlayModeController____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__DesktopPlayModeController____c);
-          pGVar3 = pGVar20;
+          pGVar3 = pGVar19;
         }
         object = TypeInfo__DesktopPlayModeController____c->static_fields->__9;
         callbackFunction =
@@ -739,8 +740,8 @@ code_?:
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      MVar21 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar21 == MVGameMode__Enum_Play) {
+      MVar20 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar20 == MVGameMode__Enum_Play) {
         (this->fields)._._IsInLobby_k__BackingField = 1;
         (*(code *)(this->klass->vtable).set_IsInPauseMenu_1.method)
                   (this,1,(this->klass->vtable).Initialize.methodPtr);
@@ -803,8 +804,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

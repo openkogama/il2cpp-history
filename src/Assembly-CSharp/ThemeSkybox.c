@@ -278,10 +278,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateMoonLight
   if (pFVar1 != (FlareLight *)0x0) {
     pLVar2 = (pFVar1->fields).light;
     fVar3 = (this->fields)._moonLightContrast;
-    fVar4 = _UNK_? - (this->fields)._moonLightContrast;
+    fVar4 = _UNK_? - fVar3;
     if (pLVar2 != (Light *)0x0) {
       value.g = (this->fields)._moonTint.g * fVar3 + fVar4;
-      value.r = (this->fields)._moonTint.r * fVar3 + fVar4;
+      value.r = fVar4 + (this->fields)._moonTint.r * fVar3;
       value.b = (this->fields)._moonTint.b * fVar3 + fVar4;
       value.a = (this->fields)._moonTint.a * fVar3 + fVar4;
       UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color
@@ -356,10 +356,10 @@ void Assembly-CSharp.dll::ThemeSkybox::ThemeSkybox_RecalculateSunLight
   if (pFVar1 != (FlareLight *)0x0) {
     pLVar2 = (pFVar1->fields).light;
     fVar3 = (this->fields)._sunLightContrast;
-    fVar4 = _UNK_? - (this->fields)._sunLightContrast;
+    fVar4 = _UNK_? - fVar3;
     if (pLVar2 != (Light *)0x0) {
       value.g = (this->fields)._sunTint.g * fVar3 + fVar4;
-      value.r = (this->fields)._sunTint.r * fVar3 + fVar4;
+      value.r = fVar4 + (this->fields)._sunTint.r * fVar3;
       value.b = (this->fields)._sunTint.b * fVar3 + fVar4;
       value.a = (this->fields)._sunTint.a * fVar3 + fVar4;
       UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color

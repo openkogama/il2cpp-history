@@ -312,7 +312,7 @@ code_?:
       (pCVar4->fields).scrollingEnabled = 0;
       pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
       if (pRVar2 == (RectTransform *)0x0) goto code_?;
-      value = 0xf5;
+      value = 0x95;
       chatConsoleMode =
            (ChatConsoleMode__Enum)
            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject

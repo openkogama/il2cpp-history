@@ -322,16 +322,17 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_Update
         }
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                  ((MethodInfo *)(pMVar5->fields).respawnTime);
         puVar9 = &UNK_?;
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
         if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        fVar4 = (float)puVar9 - fVar4;
-        fVar10 = MVLocalPlayer::MVLocalPlayer_get_RespawnDuration(pMVar5,(MethodInfo *)0x0);
-        this = (PlayButtonTouch *)0x0;
-        if (pIRam00000010 == (Image *)0x0) goto code_?;
+        puVar10 = &UNK_?;
+        fVar4 = MVLocalPlayer::MVLocalPlayer_get_RespawnDuration(pMVar5,(MethodInfo *)0x0);
+        pIVar6 = (this->fields).countdownFill;
+        if (pIVar6 == (Image *)0x0) goto code_?;
         UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                  (pIRam00000010,fVar4 / fVar10,(MethodInfo *)0x0);
+                  (pIVar6,((float)puVar10 - (float)puVar9) / fVar4,(MethodInfo *)0x0);
       }
       pIVar6 = (this->fields).countdownFill;
       if (pIVar6 != (Image *)0x0) {

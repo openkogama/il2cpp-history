@@ -66,20 +66,17 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
   if (cRam_? == '\0') {
     func_?();
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1037;
+    uVar1 = 0x1036;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }
   IVar3.z = fineGrainedPosition.x;
-  IVar3._0_4_ = &uStack_4;
+  IVar3._0_4_ = &stack0xfffffff4;
   IVar3 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
           CubeMathFunctions_FromLocalPosToLocalPos
                     (IVar3,(ICubeModel *)CONCAT22(uVar1,fineGrainedPosition.z),terrainWorldObject,
                      (MethodInfo *)fineGrainedTerrainWorldObject);
-  uVar5 = *IVar3._0_4_;
-  uVar1 = (undefined2)uVar5;
-  uStack_6 = (undefined2)((uint)uVar5 >> 0x10);
-  iVar7 = *(int16_t *)(IVar3._0_4_ + 1);
+  IVar3 = *IVar3._0_4_;
   if (terrainWorldObject != (ICubeModel *)0x0) {
     a = (CubeBase *)func_?();
     if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
@@ -90,33 +87,24 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
     if (bVar2 != 0) {
       return 0;
     }
-    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar8 != (MVNetworkGame *)0x0) &&
-        (this = (pMVar8->fields)._MaterialRepository_k__BackingField, a != (CubeBase *)0x0)) &&
-       (pBVar9 = (a->fields).faceMaterials, pBVar9 != (Byte__Array *)0x0)) {
-      if (pBVar9->max_length == 0) goto code_?;
-      uStack_10 = pBVar9->vector[0];
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar4 != (MVNetworkGame *)0x0) &&
+        (this = (pMVar4->fields)._MaterialRepository_k__BackingField, a != (CubeBase *)0x0)) &&
+       (pBVar5 = (a->fields).faceMaterials, pBVar5 != (Byte__Array *)0x0)) {
+      if (pBVar5->max_length == 0) goto code_?;
       if (this != (MVMaterialRepository *)0x0) {
-        pPVar11 = MVMaterialRepository::MVMaterialRepository_GetMaterialPhysicalProperties
-                           ((PhysicalProperties *)&stack0xffffffc8,this,uStack_10,(MethodInfo *)0x0);
-        if (pPVar11->toughness == _UNK_?) {
+        pPVar6 = MVMaterialRepository::MVMaterialRepository_GetMaterialPhysicalProperties
+                           ((PhysicalProperties *)&stack0xffffffc8,this,pBVar5->vector[0],
+                            (MethodInfo *)0x0);
+        if (pPVar6->toughness == _UNK_?) {
           return 0;
         }
         if ((TypeInfo__MoveCubeFromCoarseToFine->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        fromPos.y = uStack_6;
-        fromPos.x = uVar1;
-        fromPos.z = iVar7;
         MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_MoveCube
-                  (terrainWorldObject,fineGrainedTerrainWorldObject,fromPos,(MethodInfo *)0x0);
-        uStack_4 = 3;
-        uStack_10 = 0;
-        uStack_12 = 0;
+                  (terrainWorldObject,fineGrainedTerrainWorldObject,IVar3,(MethodInfo *)0x0);
         func_?();
-        uStack_4 = 0x3db2;
-        uStack_10 = 0x37;
-        uStack_12 = 0x10;
         RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
                   (fineGrainedPosition,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
         return 1;
@@ -126,8 +114,8 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  bVar2 = (*pcVar13)();
+  pcVar7 = (code *)swi(3);
+  bVar2 = (*pcVar7)();
   return bVar2;
 }
 
@@ -181,7 +169,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1037;
+    uVar1 = 0x1036;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }

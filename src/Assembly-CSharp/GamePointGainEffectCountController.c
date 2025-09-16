@@ -53,7 +53,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
   fVar4 = (this->fields).slideMoveAmount;
   if (pTVar2 != (Transform *)0x0) {
     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffe0,pTVar2,(MethodInfo *)0x0);
+                       ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
     uVar6 = pVVar5->x;
     uVar7 = pVVar5->y;
     fVar8 = 0.0;
@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     pTVar2 = (this->fields).transformToSlide;
     if (pTVar2 != (Transform *)0x0) {
       value.y = (float)uVar7;
-      value.x = ((fVar1 + fVar4) - (float)uVar6) * fVar8 + (float)uVar6;
+      value.x = ((fVar4 + fVar1) - (float)uVar6) * fVar8 + (float)uVar6;
       value.z = pVVar5->z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                 (pTVar2,value,(MethodInfo *)0x0);
@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     fVar1 = (this->fields).originalXPosition;
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffe0,pTVar3,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
       uVar6 = pVVar5->x;
       uVar7 = pVVar5->y;
       fVar8 = 0.0;
@@ -135,7 +135,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     fVar4 = (this->fields).slideMoveAmount;
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffe0,pTVar3,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
       uVar9 = pVVar5->x;
       uVar10 = pVVar5->y;
       fVar11 = 0.0;
@@ -145,7 +145,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       pTVar3 = (this->fields).transformToSlide;
       if (pTVar3 != (Transform *)0x0) {
         value_00.y = (float)uVar10;
-        value_00.x = ((fVar1 + fVar4) - (float)uVar9) * fVar11 + (float)uVar9;
+        value_00.x = ((fVar4 + fVar1) - (float)uVar9) * fVar11 + (float)uVar9;
         value_00.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                   (pTVar3,value_00,(MethodInfo *)0x0);
@@ -157,9 +157,17 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar12 = func_?();
+  iVar13 = (int)((ulonglong)uVar12 >> 0x20);
+  piVar14 = (int *)uVar12;
+  pcVar15 = (char *)(iVar13 + 0x6a104408);
+  *pcVar15 = *pcVar15 + unaff_BL +
+            ((longlong)(int)((longlong)*piVar14 * 0x8951044) != (longlong)*piVar14 * 0x8951044);
+  puVar16 = (uint *)((int)piVar14 + iVar13 + -0x34);
+  *puVar16 = *puVar16 | (uint)piVar14;
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
+  return;
 }
 
 

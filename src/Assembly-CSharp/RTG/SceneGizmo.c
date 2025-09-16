@@ -80,7 +80,7 @@ code_?:
       func_?(TypeInfo__System__Type);
     }
     pTVar5 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                        ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
     if (pTVar5 == (Type *)0x0) goto code_?;
     name = (String *)
            (*(code *)(pTVar5->klass->vtable).ToString.method)
@@ -142,11 +142,15 @@ code_?:
     GizmoCap3D::GizmoCap3D__ctor(pGVar8,pGVar7,1,(MethodInfo *)0x0);
     method_01->name = (char *)pGVar8;
     func_?(&method_01->name,pGVar8);
-    pSVar9 = (&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0];
-    if ((pSVar9 == (SceneGizmoLookAndFeel *)0x0) ||
-       (pGVar8 = (GizmoCap3D *)method_01->name, pGVar8 == (GizmoCap3D *)0x0))
-    goto code_?;
+    if ((this->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
+      pSVar9 = (this->fields)._lookAndFeel;
+      if (pSVar9 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pSVar9 = (this->fields)._sharedLookAndFeel;
+    }
+    pGVar8 = (GizmoCap3D *)method_01->name;
+    if (pGVar8 == (GizmoCap3D *)0x0) goto code_?;
     pGVar10 = (pSVar9->fields)._midCapLookAndFeel;
     (pGVar8->fields)._sharedLookAndFeel = pGVar10;
     func_?(&(pGVar8->fields)._sharedLookAndFeel,pGVar10);
@@ -242,7 +246,7 @@ code_?:
           if ((*(uint *)(iVar14 + 0xc) <= uVar16) ||
              (id = *(int32_t *)(iVar14 + iVar15), (uint)piVar12[3] <= uVar16))
           goto code_?;
-          pAVar13 = *(AxisDescriptor **)((int)piVar12 + iVar15);
+          pAVar13 = *(AxisDescriptor **)(iVar15 + (int)piVar12);
           this_03 = (SceneGizmoAxisCap *)func_?(TypeInfo__RTG__SceneGizmoAxisCap);
           SceneGizmoAxisCap::SceneGizmoAxisCap__ctor(this_03,this,id,pAVar13,(MethodInfo *)0x0);
           if (pSVar17 == (SceneGizmoAxisCap__Array *)0x0) goto code_?;
@@ -253,9 +257,9 @@ code_?:
           *(SceneGizmoAxisCap **)((int)pSVar17->vector + iVar15 + -0x10) = this_03;
           func_?((int)pSVar17->vector + iVar15 + -0x10,this_03);
           pSVar17 = (this->fields)._axesHandles;
-          pLVar11 = (this->fields)._renderSortedHandles;
           if (pSVar17 == (SceneGizmoAxisCap__Array *)0x0) goto code_?;
           if (pSVar17->max_length <= uVar16) goto code_?;
+          pLVar11 = (this->fields)._renderSortedHandles;
           if (pLVar11 == (List_1_RTG_SceneGizmoCap_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Add
@@ -337,12 +341,16 @@ void Assembly-CSharp.dll::RTG::SceneGizmo::SceneGizmo_OnGUI(SceneGizmo *this,Met
       cRam_? = '\x01';
     }
     pSVar2 = (pSVar1->fields)._sceneGizmo;
-    if (((pSVar2 == (SceneGizmo *)0x0) ||
-        (this_00 = (&(pSVar2->fields)._lookAndFeel)
-                   [(pSVar2->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0],
-        (((pSVar1->fields)._sceneGizmo)->fields)._sceneGizmoCamera == (RTSceneGizmoCamera *)0x0)) ||
-       (this_00 == (SceneGizmoLookAndFeel *)0x0)) goto code_?;
-    if ((this_00->fields)._isCamPrjSwitchLabelVisible == 0) {
+    if (pSVar2 == (SceneGizmo *)0x0) goto code_?;
+    if ((pSVar2->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
+      this_02 = (pSVar2->fields)._lookAndFeel;
+    }
+    else {
+      this_02 = (pSVar2->fields)._sharedLookAndFeel;
+    }
+    if (((pSVar2->fields)._sceneGizmoCamera == (RTSceneGizmoCamera *)0x0) ||
+       (this_02 == (SceneGizmoLookAndFeel *)0x0)) goto code_?;
+    if ((this_02->fields)._isCamPrjSwitchLabelVisible == 0) {
       return;
     }
     x = (((((pSVar1->fields)._sceneGizmo)->fields)._sceneGizmoCamera)->fields)._sceneCamera;
@@ -370,9 +378,9 @@ void Assembly-CSharp.dll::RTG::SceneGizmo::SceneGizmo_OnGUI(SceneGizmo *this,Met
       bVar4 = RTFocusCamera::RTFocusCamera_get_IsDoingProjectionSwitch(pRVar5,(MethodInfo *)0x0);
       if (bVar4 != 0) {
         pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
-                               (this_00,(MethodInfo *)0x0);
+                               (this_02,(MethodInfo *)0x0);
         texture2D = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
-                              (this_00,(MethodInfo *)0x0);
+                              (this_02,(MethodInfo *)0x0);
         if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0)
         {
           func_?();
@@ -385,15 +393,15 @@ void Assembly-CSharp.dll::RTG::SceneGizmo::SceneGizmo_OnGUI(SceneGizmo *this,Met
         ;
         if (CVar7 == CameraPrjSwitchTransition_Type__Enum_ToPerspective) {
           pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
-                                 (this_00,(MethodInfo *)0x0);
+                                 (this_02,(MethodInfo *)0x0);
           texture2D = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
-                                (this_00,(MethodInfo *)0x0);
+                                (this_02,(MethodInfo *)0x0);
         }
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_EaseInOut
-                            (0.0,(this_00->fields)._camPrjSwitchLabelTint.a,1.0,0.0,
+        this_00 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_EaseInOut
+                            (0.0,(this_02->fields)._camPrjSwitchLabelTint.a,1.0,0.0,
                              (MethodInfo *)0x0);
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_EaseInOut
-                            (0.0,0.0,1.0,(this_00->fields)._camPrjSwitchLabelTint.a,
+        this_01 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_EaseInOut
+                            (0.0,0.0,1.0,(this_02->fields)._camPrjSwitchLabelTint.a,
                              (MethodInfo *)0x0);
         if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0)
         {
@@ -404,19 +412,19 @@ void Assembly-CSharp.dll::RTG::SceneGizmo::SceneGizmo_OnGUI(SceneGizmo *this,Met
                             (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
         if ((pRVar5 == (RTFocusCamera *)0x0) ||
            (fVar8 = RTFocusCamera::RTFocusCamera_get_PrjSwitchProgress(pRVar5,(MethodInfo *)0x0),
-           this_02 == (AnimationCurve *)0x0)) goto code_?;
+           this_01 == (AnimationCurve *)0x0)) goto code_?;
         fVar8 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (this_02,fVar8,(MethodInfo *)0x0);
+                           (this_01,fVar8,(MethodInfo *)0x0);
         pRVar5 = (RTFocusCamera *)
                   MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                             (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
         if ((pRVar5 == (RTFocusCamera *)0x0) ||
            (fVar9 = RTFocusCamera::RTFocusCamera_get_PrjSwitchProgress(pRVar5,(MethodInfo *)0x0),
-           this_01 == (AnimationCurve *)0x0)) goto code_?;
+           this_00 == (AnimationCurve *)0x0)) goto code_?;
         fVar9 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (this_01,fVar9,(MethodInfo *)0x0);
+                           (this_00,fVar9,(MethodInfo *)0x0);
         pCVar10 = ColorEx::ColorEx_KeepAllButAlpha
-                            ((Color *)&stack0xffffffb0,(this_00->fields)._camPrjSwitchLabelTint,
+                            ((Color *)&stack0xffffffb0,(this_02->fields)._camPrjSwitchLabelTint,
                              fVar9,(MethodInfo *)0x0);
         puStack_11 = (undefined *)pCVar10->r;
         fVar9 = pCVar10->g;
@@ -468,7 +476,7 @@ void Assembly-CSharp.dll::RTG::SceneGizmo::SceneGizmo_OnGUI(SceneGizmo *this,Met
                   (position,(Texture *)texture2D,(MethodInfo *)0x0);
         GUIEx::GUIEx_PopColor((MethodInfo *)0x0);
         pCVar10 = ColorEx::ColorEx_KeepAllButAlpha
-                            ((Color *)&stack0xffffffb0,(this_00->fields)._camPrjSwitchLabelTint,
+                            ((Color *)&stack0xffffffb0,(this_02->fields)._camPrjSwitchLabelTint,
                              fVar8,(MethodInfo *)0x0);
         GUIEx::GUIEx_PushColor(*pCVar10,(MethodInfo *)0x0);
         pRVar14 = RectEx::RectEx_FromTexture2D
@@ -504,16 +512,16 @@ void Assembly-CSharp.dll::RTG::SceneGizmo::SceneGizmo_OnGUI(SceneGizmo *this,Met
                         (this_03,(MethodInfo *)0x0);
       if (bVar4 == 0) {
         pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
-                               (this_00,(MethodInfo *)0x0);
+                               (this_02,(MethodInfo *)0x0);
       }
       else {
         pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
-                               (this_00,(MethodInfo *)0x0);
+                               (this_02,(MethodInfo *)0x0);
       }
-      fVar8 = (this_00->fields)._camPrjSwitchLabelTint.r;
-      fVar9 = (this_00->fields)._camPrjSwitchLabelTint.g;
-      fVar12 = (this_00->fields)._camPrjSwitchLabelTint.b;
-      fVar13 = (this_00->fields)._camPrjSwitchLabelTint.a;
+      fVar8 = (this_02->fields)._camPrjSwitchLabelTint.r;
+      fVar9 = (this_02->fields)._camPrjSwitchLabelTint.g;
+      fVar12 = (this_02->fields)._camPrjSwitchLabelTint.b;
+      fVar13 = (this_02->fields)._camPrjSwitchLabelTint.a;
       if ((TypeInfo__RTG__GUIEx->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }

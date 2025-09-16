@@ -312,7 +312,7 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_OnHitLocal
     func_?(&TypeInfo__UnityEngine__Physics);
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffff40,0,0x48);
+  func_?(&stack0xffffff44,0,0x48);
   this_02 = (ExplosionEvent *)
             func_?(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
   worldPosition.y = voxelHit.point.x;
@@ -340,7 +340,7 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_OnHitLocal
     position.x = in_stack_1;
     position.z = voxelHit.point.y;
     iVar5 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
-                      (position,fStack_4,pCVar6,iVar5,(MethodInfo *)0x0);
+                       (position,fStack_4,pCVar6,iVar5,(MethodInfo *)0x0);
     iStack_7 = iVar5;
     this_03 = (HashSet_1_System_UInt32_ *)func_?();
     pHStack_8 = this_03;
@@ -402,7 +402,7 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_OnHitLocal
               from.x = in_stack_1;
               from.z = voxelHit.point.y;
               InteractionDataHandlerBase::InteractionDataHandlerBase_GetClosestPoint
-                        ((Vector3 *)&stack0xffffff34,this_05,from,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffff38,this_05,from,(MethodInfo *)0x0);
               fVar17 = (float10)func_?();
               this_01 = (this->fields).damageFalloff;
               fStack_4 = (float)fVar17;
@@ -446,7 +446,7 @@ code_?:
                           Component_get_transform(pCStack_11,(MethodInfo *)0x0);
                 if (pTVar12 == (Transform *)0x0) goto code_?;
                 pVVar21 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                    ((Vector3 *)&stack0xffffff28,pTVar12,(MethodInfo *)0x0);
+                                    ((Vector3 *)&stack0xffffff2c,pTVar12,(MethodInfo *)0x0);
                 uStack_22._0_4_ = pVVar21->x;
                 uStack_22._4_4_ = pVVar21->y;
                 fStack_23 = pVVar21->z;
@@ -465,40 +465,39 @@ code_?:
                 fStack_29 = VStack_28.x * fVar20 * fStack_4;
                 fStack_30 = VStack_28.y * fVar20 * fStack_4;
                 fStack_31 = VStack_28.z * fVar20 * fStack_4;
-                iVar32 = (this_04->fields)._.ownerActorNr;
+                pCStack_11 = (Component *)(this_04->fields)._.ownerActorNr;
                 pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
                 if ((pMVar2 == (MVNetworkGame *)0x0) ||
                    (pMVar16 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0)
                    , pMVar16 == (MVLocalPlayer *)0x0)) goto code_?;
-                uStack_33 = CONCAT31(uStack_33._1_3_,
-                                     iVar32 == (pMVar16->fields)._._ActorNr_k__BackingField);
+                pCVar32 = (Component *)(pMVar16->fields)._._ActorNr_k__BackingField;
                 impulse.y = fStack_30;
                 impulse.x = fStack_29;
                 impulse.z = fStack_31;
-                pIVar34 = ProximityDamageAndImpulse::ProximityDamageAndImpulse_Create
+                pIVar33 = ProximityDamageAndImpulse::ProximityDamageAndImpulse_Create
                                     ((InteractionData *)auStack_18,fStack_19,impulse,
                                      PlayerKilledByType__Enum_BazookaGun,(MethodInfo *)0x0);
-                uVar35._0_4_ = (pIVar34->impulse).x;
-                uVar35._4_4_ = (pIVar34->impulse).y;
-                fVar20 = (pIVar34->impulse).z;
-                uVar36._0_1_ = pIVar34->interactionType;
-                uVar36._1_1_ = pIVar34->playerKilledByType;
-                uVar36._2_2_ = *(undefined2 *)&pIVar34->field_0x12;
-                uVar37 = uStack_33;
+                uVar34._0_4_ = (pIVar33->impulse).x;
+                uVar34._4_4_ = (pIVar33->impulse).y;
+                fVar20 = (pIVar33->impulse).z;
+                uVar35._0_1_ = pIVar33->interactionType;
+                uVar35._1_1_ = pIVar33->playerKilledByType;
+                uVar35._2_2_ = *(undefined2 *)&pIVar33->field_0x12;
+                uVar36 = (uint)(pCStack_11 == pCVar32);
                 func_?();
-                iVar32 = func_?();
-                if (iVar32 != 0) {
-                  func_?(&stack0xffffff40);
+                iVar37 = func_?();
+                if (iVar37 != 0) {
+                  func_?(&stack0xffffff44);
                   pMVar38 = (this->fields)._._.owner;
                   if ((pMVar38 == (MVPickupOwner *)0x0) ||
                      (pMVar39 = (pMVar38->fields)._.worldObjectParent,
                      pMVar39 == (MVWorldObjectClient *)0x0)) goto code_?;
                   pIStack_14 = (InteractionDataHandlerBase *)(pMVar39->fields)._.ownerActorNr;
-                  iVar32 = func_?();
-                  if ((iVar32 == 0) || (iVar32 = func_?(), iVar32 == 0))
+                  iVar37 = func_?();
+                  if ((iVar37 == 0) || (iVar37 = func_?(), iVar37 == 0))
                   goto code_?;
-                  func_?(0,TypeInfo__IBulletImpactVisualizer,iVar32,(int)uVar35,
-                                  (int)((ulonglong)uVar35 >> 0x20),fVar20,uVar36,uVar37,puStack_40,
+                  func_?(0,TypeInfo__IBulletImpactVisualizer,iVar37,(int)uVar34,
+                                  (int)((ulonglong)uVar34 >> 0x20),fVar20,uVar35,uVar36,puStack_40,
                                   pOStack_15,uStack_41,uStack_42,uStack_43,uStack_44,uStack_45,
                                   uStack_46,uStack_47,uStack_48,uStack_49,(int)uStack_50,
                                   (int)((ulonglong)uStack_50 >> 0x20),

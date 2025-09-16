@@ -201,7 +201,7 @@ void Assembly-CSharp.dll::GUICellCursor::GUICellCursor_SetCursorCube
         if (pTVar3 != (Transform *)0x0) {
           value_00.x._2_2_ = uStack_10;
           value_00.x._0_2_ = uVar9;
-          in_stack_5 = 0x1035;
+          in_stack_5 = 0x1034;
           value_00.y = (float)puVar11;
           value_00.z = (float)uVar8;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position

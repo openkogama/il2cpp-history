@@ -241,9 +241,9 @@ void Assembly-CSharp.dll::LobbyStateCamera::LobbyStateCamera_UpdateCamera
       uVar13 = pVVar3->x;
       uVar14 = pVVar3->y;
       if (pTVar2 != (Transform *)0x0) {
-        this = (LobbyStateCamera *)(pVVar3->z + fVar6 + 0.0);
-        fVar15 = (float)uVar14 + fVar7;
-        VVar16.x = (float)uVar13 + (float)uVar4 + 0.0;
+        this = (LobbyStateCamera *)(fVar6 + 0.0 + pVVar3->z);
+        fVar15 = fVar7 + (float)uVar14;
+        VVar16.x = (float)uVar4 + 0.0 + (float)uVar13;
         VVar16 = (Vector3)CONCAT84(uVar17,VVar16.x);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (pTVar2,VVar16,(MethodInfo *)0x0);

@@ -686,7 +686,7 @@ code_?:
   if (piVar24 == (int *)0x0) goto code_?;
   iVar29 = *piVar24;
   uVar30 = 0;
-  if (*(short *)(iVar29 + 0xb6) != 0) {
+  if (*(ushort *)(iVar29 + 0xb6) != 0) {
     do {
       if (*(IEnumerator_1_MVBody___Class **)(*(int *)(iVar29 + 0x58) + (uint)uVar30 * 8) ==
           TypeInfo__System__Collections__Generic__IEnumerator<MVBody>) {
@@ -1912,10 +1912,11 @@ code_?:
                   (this->fields).bodies;
         if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
           RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_01,(this->fields).currentBodyIndex,
-                             MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+                   RegularExpressions::RegexCharClass+SingleRange]::
+                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                             (this_01,(this->fields).currentBodyIndex,
+                              MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_)
+          ;
           if ((RVar11 != (RegexCharClass_SingleRange)0x0) &&
              (this_00 != (MvAvatarMetaDataWoMap *)0x0)) {
             MVWorldObject.dll::MV::WorldObject::MvAvatarMetaDataWoMap::
@@ -2080,55 +2081,55 @@ code_?:
                                          UnityEngine__Animation_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Animation>__
                                         );
                     if (this_07 != (Animation *)0x0) {
-                      pMVar16 = (MVBody *)
-                                UnityEngine.AnimationModule.dll::UnityEngine::Animation::
+                      pIVar16 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::
                                 Animation_GetEnumerator(this_07,(MethodInfo *)0x0);
                       uStack_1 = 1;
-                      while (pMVar16 != (MVBody *)0x0) {
+                      while (pIVar16 != (IEnumerator *)0x0) {
                         cVar17 = func_?(0,TypeInfo__System__Collections__IEnumerator);
+                        pIVar18 = TypeInfo__System__Collections__IEnumerator;
                         if (cVar17 == '\0') {
                           uStack_1 = 0xffffffff;
-                          iVar9 = func_?(pMVar16);
+                          iVar9 = func_?(pIVar16);
                           if (iVar9 != 0) {
                             func_?(0,TypeInfo__System__IDisposable);
                           }
                           *unaff_FS_OFFSET = uStack_3;
                           return;
                         }
-                        unaff_EDI = pMVar16;
-                        if (pMVar16 == (MVBody *)0x0) break;
-                        pMVar6 = pMVar16->klass;
-                        uVar18 = 0;
-                        uVar19._0_1_ = (pMVar6->_1).rank;
-                        uVar19._1_1_ = (pMVar6->_1).minimumAlignment;
-                        if (uVar19 != 0) {
+                        if (pIVar16 == (IEnumerator *)0x0) break;
+                        pIVar19 = pIVar16->klass;
+                        uVar20 = 0;
+                        uVar21._0_1_ = (pIVar19->_1).rank;
+                        uVar21._1_1_ = (pIVar19->_1).minimumAlignment;
+                        if (uVar21 != 0) {
                           do {
-                            if (pMVar6->interfaceOffsets[uVar18].interfaceType ==
+                            if (pIVar19->interfaceOffsets[uVar20].interfaceType ==
                                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-                              ppMVar20 = &(&(pMVar16->klass->vtable).Finalize)
-                                          [pMVar16->klass->interfaceOffsets[uVar18].offset].method;
+                              ppMVar22 = &(&(pIVar16->klass->vtable).get_Current)
+                                          [pIVar16->klass->interfaceOffsets[uVar20].offset].method;
                               goto code_?;
                             }
-                            uVar18 = uVar18 + 1;
-                          } while (uVar18 < uVar19);
+                            uVar20 = uVar20 + 1;
+                          } while (uVar20 < uVar21);
                         }
-                        ppMVar20 = (MethodInfo **)
-                                   func_?(pMVar16,
+                        ppMVar22 = (MethodInfo **)
+                                   func_?(pIVar16,
                                                   TypeInfo__System__Collections__IEnumerator);
 code_?:
-                        pAVar5 = (AnimationState *)(*(code *)*ppMVar20)(pMVar16);
+                        pAVar5 = (AnimationState *)(*(code *)*ppMVar22)(pIVar16);
+                        unaff_EDI = (MVBody *)pIVar18;
                         if (pAVar5 == (AnimationState *)0x0) break;
-                        pAVar21 = (AnimationState *)0x0;
+                        pAVar23 = (AnimationState *)0x0;
                         if (pAVar5->klass == TypeInfo__UnityEngine__AnimationState) {
-                          pAVar21 = pAVar5;
+                          pAVar23 = pAVar5;
                         }
-                        if (pAVar21 == (AnimationState *)0x0) goto code_?;
-                        pAVar21 = (AnimationState *)0x0;
+                        if (pAVar23 == (AnimationState *)0x0) goto code_?;
+                        pAVar23 = (AnimationState *)0x0;
                         if (pAVar5->klass == TypeInfo__UnityEngine__AnimationState) {
-                          pAVar21 = pAVar5;
+                          pAVar23 = pAVar5;
                         }
                         UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
-                        AnimationState_set_wrapMode(pAVar21,WrapMode__Enum_Loop,(MethodInfo *)0x0);
+                        AnimationState_set_wrapMode(pAVar23,WrapMode__Enum_Loop,(MethodInfo *)0x0);
                       }
                     }
                   }
@@ -2144,8 +2145,8 @@ code_?:
   func_?(unaff_EDI,pMVar6);
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 

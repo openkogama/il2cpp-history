@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle__ctor
           pIVar4->vector[2] = vertIndex2;
           pVVar2 = (this->fields)._vertices;
           if (pVVar2 != (Vector3__Array *)0x0) {
-            if (pVVar2->max_length < 2) goto code_?;
+            if ((pVVar2->max_length < 2) || (pVVar2->max_length == 0)) goto code_?;
             VStack_5.x = pVVar2->vector[0].x;
             VStack_5.y = pVVar2->vector[0].y;
             VStack_5.z = pVVar2->vector[0].z;
@@ -49,7 +49,7 @@ void Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle__ctor
             fVar9 = (float)uStack_6._4_4_ - VStack_5.y;
             fVar10 = fStack_7 - VStack_5.z;
             if (pVVar2 != (Vector3__Array *)0x0) {
-              if (2 < pVVar2->max_length) {
+              if ((2 < pVVar2->max_length) && (pVVar2->max_length != 0)) {
                 uStack_6._0_4_ = pVVar2->vector[0].x;
                 uStack_6._4_4_ = pVVar2->vector[0].y;
                 fStack_7 = pVVar2->vector[0].z;

@@ -219,29 +219,26 @@ code_?:
     }
   }
 code_?:
-  bVar12 = 0;
-  uVar13 = func_?();
-  uVar14 = (undefined2)((uint6)uVar13 >> 0x20);
-  iVar15 = (int)uVar13;
-  uVar16 = (undefined1)(iVar15 + -1);
-  out(uVar14,uVar16);
-  pbVar17 = (byte *)(iVar15 + -0x13);
-  bVar18 = CARRY1(*pbVar17,extraout_CL) || CARRY1(*pbVar17 + extraout_CL,bVar12);
-  *pbVar17 = *pbVar17 + extraout_CL + bVar12;
-  pbVar17 = (byte *)(unaff_EBX + -0x12);
-  bVar19 = (byte)((uint)(iVar15 + -1) >> 8);
-  bVar20 = CARRY1(*pbVar17,bVar19) || CARRY1(*pbVar17 + bVar19,bVar18);
-  *pbVar17 = *pbVar17 + bVar19 + bVar18;
-  pbVar17 = (byte *)(unaff_EBX + -0x12);
-  bVar12 = *pbVar17;
-  bVar21 = *pbVar17;
-  *pbVar17 = bVar21 + bVar19 + bVar20;
-  *(char *)(iVar15 + -0x77efb013) =
-       *(char *)(iVar15 + -0x77efb013) + extraout_CL +
-       (CARRY1(bVar12,bVar19) || CARRY1(bVar21 + bVar19,bVar20));
-  out(uVar14,uVar16);
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  iVar12 = func_?();
+  pbVar13 = (byte *)(iVar12 + -0x57d7efb1);
+  bVar14 = *pbVar13;
+  *pbVar13 = *pbVar13 - extraout_CH;
+  pbVar13 = (byte *)(unaff_EBX + -0x58);
+  bVar15 = (byte)iVar12;
+  bVar16 = CARRY1(*pbVar13,bVar15) || CARRY1(*pbVar13 + bVar15,bVar14 < extraout_CH);
+  *pbVar13 = *pbVar13 + bVar15 + (bVar14 < extraout_CH);
+  pbVar13 = (byte *)(unaff_EBX + -0x58);
+  bVar17 = CARRY1(*pbVar13,bVar15) || CARRY1(*pbVar13 + bVar15,bVar16);
+  *pbVar13 = *pbVar13 + bVar15 + bVar16;
+  pbVar13 = (byte *)(iVar12 + -0x58);
+  bVar14 = *pbVar13;
+  bVar15 = *pbVar13;
+  *pbVar13 = bVar15 + extraout_CH + bVar17;
+  *(char *)(iVar12 + -0x58) =
+       *(char *)(iVar12 + -0x58) + extraout_CH +
+       (CARRY1(bVar14,extraout_CH) || CARRY1(bVar15 + extraout_CH,bVar17));
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

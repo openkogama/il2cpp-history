@@ -590,12 +590,28 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
       return;
     }
   }
-  cVar2 = '\0';
-  iVar3 = func_?();
-  pcVar4 = (char *)(iVar3 * 5 + -0x6d49efb9);
-  *pcVar4 = *pcVar4 + unaff_BL + cVar2;
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  bVar2 = 0;
+  uVar3 = func_?();
+  pbVar4 = (byte *)((int)((ulonglong)uVar3 >> 0x20) + 0x4b);
+  bVar5 = (byte)((uint)((int)uVar3 + -1) >> 8);
+  bVar6 = *pbVar4 + bVar5;
+  bVar7 = CARRY1(*pbVar4,bVar5) || CARRY1(bVar6,bVar2);
+  *pbVar4 = bVar6 + bVar2;
+  pbVar4 = (byte *)(unaff_EBX + 0x46 + extraout_ECX * 2);
+  bVar5 = (byte)((uint)(unaff_EBX + -1) >> 8);
+  bVar6 = *pbVar4 + bVar5;
+  bVar8 = CARRY1(*pbVar4,bVar5) || CARRY1(bVar6,bVar7);
+  *pbVar4 = bVar6 + bVar7;
+  pbVar4 = (byte *)(team + 0xb010474b);
+  bVar6 = *pbVar4;
+  bVar2 = (byte)((ulonglong)uVar3 >> 0x20);
+  bVar5 = *pbVar4 + bVar2;
+  *pbVar4 = bVar5 + bVar8;
+  pcVar9 = (char *)((int)uVar3 + -0x33efb8b6);
+  *pcVar9 = *pcVar9 + (char)((ulonglong)uVar3 >> 0x28) +
+            (CARRY1(bVar6,bVar2) || CARRY1(bVar5,bVar8));
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

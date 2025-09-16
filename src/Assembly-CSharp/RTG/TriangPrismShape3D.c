@@ -113,8 +113,8 @@ bool Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_ContainsPo
                (TriangPrismShape3D *this,Vector3 point,MethodInfo *method)
 
 {
-  baseWidth = (this->fields)._width;
   baseDepth = (this->fields)._depth;
+  baseWidth = (this->fields)._width;
   bVar1 = PrismMath::PrismMath_ContainsPoint
                     (point,(this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,
                      (this->fields)._height,(this->fields)._rotation,
@@ -129,8 +129,8 @@ AABB * Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_GetAABB
                  (AABB *__return_storage_ptr__,TriangPrismShape3D *this,MethodInfo *method)
 
 {
-  baseWidth = (this->fields)._width;
   baseDepth = (this->fields)._depth;
+  baseWidth = (this->fields)._width;
   pointCloud = PrismMath::PrismMath_CalcTriangPrismCornerPoints
                          ((this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,
                           (this->fields)._height,(this->fields)._rotation,(MethodInfo *)0x0);
@@ -172,8 +172,8 @@ bool Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_Raycast
                (TriangPrismShape3D *this,Ray ray,float *t,MethodInfo *method)
 
 {
-  baseWidth = (this->fields)._width;
   baseDepth = (this->fields)._depth;
+  baseWidth = (this->fields)._width;
   bVar1 = PrismMath::PrismMath_RaycastTriangular
                     (ray,t,(this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,
                      (this->fields)._height,(this->fields)._rotation,(MethodInfo *)0x0);

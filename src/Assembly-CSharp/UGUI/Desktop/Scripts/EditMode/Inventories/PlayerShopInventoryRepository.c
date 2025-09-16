@@ -515,7 +515,6 @@ PlayerShopInventoryRepository_GetInventoryItemsInCategorySlow
                                 MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<InventoryItem>_>__get_Item_int_
                                );
         pLVar7 = (List_1_InventoryItem_ *)func_?();
-        DStack_2._getEnumeratorRetType = (int32_t)&UNK_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object___ctor_1
                   ((List_1_System_Object_ *)pLVar7,(IEnumerable_1_System_Object_ *)collection,
@@ -828,7 +827,6 @@ PlayerShopInventoryRepository_GetShopItemsInCategorySlow
                                 MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<ShopItem>_>__get_Item_int_
                                );
         pLVar7 = (List_1_ShopItem_ *)func_?();
-        DStack_2._getEnumeratorRetType = (int32_t)&UNK_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object___ctor_1
                   ((List_1_System_Object_ *)pLVar7,(IEnumerable_1_System_Object_ *)collection,

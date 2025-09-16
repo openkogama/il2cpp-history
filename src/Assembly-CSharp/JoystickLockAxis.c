@@ -110,7 +110,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
     }
     else {
       if (cRam_? == '\0') {
-        uStack_3 = 0x11b60bfc1049bfba;
+        uStack_3 = 0x11b51d1c1049796a;
         func_?();
         cRam_? = '\x01';
       }
@@ -118,7 +118,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
       position.z = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
     }
     if (cRam_? == '\0') {
-      uStack_3 = 0x11b60bfc1049c00d;
+      uStack_3 = 0x11b51d1c104979bd;
       func_?();
       cRam_? = '\x01';
     }
@@ -129,7 +129,7 @@ Assembly-CSharp.dll::JoystickLockAxis::JoystickLockAxis_UpdateLockToAxis
                           (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x *
                           (float)this) & _UNK_?));
     if (cRam_? == '\0') {
-      uStack_3 = 0x11b60bfc1049c064;
+      uStack_3 = 0x11b51d1c10497a14;
       func_?();
       cRam_? = '\x01';
     }

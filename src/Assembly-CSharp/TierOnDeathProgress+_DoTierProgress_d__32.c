@@ -309,11 +309,7 @@ code_?:
   }
   if (pTVar3 == (TierOnDeathProgress *)0x0) {
 code_?:
-    cVar26 = '\0';
     bVar21 = func_?();
-    *(longlong *)((int)&pTVar3[-0x896d4a].fields.progressText + 3) = (longlong)ROUND(extraout_ST0);
-    pcVar27 = (char *)((int)&pTVar3[-0x4a30f9].fields.currentGamePoints + 1);
-    *pcVar27 = *pcVar27 + bVar21 + cVar26;
     return bVar21;
   }
 code_?:

@@ -136,55 +136,52 @@ Assembly-CSharp.dll::RTG::RTMesh::RTMesh_GetTriangle
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  uVar1 = triangleIndex * 3;
-  pIVar2 = (this->fields)._vertIndices;
-  if (pIVar2 != (Int32__Array *)0x0) {
-    if (pIVar2->max_length <= uVar1) goto code_?;
-    vertIndex0 = pIVar2->vector[triangleIndex * 3];
-    if (pIVar2->max_length <= uVar1 + 1) goto code_?;
-    vertIndex1 = pIVar2->vector[triangleIndex * 3 + 1];
-    pIVar2 = (this->fields)._vertIndices;
-    if (pIVar2 != (Int32__Array *)0x0) {
-      if (pIVar2->max_length <= uVar1 + 2) goto code_?;
-      uVar1 = pIVar2->vector[triangleIndex * 3 + 2];
-      vertices = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
-      pVVar3 = (this->fields)._vertices;
-      if (pVVar3 != (Vector3__Array *)0x0) {
-        if (pVVar3->max_length <= vertIndex0) goto code_?;
-        if (vertices != (Vector3__Array *)0x0) {
-          fVar4 = pVVar3->vector[vertIndex0].y;
-          fVar5 = pVVar3->vector[vertIndex0].z;
-          if (vertices->max_length == 0) goto code_?;
-          vertices->vector[0].x = pVVar3->vector[vertIndex0].x;
-          vertices->vector[0].y = fVar4;
-          vertices->vector[0].z = fVar5;
+  pIVar1 = (this->fields)._vertIndices;
+  uVar2 = triangleIndex * 3;
+  if (pIVar1 != (Int32__Array *)0x0) {
+    if (pIVar1->max_length <= uVar2) goto code_?;
+    vertIndex0 = pIVar1->vector[triangleIndex * 3];
+    if (pIVar1->max_length <= uVar2 + 1) goto code_?;
+    vertIndex1 = pIVar1->vector[triangleIndex * 3 + 1];
+    if (pIVar1->max_length <= uVar2 + 2) goto code_?;
+    uVar2 = pIVar1->vector[triangleIndex * 3 + 2];
+    vertices = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
+    pVVar3 = (this->fields)._vertices;
+    if (pVVar3 != (Vector3__Array *)0x0) {
+      if (pVVar3->max_length <= vertIndex0) goto code_?;
+      if (vertices != (Vector3__Array *)0x0) {
+        fVar4 = pVVar3->vector[vertIndex0].y;
+        fVar5 = pVVar3->vector[vertIndex0].z;
+        if (vertices->max_length == 0) goto code_?;
+        vertices->vector[0].x = pVVar3->vector[vertIndex0].x;
+        vertices->vector[0].y = fVar4;
+        vertices->vector[0].z = fVar5;
+        pVVar3 = (this->fields)._vertices;
+        if (pVVar3 != (Vector3__Array *)0x0) {
+          if (pVVar3->max_length <= vertIndex1) goto code_?;
+          fVar4 = pVVar3->vector[vertIndex1].y;
+          fVar5 = pVVar3->vector[vertIndex1].z;
+          if (vertices->max_length < 2) goto code_?;
+          vertices->vector[1].x = pVVar3->vector[vertIndex1].x;
+          vertices->vector[1].y = fVar4;
+          vertices->vector[1].z = fVar5;
           pVVar3 = (this->fields)._vertices;
           if (pVVar3 != (Vector3__Array *)0x0) {
-            if (pVVar3->max_length <= vertIndex1) goto code_?;
-            fVar4 = pVVar3->vector[vertIndex1].y;
-            fVar5 = pVVar3->vector[vertIndex1].z;
-            if (vertices->max_length < 2) goto code_?;
-            vertices->vector[1].x = pVVar3->vector[vertIndex1].x;
-            vertices->vector[1].y = fVar4;
-            vertices->vector[1].z = fVar5;
-            pVVar3 = (this->fields)._vertices;
-            if (pVVar3 != (Vector3__Array *)0x0) {
-              if (uVar1 < pVVar3->max_length) {
-                fVar4 = pVVar3->vector[uVar1].y;
-                fVar5 = pVVar3->vector[uVar1].z;
-                if (2 < vertices->max_length) {
-                  vertices->vector[2].x = pVVar3->vector[uVar1].x;
-                  vertices->vector[2].y = fVar4;
-                  vertices->vector[2].z = fVar5;
-                  pMVar6 = (MeshTriangle *)func_?(TypeInfo__RTG__MeshTriangle);
-                  MeshTriangle::MeshTriangle__ctor
-                            (pMVar6,vertices,triangleIndex,vertIndex0,vertIndex1,uVar1,
-                             (MethodInfo *)0x0);
-                  return pMVar6;
-                }
+            if (uVar2 < pVVar3->max_length) {
+              fVar4 = pVVar3->vector[uVar2].y;
+              fVar5 = pVVar3->vector[uVar2].z;
+              if (2 < vertices->max_length) {
+                vertices->vector[2].x = pVVar3->vector[uVar2].x;
+                vertices->vector[2].y = fVar4;
+                vertices->vector[2].z = fVar5;
+                pMVar6 = (MeshTriangle *)func_?(TypeInfo__RTG__MeshTriangle);
+                MeshTriangle::MeshTriangle__ctor
+                          (pMVar6,vertices,triangleIndex,vertIndex0,vertIndex1,uVar2,
+                           (MethodInfo *)0x0);
+                return pMVar6;
               }
-              goto code_?;
             }
+            goto code_?;
           }
         }
       }

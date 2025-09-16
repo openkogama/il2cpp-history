@@ -43,17 +43,24 @@ void Assembly-CSharp.dll::RTG::SceneGizmoMidCap::SceneGizmoMidCap_OnGizmoPreUpda
 {
   pGStack_1 = (GizmoCap3DLookAndFeel *)&stack0xfffffffc;
   pSVar2 = (this->fields)._._sceneGizmo;
-  if (((pSVar2 != (SceneGizmo *)0x0) &&
-      (pSVar3 = (&(pSVar2->fields)._lookAndFeel)
-                [(pSVar2->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0],
-      pSVar3 != (SceneGizmoLookAndFeel *)0x0)) &&
-     (pGVar4 = (this->fields)._._cap, pGVar4 != (GizmoCap3D *)0x0)) {
-    pGStack_1 = (pSVar3->fields)._midCapLookAndFeel;
-    (pGVar4->fields)._sharedLookAndFeel = pGStack_1;
-    ppGStack_5 = &(pGVar4->fields)._sharedLookAndFeel;
-    func_?();
-    return;
+  if (pSVar2 != (SceneGizmo *)0x0) {
+    if ((pSVar2->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
+      pSVar3 = (pSVar2->fields)._lookAndFeel;
+      if (pSVar3 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pSVar3 = (pSVar2->fields)._sharedLookAndFeel;
+    }
+    pGVar4 = (this->fields)._._cap;
+    if (pGVar4 != (GizmoCap3D *)0x0) {
+      pGStack_1 = (pSVar3->fields)._midCapLookAndFeel;
+      (pGVar4->fields)._sharedLookAndFeel = pGStack_1;
+      ppGStack_5 = &(pGVar4->fields)._sharedLookAndFeel;
+      func_?();
+      return;
+    }
   }
+code_?:
   uVar6 = func_?(&puStack_7);
   func_?(uVar6);
   pcVar8 = (code *)swi(3);
@@ -111,10 +118,15 @@ void Assembly-CSharp.dll::RTG::SceneGizmoMidCap::SceneGizmoMidCap__ctor
     GizmoCap3D::GizmoCap3D__ctor(pGVar2,pGVar1,1,(MethodInfo *)0x0);
     (this->fields)._._cap = pGVar2;
     func_?(&(this->fields)._._cap,pGVar2);
-    pSVar3 = (&(sceneGizmo->fields)._lookAndFeel)
-             [(sceneGizmo->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0];
-    if ((pSVar3 != (SceneGizmoLookAndFeel *)0x0) &&
-       (pGVar2 = (this->fields)._._cap, pGVar2 != (GizmoCap3D *)0x0)) {
+    if ((sceneGizmo->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
+      pSVar3 = (sceneGizmo->fields)._lookAndFeel;
+      if (pSVar3 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pSVar3 = (sceneGizmo->fields)._sharedLookAndFeel;
+    }
+    pGVar2 = (this->fields)._._cap;
+    if (pGVar2 != (GizmoCap3D *)0x0) {
       pGVar4 = (pSVar3->fields)._midCapLookAndFeel;
       (pGVar2->fields)._sharedLookAndFeel = pGVar4;
       func_?(&(pGVar2->fields)._sharedLookAndFeel,pGVar4);
@@ -143,6 +155,7 @@ void Assembly-CSharp.dll::RTG::SceneGizmoMidCap::SceneGizmoMidCap__ctor
       }
     }
   }
+code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();

@@ -371,93 +371,79 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Clear
               (pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Clear__);
     if (((this->fields).inventoryController != (InventoryController *)0x0) &&
        (iVar3 = *(int *)(in_stack_4 + 0x18), iVar3 != 0)) {
+      uVar5 = *unaff_FS_OFFSET;
       *unaff_FS_OFFSET = &stack0xfffffff8;
       if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__get_Current__
-                       );
+        func_?();
+        func_?();
+        func_?();
+        func_?();
         func_?(&
                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
                        );
         cRam_? = '\x01';
       }
-      DStack_5._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-      DStack_5._index = 0;
-      DStack_5._version = 0;
-      DStack_5._currentValue = (Object *)0x0;
       pDVar1 = *(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                  **)(iVar3 + 0x10);
       if ((pDVar1 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                       *)0x0) &&
-         (this = (AccessoryShopController *)
-                 mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-                 StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-                 Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                           (pDVar1,
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
-                           ), this != (AccessoryShopController *)0x0)) {
+         (method_00 = (MethodInfo *)
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
+                      UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                                (pDVar1,
+                                 MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
+                                ), method_00 != (MethodInfo *)0x0)) {
         pDVar6 = mscorlib.dll::System::Collections::Generic::
                  Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                  StyleSheetCache+SheetHandleKey,System::Object]::
                  Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                            (&DStack_2,
                             (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                             *)this,
+                             *)method_00,
                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
                            );
-        DStack_5._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar6->_dictionary;
-        DStack_5._index = pDVar6->_index;
-        DStack_5._version = pDVar6->_version;
-        DStack_5._currentValue = pDVar6->_currentValue;
         DStack_2._version = 0;
-        DStack_2._currentValue = (Object *)&DStack_5;
+        pIVar7 = (InventorySlot *)pDVar6->_currentValue;
+        DStack_2._currentValue = (Object *)&stack0xffffffd0;
         while( true ) {
-          bVar7 = mscorlib.dll::System::Collections::Generic::
+          this_00 = pIVar7;
+          bVar8 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                   UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                            (&DStack_5,
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                              *)&stack0xffffffd0,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
                             );
-          this_00 = DStack_5._currentValue;
-          if (bVar7 == 0) {
-            puVar8 = &UNK_?;
+          if (bVar8 == 0) {
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&DStack_5,
+                      ((Object *)&stack0xffffffd0,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
-                       ,(MethodInfo *)this);
-            *unaff_FS_OFFSET = puVar8;
+                       ,method_00);
+            *unaff_FS_OFFSET = uVar5;
             return;
           }
-          if ((InventorySlot *)DStack_5._currentValue == (InventorySlot *)0x0) break;
+          if (this_00 == (InventorySlot *)0x0) break;
+          pIVar7 = this_00;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          pGVar9 = InventorySlot::InventorySlot_get_Item((InventorySlot *)this_00,(MethodInfo *)0x0)
-          ;
+          pGVar9 = InventorySlot::InventorySlot_get_Item(this_00,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          this = (AccessoryShopController *)0x0;
-          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+          method_00 = (MethodInfo *)0x0;
+          bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             ((Object_1 *)pGVar9,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar7 != 0) {
-            pGVar9 = InventorySlot::InventorySlot_get_Item
-                               ((InventorySlot *)this_00,(MethodInfo *)0x0);
+          if (bVar8 != 0) {
+            pGVar9 = InventorySlot::InventorySlot_get_Item(this_00,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
+            pIVar7 = (InventorySlot *)0x0;
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                       ((Object_1 *)pGVar9,(MethodInfo *)0x0);
           }
@@ -465,10 +451,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Clear
       }
     }
   }
-  DStack_2._currentValue = (Object *)&UNK_?;
-  func_?();
-  DStack_2._currentValue = (Object *)&UNK_?;
-  func_?();
+  uVar5 = func_?(&stack0xffffffb4);
+  func_?(uVar5);
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;
@@ -600,8 +584,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff90;
-  puVar5 = &stack0xffffff90;
+  puStack_4 = &stack0xffffff8c;
+  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_
@@ -641,7 +625,7 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
     pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &stack0xffffff9c,this_01,
+                        &stack0xffffff98,this_01,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__
                        );
     uStack_8 = 0;

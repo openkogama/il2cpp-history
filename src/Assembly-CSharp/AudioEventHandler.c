@@ -236,6 +236,8 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_Init
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void PlaySound(AudioActions, IntVector, GameObject) */
 
 void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
@@ -245,7 +247,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x6f48);
+    func_?(0x8068);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -262,15 +264,31 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) {
 code_?:
-      uVar2 = func_?();
-      bVar3 = (byte)((ulonglong)uVar2 >> 0x20) &
-              *(byte *)CONCAT31((int3)((ulonglong)uVar2 >> 8),(char)uVar2 + -0x4f);
-      pbVar4 = (byte *)(CONCAT31((int3)((ulonglong)uVar2 >> 0x28),bVar3) + -0x26efdd4f);
-      bVar5 = *pbVar4;
-      *pbVar4 = *pbVar4 + bVar3;
-      cRam_? = cRam_? + unaff_BL + -1 + CARRY1(bVar5,bVar3);
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      bVar2 = true;
+      uVar3 = func_?();
+      if (bVar2) {
+        iVar4 = in((short)((uint6)uVar3 >> 0x20));
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (**(code **)(iVar4 + -0x54))();
+        return;
+      }
+      bVar5 = (byte)extraout_ECX;
+      *(char *)(extraout_ECX + 0x72) = *(char *)(extraout_ECX + 0x72) + bVar5;
+      bVar6 = (byte)((uint)extraout_ECX >> 8);
+      if (CARRY1(bVar6,bVar5)) {
+        piVar7 = (int *)((int)&TypeInfo__AudioEventHandler +
+                        CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar6 + bVar5,bVar5)))
+        ;
+        *piVar7 = (int)(&stack0x00000000 + *piVar7);
+        if (*(int *)(CONCAT31((int3)((uint6)uVar3 >> 8),(char)uVar3 + -0x3a) + 0xADDR) == 0) {
+          func_?();
+        }
+        AudioEventHandler_HandleTranslateData((MethodInfo *)0x0);
+        return;
+      }
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
     randMax = 1.1;

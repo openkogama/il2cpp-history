@@ -107,12 +107,18 @@ code_?:
   default:
     goto code_?;
   }
-  func_?();
-  pcVar9 = (char *)((int)&pTVar1[2].klass + 2);
-  *pcVar9 = *pcVar9 + extraout_CL;
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
-  return bVar11;
+  bVar9 = 0;
+  uVar10 = func_?();
+  iVar5 = (byte)((char)uVar10 + (char)((ushort)uVar10 >> 8) * -6) - 1;
+  bVar11 = (byte)((uint)iVar5 >> 8);
+  bVar12 = (byte)((uint)this >> 8);
+  cRam_? = cRam_? + (char)iVar5 + -2 +
+                 (CARRY1(extraout_DH,bVar12) ||
+                 CARRY1(extraout_DH + bVar12,
+                        CARRY1(bVar11,(byte)this) || CARRY1(bVar11 + (byte)this,bVar9)));
+  pcVar13 = (code *)swi(3);
+  bVar14 = (*pcVar13)();
+  return bVar14;
 }
 
 

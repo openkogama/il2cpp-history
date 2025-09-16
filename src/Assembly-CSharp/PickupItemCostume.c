@@ -1569,9 +1569,8 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetAvatarInvisibi
                (PickupItemCostume *this,bool isInvisible,MVAvatar *avatar,MethodInfo *method)
 
 {
-  isInvisible_00 = isInvisible;
-  pPVar1 = this;
-  pPVar2 = _isInvisible;
+  pMVar1 = avatar;
+  pPVar2 = this;
   if (cRam_? == '\0') {
     func_?(&
                     UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
@@ -1596,35 +1595,31 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetAvatarInvisibi
         avatar = (MVAvatar *)0x0;
       }
       else {
-        _isInvisible = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
         avatar_00 = (MVAvatarRemote *)0x0;
         if ((MVAvatarRemote__Class *)ppIVar4[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] ==
             TypeInfo__MVAvatarRemote) {
           avatar_00 = (MVAvatarRemote *)avatar;
         }
         PickupItemCostume_CalculateRemoteAvatarUIVisibility
-                  (this,isInvisible_00,avatar_00,(MethodInfo *)0x0);
+                  (this,isInvisible,avatar_00,(MethodInfo *)0x0);
         this = (PickupItemCostume *)avatar_00;
       }
       if (isInvisible == 0) {
         return;
       }
-      this_00 = (pPVar1->fields)._.cubeModelParent;
-      unaff_ESI = pPVar2;
+      this_00 = (pPVar2->fields)._.cubeModelParent;
       if (this_00 != (Transform *)0x0) {
         pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                  Component_GetComponentsInChildren
                            ((Component *)this_00,
                             UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                            );
-        unaff_ESI = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
+        pMVar1 = (MVAvatar *)0x0;
         if (pOVar5 != (Object__Array *)0x0) {
           ppOVar6 = pOVar5->vector;
-          for (; (int)unaff_ESI < (int)pOVar5->max_length;
-              unaff_ESI = (PickupItemCostume_CostumeConfiguration__Class *)
-                          ((int)&(unaff_ESI->_0).image + 1)) {
-            if ((PickupItemCostume_CostumeConfiguration__Class *)pOVar5->max_length <= unaff_ESI)
-            goto code_?;
+          for (; (int)pMVar1 < (int)pOVar5->max_length;
+              pMVar1 = (MVAvatar *)((int)&((Il2CppClass_0 *)&pMVar1->klass)->image + 1)) {
+            if ((MVAvatar *)pOVar5->max_length <= pMVar1) goto code_?;
             this_01 = (Renderer *)*ppOVar6;
             if (this_01 == (Renderer *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
@@ -1635,13 +1630,13 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetAvatarInvisibi
             if (avatar != (MVAvatar *)0x0) {
               layerName = StringLiteral_Default;
             }
-            avatar = (MVAvatar *)
-                     UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                               (layerName,(MethodInfo *)0x0);
+            value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                              (layerName,(MethodInfo *)0x0);
             if (this_04 == (GameObject *)0x0) goto code_?;
-            this = (PickupItemCostume *)&UNK_?;
+            this = (PickupItemCostume *)0x0;
+            pOVar5 = (Object__Array *)&UNK_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                      (this_04,(int32_t)avatar,(MethodInfo *)0x0);
+                      (this_04,value,(MethodInfo *)0x0);
             ppOVar6 = ppOVar6 + 1;
           }
           this_02 = (this->fields).trailRenderer;
@@ -1650,7 +1645,7 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetAvatarInvisibi
             cRam_? = '\x01';
           }
           pPVar7 = (this->fields)._._Configuration_k__BackingField;
-          unaff_ESI = TypeInfo__PickupItemCostume__CostumeConfiguration;
+          pMVar1 = (MVAvatar *)TypeInfo__PickupItemCostume__CostumeConfiguration;
           if (pPVar7 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
             if (((pPVar7->klass->_1).naturalAligment <
                  (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment) ||
@@ -1675,7 +1670,7 @@ code_?:
   func_?();
   pPVar7 = extraout_EDX;
 code_?:
-  func_?(pPVar7,unaff_ESI);
+  func_?(pPVar7,pMVar1);
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;

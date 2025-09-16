@@ -217,7 +217,6 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
           return;
         }
       } while (DStack_6._current.key == excludedActorNr);
-      unaff_EDI = (char *)excludedActorNr;
       if (DStack_6._current.value == (Object *)0x0) break;
       iVar13 = *(int *)((int)DStack_6._current.value + 8);
       if (0 < iVar13) {
@@ -238,16 +237,8 @@ void MVWorldObject.dll::TeamsCounter::TeamsCounter_GetActorWithBestScore
       }
     }
   }
-  bVar14 = 0;
-  bVar15 = func_?();
-  bVar14 = 0x99 < bVar15 | bVar14;
-  bVar15 = *extraout_EDX;
-  bVar16 = (byte)((uint)unaff_EBX >> 8);
-  bVar17 = *extraout_EDX + bVar16;
-  *extraout_EDX = bVar17 + bVar14;
-  *unaff_EDI = *unaff_EDI + extraout_CH + (CARRY1(bVar15,bVar16) || CARRY1(bVar17,bVar14));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  func_?();
+  return;
 }
 
 

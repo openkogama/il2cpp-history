@@ -20,8 +20,8 @@ uint32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Utils::xxHash::xxH
       if ((((buf->max_length <= uVar7) || (buf->max_length <= uVar7 + 1)) ||
           (buf->max_length <= uVar7 + 2)) || (buf->max_length <= uVar7 + 3)) goto code_?;
       uStack_4 = uStack_4 +
-                  CONCAT31(CONCAT21(CONCAT11(buf->vector[uVar7 + 3],buf->vector[uVar7 + 2]),
-                                    buf->vector[uVar7 + 1]),buf->vector[uVar7]) * -0x7a143589;
+                 CONCAT31(CONCAT21(CONCAT11(buf->vector[uVar7 + 3],buf->vector[uVar7 + 2]),
+                                   buf->vector[uVar7 + 1]),buf->vector[uVar7]) * -0x7a143589;
       uVar8 = uStack_4 >> 0x13 | uStack_4 * 0x2000;
       uStack_4 = uVar8 * -0x61c8864f;
       if (((buf->max_length <= uVar7 + 4) || (buf->max_length <= uVar7 + 5)) ||
@@ -35,8 +35,8 @@ uint32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Utils::xxHash::xxH
          ((buf->max_length <= uVar7 + 10 || (buf->max_length <= uVar7 + 0xb))))
       goto code_?;
       uStack_3 = uStack_3 +
-                 CONCAT31(CONCAT21(CONCAT11(buf->vector[uVar7 + 0xb],buf->vector[uVar7 + 10]),
-                                   buf->vector[uVar7 + 9]),buf->vector[uVar7 + 8]) * -0x7a143589;
+                  CONCAT31(CONCAT21(CONCAT11(buf->vector[uVar7 + 0xb],buf->vector[uVar7 + 10]),
+                                    buf->vector[uVar7 + 9]),buf->vector[uVar7 + 8]) * -0x7a143589;
       uVar10 = uStack_3 >> 0x13 | uStack_3 * 0x2000;
       uStack_3 = uVar10 * -0x61c8864f;
       if ((((buf->max_length <= uVar7 + 0xc) || (buf->max_length <= uVar7 + 0xd)) ||
@@ -67,25 +67,26 @@ uint32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Utils::xxHash::xxH
       uVar8 = uVar1;
     } while ((int)uVar1 <= len + -4);
   }
-  while( true ) {
-    if (len <= (int)uVar1) {
-      uVar1 = (uVar7 >> 0xf ^ uVar7) * -0x7a143589;
-      uVar1 = (uVar1 >> 0xd ^ uVar1) * -0x3d4d51c3;
-      return uVar1 >> 0x10 ^ uVar1;
+  if ((int)uVar1 < len) {
+    if (buf == (Byte__Array *)0x0) {
+code_?:
+      func_?();
+code_?:
+      func_?();
+      pcVar12 = (code *)swi(3);
+      uVar13 = (*pcVar12)();
+      return uVar13;
     }
-    if (buf == (Byte__Array *)0x0) break;
-    if (buf->max_length <= uVar1) goto code_?;
-    puVar12 = buf->vector + uVar1;
-    uVar1 = uVar1 + 1;
-    uVar7 = uVar7 + (uint)*puVar12 * 0x165667b1;
-    uVar7 = (uVar7 >> 0x15 | uVar7 * 0x800) * -0x61c8864f;
+    do {
+      if (buf->max_length <= uVar1) goto code_?;
+      puVar14 = buf->vector + uVar1;
+      uVar1 = uVar1 + 1;
+      uVar7 = uVar7 + (uint)*puVar14 * 0x165667b1;
+      uVar7 = (uVar7 >> 0x15 | uVar7 * 0x800) * -0x61c8864f;
+    } while ((int)uVar1 < len);
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  uVar14 = (*pcVar13)();
-  return uVar14;
+  uVar1 = (uVar7 >> 0xf ^ uVar7) * -0x7a143589;
+  uVar1 = (uVar1 >> 0xd ^ uVar1) * -0x3d4d51c3;
+  return uVar1 >> 0x10 ^ uVar1;
 }
 

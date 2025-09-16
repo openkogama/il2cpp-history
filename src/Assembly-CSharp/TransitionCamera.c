@@ -61,7 +61,7 @@ void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_InitTransition
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
                           (pTVar2,(this->fields).prevCameraRotation,(MethodInfo *)0x0);
                 (this->fields).time = transitionTime;
-                (this->fields).superSoft = 0x7e;
+                (this->fields).superSoft = 0x1e;
                 (this->fields).transitionPercentage = 0.0;
                 return;
               }
@@ -298,7 +298,7 @@ void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_UpdateCamera
     pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles
                        ((Vector3 *)&stack0xffffffdc,pTVar11,(MethodInfo *)0x0);
     pQVar12 = TransitionCamera_RotateTowardsY
-                        ((Quaternion *)&stack0xffffffcc,this_01,VVar8,*pVVar7,3.2602383e-29,
+                        ((Quaternion *)&stack0xffffffcc,this_01,VVar8,*pVVar7,3.255433e-29,
                          (MethodInfo *)0x0);
     fVar15 = pQVar12->x;
     fVar16 = pQVar12->y;
@@ -327,7 +327,7 @@ void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_UpdateCamera
     VVar8.x = VStack_2.y;
     VVar8.y = VStack_2.z;
     pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Slerp
-                       ((Vector3 *)&stack0xffffffdc,VVar8,*pVVar7,3.2602383e-29,(MethodInfo *)0x0);
+                       ((Vector3 *)&stack0xffffffdc,VVar8,*pVVar7,3.255433e-29,(MethodInfo *)0x0);
     if (pTVar11 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (pTVar11,*pVVar7,(MethodInfo *)0x0);

@@ -580,108 +580,107 @@ void Assembly-CSharp.dll::PlayerSocialPopup::PlayerSocialPopup_OnOpenAdminContro
     cRam_? = '\x01';
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    pMVar1 = (MethodInfo *)&UNK_?;
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      bVar2 = MVLocalPlayer::MVLocalPlayer_get_IsAdmin(this_01,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if (MVar3 != MVGameMode__Enum_Edit) {
-          return;
-        }
-        PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-        if ((char)PVar4 != '\x02') {
-          return;
-        }
-        value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (value,ExceptionArgument__Enum_obj,pMVar1);
-        original_00 = pORam0000003c;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        pOVar5 = (Object__Class *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           (original_00,
-                            OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_
-                           );
-        if (value != (Object *)0x0) {
-          value[1].klass = pOVar5;
-          func_?(value + 1,pOVar5);
-          pOVar5 = value[1].klass;
-          if ((piRam_? != (int *)0x0) &&
-             (pSVar6 = (String *)
-                       (**(code **)(*piRam_? + 0x310))
-                                 (piRam_?,*(undefined4 *)(*piRam_? + 0x314)),
-             pOVar5 != (Object__Class *)0x0)) {
-            OwnerToolController::OwnerToolController_Initialize
-                      ((OwnerToolController *)pOVar5,pSVar6,(MethodInfo *)0x0);
-            root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)0x0,(MethodInfo *)0x0);
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                );
-            pMVar1 = 
-            MethodInfo__PlayerSocialPopup____c__DisplayClass19_1___OnOpenAdminController_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-            ;
+  if ((this_00 != (MVNetworkGame *)0x0) &&
+     (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+     this_01 != (MVLocalPlayer *)0x0)) {
+    bVar1 = MVLocalPlayer::MVLocalPlayer_get_IsAdmin(this_01,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar2 != MVGameMode__Enum_Edit) {
+        return;
+      }
+      PVar3 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
+      if ((char)PVar3 != '\x02') {
+        return;
+      }
+      this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+      original = pORam0000003c;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      pLVar4 = (List_1_System_Object_ *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         (original,
+                          OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_
+                         );
+      if (this_02 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+        (this_02->fields)._._defaultValue_k__BackingField = pLVar4;
+        func_?(&this_02->fields,pLVar4);
+        pLVar4 = (this_02->fields)._._defaultValue_k__BackingField;
+        if ((piRam_? != (int *)0x0) &&
+           (pSVar5 = (String *)
+                     (**(code **)(*piRam_? + 0x310))
+                               (piRam_?,*(undefined4 *)(*piRam_? + 0x314)),
+           pLVar4 != (List_1_System_Object_ *)0x0)) {
+          OwnerToolController::OwnerToolController_Initialize
+                    ((OwnerToolController *)pLVar4,pSVar5,(MethodInfo *)0x0);
+          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)0x0,(MethodInfo *)0x0);
+          callbackFunction =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                              );
+          method_1 = 
+          MethodInfo__PlayerSocialPopup____c__DisplayClass19_1___OnOpenAdminController_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+          ;
 code_?:
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,pMVar1,
-                       (MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            return;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                     (Object *)this_02,method_1,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
         }
       }
-      else {
-        value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (value,ExceptionArgument__Enum_obj,pMVar1);
-        original = (this->fields).adminToolsPrefab;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        pOVar5 = (Object__Class *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)original,
-                            AdminToolController_MethodInfo__UnityEngine__Object__Instantiate<AdminToolController>_AdminToolController_
-                           );
-        if (value != (Object *)0x0) {
-          value[1].klass = pOVar5;
-          func_?(value + 1,pOVar5);
-          pTVar7 = (this->fields).playerName;
-          pOVar5 = value[1].klass;
-          if ((pTVar7 != (Text *)0x0) &&
-             (pSVar6 = (String *)
-                       (*(code *)(pTVar7->klass->vtable).get_text.method)
-                                 (pTVar7,(pTVar7->klass->vtable).set_text.methodPtr),
-             pOVar5 != (Object__Class *)0x0)) {
-            AdminToolController::AdminToolController_Initialize
-                      ((AdminToolController *)pOVar5,pSVar6,(MethodInfo *)0x0);
-            root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this,(MethodInfo *)0x0);
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                );
-            pMVar1 = 
-            MethodInfo__PlayerSocialPopup____c__DisplayClass19_0___OnOpenAdminController_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-            ;
-            goto code_?;
-          }
+    }
+    else {
+      this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+      pAVar6 = (this->fields).adminToolsPrefab;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      pLVar4 = (List_1_System_Object_ *)
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)pAVar6,
+                          AdminToolController_MethodInfo__UnityEngine__Object__Instantiate<AdminToolController>_AdminToolController_
+                         );
+      if (this_02 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+        (this_02->fields)._._defaultValue_k__BackingField = pLVar4;
+        func_?(&this_02->fields,pLVar4);
+        pTVar7 = (this->fields).playerName;
+        pAVar6 = (AdminToolController *)(this_02->fields)._._defaultValue_k__BackingField;
+        if ((pTVar7 != (Text *)0x0) &&
+           (pSVar5 = (String *)
+                     (*(code *)(pTVar7->klass->vtable).get_text.method)
+                               (pTVar7,(pTVar7->klass->vtable).set_text.methodPtr),
+           pAVar6 != (AdminToolController *)0x0)) {
+          AdminToolController::AdminToolController_Initialize(pAVar6,pSVar5,(MethodInfo *)0x0);
+          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+          callbackFunction =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                              );
+          method_1 = 
+          MethodInfo__PlayerSocialPopup____c__DisplayClass19_0___OnOpenAdminController_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+          ;
+          goto code_?;
         }
       }
     }
@@ -749,13 +748,14 @@ void Assembly-CSharp.dll::PlayerSocialPopup::PlayerSocialPopup_PostErrorPopup
     func_?(&TypeInfo__PlayerSocialPopup____c__DisplayClass24_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PlayerSocialPopup____c__DisplayClass24_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)error;
-    func_?(value + 1,error);
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__PlayerSocialPopup____c__DisplayClass24_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)error;
+    func_?(&this_00->fields,error);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -765,7 +765,7 @@ void Assembly-CSharp.dll::PlayerSocialPopup::PlayerSocialPopup_PostErrorPopup
                         );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                MethodInfo__PlayerSocialPopup____c__DisplayClass24_0___PostErrorPopup_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {

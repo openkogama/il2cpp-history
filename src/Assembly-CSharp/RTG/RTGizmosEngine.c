@@ -661,20 +661,20 @@ Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_GetGizmoHandleHoverData
         pVVar2 = (Vector3 *)
                  func_?(&stack0xffffffcc,6,TypeInfo__RTG__IInputDevice,pOVar1[2].klass,
                                  this_00);
-        uVar3 = pVVar2[1].z;
         position = *pVVar2;
-        VStack_4.x = pVVar2[1].x;
-        VStack_4.y = pVVar2[1].y;
-        VStack_4.z = pVVar2[1].z;
+        VStack_3.x = pVVar2[1].x;
+        VStack_3.y = pVVar2[1].y;
+        VStack_3.z = pVVar2[1].z;
         if ((Gizmo *)value[1].klass != (Gizmo *)0x0) {
-          hoverRay.m_Direction.z = (float)uVar3;
+          uVar4 = pVVar2[1].z;
+          hoverRay.m_Direction.z = (float)uVar4;
           hoverRay._0_20_ = *(undefined1 (*) [20])pVVar2;
           this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                     Gizmo::Gizmo_GetAllHandlesHoverData
                               ((Gizmo *)value[1].klass,hoverRay,(MethodInfo *)0x0);
           if (this_00 != (Camera *)0x0) {
             pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                               (&VStack_4,this_00,position,(MethodInfo *)0x0);
+                               (&VStack_3,this_00,position,(MethodInfo *)0x0);
             pMVar5 = (MonitorData *)pVVar2->z;
             *(undefined8 *)&value[1].monitor = *(undefined8 *)pVVar2;
             value[2].monitor = pMVar5;

@@ -34,22 +34,22 @@ bool Assembly-CSharp.dll::GameMeterShake+<ShakeAnimation>d__5::
     fVar7 = MathFunctions::MathFunctions_SmoothInverseLerp
                       (0.0,0.5,(this->fields)._shakeTime_5__2,(MethodInfo *)0x0);
     if (pGVar2 != (GameMeterShake *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(-10.0,10.0,(MethodInfo *)0x0);
-      fVar8 = -10.0;
-      puVar9 = &UNK_?;
-      fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
+      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
                          (-10.0,10.0,(MethodInfo *)0x0);
+      pMVar9 = (MethodInfo *)(fVar8 * (1.0 - fVar7));
+      fVar10 = 10.0;
+      puVar11 = &UNK_?;
+      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(-10.0,10.0,pMVar9);
       pRVar6 = (pGVar2->fields).rectTransform;
       if (pRVar6 != (RectTransform *)0x0) {
-        value.y = fVar10 * (1.0 - fVar7) + fVar8;
-        value.x = (float)puVar9;
+        value.y = fVar8 * (1.0 - fVar7) + (float)puVar11;
+        value.x = (float)pMVar9 + fVar10;
         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
                   (pRVar6,value,(MethodInfo *)0x0);
-        fVar7 = (this->fields)._shakeTime_5__2;
-        fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                           ((MethodInfo *)0x0);
+        pMVar9 = (MethodInfo *)(this->fields)._shakeTime_5__2;
+        fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime(pMVar9);
         (this->fields).__2__current = (Object *)0x0;
-        (this->fields)._shakeTime_5__2 = fVar10 + fVar7;
+        (this->fields)._shakeTime_5__2 = fVar7 + (float)pMVar9;
         func_?();
         (this->fields).__1__state = 1;
         return 1;
@@ -57,9 +57,9 @@ bool Assembly-CSharp.dll::GameMeterShake+<ShakeAnimation>d__5::
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  pcVar12 = (code *)swi(3);
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 

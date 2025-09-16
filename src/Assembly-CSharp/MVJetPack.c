@@ -382,25 +382,24 @@ code_?:
         goto code_?;
         if (pIVar8->max_length != 0) {
           pIVar9 = (((this->fields).jetPackParameters)->fields).lowerCubeConstraint;
-          if (1 < pIVar9->max_length) {
-            pJVar7 = (this->fields).jetPackParameters;
-            if (pJVar7 == (JetPackParameters *)0x0) goto code_?;
-            pIVar10 = (pJVar7->fields).lowerCubeConstraint;
-            if (2 < pIVar10->max_length) {
+          if (pIVar9 != (Int32__Array *)0x0) {
+            if (pIVar9->max_length < 2) goto code_?;
+            pIVar10 = (((this->fields).jetPackParameters)->fields).lowerCubeConstraint;
+            if (pIVar10 != (Int32__Array *)0x0) {
+              if (pIVar10->max_length < 3) goto code_?;
               uVar11 = 0;
               MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
                         ((IntVector *)&stack0xffffffec,pIVar8->vector[0],pIVar9->vector[1],
                          pIVar10->vector[2],(MethodInfo *)0x0);
               pJVar7 = (this->fields).jetPackParameters;
-              if ((pJVar7 == (JetPackParameters *)0x0) ||
-                 (pIVar8 = (pJVar7->fields).upperCubeConstraint, pIVar8 == (Int32__Array *)0x0))
-              goto code_?;
-              if (pIVar8->max_length != 0) {
+              if ((pJVar7 != (JetPackParameters *)0x0) &&
+                 (pIVar8 = (pJVar7->fields).upperCubeConstraint, pIVar8 != (Int32__Array *)0x0)) {
+                if (pIVar8->max_length == 0) goto code_?;
                 pIVar9 = (((this->fields).jetPackParameters)->fields).upperCubeConstraint;
-                if (1 < pIVar9->max_length) {
-                  pJVar7 = (this->fields).jetPackParameters;
-                  if (pJVar7 != (JetPackParameters *)0x0) {
-                    pIVar10 = (pJVar7->fields).upperCubeConstraint;
+                if (pIVar9 != (Int32__Array *)0x0) {
+                  if (pIVar9->max_length < 2) goto code_?;
+                  pIVar10 = (((this->fields).jetPackParameters)->fields).upperCubeConstraint;
+                  if (pIVar10 != (Int32__Array *)0x0) {
                     if (pIVar10->max_length < 3) goto code_?;
                     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
                               ((IntVector *)&stack0xfffffff4,pIVar8->vector[0],pIVar9->vector[1],
@@ -477,11 +476,11 @@ code_?:
                       }
                     }
                   }
-                  goto code_?;
                 }
               }
             }
           }
+          goto code_?;
         }
         goto code_?;
       }

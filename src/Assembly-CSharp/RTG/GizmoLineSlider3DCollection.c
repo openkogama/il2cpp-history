@@ -97,98 +97,106 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection::
   pGStack_8 = (GizmoHandle *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._sliders;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffffb4,this_00,
-                        MethodInfo__System__Collections__Generic__List<RTG::GizmoLineSlider3D>__GetEnumerator__
-                       );
-    iStack_10 = 0;
-    pGStack_6 = (GizmoLineSlider3D__Class *)pLVar9->_list;
-    pMStack_7 = (MonitorData *)pLVar9->_index;
-    pGStack_1 = (GizmoCap3D *)0x1;
-    pGStack_11 = (GizmoSglAxisOffsetDrag3D *)&pGStack_6;
-    while( true ) {
-      do {
-        this_03 = (Gizmo *)&pGStack_6;
-        bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)this_03,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoLineSlider3D>__MoveNext__
-                          );
-        if (bVar12 == 0) {
-          pGStack_1 = (GizmoCap3D *)0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pGStack_6,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoLineSlider3D>__Dispose__
-                     ,(MethodInfo *)in_stack_13);
-          *unaff_FS_OFFSET = pLStack_3;
-          return;
-        }
-        if (this_03 == (Gizmo *)0x0) goto code_?;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pGVar14 = (GizmoLineSlider3DLookAndFeel *)
-                 (&(this_03->fields)._hoverInfo._hoverPoint.y)
-                 [(GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z !=
-                  (GizmoLineSlider3DLookAndFeel *)0x0];
-        if (pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-      } while ((pGVar14->fields)._useZoomFactor == 0);
-      pGVar14 = (GizmoLineSlider3DLookAndFeel *)
-               (&(this_03->fields)._hoverInfo._hoverPoint.y)
-               [(GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z !=
-                (GizmoLineSlider3DLookAndFeel *)0x0];
-      if (pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) break;
-      zoomFactor = _UNK_?;
-      if ((pGVar14->fields)._useZoomFactor != 0) {
-        this_01 = ((GizmoSlider__Fields *)&(this_03->fields).PostEnabled)->_handle;
-        if (this_01 == (GizmoHandle *)0x0) break;
-        zoomFactor = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
-      }
-      pIVar15 = (IGizmoLineSlider3DController__Array *)(this_03->fields).PostDragBegin;
-      pGVar14 = (GizmoLineSlider3DLookAndFeel *)
-               (&(this_03->fields)._hoverInfo._hoverPoint.y)
-               [(GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z !=
-                (GizmoLineSlider3DLookAndFeel *)0x0];
-      if ((pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) ||
-         (uVar16 = (pGVar14->fields)._lineType, pIVar15 == (IGizmoLineSlider3DController__Array *)0x0))
-      break;
-      if (pIVar15->max_length <= uVar16) goto code_?;
-      if (pIVar15->vector[uVar16] == (IGizmoLineSlider3DController *)0x0) break;
-      func_?(1,TypeInfo__RTG__IGizmoLineSlider3DController,pIVar15->vector[uVar16],zoomFactor
-                     );
-      this_02 = *(GizmoCap3D **)&(this_03->fields)._isEnabled;
-      if (this_02 == (GizmoCap3D *)0x0) break;
-      GizmoCap3D::GizmoCap3D_ApplyZoomFactor(this_02,camera,(MethodInfo *)0x0);
-      pGStack_17 = *(GizmoSglAxisScaleDrag3D **)&(this_03->fields)._isEnabled;
-      pVVar18 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealDirection
-                         (&VStack_19,(GizmoLineSlider3D *)this_03,(MethodInfo *)0x0);
-      pIStack_20 = (IGizmoLineSlider3DController__Array *)pVVar18->x;
-      pGStack_21 = (GizmoLineSlider3DControllerData *)pVVar18->y;
-      pGStack_22 = (GizmoRotationArc3D *)pVVar18->z;
-      pVVar18 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealEndPosition
-                         ((Vector3 *)&stack0xffffffb8,(GizmoLineSlider3D *)this_03,zoomFactor,
-                          (MethodInfo *)0x0);
-      if (pGStack_17 == (GizmoSglAxisScaleDrag3D *)0x0) break;
-      sliderDirection.z = (float)pGStack_22;
-      sliderDirection.x = (float)pIStack_20;
-      sliderDirection.y = (float)pGStack_21;
-      GizmoCap3D::GizmoCap3D_CapSlider3D
-                ((GizmoCap3D *)pGStack_17,sliderDirection,*pVVar18,(MethodInfo *)0x0);
-    }
+  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+code_?:
+    func_?();
+code_?:
+    func_?();
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
+    return;
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
-  return;
+  pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+           RegexCharClass+SingleRange]::
+           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                     ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                       *)&stack0xffffffb4,this_00,
+                      MethodInfo__System__Collections__Generic__List<RTG::GizmoLineSlider3D>__GetEnumerator__
+                     );
+  iStack_11 = 0;
+  pGStack_6 = (GizmoLineSlider3D__Class *)pLVar10->_list;
+  pMStack_7 = (MonitorData *)pLVar10->_index;
+  pGStack_1 = (GizmoCap3D *)0x1;
+  pGStack_12 = (GizmoSglAxisOffsetDrag3D *)&pGStack_6;
+  do {
+    do {
+      this_03 = (Gizmo *)&pGStack_6;
+      bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)this_03,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoLineSlider3D>__MoveNext__
+                        );
+      if (bVar13 == 0) {
+        pGStack_1 = (GizmoCap3D *)0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&pGStack_6,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoLineSlider3D>__Dispose__
+                   ,(MethodInfo *)in_stack_14);
+        *unaff_FS_OFFSET = pLStack_3;
+        return;
+      }
+      if (this_03 == (Gizmo *)0x0) goto code_?;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z ==
+          (GizmoLineSlider3DLookAndFeel *)0x0) {
+        pGVar15 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.y;
+        if (pGVar15 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+      }
+      else {
+        pGVar15 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z;
+      }
+    } while ((pGVar15->fields)._useZoomFactor == 0);
+    if ((GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z ==
+        (GizmoLineSlider3DLookAndFeel *)0x0) {
+      pGVar15 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.y;
+      if (pGVar15 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar15 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z;
+    }
+    zoomFactor = _UNK_?;
+    if ((pGVar15->fields)._useZoomFactor != 0) {
+      this_01 = ((GizmoSlider__Fields *)&(this_03->fields).PostEnabled)->_handle;
+      if (this_01 == (GizmoHandle *)0x0) goto code_?;
+      zoomFactor = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+    }
+    pIVar16 = (IGizmoLineSlider3DController__Array *)(this_03->fields).PostDragBegin;
+    if ((GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z ==
+        (GizmoLineSlider3DLookAndFeel *)0x0) {
+      pGVar15 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.y;
+      if (pGVar15 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar15 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z;
+    }
+    uVar17 = (pGVar15->fields)._lineType;
+    if (pIVar16 == (IGizmoLineSlider3DController__Array *)0x0) goto code_?;
+    if (pIVar16->max_length <= uVar17) goto code_?;
+    if (pIVar16->vector[uVar17] == (IGizmoLineSlider3DController *)0x0) goto code_?;
+    func_?(1,TypeInfo__RTG__IGizmoLineSlider3DController,pIVar16->vector[uVar17],zoomFactor);
+    this_02 = *(GizmoCap3D **)&(this_03->fields)._isEnabled;
+    if (this_02 == (GizmoCap3D *)0x0) goto code_?;
+    GizmoCap3D::GizmoCap3D_ApplyZoomFactor(this_02,camera,(MethodInfo *)0x0);
+    pGStack_18 = *(GizmoSglAxisScaleDrag3D **)&(this_03->fields)._isEnabled;
+    pVVar19 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealDirection
+                       (&VStack_20,(GizmoLineSlider3D *)this_03,(MethodInfo *)0x0);
+    pIStack_21 = (IGizmoLineSlider3DController__Array *)pVVar19->x;
+    pGStack_22 = (GizmoLineSlider3DControllerData *)pVVar19->y;
+    pGStack_23 = (GizmoRotationArc3D *)pVVar19->z;
+    pVVar19 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealEndPosition
+                       ((Vector3 *)&stack0xffffffb8,(GizmoLineSlider3D *)this_03,zoomFactor,
+                        (MethodInfo *)0x0);
+    if (pGStack_18 == (GizmoSglAxisScaleDrag3D *)0x0) goto code_?;
+    sliderDirection.z = (float)pGStack_23;
+    sliderDirection.x = (float)pIStack_21;
+    sliderDirection.y = (float)pGStack_22;
+    GizmoCap3D::GizmoCap3D_CapSlider3D
+              ((GizmoCap3D *)pGStack_18,sliderDirection,*pVVar19,(MethodInfo *)0x0);
+  } while( true );
 }
 
 

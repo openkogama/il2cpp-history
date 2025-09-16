@@ -742,7 +742,7 @@ code_?:
     fVar6 = (this->fields).pickedUpStateDuration;
     fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                       ((MethodInfo *)0x0);
-    fVar7 = fVar7 - (fVar1 + fVar6);
+    fVar7 = fVar7 - (fVar6 + fVar1);
     pfVar2 = &(this->fields).reshowingStateDuration;
     if (*pfVar2 <= fVar7 && fVar7 != *pfVar2) {
       pMVar3 = (this->fields).collectibleObject;

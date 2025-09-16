@@ -81,33 +81,34 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Stop
 
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).beginTime;
-  fVar2 = (this->fields)._.originalScale.z;
+  fVar2 = (this->fields).beginTime;
+  fVar3 = (this->fields)._.originalScale.z;
   this_00 = (this->fields)._.target;
+  fVar4 = (this->fields)._.originalScale.x;
+  fVar5 = (this->fields)._.originalScale.y;
   this_01 = (this->fields).animationCurve;
-  fVar3 = (this->fields)._.originalScale.x;
-  fVar4 = (this->fields)._.originalScale.y;
   if (this_01 != (AnimationCurve *)0x0) {
-    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
-    fVar2 = fVar2 * fVar5;
+    fVar3 = fVar3 * fVar6;
     if (this_00 != (Transform *)0x0) {
-      value.y = fVar4 * fVar5;
-      value.x = fVar3 * fVar5;
-      value.z = fVar2;
+      value.y = fVar5 * fVar6;
+      value.x = fVar4 * fVar6;
+      value.z = fVar3;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                 (this_00,value,(MethodInfo *)0x0);
-      pSVar6 = (this->fields)._.OnScaleAnimationStopped;
+      pSVar7 = (this->fields)._.OnScaleAnimationStopped;
       (this->fields)._.state = 1;
-      if (pSVar6 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-        (*(pSVar6->fields)._._.invoke_impl)((pSVar6->fields)._._.method_code);
+      if (pSVar7 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+        (*(pSVar7->fields)._._.invoke_impl)
+                  ((pSVar7->fields)._._.method_code,(fVar1 - fVar2) - (this->fields).doneTime);
       }
       return;
     }
   }
-  func_?(fVar2,fVar1);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?(fVar3,fVar2,fVar1);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

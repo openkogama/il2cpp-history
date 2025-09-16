@@ -138,19 +138,20 @@ Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_FromPoints
         return __return_storage_ptr__;
       }
       if (piVar8 == (int *)0x0) break;
-      iVar10 = *piVar8;
-      uVar11 = 0;
-      if (*(ushort *)(iVar10 + 0xb6) != 0) {
+      uVar10 = 0;
+      uVar11 = *(ushort *)(*piVar8 + 0xb6);
+      if (uVar11 != 0) {
         do {
           if (*(IEnumerator_1_UnityEngine_Vector2___Class **)
-               (*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) ==
+               (*(int *)(*piVar8 + 0x58) + (uint)uVar10 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>) {
             puVar12 = (undefined4 *)
-                     (iVar10 + (*(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) + 0x18) * 8);
+                     (*piVar8 +
+                     (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
-          uVar11 = uVar11 + 1;
-        } while (uVar11 < *(ushort *)(iVar10 + 0xb6));
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < uVar11);
       }
       puVar12 = (undefined4 *)
                func_?(piVar8,

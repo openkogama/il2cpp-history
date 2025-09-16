@@ -669,7 +669,7 @@ code_?:
       auVar10._0_8_ = auVar7._0_8_;
       auVar10._8_4_ = 1;
       auVar11._8_36_ = auVar10._8_36_;
-      auVar11._0_8_ = 0x1021ee8f00000000;
+      auVar11._0_8_ = 0x1021af0f00000000;
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_set_invertCulling(1,(MethodInfo *)0x0);
       auVar12._16_28_ = auVar11._16_28_;
       auVar12._0_12_ = auVar11._0_12_;
@@ -678,7 +678,7 @@ code_?:
       auVar13._0_8_ = auVar11._0_8_;
       auVar13._8_4_ = this;
       auVar14._8_36_ = auVar13._8_36_;
-      auVar14._0_8_ = 0x1021ee9700000000;
+      auVar14._0_8_ = 0x1021af1700000000;
       pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
       auVar16._24_20_ = auVar14._24_20_;

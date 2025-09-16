@@ -182,8 +182,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogParser::CatalogParser_Parse
     if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
     goto code_?;
     pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-             (*(code *)(((String__Class *)((Il2CppClass_0 *)&pMVar7->klass)->image)->vtable).
-                       System_IConvertible_ToByte.method)();
+             (*(code *)((Il2CppClass_0 *)&pMVar7->klass)->image[6].codeGenModule)();
     bVar9 = mscorlib.dll::System::String::String_op_Equality
                       ((String *)pMVar8,::StringLiteral__,(MethodInfo *)0x0);
   } while (bVar9 != 0);

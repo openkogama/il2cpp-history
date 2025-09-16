@@ -333,14 +333,13 @@ code_?:
     uVar26 = AStack_6._24_4_;
     while (AStack_6._24_4_ = uVar26, AStack_6._center._4_8_ = uVar25, AStack_6._center.x = fVar24
           , AStack_6._size.z = fVar11, AStack_6._size.y = fVar10, AStack_6._size.x = fVar9,
-          pIVar16 = pIStack_21,
-          pIStack_27 = (IEnumerable_1_UnityEngine_GameObject___Class *)pIStack_21,
+          pIVar16 = pIStack_21, pIStack_27 = pIStack_21,
           pIStack_21 != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
       pIStack_28 = pIStack_21->klass;
       uVar19 = 0;
       uVar18._0_1_ = (pIStack_28->_1).rank;
       uVar18._1_1_ = (pIStack_28->_1).minimumAlignment;
-      uStack_29 = (uint)uVar18;
+      pIStack_29 = (IEnumerable_1_UnityEngine_GameObject___Class *)(uint)uVar18;
       if (uVar18 != 0) {
         do {
           if (pIStack_28->interfaceOffsets[uVar19].interfaceType ==
@@ -375,16 +374,16 @@ code_?:
         *unaff_FS_OFFSET = uStack_3;
         return __return_storage_ptr__;
       }
-      pIStack_28 = (IEnumerable_1_UnityEngine_GameObject___Class *)pIStack_21;
+      pIStack_27 = pIStack_21;
       if (pIStack_21 == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) break;
-      pIStack_27 = pIStack_21->klass;
+      pIStack_29 = pIStack_21->klass;
       uVar19 = 0;
-      uVar31._0_1_ = (pIStack_27->_1).rank;
-      uVar31._1_1_ = (pIStack_27->_1).minimumAlignment;
-      uStack_29 = (uint)uVar31;
+      uVar31._0_1_ = (pIStack_29->_1).rank;
+      uVar31._1_1_ = (pIStack_29->_1).minimumAlignment;
+      pIStack_28 = (IEnumerable_1_UnityEngine_GameObject___Class *)(uint)uVar31;
       if (uVar31 != 0) {
         do {
-          if (pIStack_27->interfaceOffsets[uVar19].interfaceType ==
+          if (pIStack_29->interfaceOffsets[uVar19].interfaceType ==
               (Il2CppClass *)
               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>) {
             ppMVar20 = &(&pIStack_21->klass->vtable)
@@ -447,7 +446,7 @@ Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_GetTransfor
           (ObjectTransformGizmo *this,MethodInfo *method)
 
 {
-  pMVar1 = (MethodInfo *)*unaff_FS_OFFSET;
+  pOVar1 = (ObjectTransformGizmoSettings *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&
@@ -481,86 +480,96 @@ Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_GetTransfor
   }
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             GameObjectEx::GameObjectEx_FilterParentsOnly_1(gameObjects,(MethodInfo *)0x0);
-  this_01 = (MethodInfo *)
+  this_01 = (ObjectTransformGizmoSettings *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-  pMVar2 = this_01;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-    RegexCharClass+SingleRange]::
-    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               &stack0xffffffcc,this_00,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-              );
-    method_00 = (MethodInfo *)0x0;
-    while( true ) {
-      this_02 = 
-      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-      ;
-      bVar3 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                        );
-      if (bVar3 == 0) {
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffbc,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   ,method_00);
-        *unaff_FS_OFFSET = pMVar1;
-        return (List_1_UnityEngine_GameObject_ *)this_01;
+  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+code_?:
+    func_?();
+    func_?();
+    pcVar2 = (code *)swi(3);
+    pLVar3 = (List_1_UnityEngine_GameObject_ *)(*pcVar2)();
+    return pLVar3;
+  }
+  mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  RegexCharClass+SingleRange]::
+  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+            ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             &stack0xffffffcc,this_00,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+            );
+  method_00 = (MethodInfo *)0x0;
+code_?:
+  this_02 = 
+  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+  ;
+  bVar4 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          List_1_T_Enumerator_System_Object__MoveNext
+                    ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                    );
+  if (bVar4 == 0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&stack0xffffffbc,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+               ,method_00);
+    *unaff_FS_OFFSET = pOVar1;
+    return (List_1_UnityEngine_GameObject_ *)this_01;
+  }
+  if (this_02 != (MethodInfo *)0x0) {
+    method_00 = (MethodInfo *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          ((GameObject *)this_02,
+                           RTG__IRTTransformGizmoListener_MethodInfo__UnityEngine__GameObject__GetComponent<RTG::IRTTransformGizmoListener>__
+                          );
+    if (method_00 != (MethodInfo *)0x0) goto code_?;
+    goto code_?;
+  }
+  goto code_?;
+code_?:
+  cVar5 = func_?();
+  if (cVar5 != '\0') {
+code_?:
+    if ((this->fields)._sharedSettings == (ObjectTransformGizmoSettings *)0x0) {
+      pOVar6 = (this->fields)._settings;
+    }
+    else {
+      pOVar6 = (this->fields)._sharedSettings;
+    }
+    if (this_02 == (MethodInfo *)0x0) goto code_?;
+    layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                            ((GameObject *)this_02,(MethodInfo *)0x0);
+    if (pOVar6 == (ObjectTransformGizmoSettings *)0x0) goto code_?;
+    method_00 = (MethodInfo *)&UNK_?;
+    bVar4 = LayerEx::LayerEx_IsLayerBitSet
+                      ((pOVar6->fields)._transformableLayers,layerNumber,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      if ((this->fields)._sharedSettings == (ObjectTransformGizmoSettings *)0x0) {
+        this_01 = (this->fields)._settings;
+        if (this_01 == (ObjectTransformGizmoSettings *)0x0) goto code_?;
       }
-      if (this_02 == (MethodInfo *)0x0) break;
-      method_00 = (MethodInfo *)
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                            ((GameObject *)this_02,
-                             RTG__IRTTransformGizmoListener_MethodInfo__UnityEngine__GameObject__GetComponent<RTG::IRTTransformGizmoListener>__
-                            );
-      this_01 = pMVar2;
-      if ((method_00 == (MethodInfo *)0x0) ||
-         (cVar4 = func_?(), pMVar2 = this_01, cVar4 != '\0')) {
-        pOVar5 = (&(this->fields)._settings)
-                 [(this->fields)._sharedSettings != (ObjectTransformGizmoSettings *)0x0];
-        if ((this_02 == (MethodInfo *)0x0) ||
-           (layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                                    ((GameObject *)this_02,(MethodInfo *)0x0),
-           pOVar5 == (ObjectTransformGizmoSettings *)0x0)) break;
-        method_00 = (MethodInfo *)&UNK_?;
-        bVar3 = LayerEx::LayerEx_IsLayerBitSet
-                          ((pOVar5->fields)._transformableLayers,layerNumber,(MethodInfo *)0x0);
-        pMVar2 = this_01;
-        if (bVar3 != 0) {
-          pOVar5 = (&(this->fields)._settings)
-                   [(this->fields)._sharedSettings != (ObjectTransformGizmoSettings *)0x0];
-          if (pOVar5 == (ObjectTransformGizmoSettings *)0x0) break;
-          this_01 = this_02;
-          bVar3 = ObjectTransformGizmoSettings::ObjectTransformGizmoSettings_IsObjectTransformable
-                            (pOVar5,(GameObject *)this_02,(MethodInfo *)0x0);
-          pMVar2 = this_01;
-          if (bVar3 != 0) {
-            if (this_01 == (MethodInfo *)0x0) break;
-            pMVar1 = this_01;
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Add
-                      ((List_1_System_Object_ *)this_01,(Object *)this_02,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                      );
-          }
-        }
+      else {
+        this_01 = (this->fields)._sharedSettings;
+      }
+      bVar4 = ObjectTransformGizmoSettings::ObjectTransformGizmoSettings_IsObjectTransformable
+                        (this_01,(GameObject *)this_02,(MethodInfo *)0x0);
+      if (bVar4 != 0) {
+        if (this_01 == (ObjectTransformGizmoSettings *)0x0) goto code_?;
+        pOVar1 = this_01;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_01,(Object *)this_02,
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                  );
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pLVar7 = (List_1_UnityEngine_GameObject_ *)(*pcVar6)();
-  return pLVar7;
+  goto code_?;
 }
 
 

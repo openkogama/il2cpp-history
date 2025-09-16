@@ -38,7 +38,6 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
         fVar9 * (pLVar10->fields).interpolateTowardsYawRotation.w) {
       return;
     }
-    pLVar10 = (this->fields).headController;
     if (pLVar10 != (LimbController *)0x0) {
       (pLVar10->fields).elapsedInterpolationTime = 0.0;
       (pLVar10->fields).elapsedInterpolateAnimationTime = 0.0;
@@ -140,7 +139,6 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::
         yawRotation.w * (pLVar2->fields).interpolateTowardsYawRotation.w) {
       return;
     }
-    pLVar2 = (this->fields).headController;
     if (pLVar2 != (LimbController *)0x0) {
       (pLVar2->fields).elapsedInterpolationTime = 0.0;
       (pLVar2->fields).elapsedInterpolateAnimationTime = 0.0;

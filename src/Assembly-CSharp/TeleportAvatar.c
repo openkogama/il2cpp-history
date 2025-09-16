@@ -132,8 +132,7 @@ void Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar__Start_b__16_0
   fVar1 = (float10)func_?(t * _UNK_?);
   if (this_00 != (MVAvatarLocal *)0x0) {
     MVAvatar::MVAvatar_set_SetTransparency
-              ((MVAvatar *)this_00,_UNK_? - (float)(fVar1 / (float10)_UNK_?),
-               (MethodInfo *)0x0);
+              ((MVAvatar *)this_00,_UNK_? - (float)fVar1 / _UNK_?,(MethodInfo *)0x0);
     return;
   }
   func_?();
@@ -153,7 +152,7 @@ void Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar__Start_b__16_1
   fVar1 = (float10)func_?(t * _UNK_?);
   if (this_00 != (MVAvatarLocal *)0x0) {
     MVAvatar::MVAvatar_set_SetTransparency
-              ((MVAvatar *)this_00,(float)(fVar1 / (float10)_UNK_?),(MethodInfo *)0x0);
+              ((MVAvatar *)this_00,(float)fVar1 / _UNK_?,(MethodInfo *)0x0);
     return;
   }
   func_?();

@@ -251,27 +251,37 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculateLookArou
   }
   pCVar1 = (this->fields)._lookAroundSettings;
   if (pCVar1 != (CameraLookAroundSettings *)0x0) {
+    if ((pCVar1->fields)._lookAroundMode == 0) {
+      fVar2 = (pCVar1->fields)._standardLookAroundSensitivity;
+    }
+    else {
+      fVar2 = (pCVar1->fields)._smoothLookAroundSensitivity;
+    }
     fVar2 = (float)((uint)deviceAxisY ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-            (&(pCVar1->fields)._standardLookAroundSensitivity)
-            [(pCVar1->fields)._lookAroundMode != 0];
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar2
+    ;
+    pCVar3 = (this->fields)._lookAroundSettings;
     if ((pCVar1->fields)._invertY != 0) {
       fVar2 = fVar2 * _UNK_?;
     }
-    fVar3 = deviceAxisX *
-            (&(pCVar1->fields)._standardLookAroundSensitivity)
-            [(pCVar1->fields)._lookAroundMode != 0];
-    if ((((this->fields)._lookAroundSettings)->fields)._invertX != 0) {
-      fVar3 = fVar3 * _UNK_?;
+    if ((pCVar3->fields)._lookAroundMode == 0) {
+      fVar4 = (pCVar3->fields)._standardLookAroundSensitivity;
     }
-    VVar4.y = fVar3;
-    VVar4.x = fVar2;
-    return VVar4;
+    else {
+      fVar4 = (pCVar3->fields)._smoothLookAroundSensitivity;
+    }
+    fVar4 = deviceAxisX * fVar4;
+    if ((((this->fields)._lookAroundSettings)->fields)._invertX != 0) {
+      fVar4 = fVar4 * _UNK_?;
+    }
+    VVar5.y = fVar4;
+    VVar5.x = fVar2;
+    return VVar5;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  VVar4 = (Vector2)(*pcVar5)();
-  return VVar4;
+  pcVar6 = (code *)swi(3);
+  VVar5 = (Vector2)(*pcVar6)();
+  return VVar5;
 }
 
 
@@ -287,25 +297,37 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculateOrbitRot
   }
   pCVar1 = (this->fields)._orbitSettings;
   if (pCVar1 != (CameraOrbitSettings *)0x0) {
+    if ((pCVar1->fields)._orbitMode == 1) {
+      fVar2 = (pCVar1->fields)._smoothOrbitSensitivity;
+    }
+    else {
+      fVar2 = (pCVar1->fields)._standardOrbitSensitivity;
+    }
     fVar2 = (float)((uint)deviceAxisY ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-            (&(pCVar1->fields)._standardOrbitSensitivity)[(pCVar1->fields)._orbitMode == 1];
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar2
+    ;
+    pCVar3 = (this->fields)._orbitSettings;
     if ((pCVar1->fields)._invertY != 0) {
       fVar2 = fVar2 * _UNK_?;
     }
-    fVar3 = deviceAxisX *
-            (&(pCVar1->fields)._standardOrbitSensitivity)[(pCVar1->fields)._orbitMode == 1];
-    if ((((this->fields)._orbitSettings)->fields)._invertX != 0) {
-      fVar3 = fVar3 * _UNK_?;
+    if ((pCVar3->fields)._orbitMode == 1) {
+      fVar4 = (pCVar3->fields)._smoothOrbitSensitivity;
     }
-    VVar4.y = fVar3;
-    VVar4.x = fVar2;
-    return VVar4;
+    else {
+      fVar4 = (pCVar3->fields)._standardOrbitSensitivity;
+    }
+    fVar4 = deviceAxisX * fVar4;
+    if ((((this->fields)._orbitSettings)->fields)._invertX != 0) {
+      fVar4 = fVar4 * _UNK_?;
+    }
+    VVar5.y = fVar4;
+    VVar5.x = fVar2;
+    return VVar5;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  VVar4 = (Vector2)(*pcVar5)();
-  return VVar4;
+  pcVar6 = (code *)swi(3);
+  VVar5 = (Vector2)(*pcVar6)();
+  return VVar5;
 }
 
 
@@ -325,15 +347,28 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculatePanAmoun
   }
   pCVar1 = (this->fields)._panSettings;
   if (pCVar1 != (CameraPanSettings *)0x0) {
+    if ((pCVar1->fields)._panMode == 0) {
+      fVar2 = (pCVar1->fields)._standardPanSensitivity;
+    }
+    else {
+      fVar2 = (pCVar1->fields)._smoothPanSensitivity;
+    }
     fVar2 = (float)((uint)deviceAxisX ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-            (&(pCVar1->fields)._standardPanSensitivity)[(pCVar1->fields)._panMode != 0];
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar2
+    ;
+    pCVar3 = (this->fields)._panSettings;
     if ((pCVar1->fields)._invertX != 0) {
       fVar2 = fVar2 * _UNK_?;
     }
+    if ((pCVar3->fields)._panMode == 0) {
+      fVar4 = (pCVar3->fields)._standardPanSensitivity;
+    }
+    else {
+      fVar4 = (pCVar3->fields)._smoothPanSensitivity;
+    }
     deviceAxisY = (float)((uint)deviceAxisY ^
                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-                  (&(pCVar1->fields)._standardPanSensitivity)[(pCVar1->fields)._panMode != 0];
+                  fVar4;
     if ((((this->fields)._panSettings)->fields)._invertY != 0) {
       deviceAxisY = deviceAxisY * _UNK_?;
     }
@@ -342,15 +377,15 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculatePanAmoun
     if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__CameraEx);
     }
-    fVar3 = CameraEx::CameraEx_EstimateZoomFactorSpherical(camera,worldPos,(MethodInfo *)0x0);
-    VStack_4.y = deviceAxisY * (float)((uint)fVar3 & _UNK_?);
-    VStack_4.x = fVar2 * (float)((uint)fVar3 & _UNK_?);
-    return VStack_4;
+    fVar4 = CameraEx::CameraEx_EstimateZoomFactorSpherical(camera,worldPos,(MethodInfo *)0x0);
+    VStack_5.y = deviceAxisY * (float)((uint)fVar4 & _UNK_?);
+    VStack_5.x = fVar2 * (float)((uint)fVar4 & _UNK_?);
+    return VStack_5;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  VVar6 = (Vector2)(*pcVar5)();
-  return VVar6;
+  pcVar6 = (code *)swi(3);
+  VVar7 = (Vector2)(*pcVar6)();
+  return VVar7;
 }
 
 
@@ -1151,8 +1186,8 @@ code_?:
                       if (bVar24 || bVar13) {
                         pCVar1 = (this->fields)._moveSettings;
                         if (pCVar1 != (CameraMoveSettings *)0x0) {
-                          fVar2 = (pCVar1->fields)._accelerationRate;
-                          fVar3 = (this->fields)._lastFocusPoint.z;
+                          fStack_9 = (pCVar1->fields)._accelerationRate;
+                          fVar2 = (this->fields)._lastFocusPoint.z;
                           this_00 = (this->fields)._targetCamera;
                           uVar27._0_4_ = (Camera *)(this->fields)._lastFocusPoint.x;
                           uVar27._4_4_ = (Transform *)(this->fields)._lastFocusPoint.y;
@@ -1181,30 +1216,30 @@ code_?:
                                                    (MethodInfo *)0x0);
                               pCStack_28 = (CameraProjectionSwitchBeginHandler *)pVVar15->x;
                               unique0x0000a404 = pVVar15->y;
-                              fVar4 = pVVar15->z;
-                              fVar32 = (float)(Camera *)uVar27 - (float)pCStack_28;
-                              fVar33 = (float)SUB84(uVar27,4) - unique0x0000a404;
-                              iVar34 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                              fVar3 = pVVar15->z;
+                              fVar4 = (float)(Camera *)uVar27 - (float)pCStack_28;
+                              fVar32 = (float)SUB84(uVar27,4) - unique0x0000a404;
+                              iVar33 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                        Camera_get_pixelHeight(this_00,(MethodInfo *)0x0);
-                              fVar35 = (float)iVar34 * _UNK_? * _UNK_?;
-                              fVar36 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                              fVar34 = (float)iVar33 * _UNK_? * _UNK_?;
+                              fVar35 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                        Camera_get_fieldOfView(this_00,(MethodInfo *)0x0);
-                              fVar3 = (fVar32 * (float)pRVar29 + fVar33 * (float)pMVar30 +
-                                       (fVar3 - fVar4) * (float)BVar31._._.m_CachedPtr) /
-                                       (fVar35 / fVar36);
+                              fVar2 = (fVar4 * (float)pRVar29 + fVar32 * (float)pMVar30 +
+                                       (fVar2 - fVar3) * (float)BVar31._._.m_CachedPtr) /
+                                       (fVar34 / fVar35);
                             }
                             else {
-                              fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                              fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                        Camera_get_orthographicSize(this_00,(MethodInfo *)0x0);
-                              iVar34 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                              iVar33 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                        Camera_get_pixelHeight(this_00,(MethodInfo *)0x0);
-                              fVar3 = (fVar3 + fVar3) / ((float)iVar34 * _UNK_?);
+                              fVar2 = (fVar2 + fVar2) / ((float)iVar33 * _UNK_?);
                             }
-                            fStack_9 = UnityEngine.CoreModule.dll::UnityEngine::Time::
-                                        Time_1_get_deltaTime((MethodInfo *)0x0);
-                            fStack_9 = fStack_9 * (float)((uint)fVar3 & _UNK_?) * fVar2;
+                            fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::
+                                     Time_1_get_deltaTime((MethodInfo *)0x0);
                             (this->fields)._currentAcceleration =
-                                 fStack_9 + (this->fields)._currentAcceleration;
+                                 (float)((uint)fVar2 & _UNK_?) * fStack_9 * fVar3 +
+                                 (this->fields)._currentAcceleration;
                             goto code_?;
                           }
                         }
@@ -1217,17 +1252,17 @@ code_?:
                                       RTInput::RTInput_MouseAxisY((MethodInfo *)0x0);
                         if (((float)pMVar30 == 0.0) && ((float)deviceAxisY == 0.0))
                         goto code_?;
-                        pCVar37 = (this->fields)._panSettings;
-                        if (pCVar37 != (CameraPanSettings *)0x0) {
-                          if ((pCVar37->fields)._isPanningEnabled == 0) {
+                        pCVar36 = (this->fields)._panSettings;
+                        if (pCVar36 != (CameraPanSettings *)0x0) {
+                          if ((pCVar36->fields)._isPanningEnabled == 0) {
 code_?:
-                            pCVar38 = (this->fields)._orbitSettings;
-                            if (pCVar38 != (CameraOrbitSettings *)0x0) {
-                              if ((pCVar38->fields)._isOrbitEnabled == 0) {
+                            pCVar37 = (this->fields)._orbitSettings;
+                            if (pCVar37 != (CameraOrbitSettings *)0x0) {
+                              if ((pCVar37->fields)._isOrbitEnabled == 0) {
 code_?:
-                                pCVar39 = (this->fields)._lookAroundSettings;
-                                if (pCVar39 != (CameraLookAroundSettings *)0x0) {
-                                  if ((pCVar39->fields)._isLookAroundEnabled != 0) {
+                                pCVar38 = (this->fields)._lookAroundSettings;
+                                if (pCVar38 != (CameraLookAroundSettings *)0x0) {
+                                  if ((pCVar38->fields)._isLookAroundEnabled != 0) {
                                     pCVar10 = (this->fields)._hotkeys;
                                     if ((pCVar10 == (CameraHotkeys *)0x0) ||
                                        (method_00 = (RTFocusCamera *)(pCVar10->fields)._lookAround,
@@ -1235,10 +1270,10 @@ code_?:
                                     bVar12 = Hotkeys::Hotkeys_IsActive
                                                        ((Hotkeys *)method_00,1,(MethodInfo *)0x0);
                                     if (bVar12 != 0) {
-                                      pCVar39 = (this->fields)._lookAroundSettings;
-                                      if (pCVar39 == (CameraLookAroundSettings *)0x0)
+                                      pCVar38 = (this->fields)._lookAroundSettings;
+                                      if (pCVar38 == (CameraLookAroundSettings *)0x0)
                                       goto code_?;
-                                      if ((pCVar39->fields)._lookAroundMode != 0) {
+                                      if ((pCVar38->fields)._lookAroundMode != 0) {
                                         RTFocusCamera_StopCamTransform(this,(MethodInfo *)0x0);
                                         method_01 = (RTFocusCamera_DoSmoothOrbit_d_131__Class *)
                                                                                                         
@@ -1254,11 +1289,11 @@ code_?:
                                         }
                                         goto code_?;
                                       }
-                                      VVar40 = RTFocusCamera_CalculateLookAroundRotation
+                                      VVar39 = RTFocusCamera_CalculateLookAroundRotation
                                                          (this,(float)pMVar30,(float)deviceAxisY,
                                                           (MethodInfo *)0x0);
                                       RTFocusCamera_LookAround
-                                                (this,(float)VVar40.x,fStack_9,(MethodInfo *)0x0);
+                                                (this,(float)VVar39.x,fStack_9,(MethodInfo *)0x0);
                                     }
                                   }
 code_?:
@@ -1268,22 +1303,22 @@ code_?:
                                   }
                                   if ((this->fields).CanUseScrollWheel !=
                                       (CameraCanUseScrollWheelHandler *)0x0) {
-                                    pOVar41 = (Object *)func_?();
+                                    pOVar40 = (Object *)func_?();
                                     mscorlib.dll::System::ThrowHelper::
                                     ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                              (pOVar41,ExceptionArgument__Enum_obj,
+                                              (pOVar40,ExceptionArgument__Enum_obj,
                                                (MethodInfo *)method_00);
-                                    pCVar42 = (this->fields).CanUseScrollWheel;
-                                    if ((pCVar42 == (CameraCanUseScrollWheelHandler *)0x0) ||
-                                       ((*(pCVar42->fields)._._.invoke_impl)
-                                                  ((pCVar42->fields)._._.method_code,pOVar41,
-                                                   (pCVar42->fields)._._.method),
-                                       pOVar41 == (Object *)0x0)) goto code_?;
-                                    if (*(char *)&pOVar41[1].klass == '\0') {
+                                    pCVar41 = (this->fields).CanUseScrollWheel;
+                                    if ((pCVar41 == (CameraCanUseScrollWheelHandler *)0x0) ||
+                                       ((*(pCVar41->fields)._._.invoke_impl)
+                                                  ((pCVar41->fields)._._.method_code,pOVar40,
+                                                   (pCVar41->fields)._._.method),
+                                       pOVar40 == (Object *)0x0)) goto code_?;
+                                    if (*(char *)&pOVar40[1].klass == '\0') {
                                       bVar13 = false;
                                     }
                                     else {
-                                      bVar13 = *(char *)((int)&pOVar41[1].klass + 1) == '\0';
+                                      bVar13 = *(char *)((int)&pOVar40[1].klass + 1) == '\0';
                                     }
                                     if (!bVar13) {
                                       return;
@@ -1294,12 +1329,12 @@ code_?:
                                   if ((float)pMVar30 == 0.0) {
                                     return;
                                   }
-                                  pCVar43 = (this->fields)._zoomSettings;
-                                  if (pCVar43 != (CameraZoomSettings *)0x0) {
-                                    if ((pCVar43->fields)._isZoomEnabled == 0) {
+                                  pCVar42 = (this->fields)._zoomSettings;
+                                  if (pCVar42 != (CameraZoomSettings *)0x0) {
+                                    if ((pCVar42->fields)._isZoomEnabled == 0) {
                                       return;
                                     }
-                                    if ((pCVar43->fields)._zoomMode != 0) {
+                                    if ((pCVar42->fields)._zoomMode != 0) {
                                       RTFocusCamera_StopCamTransform(this,(MethodInfo *)0x0);
                                       if (cRam_? == '\0') {
                                         func_?();
@@ -1307,24 +1342,24 @@ code_?:
                                       }
                                       method_02 = TypeInfo__RTG__RTFocusCamera___DoSmoothZoom_d__132
                                       ;
-                                      pOVar41 = (Object *)func_?();
+                                      pOVar40 = (Object *)func_?();
                                       mscorlib.dll::System::ThrowHelper::
                                       ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                                (pOVar41,ExceptionArgument__Enum_obj,
+                                                (pOVar40,ExceptionArgument__Enum_obj,
                                                  (MethodInfo *)method_02);
-                                      pOVar41[1].klass = (Object__Class *)0x0;
-                                      pOVar41[2].klass = (Object__Class *)this;
+                                      pOVar40[1].klass = (Object__Class *)0x0;
+                                      pOVar40[2].klass = (Object__Class *)this;
                                       func_?();
-                                      pOVar41[2].monitor = pMVar30;
+                                      pOVar40[2].monitor = pMVar30;
                                       (this->fields)._genricCamTransformCrtn =
-                                           (IEnumerator *)pOVar41;
+                                           (IEnumerator *)pOVar40;
                                       func_?();
                                       stack0xffffffbc = (float)this;
                                       pCStack_28 = (CameraProjectionSwitchBeginHandler *)
                                                    &UNK_?;
                                       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                                       MonoBehaviour_StartCoroutine_Auto
-                                                ((MonoBehaviour *)this,(IEnumerator *)pOVar41,
+                                                ((MonoBehaviour *)this,(IEnumerator *)pOVar40,
                                                  (MethodInfo *)0x0);
                                       return;
                                     }
@@ -1343,13 +1378,13 @@ code_?:
                                   bVar12 = Hotkeys::Hotkeys_IsActive
                                                      ((Hotkeys *)method_00,1,(MethodInfo *)0x0);
                                   if (bVar12 == 0) goto code_?;
-                                  pCVar38 = (this->fields)._orbitSettings;
-                                  if (pCVar38 != (CameraOrbitSettings *)0x0) {
-                                    if ((pCVar38->fields)._orbitMode == 0) {
-                                      VVar40 = RTFocusCamera_CalculateOrbitRotation
+                                  pCVar37 = (this->fields)._orbitSettings;
+                                  if (pCVar37 != (CameraOrbitSettings *)0x0) {
+                                    if ((pCVar37->fields)._orbitMode == 0) {
+                                      VVar39 = RTFocusCamera_CalculateOrbitRotation
                                                          (this,(float)pMVar30,(float)deviceAxisY,
                                                           (MethodInfo *)0x0);
-                                      RTFocusCamera_Orbit(this,(float)VVar40.x,fStack_9,
+                                      RTFocusCamera_Orbit(this,(float)VVar39.x,fStack_9,
                                                           (MethodInfo *)0x0);
                                       goto code_?;
                                     }
@@ -1373,13 +1408,13 @@ code_?:
                                (pHVar11 = (pCVar10->fields)._pan, pHVar11 != (Hotkeys *)0x0)) {
                               bVar12 = Hotkeys::Hotkeys_IsActive(pHVar11,1,(MethodInfo *)0x0);
                               if (bVar12 == 0) goto code_?;
-                              pCVar37 = (this->fields)._panSettings;
-                              if (pCVar37 == (CameraPanSettings *)0x0) goto code_?;
-                              if ((pCVar37->fields)._panMode == 0) {
-                                VVar40 = RTFocusCamera_CalculatePanAmount
+                              pCVar36 = (this->fields)._panSettings;
+                              if (pCVar36 == (CameraPanSettings *)0x0) goto code_?;
+                              if ((pCVar36->fields)._panMode == 0) {
+                                VVar39 = RTFocusCamera_CalculatePanAmount
                                                    (this,(float)pMVar30,(float)deviceAxisY,
                                                     (MethodInfo *)0x0);
-                                RTFocusCamera_Pan(this,VVar40,(MethodInfo *)0x0);
+                                RTFocusCamera_Pan(this,VVar39,(MethodInfo *)0x0);
                                 goto code_?;
                               }
                               RTFocusCamera_StopCamTransform(this,(MethodInfo *)0x0);
@@ -1392,21 +1427,21 @@ code_?:
                                             TypeInfo__RTG__RTFocusCamera___DoSmoothPan_d__129;
                               }
 code_?:
-                              pOVar41 = (Object *)func_?();
+                              pOVar40 = (Object *)func_?();
                               mscorlib.dll::System::ThrowHelper::
                               ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                        (pOVar41,ExceptionArgument__Enum_obj,(MethodInfo *)method_01
+                                        (pOVar40,ExceptionArgument__Enum_obj,(MethodInfo *)method_01
                                         );
-                              pOVar41[1].klass = (Object__Class *)0x0;
-                              pOVar41[2].klass = (Object__Class *)this;
+                              pOVar40[1].klass = (Object__Class *)0x0;
+                              pOVar40[2].klass = (Object__Class *)this;
                               func_?();
-                              pOVar41[2].monitor = pMVar30;
-                              pOVar41[3].klass = deviceAxisY;
-                              (this->fields)._genricCamTransformCrtn = (IEnumerator *)pOVar41;
+                              pOVar40[2].monitor = pMVar30;
+                              pOVar40[3].klass = deviceAxisY;
+                              (this->fields)._genricCamTransformCrtn = (IEnumerator *)pOVar40;
                               func_?();
                               UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                               MonoBehaviour_StartCoroutine_Auto
-                                        ((MonoBehaviour *)this,(IEnumerator *)pOVar41,
+                                        ((MonoBehaviour *)this,(IEnumerator *)pOVar40,
                                          (MethodInfo *)0x0);
                               goto code_?;
                             }
@@ -1427,8 +1462,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar44 = (code *)swi(3);
-  (*pcVar44)();
+  pcVar43 = (code *)swi(3);
+  (*pcVar43)();
   return;
 }
 
@@ -1958,7 +1993,7 @@ void Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_PerformRotationSwitc
                 uVar7 = pVVar5->y;
                 fVar8 = (this->fields)._focusPointOffset;
                 value.y = (float)&stack0xffffffd8 - (float)uVar7 * fVar8;
-                value.x = 4.3621738e-29 - (float)uVar6 * fVar8;
+                value.x = 4.3565887e-29 - (float)uVar6 * fVar8;
                 value.z = (float)pTVar4 - pVVar5->z * fVar8;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                           (pTVar3,value,(MethodInfo *)0x0);

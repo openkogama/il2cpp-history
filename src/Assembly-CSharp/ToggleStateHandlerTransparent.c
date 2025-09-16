@@ -22,7 +22,12 @@ void Assembly-CSharp.dll::ToggleStateHandlerTransparent::
     uStack_3 = *puVar2;
     uStack_4 = puVar2[1];
     uStack_5 = puVar2[2];
-    fStack_6 = (&(this->fields).toggled)[(this->fields)._.toggleState == 0];
+    if ((this->fields)._.toggleState == 0) {
+      fStack_6 = (this->fields).notToggled;
+    }
+    else {
+      fStack_6 = (this->fields).toggled;
+    }
     (*(code *)(pIVar1->klass->vtable).set_color.method)
               (pIVar1,uStack_3,uStack_4,uStack_5,fStack_6,
                (pIVar1->klass->vtable).get_raycastTarget.methodPtr);

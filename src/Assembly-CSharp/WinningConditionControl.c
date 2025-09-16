@@ -251,15 +251,14 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   statType = (GameStatCounterType__Enum)
              mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
-  cVar8 = '\0';
   if (values != (String__Array *)0x0) {
-    uStack9 = 0;
-    pSStack10 = pSVar1;
+    uStack8 = 0;
+    pSStack9 = pSVar1;
     func_?();
-    puStack11 = (undefined *)statType;
-    uStack12 = 1;
+    puStack10 = (undefined *)statType;
+    uStack11 = 1;
     func_?();
-    pSStack13 = ::StringLiteral__;
+    pSStack12 = ::StringLiteral__;
     func_?();
     method = (MethodInfo *)&UNK_?;
     func_?();
@@ -272,40 +271,15 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     return pSVar1;
   }
-  uVar14 = func_?();
-  cVar15 = (char)((ulonglong)uVar14 >> 0x28);
-  uVar16 = (undefined3)((ulonglong)uVar14 >> 8);
-  cVar8 = ((char)uVar14 - cVar15) - cVar8;
-  puVar17 = (uint *)CONCAT31(uVar16,cVar8);
-  *puVar17 = *puVar17 - (int)((ulonglong)uVar14 >> 0x20);
-  uVar18 = (undefined2)((ulonglong)uVar14 >> 0x30);
-  uVar19 = (undefined1)((ulonglong)uVar14 >> 0x20);
-  cVar15 = cVar15 - cVar8;
-  uVar20 = CONCAT22(uVar18,CONCAT11(cVar15,uVar19));
-  uVar21 = *puVar17;
-  *puVar17 = *puVar17 - uVar20;
-  cVar8 = (cVar8 - cVar15) - (uVar21 < uVar20);
-  puVar17 = (uint *)CONCAT31(uVar16,cVar8);
-  uVar21 = *puVar17;
-  *puVar17 = *puVar17 - uVar20;
-  cVar8 = (cVar8 - cVar15) - (uVar21 < uVar20);
-  puVar17 = (uint *)CONCAT31(uVar16,cVar8);
-  uVar21 = *puVar17;
-  *puVar17 = *puVar17 - uVar20;
-  cVar8 = (cVar8 - cVar15) - (uVar21 < uVar20);
-  puVar17 = (uint *)CONCAT31(uVar16,cVar8);
-  uVar21 = *puVar17;
-  *puVar17 = *puVar17 - uVar20;
-  cVar8 = (cVar8 - cVar15) - (uVar21 < uVar20);
-  puVar17 = (uint *)CONCAT31(uVar16,cVar8);
-  uVar21 = *puVar17;
-  *puVar17 = *puVar17 - uVar20;
-  cVar8 = (cVar8 - cVar15) - (uVar21 < uVar20);
-  piVar22 = (int *)CONCAT31(uVar16,cVar8);
-  *piVar22 = *piVar22 - uVar20;
-  *piVar22 = *piVar22 - CONCAT22(uVar18,CONCAT11(cVar15 - cVar8,uVar19));
-  pcVar23 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar23)();
+  uVar13 = func_?();
+  iVar4 = (int)((ulonglong)uVar13 >> 0x20);
+  piVar14 = (int *)uVar13;
+  *piVar14 = *piVar14 - iVar4;
+  *piVar14 = *piVar14 - iVar4;
+  *piVar14 = *piVar14 - iVar4;
+  *piVar14 = *piVar14 - iVar4;
+  pcVar15 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar15)();
   return pSVar1;
 }
 

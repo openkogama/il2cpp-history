@@ -12,8 +12,8 @@ using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent(typeof(GridLayoutGroup))]
 [RequireComponent(typeof(RectTransform))]
+[RequireComponent(typeof(GridLayoutGroup))]
 public class MainMenuGridAdjuster : MonoBehaviour
 {
 	// Fields

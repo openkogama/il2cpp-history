@@ -224,8 +224,8 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
+  puStack_4 = &stack0xffffff94;
+  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
@@ -292,7 +292,7 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
         pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                  Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                            &stack0xffffffa4,
+                            &stack0xffffffa0,
                             (Dictionary_2_System_UInt32_System_Object_ *)pKVar7[1].klass,
                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                            );
@@ -338,32 +338,30 @@ int32_t Assembly-CSharp.dll::GamePassesShop::GamePassesShop_CalculateTotalSpawnR
                                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                                              );
           if (piStack_14 == (int *)0x0) goto code_?;
-          pIStack_12 = (IAttributeSetting__Class *)*piStack_14;
-          uVar15 = 0;
-          uStack_16 = 0;
-          sVar17._0_1_ = (pIStack_12->_1).rank;
-          sVar17._1_1_ = (pIStack_12->_1).minimumAlignment;
-          if (sVar17 != 0) {
+          iStack_15 = *piStack_14;
+          uVar16 = 0;
+          uStack_17 = 0;
+          uVar18 = *(ushort *)(iStack_15 + 0xb6);
+          pIStack_12 = (IAttributeSetting__Class *)(uint)uVar18;
+          if (uVar18 != 0) {
             do {
-              if (pIStack_12->interfaceOffsets[uVar15].interfaceType ==
-                  (Il2CppClass *)
+              if (*(IAttributeSetting__Class **)(*(int *)(iStack_15 + 0x58) + (uint)uVar16 * 8) ==
                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                  ) {
-                puVar18 = (undefined4 *)
-                         (*piStack_14 +
-                         (*(int *)(*(int *)(*piStack_14 + 0x58) + 4 + (uint)uVar15 * 8) + 0x18) * 8)
-                ;
+                puVar19 = (undefined4 *)
+                         (iStack_15 +
+                         (*(int *)(*(int *)(iStack_15 + 0x58) + 4 + (uint)uVar16 * 8) + 0x18) * 8);
                 goto code_?;
               }
-              uVar15 = uVar15 + 1;
-            } while (uVar15 < *(ushort *)(*piStack_14 + 0xb6));
+              uVar16 = uVar16 + 1;
+            } while (uVar16 < uVar18);
           }
-          puVar18 = (undefined4 *)
+          puVar19 = (undefined4 *)
                    func_?(piStack_14,
                                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                                    ,0);
 code_?:
-          iVar13 = (*(code *)*puVar18)(piStack_14,puVar18[1]);
+          iVar13 = (*(code *)*puVar19)(piStack_14,puVar19[1]);
           spawnRoleCreator = (MVAvatarSpawnRoleCreator *)((int)&spawnRoleCreator->klass + iVar13);
         }
       }
@@ -371,11 +369,11 @@ code_?:
   }
   func_?();
 code_?:
-  uVar19 = func_?(unaff_EDI,pIStack_12);
-  func_?(uVar19);
-  pcVar20 = (code *)swi(3);
-  iVar21 = (*pcVar20)();
-  return iVar21;
+  uVar20 = func_?(unaff_EDI,pIStack_12);
+  func_?(uVar20);
+  pcVar21 = (code *)swi(3);
+  iVar22 = (*pcVar21)();
+  return iVar22;
 }
 
 
@@ -2444,13 +2442,13 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
             if ((pPVar4 != (PlayerPlanetData *)0x0) &&
                (pPVar5 = TypeInfo__GamePassesManager->static_fields->playerTierStateCalculator,
                pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-              this = (GamePassesShop *)CONCAT31(0x1043b3,(pPVar4->fields).gamePassTier);
+              this = (GamePassesShop *)CONCAT31(0x10436c,(pPVar4->fields).gamePassTier);
               pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculator
                        ::PlayerTierStateCalculator_GetTierPricingState
                                  (pPVar5,0,(GamePassTier__Enum)this,(MethodInfo *)0x0);
               if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
                              *)0x0) {
-                this = (GamePassesShop *)CONCAT31(0x1043b3,(pGVar1->fields).gamePassTierDisplayed);
+                this = (GamePassesShop *)CONCAT31(0x10436c,(pGVar1->fields).gamePassTierDisplayed);
                 pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           ByteEnum,System::Object]::
                           Dictionary_2_System_ByteEnum_System_Object__get_Item
@@ -2490,7 +2488,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_OnSuccessfulPurchase
                          (pPVar5 = TypeInfo__GamePassesManager->static_fields->
                                    playerTierStateCalculator,
                          pPVar5 != (PlayerTierStateCalculator *)0x0)) {
-                        GStack_10 = CONCAT31(0x1043b3,(pPVar4->fields).gamePassTier);
+                        GStack_10 = CONCAT31(0x10436c,(pPVar4->fields).gamePassTier);
                         pDVar6 = MVWorldObject.dll::MV::WorldObject::GamePassSystem::
                                  PlayerTierStateCalculator::
                                  PlayerTierStateCalculator_GetTierPricingState
@@ -3215,7 +3213,7 @@ void Assembly-CSharp.dll::GamePassesShop::GamePassesShop_ShowPurchaseConfirmPopu
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
     pOVar1 = value[1].klass;
-    this = (GamePassesShop *)CONCAT31(0x1043c0,(this->fields).gamePassTierDisplayed);
+    this = (GamePassesShop *)CONCAT31(0x104379,(this->fields).gamePassTierDisplayed);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -3573,9 +3571,11 @@ code_?:
   }
   pLStack_16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                DStack_6._current.value;
+  pLStack_17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               DStack_6._current.value;
   if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)DStack_6._current.value
       != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                       ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
@@ -3593,27 +3593,25 @@ code_?:
   }
   goto code_?;
 code_?:
-  if (RVar17 == (RegexCharClass_SingleRange)0x0) {
-    RVar18.First = 0;
-    RVar18.Last = 0;
-  }
-  else {
-    if ((*(byte *)(*(int *)RVar17 + 0xb8) < (TypeInfo__MVTeleporter->_1).naturalAligment) ||
+  RVar19 = RVar18;
+  if (RVar18 != (RegexCharClass_SingleRange)0x0) {
+    pLStack_17 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)RVar18;
+    if (((byte)pLStack_17[7].fields._version < (TypeInfo__MVTeleporter->_1).naturalAligment) ||
        (*(MVTeleporter__Class **)
-         (*(int *)(*(int *)RVar17 + 100) + -4 +
-         (uint)(TypeInfo__MVTeleporter->_1).naturalAligment * 4) != TypeInfo__MVTeleporter)) {
-      bVar19 = false;
+         (pLStack_17[4].monitor + (uint)(TypeInfo__MVTeleporter->_1).naturalAligment * 4 + -4) !=
+        TypeInfo__MVTeleporter)) {
+      bVar20 = false;
     }
     else {
-      bVar19 = true;
+      bVar20 = true;
     }
-    RVar18.First = 0;
-    RVar18.Last = 0;
-    if (bVar19) {
-      RVar18 = RVar17;
+    RVar19.First = 0;
+    RVar19.Last = 0;
+    if (bVar20) {
+      RVar19 = RVar18;
     }
   }
-  if (RVar18 != (RegexCharClass_SingleRange)0x0) {
+  if (RVar19 != (RegexCharClass_SingleRange)0x0) {
 code_?:
     if (pDStack_7 ==
         (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0)

@@ -128,6 +128,8 @@ Vector3 * Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_GetClosestGridPoint
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void Initialize() */
 
 void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
@@ -151,49 +153,62 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
   pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
            (pMVar1->fields)._._._.data;
   (pMVar1->fields).isInWorld = 1;
-  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  cVar3 = (int)pDVar2 < 0;
+  uVar4 = pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0;
+  if (!(bool)uVar4) {
+    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar3 != 0) {
+    if (bVar5 != 0) {
       pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (pMVar1->fields)._._._.data;
+      cVar3 = (int)pDVar2 < 0;
+      uVar4 = true;
       if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
       goto code_?;
       this = (MVSpawnPoint *)
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
       ;
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar4.m_Index != 0) {
-        TVar5.m_Index = 0;
-        if (*(Boolean__Class **)TVar4.m_Index == TypeInfo__System__Boolean) {
-          TVar5 = TVar4;
+      if (TVar6.m_Index != 0) {
+        TVar7.m_Index = 0;
+        if (*(Boolean__Class **)TVar6.m_Index == TypeInfo__System__Boolean) {
+          TVar7 = TVar6;
         }
-        if (TVar5.m_Index != 0) {
-          pIVar6 = (TypeInfo__System__Boolean->_0).element_class;
-          bVar7 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar6;
-          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar6) goto code_?;
+        if (TVar7.m_Index != 0) {
+          pIVar8 = *(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20);
+          pIVar9 = (TypeInfo__System__Boolean->_0).element_class;
+          bVar10 = pIVar8 < pIVar9;
+          cVar11 = SBORROW4((int)pIVar8,(int)pIVar9);
+          cVar3 = (int)pIVar8 - (int)pIVar9 < 0;
+          uVar4 = pIVar8 == pIVar9;
+          data = TypeInfo__System__Boolean;
+          in_stack_12 = unaff_EDI;
+          if (!(bool)uVar4) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar8 = (int8_t *)func_?();
+          piVar13 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar8,
+                    ((Nullable_1_SByte_ *)&this,*piVar13,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar9 != (MVNetworkGame *)0x0) {
-      this_00 = (MethodInfo *)(pMVar9->fields).teamManager;
+    in_stack_12 = (Boolean__Class *)0x0;
+    pMVar14 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    cVar3 = (int)pMVar14 < 0;
+    uVar4 = pMVar14 == (MVNetworkGame *)0x0;
+    if (!(bool)uVar4) {
+      this_00 = (MethodInfo *)(pMVar14->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -210,7 +225,9 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
       default:
         team = MVTeam__Enum_None;
       }
-      if (this_00 != (MethodInfo *)0x0) {
+      cVar3 = (int)this_00 < 0;
+      uVar4 = this_00 == (MethodInfo *)0x0;
+      if (!(bool)uVar4) {
         this = (MVSpawnPoint *)&UNK_?;
         method = this_00;
         MVTeamManager::MVTeamManager_OnAddSpawnPoint
@@ -220,34 +237,45 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
     }
   }
 code_?:
-  bVar7 = 0;
+  cVar11 = '\0';
+  bVar10 = 0;
+  in_stack_15 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;
   func_?();
-  TVar4.m_Index = (int32_t)extraout_EDX;
+  TVar6.m_Index = (int32_t)extraout_EDX;
+  data = unaff_EDI;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
-  method = (MethodInfo *)TVar4.m_Index;
-  func_?();
-  bVar10 = CARRY1(bStack_11,(byte)extraout_DX) || CARRY1(bStack_11 + (byte)extraout_DX,bVar7);
-  pbVar12 = &stack0x00000032 + (int)&pMVar1[-1].fields.field_0xf7 * 4;
-  bVar7 = *pbVar12;
-  bVar13 = *pbVar12 + (byte)unaff_EBX;
-  *pbVar12 = bVar13 + bVar10;
-  *(char *)(unaff_EBX + -0x4b) =
-       *(char *)(unaff_EBX + -0x4b) + extraout_AH +
-       (CARRY1(bVar7,(byte)unaff_EBX) || CARRY1(bVar13,bVar10));
-  in(extraout_DX);
-  switch(this) {
-  case (MVSpawnPoint *)0x27:
-    return;
-  case (MVSpawnPoint *)0x28:
-    return;
-  case (MVSpawnPoint *)0x29:
-    return;
-  case (MVSpawnPoint *)0x2a:
-    return;
-  default:
+  method = (MethodInfo *)TVar6.m_Index;
+  pcVar16 = (char *)func_?();
+  if (!(bool)uVar4 && cVar11 == cVar3) {
+    bVar17 = (byte)pcVar16;
+    if (SCARRY1(in_stack_18,bVar17) == SCARRY1(in_stack_18 + bVar17,bVar10)) {
+      *pcVar16 = *pcVar16 + bVar17;
+    }
+    else {
+      *(char *)(unaff_EBX + 0x55103671) =
+           *(char *)(unaff_EBX + 0x55103671) + extraout_DL +
+           (CARRY1(in_stack_18,bVar17) || CARRY1(in_stack_18 + bVar17,bVar10));
+      switch(in_stack_12) {
+      case (Boolean__Class *)0x27:
+        return;
+      case (Boolean__Class *)0x28:
+        return;
+      case (Boolean__Class *)0x29:
+        return;
+      case (Boolean__Class *)0x2a:
+        return;
+      }
+    }
     return;
   }
+  this = (MVSpawnPoint *)&UNK_?;
+  MVLogicObject::MVLogicObject__ctor
+            ((MVLogicObject *)method,(Dictionary_2_System_Object_System_Object_ *)data,
+             (ObjectPrefab *)in_stack_12,in_stack_15,in_stack_19);
+  *(undefined4 *)&(pMVar1->fields)._._.interactionFlags = 0xa101;
+  *(undefined4 *)((int)&(pMVar1->fields)._._.interactionFlags + 4) = 0;
+  return;
 }
 
 

@@ -480,7 +480,7 @@ Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_CreateGrad
         VStack_8.Item1 = 0.0;
         VStack_8.Item2 = 0.0;
         mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                  (&VStack_8,pTVar11->alpha,*(float *)((int)pfVar12 + iVar13),(MethodInfo *)0x0);
+                  (&VStack_8,pTVar11->alpha,*(float *)(iVar13 + (int)pfVar12),(MethodInfo *)0x0);
         if (pTStack_5 == (ThrustersColorColorKey__Array *)0x0) goto code_?;
         if (pTStack_5->max_length <= (uint)fVar14) goto code_?;
         pTVar11 = pTVar11 + 1;
@@ -948,7 +948,7 @@ code_?:
       ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startSizeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.512506e-29,
+                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.507277e-29,
                  (MethodInfo *)0x0);
       return;
     }

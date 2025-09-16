@@ -193,7 +193,7 @@ code_?:
   valuePair.value = extraout_EDX;
 code_?:
   func_?(valuePair.value,kogamaSettingBasePrototype);
-  pKVar5 = (KogamaSettingNumericBase_1_System_Int32___Class *)extraout_EDX_00;
+  pKVar5 = extraout_EDX_00;
 code_?:
   func_?(kogamaSettingBasePrototype,pKVar5);
   pcVar12 = (code *)swi(1);

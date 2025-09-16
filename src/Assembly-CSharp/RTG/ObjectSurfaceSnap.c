@@ -399,10 +399,10 @@ Assembly-CSharp.dll::RTG::ObjectSurfaceSnap::ObjectSurfaceSnap_SnapHierarchy
     cRam_? = '\x01';
   }
   fVar3 = 0.0;
-  fVar4 = 0.0;
+  uVar4._0_4_ = 0.0;
   fVar5 = 0.0;
   fVar6 = 0.0;
-  pTVar7 = (Transform *)0x0;
+  fVar7 = 0.0;
   fVar8 = 0.0;
   fVar9 = 0.0;
   fVar10 = 0.0;
@@ -415,209 +415,215 @@ Assembly-CSharp.dll::RTG::ObjectSurfaceSnap::ObjectSurfaceSnap_SnapHierarchy
   __return_storage_ptr__ = pOVar1;
   if ((bVar11 == 0) && (bVar12 == 0)) {
     if ((root == (GameObject *)0x0) ||
-       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (root,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+       (pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (root,(MethodInfo *)0x0), pTVar14 == (Transform *)0x0))
     goto code_?;
-    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffe0,pTVar7,(MethodInfo *)0x0);
-    pVVar14 = PlaneEx::PlaneEx_ProjectPoint
-                        ((Vector3 *)&stack0xffffffe0,PVar13,*pVVar14,(MethodInfo *)0x0);
-    uVar15 = pVVar14->x;
-    uVar16 = pVVar14->y;
-    VVar17.y = (float)uVar16 + snapConfig.SurfaceHitNormal.y * snapConfig.OffsetFromSurface;
-    VVar17.x = (float)uVar15 + snapConfig.SurfaceHitNormal.x * snapConfig.OffsetFromSurface;
-    VVar17.z = pVVar14->z + snapConfig.SurfaceHitNormal.z * snapConfig.OffsetFromSurface;
+    pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xffffffe0,pTVar14,(MethodInfo *)0x0);
+    pVVar15 = PlaneEx::PlaneEx_ProjectPoint
+                         ((Vector3 *)&stack0xffffffe0,PVar13,*pVVar15,(MethodInfo *)0x0);
+    uVar16 = pVVar15->x;
+    uVar17 = pVVar15->y;
+    VVar18.y = (float)uVar17 + snapConfig.SurfaceHitNormal.y * snapConfig.OffsetFromSurface;
+    VVar18.x = (float)uVar16 + snapConfig.SurfaceHitNormal.x * snapConfig.OffsetFromSurface;
+    VVar18.z = pVVar15->z + snapConfig.SurfaceHitNormal.z * snapConfig.OffsetFromSurface;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (pTVar7,VVar17,(MethodInfo *)0x0);
-    fVar6 = 1.4013e-45;
-    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffe0,pTVar7,(MethodInfo *)0x0);
-    fVar5 = snapConfig.SurfaceHitPlane.m_Distance;
+              (pTVar14,VVar18,(MethodInfo *)0x0);
+    uVar4._0_4_ = 1.4013e-45;
+    pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&stack0xffffffe0,pTVar14,(MethodInfo *)0x0);
+    fVar3 = snapConfig.SurfaceHitPlane.m_Distance;
 code_?:
-    uVar18._0_4_ = pVVar14->x;
-    uVar18._4_4_ = pVVar14->y;
-    fVar8 = pVVar14->z;
+    uVar19._0_4_ = pVVar15->x;
+    uVar19._4_4_ = pVVar15->y;
+    fVar5 = pVVar15->z;
 code_?:
-    *(float *)__return_storage_ptr__ = fVar6;
+    *(float *)__return_storage_ptr__ = (float)uVar4;
     (__return_storage_ptr__->SittingPlane).m_Normal.x = snapConfig.SurfaceHitPlane.m_Normal.x;
     (__return_storage_ptr__->SittingPlane).m_Normal.y = snapConfig.SurfaceHitPlane.m_Normal.y;
     (__return_storage_ptr__->SittingPlane).m_Normal.z = snapConfig.SurfaceHitPlane.m_Normal.z;
-    (__return_storage_ptr__->SittingPlane).m_Distance = fVar5;
-    (__return_storage_ptr__->SittingPoint).x = (float)uVar18;
-    (__return_storage_ptr__->SittingPoint).y = (float)((ulonglong)uVar18 >> 0x20);
-    (__return_storage_ptr__->SittingPoint).z = fVar8;
+    (__return_storage_ptr__->SittingPlane).m_Distance = fVar3;
+    (__return_storage_ptr__->SittingPoint).x = (float)uVar19;
+    (__return_storage_ptr__->SittingPoint).y = (float)((ulonglong)uVar19 >> 0x20);
+    (__return_storage_ptr__->SittingPoint).z = fVar5;
     return __return_storage_ptr__;
   }
-  cVar19 = snapConfig.SurfaceType == 3;
-  fVar20 = 0.0;
-  uVar21._0_4_ = 0.0;
-  puVar22 = (undefined *)0x0;
+  cVar20 = snapConfig.SurfaceType == 3;
+  fVar21 = 0.0;
+  uVar4._4_4_ = 0.0;
+  fVar22 = 0.0;
   fVar23 = 7.00649e-45;
   cVar24 = snapConfig.SurfaceType == 0 || snapConfig.SurfaceType == 2;
   cVar25 = snapConfig.SurfaceType == 0;
   pOVar26 = ObjectSurfaceSnap_CreateSurfaceRaycaster
                        (snapConfig.SurfaceType,snapConfig.SurfaceObject,1,(MethodInfo *)0x0);
-  VVar17 = snapConfig.SurfaceHitNormal;
+  VVar18 = snapConfig.SurfaceHitNormal;
   if (snapConfig.SurfaceType != 4) {
     if (root == (GameObject *)0x0) goto code_?;
-    pTVar27 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (root,(MethodInfo *)0x0);
+    pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (root,(MethodInfo *)0x0);
     if (snapConfig.AlignAxis == 0) {
-      fVar5 = fVar9;
-      fVar6 = fVar10;
       if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
-        fVar5 = fVar9;
-        fVar6 = fVar10;
       }
-      queryConfig_02.NoVolumeSize.x = fVar20;
+      queryConfig_02.NoVolumeSize.x = fVar21;
       queryConfig_02.ObjectTypes = (int32_t)fVar23;
-      queryConfig_02.NoVolumeSize.y = (float)uVar21;
-      queryConfig_02.NoVolumeSize.z = (float)puVar22;
-      pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+      queryConfig_02.NoVolumeSize.y = uVar4._4_4_;
+      queryConfig_02.NoVolumeSize.z = fVar22;
+      pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                            ((OBB *)&stack0xfffffe90,root,queryConfig_02,(MethodInfo *)0x0);
-      fVar10 = (pOVar28->_size).x;
-      fVar29 = (pOVar28->_size).y;
-      uVar21._4_4_ = (pOVar28->_size).z;
-      fVar3 = (pOVar28->_center).x;
-      fVar30 = (pOVar28->_center).y;
-      fVar31 = (pOVar28->_center).z;
-      puVar32 = (undefined *)(pOVar28->_rotation).x;
-      fVar4 = (pOVar28->_rotation).y;
-      fVar33 = (pOVar28->_rotation).z;
-      fVar34 = (pOVar28->_rotation).w;
-      fVar9 = *(float *)&pOVar28->_isValid;
-      if (SUB41(fVar9,0) == '\0') goto code_?;
-      fVar35 = snapConfig.SurfaceHitNormal.x;
-      fVar36 = fVar10;
-      fVar37 = fVar29;
-      uVar38._0_4_ = uVar21._4_4_;
-      uVar38._4_4_ = fVar3;
+      uVar4._0_4_ = (pOVar27->_size).x;
+      fVar5 = (pOVar27->_size).y;
+      fVar6 = (pOVar27->_size).z;
+      fVar28 = (pOVar27->_center).x;
+      fVar29 = (pOVar27->_center).y;
+      fVar30 = (pOVar27->_center).z;
+      this_00 = (ObjectSurfaceSnap_SnapResult *)(pOVar27->_rotation).x;
+      fVar31 = (pOVar27->_rotation).y;
+      fVar32 = (pOVar27->_rotation).z;
+      fVar33 = (pOVar27->_rotation).w;
+      fVar3 = *(float *)&pOVar27->_isValid;
+      if (SUB41(fVar3,0) == '\0') goto code_?;
+      fVar34 = snapConfig.SurfaceHitNormal.x;
+      uVar35._0_4_ = (float)uVar4;
+      uVar35._4_4_ = fVar5;
+      fVar36 = fVar6;
+      fVar37 = fVar28;
+      fVar38 = fVar32;
       fVar39 = fVar33;
-      fVar40 = fVar34;
       if (cVar24 == '\0') {
-        if (cVar19 != '\0') {
+        if (cVar20 != '\0') {
           if (snapConfig.SurfaceObject != (GameObject *)0x0) {
-            puVar41 = &UNK_?;
-            puVar22 = puVar32;
-            pTVar42 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+            puVar40 = &UNK_?;
+            pOVar1 = this_00;
+            pTVar41 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                                  (snapConfig.SurfaceObject,(MethodInfo *)0x0);
-            if (pTVar42 != (Transform *)0x0) {
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)&stack0xffffffe0,pTVar42,(MethodInfo *)0x0);
-              fVar4 = pVVar14->x;
-              fVar37 = pVVar14->y;
-              fVar3 = pVVar14->z;
-              if (pTVar27 != (Transform *)0x0) {
+            if (pTVar41 != (Transform *)0x0) {
+              pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                   ((Vector3 *)&stack0xffffffe0,pTVar41,(MethodInfo *)0x0);
+              fVar22 = pVVar15->x;
+              fVar34 = pVVar15->y;
+              fVar23 = pVVar15->z;
+              if (pTVar14 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffe0,pTVar27,(MethodInfo *)0x0);
-                puVar43 = (undefined8 *)func_?();
-                fVar23 = *(float *)(puVar43 + 1);
-                fVar40 = (float)*puVar43;
-                fVar44 = (float)((ulonglong)*puVar43 >> 0x20);
-                uVar21._0_4_ = fVar40;
-                fVar35 = fVar44;
-                fVar36 = fVar23;
-                pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_get_lossyScale
-                                    ((Vector3 *)&stack0xffffffe0,pTVar42,(MethodInfo *)0x0);
-                fVar20 = Vector3Ex::Vector3Ex_GetMaxAbsComp(*pVVar14,(MethodInfo *)0x0);
-                fVar20 = fVar20 * _UNK_?;
-                fVar39 = (float)((uint)(float)uVar21 ^
+                          ((Vector3 *)&stack0xffffffe0,pTVar14,(MethodInfo *)0x0);
+                puVar42 = (undefined8 *)func_?();
+                fVar21 = *(float *)(puVar42 + 1);
+                fVar37 = (float)*puVar42;
+                fVar38 = (float)((ulonglong)*puVar42 >> 0x20);
+                fVar28 = fVar37;
+                fVar31 = fVar38;
+                uVar35._0_4_ = fVar21;
+                pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                           Transform_get_lossyScale
+                                     ((Vector3 *)&stack0xffffffe0,pTVar41,(MethodInfo *)0x0);
+                uVar4._4_4_ = Vector3Ex::Vector3Ex_GetMaxAbsComp(*pVVar15,(MethodInfo *)0x0);
+                uVar4._4_4_ = uVar4._4_4_ * _UNK_?;
+                fVar28 = (float)((uint)fVar28 ^
+                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                );
+                fVar36 = (float)((uint)fVar31 ^
                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                );
-                uVar38._4_4_ = (float)((uint)fVar35 ^
-                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                      );
-                uVar38._0_4_ = (float)((uint)fVar23 ^
+                uVar35._4_4_ = (float)((uint)fVar21 ^
                                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                       );
                 if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-                  puVar22 = &UNK_?;
+                  pOVar1 = (ObjectSurfaceSnap_SnapResult *)&UNK_?;
                   func_?();
                 }
-                boxCenter_02.y = fVar39;
-                boxCenter_02.x = fVar34;
-                boxCenter_02.z = fVar31;
-                boxSize_02.y = fVar29;
-                boxSize_02.x = fVar10;
-                boxSize_02.z = uVar21._4_4_;
+                boxCenter_02.y = fVar28;
+                boxCenter_02.x = fVar33;
+                boxCenter_02.z = fVar30;
+                boxSize_02.y = fVar5;
+                boxSize_02.x = (float)uVar4;
+                boxSize_02.z = fVar6;
                 boxRotation_02.y = 0.0;
-                boxRotation_02.x = (float)puVar22;
-                boxRotation_02.z = fVar33;
-                boxRotation_02.w = fVar34;
-                direction_02.y = uVar38._4_4_;
-                direction_02.x = fVar39;
-                direction_02.z = (float)uVar38;
-                BVar45 = BoxMath::BoxMath_GetMostAlignedFace
+                boxRotation_02.x = (float)pOVar1;
+                boxRotation_02.z = fVar32;
+                boxRotation_02.w = fVar33;
+                direction_02.y = fVar36;
+                direction_02.x = fVar28;
+                direction_02.z = uVar35._4_4_;
+                BVar43 = BoxMath::BoxMath_GetMostAlignedFace
                                     (boxCenter_02,boxSize_02,boxRotation_02,direction_02,
                                      (MethodInfo *)0x0);
                 if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                puVar22 = &UNK_?;
-                pLVar46 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
-                                     (root,BVar45,0.001,0.01,(MethodInfo *)0x0);
-                fVar4 = fVar4 + (float)uVar21 * fVar20;
-                fVar3 = fVar3 + fVar23 * fVar20;
-                puVar47 = &UNK_?;
-                inNormal_00.y = fVar44;
-                inNormal_00.x = fVar40;
-                inNormal_00.z = fVar36;
-                inPoint_01.y = fVar37 + fVar35 * fVar20;
-                inPoint_01.x = fVar4;
-                inPoint_01.z = fVar3;
+                fVar5 = 0.001;
+                puVar44 = &UNK_?;
+                pLVar45 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
+                                     (root,BVar43,0.001,0.01,(MethodInfo *)0x0);
+                fVar22 = fVar5 * uVar4._4_4_ + fVar22;
+                fVar23 = fVar21 * uVar4._4_4_ + fVar23;
+                puVar46 = &UNK_?;
+                inNormal_00.y = fVar38;
+                inNormal_00.x = fVar37;
+                inNormal_00.z = (float)uVar35;
+                inPoint_01.y = fVar31 * uVar4._4_4_ + fVar34;
+                inPoint_01.x = fVar22;
+                inPoint_01.z = fVar23;
                 UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_SetNormalAndPosition
                           ((Plane *)&stack0xffffff90,inNormal_00,inPoint_01,(MethodInfo *)0x0);
-                obb_04._size.y = (float)puVar22;
-                obb_04._size.x = fVar10;
+                obb_04._size.y = (float)puVar44;
+                obb_04._size.x = (float)uVar4;
                 obb_04._size.z = (float)root;
-                obb_04._center.x = (float)puVar47;
-                obb_04._center.y = fVar30;
-                obb_04._center.z = fVar31;
-                obb_04._rotation.x = (float)puVar32;
-                obb_04._rotation.y = (float)puVar41;
-                obb_04._rotation.z = (float)puVar22;
-                obb_04._rotation.w = (float)root;
-                obb_04._40_4_ = fVar9;
+                obb_04._center.x = (float)puVar46;
+                obb_04._center.y = fVar29;
+                obb_04._center.z = fVar30;
+                obb_04._rotation.x = (float)this_00;
+                obb_04._rotation.y = (float)puVar40;
+                obb_04._rotation.z = fVar30;
+                obb_04._rotation.w = (float)this_00;
+                obb_04._40_4_ = fVar3;
                 surfacePlane_00.m_Normal.y = fVar8;
-                surfacePlane_00.m_Normal.x = (float)pTVar7;
-                surfacePlane_00.m_Normal.z = fVar5;
-                surfacePlane_00.m_Distance = fVar6;
-                pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                                    ((Vector3 *)&stack0xffffffd0,obb_04,surfacePlane_00,0.0,
-                                     (MethodInfo *)0x0);
-                uVar38._0_4_ = pVVar14->x;
-                uVar38._4_4_ = pVVar14->y;
-                fVar10 = pVVar14->z;
-                uVar21 = uVar38;
-                fVar20 = fVar10;
-                pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                    ((Vector3 *)&stack0xffffff50,(Transform *)root,(MethodInfo *)0x0
-                                    );
-                uVar48 = pVVar14->x;
-                uVar49 = pVVar14->y;
-                value_09.y = SUB84(uVar21,4) + (float)uVar49;
-                value_09.x = (float)uVar21 + (float)uVar48;
-                value_09.z = fVar20 + pVVar14->z;
+                surfacePlane_00.m_Normal.x = fVar7;
+                surfacePlane_00.m_Normal.z = fVar9;
+                surfacePlane_00.m_Distance = fVar10;
+                pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                                     ((Vector3 *)&stack0xffffffd0,obb_04,surfacePlane_00,0.0,
+                                      (MethodInfo *)0x0);
+                uVar35._0_4_ = pVVar15->x;
+                uVar35._4_4_ = pVVar15->y;
+                uVar4._0_4_ = pVVar15->z;
+                uVar47 = uVar35;
+                fVar5 = (float)uVar4;
+                pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                           Transform_get_position
+                                     ((Vector3 *)&stack0xffffff60,(Transform *)this_00,
+                                      (MethodInfo *)0x0);
+                uVar48 = pVVar15->x;
+                uVar49 = pVVar15->y;
+                value_09.y = SUB84(uVar47,4) + (float)uVar49;
+                value_09.x = (float)uVar47 + (float)uVar48;
+                value_09.z = fVar5 + pVVar15->z;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                          ((Transform *)root,value_09,(MethodInfo *)0x0);
-                offset_01.y = uVar38._4_4_;
-                offset_01.x = (float)uVar38;
-                offset_01.z = fVar10;
-                Vector3Ex::Vector3Ex_OffsetPoints(pLVar46,offset_01,(MethodInfo *)0x0);
-                pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                    ((Vector3 *)&stack0xffffffd0,(Transform *)root,(MethodInfo *)0x0
-                                    );
-                uVar50 = pVVar14->x;
-                uVar51 = pVVar14->y;
-                value.y = fVar35 * snapConfig.OffsetFromSurface + (float)uVar51;
-                value.x = fVar31 * snapConfig.OffsetFromSurface + (float)uVar50;
-                value.z = fVar23 * snapConfig.OffsetFromSurface + pVVar14->z;
+                          ((Transform *)this_00,value_09,(MethodInfo *)0x0);
+                offset_01.y = uVar35._4_4_;
+                offset_01.x = (float)uVar35;
+                offset_01.z = (float)uVar4;
+                Vector3Ex::Vector3Ex_OffsetPoints(pLVar45,offset_01,(MethodInfo *)0x0);
+                pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                           Transform_get_position
+                                     ((Vector3 *)&stack0xffffffd0,(Transform *)this_00,
+                                      (MethodInfo *)0x0);
+                uVar50 = pVVar15->x;
+                uVar51 = pVVar15->y;
+                value.y = fVar31 * snapConfig.OffsetFromSurface + (float)uVar51;
+                value.x = (float)puVar44 * snapConfig.OffsetFromSurface + (float)uVar50;
+                value.z = fVar21 * snapConfig.OffsetFromSurface + pVVar15->z;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                          ((Transform *)root,value,(MethodInfo *)0x0);
-                __return_storage_ptr__ = (ObjectSurfaceSnap_SnapResult *)root;
-                goto code_?;
+                          ((Transform *)this_00,value,(MethodInfo *)0x0);
+                *(undefined4 *)this_00 = 1;
+                (this_00->SittingPlane).m_Normal.x = fVar7;
+                (this_00->SittingPlane).m_Normal.y = fVar8;
+                (this_00->SittingPlane).m_Normal.z = fVar9;
+                (this_00->SittingPlane).m_Distance = fVar10;
+                (this_00->SittingPoint).x = fVar22;
+                (this_00->SittingPoint).y = fVar3;
+                (this_00->SittingPoint).z = fVar23;
+                return this_00;
               }
             }
           }
@@ -630,79 +636,79 @@ code_?:
                   ((Vector3 *)&stack0xffffffd0,(MethodInfo *)0x0);
       }
       puVar52 = &stack0xffffffa8;
-      fVar5 = fVar3;
-      fVar8 = fVar3;
+      fVar7 = fVar28;
+      fVar8 = fVar28;
       func_?();
       if (pOVar26 == (ObjectSurfaceSnap_SurfaceRaycaster *)0x0) goto code_?;
       uVar53 = 4;
-      puVar41 = &UNK_?;
+      puVar40 = &UNK_?;
       iVar54 = func_?();
       if (iVar54 != 0) {
-        obb_00._size.y = fVar37;
-        obb_00._size.x = fVar36;
-        obb_00._size.z = (float)uVar38;
-        obb_00._center.x = uVar38._4_4_;
+        obb_00._size.y = uVar35._4_4_;
+        obb_00._size.x = (float)uVar35;
+        obb_00._size.z = fVar36;
+        obb_00._center.x = fVar37;
         obb_00._center.y = (float)puVar52;
-        obb_00._center.z = fVar3;
-        obb_00._rotation.x = (float)puVar41;
+        obb_00._center.z = fVar28;
+        obb_00._rotation.x = (float)puVar40;
         obb_00._rotation.y = (float)uVar53;
-        obb_00._rotation.z = fVar39;
-        obb_00._rotation.w = fVar40;
-        obb_00._40_4_ = fVar9;
-        pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                            ((Vector3 *)&stack0xffffffe0,obb_00,*(Plane *)(iVar54 + 0x28),0.0,
-                             (MethodInfo *)0x0);
-        fVar39 = pVVar14->x;
-        fVar40 = pVVar14->y;
-        fVar6 = pVVar14->z;
-        if (pTVar27 == (Transform *)0x0) goto code_?;
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffb0,pTVar27,(MethodInfo *)0x0);
-        uVar55 = pVVar14->x;
-        uVar56 = pVVar14->y;
-        value_01.y = fVar40 + (float)uVar56;
-        value_01.x = fVar39 + (float)uVar55;
-        value_01.z = fVar6 + pVVar14->z;
+        obb_00._rotation.z = fVar38;
+        obb_00._rotation.w = fVar39;
+        obb_00._40_4_ = fVar3;
+        pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                             ((Vector3 *)&stack0xffffffe0,obb_00,*(Plane *)(iVar54 + 0x28),0.0,
+                              (MethodInfo *)0x0);
+        fVar36 = pVVar15->x;
+        fVar37 = pVVar15->y;
+        fVar3 = pVVar15->z;
+        if (pTVar14 == (Transform *)0x0) goto code_?;
+        pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffb0,pTVar14,(MethodInfo *)0x0);
+        uVar55 = pVVar15->x;
+        uVar56 = pVVar15->y;
+        value_01.y = fVar37 + (float)uVar56;
+        value_01.x = fVar36 + (float)uVar55;
+        value_01.z = fVar3 + pVVar15->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar27,value_01,(MethodInfo *)0x0);
+                  (pTVar14,value_01,(MethodInfo *)0x0);
         if (cVar24 != '\0') {
-          fVar5 = fVar5 + fVar39;
-          fVar30 = fVar30 + fVar40;
-          fVar31 = fVar31 + fVar6;
-          fVar3 = (float)((uint)(float)*(undefined8 *)(iVar54 + 0x1c) ^
+          fVar36 = fVar36 + fVar7;
+          fVar37 = fVar37 + fVar29;
+          fVar3 = fVar3 + fVar30;
+          fVar9 = (float)((uint)(float)*(undefined8 *)(iVar54 + 0x1c) ^
                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           fVar8 = (float)((uint)(float)((ulonglong)*(undefined8 *)(iVar54 + 0x1c) >> 0x20) ^
                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-          fVar6 = (float)(*(uint *)(iVar54 + 0x24) ^
+          fVar7 = (float)(*(uint *)(iVar54 + 0x24) ^
                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          boxCenter_03.y = fVar30;
-          boxCenter_03.x = fVar5;
-          boxCenter_03.z = fVar31;
-          boxSize_03.y = fVar29;
-          boxSize_03.x = fVar10;
-          boxSize_03.z = uVar21._4_4_;
-          boxRotation_03.y = fVar4;
-          boxRotation_03.x = (float)puVar32;
-          boxRotation_03.z = fVar33;
-          boxRotation_03.w = fVar34;
+          boxCenter_03.y = fVar37;
+          boxCenter_03.x = fVar36;
+          boxCenter_03.z = fVar3;
+          boxSize_03.y = fVar5;
+          boxSize_03.x = (float)uVar4;
+          boxSize_03.z = fVar6;
+          boxRotation_03.y = fVar31;
+          boxRotation_03.x = (float)this_00;
+          boxRotation_03.z = fVar32;
+          boxRotation_03.w = fVar33;
           direction_03.y = fVar8;
-          direction_03.x = fVar3;
-          direction_03.z = fVar6;
-          BVar45 = BoxMath::BoxMath_GetMostAlignedFace
+          direction_03.x = fVar9;
+          direction_03.z = fVar7;
+          BVar43 = BoxMath::BoxMath_GetMostAlignedFace
                               (boxCenter_03,boxSize_03,boxRotation_03,direction_03,(MethodInfo *)0x0
                               );
           if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pLVar46 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
-                               (root,BVar45,0.001,0.01,(MethodInfo *)0x0);
-          pVVar14 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
-                              ((Vector3 *)&stack0xffffffd0,(MethodInfo *)0x0);
-          uVar57 = pVVar14->x;
-          uVar58 = pVVar14->y;
+          pLVar45 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
+                               (root,BVar43,0.001,0.01,(MethodInfo *)0x0);
+          pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
+                               ((Vector3 *)&stack0xffffffd0,(MethodInfo *)0x0);
+          uVar57 = pVVar15->x;
+          uVar58 = pVVar15->y;
           embedDirection.y =
                (float)(uVar58 ^ 
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
@@ -710,248 +716,247 @@ code_?:
                (float)(uVar57 ^ 
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
           embedDirection.z =
-               (float)((uint)pVVar14->z ^
+               (float)((uint)pVVar15->z ^
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-          pVVar14 = ObjectSurfaceSnap_CalculateEmbedVector
-                              ((Vector3 *)&stack0xffffffd0,pLVar46,snapConfig.SurfaceObject,
-                               embedDirection,snapConfig.SurfaceType,(MethodInfo *)0x0);
-          uVar59._0_4_ = pVVar14->x;
-          uVar59._4_4_ = pVVar14->y;
-          fVar5 = pVVar14->z;
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffb0,pTVar27,(MethodInfo *)0x0);
-          uVar60 = pVVar14->x;
-          uVar61 = pVVar14->y;
+          pVVar15 = ObjectSurfaceSnap_CalculateEmbedVector
+                               ((Vector3 *)&stack0xffffffd0,pLVar45,snapConfig.SurfaceObject,
+                                embedDirection,snapConfig.SurfaceType,(MethodInfo *)0x0);
+          uVar59._0_4_ = pVVar15->x;
+          uVar59._4_4_ = pVVar15->y;
+          fVar3 = pVVar15->z;
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffffb0,pTVar14,(MethodInfo *)0x0);
+          uVar60 = pVVar15->x;
+          uVar61 = pVVar15->y;
           value_02.y = SUB84(uVar59,4) + (float)uVar61;
           value_02.x = (float)uVar59 + (float)uVar60;
-          value_02.z = fVar5 + pVVar14->z;
+          value_02.z = fVar3 + pVVar15->z;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar27,value_02,(MethodInfo *)0x0);
+                    (pTVar14,value_02,(MethodInfo *)0x0);
         }
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffe0,pTVar27,(MethodInfo *)0x0);
-        uVar62 = pVVar14->x;
-        uVar63 = pVVar14->y;
+        pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffe0,pTVar14,(MethodInfo *)0x0);
+        uVar62 = pVVar15->x;
+        uVar63 = pVVar15->y;
         value_05.y = snapConfig.OffsetFromSurface *
                      (float)((ulonglong)*(undefined8 *)(iVar54 + 0x1c) >> 0x20) + (float)uVar63;
         value_05.x = snapConfig.OffsetFromSurface * (float)*(undefined8 *)(iVar54 + 0x1c) +
                      (float)uVar62;
-        value_05.z = snapConfig.OffsetFromSurface * *(float *)(iVar54 + 0x24) + pVVar14->z;
+        value_05.z = snapConfig.OffsetFromSurface * *(float *)(iVar54 + 0x24) + pVVar15->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar27,value_05,(MethodInfo *)0x0);
-        fVar8 = *(float *)(iVar54 + 0x14);
-        fVar6 = 1.4013e-45;
+                  (pTVar14,value_05,(MethodInfo *)0x0);
+        fVar5 = *(float *)(iVar54 + 0x14);
+        uVar4._0_4_ = 1.4013e-45;
         snapConfig.SurfaceHitPlane.m_Normal.x = *(float *)(iVar54 + 0x28);
         snapConfig.SurfaceHitPlane.m_Normal.y = *(float *)(iVar54 + 0x2c);
         snapConfig.SurfaceHitPlane.m_Normal.z = *(float *)(iVar54 + 0x30);
-        fVar5 = *(float *)(iVar54 + 0x34);
-        uVar18 = *(undefined8 *)(iVar54 + 0xc);
+        fVar3 = *(float *)(iVar54 + 0x34);
+        uVar19 = *(undefined8 *)(iVar54 + 0xc);
         goto code_?;
       }
-      if ((cVar19 == '\0') && (snapConfig.SurfaceType == 1)) {
-        obb._size.y = fVar37;
-        obb._size.x = fVar36;
-        obb._size.z = (float)uVar38;
-        obb._center.x = uVar38._4_4_;
+      if ((cVar20 == '\0') && (snapConfig.SurfaceType == 1)) {
+        obb._size.y = uVar35._4_4_;
+        obb._size.x = (float)uVar35;
+        obb._size.z = fVar36;
+        obb._center.x = fVar37;
         obb._center.y = (float)puVar52;
-        obb._center.z = fVar3;
-        obb._rotation.x = (float)puVar41;
+        obb._center.z = fVar28;
+        obb._rotation.x = (float)puVar40;
         obb._rotation.y = (float)uVar53;
-        obb._rotation.z = fVar39;
-        obb._rotation.w = fVar40;
-        obb._40_4_ = fVar9;
-        pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                            ((Vector3 *)&stack0xffffffd0,obb,PVar13,0.0,(MethodInfo *)0x0);
-        uVar64._0_4_ = pVVar14->x;
-        uVar64._4_4_ = pVVar14->y;
-        fVar6 = pVVar14->z;
-        if (pTVar27 == (Transform *)0x0) goto code_?;
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffb0,pTVar27,(MethodInfo *)0x0);
-        uVar65 = pVVar14->x;
-        uVar66 = pVVar14->y;
+        obb._rotation.z = fVar38;
+        obb._rotation.w = fVar39;
+        obb._40_4_ = fVar3;
+        pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                             ((Vector3 *)&stack0xffffffd0,obb,PVar13,0.0,(MethodInfo *)0x0);
+        uVar64._0_4_ = pVVar15->x;
+        uVar64._4_4_ = pVVar15->y;
+        fVar3 = pVVar15->z;
+        if (pTVar14 == (Transform *)0x0) goto code_?;
+        pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffb0,pTVar14,(MethodInfo *)0x0);
+        uVar65 = pVVar15->x;
+        uVar66 = pVVar15->y;
         value_00.y = SUB84(uVar64,4) + (float)uVar66;
         value_00.x = (float)uVar64 + (float)uVar65;
-        value_00.z = fVar6 + pVVar14->z;
+        value_00.z = fVar3 + pVVar15->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar27,value_00,(MethodInfo *)0x0);
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffd0,pTVar27,(MethodInfo *)0x0);
-        uVar67 = pVVar14->x;
-        uVar68 = pVVar14->y;
+                  (pTVar14,value_00,(MethodInfo *)0x0);
+        pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffd0,pTVar14,(MethodInfo *)0x0);
+        uVar67 = pVVar15->x;
+        uVar68 = pVVar15->y;
         value_04.y = snapConfig.SurfaceHitNormal.y * snapConfig.OffsetFromSurface + (float)uVar68;
-        value_04.x = fVar35 * snapConfig.OffsetFromSurface + (float)uVar67;
-        value_04.z = snapConfig.SurfaceHitNormal.z * snapConfig.OffsetFromSurface + pVVar14->z;
+        value_04.x = fVar34 * snapConfig.OffsetFromSurface + (float)uVar67;
+        value_04.z = snapConfig.SurfaceHitNormal.z * snapConfig.OffsetFromSurface + pVVar15->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar27,value_04,(MethodInfo *)0x0);
-        fVar6 = 0.0;
-        pt_01.y = fVar30;
-        pt_01.x = fVar5;
+                  (pTVar14,value_04,(MethodInfo *)0x0);
+        uVar4._0_4_ = 0.0;
+        pt_01.y = fVar29;
+        pt_01.x = fVar7;
         pt_01.z = fVar8;
-        pVVar14 = PlaneEx::PlaneEx_ProjectPoint
-                            ((Vector3 *)&stack0xffffffe0,PVar13,pt_01,(MethodInfo *)0x0);
-        fVar5 = snapConfig.SurfaceHitPlane.m_Distance;
+        pVVar15 = PlaneEx::PlaneEx_ProjectPoint
+                             ((Vector3 *)&stack0xffffffe0,PVar13,pt_01,(MethodInfo *)0x0);
+        fVar3 = snapConfig.SurfaceHitPlane.m_Distance;
         goto code_?;
       }
     }
     else if (cVar24 == '\0') {
-      if (cVar19 != '\0') {
+      if (cVar20 != '\0') {
         if ((snapConfig.SurfaceObject != (GameObject *)0x0) &&
-           (pTVar7 = pTVar27,
-           pTVar42 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (snapConfig.SurfaceObject,(MethodInfo *)0x0),
-           pTVar42 != (Transform *)0x0)) {
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffe0,pTVar42,(MethodInfo *)0x0);
-          fVar29 = pVVar14->x;
-          fVar9 = pVVar14->y;
-          fVar8 = pVVar14->z;
-          if (pTVar27 != (Transform *)0x0) {
+           (pTVar41 = pTVar14,
+           this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (snapConfig.SurfaceObject,(MethodInfo *)0x0), this != (Transform *)0x0))
+        {
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffffe0,this,(MethodInfo *)0x0);
+          fVar8 = pVVar15->x;
+          fVar9 = pVVar15->y;
+          fVar7 = pVVar15->z;
+          if (pTVar14 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&stack0xffffffb0,pTVar27,(MethodInfo *)0x0);
-            puVar43 = (undefined8 *)func_?();
-            fVar10 = *(float *)(puVar43 + 1);
-            fVar36 = (float)*puVar43;
-            fVar33 = (float)((ulonglong)*puVar43 >> 0x20);
-            fVar30 = fVar36;
-            fVar31 = fVar33;
-            fVar35 = fVar10;
-            pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                                ((Vector3 *)&stack0xffffffe0,pTVar42,(MethodInfo *)0x0);
-            uVar21._4_4_ = Vector3Ex::Vector3Ex_GetMaxAbsComp(*pVVar14,(MethodInfo *)0x0);
-            uVar21._4_4_ = uVar21._4_4_ * _UNK_?;
+                      ((Vector3 *)&stack0xffffffb0,pTVar14,(MethodInfo *)0x0);
+            puVar42 = (undefined8 *)func_?();
+            fVar10 = *(float *)(puVar42 + 1);
+            fVar32 = (float)*puVar42;
+            fVar33 = (float)((ulonglong)*puVar42 >> 0x20);
+            fVar29 = fVar32;
+            fVar30 = fVar33;
+            fVar31 = fVar10;
+            pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                                 ((Vector3 *)&stack0xffffffe0,this,(MethodInfo *)0x0);
+            fVar28 = Vector3Ex::Vector3Ex_GetMaxAbsComp(*pVVar15,(MethodInfo *)0x0);
+            fVar28 = fVar28 * _UNK_?;
             normAlignVector.y = fVar33;
-            normAlignVector.x = fVar36;
-            normAlignVector.z = fVar35;
+            normAlignVector.x = fVar32;
+            normAlignVector.z = fVar31;
             TransformEx::TransformEx_Align
-                      ((Quaternion *)&stack0xffffff90,pTVar27,normAlignVector,
+                      ((Quaternion *)&stack0xffffff90,pTVar14,normAlignVector,
                        snapConfig.AlignmentAxis,(MethodInfo *)0x0);
             if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            queryConfig_01.NoVolumeSize.x = fVar20;
+            queryConfig_01.NoVolumeSize.x = fVar21;
             queryConfig_01.ObjectTypes = (int32_t)fVar23;
-            queryConfig_01.NoVolumeSize.y = (float)uVar21;
-            queryConfig_01.NoVolumeSize.z = (float)puVar22;
-            pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+            queryConfig_01.NoVolumeSize.y = uVar4._4_4_;
+            queryConfig_01.NoVolumeSize.z = fVar22;
+            pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                                  ((OBB *)&stack0xfffffe60,root,queryConfig_01,(MethodInfo *)0x0);
-            uVar38._0_4_ = (pOVar28->_center).y;
-            uVar38._4_4_ = (pOVar28->_rotation).x;
-            fVar39 = (pOVar28->_rotation).y;
-            fVar23 = (pOVar28->_size).x;
-            uVar21._0_4_ = (pOVar28->_size).y;
-            fVar34 = (pOVar28->_size).z;
-            fVar37 = (pOVar28->_center).x;
-            uVar69 = (pOVar28->_rotation).z;
-            fVar20 = (pOVar28->_rotation).w;
-            uVar53 = *(undefined4 *)&pOVar28->_isValid;
+            uVar35._0_4_ = (pOVar27->_center).y;
+            uVar35._4_4_ = (pOVar27->_rotation).x;
+            fVar36 = (pOVar27->_rotation).y;
+            fVar23 = (pOVar27->_size).x;
+            uVar4._4_4_ = (pOVar27->_size).y;
+            fVar22 = (pOVar27->_size).z;
+            fVar34 = (pOVar27->_center).x;
+            uVar69 = (pOVar27->_rotation).z;
+            fVar21 = (pOVar27->_rotation).w;
+            uVar53 = *(undefined4 *)&pOVar27->_isValid;
             if ((char)uVar53 != '\0') {
-              fVar70 = (float)((uint)fVar30 ^
+              fVar70 = (float)((uint)fVar29 ^
                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
-              fVar71 = (float)((uint)fVar31 ^
+              fVar71 = (float)((uint)fVar30 ^
                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
-              fVar72 = (float)((uint)fVar10 ^
+              fVar39 = (float)((uint)fVar10 ^
                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                               );
-              fVar40 = fVar39;
-              fVar44 = fVar37;
+              fVar37 = fVar36;
+              fVar38 = fVar34;
               if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              uVar73 = 0;
-              boxCenter_01.y = (float)uVar38;
-              boxCenter_01.x = fVar37;
-              boxCenter_01.z = fVar72;
-              boxSize_01.y = (float)uVar21;
+              uVar72 = 0;
+              boxCenter_01.y = (float)uVar35;
+              boxCenter_01.x = fVar34;
+              boxCenter_01.z = fVar39;
+              boxSize_01.y = uVar4._4_4_;
               boxSize_01.x = fVar23;
-              boxSize_01.z = fVar34;
-              boxRotation_01.y = fVar40;
-              boxRotation_01.x = uVar38._4_4_;
+              boxSize_01.z = fVar22;
+              boxRotation_01.y = fVar37;
+              boxRotation_01.x = uVar35._4_4_;
               boxRotation_01.z = (float)uVar69;
-              boxRotation_01.w = fVar20;
+              boxRotation_01.w = fVar21;
               direction_01.y = fVar71;
               direction_01.x = fVar70;
-              direction_01.z = fVar72;
-              fVar20 = fVar23;
-              fVar37 = (float)uVar21;
-              BVar45 = BoxMath::BoxMath_GetMostAlignedFace
+              direction_01.z = fVar39;
+              fVar21 = fVar23;
+              fVar34 = uVar4._4_4_;
+              BVar43 = BoxMath::BoxMath_GetMostAlignedFace
                                   (boxCenter_01,boxSize_01,boxRotation_01,direction_01,
                                    (MethodInfo *)0x0);
               if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              pLVar46 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
-                                   (root,BVar45,0.001,0.01,(MethodInfo *)0x0);
-              fVar9 = fVar9 + fVar31 * uVar21._4_4_;
+              pLVar45 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
+                                   (root,BVar43,0.001,0.01,(MethodInfo *)0x0);
+              fVar9 = fVar9 + fVar30 * fVar28;
               inNormal.y = fVar33;
-              inNormal.x = fVar36;
-              inNormal.z = fVar35;
+              inNormal.x = fVar32;
+              inNormal.z = fVar31;
               inPoint_00.y = fVar9;
-              inPoint_00.x = fVar29 + fVar30 * uVar21._4_4_;
-              inPoint_00.z = fVar8 + fVar10 * uVar21._4_4_;
+              inPoint_00.x = fVar8 + fVar29 * fVar28;
+              inPoint_00.z = fVar7 + fVar10 * fVar28;
               UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_SetNormalAndPosition
                         ((Plane *)&stack0xffffff40,inNormal,inPoint_00,(MethodInfo *)0x0);
-              obb_02._size.y = fVar37;
-              obb_02._size.x = fVar20;
-              obb_02._size.z = fVar34;
-              obb_02._center.x = fVar44;
+              obb_02._size.y = fVar34;
+              obb_02._size.x = fVar21;
+              obb_02._size.z = fVar22;
+              obb_02._center.x = fVar38;
               obb_02._center.y = fVar71;
-              obb_02._center.z = fVar72;
-              obb_02._rotation.x = (float)uVar73;
-              obb_02._rotation.y = fVar39;
+              obb_02._center.z = fVar39;
+              obb_02._rotation.x = (float)uVar72;
+              obb_02._rotation.y = fVar36;
               obb_02._rotation.z = fVar23;
-              obb_02._rotation.w = (float)uVar21;
+              obb_02._rotation.w = uVar4._4_4_;
               obb_02._40_4_ = uVar53;
-              surfacePlane.m_Normal.y = fVar4;
+              surfacePlane.m_Normal.y = (float)uVar4;
               surfacePlane.m_Normal.x = fVar3;
               surfacePlane.m_Normal.z = fVar5;
               surfacePlane.m_Distance = fVar6;
-              pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                                  ((Vector3 *)&stack0xffffffd0,obb_02,surfacePlane,0.0,
-                                   (MethodInfo *)0x0);
+              pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                                   ((Vector3 *)&stack0xffffffd0,obb_02,surfacePlane,0.0,
+                                    (MethodInfo *)0x0);
               fVar8 = 0.0;
-              uVar21._0_4_ = pVVar14->x;
-              uVar21._4_4_ = pVVar14->y;
-              fVar3 = pVVar14->z;
-              pTVar27 = pTVar7;
-              uVar74 = uVar21;
-              fVar4 = fVar3;
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)&stack0xffffff50,pTVar7,(MethodInfo *)0x0);
-              uVar75 = pVVar14->x;
-              uVar76 = pVVar14->y;
-              value_06.y = SUB84(uVar74,4) + (float)uVar76;
-              value_06.x = (float)uVar74 + (float)uVar75;
-              value_06.z = fVar4 + pVVar14->z;
+              uVar4._0_4_ = pVVar15->x;
+              uVar4._4_4_ = pVVar15->y;
+              fVar3 = pVVar15->z;
+              pTVar14 = pTVar41;
+              uVar47 = uVar4;
+              fVar7 = fVar3;
+              pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                   ((Vector3 *)&stack0xffffff60,pTVar41,(MethodInfo *)0x0);
+              uVar73 = pVVar15->x;
+              uVar74 = pVVar15->y;
+              value_06.y = SUB84(uVar47,4) + (float)uVar74;
+              value_06.x = (float)uVar47 + (float)uVar73;
+              value_06.z = fVar7 + pVVar15->z;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                        (pTVar27,value_06,(MethodInfo *)0x0);
-              offset.y = uVar21._4_4_;
-              offset.x = (float)uVar21;
+                        (pTVar14,value_06,(MethodInfo *)0x0);
+              offset.y = uVar4._4_4_;
+              offset.x = (float)uVar4;
               offset.z = fVar3;
-              Vector3Ex::Vector3Ex_OffsetPoints(pLVar46,offset,(MethodInfo *)0x0);
-              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                  ((Vector3 *)&stack0xffffffd0,pTVar27,(MethodInfo *)0x0);
-              uVar77 = pVVar14->x;
-              uVar78 = pVVar14->y;
-              fVar4 = fVar10 * snapConfig.OffsetFromSurface + pVVar14->z;
-              fVar3 = fVar30 * snapConfig.OffsetFromSurface + (float)uVar77;
-              value_08.y = fVar31 * snapConfig.OffsetFromSurface + (float)uVar78;
-              value_08.x = fVar3;
-              value_08.z = fVar4;
+              Vector3Ex::Vector3Ex_OffsetPoints(pLVar45,offset,(MethodInfo *)0x0);
+              pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                   ((Vector3 *)&stack0xffffffd0,pTVar14,(MethodInfo *)0x0);
+              uVar75 = pVVar15->x;
+              uVar76 = pVVar15->y;
+              fVar3 = pVVar15->z + fVar10 * snapConfig.OffsetFromSurface;
+              uVar4._0_4_ = (float)uVar75 + fVar29 * snapConfig.OffsetFromSurface;
+              value_08.y = (float)uVar76 + fVar30 * snapConfig.OffsetFromSurface;
+              value_08.x = (float)uVar4;
+              value_08.z = fVar3;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                        (pTVar27,value_08,(MethodInfo *)0x0);
-code_?:
-              *(undefined4 *)__return_storage_ptr__ = 1;
-              (__return_storage_ptr__->SittingPlane).m_Normal.x = (float)pTVar7;
-              (__return_storage_ptr__->SittingPlane).m_Normal.y = fVar8;
-              (__return_storage_ptr__->SittingPlane).m_Normal.z = fVar5;
-              (__return_storage_ptr__->SittingPlane).m_Distance = fVar6;
-              (__return_storage_ptr__->SittingPoint).x = fVar4;
-              (__return_storage_ptr__->SittingPoint).y = fVar9;
-              (__return_storage_ptr__->SittingPoint).z = fVar3;
-              return __return_storage_ptr__;
+                        (pTVar14,value_08,(MethodInfo *)0x0);
+              *(undefined4 *)pOVar1 = 1;
+              (pOVar1->SittingPlane).m_Normal.x = (float)pTVar41;
+              (pOVar1->SittingPlane).m_Normal.y = fVar8;
+              (pOVar1->SittingPlane).m_Normal.z = fVar5;
+              (pOVar1->SittingPlane).m_Distance = fVar6;
+              (pOVar1->SittingPoint).x = fVar3;
+              (pOVar1->SittingPoint).y = fVar9;
+              (pOVar1->SittingPoint).z = (float)uVar4;
+              return pOVar1;
             }
             goto code_?;
           }
@@ -959,66 +964,66 @@ code_?:
         goto code_?;
       }
       TransformEx::TransformEx_Align
-                ((Quaternion *)&stack0xffffff90,pTVar27,VVar17,snapConfig.AlignmentAxis,
+                ((Quaternion *)&stack0xffffff90,pTVar14,VVar18,snapConfig.AlignmentAxis,
                  (MethodInfo *)0x0);
       if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      queryConfig.NoVolumeSize.x = fVar20;
+      queryConfig.NoVolumeSize.x = fVar21;
       queryConfig.ObjectTypes = (int32_t)fVar23;
-      queryConfig.NoVolumeSize.y = (float)uVar21;
-      queryConfig.NoVolumeSize.z = (float)puVar22;
-      pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+      queryConfig.NoVolumeSize.y = uVar4._4_4_;
+      queryConfig.NoVolumeSize.z = fVar22;
+      pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                            ((OBB *)&stack0xfffffe60,root,queryConfig,(MethodInfo *)0x0);
-      fVar5 = (pOVar28->_size).x;
-      fVar8 = (pOVar28->_size).y;
-      fVar3 = (pOVar28->_size).z;
-      fVar4 = (pOVar28->_center).x;
-      fVar9 = (pOVar28->_center).y;
-      fVar10 = (pOVar28->_center).z;
-      fVar29 = (pOVar28->_rotation).x;
-      uVar21._4_4_ = (pOVar28->_rotation).y;
-      uVar73 = (pOVar28->_rotation).z;
-      fVar6 = (pOVar28->_rotation).w;
-      if ((char)*(undefined4 *)&pOVar28->_isValid == '\0') goto code_?;
-      fVar30 = (float)((uint)snapConfig.SurfaceHitNormal.z ^
+      fVar3 = (pOVar27->_size).x;
+      uVar4._0_4_ = (pOVar27->_size).y;
+      fVar6 = (pOVar27->_size).z;
+      fVar7 = (pOVar27->_center).x;
+      fVar8 = (pOVar27->_center).y;
+      fVar9 = (pOVar27->_center).z;
+      fVar10 = (pOVar27->_rotation).x;
+      fVar28 = (pOVar27->_rotation).y;
+      uVar72 = (pOVar27->_rotation).z;
+      fVar5 = (pOVar27->_rotation).w;
+      if ((char)*(undefined4 *)&pOVar27->_isValid == '\0') goto code_?;
+      fVar29 = (float)((uint)snapConfig.SurfaceHitNormal.z ^
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      uVar79._4_4_ =
+      uVar77._4_4_ =
            (float)((uint)snapConfig.SurfaceHitNormal.y ^
                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      uVar79._0_4_ =
+      uVar77._0_4_ =
            (float)((uint)snapConfig.SurfaceHitNormal.x ^
                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      boxCenter.y = fVar9;
-      boxCenter.x = fVar4;
-      boxCenter.z = fVar10;
-      boxSize.y = fVar8;
-      boxSize.x = fVar5;
-      boxSize.z = fVar3;
-      boxRotation.y = uVar21._4_4_;
-      boxRotation.x = fVar29;
-      boxRotation.z = (float)uVar73;
-      boxRotation.w = fVar6;
-      direction.z = fVar30;
-      direction.x = (float)uVar79;
-      direction.y = SUB84(uVar79,4);
-      BVar45 = BoxMath::BoxMath_GetMostAlignedFace
+      boxCenter.y = fVar8;
+      boxCenter.x = fVar7;
+      boxCenter.z = fVar9;
+      boxSize.y = (float)uVar4;
+      boxSize.x = fVar3;
+      boxSize.z = fVar6;
+      boxRotation.y = fVar28;
+      boxRotation.x = fVar10;
+      boxRotation.z = (float)uVar72;
+      boxRotation.w = fVar5;
+      direction.z = fVar29;
+      direction.x = (float)uVar77;
+      direction.y = SUB84(uVar77,4);
+      BVar43 = BoxMath::BoxMath_GetMostAlignedFace
                           (boxCenter,boxSize,boxRotation,direction,(MethodInfo *)0x0);
       if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pLVar46 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
-                           (root,BVar45,0.001,0.01,(MethodInfo *)0x0);
-      if (pLVar46 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-      if ((pLVar46->fields)._size != 0) {
-        pVVar14 = Vector3Ex::Vector3Ex_GetPointCloudCenter
-                            ((Vector3 *)&stack0xffffffd0,
-                             (IEnumerable_1_UnityEngine_Vector3_ *)pLVar46,(MethodInfo *)0x0);
-        fVar30 = pVVar14->x;
-        fVar31 = pVVar14->y;
+      pLVar45 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
+                           (root,BVar43,0.001,0.01,(MethodInfo *)0x0);
+      if (pLVar45 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+      if ((pLVar45->fields)._size != 0) {
+        pVVar15 = Vector3Ex::Vector3Ex_GetPointCloudCenter
+                             ((Vector3 *)&stack0xffffffd0,
+                              (IEnumerable_1_UnityEngine_Vector3_ *)pLVar45,(MethodInfo *)0x0);
+        fVar28 = pVVar15->x;
+        fVar29 = pVVar15->y;
         if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
@@ -1029,243 +1034,244 @@ code_?:
         if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pAVar80 = ObjectBounds::ObjectBounds_CalcMeshModelAABB
+        pAVar78 = ObjectBounds::ObjectBounds_CalcMeshModelAABB
                              ((AABB *)&stack0xffffff30,snapConfig.SurfaceObject,(MethodInfo *)0x0);
-        if ((char)*(undefined4 *)&pAVar80->_isValid != '\0') {
+        if ((char)*(undefined4 *)&pAVar78->_isValid != '\0') {
           if ((snapConfig.SurfaceObject == (GameObject *)0x0) ||
-             (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(snapConfig.SurfaceObject,(MethodInfo *)0x0),
-             pTVar7 == (Transform *)0x0)) goto code_?;
-          pMVar81 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+             (pTVar41 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                         GameObject_get_transform(snapConfig.SurfaceObject,(MethodInfo *)0x0),
+             pTVar41 == (Transform *)0x0)) goto code_?;
+          pMVar79 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                      Transform_get_localToWorldMatrix
-                               ((Matrix4x4 *)&stack0xfffffe50,pTVar7,(MethodInfo *)0x0);
-          transformMatrix.m02._1_2_ = (short)((uint)pMVar81->m02 >> 8);
-          transformMatrix._0_33_ = *(undefined1 (*) [33])pMVar81;
-          transformMatrix.m02._3_1_ = (char)((uint)pMVar81->m02 >> 0x18);
-          transformMatrix.m12 = pMVar81->m12;
-          transformMatrix.m22 = pMVar81->m22;
-          transformMatrix.m32 = pMVar81->m32;
-          transformMatrix.m03 = pMVar81->m03;
-          transformMatrix.m13 = pMVar81->m13;
-          transformMatrix.m23 = pMVar81->m23;
-          transformMatrix.m33 = pMVar81->m33;
+                               ((Matrix4x4 *)&stack0xfffffe50,pTVar41,(MethodInfo *)0x0);
+          transformMatrix.m02._1_2_ = (short)((uint)pMVar79->m02 >> 8);
+          transformMatrix._0_33_ = *(undefined1 (*) [33])pMVar79;
+          transformMatrix.m02._3_1_ = (char)((uint)pMVar79->m02 >> 0x18);
+          transformMatrix.m12 = pMVar79->m12;
+          transformMatrix.m22 = pMVar79->m22;
+          transformMatrix.m32 = pMVar79->m32;
+          transformMatrix.m03 = pMVar79->m03;
+          transformMatrix.m13 = pMVar79->m13;
+          transformMatrix.m23 = pMVar79->m23;
+          transformMatrix.m33 = pMVar79->m33;
           AABB::AABB_Transform((AABB *)&stack0xffffff80,transformMatrix,(MethodInfo *)0x0);
         }
         OBB::OBB_get_Extents((Vector3 *)&stack0xffffffd0,(OBB *)&stack0xfffffee8,(MethodInfo *)0x0);
         func_?();
+        fVar3 = 0.0;
         func_?();
         if (pOVar26 == (ObjectSurfaceSnap_SurfaceRaycaster *)0x0) goto code_?;
-        uVar82 = func_?();
-        if (uVar82 != 0) {
-          fVar5 = *(float *)(uVar82 + 0x24);
-          pVVar14 = (Vector3 *)(uVar82 + 0x1c);
-          fVar35 = pVVar14->x;
-          fVar36 = pVVar14->y;
-          fVar6 = fVar35;
-          fVar8 = fVar36;
+        uVar80 = func_?();
+        uVar4._0_4_ = 0.0;
+        if (uVar80 != 0) {
+          fVar5 = *(float *)(uVar80 + 0x24);
+          pVVar15 = (Vector3 *)(uVar80 + 0x1c);
+          fVar30 = pVVar15->x;
+          fVar31 = pVVar15->y;
+          fVar6 = fVar30;
+          fVar7 = fVar31;
           TransformEx::TransformEx_Align
-                    ((Quaternion *)&stack0xffffff90,pTVar27,*pVVar14,snapConfig.AlignmentAxis,
+                    ((Quaternion *)&stack0xffffff90,pTVar14,*pVVar15,snapConfig.AlignmentAxis,
                      (MethodInfo *)0x0);
           if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-            puVar22 = &UNK_?;
             func_?();
           }
-          queryConfig_07.NoVolumeSize.x = fVar20;
-          queryConfig_07.ObjectTypes = (int32_t)fVar23;
-          queryConfig_07.NoVolumeSize.y = (float)uVar21;
-          queryConfig_07.NoVolumeSize.z = (float)puVar22;
-          pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+          queryConfig_07.NoVolumeSize.x = (float)uVar4;
+          queryConfig_07.ObjectTypes = snapConfig.AlignmentAxis;
+          queryConfig_07.NoVolumeSize.y = fVar3;
+          queryConfig_07.NoVolumeSize.z = fVar22;
+          pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                                ((OBB *)&stack0xfffffe60,root,queryConfig_07,(MethodInfo *)0x0);
-          uVar83 = (pOVar28->_rotation).w;
-          uVar84 = (pOVar28->_size).x;
-          uVar85 = (pOVar28->_size).y;
-          uVar86 = (pOVar28->_size).z;
-          obb_06._size.z = (float)uVar86;
-          obb_06._size.y = (float)uVar85;
-          obb_06._size.x = (float)uVar84;
-          uVar87 = (pOVar28->_center).x;
-          uVar88 = (pOVar28->_center).y;
-          uVar89 = (pOVar28->_center).z;
-          obb_06._center.z = (float)uVar89;
-          obb_06._center.y = (float)uVar88;
-          obb_06._center.x = (float)uVar87;
-          uVar90 = (pOVar28->_rotation).x;
-          uVar91 = (pOVar28->_rotation).y;
-          uVar92 = (pOVar28->_rotation).z;
-          obb_06._rotation.z = (float)uVar92;
-          obb_06._rotation.y = (float)uVar91;
-          obb_06._rotation.x = (float)uVar90;
-          snapConfig.SurfaceObject = *(GameObject **)&pOVar28->_isValid;
-          obb_06._rotation.w = (float)uVar83;
+          uVar81 = (pOVar27->_rotation).w;
+          uVar82 = (pOVar27->_size).x;
+          uVar83 = (pOVar27->_size).y;
+          uVar84 = (pOVar27->_size).z;
+          obb_06._size.z = (float)uVar84;
+          obb_06._size.y = (float)uVar83;
+          obb_06._size.x = (float)uVar82;
+          uVar85 = (pOVar27->_center).x;
+          uVar86 = (pOVar27->_center).y;
+          uVar87 = (pOVar27->_center).z;
+          obb_06._center.z = (float)uVar87;
+          obb_06._center.y = (float)uVar86;
+          obb_06._center.x = (float)uVar85;
+          uVar88 = (pOVar27->_rotation).x;
+          uVar89 = (pOVar27->_rotation).y;
+          uVar90 = (pOVar27->_rotation).z;
+          obb_06._rotation.z = (float)uVar90;
+          obb_06._rotation.y = (float)uVar89;
+          obb_06._rotation.x = (float)uVar88;
+          snapConfig.SurfaceObject = *(GameObject **)&pOVar27->_isValid;
+          obb_06._rotation.w = (float)uVar81;
           obb_06._40_4_ = snapConfig.SurfaceObject;
-          pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                              ((Vector3 *)&stack0xffffffe0,obb_06,*(Plane *)(uVar82 + 0x28),0.0,
-                               (MethodInfo *)0x0);
-          fVar3 = pVVar14->z;
-          if (pTVar27 == (Transform *)0x0) goto code_?;
-          fVar4 = 0.0;
-          pTVar7 = pTVar27;
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffff50,pTVar27,(MethodInfo *)0x0);
-          uVar93 = pVVar14->x;
-          uVar94 = pVVar14->y;
-          value_11.y = (float)uVar94 + fVar4;
-          value_11.x = (float)uVar93 + (float)pTVar7;
-          value_11.z = pVVar14->z + fVar3;
+          pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                               ((Vector3 *)&stack0xffffffe0,obb_06,*(Plane *)(uVar80 + 0x28),0.0,
+                                (MethodInfo *)0x0);
+          fVar3 = pVVar15->z;
+          if (pTVar14 == (Transform *)0x0) goto code_?;
+          uVar4._0_4_ = 0.0;
+          pTVar41 = pTVar14;
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffff60,pTVar14,(MethodInfo *)0x0);
+          uVar91 = pVVar15->x;
+          uVar92 = pVVar15->y;
+          value_11.y = (float)uVar92 + (float)uVar4;
+          value_11.x = (float)uVar91 + (float)pTVar41;
+          value_11.z = pVVar15->z + fVar3;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar27,value_11,(MethodInfo *)0x0);
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffd0,pTVar27,(MethodInfo *)0x0);
-          uVar95 = pVVar14->x;
-          uVar96 = pVVar14->y;
-          value_13.y = (float)uVar96 + snapConfig.OffsetFromSurface * fVar8;
-          value_13.x = (float)uVar95 + snapConfig.OffsetFromSurface * fVar6;
-          value_13.z = pVVar14->z + snapConfig.OffsetFromSurface * fVar5;
+                    (pTVar14,value_11,(MethodInfo *)0x0);
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffffd0,pTVar14,(MethodInfo *)0x0);
+          uVar93 = pVVar15->x;
+          uVar94 = pVVar15->y;
+          value_13.y = (float)uVar94 + snapConfig.OffsetFromSurface * fVar7;
+          value_13.x = (float)uVar93 + snapConfig.OffsetFromSurface * fVar6;
+          value_13.z = pVVar15->z + snapConfig.OffsetFromSurface * fVar5;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar27,value_13,(MethodInfo *)0x0);
-          snapConfig.AlignmentAxis = *(int32_t *)(uVar82 + 0x14);
-          root = (GameObject *)*(undefined8 *)(uVar82 + 0xc);
-          snapConfig._0_4_ = SUB84((ulonglong)*(undefined8 *)(uVar82 + 0xc) >> 0x20,0);
-          uVar21 = CONCAT44(fVar36,fVar35);
+                    (pTVar14,value_13,(MethodInfo *)0x0);
+          snapConfig.AlignmentAxis = *(int32_t *)(uVar80 + 0x14);
+          root = (GameObject *)*(undefined8 *)(uVar80 + 0xc);
+          snapConfig._0_4_ = SUB84((ulonglong)*(undefined8 *)(uVar80 + 0xc) >> 0x20,0);
+          uVar47 = CONCAT44(fVar31,fVar30);
           goto code_?;
         }
+        fVar5 = (float)snapConfig.AlignmentAxis;
         TransformEx::TransformEx_Align
-                  ((Quaternion *)&stack0xffffff90,pTVar27,VVar17,snapConfig.AlignmentAxis,
+                  ((Quaternion *)&stack0xffffff90,pTVar14,VVar18,snapConfig.AlignmentAxis,
                    (MethodInfo *)0x0);
         if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-          puVar22 = &UNK_?;
           func_?();
         }
-        queryConfig_06.NoVolumeSize.x = fVar20;
-        queryConfig_06.ObjectTypes = (int32_t)fVar23;
-        queryConfig_06.NoVolumeSize.y = (float)uVar21;
-        queryConfig_06.NoVolumeSize.z = (float)puVar22;
-        pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+        queryConfig_06.NoVolumeSize.x = (float)uVar4;
+        queryConfig_06.ObjectTypes = (int32_t)fVar5;
+        queryConfig_06.NoVolumeSize.y = fVar3;
+        queryConfig_06.NoVolumeSize.z = fVar22;
+        pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                              ((OBB *)&stack0xfffffe60,root,queryConfig_06,(MethodInfo *)0x0);
-        uVar97 = (pOVar28->_rotation).w;
-        uVar98 = (pOVar28->_size).x;
-        uVar99 = (pOVar28->_size).y;
-        uVar100 = (pOVar28->_size).z;
-        obb_05._size.z = (float)uVar100;
-        obb_05._size.y = (float)uVar99;
-        obb_05._size.x = (float)uVar98;
-        uVar101 = (pOVar28->_center).x;
-        uVar102 = (pOVar28->_center).y;
-        uVar103 = (pOVar28->_center).z;
-        obb_05._center.z = (float)uVar103;
-        obb_05._center.y = (float)uVar102;
-        obb_05._center.x = (float)uVar101;
-        uVar104 = (pOVar28->_rotation).x;
-        uVar105 = (pOVar28->_rotation).y;
-        uVar106 = (pOVar28->_rotation).z;
-        obb_05._rotation.z = (float)uVar106;
-        obb_05._rotation.y = (float)uVar105;
-        obb_05._rotation.x = (float)uVar104;
-        fVar5 = *(float *)&pOVar28->_isValid;
-        obb_05._rotation.w = (float)uVar97;
-        obb_05._40_4_ = fVar5;
-        pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                            ((Vector3 *)&stack0xffffffe0,obb_05,PVar13,0.0,(MethodInfo *)0x0);
-        fVar6 = pVVar14->z;
-        if (pTVar27 == (Transform *)0x0) goto code_?;
-        fVar8 = 0.0;
-        pTVar7 = pTVar27;
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffb0,pTVar27,(MethodInfo *)0x0);
-        uVar107 = pVVar14->x;
-        uVar108 = pVVar14->y;
-        value_10.y = (float)uVar108 + fVar8;
-        value_10.x = (float)uVar107 + (float)pTVar7;
-        value_10.z = pVVar14->z + fVar6;
+        uVar95 = (pOVar27->_rotation).w;
+        uVar96 = (pOVar27->_size).x;
+        uVar97 = (pOVar27->_size).y;
+        uVar98 = (pOVar27->_size).z;
+        obb_05._size.z = (float)uVar98;
+        obb_05._size.y = (float)uVar97;
+        obb_05._size.x = (float)uVar96;
+        uVar99 = (pOVar27->_center).x;
+        uVar100 = (pOVar27->_center).y;
+        uVar101 = (pOVar27->_center).z;
+        obb_05._center.z = (float)uVar101;
+        obb_05._center.y = (float)uVar100;
+        obb_05._center.x = (float)uVar99;
+        uVar102 = (pOVar27->_rotation).x;
+        uVar103 = (pOVar27->_rotation).y;
+        uVar104 = (pOVar27->_rotation).z;
+        obb_05._rotation.z = (float)uVar104;
+        obb_05._rotation.y = (float)uVar103;
+        obb_05._rotation.x = (float)uVar102;
+        fVar3 = *(float *)&pOVar27->_isValid;
+        obb_05._rotation.w = (float)uVar95;
+        obb_05._40_4_ = fVar3;
+        pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                             ((Vector3 *)&stack0xffffffe0,obb_05,PVar13,0.0,(MethodInfo *)0x0);
+        uVar4._0_4_ = pVVar15->z;
+        if (pTVar14 == (Transform *)0x0) goto code_?;
+        fVar5 = 0.0;
+        pTVar41 = pTVar14;
+        pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffb0,pTVar14,(MethodInfo *)0x0);
+        uVar105 = pVVar15->x;
+        uVar106 = pVVar15->y;
+        value_10.y = (float)uVar106 + fVar5;
+        value_10.x = (float)uVar105 + (float)pTVar41;
+        value_10.z = pVVar15->z + (float)uVar4;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar27,value_10,(MethodInfo *)0x0);
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffd0,pTVar27,(MethodInfo *)0x0);
-        uVar109 = pVVar14->x;
-        uVar110 = pVVar14->y;
-        value_12.y = (float)uVar110 + snapConfig.SurfaceHitNormal.y * snapConfig.OffsetFromSurface;
-        value_12.x = (float)uVar109 + snapConfig.SurfaceHitNormal.x * snapConfig.OffsetFromSurface;
-        value_12.z = pVVar14->z + snapConfig.SurfaceHitNormal.z * snapConfig.OffsetFromSurface;
+                  (pTVar14,value_10,(MethodInfo *)0x0);
+        pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffd0,pTVar14,(MethodInfo *)0x0);
+        uVar107 = pVVar15->x;
+        uVar108 = pVVar15->y;
+        value_12.y = (float)uVar108 + snapConfig.SurfaceHitNormal.y * snapConfig.OffsetFromSurface;
+        value_12.x = (float)uVar107 + snapConfig.SurfaceHitNormal.x * snapConfig.OffsetFromSurface;
+        value_12.z = pVVar15->z + snapConfig.SurfaceHitNormal.z * snapConfig.OffsetFromSurface;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar27,value_12,(MethodInfo *)0x0);
-        fVar6 = 1.4013e-45;
-        pt.y = fVar31;
-        pt.x = fVar30;
-        pt.z = fVar5;
-        fVar5 = snapConfig.SurfaceHitPlane.m_Distance;
-        pVVar14 = PlaneEx::PlaneEx_ProjectPoint
-                            ((Vector3 *)&stack0xffffffe0,snapConfig.SurfaceHitPlane,pt,
-                             (MethodInfo *)0x0);
+                  (pTVar14,value_12,(MethodInfo *)0x0);
+        uVar4._0_4_ = 1.4013e-45;
+        pt.y = fVar29;
+        pt.x = fVar28;
+        pt.z = fVar3;
+        fVar3 = snapConfig.SurfaceHitPlane.m_Distance;
+        pVVar15 = PlaneEx::PlaneEx_ProjectPoint
+                             ((Vector3 *)&stack0xffffffe0,snapConfig.SurfaceHitPlane,pt,
+                              (MethodInfo *)0x0);
         __return_storage_ptr__ =
              (ObjectSurfaceSnap_SnapResult *)snapConfig.SurfaceHitPlane.m_Distance;
         goto code_?;
       }
     }
     else {
-      pVVar14 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
-                          ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
+      pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
+                           ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
       TransformEx::TransformEx_Align
-                ((Quaternion *)&stack0xffffff90,pTVar27,*pVVar14,snapConfig.AlignmentAxis,
+                ((Quaternion *)&stack0xffffff90,pTVar14,*pVVar15,snapConfig.AlignmentAxis,
                  (MethodInfo *)0x0);
       if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      queryConfig_00.NoVolumeSize.x = fVar20;
+      queryConfig_00.NoVolumeSize.x = fVar21;
       queryConfig_00.ObjectTypes = (int32_t)fVar23;
-      queryConfig_00.NoVolumeSize.y = (float)uVar21;
-      queryConfig_00.NoVolumeSize.z = (float)puVar22;
-      pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+      queryConfig_00.NoVolumeSize.y = uVar4._4_4_;
+      queryConfig_00.NoVolumeSize.z = fVar22;
+      pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                            ((OBB *)&stack0xfffffe60,root,queryConfig_00,(MethodInfo *)0x0);
-      fVar6 = (pOVar28->_size).x;
-      fVar8 = (pOVar28->_size).y;
-      fVar3 = (pOVar28->_size).z;
-      fVar4 = (pOVar28->_center).x;
-      fVar9 = (pOVar28->_center).y;
-      fVar10 = (pOVar28->_center).z;
-      fVar29 = (pOVar28->_rotation).x;
-      uVar21._4_4_ = (pOVar28->_rotation).y;
-      uVar53 = (pOVar28->_rotation).z;
-      fVar5 = (pOVar28->_rotation).w;
-      if ((char)*(undefined4 *)&pOVar28->_isValid == '\0') goto code_?;
-      pVVar14 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
-                          ((Vector3 *)&stack0xffffffd0,(MethodInfo *)0x0);
-      uVar111 = pVVar14->x;
-      uVar112 = pVVar14->y;
-      fVar30 = (float)((uint)pVVar14->z ^
+      uVar4._0_4_ = (pOVar27->_size).x;
+      fVar5 = (pOVar27->_size).y;
+      fVar6 = (pOVar27->_size).z;
+      fVar7 = (pOVar27->_center).x;
+      fVar8 = (pOVar27->_center).y;
+      fVar9 = (pOVar27->_center).z;
+      fVar10 = (pOVar27->_rotation).x;
+      fVar28 = (pOVar27->_rotation).y;
+      uVar53 = (pOVar27->_rotation).z;
+      fVar3 = (pOVar27->_rotation).w;
+      if ((char)*(undefined4 *)&pOVar27->_isValid == '\0') goto code_?;
+      pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
+                           ((Vector3 *)&stack0xffffffd0,(MethodInfo *)0x0);
+      uVar109 = pVVar15->x;
+      uVar110 = pVVar15->y;
+      fVar29 = (float)((uint)pVVar15->z ^
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      uVar74._4_4_ =
-           (float)(uVar112 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+      uVar47._4_4_ =
+           (float)(uVar110 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                   );
-      uVar74._0_4_ =
-           (float)(uVar111 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+      uVar47._0_4_ =
+           (float)(uVar109 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                   );
       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      boxCenter_00.y = fVar9;
-      boxCenter_00.x = fVar4;
-      boxCenter_00.z = fVar10;
-      boxSize_00.y = fVar8;
-      boxSize_00.x = fVar6;
-      boxSize_00.z = fVar3;
-      boxRotation_00.y = uVar21._4_4_;
-      boxRotation_00.x = fVar29;
+      boxCenter_00.y = fVar8;
+      boxCenter_00.x = fVar7;
+      boxCenter_00.z = fVar9;
+      boxSize_00.y = fVar5;
+      boxSize_00.x = (float)uVar4;
+      boxSize_00.z = fVar6;
+      boxRotation_00.y = fVar28;
+      boxRotation_00.x = fVar10;
       boxRotation_00.z = (float)uVar53;
-      boxRotation_00.w = fVar5;
-      direction_00.z = fVar30;
-      direction_00.x = (float)uVar74;
-      direction_00.y = SUB84(uVar74,4);
-      BVar45 = BoxMath::BoxMath_GetMostAlignedFace
+      boxRotation_00.w = fVar3;
+      direction_00.z = fVar29;
+      direction_00.x = (float)uVar47;
+      direction_00.y = SUB84(uVar47,4);
+      BVar43 = BoxMath::BoxMath_GetMostAlignedFace
                           (boxCenter_00,boxSize_00,boxRotation_00,direction_00,(MethodInfo *)0x0);
       if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pLVar46 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
-                           (root,BVar45,0.001,0.01,(MethodInfo *)0x0);
-      if (pLVar46 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-      if ((pLVar46->fields)._size != 0) {
+      pLVar45 = ObjectVertexCollect::ObjectVertexCollect_CollectHierarchyVerts
+                           (root,BVar43,0.001,0.01,(MethodInfo *)0x0);
+      if (pLVar45 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+      if ((pLVar45->fields)._size != 0) {
         Vector3Ex::Vector3Ex_GetPointCloudCenter
-                  ((Vector3 *)&stack0xffffffe0,(IEnumerable_1_UnityEngine_Vector3_ *)pLVar46,
+                  ((Vector3 *)&stack0xffffffe0,(IEnumerable_1_UnityEngine_Vector3_ *)pLVar45,
                    (MethodInfo *)0x0);
         TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
                   ((Vector3 *)&stack0xffffffb0,(MethodInfo *)0x0);
@@ -1275,9 +1281,10 @@ code_?:
         if (pOVar26 == (ObjectSurfaceSnap_SurfaceRaycaster *)0x0) goto code_?;
         iVar54 = func_?();
         if (iVar54 != 0) {
-          uVar113 = *(undefined8 *)(iVar54 + 0x1c);
-          fVar5 = *(float *)(iVar54 + 0x24);
-          fVar6 = (float)((ulonglong)uVar113 >> 0x20);
+          uVar111 = *(undefined8 *)(iVar54 + 0x1c);
+          fVar3 = *(float *)(iVar54 + 0x24);
+          uVar4._0_4_ = (float)uVar111;
+          fVar5 = (float)((ulonglong)uVar111 >> 0x20);
           if (cVar25 != '\0') {
             if (snapConfig.SurfaceObject == (GameObject *)0x0) goto code_?;
             terrain = (Terrain *)
@@ -1285,146 +1292,146 @@ code_?:
                                 (snapConfig.SurfaceObject,
                                  UnityEngine__Terrain_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Terrain>__
                                 );
-            pVVar14 = TerrainEx::TerrainEx_GetInterpolatedNormal
-                                ((Vector3 *)&stack0xffffffe0,terrain,*(Vector3 *)(iVar54 + 0xc),
-                                 (MethodInfo *)0x0);
-            uVar113._0_4_ = pVVar14->x;
-            uVar113._4_4_ = pVVar14->y;
-            fVar5 = pVVar14->z;
-            fVar6 = (float)uVar113._4_4_;
+            pVVar15 = TerrainEx::TerrainEx_GetInterpolatedNormal
+                                 ((Vector3 *)&stack0xffffffe0,terrain,*(Vector3 *)(iVar54 + 0xc),
+                                  (MethodInfo *)0x0);
+            uVar111._0_4_ = pVVar15->x;
+            uVar111._4_4_ = pVVar15->y;
+            fVar3 = pVVar15->z;
+            uVar4._0_4_ = (float)(undefined4)uVar111;
+            fVar5 = (float)uVar111._4_4_;
           }
-          normAlignVector_00.z = fVar5;
-          normAlignVector_00.x = (float)(int)uVar113;
-          normAlignVector_00.y = (float)(int)((ulonglong)uVar113 >> 0x20);
-          pQVar114 = TransformEx::TransformEx_Align
-                               ((Quaternion *)&stack0xffffff90,pTVar27,normAlignVector_00,
+          normAlignVector_00.z = fVar3;
+          normAlignVector_00.x = (float)(int)uVar111;
+          normAlignVector_00.y = (float)(int)((ulonglong)uVar111 >> 0x20);
+          pQVar112 = TransformEx::TransformEx_Align
+                               ((Quaternion *)&stack0xffffff90,pTVar14,normAlignVector_00,
                                 snapConfig.AlignmentAxis,(MethodInfo *)0x0);
-          fVar8 = pQVar114->x;
-          fVar3 = pQVar114->y;
-          fVar4 = pQVar114->z;
-          fVar9 = pQVar114->w;
+          fVar6 = pQVar112->x;
+          fVar7 = pQVar112->y;
+          fVar8 = pQVar112->z;
+          fVar9 = pQVar112->w;
           if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          queryConfig_03.NoVolumeSize.x = fVar20;
+          queryConfig_03.NoVolumeSize.x = fVar21;
           queryConfig_03.ObjectTypes = (int32_t)fVar23;
-          queryConfig_03.NoVolumeSize.y = (float)uVar21;
-          queryConfig_03.NoVolumeSize.z = (float)puVar22;
-          pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+          queryConfig_03.NoVolumeSize.y = uVar4._4_4_;
+          queryConfig_03.NoVolumeSize.z = fVar22;
+          pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                                ((OBB *)&stack0xfffffe60,root,queryConfig_03,(MethodInfo *)0x0);
-          fVar20 = (pOVar28->_center).y;
-          uVar21._0_4_ = (pOVar28->_center).z;
-          fVar29 = (pOVar28->_rotation).x;
-          uVar21._4_4_ = (pOVar28->_rotation).y;
-          fVar10 = (pOVar28->_rotation).z;
-          fVar23 = (pOVar28->_rotation).w;
-          if (pTVar27 == (Transform *)0x0) goto code_?;
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffe0,pTVar27,(MethodInfo *)0x0);
-          quat.y = fVar3;
-          quat.x = fVar8;
-          quat.z = fVar4;
+          fVar21 = (pOVar27->_center).y;
+          uVar4._4_4_ = (pOVar27->_center).z;
+          fVar22 = (pOVar27->_rotation).x;
+          fVar28 = (pOVar27->_rotation).y;
+          fVar10 = (pOVar27->_rotation).z;
+          fVar23 = (pOVar27->_rotation).w;
+          if (pTVar14 == (Transform *)0x0) goto code_?;
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffffe0,pTVar14,(MethodInfo *)0x0);
+          quat.y = fVar7;
+          quat.x = fVar6;
+          quat.z = fVar8;
           quat.w = fVar9;
-          QuaternionEx::QuaternionEx_RotatePoints(quat,pLVar46,*pVVar14,(MethodInfo *)0x0);
-          pVVar14 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
-                              ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
+          QuaternionEx::QuaternionEx_RotatePoints(quat,pLVar45,*pVVar15,(MethodInfo *)0x0);
+          pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
+                               ((Vector3 *)&stack0xffffffe0,(MethodInfo *)0x0);
+          fVar6 = 0.0;
+          fVar7 = 0.0;
           fVar8 = 0.0;
-          fVar3 = 0.0;
-          fVar4 = 0.0;
           fVar9 = 0.0;
           UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_SetNormalAndPosition
-                    ((Plane *)&stack0xffffff90,*pVVar14,*(Vector3 *)(iVar54 + 0xc),
+                    ((Plane *)&stack0xffffff90,*pVVar15,*(Vector3 *)(iVar54 + 0xc),
                      (MethodInfo *)0x0);
-          obb_03._size.y = fVar4;
-          obb_03._size.x = fVar3;
+          obb_03._size.y = fVar8;
+          obb_03._size.x = fVar7;
           obb_03._size.z = fVar9;
           obb_03._center.x = 0.1;
-          obb_03._center.y = fVar20;
-          obb_03._center.z = (float)uVar21;
-          obb_03._rotation.x = fVar29;
-          obb_03._rotation.y = uVar21._4_4_;
+          obb_03._center.y = fVar21;
+          obb_03._center.z = uVar4._4_4_;
+          obb_03._rotation.x = fVar22;
+          obb_03._rotation.y = fVar28;
           obb_03._rotation.z = fVar10;
           obb_03._rotation.w = fVar23;
-          obb_03._isValid = pOVar28->_isValid;
-          obb_03._41_3_ = *(undefined3 *)&pOVar28->field_0x29;
-          PVar13.m_Normal.y = fVar3;
-          PVar13.m_Normal.x = fVar8;
-          PVar13.m_Normal.z = fVar4;
+          obb_03._isValid = pOVar27->_isValid;
+          obb_03._41_3_ = *(undefined3 *)&pOVar27->field_0x29;
+          PVar13.m_Normal.y = fVar7;
+          PVar13.m_Normal.x = fVar6;
+          PVar13.m_Normal.z = fVar8;
           PVar13.m_Distance = fVar9;
-          pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                              ((Vector3 *)&stack0xffffffe0,obb_03,PVar13,0.1,(MethodInfo *)0x0);
-          fVar20 = 0.0;
-          fVar8 = pVVar14->x;
-          fVar3 = pVVar14->y;
-          fVar4 = pVVar14->z;
-          fVar9 = fVar8;
-          fVar10 = fVar3;
-          fVar23 = fVar4;
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffff60,pTVar27,(MethodInfo *)0x0);
-          uVar115 = pVVar14->x;
-          uVar116 = pVVar14->y;
-          value_07.y = (float)uVar116 + fVar10;
-          value_07.x = (float)uVar115 + fVar9;
-          value_07.z = pVVar14->z + fVar23;
+          pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                               ((Vector3 *)&stack0xffffffe0,obb_03,PVar13,0.1,(MethodInfo *)0x0);
+          fVar6 = pVVar15->x;
+          fVar7 = pVVar15->y;
+          fVar8 = pVVar15->z;
+          fVar9 = fVar6;
+          fVar10 = fVar7;
+          fVar23 = fVar8;
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffff50,pTVar14,(MethodInfo *)0x0);
+          uVar113 = pVVar15->x;
+          uVar114 = pVVar15->y;
+          value_07.y = (float)uVar114 + fVar10;
+          value_07.x = (float)uVar113 + fVar9;
+          value_07.z = pVVar15->z + fVar23;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar27,value_07,(MethodInfo *)0x0);
-          offset_00.y = fVar3;
-          offset_00.x = fVar8;
-          offset_00.z = fVar4;
-          Vector3Ex::Vector3Ex_OffsetPoints(pLVar46,offset_00,(MethodInfo *)0x0);
-          pVVar14 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
-                              ((Vector3 *)&stack0xffffff60,(MethodInfo *)0x0);
-          uVar117 = pVVar14->x;
-          uVar118 = pVVar14->y;
-          uVar82 = uVar117 ^ 
+                    (pTVar14,value_07,(MethodInfo *)0x0);
+          offset_00.y = fVar7;
+          offset_00.x = fVar6;
+          offset_00.z = fVar8;
+          Vector3Ex::Vector3Ex_OffsetPoints(pLVar45,offset_00,(MethodInfo *)0x0);
+          pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
+                               ((Vector3 *)&stack0xffffff50,(MethodInfo *)0x0);
+          uVar115 = pVVar15->x;
+          uVar116 = pVVar15->y;
+          uVar80 = uVar115 ^ 
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           embedDirection_00.y =
-               (float)(uVar118 ^ 
+               (float)(uVar116 ^ 
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-          embedDirection_00.x = (float)uVar82;
+          embedDirection_00.x = (float)uVar80;
           embedDirection_00.z =
-               (float)((uint)pVVar14->z ^
+               (float)((uint)pVVar15->z ^
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-          pVVar14 = ObjectSurfaceSnap_CalculateEmbedVector
-                              ((Vector3 *)&stack0xffffff60,pLVar46,snapConfig.SurfaceObject,
-                               embedDirection_00,snapConfig.SurfaceType,(MethodInfo *)0x0);
-          fVar3 = 0.0;
-          uVar119._0_4_ = pVVar14->x;
-          uVar119._4_4_ = pVVar14->y;
-          fVar8 = pVVar14->z;
-          pTVar7 = pTVar27;
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffff60,pTVar27,(MethodInfo *)0x0);
-          uVar120 = pVVar14->x;
-          uVar121 = pVVar14->y;
-          value_14.y = (float)uVar121 + snapConfig.OffsetFromSurface * fVar3 + SUB84(uVar119,4);
-          value_14.x = (float)uVar120 +
-                       snapConfig.OffsetFromSurface * (float)pTVar7 + (float)uVar119;
-          value_14.z = pVVar14->z + snapConfig.OffsetFromSurface * fVar5 + fVar8;
+          pVVar15 = ObjectSurfaceSnap_CalculateEmbedVector
+                               ((Vector3 *)&stack0xffffff50,pLVar45,snapConfig.SurfaceObject,
+                                embedDirection_00,snapConfig.SurfaceType,(MethodInfo *)0x0);
+          fVar7 = 0.0;
+          uVar117._0_4_ = pVVar15->x;
+          uVar117._4_4_ = pVVar15->y;
+          fVar6 = pVVar15->z;
+          pTVar41 = pTVar14;
+          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                               ((Vector3 *)&stack0xffffff50,pTVar14,(MethodInfo *)0x0);
+          uVar118 = pVVar15->x;
+          uVar119 = pVVar15->y;
+          value_14.y = (float)uVar119 + snapConfig.OffsetFromSurface * fVar7 + SUB84(uVar117,4);
+          value_14.x = (float)uVar118 +
+                       snapConfig.OffsetFromSurface * (float)pTVar41 + (float)uVar117;
+          value_14.z = pVVar15->z + snapConfig.OffsetFromSurface * fVar3 + fVar6;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar27,value_14,(MethodInfo *)0x0);
-          snapConfig.AlignmentAxis = *(int32_t *)(uVar82 + 0x14);
-          root = (GameObject *)*(undefined8 *)(uVar82 + 0xc);
-          snapConfig._0_4_ = SUB84((ulonglong)*(undefined8 *)(uVar82 + 0xc) >> 0x20,0);
-          uVar21 = CONCAT44(fVar6,fVar20);
+                    (pTVar14,value_14,(MethodInfo *)0x0);
+          snapConfig.AlignmentAxis = *(int32_t *)(uVar80 + 0x14);
+          root = (GameObject *)*(undefined8 *)(uVar80 + 0xc);
+          snapConfig._0_4_ = SUB84((ulonglong)*(undefined8 *)(uVar80 + 0xc) >> 0x20,0);
+          uVar47 = CONCAT44(fVar5,(float)uVar4);
 code_?:
-          pVVar14 = (Vector3 *)0x0;
-          puVar22 = (undefined *)0x0;
+          pVVar15 = (Vector3 *)0x0;
+          puVar40 = (undefined *)0x0;
           snapConfig.SurfaceHitPlane.m_Normal.y = 0.0;
           snapConfig.SurfaceHitPlane.m_Normal.x = 0.0;
-          uVar53 = (undefined4)((ulonglong)uVar21 >> 0x20);
-          fVar122 = (float)uVar53;
+          uVar53 = (undefined4)((ulonglong)uVar47 >> 0x20);
+          fVar120 = (float)uVar53;
           __return_storage_ptr__ = (ObjectSurfaceSnap_SnapResult *)snapConfig.SurfaceObject;
           inPoint.y = (float)snapConfig._0_4_;
           inPoint.x = (float)root;
           inPoint.z = (float)snapConfig.AlignmentAxis;
           UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_SetNormalAndPosition
-                    ((Plane *)&stack0xffffff90,(Vector3)CONCAT84(lVar2,(float)uVar21),inPoint,
+                    ((Plane *)&stack0xffffff90,(Vector3)CONCAT84(lVar2,(float)uVar47),inPoint,
                      (MethodInfo *)0x0);
-          fVar5 = *(float *)(uVar82 + 0x14);
-          fVar6 = 1.4013e-45;
-          uVar123 = *(undefined8 *)(uVar82 + 0xc);
+          fVar3 = *(float *)(uVar80 + 0x14);
+          uVar4._0_4_ = 1.4013e-45;
+          uVar121 = *(undefined8 *)(uVar80 + 0xc);
           lVar2 = CONCAT44(snapConfig.SurfaceObject,uVar53);
           goto code_?;
         }
@@ -1436,115 +1443,115 @@ code_?:
   if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  queryConfig_04.NoVolumeSize.x = fVar20;
+  queryConfig_04.NoVolumeSize.x = fVar21;
   queryConfig_04.ObjectTypes = (int32_t)fVar23;
-  queryConfig_04.NoVolumeSize.y = (float)uVar21;
-  queryConfig_04.NoVolumeSize.z = (float)puVar22;
-  pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+  queryConfig_04.NoVolumeSize.y = uVar4._4_4_;
+  queryConfig_04.NoVolumeSize.z = fVar22;
+  pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                        ((OBB *)&stack0xfffffe60,root,queryConfig_04,(MethodInfo *)0x0);
-  fVar5 = (pOVar28->_size).x;
-  fVar6 = (pOVar28->_size).y;
-  fVar8 = (pOVar28->_size).z;
-  pGVar124 = (GameObject *)(pOVar28->_center).x;
-  fVar3 = (pOVar28->_center).y;
-  fVar4 = (pOVar28->_center).z;
-  fVar9 = (pOVar28->_rotation).x;
-  fVar10 = (pOVar28->_rotation).y;
-  fVar44 = (pOVar28->_rotation).z;
-  fVar72 = (pOVar28->_rotation).w;
-  uVar53 = *(undefined4 *)&pOVar28->_isValid;
+  fVar3 = (pOVar27->_size).x;
+  uVar4._0_4_ = (pOVar27->_size).y;
+  fVar5 = (pOVar27->_size).z;
+  pGVar122 = (GameObject *)(pOVar27->_center).x;
+  fVar6 = (pOVar27->_center).y;
+  fVar7 = (pOVar27->_center).z;
+  fVar8 = (pOVar27->_rotation).x;
+  fVar9 = (pOVar27->_rotation).y;
+  fVar38 = (pOVar27->_rotation).z;
+  fVar39 = (pOVar27->_rotation).w;
+  uVar53 = *(undefined4 *)&pOVar27->_isValid;
   if ((char)uVar53 != '\0') {
     if (root != (GameObject *)0x0) {
-      fVar29 = 0.0;
-      pGVar125 = root;
-      pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+      fVar10 = 0.0;
+      pGVar123 = root;
+      pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (root,(MethodInfo *)0x0);
-      fVar71 = fVar44;
-      fVar70 = fVar72;
+      fVar71 = fVar38;
+      fVar70 = fVar39;
       if (snapConfig.AlignAxis != 0) {
         TransformEx::TransformEx_Align
-                  ((Quaternion *)&stack0xffffff90,pTVar7,VVar17,snapConfig.AlignmentAxis,
+                  ((Quaternion *)&stack0xffffff90,pTVar14,VVar18,snapConfig.AlignmentAxis,
                    (MethodInfo *)0x0);
         if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        queryConfig_05.NoVolumeSize.x = fVar20;
+        queryConfig_05.NoVolumeSize.x = fVar21;
         queryConfig_05.ObjectTypes = (int32_t)fVar23;
-        queryConfig_05.NoVolumeSize.y = (float)uVar21;
-        queryConfig_05.NoVolumeSize.z = (float)puVar22;
-        pOVar28 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
+        queryConfig_05.NoVolumeSize.y = uVar4._4_4_;
+        queryConfig_05.NoVolumeSize.z = fVar22;
+        pOVar27 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                              ((OBB *)&stack0xfffffe60,root,queryConfig_05,(MethodInfo *)0x0);
-        fVar5 = (pOVar28->_size).x;
-        fVar6 = (pOVar28->_size).y;
-        fVar8 = (pOVar28->_size).z;
-        pGVar125 = (GameObject *)(pOVar28->_center).x;
-        uVar53 = *(undefined4 *)&pOVar28->_isValid;
-        fVar29 = (pOVar28->_center).y;
-        fVar4 = (pOVar28->_center).z;
-        fVar9 = (pOVar28->_rotation).x;
-        fVar10 = (pOVar28->_rotation).y;
-        fVar71 = (pOVar28->_rotation).z;
-        fVar70 = (pOVar28->_rotation).w;
-        pGVar124 = pGVar125;
-        fVar3 = fVar29;
+        fVar3 = (pOVar27->_size).x;
+        uVar4._0_4_ = (pOVar27->_size).y;
+        fVar5 = (pOVar27->_size).z;
+        pGVar123 = (GameObject *)(pOVar27->_center).x;
+        uVar53 = *(undefined4 *)&pOVar27->_isValid;
+        fVar10 = (pOVar27->_center).y;
+        fVar7 = (pOVar27->_center).z;
+        fVar8 = (pOVar27->_rotation).x;
+        fVar9 = (pOVar27->_rotation).y;
+        fVar71 = (pOVar27->_rotation).z;
+        fVar70 = (pOVar27->_rotation).w;
+        pGVar122 = pGVar123;
+        fVar6 = fVar10;
       }
-      if (pTVar7 != (Transform *)0x0) {
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffff60,pTVar7,(MethodInfo *)0x0);
-        fVar126 = pVVar14->x;
-        fVar127 = pVVar14->y;
-        fVar23 = pVVar14->z;
-        obb_01._size.y = fVar6;
-        obb_01._size.x = fVar5;
-        obb_01._size.z = fVar8;
-        obb_01._center.x = (float)pGVar124;
-        obb_01._center.y = fVar3;
-        obb_01._center.z = fVar4;
-        obb_01._rotation.x = fVar9;
-        obb_01._rotation.y = fVar10;
+      if (pTVar14 != (Transform *)0x0) {
+        pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffff50,pTVar14,(MethodInfo *)0x0);
+        fVar124 = pVVar15->x;
+        fVar125 = pVVar15->y;
+        fVar23 = pVVar15->z;
+        obb_01._size.y = (float)uVar4;
+        obb_01._size.x = fVar3;
+        obb_01._size.z = fVar5;
+        obb_01._center.x = (float)pGVar122;
+        obb_01._center.y = fVar6;
+        obb_01._center.z = fVar7;
+        obb_01._rotation.x = fVar8;
+        obb_01._rotation.y = fVar9;
         obb_01._rotation.z._0_1_ = SUB41(fVar71,0);
         obb_01._rotation.z._1_2_ = (short)((uint)fVar71 >> 8);
         obb_01._rotation.z._3_1_ = (char)((uint)fVar71 >> 0x18);
         obb_01._rotation.w = fVar70;
         obb_01._40_4_ = uVar53;
-        pVVar14 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
-                            ((Vector3 *)&stack0xffffff60,obb_01,snapConfig.SurfaceHitPlane,
-                             snapConfig.OffsetFromSurface,(MethodInfo *)0x0);
-        uVar128 = pVVar14->x;
-        uVar129 = pVVar14->y;
-        value_03.y = (float)uVar129 + fVar127;
-        value_03.x = (float)uVar128 + fVar126;
-        value_03.z = pVVar14->z + fVar23;
+        pVVar15 = ObjectSurfaceSnap_CalculateSitOnSurfaceOffset
+                             ((Vector3 *)&stack0xffffff50,obb_01,snapConfig.SurfaceHitPlane,
+                              snapConfig.OffsetFromSurface,(MethodInfo *)0x0);
+        uVar126 = pVVar15->x;
+        uVar127 = pVVar15->y;
+        value_03.y = (float)uVar127 + fVar125;
+        value_03.x = (float)uVar126 + fVar124;
+        value_03.z = pVVar15->z + fVar23;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                  (pTVar7,value_03,(MethodInfo *)0x0);
-        fVar6 = 1.4013e-45;
-        pVVar14 = (Vector3 *)&stack0xffffff60;
-        puVar22 = &UNK_?;
-        pt_00.y = fVar29;
-        pt_00.x = (float)pGVar125;
-        pt_00.z = fVar4;
-        pVVar130 = PlaneEx::PlaneEx_ProjectPoint
-                             (pVVar14,snapConfig.SurfaceHitPlane,pt_00,(MethodInfo *)0x0);
-        uVar123._0_4_ = pVVar130->x;
-        uVar123._4_4_ = pVVar130->y;
-        fVar5 = pVVar130->z;
+                  (pTVar14,value_03,(MethodInfo *)0x0);
+        uVar4._0_4_ = 1.4013e-45;
+        pVVar15 = (Vector3 *)&stack0xffffff50;
+        puVar40 = &UNK_?;
+        pt_00.y = fVar10;
+        pt_00.x = (float)pGVar123;
+        pt_00.z = fVar7;
+        pVVar128 = PlaneEx::PlaneEx_ProjectPoint
+                             (pVVar15,snapConfig.SurfaceHitPlane,pt_00,(MethodInfo *)0x0);
+        uVar121._0_4_ = pVVar128->x;
+        uVar121._4_4_ = pVVar128->y;
+        fVar3 = pVVar128->z;
 code_?:
         __return_storage_ptr__ = (ObjectSurfaceSnap_SnapResult *)((ulonglong)lVar2 >> 0x20);
-        *(float *)__return_storage_ptr__ = fVar6;
+        *(float *)__return_storage_ptr__ = (float)uVar4;
         (__return_storage_ptr__->SittingPlane).m_Normal.x = snapConfig.SurfaceHitPlane.m_Normal.x;
         (__return_storage_ptr__->SittingPlane).m_Normal.y = snapConfig.SurfaceHitPlane.m_Normal.y;
-        (__return_storage_ptr__->SittingPlane).m_Normal.z = (float)puVar22;
-        (__return_storage_ptr__->SittingPlane).m_Distance = (float)pVVar14;
-        (__return_storage_ptr__->SittingPoint).x = (float)uVar123;
-        (__return_storage_ptr__->SittingPoint).y = (float)((ulonglong)uVar123 >> 0x20);
-        (__return_storage_ptr__->SittingPoint).z = fVar5;
+        (__return_storage_ptr__->SittingPlane).m_Normal.z = (float)puVar40;
+        (__return_storage_ptr__->SittingPlane).m_Distance = (float)pVVar15;
+        (__return_storage_ptr__->SittingPoint).x = (float)uVar121;
+        (__return_storage_ptr__->SittingPoint).y = (float)((ulonglong)uVar121 >> 0x20);
+        (__return_storage_ptr__->SittingPoint).z = fVar3;
         return __return_storage_ptr__;
       }
     }
 code_?:
     func_?();
-    pcVar131 = (code *)swi(3);
-    pOVar1 = (ObjectSurfaceSnap_SnapResult *)(*pcVar131)();
+    pcVar129 = (code *)swi(3);
+    pOVar1 = (ObjectSurfaceSnap_SnapResult *)(*pcVar129)();
     return pOVar1;
   }
 code_?:

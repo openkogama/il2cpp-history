@@ -1357,7 +1357,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnPickupN
     if (pTVar1 != (Transform *)0x0) {
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
                          ((Vector3 *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
-      fVar4 = _UNK_? / pVVar2->x;
+      fVar4 = pVVar2->x;
       pPVar5 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
         fVar6 = (pPVar5->fields)._.radius;
@@ -1366,7 +1366,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnPickupN
         if (pPVar5 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
           pTVar1 = (this->fields)._._._.muzzlePoint;
           if (pTVar1 != (Transform *)0x0) {
-            value.y = (fVar6 + (pPVar5->fields)._.range) * fVar4 * _UNK_?;
+            value.y = (fVar6 + (pPVar5->fields)._.range) * (_UNK_? / fVar4) * _UNK_?;
             value.x = (float)puVar7;
             value.z = fVar3;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition

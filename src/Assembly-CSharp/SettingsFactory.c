@@ -751,12 +751,8 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    GameCoinRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<GameCoinRequirementSettings>_GameCoinRequirementSettings_
-                   );
-    func_?(&
-                    GameRankRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<GameRankRequirementSettings>_GameRankRequirementSettings_
-                   );
+    func_?();
+    func_?();
     func_?(&
                     LevelRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<LevelRequirementSettings>_LevelRequirementSettings_
                    );
@@ -784,7 +780,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
                         LevelRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<LevelRequirementSettings>_LevelRequirementSettings_
                        );
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+                        ((Component *)this,(MethodInfo *)0x0);
     if (pLVar1 != (LevelRequirementSettings *)0x0) {
       LevelRequirementSettings::LevelRequirementSettings_Initialize
                 (pLVar1,woID,pGVar2,(MethodInfo *)0x0);
@@ -801,16 +797,12 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
                         GameCoinRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<GameCoinRequirementSettings>_GameCoinRequirementSettings_
                        );
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+                        ((Component *)this,(MethodInfo *)0x0);
     if (pOVar3 != (Object *)0x0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__System__Convert);
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+        func_?();
+        func_?();
+        func_?();
         func_?(&
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                        );
@@ -884,7 +876,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
                         StarsRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<StarsRequirementSettings>_StarsRequirementSettings_
                        );
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+                        ((Component *)this,(MethodInfo *)0x0);
     if (pSVar6 != (StarsRequirementSettings *)0x0) {
       StarsRequirementSettings::StarsRequirementSettings_Initialize
                 (pSVar6,woID,pGVar2,(MethodInfo *)0x0);
@@ -902,7 +894,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
                         TeamRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<TeamRequirementSettings>_TeamRequirementSettings_
                        );
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+                        ((Component *)this,(MethodInfo *)0x0);
     if (pTVar7 != (TeamRequirementSettings *)0x0) {
       TeamRequirementSettings::TeamRequirementSettings_Initialize
                 (pTVar7,woID,pGVar2,(MethodInfo *)0x0);
@@ -920,7 +912,7 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
                         GameRankRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<GameRankRequirementSettings>_GameRankRequirementSettings_
                        );
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar8 != (GameRankRequirementSettings *)0x0) {
       GameRankRequirementSettings::GameRankRequirementSettings_Initialize
                 (pGVar8,woID,pGVar2,(MethodInfo *)0x0);
@@ -933,12 +925,12 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       func_?(TypeInfo__UnityEngine__Object);
     }
     pRVar9 = (RewardedAdRequirementSettings *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pRVar9,
-                        UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RewardedAdRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RewardedAdRequirementSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RewardedAdRequirementSettings_
-                       );
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                        ((Object *)pRVar9,
+                         UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RewardedAdRequirementSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RewardedAdRequirementSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RewardedAdRequirementSettings_
+                        );
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
+                        ((Component *)this,(MethodInfo *)0x0);
     if (pRVar9 != (RewardedAdRequirementSettings *)0x0) {
       UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RewardedAdRequirementSettings::
       RewardedAdRequirementSettings_Initialize(pRVar9,woID,pGVar2,(MethodInfo *)0x0);
@@ -948,12 +940,17 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
   default:
     return;
   }
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar10 = func_?(&stack0xfffffff4);
+  func_?(uVar10);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
+  return;
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void CreateSettingsDialog(Int32, WorldObjectType) */
 
 void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_2
@@ -1016,9 +1013,9 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__SettingsFactory____c__DisplayClass58_0;
-  pMVar1 = (MVDoorBlueprint__Class *)func_?();
+  pOVar1 = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pMVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (0x41 < (int)worldObjectType) {
     if ((int)worldObjectType < 0x87) {
       if (worldObjectType == WorldObjectType__Enum_WorldObjectSpawnerVehicleEnergy) {
@@ -1033,9 +1030,9 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
                             );
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        pMVar1 = (MVDoorBlueprint__Class *)this;
-        unaff_EDI = (SettingsFactory *)0x0;
-        if (pVVar2 != (VehicleEnergySettings *)0x0) {
+        cVar4 = pVVar2 == (VehicleEnergySettings *)0x0;
+        unaff_EDI = (MVWorldObject__Class *)0x0;
+        if (!(bool)cVar4) {
           UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleEnergySettings::
           VehicleEnergySettings_Initialize(pVVar2,0,pGVar3,(MethodInfo *)0x0);
           return;
@@ -1047,28 +1044,26 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pIVar4 = (Int32__Array *)
+        pOVar5 = (Object__Class *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                             ((Object *)unaff_EBX.m_Index,
                              SpawnRoleEditorMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleEditorMenu>_SpawnRoleEditorMenu_
                             );
-        unaff_EDI = this;
-        if (pMVar1 != (MVDoorBlueprint__Class *)0x0) {
-          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId___Fields *)
-          &(pMVar1->_0).name)->_buckets = pIVar4;
+        cVar4 = pOVar1 == (Object *)0x0;
+        unaff_EDI = (MVWorldObject__Class *)this;
+        if (!(bool)cVar4) {
+          pOVar1[1].klass = pOVar5;
           func_?();
-          pIVar4 = ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId___Fields *)
-                    &(pMVar1->_0).name)->_buckets;
-          if (pIVar4 != (Int32__Array *)0x0) {
+          cVar4 = pOVar1[1].klass == (Object__Class *)0x0;
+          if (!(bool)cVar4) {
             SpawnRoleEditorMenu::SpawnRoleEditorMenu_Initialize
-                      ((SpawnRoleEditorMenu *)pIVar4,0,(MethodInfo *)0x0);
+                      ((SpawnRoleEditorMenu *)pOVar1[1].klass,0,(MethodInfo *)0x0);
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                 ((Component *)this,(MethodInfo *)0x0);
             callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                       (Object *)pMVar1,
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,pOVar1,
                        MethodInfo__SettingsFactory____c__DisplayClass58_0___CreateSettingsDialog_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
@@ -1087,44 +1082,44 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       goto code_?;
     }
     if (worldObjectType == WorldObjectType__Enum_ModelTransparency) {
-      pOVar5 = (this->fields).objectTransparencySettingsPrefab;
+      pOVar6 = (this->fields).objectTransparencySettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pOVar5 = (ObjectTransparencySettings *)
+      pOVar6 = (ObjectTransparencySettings *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)pOVar5,
+                         ((Object *)pOVar6,
                           UGUI__Desktop__Scripts__EditMode__SettingsBoxes__ObjectTransparencySettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::ObjectTransparencySettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__ObjectTransparencySettings_
                          );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pOVar5 != (ObjectTransparencySettings *)0x0) {
+      cVar4 = pOVar6 == (ObjectTransparencySettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::ObjectTransparencySettings::
-        ObjectTransparencySettings_Initialize(pOVar5,0,pGVar3,(MethodInfo *)0x0);
+        ObjectTransparencySettings_Initialize(pOVar6,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       goto code_?;
     }
     switch(worldObjectType) {
     case WorldObjectType__Enum_CameraSettings:
-      pCVar6 = (this->fields).cameraBoxSettingsPrefab;
+      pCVar7 = (this->fields).cameraBoxSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pCVar6 = (CameraBoxSettings *)
+      pCVar7 = (CameraBoxSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pCVar6,
+                          ((Object *)pCVar7,
                            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Camera__CameraBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::CameraBoxSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Camera__CameraBoxSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (pCVar6 != (CameraBoxSettings *)0x0) {
+      cVar4 = pCVar7 == (CameraBoxSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::CameraBoxSettings::
-        CameraBoxSettings_Initialize(pCVar6,0,pGVar3,(MethodInfo *)0x0);
+        CameraBoxSettings_Initialize(pCVar7,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
@@ -1143,61 +1138,66 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
     case WorldObjectType__Enum_CollectTheItem:
       goto code_?;
     case WorldObjectType__Enum_GameCoinChest:
-      pGVar7 = (this->fields).gameCoinChestSettingsPrefab;
+      pGVar8 = (this->fields).gameCoinChestSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pGVar7 = (GameCoinChestSettings *)
+      pGVar8 = (GameCoinChestSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pGVar7,
+                          ((Object *)pGVar8,
                            GameCoinChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GameCoinChestSettings>_GameCoinChestSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (pGVar7 != (GameCoinChestSettings *)0x0) {
-        GameCoinChestSettings::GameCoinChestSettings_Initialize(pGVar7,0,pGVar3,(MethodInfo *)0x0)
+      cVar4 = pGVar8 == (GameCoinChestSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        GameCoinChestSettings::GameCoinChestSettings_Initialize(pGVar8,0,pGVar3,(MethodInfo *)0x0)
         ;
         return;
       }
       break;
     case WorldObjectType__Enum_BlueprintDoor:
-      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if ((pMVar8 != (MVWorldObjectClientManager *)0x0) &&
-         (pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (pMVar8,woID,(MethodInfo *)0x0),
-         pMVar1 = TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint,
-         pMVar9 != (MVWorldObject *)0x0)) {
-        if (((pMVar9->klass->_1).naturalAligment <
-             (TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment) ||
-           ((MVDoorBlueprint__Class *)
-            (pMVar9->klass->_1).typeHierarchy
-            [(TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment - 1] !=
-            TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint)) {
-          func_?();
-        }
-        else {
-          pLVar10 = pMVar9[2].fields.outputLinkRefs;
-          if (pLVar10 != (List_1_MV_WorldObject_Link_ *)0x0) {
-            unaff_EBX.m_Index = (int32_t)(pLVar10->fields)._items;
-            pDVar11 = (this->fields).doorSettingsPrefab;
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            pDVar11 = (DoorSettings *)
-                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                ((Object *)pDVar11,
-                                 UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_
-                                );
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this,(MethodInfo *)0x0);
-            unaff_EDI = (SettingsFactory *)0x0;
-            pMVar1 = (MVDoorBlueprint__Class *)this;
-            if (pDVar11 != (DoorSettings *)0x0) {
-              UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings::
-              DoorSettings_Initialize(pDVar11,unaff_EBX.m_Index,pGVar3,(MethodInfo *)0x0);
-              return;
+      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      cVar4 = pMVar9 == (MVWorldObjectClientManager *)0x0;
+      if (!(bool)cVar4) {
+        pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                            (pMVar9,woID,(MethodInfo *)0x0);
+        cVar4 = pMVar10 == (MVWorldObject *)0x0;
+        if (!(bool)cVar4) {
+          bVar11 = (pMVar10->klass->_1).naturalAligment;
+          bVar12 = (TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment;
+          cVar4 = bVar11 == bVar12;
+          if ((bVar11 < bVar12) ||
+             (cVar4 = (MVDoorBlueprint__Class *)
+                       (pMVar10->klass->_1).typeHierarchy
+                       [(TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint->_1).naturalAligment -
+                        1] == TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint, !(bool)cVar4)) {
+            func_?();
+          }
+          else {
+            pLVar13 = pMVar10[2].fields.outputLinkRefs;
+            cVar4 = pLVar13 == (List_1_MV_WorldObject_Link_ *)0x0;
+            if (!(bool)cVar4) {
+              unaff_EBX.m_Index = (int32_t)(pLVar13->fields)._items;
+              pDVar14 = (this->fields).doorSettingsPrefab;
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              pDVar14 = (DoorSettings *)
+                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                  ((Object *)pDVar14,
+                                   UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Doors__DoorSettings_
+                                  );
+              pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)this,(MethodInfo *)0x0);
+              cVar4 = pDVar14 == (DoorSettings *)0x0;
+              unaff_EDI = (MVWorldObject__Class *)0x0;
+              if (!(bool)cVar4) {
+                UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Doors::DoorSettings::
+                DoorSettings_Initialize(pDVar14,unaff_EBX.m_Index,pGVar3,(MethodInfo *)0x0);
+                return;
+              }
             }
           }
         }
@@ -1209,40 +1209,40 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       SettingsFactory_CreateEditablePickupItemsSettings(this,woID,(MethodInfo *)0x0);
       return;
     case WorldObjectType__Enum_TeamEditor:
-      pTVar12 = (this->fields).teamEditorSettingsPrefab;
+      pTVar15 = (this->fields).teamEditorSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pTVar12 = (TeamEditorSettings *)
+      pTVar15 = (TeamEditorSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pTVar12,
+                          ((Object *)pTVar15,
                            TeamEditorSettings_MethodInfo__UnityEngine__Object__Instantiate<TeamEditorSettings>_TeamEditorSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (pTVar12 != (TeamEditorSettings *)0x0) {
-        TeamEditorSettings::TeamEditorSettings_Initialize(pTVar12,0,pGVar3,(MethodInfo *)0x0);
+      cVar4 = pTVar15 == (TeamEditorSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        TeamEditorSettings::TeamEditorSettings_Initialize(pTVar15,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_TriggerCube:
-      pTVar13 = (this->fields).triggerCubeSettingsPrefab;
+      pTVar16 = (this->fields).triggerCubeSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pTVar13 = (TriggerCubeSettings *)
+      pTVar16 = (TriggerCubeSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pTVar13,
+                          ((Object *)pTVar16,
                            TriggerCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<TriggerCubeSettings>_TriggerCubeSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (pTVar13 != (TriggerCubeSettings *)0x0) {
-        TriggerCubeSettings::TriggerCubeSettings_Initialize(pTVar13,0,pGVar3,(MethodInfo *)0x0);
+      cVar4 = pTVar16 == (TriggerCubeSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        TriggerCubeSettings::TriggerCubeSettings_Initialize(pTVar16,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
@@ -1251,16 +1251,16 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pMVar1 = (MVDoorBlueprint__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+      pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                          ((Object *)original,
                           ShootablePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<ShootablePlateSettings>_ShootablePlateSettings_
                          );
-      root = (SettingsFactory *)
+      root = (MVWorldObject__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
+      cVar4 = pOVar1 == (Object *)0x0;
       unaff_EDI = root;
-      if (pMVar1 != (MVDoorBlueprint__Class *)0x0) {
+      if (!(bool)cVar4) {
         if (cRam_? == '\0') {
           func_?();
           func_?();
@@ -1268,47 +1268,56 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
           func_?();
           cRam_? = '\x01';
         }
-        this_00 = (SettingsBase *)(pMVar1->_0).byval_arg.data.typeHandle;
-        if (this_00 != (SettingsBase *)0x0) {
-          unaff_EDI = (SettingsFactory *)0x0;
+        cVar4 = pOVar1[2].klass == (Object__Class *)0x0;
+        if (!(bool)cVar4) {
+          unaff_EDI = (MVWorldObject__Class *)0x0;
           SettingsBase::SettingsBase_Initialize
-                    (this_00,0,(GameObject *)root,
+                    ((SettingsBase *)pOVar1[2].klass,0,(GameObject *)root,
                      MVWorldObjectDocumentationType__Enum_ShootableButton,(MethodInfo *)0x0);
-          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-          if (((pMVar8 != (MVWorldObjectClientManager *)0x0) &&
-              (pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                   (pMVar8,0,(MethodInfo *)0x0), pMVar9 != (MVWorldObject *)0x0))
-             && (this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                           (pMVar9->fields).data,
-                this_01 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
-            unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  (this_01,(Object *)StringLiteral_duration,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  );
-            if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0)
-            {
-              func_?();
-            }
-            unaff_EDI = (SettingsFactory *)
-                        mscorlib.dll::System::Globalization::CultureInfo::
-                        CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
-            if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            value = mscorlib.dll::System::Convert::Convert_ToSingle_1
-                              ((Object *)unaff_EBX.m_Index,(IFormatProvider *)unaff_EDI,
-                               (MethodInfo *)0x0);
-            pSVar14 = *(SettingsSlider **)&(pMVar1->_0).byval_arg.attrs;
-            if (pSVar14 != (SettingsSlider *)0x0) {
-              SettingsSlider::SettingsSlider_Initialize
-                        (pSVar14,StringLiteral_duration,value,0.5,30.0,(MethodInfo *)0x0);
-              this_02 = (SettingsInputFieldSlider *)(pMVar1->_0).this_arg.data.typeHandle;
-              if (this_02 != (SettingsInputFieldSlider *)0x0) {
-                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                          (this_02,StringLiteral_duration,value,(MethodInfo *)0x0);
-                return;
+          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+          cVar4 = pMVar9 == (MVWorldObjectClientManager *)0x0;
+          if (!(bool)cVar4) {
+            pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                (pMVar9,0,(MethodInfo *)0x0);
+            cVar4 = pMVar10 == (MVWorldObject *)0x0;
+            if (!(bool)cVar4) {
+              pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (pMVar10->fields).data;
+              cVar4 = pDVar17 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0
+              ;
+              if (!(bool)cVar4) {
+                unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Object,UnityEngine::UIElements::TextureId]::
+                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                      (pDVar17,(Object *)StringLiteral_duration,
+                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                      );
+                if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor ==
+                    0) {
+                  func_?();
+                }
+                unaff_EDI = (MVWorldObject__Class *)
+                            mscorlib.dll::System::Globalization::CultureInfo::
+                            CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
+                if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                value_00 = mscorlib.dll::System::Convert::Convert_ToSingle_1
+                                     ((Object *)unaff_EBX.m_Index,(IFormatProvider *)unaff_EDI,
+                                      (MethodInfo *)0x0);
+                cVar4 = (SettingsSlider *)pOVar1[2].monitor == (SettingsSlider *)0x0;
+                if (!(bool)cVar4) {
+                  SettingsSlider::SettingsSlider_Initialize
+                            ((SettingsSlider *)pOVar1[2].monitor,StringLiteral_duration,value_00,0.5
+                             ,30.0,(MethodInfo *)0x0);
+                  cVar4 = pOVar1[3].klass == (Object__Class *)0x0;
+                  if (!(bool)cVar4) {
+                    SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                              ((SettingsInputFieldSlider *)pOVar1[3].klass,StringLiteral_duration,
+                               value_00,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
               }
             }
           }
@@ -1320,15 +1329,15 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      unaff_EDI = (SettingsFactory *)
+      unaff_EDI = (MVWorldObject__Class *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                             ((Object *)original_00,
                              LeverSettings_MethodInfo__UnityEngine__Object__Instantiate<LeverSettings>_LeverSettings_
                             );
-      pMVar1 = (MVDoorBlueprint__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (unaff_EDI == (SettingsFactory *)0x0) break;
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      cVar4 = '\x01';
+      if (unaff_EDI == (MVWorldObject__Class *)0x0) break;
       if (cRam_? == '\0') {
         func_?();
         func_?();
@@ -1338,114 +1347,120 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
         func_?();
         cRam_? = '\x01';
       }
-      pTVar15 = *(Toggle **)&(unaff_EDI->fields).previewSettingsPopup;
-      if (pTVar15 == (Toggle *)0x0) break;
+      pTVar18 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
+      cVar4 = '\x01';
+      if (pTVar18 == (Toggle *)0x0) break;
       SettingsBase::SettingsBase_Initialize
-                ((SettingsBase *)pTVar15,0,(GameObject *)pMVar1,
-                 MVWorldObjectDocumentationType__Enum_Lever,(MethodInfo *)0x0);
-      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)0x0;
-      if ((pMVar8 == (MVWorldObjectClientManager *)0x0) ||
-         (pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (pMVar8,0,(MethodInfo *)0x0), pMVar9 == (MVWorldObject *)0x0))
+                ((SettingsBase *)pTVar18,0,pGVar3,MVWorldObjectDocumentationType__Enum_Lever,
+                 (MethodInfo *)0x0);
+      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      cVar4 = '\x01';
+      if (pMVar9 == (MVWorldObjectClientManager *)0x0) break;
+      pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (pMVar9,0,(MethodInfo *)0x0);
+      cVar4 = '\x01';
+      if (pMVar10 == (MVWorldObject *)0x0) break;
+      pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (pMVar10->fields).data;
+      unaff_EDI = *(MVWorldObject__Class **)&(unaff_EDI->_0).byval_arg.attrs;
+      cVar4 = '\x01';
+      if (pDVar17 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) break;
+      TVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+               UIElements::TextureId]::
+               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                         (pDVar17,(Object *)StringLiteral_beginActivated,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      cVar4 = '\x01';
+      if ((unaff_EDI == (MVWorldObject__Class *)0x0) || (cVar4 = '\x01', TVar19.m_Index == 0))
       break;
-      pMVar1 = (MVDoorBlueprint__Class *)(pMVar9->fields).data;
-      unaff_EDI = (SettingsFactory *)(unaff_EDI->fields).worldObjectType;
-      if ((pMVar1 == (MVDoorBlueprint__Class *)0x0) ||
-         ((TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               pMVar1,(Object *)StringLiteral_beginActivated,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              ), unaff_EDI == (SettingsFactory *)0x0 || (TVar16.m_Index == 0))))
-      break;
+      cVar4 = '\0';
       woID = unaff_EBX.m_Index;
-      if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) ==
+      if (*(Il2CppClass **)(*(int *)TVar19.m_Index + 0x20) ==
           (TypeInfo__System__Boolean->_0).element_class) {
-        pbVar17 = (bool *)func_?();
+        pbVar20 = (bool *)func_?();
         SettingsToggle::SettingsToggle_Initialize
-                  ((SettingsToggle *)unaff_EDI,StringLiteral_beginActivated,*pbVar17,
+                  ((SettingsToggle *)unaff_EDI,StringLiteral_beginActivated,*pbVar20,
                    (MethodInfo *)0x0);
         return;
       }
       goto code_?;
     case WorldObjectType__Enum_CollectTheItemDropOff:
-      pCVar18 = (this->fields).collectTheItemDropoffSettingsPrefab;
+      pCVar21 = (this->fields).collectTheItemDropoffSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pCVar18 = (CollectTheItemDropoffSettings *)
+      pCVar21 = (CollectTheItemDropoffSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pCVar18,
+                          ((Object *)pCVar21,
                            CollectTheItemDropoffSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemDropoffSettings>_CollectTheItemDropoffSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pCVar18 != (CollectTheItemDropoffSettings *)0x0) {
+      cVar4 = pCVar21 == (CollectTheItemDropoffSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
         CollectTheItemDropoffSettings::CollectTheItemDropoffSettings_Initialize
-                  (pCVar18,0,pGVar3,(MethodInfo *)0x0);
+                  (pCVar21,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_CollectTheItemCollectable:
-      pCVar19 = (this->fields).collectTheItemSettingsPrefab;
+      pCVar22 = (this->fields).collectTheItemSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pCVar19 = (CollectTheItemSettings *)
+      pCVar22 = (CollectTheItemSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pCVar19,
+                          ((Object *)pCVar22,
                            CollectTheItemSettings_MethodInfo__UnityEngine__Object__Instantiate<CollectTheItemSettings>_CollectTheItemSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pCVar19 != (CollectTheItemSettings *)0x0) {
+      cVar4 = pCVar22 == (CollectTheItemSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
         CollectTheItemSettings::CollectTheItemSettings_Initialize
-                  (pCVar19,0,pGVar3,(MethodInfo *)0x0);
+                  (pCVar22,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_WindTurbine:
-      pWVar20 = (this->fields).windTurbineSettingsPrefab;
+      pWVar23 = (this->fields).windTurbineSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pWVar20 = (WindTurbineSettings *)
+      pWVar23 = (WindTurbineSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pWVar20,
+                          ((Object *)pWVar23,
                            WindTurbineSettings_MethodInfo__UnityEngine__Object__Instantiate<WindTurbineSettings>_WindTurbineSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pWVar20 != (WindTurbineSettings *)0x0) {
-        WindTurbineSettings::WindTurbineSettings_Initialize(pWVar20,0,pGVar3,(MethodInfo *)0x0);
+      cVar4 = pWVar23 == (WindTurbineSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        WindTurbineSettings::WindTurbineSettings_Initialize(pWVar23,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_GlobalSoundEmitter:
-      pGVar21 = (this->fields).globalSoundEmitterSettingsPrefab;
+      pGVar24 = (this->fields).globalSoundEmitterSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pGVar21 = (GlobalSoundEmitterSettings *)
+      pGVar24 = (GlobalSoundEmitterSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pGVar21,
+                          ((Object *)pGVar24,
                            GlobalSoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<GlobalSoundEmitterSettings>_GlobalSoundEmitterSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pGVar21 != (GlobalSoundEmitterSettings *)0x0) {
+      cVar4 = pGVar24 == (GlobalSoundEmitterSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
         GlobalSoundEmitterSettings::GlobalSoundEmitterSettings_Initialize
-                  (pGVar21,0,pGVar3,(MethodInfo *)0x0);
+                  (pGVar24,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
@@ -1455,15 +1470,15 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      unaff_EDI = (SettingsFactory *)
+      unaff_EDI = (MVWorldObject__Class *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                             ((Object *)original_01,
                              GamePointChestSettings_MethodInfo__UnityEngine__Object__Instantiate<GamePointChestSettings>_GamePointChestSettings_
                             );
-      pMVar1 = (MVDoorBlueprint__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (unaff_EDI != (SettingsFactory *)0x0) {
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      cVar4 = unaff_EDI == (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
         if (cRam_? == '\0') {
           func_?();
           func_?();
@@ -1473,58 +1488,66 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
           func_?();
           cRam_? = '\x01';
         }
-        pTVar15 = *(Toggle **)&(unaff_EDI->fields).previewSettingsPopup;
-        if (pTVar15 != (Toggle *)0x0) {
+        pTVar18 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
+        cVar4 = pTVar18 == (Toggle *)0x0;
+        if (!(bool)cVar4) {
           SettingsBase::SettingsBase_Initialize_1
-                    ((SettingsBase *)pTVar15,0,(GameObject *)pMVar1,StringLiteral_Crystal_Reward,
-                     (MethodInfo *)0x0);
-          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-          pMVar1 = (MVDoorBlueprint__Class *)0x0;
-          if (((pMVar8 != (MVWorldObjectClientManager *)0x0) &&
-              (pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                   (pMVar8,0,(MethodInfo *)0x0), pMVar9 != (MVWorldObject *)0x0))
-             && (pMVar1 = (MVDoorBlueprint__Class *)(pMVar9->fields).data,
-                pMVar1 != (MVDoorBlueprint__Class *)0x0)) {
-            bVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               pMVar1,(Object *)StringLiteral_gamePointAmount,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                              );
-            if (bVar22 == 0) {
-              pOVar23 = (Object *)func_?();
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)pMVar1,
-                         (Object *)StringLiteral_gamePointAmount,pOVar23,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-            }
-            TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                     Object,UnityEngine::UIElements::TextureId]::
-                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                               ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                pMVar1,(Object *)StringLiteral_gamePointAmount,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               );
-            if (TVar16.m_Index != 0) {
-              woID = unaff_EBX.m_Index;
-              if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) !=
-                  (TypeInfo__System__Int32->_0).element_class) goto code_?;
-              puVar24 = (undefined4 *)func_?();
-              pSVar14 = (SettingsSlider *)(unaff_EDI->fields).worldObjectType;
-              if (pSVar14 != (SettingsSlider *)0x0) {
-                pMVar1 = (MVDoorBlueprint__Class *)*puVar24;
-                SettingsSlider::SettingsSlider_Initialize_1
-                          (pSVar14,StringLiteral_gamePointAmount,(int32_t)pMVar1,2,100,
-                           (MethodInfo *)0x0);
-                this_03 = (unaff_EDI->fields).materialsController;
-                if (this_03 != (MaterialsController *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
-                            ((SettingsInputFieldSlider *)this_03,StringLiteral_gamePointAmount,
-                             (int32_t)pMVar1,(MethodInfo *)0x0);
-                  return;
+                    ((SettingsBase *)pTVar18,0,pGVar3,StringLiteral_Crystal_Reward,(MethodInfo *)0x0
+                    );
+          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+          cVar4 = pMVar9 == (MVWorldObjectClientManager *)0x0;
+          if (!(bool)cVar4) {
+            pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                (pMVar9,0,(MethodInfo *)0x0);
+            cVar4 = pMVar10 == (MVWorldObject *)0x0;
+            if (!(bool)cVar4) {
+              pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                       (pMVar10->fields).data;
+              cVar4 = pDVar17 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0
+              ;
+              if (!(bool)cVar4) {
+                bVar25 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                  (pDVar17,(Object *)StringLiteral_gamePointAmount,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                  );
+                if (bVar25 == 0) {
+                  pOVar1 = (Object *)func_?();
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__Add
+                            ((Dictionary_2_System_Object_System_Object_ *)pDVar17,
+                             (Object *)StringLiteral_gamePointAmount,pOVar1,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                            );
+                }
+                TVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Object,UnityEngine::UIElements::TextureId]::
+                         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                   (pDVar17,(Object *)StringLiteral_gamePointAmount,
+                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                   );
+                cVar4 = TVar19.m_Index == 0;
+                if (!(bool)cVar4) {
+                  cVar4 = *(Il2CppClass **)(*(int *)TVar19.m_Index + 0x20) ==
+                           (TypeInfo__System__Int32->_0).element_class;
+                  woID = unaff_EBX.m_Index;
+                  if (!(bool)cVar4) goto code_?;
+                  piVar26 = (int32_t *)func_?();
+                  this_00 = *(SettingsSlider **)&(unaff_EDI->_0).byval_arg.attrs;
+                  cVar4 = this_00 == (SettingsSlider *)0x0;
+                  if (!(bool)cVar4) {
+                    value = *piVar26;
+                    SettingsSlider::SettingsSlider_Initialize_1
+                              (this_00,StringLiteral_gamePointAmount,value,2,100,(MethodInfo *)0x0);
+                    this_01 = (SettingsInputFieldSlider *)(unaff_EDI->_0).this_arg.data.typeHandle;
+                    cVar4 = this_01 == (SettingsInputFieldSlider *)0x0;
+                    if (!(bool)cVar4) {
+                      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
+                                (this_01,StringLiteral_gamePointAmount,value,(MethodInfo *)0x0);
+                      return;
+                    }
+                  }
                 }
               }
             }
@@ -1536,41 +1559,41 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
   }
   if ((int)worldObjectType < 0xe) {
     if (worldObjectType == WorldObjectType__Enum_PointLight) {
-      pPVar25 = (this->fields).pointLightSettingsPrefab;
+      pPVar27 = (this->fields).pointLightSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pPVar25 = (PointLightSettings *)
+      pPVar27 = (PointLightSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pPVar25,
+                          ((Object *)pPVar27,
                            PointLightSettings_MethodInfo__UnityEngine__Object__Instantiate<PointLightSettings>_PointLightSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pPVar25 != (PointLightSettings *)0x0) {
-        PointLightSettings::PointLightSettings_Initialize(pPVar25,0,pGVar3,(MethodInfo *)0x0);
+      cVar4 = pPVar27 == (PointLightSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        PointLightSettings::PointLightSettings_Initialize(pPVar27,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
     }
     else {
       if (worldObjectType != WorldObjectType__Enum_SoundEmitter) goto code_?;
-      pSVar26 = (this->fields).soundEmitterSettingsPrefab;
+      pSVar28 = (this->fields).soundEmitterSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pSVar26 = (SoundEmitterSettings *)
+      pSVar28 = (SoundEmitterSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pSVar26,
+                          ((Object *)pSVar28,
                            SoundEmitterSettings_MethodInfo__UnityEngine__Object__Instantiate<SoundEmitterSettings>_SoundEmitterSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pSVar26 != (SoundEmitterSettings *)0x0) {
-        SoundEmitterSettings::SoundEmitterSettings_Initialize(pSVar26,0,pGVar3,(MethodInfo *)0x0);
+      cVar4 = pSVar28 == (SoundEmitterSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        SoundEmitterSettings::SoundEmitterSettings_Initialize(pSVar28,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
     }
@@ -1578,21 +1601,21 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
   }
   switch(worldObjectType) {
   case WorldObjectType__Enum_ToggleBox:
-    pTVar27 = (this->fields).toggleBoxSettingsPrefab;
+    pTVar29 = (this->fields).toggleBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar27 = (ToggleBoxSettings *)
+    pTVar29 = (ToggleBoxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pTVar27,
+                        ((Object *)pTVar29,
                          ToggleBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<ToggleBoxSettings>_ToggleBoxSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pTVar27 != (ToggleBoxSettings *)0x0) {
-      ToggleBoxSettings::ToggleBoxSettings_Initialize(pTVar27,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pTVar29 == (ToggleBoxSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      ToggleBoxSettings::ToggleBoxSettings_Initialize(pTVar29,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1609,89 +1632,85 @@ void Assembly-CSharp.dll::SettingsFactory::SettingsFactory_CreateSettingsDialog_
   case WorldObjectType__Enum_PickupItemRailGun:
   case WorldObjectType__Enum_PickupItemSpawner:
 code_?:
-    pSVar28 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-    pSVar28 = mscorlib.dll::System::String::String_Concat_4
-                        (StringLiteral_WorldObjectType__,pSVar28,
+    pSVar30 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
+    pSVar30 = mscorlib.dll::System::String::String_Concat_4
+                        (StringLiteral_WorldObjectType__,pSVar30,
                          StringLiteral__has_no_settings_dialogue_,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)pSVar28,(MethodInfo *)0x0);
-    return;
+    pDVar31 = TypeInfo__UnityEngine__Debug;
+    goto code_?;
   case WorldObjectType__Enum_TextMsg:
-    pMVar29 = (this->fields).messageBoxSettingsPrefab;
+    pMVar32 = (this->fields).messageBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pMVar29 = (MessageBoxSettings *)
+    pMVar32 = (MessageBoxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pMVar29,
+                        ((Object *)pMVar32,
                          MessageBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<MessageBoxSettings>_MessageBoxSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pMVar29 != (MessageBoxSettings *)0x0) {
-      MessageBoxSettings::MessageBoxSettings_Initialize(pMVar29,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pMVar32 == (MessageBoxSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      MessageBoxSettings::MessageBoxSettings_Initialize(pMVar32,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_Fire:
-    pFVar30 = (this->fields).fireSettingsPrefab;
+    pFVar33 = (this->fields).fireSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pFVar30 = (FireSettings *)
+    pFVar33 = (FireSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pFVar30,
+                        ((Object *)pFVar33,
                          FireSettings_MethodInfo__UnityEngine__Object__Instantiate<FireSettings>_FireSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pFVar30 != (FireSettings *)0x0) {
-      FireSettings::FireSettings_Initialize(pFVar30,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pFVar33 == (FireSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      FireSettings::FireSettings_Initialize(pFVar33,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_Smoke:
-    pSVar31 = (this->fields).smokeSettingsPrefab;
+    pSVar34 = (this->fields).smokeSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar31 = (SmokeSettings *)
+    pSVar34 = (SmokeSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pSVar31,
+                        ((Object *)pSVar34,
                          SmokeSettings_MethodInfo__UnityEngine__Object__Instantiate<SmokeSettings>_SmokeSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pSVar31 != (SmokeSettings *)0x0) {
-      SmokeSettings::SmokeSettings_Initialize(pSVar31,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pSVar34 == (SmokeSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      SmokeSettings::SmokeSettings_Initialize(pSVar34,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_TimeTrigger:
-    pTVar32 = (this->fields).timeTriggerSettingsPrefab;
+    pTVar35 = (this->fields).timeTriggerSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pTVar32 = (TimeTriggerSettings *)
+    pTVar35 = (TimeTriggerSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pTVar32,
+                        ((Object *)pTVar35,
                          TimeTriggerSettings_MethodInfo__UnityEngine__Object__Instantiate<TimeTriggerSettings>_TimeTriggerSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pTVar32 != (TimeTriggerSettings *)0x0) {
-      TimeTriggerSettings::TimeTriggerSettings_Initialize(pTVar32,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pTVar35 == (TimeTriggerSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      TimeTriggerSettings::TimeTriggerSettings_Initialize(pTVar35,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1700,15 +1719,15 @@ code_?:
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    unaff_EDI = (SettingsFactory *)
+    unaff_EDI = (MVWorldObject__Class *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                           ((Object *)original_02,
                            PressurePlateSettings_MethodInfo__UnityEngine__Object__Instantiate<PressurePlateSettings>_PressurePlateSettings_
                           );
-    pMVar1 = (MVDoorBlueprint__Class *)
-             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (unaff_EDI != (SettingsFactory *)0x0) {
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
+    cVar4 = '\x01';
+    if (unaff_EDI != (MVWorldObject__Class *)0x0) {
       if (cRam_? == '\0') {
         func_?();
         func_?();
@@ -1718,57 +1737,67 @@ code_?:
         func_?();
         cRam_? = '\x01';
       }
-      pTVar15 = *(Toggle **)&(unaff_EDI->fields).previewSettingsPopup;
-      if (pTVar15 != (Toggle *)0x0) {
+      pTVar18 = (Toggle *)(unaff_EDI->_0).byval_arg.data.typeHandle;
+      cVar4 = '\x01';
+      if (pTVar18 != (Toggle *)0x0) {
         SettingsBase::SettingsBase_Initialize
-                  ((SettingsBase *)pTVar15,0,(GameObject *)pMVar1,
+                  ((SettingsBase *)pTVar18,0,pGVar3,
                    MVWorldObjectDocumentationType__Enum_PressurePlate,(MethodInfo *)0x0);
-        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        pMVar1 = (MVDoorBlueprint__Class *)0x0;
-        if ((pMVar8 != (MVWorldObjectClientManager *)0x0) &&
-           (pMVar9 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                (pMVar8,0,(MethodInfo *)0x0), pMVar9 != (MVWorldObject *)0x0)) {
-          pMVar1 = (MVDoorBlueprint__Class *)(pMVar9->fields).data;
-          unaff_EDI = (SettingsFactory *)(unaff_EDI->fields).worldObjectType;
-          if ((pMVar1 != (MVDoorBlueprint__Class *)0x0) &&
-             ((TVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                   pMVar1,(Object *)StringLiteral_hide,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  ), unaff_EDI != (SettingsFactory *)0x0 && (TVar16.m_Index != 0))))
-          {
-            woID = unaff_EBX.m_Index;
-            if (*(Il2CppClass **)(*(int *)TVar16.m_Index + 0x20) ==
-                (TypeInfo__System__Boolean->_0).element_class) {
-              pbVar17 = (bool *)func_?();
-              SettingsToggle::SettingsToggle_Initialize
-                        ((SettingsToggle *)unaff_EDI,StringLiteral_hide,*pbVar17,(MethodInfo *)0x0);
-              return;
+        pMVar9 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        cVar4 = '\x01';
+        if (pMVar9 != (MVWorldObjectClientManager *)0x0) {
+          pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (pMVar9,0,(MethodInfo *)0x0);
+          cVar4 = '\x01';
+          if (pMVar10 != (MVWorldObject *)0x0) {
+            pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                     (pMVar10->fields).data;
+            unaff_EDI = *(MVWorldObject__Class **)&(unaff_EDI->_0).byval_arg.attrs;
+            cVar4 = '\x01';
+            if (pDVar17 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+              TVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Object,UnityEngine::UIElements::TextureId]::
+                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                 (pDVar17,(Object *)StringLiteral_hide,
+                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                 );
+              cVar4 = '\x01';
+              if ((unaff_EDI != (MVWorldObject__Class *)0x0) &&
+                 (cVar4 = '\x01', TVar19.m_Index != 0)) {
+                cVar4 = '\0';
+                woID = unaff_EBX.m_Index;
+                if (*(Il2CppClass **)(*(int *)TVar19.m_Index + 0x20) ==
+                    (TypeInfo__System__Boolean->_0).element_class) {
+                  pbVar20 = (bool *)func_?();
+                  SettingsToggle::SettingsToggle_Initialize
+                            ((SettingsToggle *)unaff_EDI,StringLiteral_hide,*pbVar20,
+                             (MethodInfo *)0x0);
+                  return;
+                }
+                goto code_?;
+              }
             }
-            goto code_?;
           }
         }
       }
     }
     break;
   case WorldObjectType__Enum_Skybox:
-    pSVar33 = (this->fields).skyboxSettingsPrefab;
+    pSVar36 = (this->fields).skyboxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar33 = (SkyboxSettings *)
+    pSVar36 = (SkyboxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pSVar33,
+                        ((Object *)pSVar36,
                          SkyboxSettings_MethodInfo__UnityEngine__Object__Instantiate<SkyboxSettings>_SkyboxSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pSVar33 != (SkyboxSettings *)0x0) {
-      SkyboxSettings::SkyboxSettings_Initialize(pSVar33,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pSVar36 == (SkyboxSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      SkyboxSettings::SkyboxSettings_Initialize(pSVar36,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1776,59 +1805,59 @@ code_?:
   case WorldObjectType__Enum_SpawnPointGreen:
   case WorldObjectType__Enum_SpawnPointYellow:
   case WorldObjectType__Enum_SpawnPointBlue:
-    pSVar34 = (this->fields).spawnPointSettingsPrefab;
+    pSVar37 = (this->fields).spawnPointSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar34 = (SpawnPointSettings *)
+    pSVar37 = (SpawnPointSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pSVar34,
+                        ((Object *)pSVar37,
                          SpawnPointSettings_MethodInfo__UnityEngine__Object__Instantiate<SpawnPointSettings>_SpawnPointSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pSVar34 != (SpawnPointSettings *)0x0) {
-      SpawnPointSettings::SpawnPointSettings_Initialize(pSVar34,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pSVar37 == (SpawnPointSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      SpawnPointSettings::SpawnPointSettings_Initialize(pSVar37,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_ModelToggle:
-    pOVar35 = (this->fields).objectEnablerPrefab;
+    pOVar38 = (this->fields).objectEnablerPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pOVar35 = (ObjectEnablerSettings *)
+    pOVar38 = (ObjectEnablerSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pOVar35,
+                        ((Object *)pOVar38,
                          ObjectEnablerSettings_MethodInfo__UnityEngine__Object__Instantiate<ObjectEnablerSettings>_ObjectEnablerSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pOVar35 != (ObjectEnablerSettings *)0x0) {
-      ObjectEnablerSettings::ObjectEnablerSettings_Initialize(pOVar35,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pOVar38 == (ObjectEnablerSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      ObjectEnablerSettings::ObjectEnablerSettings_Initialize(pOVar38,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   case WorldObjectType__Enum_WaterPlane:
-    pWVar36 = (this->fields).waterBoxSettingsPrefab;
+    pWVar39 = (this->fields).waterBoxSettingsPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pWVar36 = (WaterBoxSettings *)
+    pWVar39 = (WaterBoxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pWVar36,
+                        ((Object *)pWVar39,
                          WaterBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<WaterBoxSettings>_WaterBoxSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pWVar36 != (WaterBoxSettings *)0x0) {
-      WaterBoxSettings::WaterBoxSettings_Initialize(pWVar36,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pWVar39 == (WaterBoxSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      WaterBoxSettings::WaterBoxSettings_Initialize(pWVar39,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
@@ -1836,242 +1865,250 @@ code_?:
     SettingsFactory_CreateBlueprintSettings(this,woID,(MethodInfo *)0x0);
     return;
   case WorldObjectType__Enum_PulseBox:
-    pPVar37 = (this->fields).pulseBoxPrefab;
+    pPVar40 = (this->fields).pulseBoxPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pPVar37 = (PulseBoxSettings *)
+    pPVar40 = (PulseBoxSettings *)
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                        ((Object *)pPVar37,
+                        ((Object *)pPVar40,
                          PulseBoxSettings_MethodInfo__UnityEngine__Object__Instantiate<PulseBoxSettings>_PulseBoxSettings_
                         );
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    unaff_EDI = (SettingsFactory *)0x0;
-    pMVar1 = (MVDoorBlueprint__Class *)this;
-    if (pPVar37 != (PulseBoxSettings *)0x0) {
-      PulseBoxSettings::PulseBoxSettings_Initialize(pPVar37,0,pGVar3,(MethodInfo *)0x0);
+    cVar4 = pPVar40 == (PulseBoxSettings *)0x0;
+    unaff_EDI = (MVWorldObject__Class *)0x0;
+    if (!(bool)cVar4) {
+      PulseBoxSettings::PulseBoxSettings_Initialize(pPVar40,0,pGVar3,(MethodInfo *)0x0);
       return;
     }
     break;
   default:
     switch(worldObjectType) {
     case WorldObjectType__Enum_PickupCubeGun:
-      unaff_EDI = (SettingsFactory *)(this->fields).cubeGunSettingsPrefab;
+      unaff_EDI = (MVWorldObject__Class *)(this->fields).cubeGunSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      this_04 = (CubeGunSettings *)
+      this_02 = (CubeGunSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                           ((Object *)unaff_EDI,
                            CubeGunSettings_MethodInfo__UnityEngine__Object__Instantiate<CubeGunSettings>_CubeGunSettings_
                           );
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (this_04 != (CubeGunSettings *)0x0) {
+      cVar4 = this_02 == (CubeGunSettings *)0x0;
+      if (!(bool)cVar4) {
         CubeGunSettings::CubeGunSettings_Initialize
-                  (this_04,0,(this->fields).materialsController,(MethodInfo *)0x0);
+                  (this_02,0,(this->fields).materialsController,(MethodInfo *)0x0);
         return;
       }
       break;
     default:
       goto code_?;
     case WorldObjectType__Enum_WorldObjectSpawnerVehicle:
-      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar8 == (MVWorldObjectClientManager *)0x0) break;
-      this_05 = (MVDoorBlueprint__Class *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar8,woID,(MethodInfo *)0x0);
-      pMVar1 = this_05;
+      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      cVar4 = '\x01';
+      if (pMVar9 == (MVWorldObjectClientManager *)0x0) break;
+      pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                          (pMVar9,woID,(MethodInfo *)0x0);
       unaff_EBX.m_Index = woID;
-      if (this_05 == (MVDoorBlueprint__Class *)0x0) {
+      if (pMVar10 == (MVWorldObject *)0x0) {
         MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        cVar4 = &stack0x00000000 == (undefined1 *)0x0;
         break;
       }
-      unaff_EDI = (SettingsFactory *)(this_05->_0).image;
-      if ((*(byte *)&(unaff_EDI->fields).gamePointChestSettingsPrefab <
-           (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment) ||
-         (*(MVWorldObjectSpawnerVehicle__Class **)
-           ((int)(unaff_EDI->fields).cameraBoxSettingsPrefab +
-           (uint)(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment * 4 + -4) !=
-          TypeInfo__MVWorldObjectSpawnerVehicle)) goto code_?;
-      pMVar8 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar8 == (MVWorldObjectClientManager *)0x0) break;
-      unaff_EDI = (SettingsFactory *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                            (pMVar8,(int32_t)(this_05->vtable).get_Scale.methodPtr,
-                             (MethodInfo *)0x0);
-      this_05 = (MVDoorBlueprint__Class *)0x0;
-      pMVar1 = this_05;
-      if (unaff_EDI == (SettingsFactory *)0x0) break;
-      if (((TypeInfo__MVVehicleBase->_1).naturalAligment <=
-           (((CultureInfo__Class *)unaff_EDI->klass)->_1).naturalAligment) &&
-         ((MVVehicleBase__Class *)
-          (((CultureInfo__Class *)unaff_EDI->klass)->_1).typeHierarchy
-          [(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] == TypeInfo__MVVehicleBase)) {
-        iVar38 = func_?();
-        pOVar23 = pORam0000009c;
-        unaff_EDI = (SettingsFactory *)0x2c;
-        if (iVar38 < 0x1b) {
-          if (iVar38 == 0x19) {
-            pOVar23 = pORam00000098;
-            method_01 = 
-            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HoverCraftSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_
-            ;
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+      unaff_EDI = pMVar10->klass;
+      bVar11 = (unaff_EDI->_1).naturalAligment;
+      bVar12 = (TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment;
+      cVar4 = bVar11 == bVar12;
+      if ((bVar12 <= bVar11) &&
+         (cVar4 = '\0',
+         (MVWorldObjectSpawnerVehicle__Class *)
+         (unaff_EDI->_1).typeHierarchy
+         [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1] ==
+         TypeInfo__MVWorldObjectSpawnerVehicle)) {
+        pMVar9 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        cVar4 = '\x01';
+        if (pMVar9 == (MVWorldObjectClientManager *)0x0) break;
+        unaff_EDI = (MVWorldObject__Class *)
+                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                              (pMVar9,pMVar10[2].fields.ownerActorNr,(MethodInfo *)0x0);
+        this_03 = (VehicleBaseSettings *)0x0;
+        cVar4 = '\x01';
+        if (unaff_EDI == (MVWorldObject__Class *)0x0) break;
+        pCVar41 = (CultureInfo__Class *)(unaff_EDI->_0).image;
+        bVar11 = (pCVar41->_1).naturalAligment;
+        bVar12 = (TypeInfo__MVVehicleBase->_1).naturalAligment;
+        cVar4 = bVar11 == bVar12;
+        if ((bVar12 <= bVar11) &&
+           (cVar4 = '\0',
+           (MVVehicleBase__Class *)
+           (pCVar41->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] ==
+           TypeInfo__MVVehicleBase)) {
+          iVar42 = func_?();
+          pOVar1 = pORam0000009c;
+          unaff_EDI = (MVWorldObject__Class *)0x2c;
+          if (iVar42 < 0x1b) {
+            if (iVar42 == 0x19) {
+              pOVar1 = pORam00000098;
               method_01 = 
               UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HoverCraftSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_
               ;
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+                method_01 = 
+                UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HoverCraftSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings_
+                ;
+              }
             }
+            else {
+              if (iVar42 != 0x1a) goto code_?;
+              pOVar1 = pORam000000a0;
+              method_01 = 
+              UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HamsterWheelSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_
+              ;
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+                method_01 = 
+                UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HamsterWheelSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_
+                ;
+              }
+            }
+code_?:
+            this_03 = (VehicleBaseSettings *)
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                (pOVar1,method_01);
           }
-          else {
-            if (iVar38 != 0x1a) goto code_?;
-            pOVar23 = pORam000000a0;
+          else if ((iVar42 == 0x1f) || (iVar42 == 0x22)) {
             method_01 = 
-            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HamsterWheelSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_
+            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::JetpackSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_
             ;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
               method_01 = 
-              UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::HamsterWheelSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings_
+              UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::JetpackSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_
               ;
             }
+            goto code_?;
           }
 code_?:
-          this_05 = (MVDoorBlueprint__Class *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              (pOVar23,method_01);
-        }
-        else if ((iVar38 == 0x1f) || (iVar38 == 0x22)) {
-          method_01 = 
-          UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::JetpackSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_
-          ;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
-            method_01 = 
-            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::JetpackSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__JetpackSettings_
-            ;
           }
-          goto code_?;
+          bVar25 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                            ((Object_1 *)this_03,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar25 == 0) {
+            return;
+          }
+          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)0x2c,(MethodInfo *)0x0);
+          cVar4 = this_03 == (VehicleBaseSettings *)0x0;
+          if (!(bool)cVar4) {
+            UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleBaseSettings::
+            VehicleBaseSettings_Initialize(this_03,woID,pGVar3,(MethodInfo *)0x0);
+            return;
+          }
+          break;
         }
-code_?:
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        bVar22 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)this_05,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar22 == 0) {
-          return;
-        }
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)0x2c,(MethodInfo *)0x0);
-        pMVar1 = (MVDoorBlueprint__Class *)0x0;
-        if (this_05 != (MVDoorBlueprint__Class *)0x0) {
-          UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::VehicleBaseSettings::
-          VehicleBaseSettings_Initialize
-                    ((VehicleBaseSettings *)this_05,woID,pGVar3,(MethodInfo *)0x0);
-          return;
-        }
-        break;
+        goto code_?;
       }
       goto code_?;
     case WorldObjectType__Enum_RoundCube:
-      pRVar39 = (this->fields).roundCubeSettingsPrefab;
+      pRVar43 = (this->fields).roundCubeSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pRVar39 = (RoundCubeSettings *)
+      pRVar43 = (RoundCubeSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pRVar39,
+                          ((Object *)pRVar43,
                            UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings>_UGUI__Desktop__Scripts__EditMode__SettingsBoxes__RoundCubeSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (pRVar39 != (RoundCubeSettings *)0x0) {
+      cVar4 = pRVar43 == (RoundCubeSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
         UGUI::Desktop::Scripts::EditMode::SettingsBoxes::RoundCubeSettings::
-        RoundCubeSettings_Initialize(pRVar39,0,pGVar3,(MethodInfo *)0x0);
+        RoundCubeSettings_Initialize(pRVar43,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_AdvancedGhost:
-      pOVar40 = (this->fields).oculusSettingsPrefab;
+      pOVar44 = (this->fields).oculusSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pOVar40 = (OculusSettings *)
+      pOVar44 = (OculusSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pOVar40,
+                          ((Object *)pOVar44,
                            OculusSettings_MethodInfo__UnityEngine__Object__Instantiate<OculusSettings>_OculusSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (pOVar40 != (OculusSettings *)0x0) {
-        OculusSettings::OculusSettings_Initialize(pOVar40,0,pGVar3,(MethodInfo *)0x0);
+      cVar4 = pOVar44 == (OculusSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        OculusSettings::OculusSettings_Initialize(pOVar44,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
       break;
     case WorldObjectType__Enum_KillLimit:
-      pKVar41 = (this->fields).killLimitSettingsPrefab;
+      pKVar45 = (this->fields).killLimitSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pKVar41 = (KillLimitSettings *)
+      pKVar45 = (KillLimitSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pKVar41,
+                          ((Object *)pKVar45,
                            KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_
                           );
-      pMVar1 = (MVDoorBlueprint__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      pSVar28 = TM::TM__(StringLiteral_Kill_Limit,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pKVar41 != (KillLimitSettings *)0x0) {
-        KillLimitSettings::KillLimitSettings_Initialize
-                  (pKVar41,0,(GameObject *)pMVar1,pSVar28,(MethodInfo *)0x0);
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      pSVar30 = TM::TM__(StringLiteral_Kill_Limit,(MethodInfo *)0x0);
+      cVar4 = pKVar45 == (KillLimitSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        KillLimitSettings::KillLimitSettings_Initialize(pKVar45,0,pGVar3,pSVar30,(MethodInfo *)0x0)
+        ;
         return;
       }
       break;
     case WorldObjectType__Enum_OculusKillLimit:
-      pKVar41 = (this->fields).killLimitSettingsPrefab;
+      pKVar45 = (this->fields).killLimitSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pKVar41 = (KillLimitSettings *)
+      pKVar45 = (KillLimitSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pKVar41,
+                          ((Object *)pKVar45,
                            KillLimitSettings_MethodInfo__UnityEngine__Object__Instantiate<KillLimitSettings>_KillLimitSettings_
                           );
-      pMVar1 = (MVDoorBlueprint__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      pSVar28 = TM::TM__(StringLiteral_Oculus_Kill_Limit,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      if (pKVar41 != (KillLimitSettings *)0x0) {
-        KillLimitSettings::KillLimitSettings_Initialize
-                  (pKVar41,0,(GameObject *)pMVar1,pSVar28,(MethodInfo *)0x0);
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      pSVar30 = TM::TM__(StringLiteral_Oculus_Kill_Limit,(MethodInfo *)0x0);
+      cVar4 = pKVar45 == (KillLimitSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        KillLimitSettings::KillLimitSettings_Initialize(pKVar45,0,pGVar3,pSVar30,(MethodInfo *)0x0)
+        ;
         return;
       }
       break;
     case WorldObjectType__Enum_CountingCube:
-      pCVar42 = (this->fields).countingCubeSettingsPrefab;
+      pCVar46 = (this->fields).countingCubeSettingsPrefab;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pCVar42 = (CountingCubeSettings *)
+      pCVar46 = (CountingCubeSettings *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pCVar42,
+                          ((Object *)pCVar46,
                            CountingCubeSettings_MethodInfo__UnityEngine__Object__Instantiate<CountingCubeSettings>_CountingCubeSettings_
                           );
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      unaff_EDI = (SettingsFactory *)0x0;
-      pMVar1 = (MVDoorBlueprint__Class *)this;
-      if (pCVar42 != (CountingCubeSettings *)0x0) {
-        CountingCubeSettings::CountingCubeSettings_Initialize(pCVar42,0,pGVar3,(MethodInfo *)0x0);
+      cVar4 = pCVar46 == (CountingCubeSettings *)0x0;
+      unaff_EDI = (MVWorldObject__Class *)0x0;
+      if (!(bool)cVar4) {
+        CountingCubeSettings::CountingCubeSettings_Initialize(pCVar46,0,pGVar3,(MethodInfo *)0x0);
         return;
       }
     }
@@ -2081,76 +2118,54 @@ code_?:
   woID = unaff_EBX.m_Index;
 code_?:
   func_?();
-  this_05 = pMVar1;
 code_?:
   func_?();
 code_?:
-  uVar43 = func_?();
-  puVar44 = (uint *)((ulonglong)uVar43 >> 0x20);
-  piVar45 = (int *)uVar43;
-  bVar46 = (char)((uint)woID >> 8) * '\x02';
-  uVar47 = (uint)((byte)uVar43 < 0x10);
-  bVar48 = CARRY4(uRam_?,(uint)unaff_EDI);
-  uVar49 = (int)&unaff_EDI->klass + uRam_?;
-  uRam_? = uVar49 + uVar47;
-  cVar50 = (char)((uint)this_05 >> 8);
-  *(char *)((int)puVar44 + 0x5a103cff) =
-       *(char *)((int)puVar44 + 0x5a103cff) + cVar50 + (bVar48 || CARRY4(uVar49,uVar47));
-  bVar48 = CARRY1(bRam_?,bVar46);
-  bRam_? = bRam_? + bVar46;
-  bVar51 = (byte)this_05;
-  bVar52 = (byte)extraout_ECX;
-  cVar53 = (char)((uint)extraout_ECX >> 8) + bVar51 + bVar48;
-  pbVar54 = (byte *)CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(cVar53,bVar52));
-  bVar48 = CARRY1(bRam_?,bVar46);
-  bRam_? = bRam_? + bVar46;
-  *(char *)((int)puVar44 + 0x34103d02) = *(char *)((int)puVar44 + 0x34103d02) + cVar50 + bVar48;
-  uVar55 = (undefined3)((uint)this_05 >> 8);
-  pcVar56 = (char *)(CONCAT31(uVar55,bVar51 + 0x3d) + -0x23efc2fc);
-  *pcVar56 = *pcVar56 + bVar52 + (0xc2 < bVar51);
-  iVar38 = CONCAT31(uVar55,bVar51 + 0x7a);
-  cRam_? = cRam_? + cVar53 + (0xc2 < (byte)(bVar51 + 0x3d));
-  *(int *)pbVar54 = *(int *)pbVar54 + iVar38;
-  *puVar44 = *puVar44 + iVar38;
-  *(int *)pbVar54 = *(int *)pbVar54 + iVar38;
-  uVar55 = (undefined3)((uint)(iVar38 + *(int *)pbVar54) >> 8);
-  bVar51 = (char)(iVar38 + *(int *)pbVar54) + 3;
-  iRam_? = iRam_? + CONCAT31(uVar55,bVar51);
-  *pbVar54 = *pbVar54 | bVar52;
-  bVar51 = bVar51 | *pbVar54;
-  pcVar56 = (char *)CONCAT31(uVar55,bVar51);
-  piVar57 = (int *)((uint)pbVar54 | *(uint *)(pcVar56 + (int)puVar44 * 4));
-  pbVar54 = (byte *)segment(in_DS,(short)unaff_EDI);
-  *pbVar54 = *pbVar54 | bVar46;
-  *(char *)((int)piVar45 + -0x47efc2ef) =
-       *(char *)((int)piVar45 + -0x47efc2ef) + (char)((ulonglong)uVar43 >> 0x20);
-  bRam_? = bRam_? | bVar46;
-  uRam_? = uRam_? | (uint)unaff_EDI;
-  uVar49 = (uint)unaff_EDI | uRam_?;
-  (&stack0x0cd51031)[(int)piVar57] = (&stack0x0cd51031)[(int)piVar57] + bVar51;
-  *pcVar56 = *pcVar56 + bVar51 + (pcVar56 < (char *)0x3d0cec10);
-  *piVar57 = (int)(pcVar56 + *piVar57);
-  *puVar44 = (uint)(pcVar56 + *puVar44);
-  pbVar54 = (byte *)(pcVar56 + *(int *)(pcVar56 + 0x1010101));
-  *piVar45 = (int)(pbVar54 + *piVar45);
-  *piVar57 = (int)(pbVar54 + *piVar57);
-  *piVar57 = (int)(pbVar54 + *piVar57);
-  *pbVar54 = *pbVar54 | (byte)piVar57;
-  *pbVar54 = *pbVar54 | (byte)piVar57;
-  *puVar44 = *puVar44 | (uint)piVar57;
-  bVar48 = ((uint)pbVar54 | 0xADDR) < 0x3d119610;
-  pbVar54 = (byte *)(((uint)piVar57 | *(uint *)(pbVar54 + (int)puVar44 * 4)) + 0x96103d0d);
-  bVar46 = *pbVar54;
-  bVar51 = *pbVar54 + (byte)woID;
-  *pbVar54 = bVar51 + bVar48;
-  uVar47 = (uint)(CARRY1(bVar46,(byte)woID) || CARRY1(bVar51,bVar48));
-  bVar48 = CARRY4(uRam_?,uVar49);
-  uVar49 = uRam_? + uVar49;
-  uRam_? = uVar49 + uVar47;
-  *(char *)piVar45 =
-       (char)*piVar45 + (char)((ulonglong)uVar43 >> 0x28) + (bVar48 || CARRY4(uVar49,uVar47));
+  uVar47 = func_?();
+  piVar48 = (int *)((ulonglong)uVar47 >> 0x20);
+  pSVar30 = (String *)uVar47;
+  pDVar31 = (Debug_2__Class *)(extraout_ECX + -1);
+  if (pDVar31 == (Debug_2__Class *)0x0 || cVar4 != '\0') {
+    bVar11 = (byte)uVar47;
+    if (0x10 < bVar11) {
+      ((Link__Array *)(woID + -0x447df020))->vector[0x13] =
+           (Link *)((uint)((Link__Array *)(woID + -0x447df020))->vector[0x13] ^ (uint)unaff_EDI);
+      puVar49 = (undefined1 *)0xbe82103c;
+      iVar42 = CONCAT31((int3)((ulonglong)uVar47 >> 8),(bVar11 - 0x40) + (bVar11 < 0x10));
+      while( true ) {
+        puVar50 = (undefined4 *)(puVar49 + -4);
+        puVar49 = puVar49 + -4;
+        *puVar50 = 0xbc103cc0;
+        *(char *)(iVar42 + (int)piVar48) = *(char *)(iVar42 + (int)piVar48) >> 0xd;
+        *(undefined4 *)(iVar42 + (int)piVar48) = *(undefined4 *)(iVar42 + (int)piVar48);
+        (pDVar31->_0).image = (Il2CppImage *)((int)&((pDVar31->_0).image)->name + iVar42);
+        *piVar48 = *piVar48 + iVar42;
+        (pDVar31->_0).image = (Il2CppImage *)((int)&((pDVar31->_0).image)->name + iVar42);
+        iVar42 = (int)&((pDVar31->_0).image)->name + iVar42;
+        uVar51 = (undefined3)((uint)iVar42 >> 8);
+        bVar11 = (char)iVar42 + 3;
+        iRam_? = iRam_? + CONCAT31(uVar51,bVar11);
+        *(byte *)&(pDVar31->_0).image = *(byte *)&(pDVar31->_0).image | (byte)pDVar31;
+        iVar42 = CONCAT31(uVar51,bVar11 | *(byte *)&(pDVar31->_0).image);
+        pDVar31 = (Debug_2__Class *)((uint)pDVar31 | *(uint *)(iVar42 + (int)piVar48 * 4));
+        bVar52 = unaff_EDI != (MVWorldObject__Class *)0xffffffff;
+        unaff_EDI = (MVWorldObject__Class *)*(undefined6 *)(iVar42 + (int)piVar48);
+        if (bVar52) break;
+        *(char *)(iVar42 * 9) = *(char *)(iVar42 * 9) + (char)((ulonglong)uVar47 >> 0x20);
+      }
                     /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+      halt_baddata();
+    }
+  }
+  else {
+code_?:
+    if ((pDVar31->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)pSVar30,(MethodInfo *)0x0);
+  }
+  return;
 }
 
 

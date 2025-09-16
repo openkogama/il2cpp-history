@@ -707,10 +707,11 @@ code_?:
             iVar9 = (this->fields)._position;
             (this->fields)._position = iVar9 + 1;
             if (buffer->max_length <= uVar10) goto code_?;
-            if ((this->fields)._buffer == (List_1_System_Byte_ *)0x0) goto code_?;
+            pLVar5 = (this->fields)._buffer;
+            if (pLVar5 == (List_1_System_Byte_ *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
             List_1_System_SByte__set_Item
-                      ((List_1_System_SByte_ *)(this->fields)._buffer,iVar9,buffer->vector[uVar10],
+                      ((List_1_System_SByte_ *)pLVar5,iVar9,buffer->vector[uVar10],
                        MethodInfo__System__Collections__Generic__List<unsigned_char>__set_Item_int__unsigned_char_
                       );
             uVar10 = uVar10 + 1;

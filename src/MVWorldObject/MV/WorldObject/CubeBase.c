@@ -57,7 +57,7 @@ bool MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_Equals_1
       uVar3 = 0;
       pBVar2 = (this->fields).faceMaterials;
       while( true ) {
-        if ((int)pBVar2->max_length <= (int)uVar3) {
+        if ((int)((this->fields).faceMaterials)->max_length <= (int)uVar3) {
           return 1;
         }
         if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) break;
@@ -88,24 +88,25 @@ MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
     switch(faceFlag & 0xff) {
     case FaceFlags__Enum_Top:
     case FaceFlags__Enum_Bottom|FaceFlags__Enum_Top:
-      return Face__Enum_Top;
+      goto code_?;
     case FaceFlags__Enum_Bottom:
       return Face__Enum_Bottom;
     case FaceFlags__Enum_Front:
       return Face__Enum_Front;
+    default:
+      FVar1 = Face__Enum_Top;
+      if ((undefined1)faceFlag == FaceFlags__Enum_Back) {
+        FVar1 = Face__Enum_Back;
+      }
+      return FVar1;
     }
-    FVar1 = Face__Enum_Top;
-    if ((undefined1)faceFlag == FaceFlags__Enum_Back) {
-      FVar1 = Face__Enum_Back;
-    }
-    return FVar1;
   }
   if ((undefined1)faceFlag != FaceFlags__Enum_Left) {
-    FVar1 = Face__Enum_Top;
-    if ((undefined1)faceFlag == FaceFlags__Enum_Right) {
-      FVar1 = Face__Enum_Right;
+    if ((undefined1)faceFlag != FaceFlags__Enum_Right) {
+code_?:
+      return Face__Enum_Top;
     }
-    return FVar1;
+    return Face__Enum_Right;
   }
   return Face__Enum_Left;
 }
@@ -229,8 +230,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar5 = *corners;
-    pVVar4 = *faceVertices;
+    pVVar4 = *corners;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Front:
     pVVar1 = *faceVertices;
@@ -245,8 +246,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar5 = *corners;
-    pVVar4 = *faceVertices;
+    pVVar4 = *corners;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Back:
     pVVar1 = *faceVertices;
@@ -261,8 +262,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar5 = *corners;
-    pVVar4 = *faceVertices;
+    pVVar4 = *corners;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Left:
     pVVar1 = *faceVertices;
@@ -279,7 +280,7 @@ joined_?:
     if ((pVVar4 == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *faceVertices;
+    faceVertices = (Vector3__Array **)*faceVertices;
     if (*corners == (Vector3__Array *)0x0) goto code_?;
     goto code_?;
   case Face__Enum_Right:
@@ -295,16 +296,18 @@ joined_?:
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar5 = *corners;
-    pVVar4 = *faceVertices;
+    pVVar4 = *corners;
+    faceVertices = (Vector3__Array **)*faceVertices;
     break;
   default:
     goto code_?;
   }
-  if (pVVar5 != (Vector3__Array *)0x0) {
+  if (pVVar4 != (Vector3__Array *)0x0) {
 code_?:
     func_?();
-    if (pVVar4 != (Vector3__Array *)0x0) {
+    bVar5 = (Vector3__Array *)faceVertices != (Vector3__Array *)0x0;
+    faceVertices = (Vector3__Array **)0x0;
+    if (bVar5) {
       func_?(3,uStack_2,uStack_3);
 code_?:
       return;
@@ -312,21 +315,25 @@ code_?:
   }
 code_?:
   bVar6 = 0;
-  func_?();
-  bVar7 = (byte)((uint)pVVar1 >> 8);
-  bVar8 = CARRY1(extraout_CL,bVar7) || CARRY1(extraout_CL + bVar7,bVar6);
-  uVar9 = (undefined3)(((uint)extraout_var << 0x10) >> 8);
-  bVar6 = -bVar8;
-  out(extraout_DX,CONCAT31(uVar9,bVar6));
-  bVar10 = (byte)((ushort)extraout_DX >> 8);
-  bVar7 = bVar10 + bVar6;
-  out(CONCAT11(bVar7 + bVar8,(char)extraout_DX),
-      CONCAT31(uVar9,*(undefined1 *)((int)pVVar1->vector + (bVar6 - 0x10))));
-  pfVar11 = &pVVar1[0x3d7b7a].vector[0x18].z;
-  *(char *)pfVar11 =
-       *(char *)pfVar11 + (char)extraout_DX + (CARRY1(bVar10,bVar6) || CARRY1(bVar7,bVar8));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar7 = func_?();
+  uVar8 = (undefined2)((uint6)uVar7 >> 0x20);
+  pcVar9 = (char *)uVar7;
+  out(uVar8,pcVar9);
+  pbVar10 = (byte *)((int)&pVVar1[-1].vector[0x18].y + 1);
+  bVar11 = *pbVar10;
+  bVar12 = (byte)((uint6)uVar7 >> 0x20);
+  bVar13 = *pbVar10 + bVar12;
+  pcRam_? = pcVar9;
+  *pbVar10 = bVar13 + bVar6;
+  out(uVar8,pcVar9);
+  *pcVar9 = *pcVar9 + (char)((uint6)uVar7 >> 8) + (CARRY1(bVar11,bVar12) || CARRY1(bVar13,bVar6));
+  out(uVar8,pcVar9);
+  *(char *)(extraout_ECX + -0x33ef105a) =
+       *(char *)(extraout_ECX + -0x33ef105a) + (char)((uint6)uVar7 >> 0x28) +
+       (*(byte *)&((Vector3__Array *)faceVertices)->klass < *(byte *)corners);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
+  return;
 }
 
 
@@ -440,7 +447,7 @@ code_?:
       if (iVar1 == 0) goto code_?;
       if (*(uint *)(iVar1 + 0xc) <= uVar3) goto code_?;
       uVar6 = pBVar4->vector[uVar3];
-      *(bool *)(uVar3 + 0x10 + iVar1) = uVar5 != uVar6;
+      *(bool *)(iVar1 + 0x10 + uVar3) = uVar5 != uVar6;
       if (*(uint *)(iVar1 + 0xc) <= uVar3) goto code_?;
       iVar7 = iStack_2 + 1;
       if (uVar5 == uVar6) {
@@ -973,7 +980,7 @@ bool MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
       uVar3 = 0;
       pBVar2 = (a->fields).faceMaterials;
       while( true ) {
-        if ((int)pBVar2->max_length <= (int)uVar3) {
+        if ((int)((a->fields).faceMaterials)->max_length <= (int)uVar3) {
           return 1;
         }
         if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) break;

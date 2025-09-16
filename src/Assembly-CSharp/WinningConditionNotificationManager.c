@@ -372,9 +372,16 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
       uVar6 = func_?();
-      *(int *)uVar6 = *(int *)uVar6 - (int)((ulonglong)uVar6 >> 0x20);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-      halt_baddata();
+      iVar7 = (int)((ulonglong)uVar6 >> 0x20);
+      piVar8 = (int *)uVar6;
+      *piVar8 = *piVar8 - iVar7;
+      *piVar8 = *piVar8 - iVar7;
+      *piVar8 = *piVar8 - iVar7;
+      *piVar8 = *piVar8 - iVar7;
+      *piVar8 = *piVar8 - iVar7;
+      pcVar9 = (code *)swi(3);
+      bVar3 = (*pcVar9)();
+      return bVar3;
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
       return 0;
@@ -402,8 +409,6 @@ code_?:
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* WARNING (jumptable): Removing unreachable block (ram,0xADDR) */
 /* Void UpdateNotification(Int32, GameStatCounterType, Int32) */
 
@@ -476,24 +481,17 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
   }
 code_?:
   uVar6 = func_?();
-  piVar7 = (int *)((uint)uVar6 | 0xfd);
-  *piVar7 = *piVar7 - (int)((ulonglong)uVar6 >> 0x20);
-  uVar8 = (int)piVar7 >> 0x1f;
-  *piVar7 = *piVar7 - uVar8;
-  puVar9 = (uint *)(CONCAT31((int3)((ulonglong)uVar6 >> 8),(char)piVar7) ^ 0xfd);
-  *puVar9 = *puVar9 - uVar8;
-  *puVar9 = *puVar9 - uVar8;
-  uVar2 = *puVar9;
-  uVar10 = *puVar9;
-  *puVar9 = *puVar9 - uVar8;
-  if (!SBORROW4(uVar10,uVar8)) {
-    *(char *)(extraout_ECX + -3) =
-         *(char *)(extraout_ECX + -3) + ((char)((ulonglong)uVar6 >> 0x18) >> 7) + (uVar2 < uVar8);
-  }
-  *puVar9 = *puVar9 - uVar8;
-  *puVar9 = *puVar9 - uVar8;
-  *puVar9 = *puVar9 - ((int)puVar9 >> 0x1f);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  iRam_? = (int)((ulonglong)uVar6 >> 0x20);
+  uVar7 = (undefined3)((ulonglong)uVar6 >> 8);
+  cVar8 = (char)uVar6 + 'A';
+  piVar9 = (int *)CONCAT31(uVar7,cVar8);
+  *piVar9 = *piVar9 - iRam_?;
+  *piVar9 = *piVar9 - iRam_?;
+  *piVar9 = *piVar9 - iRam_?;
+  uRam_? = 0xbfbc1029;
+  uRam_? = 0;
+  piVar9 = (int *)CONCAT31(uVar7,cVar8);
+  *piVar9 = *piVar9 - iRam_?;
+  return;
 }
 

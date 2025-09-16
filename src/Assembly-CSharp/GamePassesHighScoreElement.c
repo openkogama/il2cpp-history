@@ -263,33 +263,33 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
     func_?(&TypeInfo__GamePassesHighScoreElement____c__DisplayClass15_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__GamePassesHighScoreElement____c__DisplayClass15_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  original = (this->fields).playerSocialPopup;
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__GamePassesHighScoreElement____c__DisplayClass15_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+  pPVar1 = (this->fields).playerSocialPopup;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar1 = (Object__Class *)
+  pLVar2 = (List_1_System_Object_ *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)original,
+                     ((Object *)pPVar1,
                       PlayerSocialPopup_MethodInfo__UnityEngine__Object__Instantiate<PlayerSocialPopup>_PlayerSocialPopup_
                      );
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    pTVar2 = (this->fields).userNameText;
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_00->fields,pLVar2);
+    pTVar3 = (this->fields).userNameText;
     remotePlayerProfileId = (this->fields).profileId;
-    pOVar1 = value[1].klass;
-    if (pTVar2 != (Text *)0x0) {
+    pPVar1 = (PlayerSocialPopup *)(this_00->fields)._._defaultValue_k__BackingField;
+    if (pTVar3 != (Text *)0x0) {
       name = (String *)
-             (*(code *)(pTVar2->klass->vtable).get_text.method)
-                       (pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
-      if (pOVar1 != (Object__Class *)0x0) {
+             (*(code *)(pTVar3->klass->vtable).get_text.method)
+                       (pTVar3,(pTVar3->klass->vtable).set_text.methodPtr);
+      if (pPVar1 != (PlayerSocialPopup *)0x0) {
         PlayerSocialPopup::PlayerSocialPopup_Initialize
-                  ((PlayerSocialPopup *)pOVar1,remotePlayerProfileId,name,(this->fields).subscriber,
-                   (MethodInfo *)0x0);
+                  (pPVar1,remotePlayerProfileId,name,(this->fields).subscriber,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
@@ -299,7 +299,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
                             );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                    MethodInfo__GamePassesHighScoreElement____c__DisplayClass15_0___OnClick_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
@@ -315,8 +315,8 @@ void Assembly-CSharp.dll::GamePassesHighScoreElement::GamePassesHighScoreElement
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -60,8 +60,8 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_ContainsPoint
                MethodInfo *method)
 
 {
-  return (point.y - sphereCenter.y) * (point.y - sphereCenter.y) +
-         (point.x - sphereCenter.x) * (point.x - sphereCenter.x) +
+  return (point.x - sphereCenter.x) * (point.x - sphereCenter.x) +
+         (point.y - sphereCenter.y) * (point.y - sphereCenter.y) +
          (point.z - sphereCenter.z) * (point.z - sphereCenter.z) <=
          (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius);
 }

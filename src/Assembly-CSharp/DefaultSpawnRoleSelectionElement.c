@@ -151,7 +151,7 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
        (this_00 = *(BoneAnimation **)(*(int *)(in_stack_2 + 0x3c) + 0x18),
        this_00 != (BoneAnimation *)0x0)) {
       BoneAnimation::BoneAnimation_StartAnimation
-                (this_00,StringLiteral_Idle,iVar5 + (-500 - iVar4),(MethodInfo *)0x0);
+                (this_00,StringLiteral_Idle,(iVar5 + -500) - iVar4,(MethodInfo *)0x0);
       return;
     }
   }

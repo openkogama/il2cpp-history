@@ -39,7 +39,6 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::
         fVar8 * (pLVar9->fields).interpolateTowardsPitchRotation.w) {
       return;
     }
-    pLVar9 = (this->fields).headController;
     if (pLVar9 != (LimbController *)0x0) {
       (pLVar9->fields).elapsedInterpolationTime = 0.0;
       (pLVar9->fields).elapsedInterpolateAnimationTime = 0.0;
@@ -141,7 +140,6 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarNodEmote::
         pitchRotation.w * (pLVar2->fields).interpolateTowardsPitchRotation.w) {
       return;
     }
-    pLVar2 = (this->fields).headController;
     if (pLVar2 != (LimbController *)0x0) {
       (pLVar2->fields).elapsedInterpolationTime = 0.0;
       (pLVar2->fields).elapsedInterpolateAnimationTime = 0.0;

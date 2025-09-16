@@ -330,9 +330,9 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefingCamera::
       uVar12 = pVVar2->x;
       uVar13 = pVVar2->y;
       if (pTVar1 != (Transform *)0x0) {
-        this = (TimeAttackFlagDebriefingCamera *)(pVVar2->z + fVar5 + 0.0);
-        fVar14 = (float)uVar13 + fVar6;
-        VVar15.x = (float)uVar12 + (float)uVar3 + 0.0;
+        this = (TimeAttackFlagDebriefingCamera *)(fVar5 + 0.0 + pVVar2->z);
+        fVar14 = fVar6 + (float)uVar13;
+        VVar15.x = (float)uVar3 + 0.0 + (float)uVar12;
         VVar15 = (Vector3)CONCAT84(uVar16,VVar15.x);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (pTVar1,VVar15,(MethodInfo *)0x0);

@@ -679,14 +679,14 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_DoHealing
     uVar7 = in_stack_8;
   }
   if ((this_00->fields).isShooting == 0) {
-    auVar9._24_20_ = auVar4._24_20_;
-    auVar9._0_20_ = auVar4._0_20_;
-    auVar9._20_4_ = (this_00->fields).rayMinimumChargeTime + (this_00->fields).rayStartTime;
+    auVar9._28_16_ = auVar4._28_16_;
+    auVar9._0_24_ = auVar4._0_24_;
+    auVar9._24_4_ = (this_00->fields).rayMinimumChargeTime + (this_00->fields).rayStartTime;
     fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    auVar4._28_16_ = auVar9._28_16_;
-    auVar4._0_24_ = auVar9._0_24_;
-    auVar4._24_4_ = fVar10;
-    if ((float)auVar9._20_4_ < fVar10) {
+    auVar4._24_20_ = auVar9._24_20_;
+    auVar4._0_20_ = auVar9._0_20_;
+    auVar4._20_4_ = fVar10;
+    if ((float)auVar9._24_4_ < fVar10) {
       return;
     }
   }
@@ -827,16 +827,24 @@ code_?:
     if (pPVar49 != (ParticleSystem *)0x0) {
       PVar50 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
                ParticleSystem_get_collision(pPVar49,(MethodInfo *)0x0);
-      auVar51._0_20_ = auVar15._0_20_;
-      auVar51._20_4_ = PVar50.m_ParticleSystem;
       auVar51._28_16_ = auVar15._28_16_;
-      auVar51._24_4_ = (&(this_00->fields).maxRayRange)[(this_00->fields).isLockedOn != 0];
+      auVar51._0_24_ = auVar15._0_24_;
+      auVar51._24_4_ = PVar50.m_ParticleSystem;
+      if ((this_00->fields).isLockedOn == 0) {
+        fVar10 = (this_00->fields).maxRayRange;
+      }
+      else {
+        fVar10 = (this_00->fields).maxLockOnRange;
+      }
+      auVar52._24_20_ = auVar51._24_20_;
+      auVar52._0_20_ = auVar15._0_20_;
+      auVar52._20_4_ = fVar10;
       fVar10 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
                ParticleSystem_MainModule_get_startSpeedMultiplier_Injected
-                         ((ParticleSystem_MainModule *)&stack0xffffffe8,(MethodInfo *)0x0);
+                         ((ParticleSystem_MainModule *)&stack0xffffffec,(MethodInfo *)0x0);
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xffffffe8,auVar51._24_4_ / fVar10,
+                ((ParticleSystem_MainModule *)&stack0xffffffec,auVar52._20_4_ / fVar10,
                  (MethodInfo *)0x0);
       pPVar49 = (this_00->fields).hitParticles;
       if (pPVar49 != (ParticleSystem *)0x0) {
@@ -879,44 +887,44 @@ code_?:
       direction_00.z = 0.0;
       PickUpItemHealRay_UpdateRayParticleEffect
                 (this_00,hitVoxel,direction_00,(MethodInfo *)in_stack_29);
-      uVar52._4_4_ = in_stack_48;
-      uVar52._0_4_ = in_stack_47;
+      uVar53._4_4_ = in_stack_48;
+      uVar53._0_4_ = in_stack_47;
 code_?:
-      auVar53._16_8_ = uVar52;
-      auVar54 = auVar15._0_12_;
-      auVar55 = auVar15._12_12_;
-      uVar56 = auVar15._24_6_;
-      fVar57 = (float)auVar54._0_4_;
-      stack0xffffffd8 = (float)auVar54._4_4_;
-      stack0xffffffdc = (float)auVar54._8_4_;
-      stack0xffffffe0 = (float)auVar55._0_4_;
-      stack0xffffffe4 = (float)auVar55._4_4_;
-      stack0xffffffe8 = (float)auVar55._8_4_;
-      stack0xffffffec = (short)uVar56;
-      stack0xffffffee = (short)((uint6)uVar56 >> 0x10);
-      stack0xfffffff0 = (short)((uint6)uVar56 >> 0x20);
+      auVar54._16_8_ = uVar53;
+      auVar55 = auVar15._0_12_;
+      auVar56 = auVar15._12_12_;
+      uVar57 = auVar15._24_6_;
+      fVar58 = (float)auVar55._0_4_;
+      stack0xffffffd8 = (float)auVar55._4_4_;
+      stack0xffffffdc = (float)auVar55._8_4_;
+      stack0xffffffe0 = (float)auVar56._0_4_;
+      stack0xffffffe4 = (float)auVar56._4_4_;
+      stack0xffffffe8 = (float)auVar56._8_4_;
+      stack0xffffffec = (short)uVar57;
+      stack0xffffffee = (short)((uint6)uVar57 >> 0x10);
+      stack0xfffffff0 = (short)((uint6)uVar57 >> 0x20);
       stack0xfffffff2 = auVar15._30_2_;
       stack0xfffffff4 = auVar15._32_4_;
       stack0xfffffff8 = auVar15[0x24];
       stack0xfffffff9 = auVar15._37_3_;
       stack0xfffffffc = auVar15._40_4_;
-      VVar58 = (VoxelHit)CONCAT2844(auVar53,auVar59);
-      PickUpItemHealRay_UpdateRayHealingLogic(this_00,VVar58,in_stack_60);
+      VVar59 = (VoxelHit)CONCAT2844(auVar54,auVar60);
+      PickUpItemHealRay_UpdateRayHealingLogic(this_00,VVar59,in_stack_61);
       return;
     }
-    pMVar61 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar61 != (MVWorldObjectClientManager *)0x0) {
+    pMVar62 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar62 != (MVWorldObjectClientManager *)0x0) {
       id = MVWorldObjectClientManager::
            MVWorldObjectClientManager_GetWoIDHighestInHierarchyWithComponent
-                     (pMVar61,in_stack_41,
+                     (pMVar62,in_stack_41,
                       int_MethodInfo__MVWorldObjectClientManager__GetWoIDHighestInHierarchyWithComponent<InteractionDataHandlerBase>_int_
                      );
-      pMVar61 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar61 != (MVWorldObjectClientManager *)0x0) {
+      pMVar62 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar62 != (MVWorldObjectClientManager *)0x0) {
         hitObject = (MVWorldObjectClient *)
                     MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (pMVar61,id,(MethodInfo *)0x0);
-        result._4_4_ = uStack_62;
+                              (pMVar62,id,(MethodInfo *)0x0);
+        result._4_4_ = uStack_63;
         result.Status = 1;
         result.HitVoxel.point.x = in_stack_31;
         result.HitVoxel.point.y = fStack_32;
@@ -940,39 +948,39 @@ code_?:
         result.Direction.x = (float)uVar5;
         result.Direction.y = (float)uVar7;
         result.Direction.z = in_stack_28;
-        result._92_4_ = in_stack_63;
+        result._92_4_ = in_stack_64;
         PickUpItemHealRay_HandleOnStuck(this_00,hitObject,result,(MethodInfo *)0x0);
-        VVar58.point.y = in_stack_33;
-        VVar58.point.x = fStack_32;
-        VVar58.point.z = in_stack_34;
-        VVar58.normal.x = in_stack_34;
-        VVar58.normal.y = in_stack_36;
-        VVar58.normal.z = (float)in_stack_37;
-        VVar58.cubePos.x = (short)in_stack_38;
-        VVar58.cubePos.y = (short)((uint)in_stack_38 >> 0x10);
-        VVar58._28_4_ = in_stack_38;
-        VVar58.face = in_stack_40;
-        VVar58._36_4_ = in_stack_41;
-        VVar58.woId = (int32_t)in_stack_42;
-        VVar58.cube = in_stack_42;
-        VVar58.distance = (float)in_stack_44;
-        VVar58.collider = (Collider *)in_stack_45;
-        VVar58.transform = (Transform *)in_stack_46;
-        VVar58._60_4_ = in_stack_46;
-        VVar58.interactionFlags._0_4_ = in_stack_48;
-        VVar58.interactionFlags._4_4_ = uVar5;
+        VVar59.point.y = in_stack_33;
+        VVar59.point.x = fStack_32;
+        VVar59.point.z = in_stack_34;
+        VVar59.normal.x = in_stack_34;
+        VVar59.normal.y = in_stack_36;
+        VVar59.normal.z = (float)in_stack_37;
+        VVar59.cubePos.x = (short)in_stack_38;
+        VVar59.cubePos.y = (short)((uint)in_stack_38 >> 0x10);
+        VVar59._28_4_ = in_stack_38;
+        VVar59.face = in_stack_40;
+        VVar59._36_4_ = in_stack_41;
+        VVar59.woId = (int32_t)in_stack_42;
+        VVar59.cube = in_stack_42;
+        VVar59.distance = (float)in_stack_44;
+        VVar59.collider = (Collider *)in_stack_45;
+        VVar59.transform = (Transform *)in_stack_46;
+        VVar59._60_4_ = in_stack_46;
+        VVar59.interactionFlags._0_4_ = in_stack_48;
+        VVar59.interactionFlags._4_4_ = uVar5;
         direction_01.y = in_stack_28;
         direction_01.x = (float)uVar7;
         direction_01.z = 0.0;
         fVar10 = in_stack_34;
         uVar5 = in_stack_38;
         this = (PickUpItemHealRay *)in_stack_42;
-        PickUpItemHealRay_UpdateRayParticleEffect(this_00,VVar58,direction_01,in_stack_64);
-        auVar54._4_4_ = fStack_32;
-        auVar54._0_4_ = in_stack_31;
-        auVar54._8_4_ = in_stack_33;
+        PickUpItemHealRay_UpdateRayParticleEffect(this_00,VVar59,direction_01,in_stack_65);
+        auVar55._4_4_ = fStack_32;
+        auVar55._0_4_ = in_stack_31;
+        auVar55._8_4_ = in_stack_33;
         auVar15._12_4_ = in_stack_34;
-        auVar15._0_12_ = auVar54;
+        auVar15._0_12_ = auVar55;
         auVar15._16_4_ = fVar10;
         auVar15._20_4_ = in_stack_36;
         auVar15._24_4_ = in_stack_37;
@@ -982,18 +990,18 @@ code_?:
         auVar15._40_4_ = in_stack_41;
         unaff_retaddr = in_stack_42;
         method = (MethodInfo *)in_stack_44;
-        uStack65 = in_stack_45;
-        auVar53._16_8_ = auVar1._4_8_;
-        auVar53._24_4_ = 0;
-        uVar52 = auVar54._4_8_;
+        uStack66 = in_stack_45;
+        auVar54._16_8_ = auVar1._4_8_;
+        auVar54._24_4_ = 0;
+        uVar53 = auVar55._4_8_;
         goto code_?;
       }
     }
   }
 code_?:
   func_?();
-  pcVar66 = (code *)swi(3);
-  (*pcVar66)();
+  pcVar67 = (code *)swi(3);
+  (*pcVar67)();
   return;
 }
 
@@ -1011,8 +1019,13 @@ Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_DoRaycast
     uVar3 = pVVar1->x;
     uVar4 = pVVar1->y;
     fVar5 = pVVar1->z;
+    if ((this->fields).isLockedOn == 0) {
+      distance = (this->fields).maxRayRange;
+    }
+    else {
+      distance = (this->fields).maxLockOnRange;
+    }
     pMVar6 = (this->fields)._.owner;
-    distance = (&(this->fields).maxRayRange)[(this->fields).isLockedOn != 0];
     if (pMVar6 != (MVPickupOwner *)0x0) {
       ignoreWoIds = (HashSet_1_System_Int32_ *)
                     (*(code *)(pMVar6->klass->vtable).get_IgnoreWOIDs.method)
@@ -1269,7 +1282,12 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_HandleRaycastResu
     if (pPVar4 != (ParticleSystem *)0x0) {
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
       ParticleSystem_get_collision(pPVar4,(MethodInfo *)0x0);
-      fVar2 = (&(this->fields).maxRayRange)[(this->fields).isLockedOn != 0];
+      if ((this->fields).isLockedOn == 0) {
+        fVar2 = (this->fields).maxRayRange;
+      }
+      else {
+        fVar2 = (this->fields).maxLockOnRange;
+      }
       fVar5 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
               ParticleSystem_MainModule_get_startSpeedMultiplier_Injected
                         ((ParticleSystem_MainModule *)&stack0xfffffff8,(MethodInfo *)0x0);
@@ -1516,10 +1534,10 @@ bool Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_IsDirectionValid
   pMVar3 = (this->fields)._.owner;
   if (pMVar3 != (MVPickupOwner *)0x0) {
     pVVar4 = MVPickupOwner::MVPickupOwner_get_LookDirection(&VStack_5,pMVar3,(MethodInfo *)0x0);
-    uVar6._0_4_ = pVVar4->x;
-    uVar6._4_4_ = pVVar4->y;
     VStack_5.z = 0.0;
     VStack_5.x = direction.y;
+    uVar6._0_4_ = pVVar4->x;
+    uVar6._4_4_ = pVVar4->y;
     VStack_5.y = direction.z;
     fVar7 = (float10)func_?(uVar6);
     pGVar1 = (this->fields).stuckObject;
@@ -1549,9 +1567,13 @@ bool Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_IsDirectionValid
         if (_UNK_? <= (float)fVar7) {
           fVar14 = (float)fVar7;
         }
-        fVar14 = (_UNK_? -
-                 fVar14 / (&(this->fields).maxRayRange)[(this->fields).isLockedOn != 0]) *
-                 _UNK_? + _UNK_?;
+        if ((this->fields).isLockedOn == 0) {
+          fVar15 = (this->fields).maxRayRange;
+        }
+        else {
+          fVar15 = (this->fields).maxLockOnRange;
+        }
+        fVar14 = (_UNK_? - fVar14 / fVar15) * _UNK_? + _UNK_?;
         if ((fVar14 < fStack_8) ||
            (fStack_8 <
             (float)((uint)fVar14 ^
@@ -1580,8 +1602,8 @@ bool Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_IsDirectionValid
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  bVar2 = (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  bVar2 = (*pcVar16)();
   return bVar2;
 }
 
@@ -1742,6 +1764,7 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_OnEquip
                (PickUpItemHealRay *this,MethodInfo *method)
 
 {
+  pPVar1 = this;
   if (cRam_? == '\0') {
     func_?(&
                     UnityEngine__ParticleSystemRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystemRenderer>__
@@ -1749,66 +1772,66 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_OnEquip
     cRam_? = '\x01';
   }
   PickupItem::PickupItem_OnEquip((PickupItem *)this,(MethodInfo *)0x0);
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                     ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar1 != (Transform *)0x0) {
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (this_00 != (Transform *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
-    uVar3 = pVVar2->x;
-    fVar4 = pVVar2->z;
-    pMVar5 = (this->fields)._.owner;
-    if (pMVar5 != (MVPickupOwner *)0x0) {
-      puVar6 = &UNK_?;
+                       ((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
+    fVar3 = pVVar2->z;
+    pMVar4 = (this->fields)._.owner;
+    if (pMVar4 != (MVPickupOwner *)0x0) {
       pVVar2 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                         ((Vector3 *)&stack0xfffffff0,pMVar5,(MethodInfo *)0x0);
-      pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                         ((Quaternion *)&stack0xffffffec,*pVVar2,(MethodInfo *)0x0);
-      position.y = (float)puVar6;
-      position.x = (float)uVar3;
-      position.z = fVar4;
-      pPVar8 = OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
-                         (PoolEnums__Enum_HealRaySparks,position,*pQVar7,(Nullable_1_Single_)0x0,
-                          (Nullable_1_UnityEngine_Color_)ZEXT820(0),(MethodInfo *)0x0);
-      (this->fields).hitParticles = pPVar8;
+                         ((Vector3 *)&stack0xfffffff0,pMVar4,(MethodInfo *)0x0);
+      pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                         ((Quaternion *)&stack0xffffffd8,*pVVar2,(MethodInfo *)0x0);
+      position.y = 0.0;
+      position.x = pQVar5->w;
+      position.z = fVar3;
+      fVar6 = 0.0;
+      this = (PickUpItemHealRay *)0x0;
+      pPVar7 = OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
+                         (PoolEnums__Enum_HealRaySparks,position,*pQVar5,(Nullable_1_Single_)0x0,
+                          (Nullable_1_UnityEngine_Color_)CONCAT812(CONCAT44(this,fVar6),ZEXT812(0))
+                          ,(MethodInfo *)0x0);
+      (pPVar1->fields).hitParticles = pPVar7;
       func_?();
-      pPVar8 = (this->fields).hitParticles;
-      if (pPVar8 != (ParticleSystem *)0x0) {
+      pPVar7 = (pPVar1->fields).hitParticles;
+      if (pPVar7 != (ParticleSystem *)0x0) {
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                  (pPVar8,(MethodInfo *)0x0);
-        pMVar5 = (this->fields)._.owner;
-        if (pMVar5 != (MVPickupOwner *)0x0) {
-          if ((pMVar5->fields)._IsLocal_k__BackingField == 0) {
+                  (pPVar7,(MethodInfo *)0x0);
+        pMVar4 = (pPVar1->fields)._.owner;
+        if (pMVar4 != (MVPickupOwner *)0x0) {
+          if ((pMVar4->fields)._IsLocal_k__BackingField == 0) {
             return;
           }
-          pPVar8 = (this->fields).rayParticles;
-          if (pPVar8 != (ParticleSystem *)0x0) {
-            pPVar9 = (ParticleSystemRenderer *)
+          pPVar7 = (pPVar1->fields).rayParticles;
+          if (pPVar7 != (ParticleSystem *)0x0) {
+            pPVar8 = (ParticleSystemRenderer *)
                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                               ((Component *)pPVar8,
+                               ((Component *)pPVar7,
                                 UnityEngine__ParticleSystemRenderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystemRenderer>__
                                );
-            (this->fields).particleRenderer = pPVar9;
+            (pPVar1->fields).particleRenderer = pPVar8;
             func_?();
-            pPVar9 = (this->fields).particleRenderer;
-            if (pPVar9 != (ParticleSystemRenderer *)0x0) {
-              pMVar10 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                  ((Renderer *)pPVar9,(MethodInfo *)0x0);
-              (this->fields).normalRayMaterial = pMVar10;
+            pPVar8 = (pPVar1->fields).particleRenderer;
+            if (pPVar8 != (ParticleSystemRenderer *)0x0) {
+              pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                 ((Renderer *)pPVar8,(MethodInfo *)0x0);
+              (pPVar1->fields).normalRayMaterial = pMVar9;
               func_?();
-              pPVar9 = (this->fields).particleRenderer;
-              if (pPVar9 != (ParticleSystemRenderer *)0x0) {
+              pPVar8 = (pPVar1->fields).particleRenderer;
+              if (pPVar8 != (ParticleSystemRenderer *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                          ((Renderer *)pPVar9,(this->fields).ZIgnoreMaterial,(MethodInfo *)0x0);
-                (this->fields).remoteMuzzlePoint = (this->fields)._.muzzlePoint;
+                          ((Renderer *)pPVar8,(pPVar1->fields).ZIgnoreMaterial,(MethodInfo *)0x0);
+                (pPVar1->fields).remoteMuzzlePoint = (pPVar1->fields)._.muzzlePoint;
                 func_?();
-                (this->fields).remoteParticleSystem = (this->fields).rayParticles;
-                func_?(&(this->fields).remoteParticleSystem);
-                pTVar1 = (this->fields).localMuzzePoint;
-                (this->fields)._.muzzlePoint = pTVar1;
-                func_?(&(this->fields)._.muzzlePoint,pTVar1);
-                pPVar8 = (this->fields).localRayParticles;
-                (this->fields).rayParticles = pPVar8;
-                func_?(&(this->fields).rayParticles,pPVar8);
+                (pPVar1->fields).remoteParticleSystem = (pPVar1->fields).rayParticles;
+                func_?();
+                (pPVar1->fields)._.muzzlePoint = (pPVar1->fields).localMuzzePoint;
+                func_?(&(pPVar1->fields)._.muzzlePoint);
+                pPVar7 = (pPVar1->fields).localRayParticles;
+                (pPVar1->fields).rayParticles = pPVar7;
+                func_?(&(pPVar1->fields).rayParticles,pPVar7);
                 return;
               }
             }
@@ -1818,8 +1841,8 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_OnEquip
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -2851,63 +2874,55 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_UpdateRayParticle
       pTVar4 = (this->fields)._.muzzlePoint;
       if (pTVar4 == (Transform *)0x0) goto code_?;
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         (&VStack_6,pTVar4,(MethodInfo *)0x0);
-      uStack_7._0_4_ = pVVar5->x;
-      uStack_7._4_4_ = pVVar5->y;
-      fStack_8 = pVVar5->z - direction.y * _UNK_?;
-      uStack_2 = CONCAT44((float)uStack_7._4_4_ - direction.x * _UNK_?,
-                           (float)(undefined4)uStack_7 -
-                           hitVoxel.interactionFlags._4_4_ * _UNK_?);
-      fStack_3 = fStack_8;
+                         ((Vector3 *)&stack0xffffffcc,pTVar4,(MethodInfo *)0x0);
+      uVar6 = pVVar5->x;
+      uVar7 = pVVar5->y;
+      fStack_3 = pVVar5->z - direction.y * _UNK_?;
+      uStack_2 = CONCAT44((float)uVar7 - direction.x * _UNK_?,
+                           (float)uVar6 - hitVoxel.interactionFlags._4_4_ * _UNK_?);
     }
-    fVar9 = (float)uStack_2 + hitVoxel.interactionFlags._4_4_ * (float)hitVoxel.cube;
-    fStack_10 = uStack_2._4_4_ + direction.x * (float)hitVoxel.cube;
-    fStack_11 = fStack_3 + direction.y * (float)hitVoxel.cube;
-    uVar12 = 0;
-    uVar13 = 0;
+    fVar8 = (float)uStack_2 + hitVoxel.interactionFlags._4_4_ * (float)hitVoxel.cube;
+    uStack_2._4_4_ = uStack_2._4_4_ + direction.x * (float)hitVoxel.cube;
+    fStack_3 = fStack_3 + direction.y * (float)hitVoxel.cube;
     pTVar4 = (this->fields)._.muzzlePoint;
     if (pTVar4 != (Transform *)0x0) {
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         (&VStack_6,pTVar4,(MethodInfo *)0x0);
-      uVar14 = pVVar5->x;
-      uVar15 = pVVar5->y;
-      fStack_8 = fStack_11 - pVVar5->z;
-      uStack_7 = CONCAT44(fStack_10 - (float)uVar15,fVar9 - (float)uVar14);
-      fStack_3 = fStack_8;
-      fVar16 = (float10)func_?(&uStack_7,0);
-      fStack_17 = (float)fVar16;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                ((Vector3 *)&stack0xffffffcc,pTVar4,(MethodInfo *)0x0);
+      fVar9 = (float10)func_?(&stack0xffffffd8);
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__VehiclePickupOwner,uVar12,uVar13);
+        func_?();
         cRam_? = '\x01';
       }
-      fStack_8 = fStack_11;
-      if (((((this->fields).isLockedOn == 0) &&
-           (pMVar1 = (this->fields)._.owner, pMVar1 != (MVPickupOwner *)0x0)) &&
-          (pMVar18 = pMVar1->klass,
-          (TypeInfo__VehiclePickupOwner->_1).naturalAligment <= (pMVar18->_1).naturalAligment)) &&
-         ((pMVar18->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).naturalAligment - 1] ==
-          (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
-        pMVar1 = (this->fields)._.owner;
-        uStack_7._0_4_ = (pMVar1->fields).lookOrigin.x;
-        uStack_7._4_4_ = (pMVar1->fields).lookOrigin.y;
-        fStack_10 = (float)uStack_7._4_4_ + direction.x * (float)hitVoxel.cube;
-        fStack_8 = (pMVar1->fields).lookOrigin.z + direction.y * (float)hitVoxel.cube;
+      uStack_2._0_4_ = fVar8;
+      if (((this->fields).isLockedOn == 0) &&
+         (pMVar1 = (this->fields)._.owner, pMVar1 != (MVPickupOwner *)0x0)) {
+        pMVar10 = pMVar1->klass;
+        if (((TypeInfo__VehiclePickupOwner->_1).naturalAligment <= (pMVar10->_1).naturalAligment) &&
+           ((pMVar10->_1).typeHierarchy[(TypeInfo__VehiclePickupOwner->_1).naturalAligment - 1] ==
+            (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
+          pMVar1 = (this->fields)._.owner;
+          uVar11 = (pMVar1->fields).lookOrigin.x;
+          uVar12 = (pMVar1->fields).lookOrigin.y;
+          uStack_2._0_4_ = (float)uVar11 + hitVoxel.interactionFlags._4_4_ * (float)hitVoxel.cube;
+          fStack_3 = (pMVar1->fields).lookOrigin.z + direction.y * (float)hitVoxel.cube;
+          uStack_2._4_4_ = (float)uVar12 + direction.x * (float)hitVoxel.cube;
+        }
       }
-      hitPosition.y = fStack_10;
-      hitPosition.x = fStack_17;
-      hitPosition.z = fStack_8;
+      hitPosition.y = uStack_2._4_4_;
+      hitPosition.x = (float)uStack_2;
+      hitPosition.z = fStack_3;
       firingDirection.y = direction.x;
       firingDirection.x = hitVoxel.interactionFlags._4_4_;
       firingDirection.z = direction.y;
       PickUpItemHealRay_OnHitParticleUpdate
-                (this,hitPosition,firingDirection,fStack_17,(MethodInfo *)0x0);
+                (this,hitPosition,firingDirection,(float)fVar9,(MethodInfo *)0x0);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -3026,7 +3041,12 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_UpdateRaycastRemo
                (ParticleSystem *)
                UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
                ParticleSystem_get_collision(pPVar3,(MethodInfo *)0x0);
-          fVar5 = (&(this->fields).maxRayRange)[(this->fields).isLockedOn != 0];
+          if ((this->fields).isLockedOn == 0) {
+            fVar5 = (this->fields).maxRayRange;
+          }
+          else {
+            fVar5 = (this->fields).maxLockOnRange;
+          }
           fStack_6 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
                       ParticleSystem_MainModule_get_startSpeedMultiplier_Injected
                                 (&PStack_4,(MethodInfo *)0x0);

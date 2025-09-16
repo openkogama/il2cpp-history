@@ -485,8 +485,8 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Update
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
+  puStack_4 = &stack0xffffffa8;
+  puVar5 = &stack0xffffffa8;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
@@ -528,12 +528,12 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Update
          *)0x0) {
       method_00 = (MethodInfo *)&UNK_?;
       pDVar7 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-                StyleSheetCache+SheetHandleKey,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                          (&DStack_8,this_02,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__
-                          );
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                         (&DStack_8,this_02,
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__
+                         );
       DStack_8._currentValue = (Object *)&DStack_6;
       DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
       DStack_6._index = pDVar7->_index;
@@ -543,65 +543,64 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Update
       uStack_1 = 1;
 code_?:
       bVar9 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-               UInt32,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                         (&DStack_6,
-                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
-                         );
+              Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+              UInt32,System::Object]::
+              Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                        (&DStack_6,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
+                        );
       pOVar10 = DStack_6._currentValue;
       if (bVar9 != 0) {
         pOStack_11 = DStack_6._currentValue;
         if (DStack_6._currentValue == (Object *)0x0) goto code_?;
         pOStack_12 = (DStack_6._currentValue)->klass;
         uVar13 = 0;
-        pOStack_14 = (Object__Class *)0x0;
-        sVar15._0_1_ = (pOStack_12->_1).rank;
-        sVar15._1_1_ = (pOStack_12->_1).minimumAlignment;
-        if (sVar15 != 0) {
+        uStack_14 = 0;
+        uVar15._0_1_ = (pOStack_12->_1).rank;
+        uVar15._1_1_ = (pOStack_12->_1).minimumAlignment;
+        uStack_16 = (uint)uVar15;
+        if (uVar15 != 0) {
           do {
             if (pOStack_12->interfaceOffsets[uVar13].interfaceType ==
                 (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-              ppMVar16 = &(&((DStack_6._currentValue)->klass->vtable).GetHashCode)
+              ppMVar17 = &(&((DStack_6._currentValue)->klass->vtable).GetHashCode)
                           [(DStack_6._currentValue)->klass->interfaceOffsets[uVar13].offset].method
               ;
               goto code_?;
             }
             uVar13 = uVar13 + 1;
-            uVar17._0_1_ = ((DStack_6._currentValue)->klass->_1).rank;
-            uVar17._1_1_ = ((DStack_6._currentValue)->klass->_1).minimumAlignment;
-          } while (uVar13 < uVar17);
+          } while (uVar13 < uVar15);
         }
-        ppMVar16 = (MethodInfo **)
+        ppMVar17 = (MethodInfo **)
                    func_?(DStack_6._currentValue,TypeInfo__IInputSignalReceiver,2);
 code_?:
-        uVar18 = (*(code *)*ppMVar16)(pOVar10,ppMVar16[1]);
-        uVar13 = 0;
+        uVar18 = (*(code *)*ppMVar17)(pOVar10,ppMVar17[1]);
+        uVar15 = 0;
         pMStack_19 = (MethodInfo *)CONCAT31(pMStack_19._1_3_,uVar18);
-        pOStack_14 = pOVar10->klass;
-        pOStack_12 = (Object__Class *)0x0;
-        sVar20._0_1_ = (pOStack_14->_1).rank;
-        sVar20._1_1_ = (pOStack_14->_1).minimumAlignment;
+        pOStack_12 = pOVar10->klass;
+        uStack_16 = 0;
+        sVar20._0_1_ = (pOStack_12->_1).rank;
+        sVar20._1_1_ = (pOStack_12->_1).minimumAlignment;
         if (sVar20 != 0) {
           do {
-            if (pOStack_14->interfaceOffsets[uVar13].interfaceType ==
+            if (pOStack_12->interfaceOffsets[uVar15].interfaceType ==
                 (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
               pOVar21 = pOStack_11->klass;
-              iVar22 = pOVar21->interfaceOffsets[uVar13].offset;
+              iVar22 = pOVar21->interfaceOffsets[uVar15].offset;
               method_00 = pMStack_19;
               (*(code *)(&(pOVar21->vtable).Equals)[iVar22].method)
                         (pOStack_11,pMStack_19,(&(pOVar21->vtable).Finalize)[iVar22].methodPtr);
               goto code_?;
             }
-            uVar13 = uVar13 + 1;
-            uVar23._0_1_ = (pOStack_11->klass->_1).rank;
-            uVar23._1_1_ = (pOStack_11->klass->_1).minimumAlignment;
+            uVar15 = uVar15 + 1;
+            uVar13._0_1_ = (pOStack_11->klass->_1).rank;
+            uVar13._1_1_ = (pOStack_11->klass->_1).minimumAlignment;
             pOVar10 = pOStack_11;
-          } while (uVar13 < uVar23);
+          } while (uVar15 < uVar13);
         }
-        puVar24 = (undefined4 *)func_?(pOVar10,TypeInfo__IInputSignalReceiver,0);
+        puVar23 = (undefined4 *)func_?(pOVar10,TypeInfo__IInputSignalReceiver,0);
         method_00 = pMStack_19;
-        (*(code *)*puVar24)(pOVar10,pMStack_19,puVar24[1]);
+        (*(code *)*puVar23)(pOVar10,pMStack_19,puVar23[1]);
         goto code_?;
       }
       uStack_1 = 0xffffffff;
@@ -611,8 +610,8 @@ code_?:
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__
                  ,method_00);
       uStack_1 = 0xffffffff;
-      piVar25 = &(this->fields)._TimeStamp_k__BackingField;
-      *piVar25 = *piVar25 + 100;
+      piVar24 = &(this->fields)._TimeStamp_k__BackingField;
+      *piVar24 = *piVar24 + 100;
       if ((this->fields).trackLoops != 0) {
         if (cRam_? == '\0') {
           func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
@@ -633,8 +632,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

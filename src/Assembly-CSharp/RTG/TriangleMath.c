@@ -896,21 +896,23 @@ bool Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_RaycastWire
   bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
                      ((Plane *)&stack0xffffffd4,ray_01,(float *)&puStack_1,(MethodInfo *)0x0);
   fVar4 = fVar4;
+  fVar5 = fVar5;
   if (bVar7 == 0) {
 code_?:
+    ray.m_Direction.x = fVar5;
     ray.m_Origin.z = fVar4;
-    ray.m_Origin.y = ray.m_Direction.z;
     if (epsilon._extrudeEps != 0.0) {
       ray.m_Direction.z = 0.0;
       ray.m_Origin.x = ray.m_Direction.y;
+      ray.m_Origin.y = 0.0;
       v1.y = ray.m_Direction.y;
       v1.x = ray.m_Direction.x;
-      v1.z = ray.m_Origin.y;
-      v2.y = fVar5;
+      v1.z = 0.0;
+      v2.y = ray.m_Direction.x;
       v2.x = ray.m_Origin.z;
       v2.z = fVar6;
       fVar4 = ray.m_Origin.z;
-      ray.m_Direction.x = fVar5;
+      fVar5 = ray.m_Direction.x;
       ray.m_Direction.y = fVar6;
       fVar8 = Vector3Ex::Vector3Ex_AbsDot(v1,v2,(MethodInfo *)0x0);
       ray.m_Direction.z = 0.0;

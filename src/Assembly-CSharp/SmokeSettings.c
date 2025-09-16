@@ -237,18 +237,13 @@ code_?:
         pSVar8 = (pSVar1->fields).color;
         pIVar12 = (pSVar1->fields).preview;
         if (pSVar8 != (Single__Array *)0x0) {
-          if ((pSVar8->max_length == 0) || (pSVar8->max_length < 2)) goto code_?;
-          if (pSVar8 != (Single__Array *)0x0) {
-            if (pSVar8->max_length < 3) goto code_?;
-            if (pSVar8 != (Single__Array *)0x0) {
-              if (pSVar8->max_length < 4) goto code_?;
-              if (pIVar12 != (Image *)0x0) {
-                (*(code *)(pIVar12->klass->vtable).set_color.method)
-                          (pIVar12,pSVar8->vector[0],pSVar8->vector[1],pSVar8->vector[2],
-                           pSVar8->vector[3],(pIVar12->klass->vtable).get_raycastTarget.methodPtr);
-                return;
-              }
-            }
+          if ((((pSVar8->max_length == 0) || (pSVar8->max_length < 2)) ||
+              (pSVar8->max_length < 3)) || (pSVar8->max_length < 4)) goto code_?;
+          if (pIVar12 != (Image *)0x0) {
+            (*(code *)(pIVar12->klass->vtable).set_color.method)
+                      (pIVar12,pSVar8->vector[0],pSVar8->vector[1],pSVar8->vector[2],
+                       pSVar8->vector[3],(pIVar12->klass->vtable).get_raycastTarget.methodPtr);
+            return;
           }
         }
       }
@@ -293,10 +288,10 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_OnSettingChanged
       if (bVar1 == 0) {
         bVar1 = mscorlib.dll::System::String::String_op_Equality
                           (key,StringLiteral_alpha,(MethodInfo *)0x0);
-        pOVar2 = pORam00000010;
         if (bVar1 == 0) {
-          if (pSRam00000014 != (SettingsBase *)0x0) {
-            SettingsBase::SettingsBase_OnSettingChanged(pSRam00000014,key,value,(MethodInfo *)0x0);
+          pSVar2 = (this->fields).settingsBase;
+          if (pSVar2 != (SettingsBase *)0x0) {
+            SettingsBase::SettingsBase_OnSettingChanged(pSVar2,key,value,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -305,27 +300,27 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_OnSettingChanged
             return;
           }
         }
-        else if (pORam00000010 != (Object *)0x0) {
-          if (value != (Object *)0x0) {
-            if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-            goto code_?;
-            puVar3 = (undefined4 *)func_?();
-            if (pOVar2[1].monitor < (MonitorData *)0x4) goto code_?;
-            pOVar2[3].monitor = (MonitorData *)*puVar3;
-            if (pSRam00000014 != (SettingsBase *)0x0) {
-              SettingsBase::SettingsBase_OnSettingChanged
-                        (pSRam00000014,StringLiteral_color,pORam00000010,(MethodInfo *)0x0);
-              if (pORam00000010 != (Object *)0x0) {
-                if ((pORam00000010[1].monitor == (MonitorData *)0x0) ||
-                   (pORam00000010[1].monitor < (MonitorData *)0x2)) goto code_?;
-                if (pORam00000010 != (Object *)0x0) {
-                  if (pORam00000010[1].monitor < (MonitorData *)0x3) goto code_?;
-                  if (pORam00000010 != (Object *)0x0) {
-                    if (pORam00000010[1].monitor < (MonitorData *)0x4) goto code_?;
-                    if (iRam_? != 0) {
-                      func_?(0x17);
-                      return;
-                    }
+        else {
+          pSVar3 = (this->fields).color;
+          if (pSVar3 != (Single__Array *)0x0) {
+            if (value != (Object *)0x0) {
+              if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+              goto code_?;
+              pfVar4 = (float *)func_?();
+              if (pSVar3->max_length < 4) goto code_?;
+              pSVar3->vector[3] = *pfVar4;
+              pSVar2 = (this->fields).settingsBase;
+              if (pSVar2 != (SettingsBase *)0x0) {
+                SettingsBase::SettingsBase_OnSettingChanged
+                          (pSVar2,StringLiteral_color,(Object *)(this->fields).color,
+                           (MethodInfo *)0x0);
+                pSVar3 = (this->fields).color;
+                if (pSVar3 != (Single__Array *)0x0) {
+                  if (((pSVar3->max_length == 0) || (pSVar3->max_length < 2)) ||
+                     ((pSVar3->max_length < 3 || (pSVar3->max_length < 4)))) goto code_?;
+                  if ((this->fields).preview != (Image *)0x0) {
+                    func_?(0x17);
+                    return;
                   }
                 }
               }
@@ -334,13 +329,13 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_OnSettingChanged
         }
       }
       else {
-        pSVar4 = (this->fields).color;
-        if (pSVar4 != (Single__Array *)0x0) {
+        pSVar3 = (this->fields).color;
+        if (pSVar3 != (Single__Array *)0x0) {
           if (value != (Object *)0x0) {
             if ((value->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-              pfVar5 = (float *)func_?();
-              if (pSVar4->max_length < 3) goto code_?;
-              pSVar4->vector[2] = *pfVar5;
+              pfVar4 = (float *)func_?();
+              if (pSVar3->max_length < 3) goto code_?;
+              pSVar3->vector[2] = *pfVar4;
               goto code_?;
             }
             goto code_?;
@@ -349,45 +344,40 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_OnSettingChanged
       }
       goto code_?;
     }
-    pSVar4 = (this->fields).color;
-    if (pSVar4 == (Single__Array *)0x0) goto code_?;
+    pSVar3 = (this->fields).color;
+    if (pSVar3 == (Single__Array *)0x0) goto code_?;
     if (value == (Object *)0x0) goto code_?;
     if ((value->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar5 = (float *)func_?(value);
-      if (pSVar4->max_length < 2) goto code_?;
-      pSVar4->vector[1] = *pfVar5;
+      pfVar4 = (float *)func_?(value);
+      if (pSVar3->max_length < 2) goto code_?;
+      pSVar3->vector[1] = *pfVar4;
       goto code_?;
     }
   }
   else {
-    pSVar4 = (this->fields).color;
-    if (pSVar4 != (Single__Array *)0x0) {
+    pSVar3 = (this->fields).color;
+    if (pSVar3 != (Single__Array *)0x0) {
       if (value != (Object *)0x0) {
         if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
         goto code_?;
-        pfVar5 = (float *)func_?(value);
-        if (pSVar4->max_length == 0) goto code_?;
-        pSVar4->vector[0] = *pfVar5;
+        pfVar4 = (float *)func_?(value);
+        if (pSVar3->max_length == 0) goto code_?;
+        pSVar3->vector[0] = *pfVar4;
 code_?:
-        this_00 = (this->fields).settingsBase;
-        if (this_00 != (SettingsBase *)0x0) {
+        pSVar2 = (this->fields).settingsBase;
+        if (pSVar2 != (SettingsBase *)0x0) {
           SettingsBase::SettingsBase_OnSettingChanged
-                    (this_00,StringLiteral_color,(Object *)(this->fields).color,(MethodInfo *)0x0);
-          pSVar4 = (this->fields).color;
-          pIVar6 = (this->fields).preview;
-          if (pSVar4 != (Single__Array *)0x0) {
-            if ((pSVar4->max_length == 0) || (pSVar4->max_length < 2)) goto code_?;
-            fStack7 = pSVar4->vector[1];
-            if (pSVar4 != (Single__Array *)0x0) {
-              if (pSVar4->max_length < 3) goto code_?;
-              puStack8 = (undefined *)pSVar4->vector[2];
-              if (pSVar4 != (Single__Array *)0x0) {
-                if (pSVar4->max_length < 4) goto code_?;
-                if (pIVar6 != (Image *)0x0) {
-                  (*(code *)(pIVar6->klass->vtable).set_color.method)();
-                  return;
-                }
-              }
+                    (pSVar2,StringLiteral_color,(Object *)(this->fields).color,(MethodInfo *)0x0);
+          pSVar3 = (this->fields).color;
+          pIVar5 = (this->fields).preview;
+          if (pSVar3 != (Single__Array *)0x0) {
+            if ((((pSVar3->max_length == 0) || (pSVar3->max_length < 2)) ||
+                (fStack6 = pSVar3->vector[1], pSVar3->max_length < 3)) ||
+               (puStack7 = (undefined *)pSVar3->vector[2], pSVar3->max_length < 4))
+            goto code_?;
+            if (pIVar5 != (Image *)0x0) {
+              (*(code *)(pIVar5->klass->vtable).set_color.method)();
+              return;
             }
           }
         }
@@ -400,8 +390,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

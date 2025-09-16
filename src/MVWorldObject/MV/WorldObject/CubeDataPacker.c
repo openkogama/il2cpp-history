@@ -12,40 +12,43 @@ MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_ByteArrayToCo
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,8);
-  uVar2 = 0;
-  pVVar3 = pVVar1->vector;
-  while (byteArray != (Byte__Array *)0x0) {
-    if (byteArray->max_length <= uVar2) goto code_?;
-    bVar4 = byteArray->vector[uVar2];
-    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-    }
-    pVVar5 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
-    if (pVVar5 == (Vector3__Array *)0x0) break;
-    uVar6 = (uint)bVar4;
-    if (pVVar5->max_length <= uVar6) goto code_?;
-    if (pVVar1 == (Vector3__Array *)0x0) break;
-    fVar7 = pVVar5->vector[uVar6].y;
-    fVar8 = pVVar5->vector[uVar6].z;
-    if (pVVar1->max_length <= uVar2) goto code_?;
-    pVVar3->x = pVVar5->vector[uVar6].x;
-    pVVar3->y = fVar7;
-    uVar2 = uVar2 + 1;
-    pVVar3->z = fVar8;
-    pVVar3 = pVVar3 + 1;
-    if (7 < (int)uVar2) {
-      return pVVar1;
+  pVVar2 = pVVar1->vector;
+  uVar3 = 0;
+  if (byteArray == (Byte__Array *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    while (uVar3 < byteArray->max_length) {
+      bVar4 = byteArray->vector[uVar3];
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      }
+      pVVar5 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->bytePositionLookUpTable;
+      if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+      uVar6 = (uint)bVar4;
+      if (pVVar5->max_length <= uVar6) break;
+      if (pVVar1 == (Vector3__Array *)0x0) goto code_?;
+      fVar7 = pVVar5->vector[uVar6].y;
+      fVar8 = pVVar5->vector[uVar6].z;
+      if (pVVar1->max_length <= uVar3) break;
+      pVVar2->x = pVVar5->vector[uVar6].x;
+      pVVar2->y = fVar7;
+      uVar3 = uVar3 + 1;
+      pVVar2->z = fVar8;
+      pVVar2 = pVVar2 + 1;
+      if (7 < (int)uVar3) {
+        return pVVar1;
+      }
     }
   }
-  func_?();
-code_?:
   func_?();
   pcVar9 = (code *)swi(3);
   pVVar1 = (Vector3__Array *)(*pcVar9)();
@@ -197,9 +200,9 @@ MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_CornersToByte
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
-  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,8);
-  VStack_2.z = (float)corners->vector;
-  uStack_3 = 0;
+  VStack_1.z = (float)func_?(TypeInfo__System__Byte,8);
+  pVVar2 = corners->vector;
+  uVar3 = 0;
   if (corners == (Vector3__Array *)0x0) {
 code_?:
     func_?();
@@ -214,15 +217,15 @@ code_?:
     func_?(this,uVar4);
   }
   else {
-    while (uVar5 = uStack_3, uStack_3 < corners->max_length) {
-      VStack_2.x = ((Vector3 *)VStack_2.z)->x;
-      VStack_2.y = ((Vector3 *)VStack_2.z)->y;
-      fVar6 = ((Vector3 *)VStack_2.z)->z;
+    while (uVar3 < corners->max_length) {
+      VStack_1.x = pVVar2->x;
+      VStack_1.y = pVVar2->y;
+      fVar5 = pVVar2->z;
       if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
       }
-      VStack_7._0_8_ = VStack_2._0_8_;
-      VStack_7.z = fVar6;
+      VStack_6._0_8_ = VStack_1._0_8_;
+      VStack_6.z = fVar5;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
         func_?(&
@@ -236,78 +239,77 @@ code_?:
       if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
       }
-      pDVar8 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
-      if (pDVar8 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
-      key.z = fVar6;
-      key.x = VStack_2.x;
-      key.y = VStack_2.y;
-      bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::
+      pDVar7 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+      if (pDVar7 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
+      key.z = fVar5;
+      key.x = VStack_1.x;
+      key.y = VStack_1.y;
+      bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::
               Byte]::Dictionary_2_UnityEngine_Vector3_System_Byte__ContainsKey
-                        (pDVar8,key,
+                        (pDVar7,key,
                          MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__ContainsKey_UnityEngine__Vector3_
                         );
-      if (bVar9 == 0) {
+      if (bVar8 == 0) {
         index = 0;
         do {
           if (index == 0) {
-            fVar6 = VStack_7.x;
+            fVar5 = VStack_6.x;
           }
           else if (index == 1) {
-            fVar6 = VStack_7.y;
+            fVar5 = VStack_6.y;
           }
           else {
-            fVar6 = VStack_7.z;
+            fVar5 = VStack_6.z;
             if (index != 2) goto code_?;
           }
-          if (fVar6 == 0.0) {
+          if (fVar5 == 0.0) {
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                      (&VStack_7,index,0.0,(MethodInfo *)0x0);
+                      (&VStack_6,index,0.0,(MethodInfo *)0x0);
           }
           index = index + 1;
         } while (index < 3);
         if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
         }
-        pDVar8 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
-        if (pDVar8 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
-        fVar10 = VStack_7.x;
-        fVar11 = VStack_7.y;
-        fVar6 = VStack_7.z;
+        pDVar7 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+        if (pDVar7 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
+        fVar9 = VStack_6.x;
+        fVar10 = VStack_6.y;
+        fVar5 = VStack_6.z;
       }
       else {
         if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
-          VStack_7.y = (float)TypeInfo__MV__WorldObject__CubeDataPacker;
-          VStack_7.x = (float)&UNK_?;
+          VStack_6.y = (float)TypeInfo__MV__WorldObject__CubeDataPacker;
+          VStack_6.x = (float)&UNK_?;
           func_?();
         }
-        pDVar8 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
-        if (pDVar8 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
-        fVar10 = VStack_2.x;
-        fVar11 = VStack_2.y;
+        pDVar7 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->positionByteLookUpTable;
+        if (pDVar7 == (Dictionary_2_UnityEngine_Vector3_System_Byte_ *)0x0) goto code_?;
+        fVar9 = VStack_1.x;
+        fVar10 = VStack_1.y;
       }
-      key_00.y = fVar11;
-      key_00.x = fVar10;
-      key_00.z = fVar6;
-      uVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::
+      key_00.y = fVar10;
+      key_00.x = fVar9;
+      key_00.z = fVar5;
+      uVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::Vector3,System::
               Byte]::Dictionary_2_UnityEngine_Vector3_System_Byte__get_Item
-                        (pDVar8,key_00,
+                        (pDVar7,key_00,
                          MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Vector3,_unsigned_char>__get_Item_UnityEngine__Vector3_
                         );
-      if (pBVar1 == (Byte__Array *)0x0) goto code_?;
-      if (pBVar1->max_length <= uVar5) break;
-      uVar5 = uVar5 + 1;
-      pBVar1->vector[uStack_3] = uVar12;
-      VStack_2.z = (float)((int)VStack_2.z + 0xc);
-      uStack_3 = uVar5;
-      if (7 < (int)uVar5) {
-        return pBVar1;
+      if ((Byte__Array *)VStack_1.z == (Byte__Array *)0x0) goto code_?;
+      if (*(il2cpp_array_size_t *)((int)VStack_1.z + 0xc) <= uVar3) break;
+      ((uint8_t *)((int)VStack_1.z + 0x10))[uVar3] = uVar11;
+      pVVar2 = pVVar2 + 1;
+      uVar3 = uVar3 + 1;
+      if (7 < (int)uVar3) {
+        return (Byte__Array *)VStack_1.z;
       }
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pBVar1 = (Byte__Array *)(*pcVar13)();
-  return pBVar1;
+  pcVar12 = (code *)swi(3);
+  pBVar13 = (Byte__Array *)(*pcVar12)();
+  return pBVar13;
 }
 
 
@@ -323,8 +325,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_GetCompr
     cRam_? = '\x01';
   }
   uVar1 = 0;
-  bVar2 = true;
-  pCVar3 = TypeInfo__MV__WorldObject__CubeDataPacker;
+  pCVar2 = TypeInfo__MV__WorldObject__CubeDataPacker;
+  bVar3 = true;
   if (byteCorners == (Byte__Array *)0x0) {
 code_?:
     func_?();
@@ -334,39 +336,41 @@ code_?:
     (*pcVar4)();
     return;
   }
-  for (; (int)uVar1 < (int)byteCorners->max_length; uVar1 = uVar1 + 1) {
+  while (bVar5 = bVar3, (int)uVar1 < (int)byteCorners->max_length) {
     if (byteCorners->max_length <= uVar1) goto code_?;
-    uVar5 = byteCorners->vector[uVar1];
-    if ((pCVar3->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(pCVar3);
-      pCVar3 = TypeInfo__MV__WorldObject__CubeDataPacker;
+    uVar6 = byteCorners->vector[uVar1];
+    if ((pCVar2->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(pCVar2);
+      pCVar2 = TypeInfo__MV__WorldObject__CubeDataPacker;
     }
-    pBVar6 = pCVar3->static_fields->IdentityByteCorners;
-    if (pBVar6 == (Byte__Array *)0x0) goto code_?;
-    if (pBVar6->max_length <= uVar1) goto code_?;
-    bVar7 = false;
-    if (uVar5 == pBVar6->vector[uVar1]) {
-      bVar7 = bVar2;
+    pBVar7 = pCVar2->static_fields->IdentityByteCorners;
+    if (pBVar7 == (Byte__Array *)0x0) goto code_?;
+    if (pBVar7->max_length <= uVar1) goto code_?;
+    uVar8 = uVar1 + 1;
+    puVar9 = pBVar7->vector + uVar1;
+    uVar1 = uVar8;
+    bVar3 = false;
+    if (uVar6 == *puVar9) {
+      bVar3 = bVar5;
     }
-    bVar2 = bVar7;
   }
   uVar1 = 0;
-  bVar7 = true;
+  bVar3 = true;
   do {
     if (0 < (int)uVar1) {
       if (materials == (Byte__Array *)0x0) goto code_?;
       if ((materials->max_length <= uVar1 - 1) || (materials->max_length <= uVar1))
       goto code_?;
       if (materials->vector[uVar1 - 1] != materials->vector[uVar1]) {
-        bVar7 = false;
+        bVar3 = false;
       }
     }
     uVar1 = uVar1 + 1;
     if (5 < (int)uVar1) {
-      if (bVar2) {
+      if (bVar5) {
         *compressionFlags = *compressionFlags | 1;
       }
-      if (bVar7) {
+      if (bVar3) {
         *compressionFlags = *compressionFlags | 2;
       }
       return;
@@ -570,7 +574,6 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_WriteCom
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
-  uVar1 = 0;
   if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
   }
@@ -578,51 +581,51 @@ void MVWorldObject.dll::MV::WorldObject::CubeDataPacker::CubeDataPacker_WriteCom
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
     cRam_? = '\x01';
   }
+  pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
   uVar2 = 0;
-  bVar3 = true;
+  bVar3 = 1;
   if (byteCorners != (Byte__Array *)0x0) {
-    for (; (int)uVar2 < (int)byteCorners->max_length; uVar2 = uVar2 + 1) {
+    while (bVar4 = bVar3, (int)uVar2 < (int)byteCorners->max_length) {
       if (byteCorners->max_length <= uVar2) goto code_?;
-      uVar1 = CONCAT13(byteCorners->vector[uVar2],(int3)uVar1);
-      if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
+      uVar5 = byteCorners->vector[uVar2];
+      if ((pCVar1->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(pCVar1);
+        pCVar1 = TypeInfo__MV__WorldObject__CubeDataPacker;
       }
-      pBVar4 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners;
-      if (pBVar4 == (Byte__Array *)0x0) goto code_?;
-      if (pBVar4->max_length <= uVar2) goto code_?;
-      bVar5 = false;
-      if ((uint8_t)((uint)uVar1 >> 0x18) == pBVar4->vector[uVar2]) {
-        bVar5 = bVar3;
+      pBVar6 = pCVar1->static_fields->IdentityByteCorners;
+      if (pBVar6 == (Byte__Array *)0x0) goto code_?;
+      if (pBVar6->max_length <= uVar2) goto code_?;
+      uVar7 = uVar2 + 1;
+      puVar8 = pBVar6->vector + uVar2;
+      uVar2 = uVar7;
+      bVar3 = 0;
+      if (uVar5 == *puVar8) {
+        bVar3 = bVar4;
       }
-      bVar3 = bVar5;
     }
     uVar2 = 0;
-    bVar5 = true;
+    bVar9 = true;
     do {
       if (0 < (int)uVar2) {
         if (materials == (Byte__Array *)0x0) goto code_?;
         if ((materials->max_length <= uVar2 - 1) || (materials->max_length <= uVar2))
         goto code_?;
         if (materials->vector[uVar2 - 1] != materials->vector[uVar2]) {
-          bVar5 = false;
+          bVar9 = false;
         }
       }
       uVar2 = uVar2 + 1;
     } while ((int)uVar2 < 6);
-    bVar6 = (byte)((uint)uVar1 >> 0x10);
-    if (bVar3) {
-      bVar6 = 1;
-    }
-    if (bVar5) {
-      bVar6 = bVar6 | 2;
+    if (bVar9) {
+      bVar4 = bVar4 | 2;
     }
     if (bp != (BytePacker *)0x0) {
-      BytePacker::BytePacker_Write(bp,bVar6 | 4,(MethodInfo *)0x0);
-      if ((bVar6 & 1) == 0) {
+      BytePacker::BytePacker_Write(bp,bVar4 | 4,(MethodInfo *)0x0);
+      if ((bVar4 & 1) == 0) {
         BytePacker::BytePacker_Write_2(bp,byteCorners,0,byteCorners->max_length,(MethodInfo *)0x0);
       }
       if (materials != (Byte__Array *)0x0) {
-        if ((bVar6 & 2) == 0) {
+        if ((bVar4 & 2) == 0) {
           BytePacker::BytePacker_Write_2(bp,materials,0,materials->max_length,(MethodInfo *)0x0);
           return;
         }
@@ -638,8 +641,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

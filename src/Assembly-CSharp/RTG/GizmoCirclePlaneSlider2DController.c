@@ -68,16 +68,23 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
     this_00 = (pGVar1->fields).Circle;
-    pGVar2 = (pGVar1->fields).Slider;
-    if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-        (pGVar3 = (&(pGVar2->fields)._settings)
-                  [(pGVar2->fields)._sharedSettings != (GizmoPlaneSlider2DSettings *)0x0],
-        pGVar3 != (GizmoPlaneSlider2DSettings *)0x0)) && (this_00 != (CircleShape2D *)0x0)) {
-      SegmentShape2D::SegmentShape2D_set_RaycastEps
-                ((SegmentShape2D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
-      return;
+    pGVar2 = (((this->fields)._._data)->fields).Slider;
+    if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+        pGVar3 = (pGVar2->fields)._settings;
+        if (pGVar3 == (GizmoPlaneSlider2DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar3 = (pGVar2->fields)._sharedSettings;
+      }
+      if (this_00 != (CircleShape2D *)0x0) {
+        SegmentShape2D::SegmentShape2D_set_RaycastEps
+                  ((SegmentShape2D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
+code_?:
   uVar4 = func_?(&stack0xfffffff0);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
@@ -168,32 +175,39 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
             func_?();
             cRam_? = '\x01';
           }
-          iVar4 = *(int *)(in_stack_5 + 8);
-          iVar6 = *(int *)(in_stack_5 + 0x24);
-          if (((iVar4 != 0) &&
-              (iVar4 = *(int *)((uint)(*(int *)(iVar4 + 0xa4) != 0) * 4 + 0xa0 + iVar4), iVar4 != 0)
-              ) && (iVar6 != 0)) {
-            uVar7 = *(uint *)(iVar4 + 0x6c);
-            if (*(uint *)(iVar6 + 0xc) <= uVar7) {
-              func_?();
-              func_?();
-              pcVar8 = (code *)swi(3);
-              (*pcVar8)();
-              return;
+          iVar4 = *(int *)(in_stack_5 + 0x24);
+          iVar6 = *(int *)(in_stack_5 + 8);
+          if (iVar6 != 0) {
+            if (*(int *)(iVar6 + 0xa4) == 0) {
+              iVar6 = *(int *)(iVar6 + 0xa0);
+              if (iVar6 == 0) goto code_?;
             }
-            if (*(int *)(iVar6 + 0x10 + uVar7 * 4) != 0) {
-              func_?();
-              return;
+            else {
+              iVar6 = *(int *)(iVar6 + 0xa4);
+            }
+            if (iVar4 != 0) {
+              if (*(uint *)(iVar4 + 0xc) <= *(uint *)(iVar6 + 0x6c)) {
+                func_?();
+                func_?();
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              if (*(int *)(iVar4 + 0x10 + *(uint *)(iVar6 + 0x6c) * 4) != 0) {
+                func_?();
+                return;
+              }
             }
           }
         }
       }
     }
   }
+code_?:
   func_?();
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
