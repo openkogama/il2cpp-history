@@ -70,8 +70,8 @@ namespace UGUI.Desktop.Scripts.EditMode.SettingsBoxes.CustomGuns
 		private Image muzzleFlareColorImage;
 		[Header("Charge settings serialized fields")]
 		[SerializeField]
-		[Space(10f)]
 		[Space(20f)]
+		[Space(10f)]
 		private SettingsToggle chargeEnabledToggle;
 		[SerializeField]
 		private SettingsToggle chargeParticlesToggle;
