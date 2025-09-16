@@ -57,9 +57,9 @@ bool Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_GetCube
           uVar10 = pVVar6->x;
           uVar11 = pVVar6->y;
           fVar2 = (float)(int)((uint)(0.0 < VStack_7.y) * 2 + -1);
-          VStack_7.z = (float)puStack_9 + fVar2 * pVVar6->z * 0.5;
-          vector.y = uStack_8._4_4_ + fVar2 * (float)uVar11 * 0.5;
-          vector.x = (float)uStack_8 + fVar2 * (float)uVar10 * 0.5;
+          VStack_7.z = fVar2 * pVVar6->z * 0.5 + (float)puStack_9;
+          vector.y = fVar2 * (float)uVar11 * 0.5 + uStack_8._4_4_;
+          vector.x = fVar2 * (float)uVar10 * 0.5 + (float)uStack_8;
           vector.z = VStack_7.z;
           pVVar6 = MathFunctions::MathFunctions_RoundVector((Vector3 *)&stack0xffffffb8,vector,0,(MethodInfo *)0x0);
           uVar12 = pVVar6->x;

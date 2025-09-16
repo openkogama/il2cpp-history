@@ -849,12 +849,11 @@ List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::RTG::PrimitiveFactory::Primit
           fVar4 = (float)uStack_9 * (float)uStack_29 + uStack_9._4_4_ * uStack_29._4_4_ + fStack_10 * fStack_30;
           if (1e-05 < ABS(fVar4)) {
             fStack_37 = MathEx::MathEx_SafeAcos(fVar4,(MethodInfo *)0x0);
-            fStack_37 = fStack_37 * 57.29578;
             fStack_38 = fStack_33 * uStack_9._4_4_ - fStack_34 * uStack_29._4_4_;
             uStack_5 = CONCAT44(fStack_35 * fStack_34 - fStack_36 * fStack_33,fStack_36 * uStack_29._4_4_ - fStack_35 * uStack_9._4_4_);
             fStack_6 = fStack_38;
             pVVar1 = (Vector3 *)func_?(auStack_39);
-            pQVar40 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xfffffe60,90.0 - fStack_37,*pVVar1,(MethodInfo *)0x0);
+            pQVar40 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xfffffe60,90.0 - fStack_37 * 57.29578,*pVVar1,(MethodInfo *)0x0);
             point.z = uStack_11._4_4_;
             point.x = (float)(undefined4)uStack_23;
             point.y = (float)uStack_23._4_4_;

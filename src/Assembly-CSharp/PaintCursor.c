@@ -57,25 +57,24 @@ void Assembly-CSharp.dll::PaintCursor::PaintCursor_UpdateCursor(PaintCursor *thi
     CellCursor::CellCursor_set_Active(pCVar2,1,(MethodInfo *)0x0);
     uVar4._0_2_ = (selectedCube->fields).iLocalPos.x;
     uVar4._2_2_ = (selectedCube->fields).iLocalPos.y;
-    iVar5 = (selectedCube->fields).iLocalPos.z;
     if (targetCubeModel != (MVCubeModelBase *)0x0) {
       pCVar2 = (this->fields).paintCursor;
       cubeGameObject = (targetCubeModel->fields)._.gameObject;
       if (pCVar2 != (CellCursor *)0x0) {
         this_00 = CellCursor::CellCursor_GetCellCursor(pCVar2,(selectedCube->fields).iLocalPos,(MethodInfo *)0x0);
         if (this_00 != (CellCursorCubeLineMesh *)0x0) {
-          position.z = iVar5;
+          position.z = 0;
           position.x = (short)uVar4;
-          position.y = (short)((uint)uVar4 >> 0x10);
+          position.y = (short)(uVar4 >> 0x10);
           CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube(this_00,position,cubeGameObject,(MethodInfo *)0x0);
           if (isPainting != 0) {
-            pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-            if (((pGVar6 == (GameEventManager *)0x0) || (pGVar7 = (pGVar6->fields).AvatarCommandsBuildMode, pGVar7 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) || (pGVar8 = (pGVar7->fields).LaserCommands, pGVar8 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) goto code_?;
-            GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration(pGVar8,0.5,(MethodInfo *)0x0);
+            pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+            if (((pGVar5 == (GameEventManager *)0x0) || (pGVar6 = (pGVar5->fields).AvatarCommandsBuildMode, pGVar6 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) || (pGVar7 = (pGVar6->fields).LaserCommands, pGVar7 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) goto code_?;
+            GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration(pGVar7,0.5,(MethodInfo *)0x0);
           }
-          pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-          if (((pGVar6 != (GameEventManager *)0x0) && (pGVar7 = (pGVar6->fields).AvatarCommandsBuildMode, pGVar7 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar8 = (pGVar7->fields).LaserCommands, pGVar8 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-            GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(pGVar8,(selectedCube->fields).point,(MethodInfo *)0x0);
+          pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+          if (((pGVar5 != (GameEventManager *)0x0) && (pGVar6 = (pGVar5->fields).AvatarCommandsBuildMode, pGVar6 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (pGVar7 = (pGVar6->fields).LaserCommands, pGVar7 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+            GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(pGVar7,(selectedCube->fields).point,(MethodInfo *)0x0);
             return;
           }
         }
@@ -84,8 +83,8 @@ void Assembly-CSharp.dll::PaintCursor::PaintCursor_UpdateCursor(PaintCursor *thi
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

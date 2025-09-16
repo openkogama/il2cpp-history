@@ -227,13 +227,9 @@ code_?:
   func_?(data,pMVar1);
   pAVar16 = extraout_EDX_00;
 code_?:
-  pbVar20 = (byte *)func_?(unaff_EDI,pAVar16);
-  *pbVar20 = *pbVar20 ^ extraout_DL;
-  (unaff_EDI->_0).image = (Il2CppImage *)((MVBuildModeAvatarLocal_EditMode *)data)->klass;
-  *pbVar20 = *pbVar20 ^ extraout_DL;
-  swi(4);
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  func_?(unaff_EDI,pAVar16);
+  pcVar20 = (code *)swi(1);
+  (*pcVar20)();
   return;
 }
 
@@ -1113,7 +1109,7 @@ code_?:
   fVar19 = (pMVar1->fields)._XZMovementSpeedScale_k__BackingField;
   __return_storage_ptr__->x = fStack_22 * fVar20 * fVar13 * fVar19;
   __return_storage_ptr__->y = fStack_23 * fVar20 * fVar13 * fVar19;
-  __return_storage_ptr__->z = fVar20 * 3.4858225e-29 * fVar13 * fVar19;
+  __return_storage_ptr__->z = fVar20 * 3.4805936e-29 * fVar13 * fVar19;
   return __return_storage_ptr__;
 }
 

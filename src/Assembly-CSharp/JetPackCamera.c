@@ -118,9 +118,7 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_FocusOnObject(JetPackCame
     this_00 = (this->fields).mainCamera;
     if (this_00 != (Camera *)0x0) {
       fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(this_00,(MethodInfo *)0x0);
-      dVar5 = (double)(fVar4 * 0.5 * 0.7 * 0.017453292);
-      func_?();
-      fVar4 = SStack_1.m_value / (float)dVar5;
+      fStack_5 = SStack_1.m_value;
       puVar6 = (undefined8 *)(*(code *)(wo->klass->vtable).get_WorldPivot.method)(&VStack_3,wo,(wo->klass->vtable).get_InteractionFlags.methodPtr);
       uStack_7 = *puVar6;
       fStack_8 = *(float *)(puVar6 + 1);
@@ -134,9 +132,9 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_FocusOnObject(JetPackCame
           uStack_13._0_4_ = (this->fields).lookAtOffset.x;
           uStack_13._4_4_ = (this->fields).lookAtOffset.y;
           fStack_14 = (this->fields).lookAtOffset.z;
-          VStack_3.z = fStack_8 - (fStack_14 + pVVar11->z);
-          VStack_3.y = uStack_7._4_4_ - (uStack_13._4_4_ + VStack_12.y);
           VStack_3.x = (float)uStack_7 - ((float)uStack_13 + VStack_12.x);
+          VStack_3.y = uStack_7._4_4_ - (uStack_13._4_4_ + VStack_12.y);
+          VStack_3.z = fStack_8 - (fStack_14 + pVVar11->z);
           VStack_12.z = VStack_3.z;
           pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_12,pTVar10,(MethodInfo *)0x0);
           uStack_13._0_4_ = pVVar11->x;
@@ -146,7 +144,11 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_FocusOnObject(JetPackCame
           VStack_12._0_8_ = *puVar6;
           VStack_12.z = *(float *)(puVar6 + 1);
           fVar16 = (float10)func_?(&VStack_3,0);
-          fVar4 = (float)(fVar16 - (float10)fVar4);
+          fStack_17 = (float)fVar16;
+          dVar18 = (double)(fVar4 * 0.5 * 0.7 * 0.017453292);
+          VStack_3.x = (float)&UNK_?;
+          func_?();
+          fVar4 = fStack_17 - fStack_5 / (float)dVar18;
           VStack_3.z = fStack_14 + avatarOffset.z + VStack_12.z * fVar4;
           value.y = uStack_13._4_4_ + avatarOffset.y + VStack_12.y * fVar4;
           value.x = (float)uStack_13 + avatarOffset.x + VStack_12.x * fVar4;
@@ -184,8 +186,8 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_FocusOnObject(JetPackCame
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

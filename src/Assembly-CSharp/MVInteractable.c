@@ -137,13 +137,10 @@ code_?:
   }
   uVar9 = func_?();
 code_?:
-  piVar13 = (int *)func_?(uVar9);
-  *(char *)piVar13 = (char)*piVar13 - extraout_DL;
-  lVar14 = (longlong)((int)piVar13 * *piVar13) * (longlong)*(int *)((int)piVar13 * *piVar13);
-  pcVar15 = (char *)CONCAT22((short)((ulonglong)lVar14 >> 0x10),CONCAT11((char)((ulonglong)lVar14 >> 8) + extraout_CL + ((int)lVar14 != lVar14),(char)lVar14));
-  *pcVar15 = *pcVar15 - (char)((ulonglong)lVar14 >> 0x20);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?(uVar9);
+  cRam_? = (cRam_? - extraout_DL) + -0x28;
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

@@ -7,21 +7,19 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_AddObject(Inv
   pIVar1 = (this->fields).inventorySlots;
   if (pIVar1 != (InventorySlots *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_);
+      func_?();
       cRam_? = '\x01';
     }
     this_00 = (pIVar1->fields).inventorySlots;
-    if (this_00 != (Dictionary_2_System_Int32_InventorySlot_ *)0x0) {
-      this_01 = (InventorySlot *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,slotIndex,MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_);
-      if (this_01 != (InventorySlot *)0x0) {
-        InventorySlot::InventorySlot_Set(this_01,item,(MethodInfo *)0x0);
-        return;
-      }
+    if ((this_00 != (Dictionary_2_System_Int32_InventorySlot_ *)0x0) && (this_01 = (InventorySlot *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,slotIndex,MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_), this_01 != (InventorySlot *)0x0)) {
+      InventorySlot::InventorySlot_Set(this_01,item,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -201,21 +199,19 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_HighlightSlot
   pIVar1 = (this->fields).inventorySlots;
   if (pIVar1 != (InventorySlots *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_);
+      func_?();
       cRam_? = '\x01';
     }
     this_00 = (pIVar1->fields).inventorySlots;
-    if (this_00 != (Dictionary_2_System_Int32_InventorySlot_ *)0x0) {
-      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,slotPosition,MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_);
-      if ((pOVar2 != (Object *)0x0) && ((NotificationFade *)pOVar2[2].monitor != (NotificationFade *)0x0)) {
-        NotificationFade::NotificationFade_Activate((NotificationFade *)pOVar2[2].monitor,(MethodInfo *)0x0);
-        return;
-      }
+    if (((this_00 != (Dictionary_2_System_Int32_InventorySlot_ *)0x0) && (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_00,slotPosition,MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_), pOVar2 != (Object *)0x0)) && ((NotificationFade *)pOVar2[2].monitor != (NotificationFade *)0x0)) {
+      NotificationFade::NotificationFade_Activate((NotificationFade *)pOVar2[2].monitor,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -225,11 +221,11 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_HighlightSlot
 void Assembly-CSharp.dll::InventoryController::InventoryController_Initialize(InventoryController *this,int32_t slots,MethodInfo *method)
 
 {
-  this_00 = (this->fields).inventorySlots;
   (this->fields).numberOfSlots = slots;
+  this_00 = (this->fields).inventorySlots;
   if (this_00 != (InventorySlots *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_);
+      func_?();
       func_?(&InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_);
       func_?(&TypeInfo__UnityEngine__Object);
       cRam_? = '\x01';
@@ -238,13 +234,12 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_Initialize(In
     (this_00->fields)._SlotCountPerPage_k__BackingField = slots;
     if (0 < slots) {
       do {
-        this = (InventoryController *)(this_00->fields).inventorySlotPrefab;
+        original = (this_00->fields).inventorySlotPrefab;
         parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          this = (InventoryController *)TypeInfo__UnityEngine__Object;
-          func_?();
+          func_?(TypeInfo__UnityEngine__Object);
         }
-        value = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6((Object *)this,parent,0,InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_);
+        value = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6((Object *)original,parent,0,InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_);
         this_01 = (this_00->fields).inventorySlots;
         if (this_01 == (Dictionary_2_System_Int32_InventorySlot_ *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this_01,key,value,MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_);
@@ -254,9 +249,10 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_Initialize(In
     return;
   }
 code_?:
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uVar1 = func_?(&stack0xfffffff8);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

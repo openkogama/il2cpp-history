@@ -142,11 +142,10 @@ void Assembly-CSharp-firstpass.dll::Water::Water_CreateWaterObjects(Water *this,
     cRam_? = '\x01';
   }
   IStack_1.m_value = 0;
-  iVar2 = 0x10;
-  if ((this->fields).hardwareWaterSupport < (this->fields).waterMode) {
-    iVar2 = 0x28;
+  iVar2 = (this->fields).hardwareWaterSupport;
+  if ((this->fields).waterMode <= iVar2) {
+    iVar2 = (this->fields).waterMode;
   }
-  iVar2 = *(int *)((int)&this->klass + iVar2);
   *reflectionCamera = (Camera *)0x0;
   func_?(reflectionCamera,0);
   *refractionCamera = (Camera *)0x0;

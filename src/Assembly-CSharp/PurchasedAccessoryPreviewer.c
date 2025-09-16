@@ -173,30 +173,32 @@ void Assembly-CSharp.dll::PurchasedAccessoryPreviewer::PurchasedAccessoryPreview
     if (pAVar5->max_length <= uVar6) goto code_?;
     if (pAVar5->vector[uVar6] != (AccessoryDataClient *)0x0) {
       if (((pAVar5->vector[uVar6]->fields)._.lvl == 0) || (pAVar5 = (this->fields).previewData, (pAVar5->vector[(this->fields).currentStreamingAssetIndex]->fields)._.cost != 0)) {
-        pAVar7 = ((this->fields).previewData)->vector[(this->fields).currentStreamingAssetIndex];
-        if (pAVar7 != (AccessoryDataClient *)0x0) {
-          iVar8 = (pAVar7->fields)._.cost;
+        pAVar5 = (this->fields).previewData;
+        if (pAVar5 != (AccessoryDataClient__Array *)0x0) {
+          uVar6 = (this->fields).currentStreamingAssetIndex;
+          if (pAVar5->max_length <= uVar6) goto code_?;
+          iVar7 = (pAVar5->vector[uVar6]->fields)._.cost;
           if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pRVar9 = Styles::Styles_GetAccessoryColorsFromPrice(iVar8,(MethodInfo *)0x0);
+          pRVar8 = Styles::Styles_GetAccessoryColorsFromPrice(iVar7,(MethodInfo *)0x0);
 code_?:
-          if (pRVar9 != (RarityStylesDef *)0x0) {
-            fVar10 = (pRVar9->fields).backgroundColor.g;
-            fVar11 = (pRVar9->fields).backgroundColor.b;
-            fVar12 = (pRVar9->fields).backgroundColor.a;
+          if (pRVar8 != (RarityStylesDef *)0x0) {
+            fVar9 = (pRVar8->fields).backgroundColor.g;
+            fVar10 = (pRVar8->fields).backgroundColor.b;
+            fVar11 = (pRVar8->fields).backgroundColor.a;
             pAVar5 = (this->fields).previewData;
-            (this->fields).targetColorBackground.r = (pRVar9->fields).backgroundColor.r;
-            (this->fields).targetColorBackground.g = fVar10;
-            (this->fields).targetColorBackground.b = fVar11;
-            (this->fields).targetColorBackground.a = fVar12;
-            fVar10 = (pRVar9->fields).glowColor.g;
-            fVar11 = (pRVar9->fields).glowColor.b;
-            fVar12 = (pRVar9->fields).glowColor.a;
-            (this->fields).targetColorGlow.r = (pRVar9->fields).glowColor.r;
-            (this->fields).targetColorGlow.g = fVar10;
-            (this->fields).targetColorGlow.b = fVar11;
-            (this->fields).targetColorGlow.a = fVar12;
+            (this->fields).targetColorBackground.r = (pRVar8->fields).backgroundColor.r;
+            (this->fields).targetColorBackground.g = fVar9;
+            (this->fields).targetColorBackground.b = fVar10;
+            (this->fields).targetColorBackground.a = fVar11;
+            fVar9 = (pRVar8->fields).glowColor.g;
+            fVar10 = (pRVar8->fields).glowColor.b;
+            fVar11 = (pRVar8->fields).glowColor.a;
+            (this->fields).targetColorGlow.r = (pRVar8->fields).glowColor.r;
+            (this->fields).targetColorGlow.g = fVar9;
+            (this->fields).targetColorGlow.b = fVar10;
+            (this->fields).targetColorGlow.a = fVar11;
             if (pAVar5 != (AccessoryDataClient__Array *)0x0) {
               uVar6 = (this->fields).currentStreamingAssetIndex;
               if (pAVar5->max_length <= uVar6) goto code_?;
@@ -216,11 +218,11 @@ code_?:
         uVar6 = (this->fields).currentStreamingAssetIndex;
         if (pAVar5->max_length <= uVar6) goto code_?;
         if (pAVar5->vector[uVar6] != (AccessoryDataClient *)0x0) {
-          iVar8 = (pAVar5->vector[uVar6]->fields)._.lvl;
+          iVar7 = (pAVar5->vector[uVar6]->fields)._.lvl;
           if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pRVar9 = Styles::Styles_GetAccessoryColorsFromLevel(iVar8,(MethodInfo *)0x0);
+          pRVar8 = Styles::Styles_GetAccessoryColorsFromLevel(iVar7,(MethodInfo *)0x0);
           goto code_?;
         }
       }
@@ -229,8 +231,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

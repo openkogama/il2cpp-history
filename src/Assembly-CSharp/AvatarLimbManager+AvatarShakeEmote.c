@@ -31,7 +31,6 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::AvatarLimbManager_
     if (0.999999 < fVar7 * (pLVar10->fields).interpolateTowardsYawRotation.y + fVar6 * (pLVar10->fields).interpolateTowardsYawRotation.x + fVar8 * (pLVar10->fields).interpolateTowardsYawRotation.z + fVar9 * (pLVar10->fields).interpolateTowardsYawRotation.w) {
       return;
     }
-    pLVar10 = (this->fields).headController;
     if (pLVar10 != (LimbController *)0x0) {
       (pLVar10->fields).elapsedInterpolationTime = 0.0;
       (pLVar10->fields).elapsedInterpolateAnimationTime = 0.0;
@@ -116,7 +115,6 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarShakeEmote::AvatarLimbManager_
     if (0.999999 < yawRotation.y * (pLVar2->fields).interpolateTowardsYawRotation.y + yawRotation.x * (pLVar2->fields).interpolateTowardsYawRotation.x + yawRotation.z * (pLVar2->fields).interpolateTowardsYawRotation.z + yawRotation.w * (pLVar2->fields).interpolateTowardsYawRotation.w) {
       return;
     }
-    pLVar2 = (this->fields).headController;
     if (pLVar2 != (LimbController *)0x0) {
       (pLVar2->fields).elapsedInterpolationTime = 0.0;
       (pLVar2->fields).elapsedInterpolateAnimationTime = 0.0;

@@ -128,7 +128,7 @@ void Assembly-CSharp.dll::BoneAnimation::BoneAnimation_ComputeAnimation(BoneAnim
     if (pAVar2 == (AnimationData *)0x0) goto code_?;
     iVar4 = (pAVar2->fields).timeStamp;
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__TransformNetworkManager);
       cRam_? = '\x01';
     }
     if (iVar4 < TypeInfo__TransformNetworkManager->static_fields->_DelayedTime_k__BackingField) {
@@ -148,15 +148,16 @@ code_?:
       iVar6 = (pAVar2->fields).timeStamp;
       pAVar3 = (this->fields).avatarAnimation;
       if ((pAVar3 == (Animation *)0x0) || (pAVar7 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState(pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0), pAVar7 == (AnimationState *)0x0)) goto code_?;
-      fVar8 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_get_length(pAVar7,(MethodInfo *)0x0);
+      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_get_length(pAVar7,(MethodInfo *)0x0);
       pAVar2 = (this->fields).currentAnim;
       if ((pAVar2 == (AnimationData *)0x0) || ((pAVar3 = (this->fields).avatarAnimation, pAVar3 == (Animation *)0x0 || (pAVar7 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState(pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0), pAVar7 == (AnimationState *)0x0)))) goto code_?;
-      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time(pAVar7,((float)(iVar4 - iVar6) * 0.001) / fVar8,(MethodInfo *)0x0);
+      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time(pAVar7,((float)(iVar4 - iVar6) * 0.001) / 3.453384e-29,(MethodInfo *)0x0);
     }
-    pAStack9 = (this->fields).currentAnim;
-    (this->fields).prevAnim = pAStack9;
-    ppAStack10 = &(this->fields).prevAnim;
+    pAStack8 = (this->fields).currentAnim;
+    (this->fields).prevAnim = pAStack8;
+    ppAStack9 = &(this->fields).prevAnim;
     func_?();
+    ppAStack10 = &(this->fields).currentAnim;
     (this->fields).currentAnim = (AnimationData *)0x0;
     puStack11 = (undefined *)0x0;
     func_?();

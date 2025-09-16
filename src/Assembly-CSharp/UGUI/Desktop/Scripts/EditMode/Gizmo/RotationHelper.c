@@ -11,7 +11,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
   puStack_4 = &stack0xffffff9c;
   puVar5 = &stack0xffffff9c;
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__);
+    func_?();
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__);
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__get_Current__);
     func_?(&TypeInfo__IEditModeUI);
@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    func_?();
     cRam_? = '\x01';
   }
   pLVar7 = (List_1_T_Enumerator_System_Object_ *)TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
@@ -47,10 +47,10 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
         uVar10 = uVar10 + 1;
       } while (uVar10 < uVar12);
     }
-    ppMVar14 = (MethodInfo **)func_?(pLVar7,TypeInfo__IEditModeUI,0);
+    ppMVar14 = (MethodInfo **)func_?(pLVar7,TypeInfo__IEditModeUI);
 code_?:
-    uVar15 = CONCAT44(unaff_EDI,ppMVar14[1]);
-    cVar16 = (*(code *)*ppMVar14)(pLVar7,ppMVar14[1]);
+    lVar15 = (ulonglong)unaff_EDI << 0x20;
+    cVar16 = (*(code *)*ppMVar14)(pLVar7);
     if (cVar16 == '\0') {
       uStack_11 = 0x3d800000;
     }
@@ -58,7 +58,7 @@ code_?:
       uStack_11 = 0x3f800000;
     }
     if (targets != (List_1_WorldObjectClientRef_ *)0x0) {
-      pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_18,(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)targets,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__GetEnumerator__);
+      pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(aLStack_18,(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)targets,MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__GetEnumerator__);
       uStack_19 = 0;
       LStack_6._list = (List_1_System_Object_ *)pLVar17->_list;
       LStack_6._index = pLVar17->_index;
@@ -67,7 +67,7 @@ code_?:
       uStack_1 = 1;
       pLStack_8 = &LStack_6;
       while( true ) {
-        method_00 = (MethodInfo *)((ulonglong)uVar15 >> 0x20);
+        method_00 = (MethodInfo *)((ulonglong)lVar15 >> 0x20);
         bVar20 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__);
         if (bVar20 == 0) {
           uStack_1 = 0xffffffff;
@@ -76,20 +76,20 @@ code_?:
           return;
         }
         if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-        uVar15 = CONCAT44(method_00,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
+        lVar15 = CONCAT44(method_00,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
         pOVar21 = WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object__get_WorldObjectClient((WorldObjectClientRef_1_System_Object_ *)LStack_6._current,MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__);
         if (pOVar21 != (Object *)0x0) {
-          puVar22 = (undefined8 *)func_?(auStack_23);
-          puVar22 = (undefined8 *)func_?(&LStack_18._index,0x41,pOVar21,uStack_11,*puVar22);
-          uVar15 = *puVar22;
-          func_?(0x1e,pOVar21,uVar15);
+          func_?();
+          plVar22 = (longlong *)func_?(&aLStack_18[0]._index,0x41,pOVar21,uStack_11);
+          lVar15 = *plVar22;
+          func_?(0x1e,pOVar21);
         }
       }
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

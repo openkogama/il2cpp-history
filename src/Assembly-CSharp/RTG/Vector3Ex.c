@@ -265,8 +265,8 @@ Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetPointCloudCenter(Vec
         if (apiStack_20[0] != (int *)0x0) {
           func_?(0,TypeInfo__System__IDisposable,apiStack_20[0]);
         }
-        __return_storage_ptr__->x = (fStack_8 + fStack_14) * 0.5;
-        __return_storage_ptr__->y = (fStack_10 + fStack_16) * 0.5;
+        __return_storage_ptr__->x = (fStack_14 + fStack_8) * 0.5;
+        __return_storage_ptr__->y = (fStack_16 + fStack_10) * 0.5;
         __return_storage_ptr__->z = (fStack_18 + fStack_12) * 0.5;
         *unaff_FS_OFFSET = uStack_4;
         return __return_storage_ptr__;
@@ -317,12 +317,12 @@ code_?:
       uStack_38 = uVar37;
       uStack_36 = uVar34;
       fStack_39 = fStack_35;
+      fStack_15 = fStack_14;
       fStack_19 = fStack_35;
+      fStack_17 = fStack_16;
       fStack_9 = fStack_8;
       fStack_11 = fStack_10;
       fStack_13 = fStack_12;
-      fStack_15 = fStack_14;
-      fStack_17 = fStack_16;
       fVar23 = fStack_35;
       if (fStack_18 < fStack_35) {
         fStack_19 = fStack_18;
@@ -477,7 +477,7 @@ float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_SignedAngle(Vector3 from,Ve
     pMVar2 = (MethodInfo *)pVVar1->z;
     fVar3 = MathEx::MathEx_SafeAcos(cosine,pMVar2);
     to.z = fVar3 * 57.29578;
-    if (axis.y * cosine + axis.x * 4.4041868e-29 + axis.z * (float)pMVar2 < 0.0) {
+    if (axis.y * cosine + axis.x * 4.3986016e-29 + axis.z * (float)pMVar2 < 0.0) {
       to.z = -to.z;
     }
     return to.z;

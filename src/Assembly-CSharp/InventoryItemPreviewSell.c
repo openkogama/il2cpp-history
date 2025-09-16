@@ -458,7 +458,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_OnL
                 pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe0,this_00,(MethodInfo *)0x0);
                 if (this_01 != (RectTransform *)0x0) {
                   value.y = 0.0;
-                  value.x = pRVar5->m_Width * (1.0 - fVar4);
+                  value.x = (1.0 - fVar4) * pRVar5->m_Width;
                   UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_01,value,(MethodInfo *)0x0);
                   pPVar3 = (this->fields).compareSlider;
                   if (pPVar3 != (ProgressBarAndroid *)0x0) {

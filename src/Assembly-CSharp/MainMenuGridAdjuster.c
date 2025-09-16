@@ -95,26 +95,24 @@ void Assembly-CSharp.dll::MainMenuGridAdjuster::MainMenuGridAdjuster_SetGridSize
     func_?(&TypeInfo__GamePassesManager);
     cRam_? = '\x01';
   }
-  if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
-    uVar1 = 0;
+  if ((TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) || (bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0), bVar1 == 0)) {
+    fVar2 = (this->fields).bottomOffsetWithoutGamePasses;
   }
   else {
-    bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
-    uVar1 = (uint)bVar2;
+    fVar2 = (this->fields).bottomOffsetWithGamePasses;
   }
-  fVar3 = (&(this->fields).bottomOffsetWithoutGamePasses)[uVar1];
-  iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+  iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (Transform *)0x0) {
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffcc,this_00,(MethodInfo *)0x0);
-    fVar6 = pVVar5->y;
-    pGVar7 = (this->fields).grid;
-    fVar8 = (this->fields).topOffset;
-    if ((pGVar7 != (GridLayoutGroup *)0x0) && (pRVar9 = (pGVar7->fields)._.m_Padding, pRVar9 != (RectOffset *)0x0)) {
-      iVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_top(pRVar9,(MethodInfo *)0x0);
-      pGVar7 = (this->fields).grid;
-      if ((pGVar7 != (GridLayoutGroup *)0x0) && (pRVar9 = (pGVar7->fields)._.m_Padding, pRVar9 != (RectOffset *)0x0)) {
-        iVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_bottom(pRVar9,(MethodInfo *)0x0);
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffc8,this_00,(MethodInfo *)0x0);
+    fVar5 = pVVar4->y;
+    pGVar6 = (this->fields).grid;
+    fVar7 = (this->fields).topOffset;
+    if ((pGVar6 != (GridLayoutGroup *)0x0) && (pRVar8 = (pGVar6->fields)._.m_Padding, pRVar8 != (RectOffset *)0x0)) {
+      iVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_top(pRVar8,(MethodInfo *)0x0);
+      pGVar6 = (this->fields).grid;
+      if ((pGVar6 != (GridLayoutGroup *)0x0) && (pRVar8 = (pGVar6->fields)._.m_Padding, pRVar8 != (RectOffset *)0x0)) {
+        iVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_bottom(pRVar8,(MethodInfo *)0x0);
         arg0 = (Object *)func_?();
         arg1 = (Object *)func_?();
         message = mscorlib.dll::System::String::String_Format_1(StringLiteral_Screen_height___0_u000AheightBudget_,arg0,arg1,(MethodInfo *)0x0);
@@ -149,30 +147,30 @@ void Assembly-CSharp.dll::MainMenuGridAdjuster::MainMenuGridAdjuster_SetGridSize
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          fVar12 = (float10)func_?();
-          pGVar7 = (this->fields).grid;
-          if ((pGVar7 != (GridLayoutGroup *)0x0) && (pRVar9 = (pGVar7->fields)._.m_Padding, pRVar9 != (RectOffset *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_left(pRVar9,(MethodInfo *)0x0);
-            pGVar7 = (this->fields).grid;
-            if ((pGVar7 != (GridLayoutGroup *)0x0) && (pRVar9 = (pGVar7->fields)._.m_Padding, pRVar9 != (RectOffset *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_right(pRVar9,(MethodInfo *)0x0);
-              pGVar7 = (this->fields).grid;
-              if (pGVar7 != (GridLayoutGroup *)0x0) {
-                fVar13 = (pGVar7->fields).m_Spacing.x;
-                fVar14 = (float)(pGVar7->fields).m_Constraint;
-                pRVar9 = (pGVar7->fields)._.m_Padding;
-                if (pRVar9 != (RectOffset *)0x0) {
-                  iVar15 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_top(pRVar9,(MethodInfo *)0x0);
-                  pGVar7 = (this->fields).grid;
-                  if ((pGVar7 != (GridLayoutGroup *)0x0) && (pRVar9 = (pGVar7->fields)._.m_Padding, pRVar9 != (RectOffset *)0x0)) {
-                    iVar16 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_bottom(pRVar9,(MethodInfo *)0x0);
+          fVar11 = (float10)func_?();
+          pGVar6 = (this->fields).grid;
+          dVar12 = (double)fVar11;
+          if ((pGVar6 != (GridLayoutGroup *)0x0) && (pRVar8 = (pGVar6->fields)._.m_Padding, pRVar8 != (RectOffset *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_left(pRVar8,(MethodInfo *)0x0);
+            pGVar6 = (this->fields).grid;
+            if ((pGVar6 != (GridLayoutGroup *)0x0) && (pRVar8 = (pGVar6->fields)._.m_Padding, pRVar8 != (RectOffset *)0x0)) {
+              UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_right(pRVar8,(MethodInfo *)0x0);
+              pGVar6 = (this->fields).grid;
+              if (pGVar6 != (GridLayoutGroup *)0x0) {
+                fVar13 = (pGVar6->fields).m_Spacing.x;
+                fVar14 = (float)(pGVar6->fields).m_Constraint;
+                pRVar8 = (pGVar6->fields)._.m_Padding;
+                if (pRVar8 != (RectOffset *)0x0) {
+                  iVar15 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_top(pRVar8,(MethodInfo *)0x0);
+                  pGVar6 = (this->fields).grid;
+                  if ((pGVar6 != (GridLayoutGroup *)0x0) && (pRVar8 = (pGVar6->fields)._.m_Padding, pRVar8 != (RectOffset *)0x0)) {
+                    iVar16 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_bottom(pRVar8,(MethodInfo *)0x0);
                     pRVar17 = (this->fields).rectTransform;
-                    fVar13 = (float)(iVar16 + iVar15) + (float)((int)fVar12 + -1) * fVar14 + (float)(int)fVar12 * fVar13;
                     if (pRVar17 != (RectTransform *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(pRVar17,(Vector2)(CONCAT44(((((((float)iVar4 / fVar6 - fVar8) - fVar3) - (float)iVar10) - (float)iVar11) * 0.5 + (this->fields).topOffset) - fVar13 * 0.5,0x42200000) ^ 0x8000000000000000),(MethodInfo *)0x0);
+                      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(pRVar17,(Vector2)(CONCAT44(((((((float)iVar3 / fVar5 - fVar7) - fVar2) - (float)iVar9) - (float)iVar10) * 0.5 + (this->fields).topOffset) - ((float)(iVar16 + iVar15) + (float)((int)dVar12 + -1) * fVar14 + (float)(int)dVar12 * fVar13) * 0.5,0x42200000) ^ 0x8000000000000000),(MethodInfo *)0x0);
                       pRVar17 = (this->fields).rectTransform;
                       if (pRVar17 != (RectTransform *)0x0) {
-                        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar17,(Vector2)((ulonglong)(uint)fVar13 << 0x20),(MethodInfo *)0x0);
+                        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar17,(Vector2)0x0,(MethodInfo *)0x0);
                         return;
                       }
                     }

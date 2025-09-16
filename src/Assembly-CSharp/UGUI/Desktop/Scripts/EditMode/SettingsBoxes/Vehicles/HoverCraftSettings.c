@@ -652,33 +652,32 @@ code_?:
                     pDVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffbc,(Dictionary_2_System_UInt32_System_Object_ *)this_02,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__);
                     uStack_1 = 1;
                     value = (pDVar16->_current).value;
-                    while (pMStack_17 = MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__, bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&stack0xffffffa0,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__), bVar4 != 0) {
+                    while (pMVar17 = MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__, bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&stack0xffffffa0,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__), bVar4 != 0) {
                       this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
                       method_00 = (MethodInfo *)(this->fields)._.vehicleWoID;
-                      if (pMStack_17 != (MethodInfo *)0x0) {
-                        pMVar18 = (MethodInfo *)0x0;
-                        if ((String__Class *)pMStack_17->methodPointer == TypeInfo__System__String) {
-                          pMVar18 = pMStack_17;
+                      str1 = (MethodInfo *)0x0;
+                      if (pMVar17 != (MethodInfo *)0x0) {
+                        if ((String__Class *)pMVar17->methodPointer == TypeInfo__System__String) {
+                          str1 = pMVar17;
                         }
-                        pMStack_17 = pMVar18;
-                        if (pMVar18 == (MethodInfo *)0x0) goto code_?;
+                        if (str1 == (MethodInfo *)0x0) goto code_?;
                       }
                       if (cRam_? == '\0') {
                         func_?();
                         cRam_? = '\x01';
                       }
-                      keyPath = mscorlib.dll::System::String::String_Concat_3(StringLiteral_BlueprintData_,(String *)pMStack_17,(MethodInfo *)0x0);
+                      keyPath = mscorlib.dll::System::String::String_Concat_3(StringLiteral_BlueprintData_,(String *)str1,(MethodInfo *)0x0);
                       if (this_03 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-                      pOVar19 = (Object *)&UNK_?;
+                      pOVar18 = (Object *)&UNK_?;
                       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial(this_03,(int32_t)method_00,keyPath,value,(MethodInfo *)0x0);
-                      value = pOVar19;
+                      value = pOVar18;
                     }
                     uStack_1 = 0xffffffff;
                     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffa0,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__,method_00);
                     uStack_1 = 0xffffffff;
-                    pMVar20 = (this->fields)._.vehicleBase;
-                    if (pMVar20 != (MVVehicleBase *)0x0) {
-                      (*(code *)(pMVar20->klass->vtable).OnDataUpdate.method)();
+                    pMVar19 = (this->fields)._.vehicleBase;
+                    if (pMVar19 != (MVVehicleBase *)0x0) {
+                      (*(code *)(pMVar19->klass->vtable).OnDataUpdate.method)();
                       (this->fields).editingThrusterColor = -1;
                       if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
@@ -709,9 +708,6 @@ code_?:
 code_?:
   func_?();
   func_?();
-  *extraout_ECX = *extraout_ECX + (char)((uint)unaff_EBX >> 8);
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
   return;
 }
 

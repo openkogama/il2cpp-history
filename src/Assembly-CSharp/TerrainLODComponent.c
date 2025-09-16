@@ -99,7 +99,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
     func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_);
-    func_?(0x36f4);
+    func_?(0x4854);
     func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }
@@ -289,7 +289,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor(Terrain
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(0x1190);
+    func_?(0x22b0);
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__IEnumerable);
     func_?(&TypeInfo__System__Collections__IEnumerator);

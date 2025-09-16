@@ -67,8 +67,8 @@ List_1_MV_WorldObject_AntiCheat_FileData_ * Assembly-CSharp.dll::DllProtector::D
           pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,uVar10);
           mscorlib.dll::System::Array::Array_Copy_3((Array *)pBStack_2,startIndex + 2,(Array *)pBVar1,0,uVar10,(MethodInfo *)0x0);
           startIndex_00 = startIndex + 2 + uVar10;
-          crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32(pBStack_2,startIndex_00,(MethodInfo *)0x0);
           startIndex = startIndex_00 + 4;
+          crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32(pBStack_2,startIndex_00,(MethodInfo *)0x0);
           pFStack_14 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
           MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor(pFStack_14,pBVar1,crc,(MethodInfo *)0x0);
           this = pLStack_12;
@@ -139,8 +139,8 @@ List_1_MV_WorldObject_AntiCheat_FileData_ * Assembly-CSharp.dll::DllProtector::D
       name = (Byte__Array *)func_?(TypeInfo__System__Byte,length);
       mscorlib.dll::System::Array::Array_Copy_3((Array *)crcData,startIndex + 2,(Array *)name,0,length,(MethodInfo *)0x0);
       startIndex_00 = startIndex + 2 + length;
-      crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32(crcData,startIndex_00,(MethodInfo *)0x0);
       startIndex = startIndex_00 + 4;
+      crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32(crcData,startIndex_00,(MethodInfo *)0x0);
       this_00 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
       MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor(this_00,name,crc,(MethodInfo *)0x0);
       if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) {

@@ -169,7 +169,7 @@ void Assembly-CSharp.dll::AccessoryInventoryViewItem::AccessoryInventoryViewItem
                   this_05 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
                   DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_05,(Object *)this,MethodInfo__AccessoryInventoryViewItem__AccessoryCreatedCallback_AvatarAccessory_,(MethodInfo *)0x0);
                   if (this_03 != (AccessoryLoader *)0x0) {
-                    Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory(this_03,(String *)0xf035ff00,(Action_1_AvatarAccessory_ *)this_05,(MethodInfo *)0x0);
+                    Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory(this_03,(String *)&UNK_?,(Action_1_AvatarAccessory_ *)this_05,(MethodInfo *)0x0);
                     return;
                   }
                 }

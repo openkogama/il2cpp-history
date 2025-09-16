@@ -374,7 +374,7 @@ void Assembly-CSharp.dll::MVRotator::MVRotator_SetupCulling(MVRotator *this,Meth
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
     cRam_? = '\x01';
   }
-  this_00 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+  this_00 = (Action_1_CubeModelChangedEventArgs___Class *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor((UnityAction_1_UnityEngine_Vector2_ *)this_00,(Object *)this,MethodInfo__MVRotator__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
   this_01 = (Delegate *)func_?(TypeInfo__CullingSubscriberBase);
   CullingSubscriberBase::CullingSubscriberBase__ctor_1((CullingSubscriberBase *)this_01,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,(MethodInfo *)0x0);
@@ -392,7 +392,7 @@ void Assembly-CSharp.dll::MVRotator::MVRotator_SetupCulling(MVRotator *this,Meth
     this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,MethodInfo__MVRotator__Changed_CubeModelChangedEventArgs_,(MethodInfo *)0x0);
     this_01 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
-    this_00 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)TypeInfo__System__Action<CubeModelChangedEventArgs>;
+    this_00 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
     this = a;
     if (this_01 == (Delegate *)0x0) {
       *(undefined4 *)&(a->fields)._._.field_0xe4 = 0;
@@ -417,7 +417,7 @@ void Assembly-CSharp.dll::MVRotator::MVRotator_SetupCulling(MVRotator *this,Meth
     this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_03,(Object *)object,MethodInfo__MVRotator__OnPositionChanged_System__Object__PositionChangedEventArgs_,(MethodInfo *)0x0);
     this_01 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar7,(Delegate *)this_03,(MethodInfo *)0x0);
-    this_00 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    this_00 = (Action_1_CubeModelChangedEventArgs___Class *)TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
     if (this_01 == (Delegate *)0x0) {
       (object->fields)._._._._.PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
       func_?();
@@ -426,7 +426,7 @@ void Assembly-CSharp.dll::MVRotator::MVRotator_SetupCulling(MVRotator *this,Meth
     pUVar7 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
     if (pUVar7 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
       (object->fields)._._._._.PositionChanged = pUVar7;
-      this_00 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+      this_00 = (Action_1_CubeModelChangedEventArgs___Class *)TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
       pMStack3 = (MVRotator *)TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
       pDStack4 = this_01;
       pMStack3 = (MVRotator *)func_?();
@@ -472,13 +472,14 @@ void Assembly-CSharp.dll::MVRotator::MVRotator_SetupCullingSphere(MVRotator *thi
     uStack_9 = CONCAT44(uStack_9._4_4_ - fVar4,(float)uStack_9 - fVar3);
     fStack_10 = BStack_2.m_Extents.z;
     fVar11 = (float10)func_?();
+    fStack_12 = (float)fVar11;
     fStack_10 = (float)uVar6;
     uStack_9 = uVar7;
-    fVar12 = (float10)func_?();
+    fVar11 = (float10)func_?();
     pCVar13 = (this->fields).cullingSubscriberBase;
     pVVar14 = (Vector3 *)(*(code *)(this->klass->vtable).get_Position.method)();
     if (pCVar13 != (CullingSubscriberBase *)0x0) {
-      CullingSubscriberBase::CullingSubscriberBase_Setup(pCVar13,(float)(fVar12 + (float10)(float)fVar11),*pVVar14,(MethodInfo *)0x0);
+      CullingSubscriberBase::CullingSubscriberBase_Setup(pCVar13,(float)fVar11 + fStack_12,*pVVar14,(MethodInfo *)0x0);
       pCVar13 = (this->fields).cullingSubscriberBase;
       if (pCVar13 != (CullingSubscriberBase *)0x0) {
         (pCVar13->fields)._DistanceBandIndex_k__BackingField = 2;

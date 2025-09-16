@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility(InGa
     func_?(&TypeInfo__PickupGUI);
     cRam_? = '\x01';
   }
-  if (((uVar1 & 1) == 0) || ((TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField & 0x10U) != 0)) {
+  if (((uVar1 & 1) == 0) || ((TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField & 0x10) != 0)) {
     pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
     if (pSVar2 == (SpawnRoleDataMediator *)0x0) goto code_?;
     BVar3 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[System::ByteEnum]::SpawnRoleVariable_1_System_ByteEnum__op_Implicit((SpawnRoleVariable_1_System_ByteEnum_ *)(pSVar2->fields).pickupItemIsInHand,MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_);
@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility(InGa
       goto code_?;
     }
     if (method_00 == (MethodInfo *)0x0) goto code_?;
-    value = 0xbd;
+    value = 0x69;
     pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)method_00,(MethodInfo *)0x0);
     if (pGVar4 == (GameObject *)0x0) goto code_?;
   }

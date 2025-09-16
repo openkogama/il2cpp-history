@@ -574,8 +574,8 @@ Vector3 * Assembly-CSharp.dll::RTG::BoxShape3D::BoxShape3D_get_Max(Vector3 *__re
   uVar5 = (this->fields)._size.y;
   fVar6 = (this->fields)._size.z;
   __return_storage_ptr__->x = (float)uVar1 + (float)uVar4 * 0.5;
-  __return_storage_ptr__->y = (float)uVar2 + (float)uVar5 * 0.5;
-  __return_storage_ptr__->z = fVar6 * 0.5 + fVar3;
+  __return_storage_ptr__->y = (float)uVar5 * 0.5 + (float)uVar2;
+  __return_storage_ptr__->z = fVar3 + fVar6 * 0.5;
   return __return_storage_ptr__;
 }
 

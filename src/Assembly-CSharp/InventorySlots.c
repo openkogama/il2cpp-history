@@ -232,23 +232,23 @@ void Assembly-CSharp.dll::InventorySlots::InventorySlots_SlotChanged(InventorySl
     func_?(&TypeInfo__InventorySlots____c__DisplayClass12_0);
     cRam_? = '\x01';
   }
-  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(TypeInfo__InventorySlots____c__DisplayClass12_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-  if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    this_01[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)toSlotIndex;
+  method_00 = TypeInfo__InventorySlots____c__DisplayClass12_0;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value != (Object *)0x0) {
+    value[1].monitor = (MonitorData *)toSlotIndex;
     if (draggedItem != (GameObject *)0x0) {
       pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(draggedItem,InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__);
       if (pOVar1 != (Object *)0x0) {
-        absoluteSlotIndex = this_01[1].klass;
-        (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pOVar1[2].klass;
-        pIVar2 = InventorySlots_GetSlotBasedOnAbsolute(this,(int32_t)absoluteSlotIndex,(MethodInfo *)0x0);
+        value[1].klass = pOVar1[2].klass;
+        pIVar2 = InventorySlots_GetSlotBasedOnAbsolute(this,(int32_t)value[1].monitor,(MethodInfo *)0x0);
         if (pIVar2 != (InventorySlot *)0x0) {
           pGVar3 = InventorySlot::InventorySlot_get_Item(pIVar2,(MethodInfo *)0x0);
-          pIVar2 = InventorySlots_GetSlotBasedOnAbsolute((InventorySlots *)0x0,(int32_t)(this_01->fields)._._defaultValue_k__BackingField,(MethodInfo *)0x0);
+          pIVar2 = InventorySlots_GetSlotBasedOnAbsolute((InventorySlots *)0x0,(int32_t)value[1].klass,(MethodInfo *)0x0);
           this_00 = InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__;
           pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(draggedItem,InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__);
           if (pOVar1 != (Object *)0x0) {
-            pOVar1[2].klass = (Object__Class *)this_01[1].klass;
+            pOVar1[2].klass = (Object__Class *)value[1].monitor;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -257,7 +257,7 @@ void Assembly-CSharp.dll::InventorySlots::InventorySlots_SlotChanged(InventorySl
               if (pGVar3 == (GameObject *)0x0) goto code_?;
               pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1(pGVar3,InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__);
               if (pOVar1 == (Object *)0x0) goto code_?;
-              pOVar1[2].klass = (Object__Class *)(this_01->fields)._._defaultValue_k__BackingField;
+              pOVar1[2].klass = value[1].klass;
             }
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
@@ -282,7 +282,7 @@ void Assembly-CSharp.dll::InventorySlots::InventorySlots_SlotChanged(InventorySl
                 if (pTVar5 != (Transform *)0x0) {
                   pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar5,(MethodInfo *)0x0);
                   callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_01,MethodInfo__InventorySlots____c__DisplayClass12_0___SlotChanged_b__0_UnityEngine__EventSystems__ISlotChanged__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__InventorySlots____c__DisplayClass12_0___SlotChanged_b__0_UnityEngine__EventSystems__ISlotChanged__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
                   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }

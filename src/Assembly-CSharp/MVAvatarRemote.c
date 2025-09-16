@@ -624,9 +624,8 @@ joined_?:
             pAVar18 = (AvatarRemoteMovementCalculator *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar17,AvatarRemoteMovementCalculator_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarRemoteMovementCalculator>__);
             (this->fields).avatarRemoteMovementCalculator = pAVar18;
             func_?();
-            method_00 = TypeInfo__AvatarLimbManagerRemote;
             pAVar19 = (AvatarLimbManager *)func_?();
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pAVar19,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            ThemeAttributes::ThemeAttribute`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pAVar19,(MethodInfo *)0x0);
             (this->fields)._.limbManager = pAVar19;
             func_?(&(this->fields)._.limbManager,pAVar19);
             if (((this->fields)._.avatar != (Avatar *)0x0) && (pAVar19 = (this->fields)._.limbManager, pAVar19 != (AvatarLimbManager *)0x0)) {
@@ -775,16 +774,16 @@ code_?:
 code_?:
     func_?();
     pMVar3 = value[1].monitor;
-    iVar9 = (**(code **)(iRam_? + 0xe0))(0x1fe85752,*(undefined4 *)(iRam_? + 0xe4));
+    iVar9 = (**(code **)(iRam_? + 0xe0))(0xdfe85752,*(undefined4 *)(iRam_? + 0xe4));
     unaff_EDI = (MVBody *)0x0;
     if (pMVar3 == (MonitorData *)0x0) goto code_?;
     *(float *)(pMVar3 + 0x18) = (float)iVar9;
-    unaff_EDI = pMRam1fe85772;
+    unaff_EDI = pMRamdfe85772;
     pVVar6 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::VideoCapture+OnVideoCaptureResourceCreatedCallback::VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor(pVVar6,value,MethodInfo__MVAvatarRemote____c__DisplayClass23_0___InitializeHealth_b__1_System__Object_,(MethodInfo *)0x0);
     pMVar10 = (MVBody *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)unaff_EDI,(Delegate *)pVVar6,(MethodInfo *)0x0);
     if (pMVar10 == (MVBody *)0x0) {
-      pMRam1fe85772 = (MVBody *)0x0;
+      pMRamdfe85772 = (MVBody *)0x0;
       func_?();
       return;
     }
@@ -797,7 +796,7 @@ code_?:
       if (pMVar10->klass == (MVBody__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
         pMVar12 = pMVar10;
       }
-      pMRam1fe85772 = pMVar11;
+      pMRamdfe85772 = pMVar11;
       if (pMVar12 != (MVBody *)0x0) {
         func_?();
         return;

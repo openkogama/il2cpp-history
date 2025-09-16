@@ -85,7 +85,6 @@ void Assembly-CSharp.dll::PaintCubes::PaintCubes_Execute(PaintCubes *this,CubeMo
   }
   cVar4 = '\0';
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    cVar4 = '\0';
     func_?(TypeInfo__MVInputWrapper);
   }
   bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl(KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
@@ -187,8 +186,8 @@ code_?:
       uVar18._2_2_ = (pCVar11->fields).iLocalPos.y;
       iVar14 = (pCVar11->fields).iLocalPos.z;
       if (pMVar12 != (MVCubeModelBase *)0x0) {
-        cubeGameObject = (pMVar12->fields)._.gameObject;
         pCVar15 = (pPVar5->fields).paintCursor;
+        cubeGameObject = (pMVar12->fields)._.gameObject;
         if (pCVar15 != (CellCursor *)0x0) {
           this_01 = CellCursor::CellCursor_GetCellCursor(pCVar15,(pCVar11->fields).iLocalPos,(MethodInfo *)0x0);
           if (this_01 != (CellCursorCubeLineMesh *)0x0) {

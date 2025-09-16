@@ -141,9 +141,15 @@ code_?:
   default:
     return 0;
   }
-  func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  cVar16 = '\0';
+  pcVar17 = (char *)func_?();
+  *pcVar17 = *pcVar17 + (char)&stack0xfffffffc + cVar16;
+  LOCK();
+  *(char **)(extraout_ECX + 0x11) = pcVar17;
+  UNLOCK();
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

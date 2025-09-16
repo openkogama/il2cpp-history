@@ -137,7 +137,7 @@ void Assembly-CSharp.dll::BounceState::BounceState_UpdateBounceState(BounceState
         fStack_8 = -VStack_4.y;
         fStack_9 = -VStack_4.z;
         fVar6 = (float10)func_?(&mvControllerColliderHit.slopeNormal.z,0);
-        fStack_9 = (float)(fVar6 * (float10)0.5 * (float10)(mvControllerColliderHit.elipsoidNormal.z * fStack_7 + mvControllerColliderHit.slopeNormal.x * fStack_8 + mvControllerColliderHit.slopeNormal.y * fStack_9));
+        fStack_9 = (float)(fVar6 * (float10)0.5 * (float10)(mvControllerColliderHit.slopeNormal.x * fStack_8 + mvControllerColliderHit.elipsoidNormal.z * fStack_7 + mvControllerColliderHit.slopeNormal.y * fStack_9));
         if (1.0 < fStack_9) {
           puVar10 = (undefined4 *)&stack0x00000008;
           puVar11 = (undefined4 *)&stack0xffffff48;

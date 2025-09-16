@@ -1899,7 +1899,7 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_KillSelf(MVAvatarLocal *t
       fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       if (fVar6 - (pAVar5->fields).time <= 4.0) {
         pAVar4 = (in_stack_3->fields).interactableLocal;
-        if (((((pAVar4 != (AvatarInteractable *)0x0) && ((pAVar4->fields).lastDamageSource != (AvatarInteractable_DamageSource *)0x0)) && ((fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0), fVar6 - -1.0012373e+24 <= 4.0 && (((pAVar4->fields).lastDamageSource != (AvatarInteractable_DamageSource *)0x0 && (pAVar8 = (in_stack_3->fields).interactableLocal, pAVar8 != (AvatarInteractable *)0x0)))))) && (pAVar5 = (pAVar8->fields).lastDamageSource, pAVar5 != (AvatarInteractable_DamageSource *)0x0)) && ((fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0), fVar6 - (pAVar5->fields).time <= 4.0 && (pAVar5 = (pAVar8->fields).lastDamageSource, pAVar5 != (AvatarInteractable_DamageSource *)0x0)))) {
+        if (((((pAVar4 != (AvatarInteractable *)0x0) && ((pAVar4->fields).lastDamageSource != (AvatarInteractable_DamageSource *)0x0)) && ((fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0), fVar6 - -1.0730043e-05 <= 4.0 && (((pAVar4->fields).lastDamageSource != (AvatarInteractable_DamageSource *)0x0 && (pAVar8 = (in_stack_3->fields).interactableLocal, pAVar8 != (AvatarInteractable *)0x0)))))) && (pAVar5 = (pAVar8->fields).lastDamageSource, pAVar5 != (AvatarInteractable_DamageSource *)0x0)) && ((fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0), fVar6 - (pAVar5->fields).time <= 4.0 && (pAVar5 = (pAVar8->fields).lastDamageSource, pAVar5 != (AvatarInteractable_DamageSource *)0x0)))) {
           pMVar9 = (pAVar4->fields)._.health;
           defaultDamageType = CONCAT31((int3)((uint)puVar7 >> 8),(pAVar5->fields).damageType);
           if (pMVar9 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
@@ -2340,18 +2340,44 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_OnHealthBoostedChanged(MV
   }
   (this->fields).boostedHealthMultiplier = 1.0;
   this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((this_01 != (MVNetworkGame *)0x0) && (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0), pMVar1 != (MVLocalPlayer *)0x0)) && (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
-    this_02 = (Boost *)0x0;
-    bVar2 = BoostController::BoostController_TryGetActiveBoost(this_00,BoostType__Enum_ExtraHealthFloatMultiplier,(Boost **)&stack0xfffffff8,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      pMVar3 = (this->fields)._.MaxHealth;
-      if (pMVar3 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
-        (*(code *)(pMVar3->klass->vtable).get_Value.method)();
-        pMVar4 = (this->fields)._.Health;
-        if (pMVar4 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-          pMVar5 = pMVar4->klass;
-          pIStack6 = (Int32__Class *)(pMVar5->vtable).set_Value.methodPtr;
-          (*(code *)(pMVar5->vtable).get_Value.method)();
+  if (this_01 != (MVNetworkGame *)0x0) {
+    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+    if ((pMVar1 != (MVLocalPlayer *)0x0) && (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
+      this_02 = (Boost *)0x0;
+      bVar2 = BoostController::BoostController_TryGetActiveBoost(this_00,BoostType__Enum_ExtraHealthFloatMultiplier,(Boost **)&stack0xfffffff8,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        pMVar3 = (this->fields)._.MaxHealth;
+        if (pMVar3 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
+          (*(code *)(pMVar3->klass->vtable).get_Value.method)();
+          pMVar4 = (this->fields)._.Health;
+          if (pMVar4 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+            pMVar5 = pMVar4->klass;
+            pIStack6 = (Int32__Class *)(pMVar5->vtable).set_Value.methodPtr;
+            (*(code *)(pMVar5->vtable).get_Value.method)();
+            MVAvatarLocal_UpdateMaxHealth(this,(MethodInfo *)0x0);
+            pMVar3 = (this->fields)._.MaxHealth;
+            pMVar4 = (this->fields)._.Health;
+            if (pMVar3 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
+              pMVar7 = pMVar3->klass;
+              pIStack6 = (Int32__Class *)(pMVar7->vtable).set_Value.methodPtr;
+              (*(code *)(pMVar7->vtable).get_Value.method)();
+              if (pMVar4 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+                pMVar5 = pMVar4->klass;
+                pIStack6 = (Int32__Class *)pMVar5[1]._0.image;
+                (*(code *)(pMVar5->vtable).set_Value.method)();
+                return;
+              }
+            }
+          }
+        }
+      }
+      else if (this_02 != (Boost *)0x0) {
+        pIStack6 = (Int32__Class *)Boost::Boost_get_Value(this_02,(MethodInfo *)0x0);
+        if (pIStack6 != (Int32__Class *)0x0) {
+          pIVar8 = TypeInfo__System__Int32;
+          if ((((Object *)pIStack6)->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) goto code_?;
+          piVar9 = (int *)func_?();
+          (this->fields).boostedHealthMultiplier = (float)*piVar9 / 100.0 + 1.0;
           MVAvatarLocal_UpdateMaxHealth(this,(MethodInfo *)0x0);
           pMVar3 = (this->fields)._.MaxHealth;
           pMVar4 = (this->fields)._.Health;
@@ -2359,29 +2385,14 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_OnHealthBoostedChanged(MV
             pMVar7 = pMVar3->klass;
             pIStack6 = (Int32__Class *)(pMVar7->vtable).set_Value.methodPtr;
             (*(code *)(pMVar7->vtable).get_Value.method)();
-joined_?:
             if (pMVar4 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-              pIStack6 = (Int32__Class *)pMVar4->klass[1]._0.image;
-              (*(code *)(pMVar4->klass->vtable).set_Value.method)();
+              pMVar5 = pMVar4->klass;
+              pIStack6 = (Int32__Class *)pMVar5[1]._0.image;
+              (*(code *)(pMVar5->vtable).set_Value.method)();
               return;
             }
           }
         }
-      }
-    }
-    else if ((this_02 != (Boost *)0x0) && (pIStack6 = (Int32__Class *)Boost::Boost_get_Value(this_02,(MethodInfo *)0x0), pIStack6 != (Int32__Class *)0x0)) {
-      pIVar8 = TypeInfo__System__Int32;
-      if ((((Object *)pIStack6)->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      piVar9 = (int *)func_?();
-      (this->fields).boostedHealthMultiplier = (float)*piVar9 / 100.0 + 1.0;
-      MVAvatarLocal_UpdateMaxHealth(this,(MethodInfo *)0x0);
-      pMVar3 = (this->fields)._.MaxHealth;
-      pMVar4 = (this->fields)._.Health;
-      if (pMVar3 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
-        pMVar7 = pMVar3->klass;
-        pIStack6 = (Int32__Class *)(pMVar7->vtable).set_Value.methodPtr;
-        (*(code *)(pMVar7->vtable).get_Value.method)();
-        goto joined_?;
       }
     }
   }
@@ -4626,7 +4637,7 @@ void Assembly-CSharp.dll::MVAvatarLocal::MVAvatarLocal_set_BaseMaxHealth(MVAvata
       pMVar2 = (this->fields)._.MaxHealth;
       pMVar4 = (this->fields)._.Health;
       if ((pMVar2 != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) && (iVar6 = (*(code *)(pMVar2->klass->vtable).get_Value.method)(pMVar2,(pMVar2->klass->vtable).set_Value.methodPtr), pMVar4 != (MVRuntimeDataVariable_1_System_Single_ *)0x0)) {
-        (*(code *)(pMVar4->klass->vtable).set_Value.method)(pMVar4,(float)iVar6 / (float)((float10)iVar3 / fVar5),pMVar4->klass[1]._0.image);
+        (*(code *)(pMVar4->klass->vtable).set_Value.method)(pMVar4,(float)iVar6 / ((float)iVar3 / (float)fVar5),pMVar4->klass[1]._0.image);
         return;
       }
     }

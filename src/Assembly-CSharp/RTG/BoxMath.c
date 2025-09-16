@@ -26,7 +26,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
   rotation.x = rotation0.x;
   rotation.z = rotation0.z;
   rotation.w = rotation0.w;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffff90,rotation,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
+  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffff8c,rotation,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
   fVar5 = rotation0.w;
   if (pVVar3 != (Vector3__Array *)0x0) {
     fVar6 = pVVar4->y;
@@ -44,7 +44,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
     rotation_01.x = rotation0.x;
     rotation_01.z = rotation0.z;
     rotation_01.w = rotation0.w;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffff90,rotation_01,TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffff8c,rotation_01,TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
     fVar5 = rotation0.w;
     if (pVVar3 != (Vector3__Array *)0x0) {
       fVar6 = pVVar4->y;
@@ -55,7 +55,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
       pVVar3->vector[1].z = fVar7;
       pVVar3 = TypeInfo__RTG__BoxMath->static_fields->A;
       if (cRam_? == '\0') {
-        pSStack_8 = (Single__Array_1 *)&TypeInfo__UnityEngine__Vector3;
+        ppVStack_8 = &TypeInfo__UnityEngine__Vector3;
         VStack_2.z = (float)&UNK_?;
         func_?();
         cRam_? = '\x01';
@@ -195,23 +195,24 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
-                      pSStack_29 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      pSVar10 = TypeInfo__RTG__BoxMath->static_fields->absR;
                       fVar5 = rotation0.w;
-                      if (pSStack_29 == (Single__Array_1 *)0x0) goto code_?;
-                      if ((pSStack_29->bounds->length <= uVar27) || (iVar30 = pSStack_29->bounds[1].length, iVar30 == 0)) goto code_?;
-                      pSStack_31 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      rotation0.w = (float)pSStack_31->bounds[1].length;
-                      fVar5 = rotation0.w;
-                      if ((uint)rotation0.w < 2) goto code_?;
-                      pSStack_8 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      uVar32 = pSStack_8->bounds[1].length;
-                      if (uVar32 < 3) goto code_?;
-                      pSStack_8 = (Single__Array_1 *)(fStack_14 * pSStack_31->vector[(int)rotation0.w * uVar27 + 1] + fStack_13 * pSStack_29->vector[iVar30 * uVar27] + fStack_15 * pSStack_8->vector[uVar32 * uVar27 + 2]);
-                      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_2,uVar27,(MethodInfo *)0x0);
-                      rotation0.w = ABS(fVar5);
+                      if (pSVar10 == (Single__Array_1 *)0x0) goto code_?;
+                      if ((pSVar10->bounds->length <= uVar27) || (iVar29 = pSVar10->bounds[1].length, iVar29 == 0)) goto code_?;
+                      pSStack_30 = (Single__Array_1 *)pSVar10->vector[iVar29 * uVar27];
+                      pSVar10 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      uVar31 = pSVar10->bounds[1].length;
+                      if (uVar31 < 2) goto code_?;
+                      fStack_32 = pSVar10->vector[uVar31 * uVar27 + 1];
+                      pSVar10 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      uVar31 = pSVar10->bounds[1].length;
+                      if (uVar31 < 3) goto code_?;
+                      pSStack_33 = (Single__Array_1 *)(fStack_15 * pSVar10->vector[uVar31 * uVar27 + 2]);
+                      rotation0.w = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_2,uVar27,(MethodInfo *)0x0);
+                      ppVStack_8 = (Vector3__Class **)((uint)rotation0.w & 0x7fffffff);
                       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(&VStack_1,uVar27,(MethodInfo *)0x0);
-                      pSStack_8 = (Single__Array_1 *)(fVar5 + (float)pSStack_8);
-                      if ((float)pSStack_8 < rotation0.w) {
+                      rotation0.w = fVar5 + fStack_14 * fStack_32 + fStack_13 * (float)pSStack_30 + (float)pSStack_33;
+                      if (rotation0.w < (float)ppVStack_8) {
                         return 0;
                       }
                       uVar27 = uVar27 + 1;
@@ -226,26 +227,26 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                       pSVar10 = TypeInfo__RTG__BoxMath->static_fields->absR;
                       if (pSVar10 == (Single__Array_1 *)0x0) goto code_?;
                       if ((pSVar10->bounds->length == 0) || (pSVar10->bounds[1].length <= uVar27)) goto code_?;
-                      pSStack_29 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      if (pSStack_29->bounds->length < 2) goto code_?;
-                      pSStack_8 = (Single__Array_1 *)pSStack_29->bounds[1].length;
-                      pSStack_31 = TypeInfo__RTG__BoxMath->static_fields->absR;
-                      if (pSStack_31->bounds->length < 3) goto code_?;
-                      pSStack_31 = (Single__Array_1 *)(fStack_12 * pSStack_29->vector[(int)pSStack_8->vector + (uVar27 - 0x10)] + fStack_11 * *(float *)((int)pSVar10->vector + (int)rotation0.w + -0x10) + fStack_16 * pSStack_31->vector[uVar27 + pSStack_31->bounds[1].length * 2]);
-                      pSStack_29 = TypeInfo__RTG__BoxMath->static_fields->R;
-                      if (pSStack_29 == (Single__Array_1 *)0x0) goto code_?;
-                      if ((pSStack_29->bounds->length == 0) || (pSStack_29->bounds[1].length <= uVar27)) goto code_?;
+                      pSStack_33 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      if (pSStack_33->bounds->length < 2) goto code_?;
+                      ppVStack_8 = (Vector3__Class **)pSStack_33->bounds[1].length;
+                      pSStack_30 = TypeInfo__RTG__BoxMath->static_fields->absR;
+                      if (pSStack_30->bounds->length < 3) goto code_?;
+                      pSStack_30 = (Single__Array_1 *)(fStack_12 * pSStack_33->vector[(int)ppVStack_8 + uVar27] + fStack_11 * *(float *)((int)pSVar10->vector + (int)rotation0.w + -0x10) + fStack_16 * pSStack_30->vector[uVar27 + pSStack_30->bounds[1].length * 2]);
+                      pSStack_33 = TypeInfo__RTG__BoxMath->static_fields->R;
+                      if (pSStack_33 == (Single__Array_1 *)0x0) goto code_?;
+                      if ((pSStack_33->bounds->length == 0) || (pSStack_33->bounds[1].length <= uVar27)) goto code_?;
                       pSVar10 = TypeInfo__RTG__BoxMath->static_fields->R;
-                      pIVar33 = pSVar10->bounds;
-                      if (pIVar33->length < 2) goto code_?;
-                      pSStack_8 = (Single__Array_1 *)pIVar33[1].length;
-                      pSVar34 = TypeInfo__RTG__BoxMath->static_fields->R;
-                      pIVar33 = pSVar34->bounds;
-                      if (pIVar33->length < 3) goto code_?;
-                      rotation0.w = ABS(fStack_18 * pSVar10->vector[(int)pSStack_8->vector + (uVar27 - 0x10)] + fStack_19 * *(float *)((int)pSStack_29->vector + (int)rotation0.w + -0x10) + (float)puStack_28 * pSVar34->vector[uVar27 + pIVar33[1].length * 2]);
-                      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item((Vector3 *)&stack0xffffffa8,uVar27,(MethodInfo *)0x0);
-                      pSStack_8 = (Single__Array_1 *)(fVar7 + (float)pSStack_31);
-                      if ((float)pSStack_8 < rotation0.w) {
+                      pIVar34 = pSVar10->bounds;
+                      if (pIVar34->length < 2) goto code_?;
+                      ppVStack_8 = (Vector3__Class **)pIVar34[1].length;
+                      pSVar35 = TypeInfo__RTG__BoxMath->static_fields->R;
+                      pIVar34 = pSVar35->bounds;
+                      if (pIVar34->length < 3) goto code_?;
+                      rotation0.w = ABS(fStack_18 * pSVar10->vector[(int)ppVStack_8 + uVar27] + fStack_19 * *(float *)((int)pSStack_33->vector + (int)rotation0.w + -0x10) + (float)puStack_28 * pSVar35->vector[uVar27 + pIVar34[1].length * 2]);
+                      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item((Vector3 *)&stack0xffffffa4,uVar27,(MethodInfo *)0x0);
+                      ppVStack_8 = (Vector3__Class **)(fVar7 + (float)pSStack_30);
+                      if ((float)ppVStack_8 < rotation0.w) {
                         return 0;
                       }
                       rotation0.w = (float)((int)fVar5 + 4);
@@ -264,7 +265,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                       if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                         fVar17 = (float10)func_?();
                         rotation0.w = fStack_12 * rotation0.w;
-                        pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
+                        fStack_32 = (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
                         fVar5 = rotation0.w;
                         if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                           fVar17 = (float10)func_?();
@@ -276,13 +277,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                             fVar5 = rotation0.w;
                             if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                               fVar17 = (float10)func_?();
-                              pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                              ppVStack_8 = (Vector3__Class **)(float)fVar17;
                               fVar5 = rotation0.w;
                               if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                pSStack_8 = (Single__Array_1 *)((float)puStack_28 * (float)pSStack_8);
+                                ppVStack_8 = (Vector3__Class **)((float)puStack_28 * (float)ppVStack_8);
                                 fVar17 = (float10)func_?();
-                                pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.y);
-                                if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.y);
+                                if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                   return 0;
                                 }
                                 if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -296,7 +297,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                   if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                     fVar17 = (float10)func_?();
                                     rotation0.w = fStack_12 * rotation0.w;
-                                    pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
+                                    fStack_32 = (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
                                     fVar5 = rotation0.w;
                                     if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                       fVar17 = (float10)func_?();
@@ -308,13 +309,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                         fVar5 = rotation0.w;
                                         if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                           fVar17 = (float10)func_?();
-                                          pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                          ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                           fVar5 = rotation0.w;
                                           if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                            pSStack_8 = (Single__Array_1 *)((float)puStack_28 * (float)pSStack_8);
+                                            ppVStack_8 = (Vector3__Class **)((float)puStack_28 * (float)ppVStack_8);
                                             fVar17 = (float10)func_?();
-                                            pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.y);
-                                            if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                            ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.y);
+                                            if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                               return 0;
                                             }
                                             if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -328,7 +329,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                               if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                 fVar17 = (float10)func_?();
                                                 rotation0.w = fStack_12 * rotation0.w;
-                                                pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
+                                                fStack_32 = (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
                                                 fVar5 = rotation0.w;
                                                 if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                   fVar17 = (float10)func_?();
@@ -340,13 +341,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                     fVar5 = rotation0.w;
                                                     if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                                       fVar17 = (float10)func_?();
-                                                      pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                                      ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                                       fVar5 = rotation0.w;
                                                       if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                                        pSStack_8 = (Single__Array_1 *)((float)pSStack_8 * (float)puStack_28);
+                                                        ppVStack_8 = (Vector3__Class **)((float)ppVStack_8 * (float)puStack_28);
                                                         fVar17 = (float10)func_?();
-                                                        pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.y);
-                                                        if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                                        ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.y);
+                                                        if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                                           return 0;
                                                         }
                                                         if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -360,7 +361,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                           if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                             fVar17 = (float10)func_?();
                                                             rotation0.w = rotation0.w * fStack_11;
-                                                            pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
+                                                            fStack_32 = (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
                                                             fVar5 = rotation0.w;
                                                             if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                               fVar17 = (float10)func_?();
@@ -372,13 +373,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                 fVar5 = rotation0.w;
                                                                 if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                                                   fVar17 = (float10)func_?();
-                                                                  pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                                                  ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                                                   fVar5 = rotation0.w;
                                                                   if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                                                    pSStack_8 = (Single__Array_1 *)((float)pSStack_8 * fStack_19);
+                                                                    ppVStack_8 = (Vector3__Class **)((float)ppVStack_8 * fStack_19);
                                                                     fVar17 = (float10)func_?();
-                                                                    pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.z);
-                                                                    if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                                                    ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.z);
+                                                                    if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                                                       return 0;
                                                                     }
                                                                     if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -392,7 +393,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                       if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                         fVar17 = (float10)func_?();
                                                                         rotation0.w = rotation0.w * fStack_11;
-                                                                        pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
+                                                                        fStack_32 = (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
                                                                         fVar5 = rotation0.w;
                                                                         if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                           fVar17 = (float10)func_?();
@@ -404,13 +405,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                             fVar5 = rotation0.w;
                                                                             if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                                                               fVar17 = (float10)func_?();
-                                                                              pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                                                              ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                                                               fVar5 = rotation0.w;
                                                                               if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                                                                pSStack_8 = (Single__Array_1 *)((float)pSStack_8 * fStack_19);
+                                                                                ppVStack_8 = (Vector3__Class **)((float)ppVStack_8 * fStack_19);
                                                                                 fVar17 = (float10)func_?();
-                                                                                pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.z);
-                                                                                if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                                                                ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.z);
+                                                                                if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                                                                   return 0;
                                                                                 }
                                                                                 if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -424,7 +425,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                   if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                     fVar17 = (float10)func_?();
                                                                                     rotation0.w = rotation0.w * fStack_11;
-                                                                                    pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
+                                                                                    fStack_32 = (float)(fVar17 * (float10)fStack_16 + (float10)rotation0.w);
                                                                                     fVar5 = rotation0.w;
                                                                                     if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                       fVar17 = (float10)func_?();
@@ -436,13 +437,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                         fVar5 = rotation0.w;
                                                                                         if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                                                                           fVar17 = (float10)func_?();
-                                                                                          pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                                                                          ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                                                                           fVar5 = rotation0.w;
                                                                                           if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                                                                            pSStack_8 = (Single__Array_1 *)((float)pSStack_8 * fStack_19);
+                                                                                            ppVStack_8 = (Vector3__Class **)((float)ppVStack_8 * fStack_19);
                                                                                             fVar17 = (float10)func_?();
-                                                                                            pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.z);
-                                                                                            if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                                                                            ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.z);
+                                                                                            if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                                                                               return 0;
                                                                                             }
                                                                                             if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -456,7 +457,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                               if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                                 fVar17 = (float10)func_?();
                                                                                                 rotation0.w = rotation0.w * fStack_11;
-                                                                                                pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_12 + (float10)rotation0.w);
+                                                                                                fStack_32 = (float)(fVar17 * (float10)fStack_12 + (float10)rotation0.w);
                                                                                                 fVar5 = rotation0.w;
                                                                                                 if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                                   fVar17 = (float10)func_?();
@@ -468,13 +469,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                                     fVar5 = rotation0.w;
                                                                                                     if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                                                                                       fVar17 = (float10)func_?();
-                                                                                                      pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                                                                                      ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                                                                                       fVar5 = rotation0.w;
                                                                                                       if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                                                                                        pSStack_8 = (Single__Array_1 *)((float)pSStack_8 * fStack_18);
+                                                                                                        ppVStack_8 = (Vector3__Class **)((float)ppVStack_8 * fStack_18);
                                                                                                         fVar17 = (float10)func_?();
-                                                                                                        pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.x);
-                                                                                                        if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                                                                                        ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.x);
+                                                                                                        if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                                                                                           return 0;
                                                                                                         }
                                                                                                         if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -488,7 +489,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                                           if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                                             fVar17 = (float10)func_?();
                                                                                                             rotation0.w = rotation0.w * fStack_11;
-                                                                                                            pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_12 + (float10)rotation0.w);
+                                                                                                            fStack_32 = (float)(fVar17 * (float10)fStack_12 + (float10)rotation0.w);
                                                                                                             fVar5 = rotation0.w;
                                                                                                             if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                                               fVar17 = (float10)func_?();
@@ -500,13 +501,13 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                                                 fVar5 = rotation0.w;
                                                                                                                 if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                                                                                                   fVar17 = (float10)func_?();
-                                                                                                                  pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                                                                                                  ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                                                                                                   fVar5 = rotation0.w;
                                                                                                                   if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                                                                                                    pSStack_8 = (Single__Array_1 *)((float)pSStack_8 * fStack_18);
+                                                                                                                    ppVStack_8 = (Vector3__Class **)((float)ppVStack_8 * fStack_18);
                                                                                                                     fVar17 = (float10)func_?();
-                                                                                                                    pSStack_8 = (Single__Array_1 *)(float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.x);
-                                                                                                                    if (rotation0.w + (float)pSStack_31 < ABS((float)pSStack_8)) {
+                                                                                                                    ppVStack_8 = (Vector3__Class **)(float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.x);
+                                                                                                                    if (rotation0.w + fStack_32 < ABS((float)ppVStack_8)) {
                                                                                                                       return 0;
                                                                                                                     }
                                                                                                                     if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
@@ -520,7 +521,7 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                                                       if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                                                         fVar17 = (float10)func_?();
                                                                                                                         rotation0.w = rotation0.w * fStack_11;
-                                                                                                                        pSStack_31 = (Single__Array_1 *)(float)(fVar17 * (float10)fStack_12 + (float10)rotation0.w);
+                                                                                                                        fStack_32 = (float)(fVar17 * (float10)fStack_12 + (float10)rotation0.w);
                                                                                                                         fVar5 = rotation0.w;
                                                                                                                         if (TypeInfo__RTG__BoxMath->static_fields->absR != (Single__Array_1 *)0x0) {
                                                                                                                           fVar17 = (float10)func_?();
@@ -532,12 +533,12 @@ bool Assembly-CSharp.dll::RTG::BoxMath::BoxMath_BoxIntersectsBox(Vector3 center0
                                                                                                                             fVar5 = rotation0.w;
                                                                                                                             if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
                                                                                                                               fVar17 = (float10)func_?();
-                                                                                                                              pSStack_8 = (Single__Array_1 *)(float)fVar17;
+                                                                                                                              ppVStack_8 = (Vector3__Class **)(float)fVar17;
                                                                                                                               fVar5 = rotation0.w;
                                                                                                                               if (TypeInfo__RTG__BoxMath->static_fields->R != (Single__Array_1 *)0x0) {
-                                                                                                                                pSStack_8 = (Single__Array_1 *)((float)pSStack_8 * fStack_18);
+                                                                                                                                ppVStack_8 = (Vector3__Class **)((float)ppVStack_8 * fStack_18);
                                                                                                                                 fVar17 = (float10)func_?();
-                                                                                                                                if (rotation0.w + (float)pSStack_31 < ABS((float)((float10)(float)pSStack_8 - fVar17 * (float10)VStack_2.x))) {
+                                                                                                                                if (rotation0.w + fStack_32 < ABS((float)((float10)(float)ppVStack_8 - fVar17 * (float10)VStack_2.x))) {
                                                                                                                                   return 0;
                                                                                                                                 }
                                                                                                                                 return 1;
@@ -611,9 +612,9 @@ code_?:
 code_?:
   rotation0.w = fVar5;
   func_?();
-  pcVar35 = (code *)swi(3);
-  bVar36 = (*pcVar35)();
-  return bVar36;
+  pcVar36 = (code *)swi(3);
+  bVar37 = (*pcVar36)();
+  return bVar37;
 }
 
 

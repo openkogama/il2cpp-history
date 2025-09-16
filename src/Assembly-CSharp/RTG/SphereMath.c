@@ -31,7 +31,7 @@ List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::RTG::SphereMath::SphereMath_C
 bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_ContainsPoint(Vector3 point,Vector3 sphereCenter,float sphereRadius,SphereEpsilon epsilon,MethodInfo *method)
 
 {
-  return (point.y - sphereCenter.y) * (point.y - sphereCenter.y) + (point.x - sphereCenter.x) * (point.x - sphereCenter.x) + (point.z - sphereCenter.z) * (point.z - sphereCenter.z) <= (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius);
+  return (point.x - sphereCenter.x) * (point.x - sphereCenter.x) + (point.y - sphereCenter.y) * (point.y - sphereCenter.y) + (point.z - sphereCenter.z) * (point.z - sphereCenter.z) <= (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius);
 }
 
 

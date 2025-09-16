@@ -254,7 +254,7 @@ int32_t Assembly-CSharp.dll::TextBubbleController::TextBubbleController_ShowBubb
                 }
                 if (pTVar7 != (Transform *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar7,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-                  TextBubble::TextBubble_set_Position(pTVar4,(Vector2)0x103a5843103a57e8,(MethodInfo *)0x0);
+                  TextBubble::TextBubble_set_Position(pTVar4,(Vector2)0x103a1463103a1408,(MethodInfo *)0x0);
                   pDVar14 = (this->fields).textBubbles;
                   key.m_value = IStack_1.m_value;
                   pOVar15 = (Object *)func_?();
@@ -408,20 +408,20 @@ void Assembly-CSharp.dll::TextBubbleController::TextBubbleController_Update(Text
   method_00 = (MethodInfo *)(this->fields).textBubbles;
   if (method_00 != (MethodInfo *)0x0) {
     pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&pDStack_5,(Dictionary_2_System_UInt32_System_Object_ *)method_00,MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__GetEnumerator__);
-    uVar6 = (pDVar4->_current).key;
-    uVar7 = *(undefined8 *)&(pDVar4->_current).value;
+    uVar6 = *(undefined8 *)&(pDVar4->_current).value;
     uStack_1 = 1;
-    while (bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffc4,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TextBubbleController::BubbleTracker>__MoveNext__), bVar8 != 0) {
-      uVar9 = uVar6;
-      bVar8 = TextBubbleController_UpdateBubble(this,(TextBubbleController_BubbleTracker *)uVar7,(MethodInfo *)0x0);
-      if (bVar8 != 0) {
+    uVar7 = (pDVar4->_current).key;
+    while (uVar8 = uVar7, bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffbc,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TextBubbleController::BubbleTracker>__MoveNext__), bVar9 != 0) {
+      uVar7 = uVar8;
+      bVar9 = TextBubbleController_UpdateBubble(this,(TextBubbleController_BubbleTracker *)uVar6,(MethodInfo *)0x0);
+      if (bVar9 != 0) {
         method_00 = (MethodInfo *)(this->fields).removeList;
         if (method_00 == (MethodInfo *)0x0) goto code_?;
-        func_?(method_00,uVar9);
+        func_?(method_00,uVar8);
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffc4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TextBubbleController::BubbleTracker>__Dispose__,method_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffbc,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TextBubbleController::BubbleTracker>__Dispose__,method_00);
     uStack_1 = 0xffffffff;
     pLVar10 = (this->fields).removeList;
     if (pLVar10 != (List_1_System_Int32_ *)0x0) {

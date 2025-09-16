@@ -535,7 +535,7 @@ bool Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetIndicatorPosit
     screenPoint.x = (float)this;
     VVar6 = LocationIndicator_get_Max(this,(MethodInfo *)0x0);
     puVar7 = &UNK_?;
-    if (VVar6.y < 3.7162142e-29) {
+    if (VVar6.y < 3.7109805e-29) {
       iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
@@ -572,7 +572,6 @@ bool Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetIndicatorPosit
 
 /* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
     */
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void SetOwnership(PlanetOwnershipType) */
 
 void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetOwnership(LocationIndicator *this,PlanetOwnershipType__Enum ownershipType,MethodInfo *method)
@@ -581,256 +580,120 @@ void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetOwnership(Loca
   if (cRam_? == '\0') {
     func_?();
     func_?();
-    pLStackY_14 = (LocationIndicator *)&UNK_?;
     func_?();
-    pLStackY_14 = (LocationIndicator *)&StringLiteral_Spectator;
-    ppSStackY_18 = (String **)&UNK_?;
     func_?();
-    ppSStackY_18 = &::StringLiteral__;
-    puStackY_1c = &UNK_?;
     func_?();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).ownershipText;
   switch(ownershipType & 0xff) {
   case PlanetOwnershipType__Enum_Editor:
-    pLStackY_14 = (LocationIndicator *)&UNK_?;
     TM::TM__(StringLiteral_Editor,(MethodInfo *)0x0);
     break;
   case PlanetOwnershipType__Enum_Owner:
-    pLStackY_14 = (LocationIndicator *)&UNK_?;
     TM::TM__(StringLiteral_Owner,(MethodInfo *)0x0);
     break;
   case PlanetOwnershipType__Enum_Playtester:
-    pLStackY_14 = (LocationIndicator *)&UNK_?;
     TM::TM__(StringLiteral_Play_Tester,(MethodInfo *)0x0);
     break;
   default:
     break;
   case PlanetOwnershipType__Enum_Spectator:
-    pLStackY_14 = (LocationIndicator *)&UNK_?;
     TM::TM__(StringLiteral_Spectator,(MethodInfo *)0x0);
   }
   if (pTVar1 != (Text *)0x0) {
     (*(code *)(pTVar1->klass->vtable).set_text.method)();
     return;
   }
-  puVar2 = (undefined4 *)func_?();
-  *(byte *)(puVar2 + 0xf) = *(byte *)(puVar2 + 0xf) ^ 0x10;
-  if (!SCARRY1(in_stack_3,extraout_CH)) {
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+  uVar2 = func_?();
+  cVar3 = (byte)uVar2 - 0x3c;
+  piVar4 = (int *)CONCAT31((int3)((ulonglong)uVar2 >> 8),cVar3);
+  pcVar5 = (char *)((int)&stack0x00000000 * 2 + 0x2cb81038);
+  *pcVar5 = *pcVar5 + (char)((ulonglong)uVar2 >> 8) + ((byte)uVar2 < 0x3c);
+  if (extraout_ECX == 1 || cVar3 == '\x10') {
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
     return;
   }
-  puVar2[-1] = 0;
-  puVar2[-2] = register0x00000010;
-  puVar2[-3] = &UNK_?;
-  iVar5 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize((Text *)puVar2[-2],(MethodInfo *)puVar2[-1]);
-  piVar6 = piRam_?;
-  pfVar7 = (float *)(puVar2 + 2);
-  if (piRam_? != (int *)0x0) {
-    puVar2[1] = 0;
-    *puVar2 = piVar6;
-    puVar2[-1] = &UNK_?;
-    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)*puVar2,(MethodInfo *)puVar2[1]);
-    pfVar7 = (float *)(puVar2 + 4);
-    if (pTVar8 != (Transform *)0x0) {
-      puVar2[3] = 0;
-      puVar2[2] = pTVar8;
-      puVar2[1] = &ppSStackY_18;
-      *puVar2 = &UNK_?;
-      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)puVar2[1],(Transform *)puVar2[2],(MethodInfo *)puVar2[3]);
-      piVar6 = piRam_?;
-      fVar10 = pVVar9->x;
-      pfVar7 = (float *)(puVar2 + 7);
-      if (piRam_? != (int *)0x0) {
-        puVar2[6] = 0;
-        puVar2[5] = piVar6;
-        puVar2[4] = &UNK_?;
-        iVar11 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize((Text *)puVar2[5],(MethodInfo *)puVar2[6]);
-        piVar6 = piRam_?;
-        pfVar7 = (float *)(puVar2 + 9);
-        if (piRam_? != (int *)0x0) {
-          puVar2[8] = 0;
-          puVar2[7] = piVar6;
-          puVar2[6] = &UNK_?;
-          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)puVar2[7],(MethodInfo *)puVar2[8]);
-          pfVar7 = (float *)(puVar2 + 0xb);
-          if (pTVar8 != (Transform *)0x0) {
-            puVar2[10] = 0;
-            puVar2[9] = pTVar8;
-            puVar2[8] = &ppSStackY_18;
-            puVar2[7] = &UNK_?;
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)puVar2[8],(Transform *)puVar2[9],(MethodInfo *)puVar2[10]);
-            piVar6 = piRam_?;
-            fVar12 = pVVar9->x;
-            pfVar7 = (float *)(puVar2 + 0xe);
-            if (piRam_? != (int *)0x0) {
-              puVar2[0xd] = 0;
-              puVar2[0xc] = piVar6;
-              puVar2[0xb] = &UNK_?;
-              iVar13 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize((Text *)puVar2[0xc],(MethodInfo *)puVar2[0xd]);
-              piVar6 = piRam_?;
-              pfVar7 = (float *)(puVar2 + 0x10);
-              if (piRam_? != (int *)0x0) {
-                puVar2[0xf] = 0;
-                puVar2[0xe] = piVar6;
-                puVar2[0xd] = &UNK_?;
-                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)puVar2[0xe],(MethodInfo *)puVar2[0xf]);
-                pfVar7 = (float *)(puVar2 + 0x12);
-                if (pTVar8 != (Transform *)0x0) {
-                  puVar2[0x11] = 0;
-                  puVar2[0x10] = pTVar8;
-                  puVar2[0xf] = &ppSStackY_18;
-                  puVar2[0xe] = &UNK_?;
-                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)puVar2[0xf],(Transform *)puVar2[0x10],(MethodInfo *)puVar2[0x11]);
-                  puVar2[0x11] = 3;
-                  fVar14 = pVVar9->x;
-                  puVar2[0x10] = TypeInfo__System__Single;
-                  fVar14 = (float)iVar13 * 0.16 * (1.0 / fVar14);
-                  puVar15 = puVar2 + 0xf;
-                  puVar2[0xf] = &UNK_?;
-                  iVar16 = func_?();
-                  piVar6 = piRam_?;
-                  pfVar7 = (float *)((int)puVar15 + 0x14);
-                  if (piRam_? != (int *)0x0) {
-                    iVar17 = *piRam_?;
-                    *(undefined4 *)((int)puVar15 + 0x10) = *(undefined4 *)(iVar17 + 0x314);
-                    pcVar4 = *(code **)(iVar17 + 0x310);
-                    *(int **)((int)puVar15 + 0xc) = piVar6;
-                    puVar18 = (undefined4 *)((int)puVar15 + 8);
-                    *(undefined **)((int)puVar15 + 8) = &UNK_?;
-                    iVar17 = (*pcVar4)();
-                    pfVar19 = (float *)(puVar18 + 2);
-                    pfVar7 = (float *)(puVar18 + 2);
-                    if ((iVar17 != 0) && (pfVar7 = (float *)(puVar18 + 2), iVar16 != 0)) {
-                      if (*(int *)(iVar16 + 0xc) == 0) goto code_?;
-                      *(float *)(iVar16 + 0x10) = (float)*(int *)(iVar17 + 8) * (float)iVar5 * 0.16 * (1.0 / fVar10);
-                      piVar6 = piRam_?;
-                      pfVar7 = (float *)(puVar18 + 2);
-                      if (piRam_? != (int *)0x0) {
-                        iVar17 = *piRam_?;
-                        puVar18[1] = *(undefined4 *)(iVar17 + 0x314);
-                        pcVar4 = *(code **)(iVar17 + 0x310);
-                        *puVar18 = piVar6;
-                        puVar20 = puVar18 + -1;
-                        puVar18[-1] = &UNK_?;
-                        iVar17 = (*pcVar4)();
-                        pfVar19 = (float *)(puVar20 + 2);
-                        pfVar7 = (float *)(puVar20 + 2);
-                        if (iVar17 != 0) {
-                          if (*(uint *)(iVar16 + 0xc) < 2) goto code_?;
-                          *(float *)(iVar16 + 0x14) = (float)*(int *)(iVar17 + 8) * (float)iVar11 * 0.16 * (1.0 / fVar12);
-                          piVar6 = piRam_?;
-                          pfVar7 = (float *)(puVar20 + 2);
-                          if (piRam_? != (int *)0x0) {
-                            iVar17 = *piRam_?;
-                            puVar20[1] = *(undefined4 *)(iVar17 + 0x314);
-                            pcVar4 = *(code **)(iVar17 + 0x310);
-                            *puVar20 = piVar6;
-                            pfVar21 = (float *)(puVar20 + -1);
-                            puVar20[-1] = &UNK_?;
-                            iVar17 = (*pcVar4)();
-                            pfVar19 = pfVar21 + 2;
-                            pfVar7 = pfVar21 + 2;
-                            if (iVar17 != 0) {
-                              if (*(uint *)(iVar16 + 0xc) < 3) goto code_?;
-                              *(float *)(iVar16 + 0x18) = (float)*(int *)(iVar17 + 8) * fVar14;
-                              uVar22 = *(uint *)(iVar16 + 0xc);
-                              if (uVar22 == 0) {
-                                this = (LocationIndicator *)0x0;
-                              }
-                              else {
-                                pLVar23 = *(LocationIndicator **)(iVar16 + 0x10);
-                                uVar24 = 1;
-                                this = pLVar23;
-                                if (1 < (int)uVar22) {
-                                  pfVar19 = pfVar21 + 1;
-                                  pfVar21[1] = (float)unaff_EBX;
-                                  pfVar7 = (float *)(iVar16 + 0x14);
-                                  do {
-                                    if (uVar22 <= uVar24) goto code_?;
-                                    pLVar25 = (LocationIndicator *)*pfVar7;
-                                    if ((float)pLVar23 < (float)pLVar25) {
-                                      pLVar23 = pLVar25;
-                                      this = pLVar25;
-                                    }
-                                    uVar24 = uVar24 + 1;
-                                    pfVar7 = pfVar7 + 1;
-                                  } while ((int)uVar24 < (int)uVar22);
-                                }
-                              }
-                              iVar16 = iRam_?;
-                              pfVar7 = pfVar21 + 2;
-                              if (iRam_? != 0) {
-                                pfVar21[1] = 0.0;
-                                *pfVar21 = (float)iVar16;
-                                pfVar21[-1] = (float)&UNK_?;
-                                VVar26 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta((RectTransform *)*pfVar21,(MethodInfo *)pfVar21[1]);
-                                pLStackY_14 = this;
-                                pfVar21[1] = 0.0;
-                                *pfVar21 = VVar26.y;
-                                pfVar21[-1] = (float)this;
-                                pfVar21[-2] = (float)iVar16;
-                                pfVar21[-3] = (float)&UNK_?;
-                                UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta((RectTransform *)pfVar21[-2],*(Vector2 *)(pfVar21 + -1),(MethodInfo *)pfVar21[1]);
-                                iVar16 = iRam_?;
-                                pfVar7 = pfVar21 + 9;
-                                if (iRam_? != 0) {
-                                  pfVar21[8] = 0.0;
-                                  pfVar21[7] = (float)iVar16;
-                                  pfVar21[6] = (float)&ppSStackY_18;
-                                  pfVar21[5] = (float)&UNK_?;
-                                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)pfVar21[6],(Transform *)pfVar21[7],(MethodInfo *)pfVar21[8]);
-                                  iVar16 = iRam_?;
-                                  pfVar7 = pfVar21 + 0xc;
-                                  fVar10 = pVVar9->x;
-                                  if (iRam_? != 0) {
-                                    pfVar21[0xb] = 0.0;
-                                    pfVar21[10] = (float)iVar16;
-                                    pfVar21[9] = (float)&ppSStackY_18;
-                                    pfVar21[8] = (float)&UNK_?;
-                                    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)pfVar21[9],(Transform *)pfVar21[10],(MethodInfo *)pfVar21[0xb]);
-                                    iVar16 = iRam_?;
-                                    pfVar7 = pfVar21 + 0xf;
-                                    fVar12 = pVVar9->x;
-                                    if (iRam_? != 0) {
-                                      pfVar21[0xe] = 0.0;
-                                      pfVar21[0xd] = (float)iVar16;
-                                      pfVar21[0xc] = (float)auStackY_28;
-                                      pfVar21[0xb] = (float)&UNK_?;
-                                      pRVar27 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)pfVar21[0xc],(RectTransform *)pfVar21[0xd],(MethodInfo *)pfVar21[0xe]);
-                                      iVar16 = iRam_?;
-                                      pfVar7 = pfVar21 + 0x12;
-                                      fVar12 = pRVar27->m_Width * fVar12;
-                                      fRam00000034 = (float)this * fVar10;
-                                      if (fRam00000034 <= fVar12) {
-                                        fRam00000034 = fVar12;
-                                      }
-                                      if (iRam_? != 0) {
-                                        pfVar21[0x11] = 0.0;
-                                        pfVar21[0x10] = (float)iVar16;
-                                        pfVar21[0xf] = (float)&ppSStackY_18;
-                                        pfVar21[0xe] = (float)&UNK_?;
-                                        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)pfVar21[0xf],(Transform *)pfVar21[0x10],(MethodInfo *)pfVar21[0x11]);
-                                        iVar16 = iRam_?;
-                                        pfVar7 = pfVar21 + 0x15;
-                                        fVar10 = pVVar9->x;
-                                        if (iRam_? != 0) {
-                                          pfVar21[0x14] = 0.0;
-                                          pfVar21[0x13] = (float)iVar16;
-                                          pfVar21[0x12] = (float)auStackY_28;
-                                          pfVar21[0x11] = (float)&UNK_?;
-                                          pRVar27 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)pfVar21[0x12],(RectTransform *)pfVar21[0x13],(MethodInfo *)pfVar21[0x14]);
-                                          fRam00000038 = pRVar27->m_Height * fVar10;
-                                          return;
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
+  iRam_? = iRam_? + (int)((ulonglong)uVar2 >> 0x20);
+  if (iRam_? == 0) {
+    pTVar1 = pTRam00000018;
+    if (pTRam00000018 != (Text *)0x0) goto code_?;
+  }
+  else {
+    iVar7 = *piVar4;
+    *(char *)(unaff_EBX + 0x57) = *(char *)(unaff_EBX + 0x57) + (char)((ulonglong)uVar2 >> 0x20);
+    pTVar1 = (Text *)((int)piVar4 + iVar7);
+code_?:
+    iVar8 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar1,(MethodInfo *)0x0);
+    if ((pTRam00000018 != (Text *)0x0) && (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTRam00000018,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0)) {
+      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar9,(MethodInfo *)0x0);
+      fVar11 = pVVar10->x;
+      if ((pTRam0000001c != (Text *)0x0) && ((((UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTRam0000001c,(MethodInfo *)0x0), pTRam0000001c != (Text *)0x0 && (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTRam0000001c,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0)) && (UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar9,(MethodInfo *)0x0), pTRam00000020 != (Text *)0x0)) && ((iVar12 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTRam00000020,(MethodInfo *)0x0), pTRam00000020 != (Text *)0x0 && (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTRam00000020,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0)))))) {
+        pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar9,(MethodInfo *)0x0);
+        fVar13 = 1.0 / pVVar10->x;
+        iVar7 = func_?();
+        if ((pTRam00000018 != (Text *)0x0) && ((iVar14 = (*(code *)(pTRam00000018->klass->vtable).get_text.method)(), iVar14 != 0 && (iVar7 != 0)))) {
+          if (*(int *)(iVar7 + 0xc) == 0) goto code_?;
+          *(float *)(iVar7 + 0x10) = (float)iVar8 * 0.16 * (1.0 / fVar11) * (float)*(int *)(iVar14 + 8);
+          if (pTRam0000001c != (Text *)0x0) {
+            puVar15 = &UNK_?;
+            pTVar1 = pTRam0000001c;
+            iVar14 = (*(code *)(pTRam0000001c->klass->vtable).get_text.method)();
+            if (iVar14 != 0) {
+              if (*(uint *)(iVar7 + 0xc) < 2) goto code_?;
+              *(float *)(iVar7 + 0x14) = (float)(int)pTVar1 * 0.16 * (float)puVar15 * (float)*(int *)(iVar14 + 8);
+              if ((pTRam00000020 != (Text *)0x0) && (iVar14 = (*(code *)(pTRam00000020->klass->vtable).get_text.method)(), iVar14 != 0)) {
+                if (*(uint *)(iVar7 + 0xc) < 3) goto code_?;
+                *(float *)(iVar7 + 0x18) = (float)iVar12 * 0.16 * fVar13 * (float)*(int *)(iVar14 + 8);
+                pTVar9 = pTRam00000014;
+                uVar16 = *(uint *)(iVar7 + 0xc);
+                if (uVar16 == 0) {
+                  this = (LocationIndicator *)0x0;
+                }
+                else {
+                  pLVar17 = *(LocationIndicator **)(iVar7 + 0x10);
+                  uVar18 = 1;
+                  this = pLVar17;
+                  if (1 < (int)uVar16) {
+                    pfVar19 = (float *)(iVar7 + 0x14);
+                    do {
+                      if (uVar16 <= uVar18) goto code_?;
+                      pLVar20 = (LocationIndicator *)*pfVar19;
+                      if ((float)pLVar17 < (float)pLVar20) {
+                        pLVar17 = pLVar20;
+                        this = pLVar20;
+                      }
+                      uVar18 = uVar18 + 1;
+                      pfVar19 = pfVar19 + 1;
+                    } while ((int)uVar18 < (int)uVar16);
+                  }
+                }
+                if (pTRam00000014 != (Transform *)0x0) {
+                  VVar21 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta((RectTransform *)pTRam00000014,(MethodInfo *)0x0);
+                  VVar21.y = VVar21.y;
+                  VVar21.x = (float)this;
+                  UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta((RectTransform *)pTVar9,VVar21,(MethodInfo *)0x0);
+                  if (pTRam00000014 != (Transform *)0x0) {
+                    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTRam00000014,(MethodInfo *)0x0);
+                    fVar11 = pVVar10->x;
+                    if (pTRam00000030 != (Transform *)0x0) {
+                      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTRam00000030,(MethodInfo *)0x0);
+                      fVar13 = pVVar10->x;
+                      if (pTRam00000030 != (Transform *)0x0) {
+                        pRVar22 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffd0,(RectTransform *)pTRam00000030,(MethodInfo *)0x0);
+                        fVar13 = pRVar22->m_Width * fVar13;
+                        fRam00000034 = (float)this * fVar11;
+                        if ((float)this * fVar11 <= fVar13) {
+                          fRam00000034 = fVar13;
+                        }
+                        if (pTRam00000030 != (Transform *)0x0) {
+                          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTRam00000030,(MethodInfo *)0x0);
+                          fVar11 = pVVar10->x;
+                          if (pTRam00000030 != (Transform *)0x0) {
+                            pRVar22 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffd0,(RectTransform *)pTRam00000030,(MethodInfo *)0x0);
+                            fRam00000038 = pRVar22->m_Height * fVar11;
+                            return;
                           }
                         }
                       }
@@ -844,14 +707,11 @@ void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetOwnership(Loca
       }
     }
   }
-  pfVar19 = (float *)((int)pfVar7 + -4);
-  *(undefined **)((int)pfVar7 + -4) = &UNK_?;
   func_?();
 code_?:
-  *(undefined **)((int)pfVar19 + -4) = &UNK_?;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -868,91 +728,93 @@ void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetTextRectSize(L
   }
   pTVar2 = (this->fields).nameText;
   if (pTVar2 != (Text *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
+    iVar3 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
     pTVar2 = (this->fields).nameText;
-    if ((pTVar2 != (Text *)0x0) && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe8,pTVar3,(MethodInfo *)0x0);
+    if ((pTVar2 != (Text *)0x0) && (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
       pTVar2 = (this->fields).ownershipText;
       if (pTVar2 != (Text *)0x0) {
-        iVar4 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
+        UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
         pTVar2 = (this->fields).ownershipText;
-        if ((pTVar2 != (Text *)0x0) && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-          pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe8,pTVar3,(MethodInfo *)0x0);
+        if ((pTVar2 != (Text *)0x0) && (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0), pTVar4 != (Transform *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
           pTVar2 = (this->fields).distanceText;
-          fVar6 = (float)iVar4 * 0.16 * (1.0 / pVVar5->x);
           if (pTVar2 != (Text *)0x0) {
-            iVar4 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
-            pTVar2 = (this->fields).distanceText;
-            if ((pTVar2 != (Text *)0x0) && (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-              pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe8,pTVar3,(MethodInfo *)0x0);
-              fVar7 = (float)iVar4 * 0.16 * (1.0 / pVVar5->x);
-              iVar8 = func_?();
-              pTVar2 = (this->fields).nameText;
-              if ((pTVar2 != (Text *)0x0) && ((iVar9 = (*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr), iVar9 != 0 && (iVar8 != 0)))) {
-                if (*(int *)(iVar8 + 0xc) == 0) goto code_?;
-                *(float *)(iVar8 + 0x10) = (float)*(int *)(iVar9 + 8) * 3.7164444e-29;
-                pTVar2 = (this->fields).ownershipText;
-                if ((pTVar2 != (Text *)0x0) && (iVar9 = (*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr), iVar9 != 0)) {
-                  if (*(uint *)(iVar8 + 0xc) < 2) goto code_?;
-                  *(float *)(iVar8 + 0x14) = (float)*(int *)(iVar9 + 8) * fVar6;
-                  pTVar2 = (this->fields).distanceText;
-                  if ((pTVar2 != (Text *)0x0) && (iVar9 = (*(code *)(pTVar2->klass->vtable).get_text.method)(pTVar2,(pTVar2->klass->vtable).set_text.methodPtr), iVar9 != 0)) {
-                    if (*(uint *)(iVar8 + 0xc) < 3) goto code_?;
-                    *(float *)(iVar8 + 0x18) = (float)*(int *)(iVar9 + 8) * fVar7;
-                    uVar10 = *(uint *)(iVar8 + 0xc);
-                    if (uVar10 == 0) {
-                      this = (LocationIndicator *)0x0;
-                    }
-                    else {
-                      pLVar11 = *(LocationIndicator **)(iVar8 + 0x10);
-                      uVar12 = 1;
-                      this = pLVar11;
-                      if (1 < (int)uVar10) {
-                        pfVar13 = (float *)(iVar8 + 0x14);
-                        do {
-                          if (uVar10 <= uVar12) goto code_?;
-                          pLVar14 = (LocationIndicator *)*pfVar13;
-                          if ((float)pLVar11 < (float)pLVar14) {
-                            pLVar11 = pLVar14;
-                            this = pLVar14;
-                          }
-                          uVar12 = uVar12 + 1;
-                          pfVar13 = pfVar13 + 1;
-                        } while ((int)uVar12 < (int)uVar10);
+            iVar5 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize(pTVar2,(MethodInfo *)0x0);
+            pTVar6 = (this->fields).distanceText;
+            if (pTVar6 != (Text *)0x0) {
+              puVar7 = &UNK_?;
+              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTVar6,(MethodInfo *)0x0);
+              if (pTVar4 != (Transform *)0x0) {
+                pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+                fVar9 = 1.0 / pVVar8->x;
+                iVar10 = func_?();
+                pTVar6 = (this->fields).nameText;
+                if (((pTVar6 != (Text *)0x0) && (iVar11 = (*(code *)(pTVar6->klass->vtable).get_text.method)(), iVar11 != 0)) && (iVar10 != 0)) {
+                  if (*(int *)(iVar10 + 0xc) == 0) goto code_?;
+                  *(float *)(iVar10 + 0x10) = (float)iVar3 * 0.16 * (float)pTVar6 * (float)*(int *)(iVar11 + 8);
+                  pTVar6 = (this->fields).ownershipText;
+                  if ((pTVar6 != (Text *)0x0) && (iVar11 = (*(code *)(pTVar6->klass->vtable).get_text.method)(), iVar11 != 0)) {
+                    if (*(uint *)(iVar10 + 0xc) < 2) goto code_?;
+                    *(float *)(iVar10 + 0x14) = (float)(int)puVar7 * 0.16 * (float)pTVar2 * (float)*(int *)(iVar11 + 8);
+                    pTVar2 = (this->fields).distanceText;
+                    if ((pTVar2 != (Text *)0x0) && (iVar11 = (*(code *)(pTVar2->klass->vtable).get_text.method)(), iVar11 != 0)) {
+                      if (*(uint *)(iVar10 + 0xc) < 3) goto code_?;
+                      *(float *)(iVar10 + 0x18) = (float)iVar5 * 0.16 * fVar9 * (float)*(int *)(iVar11 + 8);
+                      uVar12 = *(uint *)(iVar10 + 0xc);
+                      if (uVar12 == 0) {
+                        this = (LocationIndicator *)0x0;
                       }
-                    }
-                    pRVar15 = (pLVar1->fields).textRectTransform;
-                    if (pRVar15 != (RectTransform *)0x0) {
-                      VVar16 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta(pRVar15,(MethodInfo *)0x0);
-                      VVar16.y = VVar16.y;
-                      VVar16.x = (float)this;
-                      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar15,VVar16,(MethodInfo *)0x0);
-                      pTVar3 = (Transform *)(pLVar1->fields).textRectTransform;
-                      if (pTVar3 != (Transform *)0x0) {
-                        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe8,pTVar3,(MethodInfo *)0x0);
-                        fVar6 = pVVar5->x;
-                        pTVar3 = (Transform *)(pLVar1->fields).rectTransform;
-                        if (pTVar3 != (Transform *)0x0) {
-                          pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe8,pTVar3,(MethodInfo *)0x0);
-                          fVar7 = pVVar5->x;
-                          pRVar15 = (pLVar1->fields).rectTransform;
-                          if (pRVar15 != (RectTransform *)0x0) {
-                            pRVar17 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffd8,pRVar15,(MethodInfo *)0x0);
-                            fVar7 = pRVar17->m_Width * fVar7;
-                            fVar18 = (float)this * fVar6;
-                            if ((float)this * fVar6 <= fVar7) {
-                              fVar18 = fVar7;
+                      else {
+                        pLVar13 = *(LocationIndicator **)(iVar10 + 0x10);
+                        uVar14 = 1;
+                        this = pLVar13;
+                        if (1 < (int)uVar12) {
+                          pfVar15 = (float *)(iVar10 + 0x14);
+                          do {
+                            if (uVar12 <= uVar14) goto code_?;
+                            pLVar16 = (LocationIndicator *)*pfVar15;
+                            if ((float)pLVar13 < (float)pLVar16) {
+                              pLVar13 = pLVar16;
+                              this = pLVar16;
                             }
-                            pTVar3 = (Transform *)(pLVar1->fields).rectTransform;
-                            (pLVar1->fields).width = fVar18;
-                            if (pTVar3 != (Transform *)0x0) {
-                              pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe8,pTVar3,(MethodInfo *)0x0);
-                              fVar6 = pVVar5->x;
-                              pRVar15 = (pLVar1->fields).rectTransform;
-                              if (pRVar15 != (RectTransform *)0x0) {
-                                pRVar17 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffd8,pRVar15,(MethodInfo *)0x0);
-                                (pLVar1->fields).height = pRVar17->m_Height * fVar6;
-                                return;
+                            uVar14 = uVar14 + 1;
+                            pfVar15 = pfVar15 + 1;
+                          } while ((int)uVar14 < (int)uVar12);
+                        }
+                      }
+                      pRVar17 = (pLVar1->fields).textRectTransform;
+                      if (pRVar17 != (RectTransform *)0x0) {
+                        VVar18 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta(pRVar17,(MethodInfo *)0x0);
+                        VVar18.y = VVar18.y;
+                        VVar18.x = (float)this;
+                        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar17,VVar18,(MethodInfo *)0x0);
+                        pTVar4 = (Transform *)(pLVar1->fields).textRectTransform;
+                        if (pTVar4 != (Transform *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+                          pTVar4 = (Transform *)(pLVar1->fields).rectTransform;
+                          if (pTVar4 != (Transform *)0x0) {
+                            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+                            pRVar17 = (pLVar1->fields).rectTransform;
+                            if (pRVar17 != (RectTransform *)0x0) {
+                              fVar19 = 0.0;
+                              pRVar20 = (Rect *)&stack0xffffffd0;
+                              pRVar21 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect(pRVar20,pRVar17,(MethodInfo *)0x0);
+                              fVar22 = pRVar21->m_Width * (float)pRVar20;
+                              fVar9 = (float)this * fVar19;
+                              if ((float)this * fVar19 <= fVar22) {
+                                fVar9 = fVar22;
+                              }
+                              pTVar4 = (Transform *)(pLVar1->fields).rectTransform;
+                              (pLVar1->fields).width = fVar9;
+                              if (pTVar4 != (Transform *)0x0) {
+                                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
+                                pRVar17 = (pLVar1->fields).rectTransform;
+                                if (pRVar17 != (RectTransform *)0x0) {
+                                  pRVar20 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffd0,pRVar17,(MethodInfo *)0x0);
+                                  (pLVar1->fields).height = pRVar20->m_Height * (float)pRVar17;
+                                  return;
+                                }
                               }
                             }
                           }
@@ -971,8 +833,8 @@ void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetTextRectSize(L
   func_?();
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 

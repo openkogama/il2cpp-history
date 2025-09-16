@@ -253,14 +253,14 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
     bVar1 = WorldObjectTypeInShopChecker::WorldObjectTypeInShopChecker_IsItemInShop(this_00,WorldObjectType__Enum_TriggerCube,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>);
-        func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_);
+        func_?(0x16b0);
+        func_?(0xb8);
         func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         func_?(&MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableTriggerAreaInventoryHighlight___Register_b__13_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_);
         cRam_? = '\x01';
       }
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>);
+      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?((short)TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableTriggerAreaInventoryHighlight___Register_b__13_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -268,8 +268,9 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar2,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_);
       (this->fields)._.isRegistered = 1;
     }
-    bVar3 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+    bVar1 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+    bVar3 = 0;
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)((uint)bVar1 << 0x18));
     if (pGVar2 != (GameObject *)0x0) {
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar2,(MethodInfo *)0x0);
       this_01 = (this->fields).slots;
@@ -280,16 +281,20 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
           bVar6 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory((this->fields).insideInventory,(MethodInfo *)0x0);
           bVar7 = 0;
           if (0 < iVar5) {
-            bVar7 = bVar4;
+            bVar7 = bVar6;
           }
-          return bVar6 & bVar7 & (bVar3 ^ 1) & bVar1;
+          bVar8 = 0;
+          if (bVar1 == 0) {
+            bVar8 = bVar4;
+          }
+          return bVar7 & bVar8 & bVar3;
         }
       }
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar1 = (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  bVar1 = (*pcVar9)();
   return bVar1;
 }
 

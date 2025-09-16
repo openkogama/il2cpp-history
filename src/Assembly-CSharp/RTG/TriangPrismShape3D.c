@@ -106,8 +106,8 @@ void Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_AlignWidth
 bool Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_ContainsPoint(TriangPrismShape3D *this,Vector3 point,MethodInfo *method)
 
 {
-  baseWidth = (this->fields)._width;
   baseDepth = (this->fields)._depth;
+  baseWidth = (this->fields)._width;
   bVar1 = PrismMath::PrismMath_ContainsPoint(point,(this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,(this->fields)._height,(this->fields)._rotation,(PrismEpsilon)(this->fields)._epsilon._ptContainEps,(MethodInfo *)0x0);
   return bVar1;
 }
@@ -118,8 +118,8 @@ bool Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_ContainsPo
 AABB * Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_GetAABB(AABB *__return_storage_ptr__,TriangPrismShape3D *this,MethodInfo *method)
 
 {
-  baseWidth = (this->fields)._width;
   baseDepth = (this->fields)._depth;
+  baseWidth = (this->fields)._width;
   pointCloud = PrismMath::PrismMath_CalcTriangPrismCornerPoints((this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,(this->fields)._height,(this->fields)._rotation,(MethodInfo *)0x0);
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
@@ -155,8 +155,8 @@ void Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_MakeEquila
 bool Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_Raycast(TriangPrismShape3D *this,Ray ray,float *t,MethodInfo *method)
 
 {
-  baseWidth = (this->fields)._width;
   baseDepth = (this->fields)._depth;
+  baseWidth = (this->fields)._width;
   bVar1 = PrismMath::PrismMath_RaycastTriangular(ray,t,(this->fields)._baseCenter,baseWidth,baseDepth,baseWidth,baseDepth,(this->fields)._height,(this->fields)._rotation,(MethodInfo *)0x0);
   return bVar1;
 }

@@ -47,7 +47,7 @@ void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_InitTransition(Tran
               if (pTVar2 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(pTVar2,(this->fields).prevCameraRotation,(MethodInfo *)0x0);
                 (this->fields).time = transitionTime;
-                (this->fields).superSoft = 0x7e;
+                (this->fields).superSoft = 0x1e;
                 (this->fields).transitionPercentage = 0.0;
                 return;
               }
@@ -217,7 +217,7 @@ void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_UpdateCamera(Transi
     pMVar7 = (camController->fields).cameraStack;
     if (((pMVar7 == (MVCameraController_CameraStack *)0x0) || (pMVar8 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera(pMVar7,(MethodInfo *)0x0), pMVar8 == (MVCameraBase *)0x0)) || (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMVar8,(MethodInfo *)0x0), pTVar9 == (Transform *)0x0)) goto code_?;
     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_eulerAngles((Vector3 *)&stack0xffffffdc,pTVar9,(MethodInfo *)0x0);
-    pQVar10 = TransitionCamera_RotateTowardsY((Quaternion *)&stack0xffffffcc,this_01,VVar6,*pVVar5,3.2602383e-29,(MethodInfo *)0x0);
+    pQVar10 = TransitionCamera_RotateTowardsY((Quaternion *)&stack0xffffffcc,this_01,VVar6,*pVVar5,3.255433e-29,(MethodInfo *)0x0);
     fVar13 = pQVar10->x;
     fVar14 = pQVar10->y;
     fVar15 = pQVar10->z;
@@ -235,7 +235,7 @@ void Assembly-CSharp.dll::TransitionCamera::TransitionCamera_UpdateCamera(Transi
     VVar6.z = fVar20;
     VVar6.x = VStack_2.y;
     VVar6.y = VStack_2.z;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Slerp((Vector3 *)&stack0xffffffdc,VVar6,*pVVar5,3.2602383e-29,(MethodInfo *)0x0);
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Slerp((Vector3 *)&stack0xffffffdc,VVar6,*pVVar5,3.255433e-29,(MethodInfo *)0x0);
     if (pTVar9 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar9,*pVVar5,(MethodInfo *)0x0);
     pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0);

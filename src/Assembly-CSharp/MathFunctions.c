@@ -5,18 +5,18 @@ Matrix4x4 * Assembly-CSharp.dll::MathFunctions::MathFunctions_AbsMatrix(Matrix4x
 
 {
   func_?(__return_storage_ptr__,0,0x40);
-  iVar1 = 0;
+  iStack_1 = 0;
   do {
-    iVar2 = 0;
-    index = iVar1;
+    iVar2 = 3;
+    index = iStack_1;
     do {
       fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1(&m,index,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,iVar1 + iVar2,ABS(fVar3),(MethodInfo *)0x0);
-      iVar2 = iVar2 + 1;
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,index,ABS(fVar3),(MethodInfo *)0x0);
       index = index + 1;
-    } while (iVar2 < 3);
-    iVar1 = iVar1 + 4;
-  } while (iVar1 < 0xc);
+      iVar2 = iVar2 + -1;
+    } while (iVar2 != 0);
+    iStack_1 = iStack_1 + 4;
+  } while (iStack_1 < 0xc);
   return __return_storage_ptr__;
 }
 
@@ -285,15 +285,15 @@ Bounds * Assembly-CSharp.dll::MathFunctions::MathFunctions_FastAABBTransform(Bou
   func_?(&MStack_2,0,0x40);
   iStack_3 = 0;
   do {
-    iVar4 = 0;
+    iVar4 = 3;
     index = iStack_3;
     do {
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_Item_1(&MStack_1,index,(MethodInfo *)0x0);
       uStack_6 = CONCAT44(fVar5,(undefined4)uStack_6);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(&MStack_2,iStack_3 + iVar4,ABS(fVar5),(MethodInfo *)0x0);
-      iVar4 = iVar4 + 1;
+      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(&MStack_2,index,ABS(fVar5),(MethodInfo *)0x0);
       index = index + 1;
-    } while (iVar4 < 3);
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
     iStack_3 = iStack_3 + 4;
   } while (iStack_3 < 0xc);
   pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint(&VStack_8,&m,b.m_Center,(MethodInfo *)0x0);

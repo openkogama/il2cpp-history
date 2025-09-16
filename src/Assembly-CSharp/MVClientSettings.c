@@ -141,7 +141,7 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_InterstitialsAd
     func_?(&TypeInfo__MVClientSettings);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) == 0) {
+  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1b & 1) == 0) {
     return 0;
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -199,12 +199,12 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_JoinFlowAdsEnab
     func_?(&TypeInfo__MVClientSettings);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x2000U) != 0) {
+  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0xd & 1) != 0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVClientSettings);
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) != 0) {
+    if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1b & 1) != 0) {
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((((pMVar1 == (MVNetworkGame *)0x0) || (this = (pMVar1->fields).playerContainer, this == (MVPlayerContainer *)0x0)) || (pMVar2 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0), pMVar2 == (MVLocalPlayer *)0x0)) || (pSVar3 = (pMVar2->fields)._._SubscriptionRules_k__BackingField, pSVar3 == (SubscriptionRulesWrapper *)0x0)) {
         uVar4 = func_?(&stack0x00000000);
@@ -330,7 +330,7 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_ReviveEnabled(M
         func_?();
         cRam_? = '\x01';
       }
-      if ((TypeInfo__MVClientSettings->static_fields->flags & 0x4000000U) != 0) {
+      if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1a & 1) != 0) {
         pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar3 != (MVNetworkGame *)0x0) && (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
           pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0);
@@ -378,7 +378,7 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_RewardedAdsEnab
     func_?(&TypeInfo__MVClientSettings);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x4000000U) == 0) {
+  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1a & 1) == 0) {
     return 0;
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);

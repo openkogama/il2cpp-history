@@ -200,7 +200,7 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_UpdateControllerUpdate(Ob
     if (pMVar4 != (Material *)0x0) {
       value.a = (this->fields).currentAlpha;
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color(pMVar4,value,(MethodInfo *)0x0);
-      if ((this->fields).currentAlpha == fVar1 && (this->fields)._IsDrawingEnabled_k__BackingField == 0) {
+      if ((this->fields)._IsDrawingEnabled_k__BackingField == 0 && (this->fields).currentAlpha == fVar1) {
         return;
       }
       pMVar9 = (this->fields).woObjectEnabler;

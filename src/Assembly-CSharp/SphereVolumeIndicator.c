@@ -129,11 +129,11 @@ void Assembly-CSharp.dll::SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
       axis.x = 1.0;
       axis.z = 0.0;
       UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffa0,360.0 / (float)(this->fields).circleSergmentCount,axis,(MethodInfo *)0x0);
-      uVar9 = 0;
       if (0 < iVar8) {
         pVVar10 = positions->vector;
+        uVar9 = 0;
+        if (positions == (Vector3__Array *)0x0) goto code_?;
         do {
-          if (positions == (Vector3__Array *)0x0) goto code_?;
           if ((positions->max_length <= uVar9) || (pVVar10->z = pVVar10->x, positions->max_length <= uVar9)) goto code_?;
           uVar9 = uVar9 + 1;
           pVVar10->x = 0.0;
@@ -151,11 +151,11 @@ void Assembly-CSharp.dll::SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
           axis_00.x = (float)uVar16;
           axis_00.z = 0.0;
           UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffa0,360.0 / (float)(this->fields).circleSergmentCount,axis_00,(MethodInfo *)0x0);
-          uVar9 = 0;
           if (0 < iVar8) {
             pfVar17 = &positions->vector[0].y;
+            uVar9 = 0;
+            if (positions == (Vector3__Array *)0x0) goto code_?;
             do {
-              if (positions == (Vector3__Array *)0x0) goto code_?;
               if ((positions->max_length <= uVar9) || (((Vector3 *)(pfVar17 + -1))->x = *pfVar17, positions->max_length <= uVar9)) goto code_?;
               uVar9 = uVar9 + 1;
               *pfVar17 = 0.0;
