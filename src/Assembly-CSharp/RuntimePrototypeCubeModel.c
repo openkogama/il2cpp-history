@@ -912,7 +912,7 @@ code_?:
       uVar39 = DStack_9._current.key._0_4_;
       this_02 = (this->fields).chunks;
       if ((this_02 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) || (key.z = iVar30, DStack_9._current.key.x = (int16_t)uVar38, DStack_9._current.key.y = SUB42(uVar38,2), key.x = DStack_9._current.key.x, key.y = DStack_9._current.key.y, DStack_9._current.key._0_4_ = uVar39, this_04 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_02,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), uVar39 = DStack_9._current.key._0_4_, this_04 == (CubeModelChunk *)0x0)) goto code_?;
-      uVar18 = 0x6bc5;
+      uVar18 = 0x6be5;
       uVar19 = 0x106b;
       chunkPos.z = OStack_13.monitor._2_2_;
       DStack_9._current.key.x = (int16_t)uVar38;

@@ -184,8 +184,9 @@ code_?:
       }
       pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar3 == (MVNetworkGame *)0x0) || (pMVar9 = (pMVar3->fields).teamManager, pMVar9 == (MVTeamManager *)0x0)) goto code_?;
-      bVar2 = 0;
+      bVar2 = 0x67;
       iVar19 = MVTeamManager::MVTeamManager_TeamCount(pMVar9,(MethodInfo *)0x0);
+      alwaysColor = (bool)pMVar9;
       if (iVar19 < 2) {
         if (*(char *)&(pDVar15->_0).parent == '\0') {
           pBVar20 = *(Button **)&(pDVar15->_0).byval_arg.attrs;
@@ -201,7 +202,7 @@ code_?:
           }
           team.m_value = 5;
 code_?:
-          colorStyle = Styles::Styles_GetTeamColorStyle(team.m_value,bVar2,(MethodInfo *)0x0);
+          colorStyle = Styles::Styles_GetTeamColorStyle(team.m_value,bVar2,alwaysColor,(MethodInfo *)0x0);
           if (pIVar21 == (Il2CppClass *)0x0) goto code_?;
           ColorStyleObject::ColorStyleObject_UpdateColorStyle((ColorStyleObject *)pIVar21,colorStyle,(MethodInfo *)0x0);
         }
@@ -219,6 +220,7 @@ code_?:
             method_00 = TypeInfo__Styles;
             func_?();
           }
+          alwaysColor = 0;
           bVar2 = 0;
           team.m_value = in_stack_8.m_value;
           goto code_?;
@@ -773,9 +775,10 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateButton(Player
     cRam_? = '\x01';
   }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar2 == (MVNetworkGame *)0x0) || (this_00 = (pMVar2->fields).teamManager, this_00 == (MVTeamManager *)0x0)) goto code_?;
-  bVar5 = 0;
-  iVar6 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
+  if ((pMVar2 == (MVNetworkGame *)0x0) || (this_06 = (pMVar2->fields).teamManager, this_06 == (MVTeamManager *)0x0)) goto code_?;
+  bVar5 = 0x67;
+  iVar6 = MVTeamManager::MVTeamManager_TeamCount(this_06,(MethodInfo *)0x0);
+  alwaysColor = (bool)this_06;
   if (iVar6 < 2) {
     if ((this->fields).useColorStyle == 0) {
       pBVar7 = (this->fields).button;
@@ -785,15 +788,15 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateButton(Player
       Styles::Styles_SetStyle_4(pBVar7,ButtonStyle__Enum_RegularButton,MVTeam__Enum_None,SoundStyle__Enum_NoSound,(MethodInfo *)0x0);
     }
     else {
-      this_06 = (this->fields).colorStyleObject;
+      this_05 = (this->fields).colorStyleObject;
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       team.m_value = MVTeam__Enum_None;
 code_?:
-      colorStyle = Styles::Styles_GetTeamColorStyle(team.m_value,bVar5,(MethodInfo *)0x0);
-      if (this_06 == (ColorStyleObject *)0x0) goto code_?;
-      ColorStyleObject::ColorStyleObject_UpdateColorStyle(this_06,colorStyle,(MethodInfo *)0x0);
+      colorStyle = Styles::Styles_GetTeamColorStyle(team.m_value,bVar5,alwaysColor,(MethodInfo *)0x0);
+      if (this_05 == (ColorStyleObject *)0x0) goto code_?;
+      ColorStyleObject::ColorStyleObject_UpdateColorStyle(this_05,colorStyle,(MethodInfo *)0x0);
     }
   }
   else {
@@ -803,11 +806,12 @@ code_?:
     if (pMVar8 == (MVLocalPlayer *)0x0) goto code_?;
     team.m_value = (pMVar8->fields)._._Team_k__BackingField;
     if ((this->fields).useColorStyle != 0) {
-      this_06 = (this->fields).colorStyleObject;
+      this_05 = (this->fields).colorStyleObject;
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         in_stack_9 = TypeInfo__Styles;
         func_?();
       }
+      alwaysColor = 0;
       bVar5 = 0;
       goto code_?;
     }
@@ -835,25 +839,25 @@ code_?:
           }
           pOVar11 = pOVar12;
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((((pMVar2 == (MVNetworkGame *)0x0) || (pFVar13 = (pMVar2->fields)._Friends_k__BackingField, pFVar13 == (FriendList *)0x0)) || (this_01 = (pFVar13->fields).pendingNotifications, pOVar12 == (Object *)0x0)) || (this_01 == (List_1_System_Int32_ *)0x0)) goto code_?;
+          if ((((pMVar2 == (MVNetworkGame *)0x0) || (pFVar13 = (pMVar2->fields)._Friends_k__BackingField, pFVar13 == (FriendList *)0x0)) || (this_00 = (pFVar13->fields).pendingNotifications, pOVar12 == (Object *)0x0)) || (this_00 == (List_1_System_Int32_ *)0x0)) goto code_?;
           unaff_retaddr = MethodInfo__System__Collections__Generic__List<int>__Contains_int_;
-          bVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains(this_01,(int32_t)pOVar12[5].monitor,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+          bVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Contains(this_00,(int32_t)pOVar12[5].monitor,MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
         } while (bVar5 == 0);
         this = (PlayerListButton *)(this->fields).prevPlayerListState;
         if ((Dictionary_2_System_Int32_MVPlayer_ *)this == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
         unaff_retaddr = (MethodInfo *)&UNK_?;
         bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::Dictionary_2_System_Int32_System_Single__ContainsKey((Dictionary_2_System_Int32_System_Single_ *)this,(int32_t)pOVar12[5].monitor,MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_);
       } while (bVar5 != 0);
-      this_02 = (Component *)(((Dictionary_2_System_Int32_MVPlayer_ *)this)->fields)._version;
-      if (this_02 != (Component *)0x0) {
-        this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_02,(MethodInfo *)0x0);
-        if (this_04 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_04,1,(MethodInfo *)0x0);
+      this_01 = (Component *)(((Dictionary_2_System_Int32_MVPlayer_ *)this)->fields)._version;
+      if (this_01 != (Component *)0x0) {
+        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject(this_01,(MethodInfo *)0x0);
+        if (this_03 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_03,1,(MethodInfo *)0x0);
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffc4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__,in_stack_14);
 code_?:
-          this_05 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_05,MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Dictionary__);
-          (((Dictionary_2_System_Int32_MVPlayer_ *)this)->fields)._values = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)this_05;
+          this_04 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?();
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_04,MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Dictionary__);
+          (((Dictionary_2_System_Int32_MVPlayer_ *)this)->fields)._values = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)this_04;
           func_?();
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar2 != (MVNetworkGame *)0x0) && (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
@@ -868,10 +872,10 @@ code_?:
                   *unaff_FS_OFFSET = this_07;
                   return;
                 }
-                this_03 = (Dictionary_2_System_Int32_System_Object_ *)(((Dictionary_2_System_Int32_MVPlayer_ *)this)->fields)._values;
-                if ((value == (MethodInfo *)0x0) || (this_03 == (Dictionary_2_System_Int32_System_Object_ *)0x0)) break;
+                this_02 = (Dictionary_2_System_Int32_System_Object_ *)(((Dictionary_2_System_Int32_MVPlayer_ *)this)->fields)._values;
+                if ((value == (MethodInfo *)0x0) || (this_02 == (Dictionary_2_System_Int32_System_Object_ *)0x0)) break;
                 pMVar15 = MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add(this_03,(int32_t)value[1].methodPointer,(Object *)value,MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add(this_02,(int32_t)value[1].methodPointer,(Object *)value,MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_);
                 value = pMVar15;
               }
             }
@@ -930,8 +934,10 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor(Pla
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 == (MVNetworkGame *)0x0) || (this_00 = (pMVar1->fields).teamManager, this_00 == (MVTeamManager *)0x0)) goto code_?;
-  iVar2 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
+  if ((pMVar1 == (MVNetworkGame *)0x0) || (this_01 = (pMVar1->fields).teamManager, this_01 == (MVTeamManager *)0x0)) goto code_?;
+  alwaysColor = 0;
+  iVar2 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
+  darkTeam = (bool)this_01;
   if (iVar2 < 2) {
     if ((this->fields).useColorStyle == 0) {
       pBVar3 = (this->fields).button;
@@ -941,18 +947,19 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor(Pla
       Styles::Styles_SetStyle_4(pBVar3,ButtonStyle__Enum_RegularButton,MVTeam__Enum_None,SoundStyle__Enum_NoSound,(MethodInfo *)0x0);
       return;
     }
-    this_01 = (this->fields).colorStyleObject;
+    this_00 = (this->fields).colorStyleObject;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
-    pMVar1 = (MVNetworkGame *)0x0;
+    method_00 = (MethodInfo *)0x0;
+    alwaysColor = 0;
     darkTeam = 0;
     team = MVTeam__Enum_None;
   }
   else {
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    darkTeam = 0x1d;
+    method_00 = (MethodInfo *)&UNK_?;
     pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
     team = (pMVar4->fields)._._Team_k__BackingField;
@@ -964,14 +971,14 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateTeamColor(Pla
       Styles::Styles_SetStyle_4(pBVar3,ButtonStyle__Enum_RegularButton,team,SoundStyle__Enum_NoSound,(MethodInfo *)0x0);
       return;
     }
-    this_01 = (this->fields).colorStyleObject;
+    this_00 = (this->fields).colorStyleObject;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
   }
-  colorStyle = Styles::Styles_GetTeamColorStyle(team,darkTeam,(MethodInfo *)pMVar1);
-  if (this_01 != (ColorStyleObject *)0x0) {
-    ColorStyleObject::ColorStyleObject_UpdateColorStyle(this_01,colorStyle,(MethodInfo *)0x0);
+  colorStyle = Styles::Styles_GetTeamColorStyle(team,darkTeam,alwaysColor,method_00);
+  if (this_00 != (ColorStyleObject *)0x0) {
+    ColorStyleObject::ColorStyleObject_UpdateColorStyle(this_00,colorStyle,(MethodInfo *)0x0);
     return;
   }
 code_?:

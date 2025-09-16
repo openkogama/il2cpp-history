@@ -590,27 +590,27 @@ Color * Assembly-CSharp.dll::Styles::Styles_GetTeamColor(Color *__return_storage
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar2 = (Color *)Styles_GetTeamColorStyle(team,darkTeam,(MethodInfo *)0x0);
+    key = Styles_GetTeamColorStyle(team,darkTeam,0,(MethodInfo *)0x0);
     this = TypeInfo__Styles->static_fields->colorStylesDictionary;
     if (this != (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) {
-      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this,(Int32Enum__Enum)pCVar2,MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_);
-      if (pOVar3 != (Object *)0x0) {
-        pOVar4 = pOVar3[2].klass;
-        pMVar5 = pOVar3[2].monitor;
-        pOVar6 = pOVar3[3].klass;
-        pCVar2->r = (float)pOVar3[1].monitor;
-        pCVar2->g = (float)pOVar4;
-        pCVar2->b = (float)pMVar5;
-        pCVar2->a = (float)pOVar6;
-        return pCVar2;
+      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item((Dictionary_2_System_Int32Enum_System_Object_ *)this,key,MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_);
+      if (pOVar2 != (Object *)0x0) {
+        pOVar3 = pOVar2[2].klass;
+        pIVar4 = (Int32__Array *)pOVar2[2].monitor;
+        pDVar5 = (Dictionary_2_TKey_TValue_Entry_ColorStyle_Styles_ColorStyleDef___Array *)pOVar2[3].klass;
+        this->klass = (Dictionary_2_ColorStyle_Styles_ColorStyleDef___Class *)pOVar2[1].monitor;
+        this->monitor = (MonitorData *)pOVar3;
+        (this->fields)._buckets = pIVar4;
+        (this->fields)._entries = pDVar5;
+        return (Color *)this;
       }
     }
-    puStack7 = &stack0xfffffffc;
+    puStack6 = &stack0xfffffffc;
     func_?();
     func_?();
-    pcVar8 = (code *)swi(3);
-    pCVar2 = (Color *)(*pcVar8)();
-    return pCVar2;
+    pcVar7 = (code *)swi(3);
+    pCVar8 = (Color *)(*pcVar7)();
+    return pCVar8;
   }
   __return_storage_ptr__->r = 1.0;
   __return_storage_ptr__->g = 0.0;
@@ -620,33 +620,35 @@ Color * Assembly-CSharp.dll::Styles::Styles_GetTeamColor(Color *__return_storage
 }
 
 
-/* ColorStyle GetTeamColorStyle(MVTeam, Boolean) */
+/* ColorStyle GetTeamColorStyle(MVTeam, Boolean, Boolean) */
 
-ColorStyle__Enum Assembly-CSharp.dll::Styles::Styles_GetTeamColorStyle(MVTeam__Enum team,bool darkTeam,MethodInfo *method)
+ColorStyle__Enum Assembly-CSharp.dll::Styles::Styles_GetTeamColorStyle(MVTeam__Enum team,bool darkTeam,bool alwaysColor,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_);
-    func_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__);
-    func_?(&TypeInfo__Styles);
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (darkTeam == 0) {
-    if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0)) goto code_?;
-    pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0);
-    if (pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
-    if (1 < (pLVar3->fields)._size) {
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)TypeInfo__Styles->static_fields->teamToColorStyle;
+    if (alwaysColor == 0) {
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0)) goto code_?;
+      pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0);
+      if (pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+      if ((pLVar3->fields)._size < 2) {
+        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)TypeInfo__Styles->static_fields->teamToColorStyle;
 code_?:
-      if (pDVar4 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item(pDVar4,(Int32Enum__Enum)MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_);
-        return (ColorStyle__Enum)pOVar5;
+        if (pDVar4 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item(pDVar4,5,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_);
+          return (ColorStyle__Enum)pOVar5;
+        }
+        goto code_?;
       }
-      goto code_?;
     }
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -654,15 +656,18 @@ code_?:
     pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)TypeInfo__Styles->static_fields->teamToColorStyle;
   }
   else {
-    if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0)) goto code_?;
-    pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0);
-    if (pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
-    if (1 < (pLVar3->fields)._size) {
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    if (alwaysColor == 0) {
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 == (MVNetworkGame *)0x0) || (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0)) goto code_?;
+      pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0);
+      if (pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+      if ((pLVar3->fields)._size < 2) {
+        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)TypeInfo__Styles->static_fields->teamToDarkColorStyle;
+        goto code_?;
       }
-      pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)TypeInfo__Styles->static_fields->teamToDarkColorStyle;
-      goto code_?;
     }
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -670,11 +675,11 @@ code_?:
     pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)TypeInfo__Styles->static_fields->teamToDarkColorStyle;
   }
   if (pDVar4 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item(pDVar4,5,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_);
+    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item(pDVar4,team,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_);
     return (ColorStyle__Enum)pOVar5;
   }
 code_?:
-  uVar6 = func_?(&stack0xfffffffc);
+  uVar6 = func_?(&stack0xfffffff0);
   func_?(uVar6);
   pcVar7 = (code *)swi(3);
   CVar8 = (*pcVar7)();

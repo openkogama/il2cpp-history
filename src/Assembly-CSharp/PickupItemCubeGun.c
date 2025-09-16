@@ -450,7 +450,7 @@ code_?:
                   if (cVar26 == '\0') break;
                   if ((CONCAT22(uStack_33,uVar32) == 0) || (piVar11 = (int *)func_?(), piVar11 == (int *)0x0)) goto code_?;
                   if (*(Il2CppClass **)(*piVar11 + 0x20) != (TypeInfo__Edge->_0).element_class) goto code_?;
-                  uVar32 = 0x1f24;
+                  uVar32 = 0x1f54;
                   uStack_33 = 0x1069;
                   pfVar34 = (float *)func_?();
                   face = *pfVar34;
