@@ -261,94 +261,110 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) {
+    this_00 = TypeInfo__AudioEventHandler->static_fields->audioBuild;
+    if (this_00 == (AudioBuild *)0x0) {
 code_?:
       bVar2 = true;
-      uVar3 = func_?();
+      bVar3 = false;
+      iVar4 = func_?();
       if (bVar2) {
-        iVar4 = in((short)((uint6)uVar3 >> 0x20));
+        if (!bVar3 && &stack0x00000000 != (undefined1 *)0x5) {
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(iVar4 + -0x54))();
+          (**(code **)(iVar4 + -0x54))();
+          return;
+        }
+        if (&stack0x00000000 == (undefined1 *)0x5) {
+          func_?();
+          func_?();
+          func_?();
+          uRam_? = 1;
+        }
+        this = (List_1_TranslateSoundData_ *)func_?();
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+        __Il2CppFullySharedGenericType]::
+        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+                   MethodInfo__System__Collections__Generic__List<TranslateSoundData>__List__);
+        TypeInfo__AudioEventHandler->static_fields->translateSoundDatas = this;
+        func_?();
         return;
       }
       bVar5 = (byte)extraout_ECX;
       *(char *)(extraout_ECX + 0x72) = *(char *)(extraout_ECX + 0x72) + bVar5;
       bVar6 = (byte)((uint)extraout_ECX >> 8);
-      if (CARRY1(bVar6,bVar5)) {
-        piVar7 = (int *)((int)&TypeInfo__AudioEventHandler +
-                        CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar6 + bVar5,bVar5)))
-        ;
-        *piVar7 = (int)(&stack0x00000000 + *piVar7);
-        if (*(int *)(CONCAT31((int3)((uint6)uVar3 >> 8),(char)uVar3 + -0x3a) + 0xADDR) == 0) {
-          func_?();
-        }
-        AudioEventHandler_HandleTranslateData((MethodInfo *)0x0);
+      if (!CARRY1(bVar6,bVar5)) {
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
         return;
       }
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      piVar8 = (int *)((int)&TypeInfo__AudioEventHandler +
+                      CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(bVar6 + bVar5,bVar5)));
+      *piVar8 = (int)(&stack0x00000000 + *piVar8);
+      if (*(int *)(CONCAT31((int3)((uint)iVar4 >> 8),(char)iVar4 + -0x3a) + 0xADDR) == 0) {
+        func_?();
+      }
+      AudioEventHandler_HandleTranslateData((MethodInfo *)0x0);
       return;
     }
     randMax = 1.1;
     randMin = 0.8;
-    audioClip = (this->fields).cubeAdded;
+    audioClip = (this_00->fields).cubeAdded;
     break;
   case AudioActions__Enum_CubeRemoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) goto code_?;
+    this_00 = TypeInfo__AudioEventHandler->static_fields->audioBuild;
+    if (this_00 == (AudioBuild *)0x0) goto code_?;
     randMax = 1.0;
     randMin = 1.0;
-    audioClip = (this->fields).cubeRemoved;
+    audioClip = (this_00->fields).cubeRemoved;
     break;
   case AudioActions__Enum_FaceMoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) goto code_?;
+    this_00 = TypeInfo__AudioEventHandler->static_fields->audioBuild;
+    if (this_00 == (AudioBuild *)0x0) goto code_?;
     randMax = 1.4;
     randMin = 0.5;
-    audioClip = (this->fields).faceMoved;
+    audioClip = (this_00->fields).faceMoved;
     break;
   case AudioActions__Enum_EdgeMoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) goto code_?;
+    this_00 = TypeInfo__AudioEventHandler->static_fields->audioBuild;
+    if (this_00 == (AudioBuild *)0x0) goto code_?;
     randMax = 1.0;
     randMin = 1.0;
-    audioClip = (this->fields).edgeMoved;
+    audioClip = (this_00->fields).edgeMoved;
     break;
   case AudioActions__Enum_VertexMoved:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) goto code_?;
+    this_00 = TypeInfo__AudioEventHandler->static_fields->audioBuild;
+    if (this_00 == (AudioBuild *)0x0) goto code_?;
     randMax = 1.0;
     randMin = 1.0;
-    audioClip = (this->fields).vertexMoved;
+    audioClip = (this_00->fields).vertexMoved;
     break;
   case AudioActions__Enum_CubePainted:
     if ((TypeInfo__AudioEventHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
-    if (this == (AudioBuild *)0x0) goto code_?;
+    this_00 = TypeInfo__AudioEventHandler->static_fields->audioBuild;
+    if (this_00 == (AudioBuild *)0x0) goto code_?;
     randMax = 1.0;
     randMin = 1.0;
-    audioClip = (this->fields).cubePainted;
+    audioClip = (this_00->fields).cubePainted;
     break;
   default:
     goto code_?;
   }
-  AudioBuild::AudioBuild_PlayClip(this,worldPos,audioClip,randMin,randMax,(MethodInfo *)0x0);
+  AudioBuild::AudioBuild_PlayClip(this_00,worldPos,audioClip,randMin,randMax,(MethodInfo *)0x0);
 code_?:
   return;
 }

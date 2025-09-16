@@ -28,7 +28,7 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
     this = (GameMeterUpdatedEffect_AnimateScale_d_6 *)(this->fields)._i_5__2;
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     (pGVar1->fields)._i_5__2 = fVar3 + (float)this;
-    if (pGVar2 != (GameMeterUpdatedEffect *)0x0) goto code_?;
+    if (pGVar2 == (GameMeterUpdatedEffect *)0x0) goto code_?;
     goto code_?;
   case 3:
     (this->fields).__1__state = -1;
@@ -38,6 +38,7 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
   if (pGVar2 != (GameMeterUpdatedEffect *)0x0) {
     fVar3 = (pGVar2->fields).scaleTime;
     pfVar4 = &(pGVar1->fields)._i_5__2;
+    in_AF = 0;
     pRVar5 = (pGVar2->fields).scaleTarget;
     if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
       if (pRVar5 != (RectTransform *)0x0) {
@@ -64,21 +65,26 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
 code_?:
           fVar3 = (pGVar2->fields).scaleTime;
           pfVar4 = &(pGVar1->fields)._i_5__2;
+          in_AF = 0;
           pRVar5 = (pGVar2->fields).scaleTarget;
           if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
             if ((pRVar5 != (RectTransform *)0x0) &&
-               (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                   ((Component *)pRVar5,(MethodInfo *)0x0),
+               (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
                pTVar13 != (Transform *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar13,(pGVar2->fields).startSize,(MethodInfo *)0x0);
               this = (GameMeterUpdatedEffect_AnimateScale_d_6 *)0x0;
-              goto code_?;
+              pOVar14 = (Object *)func_?(TypeInfo__System__Int32,&this);
+              (pGVar1->fields).__2__current = pOVar14;
+              func_?(&(pGVar1->fields).__2__current,pOVar14);
+              (pGVar1->fields).__1__state = 3;
+              return 1;
             }
           }
           else if ((pRVar5 != (RectTransform *)0x0) &&
                   (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
+                             Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
                   pTVar13 != (Transform *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
                       (&VStack_9,pTVar13,(MethodInfo *)0x0);
@@ -94,7 +100,7 @@ code_?:
     }
     else if (pRVar5 != (RectTransform *)0x0) {
       pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pRVar5,(MethodInfo *)0x0);
+                          ((Component *)pRVar5,(MethodInfo *)0x0);
       uStack_10._0_4_ = (pGVar2->fields).startSize.x;
       uStack_10._4_4_ = (pGVar2->fields).startSize.y;
       fStack_12 = (pGVar2->fields).startSize.z;
@@ -127,23 +133,25 @@ code_?:
     }
   }
 code_?:
-  cVar16 = '\0';
-  pGVar17 = (GameMeterUpdatedEffect__Class *)func_?();
-  *(char *)&pGVar2->klass = *(char *)&pGVar2->klass + (char)unaff_EBX + -1 + cVar16;
-  puVar18 = (undefined1 *)((int)&unaff_EBX[-1].fields._._.m_CachedPtr + 2);
-  pGVar2->klass = pGVar17;
-  *(char *)&pGVar1[4].fields.__1__state =
-       (char)pGVar1[4].fields.__1__state + extraout_DL +
-       CARRY1((byte)puVar18,(byte)((uint)puVar18 >> 8));
-  if ((int)&stack0xfffffffc < -0x17af0033) {
-    return (bool)&stack0xfffffffc;
-  }
-code_?:
-  pOVar14 = (Object *)func_?(TypeInfo__System__Int32);
-  (pGVar1->fields).__2__current = pOVar14;
-  func_?(&(pGVar1->fields).__2__current,pOVar14);
-  (pGVar1->fields).__1__state = 3;
-  return 1;
+  bVar16 = 0;
+  uVar17 = func_?();
+  bVar18 = (byte)uVar17;
+  pGVar19 = (GameMeterUpdatedEffect__Class *)
+            CONCAT31((int3)((uint)uVar17 >> 8),
+                     bVar18 + (9 < (bVar18 & 0xf) | in_AF) * -6 + (0x99 < bVar18 | bVar16) * -0x60);
+  bVar18 = (byte)((uint)uVar17 >> 8);
+  bVar20 = CARRY1(*(byte *)&(pGVar19->_0).image,bVar18);
+  *(byte *)&(pGVar19->_0).image = *(char *)&(pGVar19->_0).image + bVar18;
+  pGVar2->klass = pGVar19;
+  pbVar21 = (byte *)((int)&unaff_EBX[-1].fields._._.m_CachedPtr + 2);
+  bVar18 = *pbVar21;
+  bVar16 = *pbVar21 + (byte)pbVar21;
+  *pbVar21 = bVar16 + bVar20;
+  pcVar22 = (char *)((int)&pGVar1[4].fields.__1__state + 1);
+  *pcVar22 = *pcVar22 + extraout_DL + (CARRY1(bVar18,(byte)pbVar21) || CARRY1(bVar16,bVar20));
+  pcVar23 = (code *)swi(3);
+  bVar24 = (*pcVar23)();
+  return bVar24;
 }
 
 

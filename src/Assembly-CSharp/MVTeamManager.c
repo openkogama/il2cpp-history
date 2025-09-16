@@ -741,7 +741,9 @@ bool Assembly-CSharp.dll::MVTeamManager::MVTeamManager_HasTeam
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__ContainsKey_MV__WorldObject__MVTeam_
+                   );
     cRam_? = '\x01';
   }
   this_00 = (this->fields).teams;
@@ -751,10 +753,28 @@ bool Assembly-CSharp.dll::MVTeamManager::MVTeamManager_HasTeam
                       ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,team,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__ContainsKey_MV__WorldObject__MVTeam_
                       );
-    return bVar1;
+    if (bVar1 == 0) {
+      return 0;
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+               *)(this->fields).teams;
+    if (this_01 !=
+        (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+         *)0x0) {
+      iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
+                        (this_01,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__get_Count__
+                        );
+      return 1 < iVar2;
+    }
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
+  func_?();
   pcVar3 = (code *)swi(3);
   bVar1 = (*pcVar3)();
   return bVar1;

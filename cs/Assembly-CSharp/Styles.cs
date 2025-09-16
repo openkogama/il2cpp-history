@@ -190,7 +190,7 @@ public class Styles : MonoBehaviour
 	public static void SetStyle(Button button, ButtonStyle buttonStyle, MVTeam team, SoundStyle soundStyle = SoundStyle.NoSound);
 	public static void SetStyle(EffectStyleObject effectStyleObject, EffectStyle effectStyle);
 	public static Color GetTeamColor(MVTeam team, bool darkTeam = false);
-	public static ColorStyle GetTeamColorStyle(MVTeam team, bool darkTeam = false);
+	public static ColorStyle GetTeamColorStyle(MVTeam team, bool darkTeam = false, bool alwaysColor = false);
 	public static Color GetColor(ColorStyle colorStyle);
 	public static string ColorToHex(Color32 color);
 	public static Color HexToColor(string hex);

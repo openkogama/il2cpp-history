@@ -247,10 +247,26 @@ code_?:
     return;
   }
 code_?:
+  cVar7 = '\0';
   func_?();
-  do {
-                    /* WARNING: Do nothing block with infinite loop */
-  } while( true );
+  pbVar8 = (byte *)(extraout_EDX + -10);
+  bVar9 = *pbVar8;
+  bVar10 = (byte)((uint)extraout_EDX >> 8);
+  bVar11 = *pbVar8 + bVar10;
+  *pbVar8 = bVar11 + (cVar7 == '\0');
+  *(char *)(extraout_EDX + 0x1066f7) =
+       *(char *)(extraout_EDX + 0x1066f7) + (char)((uint)unaff_EBX >> 8) +
+       (CARRY1(bVar9,bVar10) || CARRY1(bVar11,cVar7 == '\0'));
+  *extraout_ECX = *extraout_ECX + -10;
+  piVar12 = (int *)(CONCAT31(0x3f1066,cRam_? + -10) + *unaff_EBX);
+  pcVar13 = (char *)((int)piVar12 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar12);
+  cVar7 = (char)pcVar13;
+  *pcVar13 = *pcVar13 + cVar7;
+  *pcVar13 = *pcVar13 + cVar7;
+  *pcVar13 = *pcVar13 + cVar7;
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
+  return;
 }
 
 

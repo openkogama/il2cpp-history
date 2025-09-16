@@ -34,7 +34,6 @@ Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue
           (DeltaCubes *this,RuntimePrototypeCubeModel *rpcm,MethodInfo *method)
 
 {
-  iVar1 = (int16_t)unaff_ESI;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__BytePacker);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
@@ -53,153 +52,156 @@ Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue
   }
   this_00 = (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)
             (this->fields).cubeChange;
-  if (this_00 != (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0) {
-    KVar2 = mscorlib.dll::System::Collections::Generic::Queue`1[KeyValuePair`2[MV::WorldObject::
-             IntVector,System::ByteEnum]]::
-             Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum__Dequeue
-                       (this_00,
-                        MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Dequeue__
-                       );
-    iStack_3 = KVar2.key.z;
-    uStack_4 = KVar2._6_2_;
+  if (this_00 == (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0) {
+code_?:
+    uVar1 = func_?();
+    pBVar2 = (Byte__Array *)(uVar1 ^ 0xfd106ae1);
+    if (extraout_ECX != 1) {
+      IVar3.z = in_stack_4;
+      IVar3._0_4_ = in_stack_5;
+      mscorlib.dll::System::Collections::Generic::KeyValuePair`2[MV::WorldObject::IntVector,System::
+      ByteEnum]::KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum___ctor
+                ((KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)pBVar2,IVar3,
+                 (ByteEnum__Enum)in_stack_6,(MethodInfo *)in_stack_7);
+      if (unaff_ESI == (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0) {
+        func_?();
+        pcVar8 = (code *)swi(3);
+        pBVar2 = (Byte__Array *)(*pcVar8)();
+        return pBVar2;
+      }
+      KVar9._4_4_ = uStack_10;
+      KVar9.key._0_4_ = pBStack_11;
+      mscorlib.dll::System::Collections::Generic::Queue`1[KeyValuePair`2[MV::WorldObject::
+      IntVector,System::ByteEnum]]::
+      Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum__Enqueue
+                (unaff_ESI,KVar9,
+                 MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Enqueue_System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_
+                );
+      return extraout_EAX;
+    }
+    pbVar12 = (byte *)((int)&unaff_ESI[-1].klass + 1);
+    bVar13 = *pbVar12;
+    *pbVar12 = *pbVar12 + extraout_DH;
+    if (!CARRY1(bVar13,extraout_DH) && *pbVar12 != 0) {
+      if (!CARRY1(bVar13,extraout_DH) && *pbVar12 != 0) {
+        pcVar8 = (code *)swi(3);
+        pBVar2 = (Byte__Array *)(*pcVar8)(0x10,0x10);
+        return pBVar2;
+      }
+      goto code_?;
+    }
+  }
+  else {
+    KVar9 = mscorlib.dll::System::Collections::Generic::Queue`1[KeyValuePair`2[MV::WorldObject::
+            IntVector,System::ByteEnum]]::
+            Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum__Dequeue
+                      (this_00,
+                       MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Dequeue__
+                      );
+    unaff_EDI = KVar9.key._0_4_;
+    iStack_14 = KVar9.key.z;
+    uStack_15 = KVar9._6_2_;
     unaff_ESI = (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)
                 func_?(TypeInfo__MV__WorldObject__BytePacker);
     MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor
               ((BytePacker *)unaff_ESI,(MethodInfo *)0x0);
-    switch(uStack_4 & 0xff) {
+    switch(uStack_15 & 0xff) {
     case 0:
       if (unaff_ESI != (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0) {
         MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_Write
-                  ((BytePacker *)unaff_ESI,KVar2.value,(MethodInfo *)0x0);
+                  ((BytePacker *)unaff_ESI,KVar9.value,(MethodInfo *)0x0);
         MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_Write_4
-                  ((BytePacker *)unaff_ESI,KVar2.key.x,(MethodInfo *)0x0);
+                  ((BytePacker *)unaff_ESI,KVar9.key.x,(MethodInfo *)0x0);
         MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_Write_4
-                  ((BytePacker *)unaff_ESI,KVar2.key.y,(MethodInfo *)0x0);
+                  ((BytePacker *)unaff_ESI,KVar9.key.y,(MethodInfo *)0x0);
         MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_Write_4
-                  ((BytePacker *)unaff_ESI,iStack_3,(MethodInfo *)0x0);
-        pBVar5 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray
-                            ((BytePacker *)unaff_ESI,(MethodInfo *)0x0);
-        return pBVar5;
+                  ((BytePacker *)unaff_ESI,iStack_14,(MethodInfo *)0x0);
+        pBVar2 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray
+                           ((BytePacker *)unaff_ESI,(MethodInfo *)0x0);
+        return pBVar2;
       }
-      break;
+      goto code_?;
     default:
       return (Byte__Array *)0x0;
     case 2:
     case 3:
     case 4:
-      if (rpcm != (RuntimePrototypeCubeModel *)0x0) {
-        IVar6 = KVar2.key;
-        pCVar7 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
-                           (rpcm,IVar6,(MethodInfo *)0x0);
-        if (pCVar7 != (Cube *)0x0) {
-          pVVar8 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
-                              ((CubeBase *)pCVar7,(MethodInfo *)0x0);
+      if (rpcm == (RuntimePrototypeCubeModel *)0x0) goto code_?;
+      IVar3 = KVar9.key;
+      pCVar16 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
+                         (rpcm,IVar3,(MethodInfo *)0x0);
+      if (pCVar16 == (Cube *)0x0) goto code_?;
+      corners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
+                          ((CubeBase *)pCVar16,(MethodInfo *)0x0);
+      if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__Cube);
+      }
+      bVar17 = Cube::Cube_IsLegal(corners,(MethodInfo *)0x0);
+      if (bVar17 != 0) {
+        pCVar16 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
+                           (rpcm,IVar3,(MethodInfo *)0x0);
+        if (pCVar16 != (Cube *)0x0) {
+          in_stack_4 = (int16_t)pCVar16;
+          in_stack_18 = (undefined2)((uint)pCVar16 >> 0x10);
+          in_stack_5 = &UNK_?;
+          in_stack_7 =
+               MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
+                         ((CubeBase *)pCVar16,(MethodInfo *)0x0);
           if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__Cube);
           }
-          bVar9 = Cube::Cube_IsLegal(pVVar8,(MethodInfo *)0x0);
-          if (bVar9 == 0) {
+          in_stack_6 = &UNK_?;
+          bVar17 = Cube::Cube_IsCollapsed(in_stack_7,(MethodInfo *)0x0);
+          if (bVar17 != 0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Debug);
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                      ((Object *)StringLiteral_Illegal_cube_detected_in_delta_c,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                      ((Object *)StringLiteral_IsCollapsed__cube_detected_in_de,(MethodInfo *)0x0);
             return (Byte__Array *)0x0;
           }
-          pCVar7 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
-                             (rpcm,IVar6,(MethodInfo *)0x0);
-          if (pCVar7 != (Cube *)0x0) {
-            pVVar8 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_Corners
-                                ((CubeBase *)pCVar7,(MethodInfo *)0x0);
-            if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__Cube);
-            }
-            bVar9 = Cube::Cube_IsCollapsed(pVVar8,(MethodInfo *)0x0);
-            if (bVar9 != 0) {
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__UnityEngine__Debug);
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                        ((Object *)StringLiteral_IsCollapsed__cube_detected_in_de,(MethodInfo *)0x0)
-              ;
-              return (Byte__Array *)0x0;
-            }
-            if (unaff_ESI != (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0
-               ) {
-              MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_Write
-                        ((BytePacker *)unaff_ESI,KVar2.value,(MethodInfo *)0x0);
-              pCVar7 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
-                                 (rpcm,IVar6,(MethodInfo *)0x0);
-              if (pCVar7 != (Cube *)0x0) {
-                in_stack_10 = (pCVar7->fields)._.byteCorners;
-                pCVar7 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
-                                   (rpcm,IVar6,(MethodInfo *)0x0);
-                if (pCVar7 != (Cube *)0x0) {
-                  pBVar5 = (pCVar7->fields)._.faceMaterials;
-                  if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor ==
-                      0) {
-                    func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-                  }
-                  MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
-                  CubeDataPacker_WriteCompressedCube
-                            ((BytePacker *)unaff_ESI,KVar2.key.x,KVar2.key.y,iStack_3,
-                             in_stack_10,pBVar5,(MethodInfo *)0x0);
-                  pBVar5 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray
-                                      ((BytePacker *)unaff_ESI,(MethodInfo *)0x0);
-                  return pBVar5;
+          if (unaff_ESI != (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0)
+          {
+            in_stack_7 = (Vector3__Array *)&UNK_?;
+            MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_Write
+                      ((BytePacker *)unaff_ESI,KVar9.value,(MethodInfo *)0x0);
+            pCVar16 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
+                               (rpcm,IVar3,(MethodInfo *)0x0);
+            if (pCVar16 != (Cube *)0x0) {
+              pBStack_11 = (pCVar16->fields)._.byteCorners;
+              pCVar16 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
+                                 (rpcm,IVar3,(MethodInfo *)0x0);
+              if (pCVar16 != (Cube *)0x0) {
+                pBVar2 = (pCVar16->fields)._.faceMaterials;
+                if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0)
+                {
+                  func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
                 }
+                MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
+                CubeDataPacker_WriteCompressedCube
+                          ((BytePacker *)unaff_ESI,KVar9.key.x,KVar9.key.y,iStack_14,pBStack_11,
+                           pBVar2,(MethodInfo *)0x0);
+                pBVar2 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ToArray
+                                   ((BytePacker *)unaff_ESI,(MethodInfo *)0x0);
+                return pBVar2;
               }
             }
           }
         }
+        goto code_?;
       }
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_Illegal_cube_detected_in_delta_c,(MethodInfo *)0x0);
     }
   }
-  uVar11 = func_?();
-  if (extraout_ECX == 1) {
-    pbVar12 = (byte *)((int)&unaff_ESI[-1].klass + 1);
-    bVar13 = *pbVar12;
-    bVar14 = (byte)(KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)(uVar11 + 0xcd106ae1);
-    bVar15 = *pbVar12;
-    *pbVar12 = bVar15 + bVar14 + (0x32ef951e < uVar11);
-    if (unaff_ESI != (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0xffffffff)
-    {
-      pcVar16 = (char *)((int)&unaff_ESI[-1].klass + 2);
-      *pcVar16 = *pcVar16 + bVar14 + (CARRY1(bVar13,bVar14) || CARRY1(bVar15 + bVar14,0x32ef951e < uVar11))
-      ;
-      pcVar17 = (code *)swi(3);
-      pBVar5 = (Byte__Array *)(*pcVar17)(0x10);
-      return pBVar5;
-    }
-    unaff_ESI = (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0;
-  }
-  else {
-    IVar6.z = iVar1;
-    IVar6.x = (short)unaff_EDI;
-    IVar6.y = (short)((uint)unaff_EDI >> 0x10);
-    mscorlib.dll::System::Collections::Generic::KeyValuePair`2[MV::WorldObject::IntVector,System::
-    ByteEnum]::KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum___ctor
-              ((KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)(uVar11 + 0xcd106ae1),
-               IVar6,unaff_EBX,in_stack_18);
-    unaff_EBP = 
-    MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Enqueue_System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_
-    ;
-    if (unaff_ESI == (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0) {
-      func_?();
-      pcVar17 = (code *)swi(3);
-      pBVar5 = (Byte__Array *)(*pcVar17)();
-      return pBVar5;
-    }
-  }
-  KVar2.key.z = (short)in_stack_19;
-  KVar2.value = (char)((uint)in_stack_19 >> 0x10);
-  KVar2._7_1_ = (char)((uint)in_stack_19 >> 0x18);
-  KVar2.key._0_4_ = in_stack_10;
-  mscorlib.dll::System::Collections::Generic::Queue`1[KeyValuePair`2[MV::WorldObject::
-  IntVector,System::ByteEnum]]::
-  Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum__Enqueue
-            (unaff_ESI,KVar2,unaff_EBP);
-  return extraout_EAX;
+  pBVar2 = (Byte__Array *)0x0;
+  unaff_EDI = CONCAT22(in_stack_18,in_stack_4);
+code_?:
+  *(undefined1 *)(unaff_EDI + 0x5e) = *(undefined1 *)(unaff_EDI + 0x5e);
+  return pBVar2;
 }
 
 

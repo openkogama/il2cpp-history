@@ -27,14 +27,13 @@ void Assembly-CSharp.dll::SettingsButton::SettingsButton_Initialize
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    colorStyle = (String *)Styles::Styles_GetTeamColorStyle(team,hasTeam ^ 1,(MethodInfo *)0x0);
+    colorStyle = Styles::Styles_GetTeamColorStyle(team,hasTeam ^ 1,1,(MethodInfo *)0x0);
     if (this_01 != (ColorStyleObject *)0x0) {
-      ColorStyleObject::ColorStyleObject_UpdateColorStyle
-                (this_01,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
-      (this->fields).key = colorStyle;
+      ColorStyleObject::ColorStyleObject_UpdateColorStyle(this_01,colorStyle,(MethodInfo *)0x0);
+      (this->fields).key = (String *)this_01;
       func_?();
       pBVar1 = (this->fields).button;
-      (this->fields).value = (int32_t)colorStyle;
+      (this->fields).value = (int32_t)&(this->fields).key;
       if (pBVar1 != (Button *)0x0) {
         this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
         this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();

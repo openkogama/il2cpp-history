@@ -122,32 +122,37 @@ code_?:
   }
 code_?:
   bVar9 = 0;
-  uRam_? = func_?();
+  func_?();
   sVar10 = (short)&stack0xfffffffc;
   sVar11 = (short)unaff_EDI;
   pbVar12 = (byte *)segment(in_SS,sVar10 + sVar11);
-  bVar13 = (byte)((uint)unaff_EBX >> 8);
+  bVar13 = (byte)((uint)(extraout_EDX + -1) >> 8);
   bVar14 = *pbVar12 + bVar13;
   bVar15 = CARRY1(*pbVar12,bVar13) || CARRY1(bVar14,bVar9);
   *pbVar12 = bVar14 + bVar9;
-  pbVar12 = (byte *)segment(in_SS,sVar10 + (short)unaff_ESI);
-  bVar16 = CARRY1(*pbVar12,extraout_CL) || CARRY1(*pbVar12 + extraout_CL,bVar15);
-  *pbVar12 = *pbVar12 + extraout_CL + bVar15;
-  pbVar12 = (byte *)segment(in_DS,(short)(unaff_EBX + -2) + (short)unaff_ESI);
-  bVar13 = (byte)(unaff_EBX + -2);
+  pbVar12 = (byte *)segment(in_SS,sVar10 + sVar11 + 0x674b);
+  bVar9 = (byte)extraout_CX;
+  bVar16 = CARRY1(*pbVar12,bVar9) || CARRY1(*pbVar12 + bVar9,bVar15);
+  *pbVar12 = *pbVar12 + bVar9 + bVar15;
+  pbVar12 = (byte *)(extraout_EDX + 0x4a);
+  bVar13 = (byte)(unaff_EBX + -1);
   bVar14 = *pbVar12 + bVar13;
   bVar15 = CARRY1(*pbVar12,bVar13) || CARRY1(bVar14,bVar16);
   *pbVar12 = bVar14 + bVar16;
-  pbVar12 = (byte *)segment(in_SS,sVar10 + sVar11);
+  pbVar12 = (byte *)segment(in_DS,(short)(unaff_EBX + -1) + (short)unaff_ESI + 0x4b);
+  bVar13 = (byte)((ushort)extraout_CX >> 8);
+  bVar14 = *pbVar12 + bVar13;
+  bVar16 = CARRY1(*pbVar12,bVar13) || CARRY1(bVar14,bVar15);
+  *pbVar12 = bVar14 + bVar15;
+  pbVar12 = (byte *)segment(in_SS,sVar10 + sVar11 + 0x674b);
   bVar14 = *pbVar12;
-  bVar9 = (byte)((uint)(unaff_EBX + -3) >> 8);
-  bVar13 = *pbVar12 + bVar9;
-  *pbVar12 = bVar13 + bVar15;
-  pcVar17 = (char *)segment(in_SS,sVar10 + sVar11);
-  *pcVar17 = *pcVar17 + (char)((uint)(unaff_EBX + -4) >> 8) +
-            (CARRY1(bVar14,bVar9) || CARRY1(bVar13,bVar15));
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  bVar13 = *pbVar12;
+  *pbVar12 = bVar13 + bVar9 + bVar16;
+  *(char *)(unaff_EBX + -0x33ef98b6) =
+       *(char *)(unaff_EBX + -0x33ef98b6) + bVar9 +
+       (CARRY1(bVar14,bVar9) || CARRY1(bVar13 + bVar9,bVar16));
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
