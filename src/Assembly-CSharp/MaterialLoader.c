@@ -659,7 +659,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_NoiseCallback(MaterialL
       UnityEngine.AssetBundleModule.dll::UnityEngine::AssetBundle::AssetBundle_Unload(this_00,0,(MethodInfo *)0x0);
       if (this_01 != (Texture *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode(this_01,FilterMode__Enum_Trilinear,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xa851e850,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xa781e850,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xc48300db,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
         return;
       }

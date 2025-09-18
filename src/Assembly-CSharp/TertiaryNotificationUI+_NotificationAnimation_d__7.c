@@ -1,11 +1,13 @@
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Boolean MoveNext() */
 
 bool Assembly-CSharp.dll::TertiaryNotificationUI+<NotificationAnimation>d__7::TertiaryNotificationUI_NotificationAnimation_d_7_MoveNext(TertiaryNotificationUI_NotificationAnimation_d_7 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    func_?();
     func_?(&TypeInfo__UnityEngine__WaitForSeconds);
     cRam_? = '\x01';
   }
@@ -59,7 +61,7 @@ bool Assembly-CSharp.dll::TertiaryNotificationUI+<NotificationAnimation>d__7::Te
       if ((pTVar1 != (TertiaryNotificationUI *)0x0) && (this_00 = (pTVar1->fields).notification, this_00 != (Notification *)0x0)) {
         obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
+          func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
 code_?:
@@ -93,15 +95,11 @@ code_?:
   default:
     goto code_?;
   }
-  bVar7 = 0;
-  uVar8 = func_?();
-  iVar3 = (byte)((char)uVar8 + (char)((ushort)uVar8 >> 8) * -6) - 1;
-  bVar9 = (byte)((uint)iVar3 >> 8);
-  bVar10 = (byte)((uint)this >> 8);
-  cRam_? = cRam_? + (char)iVar3 + -2 + (CARRY1(extraout_DH,bVar10) || CARRY1(extraout_DH + bVar10,CARRY1(bVar9,(byte)this) || CARRY1(bVar9 + (byte)this,bVar7)));
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  uVar7 = func_?(&stack0xfffffff8);
+  func_?(uVar7);
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 

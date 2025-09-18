@@ -90,14 +90,14 @@ bool Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
               func_?();
               puStack14 = (undefined *)uVar3;
             }
-            uStack13 = 0x1045;
+            uStack13 = 0x1046;
             value_00.fakeValue = (short)puStack14;
             value_00.inited = (char)((uint)puStack14 >> 0x10);
             value_00._7_1_ = (char)((uint)puStack14 >> 0x18);
             value_00.currentCryptoKey = (short)uVar1;
             value_00.hiddenValue = (short)((uint)uVar1 >> 0x10);
             iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::ObscuredShort_op_Implicit_1(value_00,(MethodInfo *)0x0);
-            if (-0x1a8f < iVar5) {
+            if (0x5521 < iVar5) {
               return 1;
             }
           }

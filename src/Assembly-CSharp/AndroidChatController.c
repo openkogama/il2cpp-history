@@ -236,7 +236,7 @@ code_?:
       (pCVar4->fields).scrollingEnabled = 0;
       pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
       if (pRVar2 == (RectTransform *)0x0) goto code_?;
-      value = 0x95;
+      value = 0x15;
       chatConsoleMode = (ChatConsoleMode__Enum)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar2,(MethodInfo *)0x0);
       if ((GameObject *)chatConsoleMode == (GameObject *)0x0) goto code_?;
       this = (AndroidChatController *)&UNK_?;

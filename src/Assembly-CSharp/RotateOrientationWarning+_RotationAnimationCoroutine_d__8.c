@@ -141,15 +141,14 @@ code_?:
   default:
     return 0;
   }
-  cVar16 = '\0';
-  pcVar17 = (char *)func_?();
-  *pcVar17 = *pcVar17 + (char)&stack0xfffffffc + cVar16;
-  LOCK();
-  *(char **)(extraout_ECX + 0x11) = pcVar17;
-  UNLOCK();
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  func_?();
+  pbVar16 = (byte *)(extraout_ECX + 0x10);
+  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
+  pbVar16 = (byte *)(extraout_ECX + 0x10);
+  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
+  pcVar17 = (code *)swi(3);
+  bVar18 = (*pcVar17)();
+  return bVar18;
 }
 
 

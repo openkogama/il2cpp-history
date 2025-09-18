@@ -59,6 +59,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::L
   default:
     return 0;
   }
+  in_AF = 0;
   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
     pBVar6 = (Behaviour *)(this_02->_0).implementedInterfaces;
     if (pBVar6 != (Behaviour *)0x0) {
@@ -82,6 +83,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::L
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
               (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
+              in_AF = 0;
               if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).element_class) {
                 pIVar7 = (this_02->_0).castClass;
                 if (pIVar7 != (Il2CppClass *)0x0) {
@@ -98,6 +100,7 @@ code_?:
                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar12,0,(MethodInfo *)0x0);
                         (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
+                        in_AF = 0;
                         if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (float)(this_02->_0).fields) {
                           pCVar3 = *(Component **)&(this_02->_0).this_arg.attrs;
                           if (pCVar3 != (Component *)0x0) {
@@ -225,11 +228,11 @@ code_?:
     }
   }
 code_?:
-  uVar15 = func_?();
-  out(extraout_DX,(char)uVar15);
-  puVar16 = (undefined1 *)((int)&this_02[-0x5732e9]._0.declaringType + 3);
-  *puVar16 = *puVar16 + (char)((ushort)uVar15 >> 8);
-  pcVar17 = (code *)swi(1);
+  cVar15 = '\0';
+  cVar16 = func_?();
+  *(byte *)&(this_02->_0).image = *(char *)&(this_02->_0).image + cVar16 + 1U + cVar15;
+  cRam_? = cRam_? + '5' + (9 < (cVar16 + 1U & 0xf) | in_AF);
+  pcVar17 = (code *)swi(3);
   bVar18 = (*pcVar17)();
   return bVar18;
 }
