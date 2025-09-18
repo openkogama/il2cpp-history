@@ -757,16 +757,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     if (pMVar2 == (MVVehicleEnergy *)0x0) goto code_?;
     MVVehicleEnergy::MVVehicleEnergy_ToggleColliders(pMVar2,1,(MethodInfo *)0x0);
     pMVar3 = (pMVar2->fields).vehicleEnergyObject;
-    if ((pMVar3 == (MVVehicleEnergyObject *)0x0) ||
-       (pVVar4 = (pMVar3->fields).vehicleEnergyVisuals, pVVar4 == (VehicleEnergyVisuals *)0x0))
-    goto code_?;
-    if ((pVVar4->fields).particleSystemOn == 0) {
-      return;
-    }
-    pPVar5 = (pVVar4->fields).particles;
-    if (pPVar5 == (ParticleSystem *)0x0) goto code_?;
-    pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pPVar5,(MethodInfo *)0x0);
+    if (pMVar3 == (MVVehicleEnergyObject *)0x0) goto code_?;
+    pVVar4 = (pMVar3->fields).vehicleEnergyVisuals;
   }
   else {
     if (spawnState != SpawnState__Enum_Taken) {
@@ -774,8 +766,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     }
     this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (this_00 == (MVNetworkGame *)0x0) goto code_?;
-    bVar7 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
-    if (bVar7 == 0) {
+    bVar5 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
+    if (bVar5 == 0) {
       return;
     }
     pGVar1 = (this->fields).pickupItemObjectScript;
@@ -785,28 +777,30 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     if (pMVar2 == (MVVehicleEnergy *)0x0) goto code_?;
     MVVehicleEnergy::MVVehicleEnergy_ToggleColliders(pMVar2,0,(MethodInfo *)0x0);
     pMVar3 = (pMVar2->fields).vehicleEnergyObject;
-    if ((pMVar3 == (MVVehicleEnergyObject *)0x0) ||
-       (pVVar4 = (pMVar3->fields).vehicleEnergyVisuals, pVVar4 == (VehicleEnergyVisuals *)0x0))
-    goto code_?;
-    if ((pVVar4->fields).particleSystemOn == 0) {
+    if (pMVar3 == (MVVehicleEnergyObject *)0x0) goto code_?;
+    pVVar4 = (pMVar3->fields).vehicleEnergyVisuals;
+    in_stack_6 = in_stack_7;
+  }
+  if (pVVar4 != (VehicleEnergyVisuals *)0x0) {
+    if (*(char *)(in_stack_6 + 0x18) == '\0') {
       return;
     }
-    pPVar5 = (pVVar4->fields).particles;
-    if (pPVar5 == (ParticleSystem *)0x0) goto code_?;
-    pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pPVar5,(MethodInfo *)0x0);
-  }
-  if (pGVar6 != (GameObject *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
+    if ((*(Component **)(in_stack_6 + 0x1c) != (Component *)0x0) &&
+       (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (*(Component **)(in_stack_6 + 0x1c),(MethodInfo *)0x0),
+       pGVar8 != (GameObject *)0x0)) {
+      if (pcRam_? == (code *)0x0) {
+        pcRam_? = (code *)func_?();
+      }
+      (*pcRam_?)();
+      return;
     }
-    (*pcRam_?)();
-    return;
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar9 = func_?(&stack0xfffffff0);
+  func_?(uVar9);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

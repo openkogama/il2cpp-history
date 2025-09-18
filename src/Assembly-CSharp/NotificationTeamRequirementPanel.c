@@ -19,46 +19,29 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._.checkmark;
-  uVar1 = this_00 == (Image *)0x0;
-  if (!(bool)uVar1) {
+  if (this_00 != (Image *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
               (this_00,checkmarkSprite,(MethodInfo *)0x0);
-    pTVar2 = (this->fields)._.textField;
+    pTVar1 = (this->fields)._.textField;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pTVar2 = (Text *)UnityEngine.CoreModule.dll::UnityEngine::Component::
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pTVar1 = (Text *)UnityEngine.CoreModule.dll::UnityEngine::Component::
                        Component_GetComponentInChildren_1
                                  ((Component *)this,
                                   UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::UI::Text>__
                                  );
-      (this->fields)._.textField = pTVar2;
+      (this->fields)._.textField = pTVar1;
       func_?();
     }
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    uVar1 = pMVar4 == (MVNetworkGame *)0x0;
-    if (!(bool)uVar1) {
-      pMVar5 = (pMVar4->fields).teamManager;
-      uVar1 = pMVar5 == (MVTeamManager *)0x0;
-      if ((!(bool)uVar1) &&
-         (uVar1 = (pMVar5->fields).teamNames ==
-                  (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0, !(bool)uVar1)) {
-        uVar1 = true;
-      }
-    }
+    MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   }
   func_?();
   func_?();
-  if (!(bool)uVar1) {
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
-    return;
-  }
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
-  return;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

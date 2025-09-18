@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     fVar1 = (this->fields).originalXPosition;
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+                         ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
       uVar6 = pVVar5->x;
       uVar7 = pVVar5->y;
       fVar8 = 0.0;
@@ -135,7 +135,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     fVar4 = (this->fields).slideMoveAmount;
     if (pTVar3 != (Transform *)0x0) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                          ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+                         ((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
       uVar9 = pVVar5->x;
       uVar10 = pVVar5->y;
       fVar11 = 0.0;
@@ -157,16 +157,12 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
       }
     }
   }
-  uVar12 = func_?();
-  iVar13 = (int)((ulonglong)uVar12 >> 0x20);
-  piVar14 = (int *)uVar12;
-  pcVar15 = (char *)(iVar13 + 0x6a104408);
-  *pcVar15 = *pcVar15 + unaff_BL +
-            ((longlong)(int)((longlong)*piVar14 * 0x8951044) != (longlong)*piVar14 * 0x8951044);
-  puVar16 = (uint *)((int)piVar14 + iVar13 + -0x34);
-  *puVar16 = *puVar16 | (uint)piVar14;
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  func_?();
+  lVar12 = (longlong)(int)this->klass * 0xe951044;
+  *(char *)(extraout_EDX + 0x6a10440e) =
+       *(char *)(extraout_EDX + 0x6a10440e) + unaff_BL + ((int)lVar12 != lVar12);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

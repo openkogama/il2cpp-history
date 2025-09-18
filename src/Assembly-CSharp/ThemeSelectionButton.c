@@ -6,40 +6,33 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_EventTrigge
 
 {
   pTVar1 = (this->fields).themePrefab;
-  pTVar2 = (this->fields).selectionMenu;
+  this_00 = (this->fields).selectionMenu;
   if ((pTVar1 != (Theme *)0x0) &&
-     (pSVar3 = (String *)
-               (*(code *)(pTVar1->klass->vtable).__unknown_2.method)
-                         (pTVar1,(pTVar1->klass->vtable).__unknown_3.methodPtr),
-     pTVar2 != (ThemeSelection *)0x0)) {
-    (pTVar2->fields).currentDescription = pSVar3;
-    func_?(&(pTVar2->fields).currentDescription,pSVar3);
-    pTVar4 = (pTVar2->fields).themeDescription;
-    pSVar3 = TM::TM__((pTVar2->fields).currentDescription,(MethodInfo *)0x0);
-    if (pTVar4 != (Text *)0x0) {
-      (*(code *)(pTVar4->klass->vtable).set_text.method)
-                (pTVar4,pSVar3,(pTVar4->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      if ((this->fields).themeInUse != 0) {
+     (value = (String *)
+              (*(code *)(pTVar1->klass->vtable).__unknown_2.method)
+                        (pTVar1,(pTVar1->klass->vtable).__unknown_3.methodPtr),
+     this_00 != (ThemeSelection *)0x0)) {
+    ThemeSelection::ThemeSelection_set_ThemeDescription(this_00,value,(MethodInfo *)0x0);
+    if ((this->fields).themeInUse != 0) {
+      return;
+    }
+    this_01 = (this->fields).nameLabel;
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_01,1,(MethodInfo *)0x0);
+      pRVar2 = (this->fields).background;
+      if (pRVar2 != (RawImage *)0x0) {
+        (*(code *)(pRVar2->klass->vtable).set_color.method)
+                  (pRVar2,(this->fields).selectedColor.r,(this->fields).selectedColor.g,
+                   (this->fields).selectedColor.b,(this->fields).selectedColor.a,
+                   (pRVar2->klass->vtable).get_raycastTarget.methodPtr);
         return;
-      }
-      this_00 = (this->fields).nameLabel;
-      if (this_00 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_00,1,(MethodInfo *)0x0);
-        pRVar5 = (this->fields).background;
-        if (pRVar5 != (RawImage *)0x0) {
-          (*(code *)(pRVar5->klass->vtable).set_color.method)
-                    (pRVar5,(this->fields).selectedColor.r,(this->fields).selectedColor.g,
-                     (this->fields).selectedColor.b,(this->fields).selectedColor.a,
-                     (pRVar5->klass->vtable).get_raycastTarget.methodPtr);
-          return;
-        }
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -54,37 +47,28 @@ void Assembly-CSharp.dll::ThemeSelectionButton::ThemeSelectionButton_EventTrigge
     func_?(&StringLiteral____Hover_over_a_theme_to_know_mo);
     cRam_? = '\x01';
   }
-  pSVar1 = StringLiteral____Hover_over_a_theme_to_know_mo;
-  pTVar2 = (this->fields).selectionMenu;
-  if (pTVar2 != (ThemeSelection *)0x0) {
-    (pTVar2->fields).currentDescription = StringLiteral____Hover_over_a_theme_to_know_mo;
-    func_?(&(pTVar2->fields).currentDescription,pSVar1);
-    pTVar3 = (pTVar2->fields).themeDescription;
-    pSVar1 = TM::TM__((pTVar2->fields).currentDescription,(MethodInfo *)0x0);
-    if (pTVar3 != (Text *)0x0) {
-      (*(code *)(pTVar3->klass->vtable).set_text.method)
-                (pTVar3,pSVar1,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      if ((this->fields).themeInUse != 0) {
+  this_00 = (this->fields).selectionMenu;
+  if (this_00 != (ThemeSelection *)0x0) {
+    ThemeSelection::ThemeSelection_set_ThemeDescription
+              (this_00,StringLiteral____Hover_over_a_theme_to_know_mo,(MethodInfo *)0x0);
+    if ((this->fields).themeInUse != 0) {
+      return;
+    }
+    this_01 = (this->fields).nameLabel;
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_01,0,(MethodInfo *)0x0);
+      pRVar1 = (this->fields).background;
+      if (pRVar1 != (RawImage *)0x0) {
+        pIStack2 = (pRVar1->klass->vtable).get_raycastTarget.methodPtr;
+        (*(code *)(pRVar1->klass->vtable).set_color.method)(pRVar1,(this->fields).normalColor.r);
         return;
-      }
-      this_00 = (this->fields).nameLabel;
-      if (this_00 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_00,0,(MethodInfo *)0x0);
-        pRVar4 = (this->fields).background;
-        if (pRVar4 != (RawImage *)0x0) {
-          (*(code *)(pRVar4->klass->vtable).set_color.method)
-                    (pRVar4,(this->fields).normalColor.r,(this->fields).normalColor.g,
-                     (this->fields).normalColor.b,(this->fields).normalColor.a,
-                     (pRVar4->klass->vtable).get_raycastTarget.methodPtr);
-          return;
-        }
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

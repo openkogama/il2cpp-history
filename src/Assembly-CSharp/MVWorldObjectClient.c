@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.5364016e-29;
-              value.x = (float)uVar4 * 4.5364016e-29;
-              value.z = (pVVar3->oneVector).z * 4.5364016e-29;
+              value.y = (float)uVar5 * 4.5361416e-29;
+              value.x = (float)uVar4 * 4.5361416e-29;
+              value.z = (pVVar3->oneVector).z * 4.5361416e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1492,27 +1492,31 @@ code_?:
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (this = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     this == (MVWorldObjectClient *)0x0)) {
-    bVar2 = 0;
-    uVar3 = func_?();
-    bVar4 = (byte)uVar3 + 0x66;
-    bVar5 = 0x99 < (byte)uVar3 || CARRY1(bVar4,bVar2);
-    bVar4 = bVar4 + bVar2;
-    pbVar6 = (byte *)CONCAT31((int3)((uint)uVar3 >> 8),bVar4);
-    bVar7 = CARRY1(*pbVar6,bVar4) || CARRY1(*pbVar6 + bVar4,bVar5);
-    *pbVar6 = *pbVar6 + bVar4 + bVar5;
-    cRam_? = cRam_? + bVar4 + 0x66 + bVar7 +
-                   (0x99 < bVar4 || CARRY1(bVar4 + 0x66,bVar7));
+     (pMVar2 = (MVWorldObjectClient *)
+               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                         (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
+     pMVar2 == (MVWorldObjectClient *)0x0)) {
+    bVar3 = 0;
+    func_?();
+    piVar4 = &(this->fields)._.itemId;
+    bVar5 = (char)*piVar4 + extraout_AH;
+    bVar6 = CARRY1((byte)*piVar4,extraout_AH) || CARRY1(bVar5,bVar3);
+    *(byte *)piVar4 = bVar5 + bVar3;
+    piVar4 = &(this->fields)._.itemId;
+    iVar7 = *piVar4;
+    bVar5 = (char)*piVar4 + extraout_AH;
+    *(byte *)piVar4 = bVar5 + bVar6;
+    piVar4 = &(this->fields)._.itemId;
+    *(byte *)piVar4 =
+         (char)*piVar4 + extraout_AH + (CARRY1((byte)iVar7,extraout_AH) || CARRY1(bVar5,bVar6));
     pcVar8 = (code *)swi(3);
-    pMVar9 = (MVWorldObjectClient *)(*pcVar8)();
-    return pMVar9;
+    pMVar2 = (MVWorldObjectClient *)(*pcVar8)();
+    return pMVar2;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_10;
+  unaff_EBP = in_stack_9;
   unaff_ESI = pMVar1;
+  this = pMVar2;
   goto code_?;
 }
 

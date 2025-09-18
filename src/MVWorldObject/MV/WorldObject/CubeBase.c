@@ -230,7 +230,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
+    pVVar1 = *corners;
     faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Front:
@@ -246,7 +246,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
+    pVVar1 = *corners;
     faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Back:
@@ -262,7 +262,7 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
+    pVVar1 = *corners;
     faceVertices = (Vector3__Array **)*faceVertices;
     break;
   case Face__Enum_Left:
@@ -296,13 +296,13 @@ joined_?:
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
+    pVVar1 = *corners;
     faceVertices = (Vector3__Array **)*faceVertices;
     break;
   default:
     goto code_?;
   }
-  if (pVVar4 != (Vector3__Array *)0x0) {
+  if (pVVar1 != (Vector3__Array *)0x0) {
 code_?:
     func_?();
     bVar5 = (Vector3__Array *)faceVertices != (Vector3__Array *)0x0;
@@ -314,25 +314,17 @@ code_?:
     }
   }
 code_?:
-  bVar6 = 0;
+  cVar6 = '\0';
   uVar7 = func_?();
   uVar8 = (undefined2)((uint6)uVar7 >> 0x20);
-  pcVar9 = (char *)uVar7;
-  out(uVar8,pcVar9);
-  pbVar10 = (byte *)((int)&pVVar1[-1].vector[0x18].y + 1);
-  bVar11 = *pbVar10;
-  bVar12 = (byte)((uint6)uVar7 >> 0x20);
-  bVar13 = *pbVar10 + bVar12;
-  pcRam_? = pcVar9;
-  *pbVar10 = bVar13 + bVar6;
-  out(uVar8,pcVar9);
-  *pcVar9 = *pcVar9 + (char)((uint6)uVar7 >> 8) + (CARRY1(bVar11,bVar12) || CARRY1(bVar13,bVar6));
-  out(uVar8,pcVar9);
-  *(char *)(extraout_ECX + -0x33ef105a) =
-       *(char *)(extraout_ECX + -0x33ef105a) + (char)((uint6)uVar7 >> 0x28) +
-       (*(byte *)&((Vector3__Array *)faceVertices)->klass < *(byte *)corners);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  out(uVar8,(int)uVar7);
+  *(char *)&((Vector3__Array *)((int)faceVertices + 0x7310ef00))->vector[0xc].x =
+       *(char *)&((Vector3__Array *)((int)faceVertices + 0x7310ef00))->vector[0xc].x +
+       (char)((uint6)uVar7 >> 8) + cVar6;
+  out(uVar8,uRam_?);
+  uRam_? = (undefined1)uRam_?;
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

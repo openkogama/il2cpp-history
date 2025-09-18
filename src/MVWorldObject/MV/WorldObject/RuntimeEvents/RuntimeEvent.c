@@ -8,40 +8,43 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
 {
   if (bytePacker == (BytePacker *)0x0) {
     func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-    halt_baddata();
+    *(char *)(extraout_EDX + -0x3f) = *(char *)(extraout_EDX + -0x3f) + (char)((uint)unaff_EBX >> 8)
+    ;
+    pcVar1 = (code *)swi(1);
+    pRVar2 = (RuntimeEvent *)(*pcVar1)();
+    return pRVar2;
   }
-  uVar1 = BytePacker::BytePacker_ReadByte(bytePacker,(MethodInfo *)0x0);
-  uVar2 = uVar1;
+  uVar3 = BytePacker::BytePacker_ReadByte(bytePacker,(MethodInfo *)0x0);
+  uVar4 = uVar3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent);
     func_?(&TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent);
     cRam_? = '\x01';
   }
-  switch(uVar1) {
+  switch(uVar3) {
   case 1:
   case 2:
   case 5:
     method_00 = TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
-    pRVar3 = (RuntimeEvent *)func_?();
+    pRVar2 = (RuntimeEvent *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pRVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (pRVar3->fields)._RuntimeEventType_k__BackingField = uVar2;
-    if (uVar2 == 1) {
-      uVar2 = BytePacker::BytePacker_ReadByte(bytePacker,(MethodInfo *)0x0);
-      *(uint8_t *)&pRVar3[1].klass = uVar2;
+              ((Object *)pRVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (pRVar2->fields)._RuntimeEventType_k__BackingField = uVar4;
+    if (uVar4 == 1) {
+      uVar4 = BytePacker::BytePacker_ReadByte(bytePacker,(MethodInfo *)0x0);
+      *(uint8_t *)&pRVar2[1].klass = uVar4;
     }
-    uVar4 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+    uVar5 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
     BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
     BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-    uVar5._0_2_ = 0;
-    uVar5._2_2_ = 0;
-    iVar6 = 0;
-    IntVector::IntVector__ctor_1((IntVector *)&stack0xfffffff0,(uint)uVar4,0,0,(MethodInfo *)0x0);
-    (pRVar3->fields).position.x = (int16_t)uVar5;
-    (pRVar3->fields).position.y = SUB42(uVar5,2);
-    (pRVar3->fields).position.z = iVar6;
-    return pRVar3;
+    uVar6._0_2_ = 0;
+    uVar6._2_2_ = 0;
+    iVar7 = 0;
+    IntVector::IntVector__ctor_1((IntVector *)&stack0xfffffff0,(uint)uVar5,0,0,(MethodInfo *)0x0);
+    (pRVar2->fields).position.x = (int16_t)uVar6;
+    (pRVar2->fields).position.y = SUB42(uVar6,2);
+    (pRVar2->fields).position.z = iVar7;
+    return pRVar2;
   case 3:
   case 4:
   case 6:
@@ -52,22 +55,22 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   case 0xf:
   case 0x10:
     method_01 = TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent;
-    pRVar3 = (RuntimeEvent *)func_?();
+    pRVar2 = (RuntimeEvent *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pRVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    (pRVar3->fields)._RuntimeEventType_k__BackingField = uVar2;
-    uVar4 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-    uVar7 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+              ((Object *)pRVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+    (pRVar2->fields)._RuntimeEventType_k__BackingField = uVar4;
+    uVar5 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
     uVar8 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-    uVar9._0_2_ = 0;
-    uVar9._2_2_ = 0;
-    iVar6 = 0;
+    uVar9 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+    uVar10._0_2_ = 0;
+    uVar10._2_2_ = 0;
+    iVar7 = 0;
     IntVector::IntVector__ctor_1
-              ((IntVector *)&stack0xfffffff0,(uint)uVar4,(uint)uVar7,(uint)uVar8,(MethodInfo *)0x0);
-    (pRVar3->fields).position.x = (int16_t)uVar9;
-    (pRVar3->fields).position.y = SUB42(uVar9,2);
-    (pRVar3->fields).position.z = iVar6;
-    return pRVar3;
+              ((IntVector *)&stack0xfffffff0,(uint)uVar5,(uint)uVar8,(uint)uVar9,(MethodInfo *)0x0);
+    (pRVar2->fields).position.x = (int16_t)uVar10;
+    (pRVar2->fields).position.y = SUB42(uVar10,2);
+    (pRVar2->fields).position.z = iVar7;
+    return pRVar2;
   default:
     return (RuntimeEvent *)0x0;
   }
@@ -124,26 +127,20 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   }
   if (bytePacker == (BytePacker *)0x0) {
 code_?:
-    bVar2 = bytePacker == (BytePacker *)0x0;
-    cVar4 = '\0';
-    cVar5 = (int)bytePacker < 0;
     func_?();
-    if (bVar2 || cVar4 != cVar5) {
-      return extraout_ECX;
-    }
-    pcVar6 = (code *)swi(1);
-    pRVar7 = (RuntimeEvent *)(*pcVar6)();
-    return pRVar7;
+    pcVar4 = (code *)swi(1);
+    pRVar5 = (RuntimeEvent *)(*pcVar4)();
+    return pRVar5;
   }
 code_?:
+  uVar6 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar7 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
   uVar8 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar9 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar10 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar11._0_2_ = 0;
-  uVar11._2_2_ = 0;
+  uVar9._0_2_ = 0;
+  uVar9._2_2_ = 0;
   IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xfffffff4,(uint)uVar8,(uint)uVar9,(uint)uVar10,(MethodInfo *)0x0);
-  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar11;
+            ((IntVector *)&stack0xfffffff4,(uint)uVar6,(uint)uVar7,(uint)uVar8,(MethodInfo *)0x0);
+  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar9;
   *(undefined2 *)
    (runtimeEventType + (RuntimeEventType__Enum_AvatarImpact75|RuntimeEventType__Enum_AvatarImpact25)
    ) = 0;

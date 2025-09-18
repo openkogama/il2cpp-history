@@ -344,27 +344,19 @@ void Assembly-CSharp.dll::GamePassesPurchaseButton::GamePassesPurchaseButton_OnD
     func_?(&StringLiteral_You_need_to_unlock_game_tier_);
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields).informationTextBubble;
-  IStack_2.m_value = (this->fields).tierDisplayed - 1;
-  str1 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
-  mscorlib.dll::System::String::String_Concat_4
-            (StringLiteral_You_need_to_unlock_game_tier_,str1,StringLiteral__first_,
-             (MethodInfo *)0x0);
-  if ((pGVar1 != (GamePassesTextBubble *)0x0) &&
-     (this_00 = (pGVar1->fields).fader, this_00 != (NotificationFade *)0x0)) {
-    NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
-    pTVar3 = (pGVar1->fields).text;
-    if (pTVar3 != (Text *)0x0) {
-      pTVar4 = pTVar3->klass;
-      pIStack5 = (pTVar4->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-      (*(code *)(pTVar4->vtable).set_text.method)();
-      (pGVar1->fields).isActive = 1;
-      return;
-    }
+  this_00 = (this->fields).informationTextBubble;
+  IStack_1.m_value = (this->fields).tierDisplayed - 1;
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                     (StringLiteral_You_need_to_unlock_game_tier_,pSVar2,StringLiteral__first_,
+                      (MethodInfo *)0x0);
+  if (this_00 != (GamePassesTextBubble *)0x0) {
+    GamePassesTextBubble::GamePassesTextBubble_Activate(this_00,pSVar2,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

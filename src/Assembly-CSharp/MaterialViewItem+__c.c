@@ -6,20 +6,37 @@ void Assembly-CSharp.dll::MaterialViewItem+<>c::MaterialViewItem_c__OnClick_b__1
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
     func_?(&StringLiteral_Destructible_material_only_avail);
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  TM::TM__(StringLiteral_Destructible_material_only_avail,(MethodInfo *)0x0);
-  if (x != (IModalPopupCreator *)0x0) {
-    func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+  pSVar1 = TM::TM__(StringLiteral_Destructible_material_only_avail,(MethodInfo *)0x0);
+  pSVar2 = ::StringLiteral__;
+  if (x == (IModalPopupCreator *)0x0) {
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff8);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar4 = 0;
+  pIVar5 = x->klass;
+  uVar6._0_1_ = (pIVar5->_1).rank;
+  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar6 != 0) {
+    do {
+      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+        ppMVar7 = &(&(x->klass->vtable).Create_3)[x->klass->interfaceOffsets[uVar4].offset].method;
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar6);
+  }
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,4);
+code_?:
+  (*(code *)*ppMVar7)(x,pSVar1,pSVar2,ppMVar7[1]);
   return;
 }
 

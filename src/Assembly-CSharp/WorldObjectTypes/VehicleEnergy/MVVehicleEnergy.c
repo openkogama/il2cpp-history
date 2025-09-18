@@ -97,7 +97,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
     EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
               (this_00,cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
     (this->fields).editableCubeModelWrapper = this_00;
-    uStack10 = 0x104f;
+    uStack10 = 0x104d;
     func_?();
     return;
   }
@@ -136,21 +136,19 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
 
 {
   pMVar1 = (this->fields).vehicleEnergyObject;
-  if (((pMVar1 != (MVVehicleEnergyObject *)0x0) &&
-      (pVVar2 = (pMVar1->fields).vehicleEnergyVisuals, pVVar2 != (VehicleEnergyVisuals *)0x0)) &&
-     (this_00 = (pVVar2->fields).rotateLocal, this_00 != (RotateLocal *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)this_00,0,(MethodInfo *)0x0);
-    pEVar3 = (this->fields).editableCubeModelWrapper;
-    if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-      bVar4 = (*(code *)(pEVar3->klass->vtable).OnEnterObject.method)(pEVar3);
-      return bVar4;
+  if ((pMVar1 != (MVVehicleEnergyObject *)0x0) &&
+     (this_00 = (pMVar1->fields).vehicleEnergyVisuals, this_00 != (VehicleEnergyVisuals *)0x0)) {
+    VehicleEnergyVisuals::VehicleEnergyVisuals_Rotate(this_00,0,(MethodInfo *)0x0);
+    pEVar2 = (this->fields).editableCubeModelWrapper;
+    if (pEVar2 != (EditableCubeModelWrapper *)0x0) {
+      bVar3 = (*(code *)(pEVar2->klass->vtable).OnEnterObject.method)(pEVar2);
+      return bVar3;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  pcVar4 = (code *)swi(3);
+  bVar3 = (*pcVar4)();
+  return bVar3;
 }
 
 
@@ -161,21 +159,19 @@ bool Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::
 
 {
   pMVar1 = (this->fields).vehicleEnergyObject;
-  if (((pMVar1 != (MVVehicleEnergyObject *)0x0) &&
-      (pVVar2 = (pMVar1->fields).vehicleEnergyVisuals, pVVar2 != (VehicleEnergyVisuals *)0x0)) &&
-     (this_00 = (pVVar2->fields).rotateLocal, this_00 != (RotateLocal *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)this_00,1,(MethodInfo *)0x0);
-    pEVar3 = (this->fields).editableCubeModelWrapper;
-    if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-      bVar4 = (*(code *)(pEVar3->klass->vtable).OnExitObject.method)(pEVar3);
-      return bVar4;
+  if ((pMVar1 != (MVVehicleEnergyObject *)0x0) &&
+     (this_00 = (pMVar1->fields).vehicleEnergyVisuals, this_00 != (VehicleEnergyVisuals *)0x0)) {
+    VehicleEnergyVisuals::VehicleEnergyVisuals_Rotate(this_00,1,(MethodInfo *)0x0);
+    pEVar2 = (this->fields).editableCubeModelWrapper;
+    if (pEVar2 != (EditableCubeModelWrapper *)0x0) {
+      bVar3 = (*(code *)(pEVar2->klass->vtable).OnExitObject.method)(pEVar2);
+      return bVar3;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  pcVar4 = (code *)swi(3);
+  bVar3 = (*pcVar4)();
+  return bVar3;
 }
 
 
@@ -343,23 +339,13 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
   MVVehicleEnergy_ToggleColliders(this,1,(MethodInfo *)0x0);
   pMVar1 = (this->fields).vehicleEnergyObject;
   if ((pMVar1 != (MVVehicleEnergyObject *)0x0) &&
-     (pVVar2 = (pMVar1->fields).vehicleEnergyVisuals, pVVar2 != (VehicleEnergyVisuals *)0x0)) {
-    if ((pVVar2->fields).particleSystemOn == 0) {
-      return;
-    }
-    this_00 = (pVVar2->fields).particles;
-    if ((this_00 != (ParticleSystem *)0x0) &&
-       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0), this_01 != (GameObject *)0x0))
-    {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,1,(MethodInfo *)0x0);
-      return;
-    }
+     (this_00 = (pMVar1->fields).vehicleEnergyVisuals, this_00 != (VehicleEnergyVisuals *)0x0)) {
+    VehicleEnergyVisuals::VehicleEnergyVisuals_ToggleVisuals(this_00,1,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -373,23 +359,13 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergy::MVVe
   MVVehicleEnergy_ToggleColliders(this,0,(MethodInfo *)0x0);
   pMVar1 = (this->fields).vehicleEnergyObject;
   if ((pMVar1 != (MVVehicleEnergyObject *)0x0) &&
-     (pVVar2 = (pMVar1->fields).vehicleEnergyVisuals, pVVar2 != (VehicleEnergyVisuals *)0x0)) {
-    if ((pVVar2->fields).particleSystemOn == 0) {
-      return;
-    }
-    this_00 = (pVVar2->fields).particles;
-    if ((this_00 != (ParticleSystem *)0x0) &&
-       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0), this_01 != (GameObject *)0x0))
-    {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,0,(MethodInfo *)0x0);
-      return;
-    }
+     (this_00 = (pMVar1->fields).vehicleEnergyVisuals, this_00 != (VehicleEnergyVisuals *)0x0)) {
+    VehicleEnergyVisuals::VehicleEnergyVisuals_ToggleVisuals(this_00,0,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -2043,11 +2043,11 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
                                               (pCVar34->fields).Normal.y =
                                                    (float)(int)((ulonglong)uVar9 >> 0x20);
                                               (pCVar34->fields).Normal.z = fVar10;
-                                              fVar14 = fVar22 * 4.170001e-29 * _UNK_? +
+                                              fVar14 = fVar22 * 4.169717e-29 * _UNK_? +
                                                        fVar18;
-                                              fVar13 = fVar23 * 4.170001e-29 * _UNK_? +
+                                              fVar13 = fVar23 * 4.169717e-29 * _UNK_? +
                                                       (float)puVar11;
-                                              fVar10 = fVar21 * 4.170001e-29 * _UNK_? + fVar12
+                                              fVar10 = fVar21 * 4.169717e-29 * _UNK_? + fVar12
                                               ;
                                               pGVar31 = (this->fields)._topTick;
                                               position_01.y = fVar13;
@@ -2091,11 +2091,11 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
                                                     (pCVar34->fields).Normal.x = (float)uVar19;
                                                     (pCVar34->fields).Normal.y = (float)uVar20;
                                                     (pCVar34->fields).Normal.z = fVar24;
-                                                    fVar14 = fVar18 - fVar22 * 4.170001e-29 *
+                                                    fVar14 = fVar18 - fVar22 * 4.169717e-29 *
                                                                       _UNK_?;
                                                     fVar13 = (float)puVar11 -
-                                                            fVar23 * 4.170001e-29 * _UNK_?;
-                                                    fVar10 = fVar12 - fVar21 * 4.170001e-29 *
+                                                            fVar23 * 4.169717e-29 * _UNK_?;
+                                                    fVar10 = fVar12 - fVar21 * 4.169717e-29 *
                                                                      _UNK_?;
                                                     pGVar31 = (this->fields)._bottomTick;
                                                     position_02.y = fVar13;

@@ -5,25 +5,15 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergyObject
      MVVehicleEnergyObject_Spawned(MVVehicleEnergyObject *this,MethodInfo *method)
 
 {
-  pVVar1 = (this->fields).vehicleEnergyVisuals;
-  if (pVVar1 != (VehicleEnergyVisuals *)0x0) {
-    if ((pVVar1->fields).particleSystemOn == 0) {
-      return;
-    }
-    this_00 = (pVVar1->fields).particles;
-    if ((this_00 != (ParticleSystem *)0x0) &&
-       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0), this_01 != (GameObject *)0x0))
-    {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,1,(MethodInfo *)0x0);
-      return;
-    }
+  this_00 = (this->fields).vehicleEnergyVisuals;
+  if (this_00 != (VehicleEnergyVisuals *)0x0) {
+    VehicleEnergyVisuals::VehicleEnergyVisuals_ToggleVisuals(this_00,1,(MethodInfo *)0x0);
+    return;
   }
-  uVar2 = func_?(&stack0xfffffff8);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -34,25 +24,15 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVVehicleEnergyObject
      MVVehicleEnergyObject_Taken(MVVehicleEnergyObject *this,MethodInfo *method)
 
 {
-  pVVar1 = (this->fields).vehicleEnergyVisuals;
-  if (pVVar1 != (VehicleEnergyVisuals *)0x0) {
-    if ((pVVar1->fields).particleSystemOn == 0) {
-      return;
-    }
-    this_00 = (pVVar1->fields).particles;
-    if ((this_00 != (ParticleSystem *)0x0) &&
-       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0), this_01 != (GameObject *)0x0))
-    {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,0,(MethodInfo *)0x0);
-      return;
-    }
+  this_00 = (this->fields).vehicleEnergyVisuals;
+  if (this_00 != (VehicleEnergyVisuals *)0x0) {
+    VehicleEnergyVisuals::VehicleEnergyVisuals_ToggleVisuals(this_00,0,(MethodInfo *)0x0);
+    return;
   }
-  uVar2 = func_?(&stack0xfffffff8);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

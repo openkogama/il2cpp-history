@@ -9,8 +9,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff9c;
-  puVar5 = &stack0xffffff9c;
+  puStack_4 = &stack0xffffffa4;
+  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
     func_?();
     func_?(&
@@ -37,60 +37,38 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
     func_?();
     cRam_? = '\x01';
   }
-  pLVar7 = (List_1_T_Enumerator_System_Object_ *)
-           TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-  pLStack_8 = pLVar7;
-  if (pLVar7 != (List_1_T_Enumerator_System_Object_ *)0x0) {
-    pIStack_9 = (IEditModeUI__Class *)pLVar7->_list;
-    uVar10 = 0;
-    uStack_11 = 0;
-    uVar12._0_1_ = (pIStack_9->_1).rank;
-    uVar12._1_1_ = (pIStack_9->_1).minimumAlignment;
-    uStack_13 = (uint)uVar12;
-    if (uVar12 != 0) {
-      do {
-        if (pIStack_9->interfaceOffsets[uVar10].interfaceType ==
-            (Il2CppClass *)TypeInfo__IEditModeUI) {
-          ppMVar14 = &(&(((IEditModeUI__Class *)pLVar7->_list)->vtable).IsGridSnap)
-                     [((IEditModeUI__Class *)pLVar7->_list)->interfaceOffsets[uVar10].offset].method
-          ;
-          goto code_?;
-        }
-        uVar10 = uVar10 + 1;
-      } while (uVar10 < uVar12);
-    }
-    ppMVar14 = (MethodInfo **)func_?(pLVar7,TypeInfo__IEditModeUI);
-code_?:
-    lVar15 = (ulonglong)unaff_EDI << 0x20;
-    cVar16 = (*(code *)*ppMVar14)(pLVar7);
-    uStack_11 = _UNK_?;
-    if (cVar16 == '\0') {
-      uStack_11 = _UNK_?;
+  pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+  if (pIVar7 != (IEditModeUI *)0x0) {
+    uVar8 = CONCAT44(unaff_EDI,pIVar7);
+    cVar9 = func_?(0,TypeInfo__IEditModeUI);
+    uStack_10 = _UNK_?;
+    if (cVar9 == '\0') {
+      uStack_10 = _UNK_?;
     }
     if (targets != (List_1_WorldObjectClientRef_ *)0x0) {
-      pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (aLStack_18,
+                         (&LStack_12,
                           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                           targets,
                           MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__GetEnumerator__
                          );
-      uStack_19 = 0;
-      LStack_6._list = (List_1_System_Object_ *)pLVar17->_list;
-      LStack_6._index = pLVar17->_index;
-      LStack_6._version = pLVar17->_version;
-      LStack_6._current = *(Object **)&pLVar17->_current;
+      uStack_13 = 0;
+      LStack_6._list = (List_1_System_Object_ *)pLVar11->_list;
+      LStack_6._index = pLVar11->_index;
+      LStack_6._version = pLVar11->_version;
+      LStack_6._current = *(Object **)&pLVar11->_current;
       uStack_1 = 1;
-      pLStack_8 = &LStack_6;
+      pLStack_14 = &LStack_6;
       while( true ) {
-        method_00 = (MethodInfo *)((ulonglong)lVar15 >> 0x20);
-        bVar20 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        method_00 = (MethodInfo *)((ulonglong)uVar8 >> 0x20);
+        bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
                           (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__
                           );
-        if (bVar20 == 0) {
+        if (bVar15 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&LStack_6,
@@ -102,26 +80,26 @@ code_?:
         }
         if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
         break;
-        lVar15 = CONCAT44(method_00,
-                          MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                         );
-        pOVar21 = WorldObjectClientRef`1[System::Object]::
+        uVar8 = CONCAT44(method_00,
+                         MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                        );
+        pOVar16 = WorldObjectClientRef`1[System::Object]::
                  WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                            ((WorldObjectClientRef_1_System_Object_ *)LStack_6._current,
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                            );
-        if (pOVar21 != (Object *)0x0) {
+        if (pOVar16 != (Object *)0x0) {
           func_?();
-          plVar22 = (longlong *)func_?(&aLStack_18[0]._index,0x41,pOVar21,uStack_11);
-          lVar15 = *plVar22;
-          func_?(0x1e,pOVar21);
+          puVar17 = (undefined8 *)func_?(&LStack_12._index,0x41,pOVar16,uStack_10);
+          uVar8 = *puVar17;
+          func_?(0x1e,pOVar16);
         }
       }
     }
   }
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

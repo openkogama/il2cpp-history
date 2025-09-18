@@ -126,16 +126,21 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_InitializeInfoButto
   }
   pSVar1 = this;
   this = (SkillSettingBase *)0x0;
-  this_00 = (pSVar1->fields).infoButton;
-  skillValue = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if (this_00 != (SpawnRoleSkillInfoButton *)0x0) {
-    SpawnRoleSkillInfoButton::SpawnRoleSkillInfoButton_Initialize
-              (this_00,skill,skillValue,skillCost,skillDataManager,(MethodInfo *)0x0);
+  pSVar2 = (pSVar1->fields).infoButton;
+  pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
+  if (pSVar2 != (SpawnRoleSkillInfoButton *)0x0) {
+    (pSVar2->fields).skillType = skill;
+    func_?(&(pSVar2->fields).skillType,skill);
+    (pSVar2->fields).skillValue = pOVar3;
+    func_?(&(pSVar2->fields).skillValue,pOVar3);
+    (pSVar2->fields).skillDataManager = skillDataManager;
+    func_?(&(pSVar2->fields).skillDataManager,skillDataManager);
+    (pSVar2->fields).skillCost = skillCost;
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -1980,48 +1980,77 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_OnHoverEnter
         }
         pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar6 != (MVNetworkGame *)0x0) &&
-           (this_00 = (pMVar6->fields)._GameTierShopRepository_k__BackingField,
-           this_00 != (GameTierShopRepository *)0x0)) {
-          pDVar7 = GameTierShopRepository::GameTierShopRepository_GetTierItemData
-                             (this_00,(uint)(byte)(bVar2 + 1),(MethodInfo *)0x0);
-          if (pDVar7 == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
-                        0x0) {
-            return;
+           (pGVar7 = (pMVar6->fields)._GameTierShopRepository_k__BackingField,
+           pGVar7 != (GameTierShopRepository *)0x0)) {
+          BStack_8 = CONCAT31(BStack_8._1_3_,bVar2 + 1);
+          if (cRam_? == '\0') {
+            func_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
+                           );
+            func_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                           );
+            cRam_? = '\x01';
           }
-          pLVar8 = (this->fields).tierProgressDataList;
-          if (pLVar8 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-            pGVar9 = mscorlib.dll::System::Collections::Generic::
-                      List`1[GameTierProgressBar+TierProgressData]::
-                      List_1_GameTierProgressBar_TierProgressData__get_Item
-                                ((GameTierProgressBar_TierProgressData *)&stack0xffffff58,pLVar8,
-                                 (uint)bVar2,
-                                 MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
-                                );
-            if (pGVar9->freeTryTextBubble != (GamePassesTextBubble *)0x0) {
-              if ((pGVar9->freeTryTextBubble->fields).isActive != 0) {
+          pDVar9 = (pGVar7->fields).tierShopData;
+          if (pDVar9 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                         *)0x0) {
+            bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Single]::Dictionary_2_System_ByteEnum_System_Single__ContainsKey
+                              ((Dictionary_2_System_ByteEnum_System_Single_ *)pDVar9,BStack_8,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
+                              );
+            if (bVar5 == 0) {
+              return;
+            }
+            pDVar9 = (pGVar7->fields).tierShopData;
+            if (pDVar9 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                           *)0x0) {
+              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        ByteEnum,System::Object]::
+                        Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar9,BStack_8,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                                  );
+              if (pOVar10 == (Object *)0x0) {
                 return;
               }
-              if ((this->fields).tierProgressDataList !=
-                  (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                iVar10 = func_?();
-                if ((*(Component **)(iVar10 + 0x3c) != (Component *)0x0) &&
-                   (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject
-                                        (*(Component **)(iVar10 + 0x3c),(MethodInfo *)0x0),
-                   this_02 != (GameObject *)0x0)) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (this_02,1,(MethodInfo *)0x0);
-                  pLVar8 = (this->fields).tierProgressDataList;
-                  if (pLVar8 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                    iVar10 = func_?(&stack0xffffff58,pLVar8,(uint)bVar2,
-                                             MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
-                                            );
-                    this_01 = *(GamePassesTextBubble **)(iVar10 + 0x3c);
-                    textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
-                    if (this_01 != (GamePassesTextBubble *)0x0) {
-                      GamePassesTextBubble::GamePassesTextBubble_Activate
-                                (this_01,textBubbleText,(MethodInfo *)0x0);
-                      return;
+              pLVar11 = (this->fields).tierProgressDataList;
+              if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                pGVar12 = mscorlib.dll::System::Collections::Generic::
+                          List`1[GameTierProgressBar+TierProgressData]::
+                          List_1_GameTierProgressBar_TierProgressData__get_Item
+                                    ((GameTierProgressBar_TierProgressData *)&stack0xffffff54,pLVar11
+                                     ,(uint)bVar2,
+                                     MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
+                                    );
+                if (pGVar12->freeTryTextBubble != (GamePassesTextBubble *)0x0) {
+                  if ((pGVar12->freeTryTextBubble->fields).isActive != 0) {
+                    return;
+                  }
+                  if ((this->fields).tierProgressDataList !=
+                      (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                    iVar13 = func_?();
+                    if ((*(Component **)(iVar13 + 0x3c) != (Component *)0x0) &&
+                       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_gameObject
+                                            (*(Component **)(iVar13 + 0x3c),(MethodInfo *)0x0),
+                       this_01 != (GameObject *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                (this_01,1,(MethodInfo *)0x0);
+                      pLVar11 = (this->fields).tierProgressDataList;
+                      if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                        iVar13 = func_?(&stack0xffffff54,pLVar11,(uint)bVar2,
+                                                 MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
+                                                );
+                        this_00 = *(GamePassesTextBubble **)(iVar13 + 0x3c);
+                        textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
+                        if (this_00 != (GamePassesTextBubble *)0x0) {
+                          GamePassesTextBubble::GamePassesTextBubble_Activate
+                                    (this_00,textBubbleText,(MethodInfo *)0x0);
+                          return;
+                        }
+                      }
                     }
                   }
                 }
@@ -2033,8 +2062,8 @@ void Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_OnHoverEnter
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -2444,48 +2473,77 @@ bool Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_ShowFreeTryTe
         }
         pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar6 != (MVNetworkGame *)0x0) &&
-           (this_00 = (pMVar6->fields)._GameTierShopRepository_k__BackingField,
-           this_00 != (GameTierShopRepository *)0x0)) {
-          pDVar7 = GameTierShopRepository::GameTierShopRepository_GetTierItemData
-                             (this_00,(uint)(byte)(bVar2 + 1),(MethodInfo *)0x0);
-          if (pDVar7 == (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
-                        0x0) {
-            return 0;
+           (pGVar7 = (pMVar6->fields)._GameTierShopRepository_k__BackingField,
+           pGVar7 != (GameTierShopRepository *)0x0)) {
+          BStack_8 = CONCAT31(BStack_8._1_3_,bVar2 + 1);
+          if (cRam_? == '\0') {
+            func_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
+                           );
+            func_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                           );
+            cRam_? = '\x01';
           }
-          pLVar8 = (this->fields).tierProgressDataList;
-          if (pLVar8 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-            pGVar9 = mscorlib.dll::System::Collections::Generic::
-                      List`1[GameTierProgressBar+TierProgressData]::
-                      List_1_GameTierProgressBar_TierProgressData__get_Item
-                                ((GameTierProgressBar_TierProgressData *)&stack0xffffff58,pLVar8,
-                                 (uint)bVar2,
-                                 MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
-                                );
-            if (pGVar9->freeTryTextBubble != (GamePassesTextBubble *)0x0) {
-              if ((pGVar9->freeTryTextBubble->fields).isActive != 0) {
-                return 1;
+          pDVar9 = (pGVar7->fields).tierShopData;
+          if (pDVar9 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                         *)0x0) {
+            bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Single]::Dictionary_2_System_ByteEnum_System_Single__ContainsKey
+                              ((Dictionary_2_System_ByteEnum_System_Single_ *)pDVar9,BStack_8,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
+                              );
+            if (bVar5 == 0) {
+              return 0;
+            }
+            pDVar9 = (pGVar7->fields).tierShopData;
+            if (pDVar9 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                           *)0x0) {
+              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        ByteEnum,System::Object]::
+                        Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar9,BStack_8,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                                  );
+              if (pOVar10 == (Object *)0x0) {
+                return 0;
               }
-              if ((this->fields).tierProgressDataList !=
-                  (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                iVar10 = func_?();
-                if ((*(Component **)(iVar10 + 0x3c) != (Component *)0x0) &&
-                   (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject
-                                        (*(Component **)(iVar10 + 0x3c),(MethodInfo *)0x0),
-                   this_02 != (GameObject *)0x0)) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (this_02,1,(MethodInfo *)0x0);
-                  pLVar8 = (this->fields).tierProgressDataList;
-                  if (pLVar8 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-                    iVar10 = func_?(&stack0xffffff58,pLVar8,(uint)bVar2,
-                                             MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
-                                            );
-                    this_01 = *(GamePassesTextBubble **)(iVar10 + 0x3c);
-                    textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
-                    if (this_01 != (GamePassesTextBubble *)0x0) {
-                      GamePassesTextBubble::GamePassesTextBubble_Activate
-                                (this_01,textBubbleText,(MethodInfo *)0x0);
-                      return 1;
+              pLVar11 = (this->fields).tierProgressDataList;
+              if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                pGVar12 = mscorlib.dll::System::Collections::Generic::
+                          List`1[GameTierProgressBar+TierProgressData]::
+                          List_1_GameTierProgressBar_TierProgressData__get_Item
+                                    ((GameTierProgressBar_TierProgressData *)&stack0xffffff54,pLVar11
+                                     ,(uint)bVar2,
+                                     MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
+                                    );
+                if (pGVar12->freeTryTextBubble != (GamePassesTextBubble *)0x0) {
+                  if ((pGVar12->freeTryTextBubble->fields).isActive != 0) {
+                    return 1;
+                  }
+                  if ((this->fields).tierProgressDataList !=
+                      (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                    iVar13 = func_?();
+                    if ((*(Component **)(iVar13 + 0x3c) != (Component *)0x0) &&
+                       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                  Component_get_gameObject
+                                            (*(Component **)(iVar13 + 0x3c),(MethodInfo *)0x0),
+                       this_01 != (GameObject *)0x0)) {
+                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                                (this_01,1,(MethodInfo *)0x0);
+                      pLVar11 = (this->fields).tierProgressDataList;
+                      if (pLVar11 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
+                        iVar13 = func_?(&stack0xffffff54,pLVar11,(uint)bVar2,
+                                                 MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
+                                                );
+                        this_00 = *(GamePassesTextBubble **)(iVar13 + 0x3c);
+                        textBubbleText = TM::TM__(StringLiteral_FREE_TRY,(MethodInfo *)0x0);
+                        if (this_00 != (GamePassesTextBubble *)0x0) {
+                          GamePassesTextBubble::GamePassesTextBubble_Activate
+                                    (this_00,textBubbleText,(MethodInfo *)0x0);
+                          return 1;
+                        }
+                      }
                     }
                   }
                 }
@@ -2497,8 +2555,8 @@ bool Assembly-CSharp.dll::GameTierProgressBar::GameTierProgressBar_ShowFreeTryTe
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar5 = (*pcVar11)();
+  pcVar14 = (code *)swi(3);
+  bVar5 = (*pcVar14)();
   return bVar5;
 }
 

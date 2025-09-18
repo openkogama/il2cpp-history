@@ -84,15 +84,8 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
   default:
     return 0;
   }
-  func_?();
-  pbVar6 = (byte *)((int)&this_00[0x581835]._1.actualSize + extraout_ECX * 2);
-  bVar7 = (byte)((uint)extraout_EDX >> 8);
-  pcVar8 = (char *)(CONCAT22((short)((uint)extraout_EDX >> 0x10),
-                             CONCAT11(bVar7 - *pbVar6,(char)extraout_EDX)) + -0x4b);
-  *pcVar8 = *pcVar8 + (char)extraout_ECX + (bVar7 < *pbVar6);
-  pcVar9 = (code *)swi(3);
-  bVar10 = (*pcVar9)();
-  return bVar10;
+  bVar6 = func_?();
+  return bVar6;
 }
 
 

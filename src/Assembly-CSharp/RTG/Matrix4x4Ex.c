@@ -387,7 +387,7 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_RotationMatrixFromRightUp
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,6,up.z,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-            (__return_storage_ptr__,8,4.3516387e-29,(MethodInfo *)0x0);
+            (__return_storage_ptr__,8,4.351374e-29,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,9,(float)__return_storage_ptr__,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1

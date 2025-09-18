@@ -143,6 +143,7 @@ void Assembly-CSharp.dll::PlayerListHold::PlayerListHold_SortAfterScore
                MethodInfo *method)
 
 {
+  pPVar1 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<PlayerListHold::PlayerElementHoldData>__Add_PlayerListHold__PlayerElementHoldData_
@@ -158,7 +159,6 @@ void Assembly-CSharp.dll::PlayerListHold::PlayerListHold_SortAfterScore
                    );
     cRam_? = '\x01';
   }
-  pPVar1 = this;
   bVar2 = false;
   iVar3 = 0;
   pLVar4 = (this->fields).playerElementList;
@@ -190,14 +190,11 @@ void Assembly-CSharp.dll::PlayerListHold::PlayerListHold_SortAfterScore
           func_?(&pVVar8->vector[uVar9].uxmlObjectAssets,0);
         }
         else {
-          item.uxmlObjectAssets =
-               (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)playerElementHoldData.playerElement
-          ;
-          item.parentId = playerElementHoldData.score;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
           VisualTreeAsset+UxmlObjectEntry]::
           List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry__AddWithResize
-                    (pLVar6,item,pMVar5->klass->rgctx_data[0xe].method);
+                    (pLVar6,(VisualTreeAsset_UxmlObjectEntry)playerElementHoldData,
+                     pMVar5->klass->rgctx_data[0xe].method);
         }
       }
       pLVar4 = (pPVar1->fields).playerElementList;
@@ -217,11 +214,11 @@ void Assembly-CSharp.dll::PlayerListHold::PlayerListHold_SortAfterScore
                           MethodInfo__System__Collections__Generic__List<PlayerListHold::PlayerElementHoldData>__get_Item_int_
                          );
       if ((XVar11.xso == (XmlSchemaObject *)0x0) ||
-         (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+         (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)XVar11.xso,(MethodInfo *)0x0),
-         pTVar12 == (Transform *)0x0)) break;
+         this_00 == (Transform *)0x0)) break;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                (pTVar12,(MethodInfo *)0x0);
+                (this_00,(MethodInfo *)0x0);
     }
     else {
       if (pLVar10 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
@@ -232,21 +229,19 @@ void Assembly-CSharp.dll::PlayerListHold::PlayerListHold_SortAfterScore
                          (pLVar10,iVar3,
                           MethodInfo__System__Collections__Generic__List<PlayerListHold::PlayerElementHoldData>__get_Item_int_
                          );
-      this = (PlayerListHold *)CONCAT31(this._1_3_,(pPVar1->fields).typeToDisplay);
-      bVar13 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
+      uVar9 = (uint)this >> 8;
+      this = (PlayerListHold *)CONCAT31((int3)uVar9,(pPVar1->fields).typeToDisplay);
+      bVar12 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
                          (playerElementHoldData.score,(int32_t)XVar11.qname,
                           (GameStatCounterType__Enum)this,(MethodInfo *)0x0);
-      if (bVar13 != 0) {
+      if (bVar12 != 0) {
         pLVar6 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)
                  (pPVar1->fields).playerElementList;
         if (pLVar6 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)0x0) break;
-        item_00.uxmlObjectAssets =
-             (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)playerElementHoldData.playerElement;
-        item_00.parentId = playerElementHoldData.score;
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
         VisualTreeAsset+UxmlObjectEntry]::
         List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry__Insert
-                  (pLVar6,iVar3,item_00,
+                  (pLVar6,iVar3,(VisualTreeAsset_UxmlObjectEntry)playerElementHoldData,
                    MethodInfo__System__Collections__Generic__List<PlayerListHold::PlayerElementHoldData>__Insert_int__PlayerListHold__PlayerElementHoldData_
                   );
         bVar2 = true;
@@ -266,34 +261,8 @@ void Assembly-CSharp.dll::PlayerListHold::PlayerListHold_SortAfterScore
                        (pLVar10,iVar3,
                         MethodInfo__System__Collections__Generic__List<PlayerListHold::PlayerElementHoldData>__get_Item_int_
                        );
-    this_01 = XVar11.xso;
-    if (this_01 == (XmlSchemaObject *)0x0) break;
-    this = (PlayerListHold *)0x0;
-    pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this_01,(MethodInfo *)0x0);
-    if (pTVar12 == (Transform *)0x0) break;
-    iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
-                       (pTVar12,(MethodInfo *)0x0);
-    this = (PlayerListHold *)(iVar14 + 1);
-    pPVar15 = (PlayerElementHold *)
-              mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-    this_00 = *(PlayerListHold **)&(this_01->fields).isProcessing;
-    if (this_00 == (PlayerListHold *)0x0) break;
-    playerElementHoldData.score = 0;
-    this = this_00;
-    bVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                       ((GameObject *)this_00,(MethodInfo *)0x0);
-    if (bVar13 == 0) {
-      pXVar16 = (this_01->fields).namespaces;
-      if (pXVar16 == (XmlSerializerNamespaces *)0x0) break;
-      this = (PlayerListHold *)&UNK_?;
-      playerElementHoldData.score = (int32_t)pXVar16;
-      playerElementHoldData.playerElement = pPVar15;
-      (*(code *)pXVar16->klass[3]._1.actualSize)();
-    }
-    piVar17 = ((Object_1__Fields *)&this_01[1].klass)->m_CachedPtr;
-    if (piVar17 == (int *)0x0) break;
-    (**(code **)(*piVar17 + 0x318))(piVar17,pPVar15,*(undefined4 *)(*piVar17 + 0x31c));
+    if ((PlayerElement *)XVar11.xso == (PlayerElement *)0x0) break;
+    PlayerElement::PlayerElement_UpdateScoreIndex((PlayerElement *)XVar11.xso,(MethodInfo *)0x0);
     pLVar4 = (pPVar1->fields).playerElementList;
     iVar3 = iVar3 + 1;
     if (pLVar4 == (List_1_PlayerListHold_PlayerElementHoldData_ *)0x0) break;
@@ -307,8 +276,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

@@ -259,7 +259,7 @@ code_?:
       if ((pMVar3 == (MVNetworkGame *)0x0) ||
          (pMVar9 = (pMVar3->fields).teamManager, pMVar9 == (MVTeamManager *)0x0))
       goto code_?;
-      bVar2 = 0x67;
+      bVar2 = 0xb7;
       iVar19 = MVTeamManager::MVTeamManager_TeamCount(pMVar9,(MethodInfo *)0x0);
       alwaysColor = (bool)pMVar9;
       if (iVar19 < 2) {
@@ -1152,7 +1152,7 @@ void Assembly-CSharp.dll::PlayerListButton::PlayerListButton_UpdateButton
   if ((pMVar2 == (MVNetworkGame *)0x0) ||
      (this_06 = (pMVar2->fields).teamManager, this_06 == (MVTeamManager *)0x0))
   goto code_?;
-  bVar5 = 0x67;
+  bVar5 = 0xb7;
   iVar6 = MVTeamManager::MVTeamManager_TeamCount(this_06,(MethodInfo *)0x0);
   alwaysColor = (bool)this_06;
   if (iVar6 < 2) {

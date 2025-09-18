@@ -15,63 +15,73 @@ void Assembly-CSharp.dll::OpenInventoryNotification::OpenInventoryNotification_I
     func_?(&TypeInfo__NotificationLifetime);
     cRam_? = '\x01';
   }
+  pOVar1 = this;
+  this = (OpenInventoryNotification *)CONCAT13(2,this._0_3_);
+  (pOVar1->fields)._.timeSinceStart = 0.0;
+  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   this_01 = data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(2,data._0_3_);
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                       pOVar1,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar2,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    if (TVar2.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+    uVar4 = CONCAT44(TypeInfo__NotificationLifetime,TVar3.m_Index);
+    if (TVar3.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
           (TypeInfo__NotificationLifetime->_0).element_class) goto code_?;
-      piVar3 = (int32_t *)func_?();
-      (this->fields).lifeTime = *piVar3;
-      pOVar1 = (Object *)func_?();
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      piVar5 = (int32_t *)func_?(TVar3.m_Index);
+      (pOVar1->fields).lifeTime = *piVar5;
+      pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                         pOVar1,
+                         pOVar2,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar2.m_Index != 0) {
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+      uVar4 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+      if (TVar3.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
             (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar3 = (int32_t *)func_?();
-        (this->fields).category = *piVar3;
-        pOVar1 = (Object *)func_?();
-        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        piVar5 = (int32_t *)func_?(TVar3.m_Index);
+        (pOVar1->fields).category = *piVar5;
+        pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
+        TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                           pOVar1,
+                           pOVar2,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-        if (TVar2.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+        uVar4 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
+        if (TVar3.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
               (TypeInfo__System__Int32->_0).element_class) goto code_?;
-          piVar3 = (int32_t *)func_?();
-          (this->fields).slot = *piVar3;
-          this_00 = (this->fields).fader;
-          if (this_00 != (NotificationFade *)0x0) {
-            NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
-            return;
+          piVar5 = (int32_t *)func_?(TVar3.m_Index);
+          (pOVar1->fields).slot = *piVar5;
+          pNVar6 = (pOVar1->fields).fader;
+          if (pNVar6 != (NotificationFade *)0x0) {
+            (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
+            this_00 = (pNVar6->fields).group;
+            (pNVar6->fields).playing = 1;
+            if (this_00 != (CanvasGroup *)0x0) {
+              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                        (this_00,0.0,(MethodInfo *)0x0);
+              (pNVar6->fields).currentTime = 0.0;
+              return;
+            }
           }
         }
       }
     }
   }
-  func_?();
+  uVar4 = func_?();
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(uVar4);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -114,7 +124,8 @@ void Assembly-CSharp.dll::OpenInventoryNotification::OpenInventoryNotification_N
             (root,(BaseEventData *)0x0,callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
             );
-  Notification::Notification_Close((Notification *)this,(MethodInfo *)0x0);
+  iVar1 = (*(code *)(this->klass->vtable).get_Lifetime.method)();
+  (this->fields)._.timeSinceStart = (float)(iVar1 + 1);
   return;
 }
 

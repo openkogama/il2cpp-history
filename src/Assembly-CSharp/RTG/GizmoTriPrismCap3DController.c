@@ -83,7 +83,7 @@ void Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::
             fVar6 = (float)fVar5;
             if ((pGVar2 != (GizmoCap3D *)0x0) &&
                (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
-              value.y = (float)pIVar4 + fVar6 * 4.1789956e-29;
+              value.y = (float)pIVar4 + fVar6 * 4.1787116e-29;
               value.x = zoomFactor + sliderDirection.x * fVar6;
               value.z = sliderEndPt.z + (float)this * fVar6;
               GizmoTransform::GizmoTransform_set_Position3D(pGVar3,value,(MethodInfo *)0x0);

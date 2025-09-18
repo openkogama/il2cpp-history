@@ -35,27 +35,29 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_A
                           (this_00,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Count__
                           );
-        if (iVar3 <= iVar5) {
+        if (iVar5 < iVar3) {
+          this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                              ((MethodInfo *)0x0);
+          if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAcceptFriendShip
+                    (this_01,_UNK_?,(MethodInfo *)0x0);
+        }
+        else {
           message = TM::TM__(StringLiteral_Your_friendlist_is_full,(MethodInfo *)0x0);
           MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
                     (MVGameMsgType__Enum_AdminMsg,message,(MethodInfo *)0x0);
-          Notification::Notification_Close((Notification *)&UNK_?,(MethodInfo *)0x0);
-          return;
         }
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                            ((MethodInfo *)0x0);
-        if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAcceptFriendShip
-                    (this_01,_UNK_?,(MethodInfo *)0x0);
-          Notification::Notification_Close((Notification *)&UNK_?,(MethodInfo *)0x0);
-          return;
-        }
+        uStack6 = *(undefined4 *)(_UNK_? + 0xe4);
+        iVar7 = (**(code **)(_UNK_? + 0xe0))();
+        _UNK_? = (float)(iVar7 + 1);
+        return;
       }
     }
   }
+code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -77,11 +79,12 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_I
     func_?(&StringLiteral__Accept__0__as_friend_);
     cRam_? = '\x01';
   }
+  n = this;
+  this = (FriendRequestNotification *)CONCAT13(1,this._0_3_);
+  (n->fields)._.timeSinceStart = 0.0;
+  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   this_01 = data;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(1,data._0_3_);
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_01 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
     uVar2 = func_?();
   }
@@ -89,8 +92,7 @@ code_?:
     TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                       pOVar1,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
     arg0.m_Index = 0;
@@ -98,9 +100,11 @@ code_?:
       if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
         arg0 = TVar3;
       }
+      pSVar4 = TypeInfo__System__String;
       if ((Object *)arg0.m_Index == (Object *)0x0) goto code_?;
     }
-    pOVar1 = (Object *)func_?();
+    uStack_5 = CONCAT13(0xf,(undefined3)uStack_5);
+    pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_5 + 3);
     TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -112,33 +116,34 @@ code_?:
     if (TVar3.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
         (TypeInfo__System__Int32->_0).element_class) {
-      piVar4 = (int32_t *)func_?(TVar3.m_Index);
-      pTVar5 = (this->fields).label;
-      (this->fields).friendId = *piVar4;
-      pSVar6 = TM::TM__(StringLiteral__Accept__0__as_friend_,(MethodInfo *)0x0);
-      pSVar6 = mscorlib.dll::System::String::String_Format
-                         (pSVar6,(Object *)arg0.m_Index,(MethodInfo *)0x0);
-      if (pTVar5 != (Text *)0x0) {
-        (*(code *)(pTVar5->klass->vtable).set_text.method)
-                  (pTVar5,pSVar6,(pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+      piVar6 = (int32_t *)func_?(TVar3.m_Index);
+      pTVar7 = (n->fields).label;
+      (n->fields).friendId = *piVar6;
+      pSVar8 = TM::TM__(StringLiteral__Accept__0__as_friend_,(MethodInfo *)0x0);
+      pSVar8 = mscorlib.dll::System::String::String_Format
+                         (pSVar8,(Object *)arg0.m_Index,(MethodInfo *)0x0);
+      if (pTVar7 != (Text *)0x0) {
+        (*(code *)(pTVar7->klass->vtable).set_text.method)
+                  (pTVar7,pSVar8,(pTVar7->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
         ;
-        this_00 = (this->fields).tertiaryNotificationUI;
-        l = (*(code *)(this->klass->vtable).get_Lifetime.method)
-                      (this,(this->klass->vtable).Initialize.methodPtr);
+        this_00 = (n->fields).tertiaryNotificationUI;
+        l = (*(code *)(n->klass->vtable).get_Lifetime.method)
+                      (n,(n->klass->vtable).Initialize.methodPtr);
         if (this_00 != (TertiaryNotificationUI *)0x0) {
           TertiaryNotificationUI::TertiaryNotificationUI_Initialize
-                    (this_00,(Notification *)this,l,0,(MethodInfo *)0x0);
+                    (this_00,(Notification *)n,l,0,(MethodInfo *)0x0);
           return;
         }
       }
       goto code_?;
     }
   }
-  func_?(uVar2);
+  TVar3.m_Index = func_?(uVar2);
+  pSVar4 = extraout_ECX;
 code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?(TVar3.m_Index,pSVar4);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -191,25 +196,29 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_U
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Count__
                         );
-      if (iVar4 <= iVar6) {
+      if (iVar6 < iVar4) {
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                            ((MethodInfo *)0x0);
+        if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAcceptFriendShip
+                  (this_01,(this->fields).friendId,(MethodInfo *)0x0);
+      }
+      else {
         message = TM::TM__(StringLiteral_Your_friendlist_is_full,(MethodInfo *)0x0);
         MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
                   (MVGameMsgType__Enum_AdminMsg,message,(MethodInfo *)0x0);
-        Notification::Notification_Close((Notification *)this,(MethodInfo *)0x0);
-        return;
       }
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
-        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAcceptFriendShip
-                  (this_01,(this->fields).friendId,(MethodInfo *)0x0);
-        Notification::Notification_Close((Notification *)this,(MethodInfo *)0x0);
-        return;
-      }
+      pIStack7 = (this->klass->vtable).Initialize.methodPtr;
+      pFStack8 = this;
+      iVar9 = (*(code *)(this->klass->vtable).get_Lifetime.method)();
+      (this->fields)._.timeSinceStart = (float)(iVar9 + 1);
+      return;
     }
   }
+code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

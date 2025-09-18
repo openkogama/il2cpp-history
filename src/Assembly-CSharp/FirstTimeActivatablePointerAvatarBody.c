@@ -267,42 +267,15 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
                ,MethodInfo *method)
 
 {
-  key = (this->fields).bubbleId;
   if (x != (TextBubbleController *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                     );
-      cRam_? = '\x01';
-    }
-    pDVar1 = (x->fields).textBubbles;
-    if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
-              ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,key,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
-                        );
-      if (bVar2 == 0) {
-        return;
-      }
-      pDVar1 = (x->fields).textBubbles;
-      if ((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-         (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                             ), pOVar3 != (Object *)0x0)) {
-        pOVar3[1].klass = (Object__Class *)(x->fields).bubbleLifeTime;
-        return;
-      }
-    }
+    TextBubbleController::TextBubbleController_ClearBubblesWithId
+              (x,(this->fields).bubbleId,(MethodInfo *)0x0);
+    return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -410,7 +383,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
 
 {
   pAVar1 = (this->fields).bodyController;
-  key = (this->fields).bubbleId;
+  bubbleId = (this->fields).bubbleId;
   if (pAVar1 != (AvatarEditModeBodyController *)0x0) {
     if (cRam_? == '\0') {
       func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
@@ -418,98 +391,40 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerAvatarBody::
     }
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (pAVar1->fields).bodies;
-    if ((this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-       (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,(pAVar1->fields).currentBodyIndex,
-                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
-       RVar2 != (RegexCharClass_SingleRange)0x0)) {
-      puVar3 = (undefined8 *)
-               (**(code **)(*(int *)RVar2 + 0x188))
-                         (&uStack_4,RVar2,*(undefined4 *)(*(int *)RVar2 + 0x18c));
-      uVar5 = (this->fields).bubbleWorldSpaceOffset.x;
-      uVar6 = (this->fields).bubbleWorldSpaceOffset.y;
-      fVar7 = (float)uVar5 + (float)*puVar3;
-      fVar8 = (float)uVar6 + (float)((ulonglong)*puVar3 >> 0x20);
-      fVar9 = (this->fields).bubbleWorldSpaceOffset.z + *(float *)(puVar3 + 1);
-      VStack_10.y = (this->fields).offset.x;
-      VStack_10.z = (this->fields).offset.y;
-      uVar11._4_4_ = fVar8;
-      uVar11._0_4_ = fVar7;
-      if ((x != (TextBubbleController *)0x0) &&
-         (pCVar12 = (x->fields).mainCamera, pCVar12 != (Camera *)0x0)) {
-        position.y = fVar8;
-        position.x = fVar7;
-        position.z = fVar9;
-        pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                            ((Vector3 *)&stack0xffffffe4,pCVar12,position,(MethodInfo *)0x0);
-        if (pVVar13->z <= 0.0) {
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        (this_00,(pAVar1->fields).currentBodyIndex,
+                         MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+      if (RVar2 != (RegexCharClass_SingleRange)0x0) {
+        puVar3 = (undefined8 *)
+                 (**(code **)(*(int *)RVar2 + 0x188))
+                           (&uStack_4,RVar2,*(undefined4 *)(*(int *)RVar2 + 0x18c));
+        uVar5 = (this->fields).bubbleWorldSpaceOffset.x;
+        uVar6 = (this->fields).bubbleWorldSpaceOffset.y;
+        fStack_7 = (float)((ulonglong)*puVar3 >> 0x20);
+        fStack_8 = (float)*puVar3;
+        fVar9 = fStack_7 + (float)uVar6;
+        fStack_10 = *(float *)(puVar3 + 1) + (this->fields).bubbleWorldSpaceOffset.z;
+        uStack_4 = CONCAT44(fVar9,(float)uVar5 + fStack_8);
+        pVVar11 = &(this->fields).offset;
+        _fStack_10 = CONCAT44(pVVar11->x,fStack_8);
+        fStack_12 = (this->fields).offset.y;
+        if (x != (TextBubbleController *)0x0) {
+          worldPosition.z = fStack_10;
+          worldPosition.x = (float)uVar5 + fStack_8;
+          worldPosition.y = fVar9;
+          TextBubbleController::TextBubbleController_UpdatePosition3D
+                    (x,bubbleId,worldPosition,*pVVar11,(MethodInfo *)0x0);
           return;
-        }
-        uStack_4._0_4_ = pVVar13->x;
-        uStack_4._4_4_ = pVVar13->y;
-        offset.y = VStack_10.z;
-        offset.x = VStack_10.y;
-        screenSpacePos.z = pVVar13->z;
-        screenSpacePos.x = (float)(undefined4)uStack_4;
-        screenSpacePos.y = uStack_4._4_4_;
-        pVVar13 = TextBubbleController::TextBubbleController_CalculateOffSet
-                            (&VStack_10,x,offset,screenSpacePos,(MethodInfo *)0x0);
-        uVar14 = pVVar13->y;
-        fVar8 = (float)uVar14 + uStack_4._4_4_;
-        pCVar12 = (x->fields).mainCamera;
-        if (pCVar12 != (Camera *)0x0) {
-          position_00.z = fVar9;
-          position_00.x = (float)uVar11;
-          position_00.y = SUB84(uVar11,4);
-          pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                              ((Vector3 *)&stack0xffffffd8,pCVar12,position_00,(MethodInfo *)0x0);
-          uStack_4._0_4_ = pVVar13->x;
-          uStack_4._4_4_ = pVVar13->y;
-          VStack_10.y = (float)(undefined4)uStack_4 * _UNK_?;
-          VStack_10.z = uStack_4._4_4_ * _UNK_?;
-          if (cRam_? == '\0') {
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                           );
-            cRam_? = '\x01';
-          }
-          pDVar15 = (x->fields).textBubbles;
-          if (((pDVar15 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-              (pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar15,key,
-                                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                   ), pOVar16 != (Object *)0x0)) &&
-             (pOVar16[2].klass != (Object__Class *)0x0)) {
-            center.y = VStack_10.z;
-            center.x = VStack_10.y;
-            TextBubble::TextBubble_Initialize
-                      ((TextBubble *)pOVar16[2].klass,center,key,(MethodInfo *)0x0);
-            pDVar15 = (x->fields).textBubbles;
-            if (pDVar15 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-              uStack_4 = CONCAT44(&UNK_?,(undefined4)uStack_4);
-              pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar15,key,
-                                   MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                  );
-              if ((pOVar16 != (Object *)0x0) && (pOVar16[2].klass != (Object__Class *)0x0)) {
-                TextBubble::TextBubble_set_Position
-                          ((TextBubble *)pOVar16[2].klass,(Vector2)((ulonglong)(uint)fVar8 << 0x20)
-                           ,(MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
         }
       }
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

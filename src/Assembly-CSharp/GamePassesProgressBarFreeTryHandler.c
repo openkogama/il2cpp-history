@@ -78,6 +78,7 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_00 = this;
   original = (this->fields).gamePassesShopPrefab;
   (this->fields).tierToTry = (uint8_t)tierToTry;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -91,8 +92,9 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
   if (value != (Object *)0x0) {
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
+    this = (GamePassesProgressBarFreeTryHandler *)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this_00,(MethodInfo *)0x0);
     callbackFunction =
          (ExecuteEvents_EventFunction_1_System_Object_ *)
          func_?(
@@ -107,18 +109,36 @@ void Assembly-CSharp.dll::GamePassesProgressBarFreeTryHandler::
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
+              ((GameObject *)this,(BaseEventData *)0x0,callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    if (value[1].klass != (Object__Class *)0x0) {
-      GamePassesShop::GamePassesShop_Initialize
-                ((GamePassesShop *)value[1].klass,(uint)(this->fields).tierToTry,(MethodInfo *)0x0);
-      return;
+    pOVar1 = value[1].klass;
+    bVar2 = (this_00->fields).tierToTry;
+    if (pOVar1 != (Object__Class *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&StringLiteral_Game_Tier_);
+        cRam_? = '\x01';
+      }
+      pIVar3 = (pOVar1->_0).byval_arg.data.array;
+      this = (GamePassesProgressBarFreeTryHandler *)(uint)bVar2;
+      *(undefined1 *)((int)&(pOVar1->_1).event_count + 1) = 1;
+      pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
+      pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Game_Tier_,pSVar4,(MethodInfo *)0x0);
+      if (pIVar3 != (Il2CppArrayType *)0x0) {
+        pIVar5 = pIVar3->etype;
+        uVar6._0_2_ = pIVar5[99].attrs;
+        uVar6._2_1_ = pIVar5[99].type;
+        uVar6._3_1_ = pIVar5[99].field_0x7;
+        (*(code *)pIVar5[99].data)(pIVar3,pSVar4,uVar6);
+        *(byte *)&(pOVar1->_1).thread_static_fields_offset = bVar2;
+        return;
+      }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -324,35 +344,38 @@ code_?:
     bVar1 = Assets::Scripts::GamePasses::TogglePreviewState::TogglePreviewState_get_CanToggle
                       (this_01,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?();
+        func_?(TypeInfo__GamePassesProgressBarFreeTryHandler____c);
       }
-      pEVar3 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__11_1;
-      if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      pEVar2 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__11_1;
+      if (pEVar2 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
         if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0
            ) {
-          func_?();
+          func_?(TypeInfo__GamePassesProgressBarFreeTryHandler____c);
         }
-        pGVar4 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
-        pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
+        pGVar3 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
+        pEVar2 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+                 func_?(
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                                );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
+                  ((UnityAction_2_System_Object_System_Object_ *)pEVar2,(Object *)pGVar3,
                    MethodInfo__GamePassesProgressBarFreeTryHandler____c___PreviewTier_b__11_1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
-        TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__11_1 = pEVar3;
+        TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__11_1 = pEVar2;
         func_?(&TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->
-                         __9__11_1);
+                         __9__11_1,pEVar2);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?();
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar2,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
+                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)pEVar2,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                 );
       return;
@@ -361,107 +384,81 @@ code_?:
     if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_TogglePreviewTier
               (this_02,(MethodInfo *)0x0);
-    pAVar5 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
-    this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    pAVar4 = TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated;
+    this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_03,(Object *)this,
                MethodInfo__GamePassesProgressBarFreeTryHandler__OnPlayerPlanetDataUpdated__,
                (MethodInfo *)0x0);
-    pAVar5 = (Action *)
+    pAVar4 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar5,(Delegate *)this_03,(MethodInfo *)0x0);
-    if (pAVar5 == (Action *)0x0) {
+                       ((Delegate *)pAVar4,(Delegate *)this_03,(MethodInfo *)0x0);
+    if (pAVar4 == (Action *)0x0) {
       TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = (Action *)0x0;
 code_?:
       func_?();
-      pGVar6 = (this->fields).tierProgressBar;
-      if (pGVar6 != (GameTierProgressBar *)0x0) {
-        if (cRam_? == '\0') {
+      this_00 = (this->fields).tierProgressBar;
+      if (this_00 != (GameTierProgressBar *)0x0) {
+        GameTierProgressBar::GameTierProgressBar_DeactivateFreeTryBubble(this_00,(MethodInfo *)0x0);
+        pEVar2 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor == 0
+           ) {
           func_?();
-          cRam_? = '\x01';
         }
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pPVar7 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-        if (pPVar7 != (PlayerPlanetData *)0x0) {
-          this_00 = (pGVar6->fields).tierProgressDataList;
-          if (this_00 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
-            pGVar8 = mscorlib.dll::System::Collections::Generic::
-                      List`1[GameTierProgressBar+TierProgressData]::
-                      List_1_GameTierProgressBar_TierProgressData__get_Item
-                                ((GameTierProgressBar_TierProgressData *)&stack0xffffff68,this_00,
-                                 (uint)(pPVar7->fields).gamePassTier,
-                                 MethodInfo__System__Collections__Generic__List<GameTierProgressBar::TierProgressData>__get_Item_int_
-                                );
-            if (pGVar8->freeTryTextBubble != (GamePassesTextBubble *)0x0) {
-              pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pGVar8->freeTryTextBubble,(MethodInfo *)0x0);
-              if (pGVar2 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar2,0,(MethodInfo *)0x0);
-                pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).
-                    cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                pEVar3 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->
-                         __9__11_0;
-                if (pEVar3 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-                  if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).
-                      cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  pGVar4 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
-                  pEVar3 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                            ((UnityAction_2_System_Object_System_Object_ *)pEVar3,(Object *)pGVar4,
-                             MethodInfo__GamePassesProgressBarFreeTryHandler____c___PreviewTier_b__11_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                             ,(MethodInfo *)0x0);
-                  TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__11_0 =
-                       pEVar3;
-                  func_?();
-                }
-                if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                    cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-                ExecuteEvents_ExecuteHierarchy
-                          (pGVar2,(BaseEventData *)0x0,
-                           (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar3,
-                           UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                          );
-                (this->fields).isWaitingForFreeTryTier = 1;
-                return;
-              }
-            }
+        callbackFunction =
+             TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__11_0;
+        if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+          if ((TypeInfo__GamePassesProgressBarFreeTryHandler____c->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
+          pGVar3 = TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9;
+          callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?();
+          pEVar2 = callbackFunction;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pGVar3
+                     ,
+                     MethodInfo__GamePassesProgressBarFreeTryHandler____c___PreviewTier_b__11_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          TypeInfo__GamePassesProgressBarFreeTryHandler____c->static_fields->__9__11_0 =
+               callbackFunction;
+          func_?();
         }
+        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
+           ) {
+          func_?();
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                  ((GameObject *)pEVar2,(BaseEventData *)0x0,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                  );
+        (this->fields).isWaitingForFreeTryTier = 1;
+        return;
       }
       goto code_?;
     }
-    pAVar9 = (Action *)0x0;
-    if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar9 = pAVar5;
+    pAVar5 = (Action *)0x0;
+    if (pAVar4->klass == TypeInfo__System__Action) {
+      pAVar5 = pAVar4;
     }
-    if (pAVar9 == (Action *)0x0) goto code_?;
-    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar9;
-    pAVar9 = (Action *)0x0;
-    if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar9 = pAVar5;
+    if (pAVar5 == (Action *)0x0) goto code_?;
+    TypeInfo__GamePassesManager->static_fields->OnPlayerPlanetDataUpdated = pAVar5;
+    pAVar5 = (Action *)0x0;
+    if (pAVar4->klass == TypeInfo__System__Action) {
+      pAVar5 = pAVar4;
     }
-    if (pAVar9 != (Action *)0x0) goto code_?;
+    if (pAVar5 != (Action *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

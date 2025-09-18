@@ -343,7 +343,7 @@ RemoveCubes_RemoveCubesWithinRadius_HandleCubeOnRadiusLimit
   if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pos.z = -0x15e9;
+  pos.z = -0x1649;
   uStack9 = 0x1036;
   bVar10 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
                     ((CubeBase *)a,(CubeBase *)0x0,(MethodInfo *)0x0);

@@ -936,51 +936,33 @@ code_?:
     this_00 = (this->fields).embeddedPlayerConfig;
     if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
     pEVar2 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                       ((EmbeddedSiteConfigData *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
+                       ((EmbeddedSiteConfigData *)&pLStack_3,this_00,(MethodInfo *)0x0);
     bVar1 = pEVar2->showPlayButtonAd;
     (this->fields).isInAd = bVar1 != 0;
     if (bVar1 != 0) {
-      pIVar3 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      pIVar4 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
       this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
                 (this_01,value,
                  MethodInfo__LobbyStateButton____c__DisplayClass24_0___PressPlayWithCallback_b__0_Assets__Scripts__AdIntegration__InterstitialAdResult_
                  ,(MethodInfo *)0x0);
-      if (pIVar3 != (IAdManager *)0x0) {
-        pIVar4 = pIVar3->klass;
-        uVar5 = 0;
-        uVar6._0_1_ = (pIVar4->_1).rank;
-        uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-        if (uVar6 != 0) {
-          do {
-            if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
-                (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-              ppMVar7 = &(&(pIVar3->klass->vtable).RequestInterstitial)
-                         [pIVar3->klass->interfaceOffsets[uVar5].offset].method;
-              goto code_?;
-            }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
-        }
-        ppMVar7 = (MethodInfo **)
-                  func_?(pIVar3,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,7);
-code_?:
-        (*(code *)*ppMVar7)(pIVar3,this_01,7,ppMVar7[1]);
+      if (pIVar4 != (IAdManager *)0x0) {
+        func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar4,this_01,7);
         return;
       }
       goto code_?;
     }
   }
-  pMVar8 = value[1].monitor;
-  if (pMVar8 != (MonitorData *)0x0) {
-    (**(code **)(pMVar8 + 0xc))(*(undefined4 *)(pMVar8 + 0x20),3,*(undefined4 *)(pMVar8 + 0x14));
+  pMVar5 = value[1].monitor;
+  if (pMVar5 != (MonitorData *)0x0) {
+    (**(code **)(pMVar5 + 0xc))(*(undefined4 *)(pMVar5 + 0x20),3,*(undefined4 *)(pMVar5 + 0x14));
     return;
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

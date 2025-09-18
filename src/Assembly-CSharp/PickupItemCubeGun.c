@@ -535,7 +535,7 @@ code_?:
                   goto code_?;
                   if (*(Il2CppClass **)(*piVar11 + 0x20) != (TypeInfo__Edge->_0).element_class)
                   goto code_?;
-                  uVar32 = 0x1f54;
+                  uVar32 = 0x1c54;
                   uStack_33 = 0x1069;
                   pfVar34 = (float *)func_?();
                   face = *pfVar34;

@@ -17,8 +17,8 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup_Initializ
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  (this->fields).callback = callback;
   (this->fields).materialID = materialID;
+  (this->fields).callback = callback;
   func_?(&(this->fields).callback,callback);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
@@ -58,23 +58,68 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup_Initializ
                                );
             (this->fields).materialPreviewer = pMVar5;
             func_?();
+            value = (pMVar2->fields)._Mesh_k__BackingField;
             pMVar5 = (this->fields).materialPreviewer;
             if (pMVar5 != (MaterialPreviewer *)0x0) {
-              MaterialPreviewer::MaterialPreviewer_Initialize
-                        (pMVar5,(pMVar2->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
-              pMVar5 = (this->fields).materialPreviewer;
-              if ((pMVar5 != (MaterialPreviewer *)0x0) &&
-                 (this_02 = (this->fields).materialPreviewImage, this_02 != (RawImage *)0x0)) {
-                UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                          (this_02,(Texture *)(pMVar5->fields).renderTexture,(MethodInfo *)0x0);
-                pTVar3 = (this->fields).description;
-                pMVar4 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
-                if (pMVar4 != (MaterialDescription__Array *)0x0) {
-                  if (pMVar4->max_length <= (uint)materialID) goto code_?;
-                  if ((pMVar4->vector[materialID] != (MaterialDescription *)0x0) &&
-                     (pTVar3 != (Text *)0x0)) {
-                    (*(code *)(pTVar3->klass->vtable).set_text.method)(pTVar3);
-                    return;
+              if (cRam_? == '\0') {
+                func_?();
+                cRam_? = '\x01';
+              }
+              this_02 = (pMVar5->fields).meshFilter;
+              if (this_02 != (MeshFilter *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_set_sharedMesh
+                          (this_02,value,(MethodInfo *)0x0);
+                pCVar6 = (pMVar5->fields).pictureCamera;
+                if (pCVar6 != (Camera *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_aspect
+                            (pCVar6,1.0,(MethodInfo *)0x0);
+                  pCVar6 = (pMVar5->fields).pictureCamera;
+                  if (pCVar6 != (Camera *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                              ((Behaviour *)pCVar6,1,(MethodInfo *)0x0);
+                    width = (pMVar5->fields).previewResolution;
+                    this_03 = (RenderTexture *)func_?();
+                    UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
+                              (this_03,width,width,0x10,(MethodInfo *)0x0);
+                    *(RenderTexture **)(width + 0x10) = this_03;
+                    func_?();
+                    if (*(Texture **)(width + 0x10) != (Texture *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                                (*(Texture **)(width + 0x10),FilterMode__Enum_Bilinear,
+                                 (MethodInfo *)0x0);
+                      if (*(Object_1 **)(width + 0x10) != (Object_1 *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
+                                  (*(Object_1 **)(width + 0x10),HideFlags__Enum_DontSave,
+                                   (MethodInfo *)0x0);
+                        if (*(RenderTexture **)(width + 0x10) != (RenderTexture *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
+                          RenderTexture_set_antiAliasing
+                                    (*(RenderTexture **)(width + 0x10),2,(MethodInfo *)0x0);
+                          if (*(Camera **)(width + 0x20) != (Camera *)0x0) {
+                            UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                            Camera_set_targetTexture
+                                      (*(Camera **)(width + 0x20),*(RenderTexture **)(width + 0x10),
+                                       (MethodInfo *)0x0);
+                            if ((_UNK_? != 0) && (_UNK_? != (RawImage *)0x0)) {
+                              UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                                        (_UNK_?,*(Texture **)(_UNK_? + 0x10),
+                                         (MethodInfo *)0x0);
+                              pMVar4 = TypeInfo__MaterialDescription->static_fields->
+                                       materialDescriptions;
+                              if (pMVar4 != (MaterialDescription__Array *)0x0) {
+                                if (pMVar4->max_length <= ((uint)this_03 & 0xff))
+                                goto code_?;
+                                if ((pMVar4->vector[(uint)this_03 & 0xff] !=
+                                     (MaterialDescription *)0x0) && (_UNK_? != (int *)0x0)) {
+                                  (**(code **)(*_UNK_? + 0x318))(_UNK_?);
+                                  return;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -88,8 +133,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -560,7 +605,7 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup__OnPurcha
     func_?(&StringLiteral_Confirm);
     cRam_? = '\x01';
   }
-  TM::TM__(StringLiteral_Purchase_Material_,(MethodInfo *)0x0);
+  pSVar1 = TM::TM__(StringLiteral_Purchase_Material_,(MethodInfo *)0x0);
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
@@ -568,14 +613,33 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup__OnPurcha
             (this_00,(Object *)this,
              MethodInfo__MaterialPurchasePopup__OnConfirmed_bool__ConfirmationPopup_,
              (MethodInfo *)0x0);
-  TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
-  if (x != (IModalPopupCreator *)0x0) {
-    func_?(3);
+  pSVar2 = TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
+  if (x == (IModalPopupCreator *)0x0) {
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pIVar4 = x->klass;
+  uVar5 = 0;
+  uVar6._0_1_ = (pIVar4->_1).rank;
+  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+  if (uVar6 != 0) {
+    do {
+      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+        ppMVar7 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
+        goto code_?;
+      }
+      uVar5 = uVar5 + 1;
+    } while (uVar5 < uVar6);
+  }
+  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)&UNK_?;
+  pSVar2 = (String *)x;
+  ppMVar7 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+code_?:
+  (*(code *)*ppMVar7)(x,pSVar1,this_00,pSVar2);
   return;
 }
 

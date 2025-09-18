@@ -104,7 +104,7 @@ code_?:
           pIVar10 = (this_00->fields).image;
           if (pIVar10 != (Image *)0x0) {
             puVar11 = (undefined4 *)
-                     (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
+                      (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
             pIVar12 = (this_00->fields).image;
             uVar13 = *puVar11;
             if (pIVar12 != (Image *)0x0) {
@@ -143,7 +143,7 @@ code_?:
         pIVar10 = (this_00->fields).image;
         if (pIVar10 != (Image *)0x0) {
           puVar11 = (undefined4 *)
-                   (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
+                    (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
           pIVar12 = (this_00->fields).image;
           uVar13 = *puVar11;
           if (pIVar12 != (Image *)0x0) {
@@ -175,15 +175,14 @@ code_?:
   default:
     return 0;
   }
-  cVar16 = '\0';
-  pcVar17 = (char *)func_?();
-  *pcVar17 = *pcVar17 + (char)&stack0xfffffffc + cVar16;
-  LOCK();
-  *(char **)(extraout_ECX + 0x11) = pcVar17;
-  UNLOCK();
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  func_?();
+  pbVar16 = (byte *)(extraout_ECX + 0x10);
+  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
+  pbVar16 = (byte *)(extraout_ECX + 0x10);
+  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
+  pcVar17 = (code *)swi(3);
+  bVar18 = (*pcVar17)();
+  return bVar18;
 }
 
 

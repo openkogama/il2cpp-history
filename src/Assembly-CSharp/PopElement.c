@@ -108,51 +108,33 @@ void Assembly-CSharp.dll::PopElement::PopElement__PopGroups_b__2_0
     cRam_? = '\x01';
   }
   uVar1 = 0;
-  iVar2 = 0;
+  index = 0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).popGroups;
   do {
     if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
       func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    if ((this_00->fields)._size <= iVar2) {
+    if ((this_00->fields)._size <= index) {
       if (x != (IUIStack *)0x0) {
-        pIVar4 = x->klass;
-        uVar5 = 0;
-        uVar6._0_1_ = (pIVar4->_1).rank;
-        uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-        if (uVar6 != 0) {
-          do {
-            if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
-                (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-              pIVar4 = x->klass;
-              iVar2 = pIVar4->interfaceOffsets[uVar5].offset;
-              (*(code *)(&(pIVar4->vtable).PopGroups)[iVar2].method)
-                        (x,uVar1,(&(pIVar4->vtable).PopToGroup)[iVar2].methodPtr);
-              return;
-            }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
-        }
-        puVar7 = (undefined4 *)func_?(x,TypeInfo__UnityEngine__EventSystems__IUIStack,3);
-        (*(code *)*puVar7)(x,uVar1,puVar7[1]);
+        func_?(3,TypeInfo__UnityEngine__EventSystems__IUIStack,x,uVar1);
         return;
       }
       goto code_?;
     }
     if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
-    RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (this_00,iVar2,
+                      (this_00,index,
                        MethodInfo__System__Collections__Generic__List<UIGroupFlags>__get_Item_int_);
-    uVar1 = uVar1 | (uint)RVar8;
-    iVar2 = iVar2 + 1;
+    uVar1 = uVar1 | (uint)RVar3;
+    index = index + 1;
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields).popGroups;
   } while( true );

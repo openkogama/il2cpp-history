@@ -229,15 +229,7 @@ void Assembly-CSharp.dll::DesktopAvatarEditModeController::DesktopAvatarEditMode
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVInputWrapper);
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVInputWrapper);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
-  }
-  TypeInfo__MVInputWrapper->static_fields->inputMap = (IKogamaInputMap *)this_00;
-  func_?(&TypeInfo__MVInputWrapper->static_fields->inputMap,this_00);
+  func_?(this_00,0);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
   pAVar2 = (pMVar1->fields).OnActiveAvatar;

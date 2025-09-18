@@ -745,20 +745,20 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
   case Face__Enum_Right:
     iStack_1 = 0;
   }
-  pbVar3 = (byte *)0x0;
+  uVar3 = 0;
   pVVar4 = *faceCorners;
-  bVar5 = 0;
+  cVar5 = '\0';
   if (pVVar4 == (Vector3__Array *)0x0) {
     func_?();
   }
   else {
     pVVar6 = pVVar4->vector;
     while( true ) {
-      if ((int)pVVar4->max_length <= (int)pbVar3) {
+      if ((int)pVVar4->max_length <= (int)uVar3) {
         return 0;
       }
-      bVar5 = pbVar3 < (byte *)pVVar4->max_length;
-      if (!(bool)bVar5) break;
+      cVar5 = uVar3 < pVVar4->max_length;
+      if (!(bool)cVar5) break;
       VStack_7.z = pVVar6->z;
       VStack_7.x = pVVar6->x;
       VStack_7.y = pVVar6->y;
@@ -781,24 +781,15 @@ bool Assembly-CSharp.dll::MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_IsF
       if (fVar11 <= (float)((uint)(fStack_2 - fVar8) & _UNK_?)) {
         return 1;
       }
-      pbVar3 = pbVar3 + 1;
+      uVar3 = uVar3 + 1;
       pVVar6 = pVVar6 + 1;
     }
   }
   func_?();
-  bVar12 = (byte)((uint)extraout_EDX >> 8);
-  bVar13 = bVar12 + unaff_BH;
-  bVar14 = CARRY1(bVar12,unaff_BH) || CARRY1(bVar13,bVar5);
-  bVar12 = (byte)extraout_EDX;
-  pbVar15 = (byte *)CONCAT22((short)((uint)extraout_EDX >> 0x10),CONCAT11(bVar13 + bVar5,bVar12));
-  bVar16 = CARRY1(*pbVar15,bVar12) || CARRY1(*pbVar15 + bVar12,bVar14);
-  *pbVar15 = *pbVar15 + bVar12 + bVar14;
-  bVar5 = *pbVar3;
-  *pbVar3 = bVar5 + bVar16;
-  cRam_? = cRam_? + extraout_CH + CARRY1(bVar5,bVar16);
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  *(char *)(uVar3 + 0xb21036d4) = *(char *)(uVar3 + 0xb21036d4) + unaff_BL + cVar5;
+  pcVar12 = (code *)swi(3);
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 

@@ -231,16 +231,17 @@ int32_t Assembly-CSharp.dll::PlayerInventoryRepository::
     func_?(&TypeInfo__PlayerInventoryRepository____c__DisplayClass5_0);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PlayerInventoryRepository____c__DisplayClass5_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)item;
-    func_?(value + 1,item);
-    pOVar1 = value[1].klass;
-    if (pOVar1 != (Object__Class *)0x0) {
-      if ((pOVar1->_0).generic_class == (Il2CppGenericClass *)0x0) {
+  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__PlayerInventoryRepository____c__DisplayClass5_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+  if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)item;
+    func_?(&this_01->fields,item);
+    pLVar1 = (this_01->fields)._._defaultValue_k__BackingField;
+    if (pLVar1 != (List_1_System_Object_ *)0x0) {
+      if (pLVar1[2].klass == (List_1_System_Object___Class *)0x0) {
         return 1;
       }
       this_00 = (this->fields).repository;
@@ -248,17 +249,17 @@ int32_t Assembly-CSharp.dll::PlayerInventoryRepository::
         source = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
                            ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                            (int32_t)(pOVar1->_0).namespaze,
+                            (pLVar1->fields)._size,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<InventoryItem>_>__get_Item_int_
                            );
-        this_01 = (Func_2_Object_Boolean_ *)
+        this_02 = (Func_2_Object_Boolean_ *)
                   func_?(TypeInfo__System__Func<InventoryItem,_bool>);
         mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                  (this_01,value,
+                  (this_02,(Object *)this_01,
                    MethodInfo__PlayerInventoryRepository____c__DisplayClass5_0___CountItemsWithOriginalID_b__0_InventoryItem_
                    ,(MethodInfo *)0x0);
         iVar2 = System.Core.dll::System::Linq::Enumerable::Enumerable_Count_3
-                          ((IEnumerable_1_System_Object_ *)source,this_01,
+                          ((IEnumerable_1_System_Object_ *)source,this_02,
                            int_MethodInfo__System__Linq__Enumerable__Count<InventoryItem>_System__Collections__Generic__IEnumerable<InventoryItem>__System__Func<InventoryItem,_bool>_
                           );
         return iVar2;

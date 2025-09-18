@@ -196,36 +196,36 @@ void Assembly-CSharp.dll::ObjExportHandler::ObjExportHandler_InitializePicking(M
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    piVar2 = (int *)func_?(2,TypeInfo__IPlayModeUI,pIVar1);
-    if (piVar2 != (int *)0x0) {
-      uVar3 = 0;
-      uVar4 = *(ushort *)(*piVar2 + 0xb6);
-      if (uVar4 != 0) {
-        do {
-          if (*(IGUICrossHair__Class **)(*(int *)(*piVar2 + 0x58) + (uint)uVar3 * 8) ==
-              TypeInfo__IGUICrossHair) {
-            puVar5 = (undefined4 *)
-                     (*piVar2 +
-                     (*(int *)(*(int *)(*piVar2 + 0x58) + 4 + (uint)uVar3 * 8) + 0x19) * 8);
-            goto code_?;
-          }
-          uVar3 = uVar3 + 1;
-        } while (uVar3 < uVar4);
-      }
-      puVar5 = (undefined4 *)func_?(piVar2,TypeInfo__IGUICrossHair,1);
+    pIVar2 = pIVar1->klass;
+    uVar3 = 0;
+    uVar4._0_1_ = (pIVar2->_1).rank;
+    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar4 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI) {
+          ppMVar5 = &(&(pIVar1->klass->vtable).GetCrossHair)
+                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          goto code_?;
+        }
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
+    }
+    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IPlayModeUI,2);
 code_?:
-      (*(code *)*puVar5)(piVar2,1,puVar5[1]);
+    iVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
+    if (iVar6 != 0) {
+      func_?(1,TypeInfo__IGUICrossHair,iVar6,1);
       this = TypeInfo__ObjExportHandler->static_fields->ignoreIds;
       this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (this_00 != (MVNetworkGame *)0x0) {
-        pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-        if ((pMVar6 != (MVLocalPlayer *)0x0) &&
-           (pSVar7 = (pMVar6->fields).spawnRoleDataMediator, pSVar7 != (SpawnRoleDataMediator *)0x0)
+        pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+        if ((pMVar7 != (MVLocalPlayer *)0x0) &&
+           (pSVar8 = (pMVar7->fields).spawnRoleDataMediator, pSVar8 != (SpawnRoleDataMediator *)0x0)
            ) {
           item = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
                  ::SpawnRoleVariable`1[System::Object]::
                  SpawnRoleVariable_1_System_Object__op_Implicit
-                           ((SpawnRoleVariable_1_System_Object_ *)(pSVar7->fields).woId,
+                           ((SpawnRoleVariable_1_System_Object_ *)(pSVar8->fields).woId,
                             MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<int>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<int>_
                            );
           if (this != (HashSet_1_System_Int32_ *)0x0) {
@@ -240,8 +240,8 @@ code_?:
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

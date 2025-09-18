@@ -166,46 +166,68 @@ void Assembly-CSharp.dll::NotificationLevelRequirementPanel::
                    );
     cRam_? = '\x01';
   }
-  NotificationRequirementPanel::NotificationRequirementPanel_OnToggleEnabled
-            ((NotificationRequirementPanel *)this,text,checkmarkSprite,enabled,(MethodInfo *)0x0);
-  if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  this_00 = (this->fields)._.checkmark;
+  if (this_00 != (Image *)0x0) {
+    UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
+              (this_00,checkmarkSprite,(MethodInfo *)0x0);
+    pTVar1 = (this->fields)._.textField;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      pTVar1 = (this->fields)._.textField;
+      if ((text == (Object *)0x0) ||
+         ((*(code *)(text->klass->vtable).ToString.method)(), pTVar1 == (Text *)0x0))
+      goto code_?;
+      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1);
+    }
+    if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField == 0) {
+      return;
+    }
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_01,(Object *)this,
+               MethodInfo__NotificationLevelRequirementPanel__BadgeCallback_UnityEngine__Networking__UnityWebRequest_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    if (text != (Object *)0x0) {
+      if ((text->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+        piVar3 = (int32_t *)func_?();
+        BadgeManager::BadgeManager_GetBadgeTexture
+                  (*piVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
+                   (MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
+    }
   }
-  object = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-  if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField == 0) {
-    return;
-  }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?();
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_00,(Object *)object,
-             MethodInfo__NotificationLevelRequirementPanel__BadgeCallback_UnityEngine__Networking__UnityWebRequest_
-             ,(MethodInfo *)0x0);
-  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  if (text == (Object *)0x0) {
-    func_?();
-  }
-  else if ((text->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-    piVar1 = (int32_t *)func_?();
-    BadgeManager::BadgeManager_GetBadgeTexture
-              (*piVar1,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0
-              );
-    return;
-  }
+code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+code_?:
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

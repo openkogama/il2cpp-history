@@ -286,7 +286,6 @@ void Assembly-CSharp.dll::MVFlag::MVFlag_SetupUseInteractor(MVFlag *this,MethodI
     func_?(&TypeInfo__System__Func<int,_bool>);
     func_?(&TypeInfo__GameCoinLogic);
     func_?(&MethodInfo__MVFlag__DoCaptureFlag_int_);
-    func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
     func_?(&TypeInfo__TeamRequirement);
     func_?(&
                     MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
@@ -297,82 +296,61 @@ void Assembly-CSharp.dll::MVFlag::MVFlag_SetupUseInteractor(MVFlag *this,MethodI
     func_?(&TypeInfo__UseInteractor);
     cRam_? = '\x01';
   }
-  pFVar1 = (this->fields).flagObject;
-  if (pFVar1 != (FlagObject *)0x0) {
-    pGVar2 = (pFVar1->fields).useInteractionRotator;
-    pTVar3 = (this->fields).triggerBoxEvents;
-    if (pTVar3 != (TriggerBoxEvents *)0x0) {
-      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar3,(MethodInfo *)0x0);
+  if ((this->fields).flagObject != (FlagObject *)0x0) {
+    pTVar1 = (this->fields).triggerBoxEvents;
+    if (pTVar1 != (TriggerBoxEvents *)0x0) {
+      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
       this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                 (this_00,(Object *)this,MethodInfo__MVFlag__DoCaptureFlag_int_,(MethodInfo *)0x0);
-      pUVar4 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (pUVar4,(MVWorldObjectClient *)this,pGVar2,0,triggerCollider,
+                (pUVar2,(MVWorldObjectClient *)this,(GameObject *)0x0,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
                  2.5,0,1,(MethodInfo *)0x0);
-      (this->fields).useInteractor = pUVar4;
-      func_?(&(this->fields).useInteractor,pUVar4);
-      pTVar3 = (this->fields).triggerBoxEvents;
-      pUVar4 = (this->fields).useInteractor;
-      pEVar5 = (EventHandler_1_Object_ *)
+      (this->fields).useInteractor = pUVar2;
+      func_?(&(this->fields).useInteractor);
+      pTVar1 = (this->fields).triggerBoxEvents;
+      pUVar2 = (this->fields).useInteractor;
+      pEVar3 = (EventHandler_1_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                (pEVar5,(Object *)pUVar4,
+                (pEVar3,(Object *)pUVar2,
                  MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
-      if (pTVar3 != (TriggerBoxEvents *)0x0) {
+      if (pTVar1 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
-        pTVar3 = (this->fields).triggerBoxEvents;
-        pUVar4 = (this->fields).useInteractor;
-        pEVar5 = (EventHandler_1_Object_ *)
+                  (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
+        pTVar1 = (this->fields).triggerBoxEvents;
+        pUVar2 = (this->fields).useInteractor;
+        pEVar3 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (pEVar5,(Object *)pUVar4,
+                  (pEVar3,(Object *)pUVar2,
                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
-        if (pTVar3 != (TriggerBoxEvents *)0x0) {
+        if (pTVar1 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
-          pFVar1 = (this->fields).flagObject;
-          if (pFVar1 != (FlagObject *)0x0) {
-            pGVar2 = (pFVar1->fields).useInteractionRotator;
+                    (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
+          pFVar4 = (this->fields).flagObject;
+          if (pFVar4 != (FlagObject *)0x0) {
+            root = (pFVar4->fields).useInteractionRotator;
             this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
-            GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar2,0,(MethodInfo *)0x0);
-            pUVar4 = (this->fields).useInteractor;
-            if (pUVar4 != (UseInteractor *)0x0) {
+            GameCoinLogic::GameCoinLogic__ctor(this_01,root,0,(MethodInfo *)0x0);
+            pUVar2 = (this->fields).useInteractor;
+            if (pUVar2 != (UseInteractor *)0x0) {
               UseInteractor::UseInteractor_AddRequirement
-                        (pUVar4,(UseRequirement *)this_01,(MethodInfo *)0x0);
-              pFVar1 = (this->fields).flagObject;
-              if (pFVar1 != (FlagObject *)0x0) {
-                tintObject = (pFVar1->fields).tintObject;
+                        (pUVar2,(UseRequirement *)this_01,(MethodInfo *)0x0);
+              pFVar4 = (this->fields).flagObject;
+              if (pFVar4 != (FlagObject *)0x0) {
+                tintObject = (pFVar4->fields).tintObject;
                 this_02 = (TeamRequirement *)func_?(TypeInfo__TeamRequirement);
                 TeamRequirement::TeamRequirement__ctor(this_02,tintObject,0,(MethodInfo *)0x0);
-                pUVar4 = (this->fields).useInteractor;
-                if (pUVar4 != (UseInteractor *)0x0) {
+                pUVar2 = (this->fields).useInteractor;
+                if (pUVar2 != (UseInteractor *)0x0) {
                   UseInteractor::UseInteractor_AddRequirement
-                            (pUVar4,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                  pFVar1 = (this->fields).flagObject;
-                  if (pFVar1 != (FlagObject *)0x0) {
-                    pGVar2 = (pFVar1->fields).useInteractionRotator;
-                    uVar6 = 0;
-                    this_03 = (RewardedAdRequirement *)
-                              func_?(
-                                             TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
-                                             );
-                    displayOffset.y = (float)_UNK_?;
-                    displayOffset.x = (float)uVar6;
-                    displayOffset.z = 0.0;
-                    WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
-                    RewardedAdRequirement__ctor_2(this_03,pGVar2,displayOffset,(MethodInfo *)0x0);
-                    pUVar4 = (this->fields).useInteractor;
-                    if (pUVar4 != (UseInteractor *)0x0) {
-                      UseInteractor::UseInteractor_AddRequirement
-                                (pUVar4,(UseRequirement *)this_03,(MethodInfo *)0x0);
-                      return;
-                    }
-                  }
+                            (pUVar2,(UseRequirement *)this_02,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
@@ -382,8 +360,8 @@ void Assembly-CSharp.dll::MVFlag::MVFlag_SetupUseInteractor(MVFlag *this,MethodI
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -446,10 +424,10 @@ void Assembly-CSharp.dll::MVFlag::MVFlag__ctor
       if (pTVar3 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
                   (pTVar3,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
-        piVar4 = &(this->fields)._._._.interactionFlags;
-        *(uint *)piVar4 = (uint)*piVar4 | 0x22100000;
-        puVar5 = (uint *)((int)&(this->fields)._._._.interactionFlags + 4);
-        *puVar5 = *puVar5 | 2;
+        uVar4 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+        piVar5 = &(this->fields)._._._.interactionFlags;
+        *(uint *)piVar5 = (uint)*piVar5 | 0x22100000;
+        *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar4;
         return;
       }
     }

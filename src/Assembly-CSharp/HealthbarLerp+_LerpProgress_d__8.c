@@ -83,11 +83,9 @@ code_?:
   }
 code_?:
   func_?();
-  *(char *)(unaff_EBX + -0x17) =
-       *(char *)(unaff_EBX + -0x17) + (char)((uint)extraout_ECX >> 8) +
-       ((longlong)(int)((longlong)extraout_ECX * 0x42) != (longlong)extraout_ECX * 0x42);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 

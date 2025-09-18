@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
 {
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
     cRam_? = '\x01';
   }
   if (addCube != 0) {
@@ -269,27 +269,24 @@ code_?:
     }
   }
 code_?:
-  bVar14 = func_?();
-  pCVar15 = (CubePickingInfo__Class *)in(extraout_DX);
-  unaff_EDI->klass = pCVar15;
-  pbVar16 = &stack0x00000022 + (int)unaff_ESI;
-  bVar17 = *pbVar16;
-  bVar18 = (byte)((ushort)extraout_DX >> 8);
-  *pbVar16 = *pbVar16 + bVar18;
-  pbVar16 = (byte *)(extraout_ECX + 0x34);
-  bVar19 = (byte)((uint)this >> 8);
-  bVar20 = *pbVar16 + bVar19;
-  bVar21 = CARRY1(*pbVar16,bVar19) || CARRY1(bVar20,CARRY1(bVar17,bVar18));
-  *pbVar16 = bVar20 + CARRY1(bVar17,bVar18);
-  pbVar16 = (undefined1 *)((int)&unaff_ESI[0x8c282b0].y + 1) + (int)register0x00000010;
-  bVar17 = *pbVar16;
-  bVar20 = *pbVar16 + (bVar14 ^ 0x46);
-  *pbVar16 = bVar20 + bVar21;
-  *(char *)&unaff_ESI[-0x8a7f44d].z =
-       (char)unaff_ESI[-0x8a7f44d].z + (char)extraout_DX +
-       (CARRY1(bVar17,bVar14 ^ 0x46) || CARRY1(bVar20,bVar21));
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  bVar14 = 0;
+  func_?();
+  uRam_? = in(extraout_DX);
+  bVar15 = (byte)((uint)this >> 8);
+  bVar16 = extraout_CL + bVar15;
+  bVar17 = CARRY1(extraout_CL,bVar15) || CARRY1(bVar16,bVar14);
+  bVar16 = bVar16 + bVar14;
+  bVar15 = *(byte *)&unaff_EDI->klass;
+  bVar14 = *(char *)&unaff_EDI->klass + bVar16;
+  uRam_? = uRam_?;
+  *(byte *)&unaff_EDI->klass = bVar14 + bVar17;
+  *(char *)&unaff_EDI->klass = (char)unaff_ESI->y;
+  piVar18 = &unaff_ESI->z;
+  *(char *)piVar18 =
+       (char)*piVar18 + (char)extraout_DX + (CARRY1(bVar15,bVar16) || CARRY1(bVar14,bVar17));
+  *(char *)((int)&unaff_EDI->klass + 1) = (char)*piVar18;
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

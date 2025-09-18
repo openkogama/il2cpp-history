@@ -8,24 +8,36 @@ void Assembly-CSharp.dll::PlayerInventoryController+<>c__DisplayClass20_0::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IEditModeController *)&TypeInfo__UnityEngine__EventSystems__IEditModeController;
-    func_?();
+    func_?(&TypeInfo__UnityEngine__EventSystems__IEditModeController);
     cRam_? = '\x01';
   }
-  if (x != (IEditModeController *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IEditModeController;
-    uStack_3 = 4;
-    pIVar4 = (IState *)func_?();
-    (this->fields).currentState = pIVar4;
-    func_?(&this->fields,pIVar4);
+  if (x == (IEditModeController *)0x0) {
+    func_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  pIStack_1 = (IEditModeController *)&stack0xfffffffc;
-  uVar5 = func_?(&uStack_3);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pIVar2 = x->klass;
+  uVar3 = 0;
+  uVar4._0_1_ = (pIVar2->_1).rank;
+  uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IEditModeController) {
+        ppMVar5 = &(&(x->klass->vtable).GetCurrentState)[x->klass->interfaceOffsets[uVar3].offset].
+                   method;
+        goto code_?;
+      }
+      uVar3 = uVar3 + 1;
+    } while (uVar3 < uVar4);
+  }
+  ppMVar5 = (MethodInfo **)
+            func_?(x,TypeInfo__UnityEngine__EventSystems__IEditModeController,4);
+code_?:
+  pIVar6 = (IState *)(*(code *)*ppMVar5)(x,ppMVar5[1]);
+  (this->fields).currentState = pIVar6;
+  func_?(&this->fields,pIVar6);
   return;
 }
 

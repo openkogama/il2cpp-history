@@ -90,9 +90,9 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
                      );
       cRam_? = '\x01';
     }
-    pGVar1 = (this->fields)._.gameCounterManager;
+    unaff_EBX = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (pGVar1 != (GameStatCounterManager *)0x0) {
+    if (unaff_EBX != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -100,7 +100,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar2 = (pGVar1->fields).activeTeams;
+      pHVar2 = (unaff_EBX->fields).activeTeams;
       this_00 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
@@ -112,7 +112,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
                 );
       if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
         pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (pGVar1,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
         return pHVar3;
       }
@@ -143,7 +143,31 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar3;
     }
   }
+  bVar4 = 0;
   func_?();
+  LOCK();
+  bVar5 = (byte)unaff_EBX;
+  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar4);
+  *extraout_EDX = *extraout_EDX + bVar5 + bVar4;
+  UNLOCK();
+  LOCK();
+  pbVar7 = extraout_EDX + -0x2a;
+  bVar8 = CARRY1(*pbVar7,bVar5) || CARRY1(*pbVar7 + bVar5,bVar6);
+  *pbVar7 = *pbVar7 + bVar5 + bVar6;
+  UNLOCK();
+  LOCK();
+  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar8);
+  *extraout_EDX = *extraout_EDX + bVar5 + bVar8;
+  UNLOCK();
+  LOCK();
+  bVar4 = *extraout_EDX;
+  bVar9 = *extraout_EDX;
+  *extraout_EDX = bVar9 + bVar5 + bVar6;
+  UNLOCK();
+  LOCK();
+  extraout_EDX[0x1a10f0d6] =
+       extraout_EDX[0x1a10f0d6] + bVar5 + (CARRY1(bVar4,bVar5) || CARRY1(bVar9 + bVar5,bVar6));
+  UNLOCK();
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }
@@ -220,9 +244,9 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
                      );
       cRam_? = '\x01';
     }
-    pGVar1 = (this->fields)._.gameCounterManager;
+    unaff_EBX = (this->fields)._.gameCounterManager;
     this = (TimeLimit *)CONCAT31(this._1_3_,(this->fields)._.gameStatCounterType);
-    if (pGVar1 != (GameStatCounterManager *)0x0) {
+    if (unaff_EBX != (GameStatCounterManager *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>__HashSet_System__Collections__Generic__IEnumerable<MV::WorldObject::MVTeam>_
@@ -230,7 +254,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
         func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>);
         cRam_? = '\x01';
       }
-      pHVar2 = (pGVar1->fields).activeTeams;
+      pHVar2 = (unaff_EBX->fields).activeTeams;
       this_00 = (HashSet_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MVTeam>
@@ -242,7 +266,7 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
                 );
       if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
         pHVar3 = GameStatCounterManager::GameStatCounterManager_GetHighScores
-                           (pGVar1,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
+                           (unaff_EBX,(GameStatCounterType__Enum)this,1 < (this_00->fields)._count,
                             WinningConditionPresentStyle__Enum_MultipleWinners,0,(MethodInfo *)0x0);
         return pHVar3;
       }
@@ -273,7 +297,31 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar3;
     }
   }
+  bVar4 = 0;
   func_?();
+  LOCK();
+  bVar5 = (byte)unaff_EBX;
+  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar4);
+  *extraout_EDX = *extraout_EDX + bVar5 + bVar4;
+  UNLOCK();
+  LOCK();
+  pbVar7 = extraout_EDX + -0x2a;
+  bVar8 = CARRY1(*pbVar7,bVar5) || CARRY1(*pbVar7 + bVar5,bVar6);
+  *pbVar7 = *pbVar7 + bVar5 + bVar6;
+  UNLOCK();
+  LOCK();
+  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar8);
+  *extraout_EDX = *extraout_EDX + bVar5 + bVar8;
+  UNLOCK();
+  LOCK();
+  bVar4 = *extraout_EDX;
+  bVar9 = *extraout_EDX;
+  *extraout_EDX = bVar9 + bVar5 + bVar6;
+  UNLOCK();
+  LOCK();
+  extraout_EDX[0x1a10f0d6] =
+       extraout_EDX[0x1a10f0d6] + bVar5 + (CARRY1(bVar4,bVar5) || CARRY1(bVar9 + bVar5,bVar6));
+  UNLOCK();
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

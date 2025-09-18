@@ -177,6 +177,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
                MethodInfo *method)
 
 {
+  puVar1 = (undefined4 *)&stack0xfffffffc;
+  puStackY_28 = &UNK_?;
   DesktopCubeModelingToolsController_SetAllToTransparent(this,(MethodInfo *)0x0);
   switch(cubeTool) {
   case CubeModelingEvent__Enum_EditCubes:
@@ -194,24 +196,55 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
     this_00 = (this->fields).pickCubeColor;
   }
   if (this_00 != (Button *)0x0) {
-    pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+    pIVar2 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
                        ((Selectable *)this_00,(MethodInfo *)0x0);
-    pIStack_2 = (Image *)(this->fields).enabledAlpha;
-    if (pIVar1 != (Image *)0x0) {
-      pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
-      pIStack_4 = pIVar1;
-      puVar5 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_4);
-      pIStack_3 = (Il2CppMethodPointer)puVar5[1];
-      uStack_6 = puVar5[2];
-      pIStack_4 = pIStack_2;
-      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar5,pIStack_3,uStack_6);
+    fStack_3 = (this->fields).enabledAlpha;
+    if (pIVar2 != (Image *)0x0) {
+      apIStack_4[1] = (pIVar2->klass->vtable).set_color.methodPtr;
+      iVar5 = (*(code *)(pIVar2->klass->vtable).get_color.method)();
+      apIStack_4[1] = *(Il2CppMethodPointer *)(iVar5 + 4);
+      apIStack_4[2] = *(Il2CppMethodPointer *)(iVar5 + 8);
+      puStackY_28 = &UNK_?;
+      (*(code *)(pIVar2->klass->vtable).set_color.method)();
 code_?:
       return;
     }
   }
+  apIStack_4[1] = (Il2CppMethodPointer)&UNK_?;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  puStackY_88 = apIStack_4 + 1;
+  puVar6 = apIStack_4 + 1;
+  apuStackY_10c4[1] = apIStack_4 + 1;
+  puVar7 = apIStack_4 + 1;
+  cVar8 = '\x1d';
+  do {
+    puVar1 = puVar1 + -1;
+    puVar6 = puVar6 + -1;
+    *puVar6 = *puVar1;
+    cVar8 = cVar8 + -1;
+  } while ('\0' < cVar8);
+  puStackY_10cc = apuStackY_10c4 + 1;
+  puVar1 = apuStackY_10c4 + 1;
+  apuStackY_2108[1] = apuStackY_10c4 + 1;
+  puVar6 = apuStackY_10c4 + 1;
+  cVar8 = '\x02';
+  do {
+    puVar7 = puVar7 + -1;
+    puVar1 = puVar1 + -1;
+    *puVar1 = *puVar7;
+    cVar8 = cVar8 + -1;
+  } while ('\0' < cVar8);
+  ppuVar9 = apuStackY_2108 + 1;
+  cVar8 = '\x12';
+  do {
+    puVar6 = puVar6 + -1;
+    ppuVar9 = ppuVar9 + -1;
+    *ppuVar9 = (undefined4 *)*puVar6;
+    cVar8 = cVar8 + -1;
+  } while ('\0' < cVar8);
+  pcVar10 = (code *)swi(3);
+  apIStack_4[1] = (Il2CppMethodPointer)&stack0xfffffffc;
+  (*pcVar10)();
   return;
 }
 

@@ -585,33 +585,32 @@ void Assembly-CSharp.dll::TierUnlockedItemElement::TierUnlockedItemElement_SetTe
     }
     Styles::Styles_GetColor
               ((Color *)&stack0xffffffec,(ColorStyle__Enum)colorStyle,(MethodInfo *)0x0);
+    this = (TierUnlockedItemElement *)0x0;
     if (pIVar1 != (Image *)0x0) {
       (*(code *)(pIVar1->klass->vtable).set_color.method)();
       return;
     }
   }
   bVar2 = 0;
-  uVar3 = func_?();
-  pbVar4 = (byte *)((int)((ulonglong)uVar3 >> 0x20) + 0x4b);
-  bVar5 = (byte)((uint)((int)uVar3 + -1) >> 8);
-  bVar6 = *pbVar4 + bVar5;
-  bVar7 = CARRY1(*pbVar4,bVar5) || CARRY1(bVar6,bVar2);
-  *pbVar4 = bVar6 + bVar2;
-  pbVar4 = (byte *)(unaff_EBX + 0x46 + extraout_ECX * 2);
-  bVar5 = (byte)((uint)(unaff_EBX + -1) >> 8);
-  bVar6 = *pbVar4 + bVar5;
-  bVar8 = CARRY1(*pbVar4,bVar5) || CARRY1(bVar6,bVar7);
-  *pbVar4 = bVar6 + bVar7;
-  pbVar4 = (byte *)(team + 0xb010474b);
-  bVar6 = *pbVar4;
-  bVar2 = (byte)((ulonglong)uVar3 >> 0x20);
-  bVar5 = *pbVar4 + bVar2;
-  *pbVar4 = bVar5 + bVar8;
-  pcVar9 = (char *)((int)uVar3 + -0x33efb8b6);
-  *pcVar9 = *pcVar9 + (char)((ulonglong)uVar3 >> 0x28) +
-            (CARRY1(bVar6,bVar2) || CARRY1(bVar5,bVar8));
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  func_?();
+  pTVar3 = (TierUnlockedItemElement__Class *)func_?();
+  this->klass = pTVar3;
+  pbVar4 = (byte *)(unaff_EBX + (int)&stack0xfffffffc * 4);
+  bVar5 = *pbVar4 + (byte)unaff_EBX;
+  bVar6 = CARRY1(*pbVar4,(byte)unaff_EBX) || CARRY1(bVar5,bVar2);
+  *pbVar4 = bVar5 + bVar2;
+  bVar7 = CARRY1(*(byte *)team,extraout_DH) || CARRY1(*(char *)team + extraout_DH,bVar6);
+  *(byte *)team = *(char *)team + extraout_DH + bVar6;
+  *(TierUnlockedItemElement__Class **)((int)&this->monitor + 2) = pTVar3;
+  pbVar4 = (byte *)((int)&pTVar3[-1]._1.actualSize + 3);
+  bVar5 = *pbVar4;
+  bVar2 = *pbVar4;
+  *pbVar4 = bVar2 + extraout_DL + bVar7;
+  pcVar8 = (char *)((int)&pTVar3[-1]._1.actualSize + 3);
+  *pcVar8 = *pcVar8 + extraout_DL + (CARRY1(bVar5,extraout_DL) || CARRY1(bVar2 + extraout_DL,bVar7))
+  ;
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

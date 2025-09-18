@@ -799,14 +799,14 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings3D::UniversalGizmoSettings3
                     if (pGVar6->max_length == 0) goto code_?;
                     if (pGVar6->vector[0] != (GizmoPlaneSlider3DSettings *)0x0) {
                       UniversalGizmoSettings3D_SetScUniformScaleSnapStep
-                                ((UniversalGizmoSettings3D *)pGVar6->vector[0],4.364172e-29,
+                                ((UniversalGizmoSettings3D *)pGVar6->vector[0],4.363912e-29,
                                  (MethodInfo *)0x0);
                       pGVar6 = (this->fields)._scDblSliderSettings;
                       if (pGVar6 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
                         if (pGVar6->max_length < 3) goto code_?;
                         if (pGVar6->vector[2] != (GizmoPlaneSlider3DSettings *)0x0) {
                           GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_ScaleSnapStepUp
-                                    (pGVar6->vector[2],4.364172e-29,(MethodInfo *)0x0);
+                                    (pGVar6->vector[2],4.363912e-29,(MethodInfo *)0x0);
                           fVar1 = ScaleGizmoSettings3D::ScaleGizmoSettings3D_get_YSnapStep
                                             (settings,(MethodInfo *)0x0);
                           pGVar3 = (this->fields)._scSglSliderSettings;

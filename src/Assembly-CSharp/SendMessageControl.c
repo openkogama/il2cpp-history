@@ -108,10 +108,10 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ActivateTeamCha
     if (((this->fields).selectedChat == 9) &&
        (bVar3 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0),
        bVar3 == 0)) {
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetSayChatBubbleVisible
-                (this_01,0,(MethodInfo *)0x0);
+                (this_02,0,(MethodInfo *)0x0);
       (this->fields).isSayChatIconVisible = 0;
     }
     pTVar4 = (this->fields).currentChat;
@@ -132,9 +132,31 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ActivateTeamCha
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,team,0,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          func_?();
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        bVar3 = Styles::Styles_HandleUnInitalized((MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          key = Styles::Styles_GetTeamColorStyle(team,0,0,(MethodInfo *)0x0);
+          this_01 = TypeInfo__Styles->static_fields->colorStylesDictionary;
+          if ((this_01 == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) ||
+             (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Int32Enum,System::Object]::
+                       Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,key,
+                                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                                 ), pOVar6 == (Object *)0x0)) goto code_?;
+        }
         if (pTVar4 != (Text *)0x0) {
-          (*(code *)(pTVar4->klass->vtable).set_color.method)();
+          (*(code *)(pTVar4->klass->vtable).set_color.method)(pTVar4);
           return;
         }
       }
@@ -142,8 +164,8 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ActivateTeamCha
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -261,18 +283,49 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_ChangeTeamChatC
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
-    pCVar3 = Styles::Styles_GetTeamColor(&CStack_4,team,0,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                     );
+      func_?(&TypeInfo__Styles);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__Styles);
+    }
+    bVar3 = Styles::Styles_HandleUnInitalized((MethodInfo *)0x0);
+    pMVar4 = _UNK_?;
+    pOVar5 = _UNK_?;
+    pMVar6 = _UNK_?;
+    pOVar7 = _UNK_?;
+    if (bVar3 != 0) {
+      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__Styles);
+      }
+      key = Styles::Styles_GetTeamColorStyle(team,0,0,(MethodInfo *)0x0);
+      this_00 = TypeInfo__Styles->static_fields->colorStylesDictionary;
+      if ((this_00 == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) ||
+         (pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
+                              MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                             ), pOVar8 == (Object *)0x0)) goto code_?;
+      pMVar4 = pOVar8[1].monitor;
+      pOVar5 = pOVar8[2].klass;
+      pMVar6 = pOVar8[2].monitor;
+      pOVar7 = pOVar8[3].klass;
+    }
     if (pTVar1 != (Text *)0x0) {
-      CStack_4.r = pCVar3->b;
-      CStack_4.g = pCVar3->a;
-      CStack_4.b = (float)(pTVar1->klass->vtable).get_raycastTarget.methodPtr;
-      (*(code *)(pTVar1->klass->vtable).set_color.method)(pTVar1,pCVar3->r,pCVar3->g);
+      (*(code *)(pTVar1->klass->vtable).set_color.method)
+                (pTVar1,pMVar4,pOVar5,pMVar6,pOVar7,
+                 (pTVar1->klass->vtable).get_raycastTarget.methodPtr);
       return;
     }
   }
+code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1145,7 +1198,8 @@ code_?:
                               pSVar6 = (String *)0x0;
                             }
                             else {
-                              pSVar6 = (String *)func_?();
+                              pSVar6 = (String *)
+                                        (*(code *)(pTVar26->klass->vtable).ToString.method)();
                             }
                             pSVar5 = mscorlib.dll::System::String::String_Concat_4
                                                 (pSVar5,pSVar6,::StringLiteral__,(MethodInfo *)0x0
@@ -2412,98 +2466,79 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_SwapChat
                (SendMessageControl *this,MVGameMsgType__Enum newChat,MethodInfo *method)
 
 {
-  if (newChat == MVGameMsgType__Enum_Chat) {
+  if (newChat != MVGameMsgType__Enum_Chat) {
+    if (newChat == MVGameMsgType__Enum_TeamChat) {
+      SendMessageControl_ActivateTeamChat(this,(MethodInfo *)0x0);
+      return;
+    }
+    if (newChat != MVGameMsgType__Enum_SayChat) {
+      return;
+    }
     if (cRam_? == '\0') {
-      func_?(&StringLiteral___All__);
+      func_?(&StringLiteral___Say__);
       cRam_? = '\x01';
     }
-    if (((this->fields).selectedChat == 9) &&
+    if (((this->fields).selectedChat != 9) &&
        (bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0),
        bVar1 == 0)) {
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
       if (pMVar2 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetSayChatBubbleVisible
-                (pMVar2,0,(MethodInfo *)0x0);
-      (this->fields).isSayChatIconVisible = 0;
+                (pMVar2,1,(MethodInfo *)0x0);
+      (this->fields).isSayChatIconVisible = 1;
     }
     pTVar3 = (this->fields).currentChat;
     if (pTVar3 != (Text *)0x0) {
       (*(code *)(pTVar3->klass->vtable).set_text.method)
-                (pTVar3,StringLiteral___All__,
+                (pTVar3,StringLiteral___Say__,
                  (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       pTVar3 = (this->fields).currentChat;
       if (pTVar3 != (Text *)0x0) {
         (*(code *)(pTVar3->klass->vtable).set_color.method)
-                  (pTVar3,_UNK_?,_UNK_?,_UNK_?,_UNK_?,
+                  (pTVar3,(this->fields).sayChatColor.r,(this->fields).sayChatColor.g,
+                   (this->fields).sayChatColor.b,(this->fields).sayChatColor.a,
                    (pTVar3->klass->vtable).get_raycastTarget.methodPtr);
-        (this->fields).selectedChat = 7;
+        (this->fields).selectedChat = 9;
         return;
       }
     }
+code_?:
+    func_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
   }
-  else {
-    if (newChat != MVGameMsgType__Enum_TeamChat) {
-      if (newChat == MVGameMsgType__Enum_SayChat) {
-        SendMessageControl_ActivateSayChat(this,1,(MethodInfo *)0x0);
-      }
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral___All__);
+    cRam_? = '\x01';
+  }
+  if (((this->fields).selectedChat == 9) &&
+     (bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0),
+     bVar1 == 0)) {
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+    if (pMVar2 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetSayChatBubbleVisible
+              (pMVar2,0,(MethodInfo *)0x0);
+    (this->fields).isSayChatIconVisible = 0;
+  }
+  pTVar3 = (this->fields).currentChat;
+  if (pTVar3 != (Text *)0x0) {
+    (*(code *)(pTVar3->klass->vtable).set_text.method)
+              (pTVar3,StringLiteral___All__,
+               (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pTVar3 = (this->fields).currentChat;
+    if (pTVar3 != (Text *)0x0) {
+      (*(code *)(pTVar3->klass->vtable).set_color.method)
+                (pTVar3,_UNK_?,_UNK_?,_UNK_?,_UNK_?,
+                 (pTVar3->klass->vtable).get_raycastTarget.methodPtr);
+      (this->fields).selectedChat = 7;
       return;
-    }
-    if (cRam_? == '\0') {
-      func_?(&StringLiteral___Team__);
-      cRam_? = '\x01';
-    }
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar4 != (MVNetworkGame *)0x0) &&
-       (this_00 = (pMVar4->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
-      iVar5 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
-      if (iVar5 < 2) {
-        return;
-      }
-      if (((this->fields).selectedChat == 9) &&
-         (bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0)
-         , bVar1 == 0)) {
-        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
-        ;
-        if (pMVar2 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetSayChatBubbleVisible
-                  (pMVar2,0,(MethodInfo *)0x0);
-        (this->fields).isSayChatIconVisible = 0;
-      }
-      pTVar3 = (this->fields).currentChat;
-      if (pTVar3 != (Text *)0x0) {
-        (*(code *)(pTVar3->klass->vtable).set_text.method)
-                  (pTVar3,StringLiteral___Team__,
-                   (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-        (this->fields).selectedChat = 8;
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__Styles);
-          cRam_? = '\x01';
-        }
-        if ((this->fields).selectedChat != 8) {
-          return;
-        }
-        pTVar3 = (this->fields).currentChat;
-        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-        if (pMVar6 != (MVLocalPlayer *)0x0) {
-          team = (pMVar6->fields)._._Team_k__BackingField;
-          if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__Styles);
-          }
-          pCVar7 = Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,team,0,(MethodInfo *)0x0);
-          if (pTVar3 != (Text *)0x0) {
-            (*(code *)(pTVar3->klass->vtable).set_color.method)
-                      (pTVar3,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
-                       (pTVar3->klass->vtable).get_raycastTarget.methodPtr);
-            return;
-          }
-        }
-      }
     }
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

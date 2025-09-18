@@ -39,53 +39,35 @@ void Assembly-CSharp.dll::ThemeMenuController::ThemeMenuController_OpenSelection
   if (value != (Object *)0x0) {
     value[1].klass = pOVar1;
     func_?(value + 1,pOVar1);
-    pOVar1 = value[1].klass;
-    if ((pOVar1 != (Object__Class *)0x0) &&
-       (pIVar2 = (pOVar1->_0).castClass, pIVar2 != (Il2CppClass *)0x0)) {
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pIVar2,(MethodInfo *)0x0);
-      if (pGVar3 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar3,0,(MethodInfo *)0x0);
-        pIVar2 = (pOVar1->_0).declaringType;
-        if (pIVar2 != (Il2CppClass *)0x0) {
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pIVar2,(MethodInfo *)0x0);
-          if (pGVar3 != (GameObject *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar3,1,(MethodInfo *)0x0);
-            (pOVar1->_0).generic_class = (Il2CppGenericClass *)this;
-            func_?(&(pOVar1->_0).generic_class,this);
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this,(MethodInfo *)0x0);
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                );
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                       MethodInfo__ThemeMenuController____c__DisplayClass4_0___OpenSelection_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (pGVar3,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            return;
-          }
-        }
+    if (value[1].klass != (Object__Class *)0x0) {
+      ThemeSelection::ThemeSelection_InitializeWithBackButton
+                ((ThemeSelection *)value[1].klass,this,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__ThemeMenuController____c__DisplayClass4_0___OpenSelection_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
       }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

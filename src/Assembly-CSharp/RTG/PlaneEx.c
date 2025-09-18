@@ -61,7 +61,7 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane
         uVar14 = pVVar2->x;
         uVar15 = pVVar2->y;
         fVar3 = pVVar2->z;
-        fVar4 = (float)((uint)((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.3846648e-29
+        fVar4 = (float)((uint)((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.3844048e-29
                               + (float)uVar13 * fVar3) ^
                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         (__return_storage_ptr__->m_Normal).x = (float)uVar14;

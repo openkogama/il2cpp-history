@@ -10,11 +10,12 @@ void Assembly-CSharp.dll::TouristRegisterNotification::TouristRegisterNotificati
     func_?(&StringLiteral_Unlock_chat_by_signing_up_here_);
     cRam_? = '\x01';
   }
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
   pTVar1 = (this->fields).label;
-  TM::TM__(StringLiteral_Unlock_chat_by_signing_up_here_,(MethodInfo *)0x0);
+  (this->fields)._.timeSinceStart = 0.0;
+  pSVar2 = TM::TM__(StringLiteral_Unlock_chat_by_signing_up_here_,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1);
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields).tertiaryNotificationUI;
     l = (*(code *)(this->klass->vtable).get_Lifetime.method)
                   (this,(this->klass->vtable).Initialize.methodPtr);
@@ -25,8 +26,8 @@ void Assembly-CSharp.dll::TouristRegisterNotification::TouristRegisterNotificati
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

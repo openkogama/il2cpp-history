@@ -257,15 +257,16 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
       return;
     }
     pPStack_2 = TypeInfo__PlayButton____c__DisplayClass17_0;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,in_stack_3);
+    this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
     this_01 = (this->fields).embeddedPlayerConfig;
     if ((this_01 != (EmbeddedPlayerConfig *)0x0) &&
        (EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
                   ((EmbeddedSiteConfigData *)&pPStack_2,this_01,(MethodInfo *)0x0),
-       value != (Object *)0x0)) {
-      *(undefined1 *)&value[1].klass = 0;
+       this_02 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)) {
+      *(undefined1 *)&(this_02->fields)._._defaultValue_k__BackingField = 0;
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -275,7 +276,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
                           );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_02,
                  MethodInfo__PlayButton____c__DisplayClass17_0___OnEnable_b__0_IDeathPromotionSelector__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -290,8 +291,8 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnEnable(PlayButton *this,Metho
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -379,31 +380,32 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
     }
     return;
   }
-  method_00 = TypeInfo__PlayButton____c__DisplayClass12_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+            func_?(TypeInfo__PlayButton____c__DisplayClass12_0);
+  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+  UxmlObjectListAttributeDescription`1[System::Object]::
+  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
   original = (this->fields).continueButtonPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar2 = (Object__Class *)
+  pLVar2 = (List_1_System_Object_ *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       ContinueButtonLockCursor_MethodInfo__UnityEngine__Object__Instantiate<ContinueButtonLockCursor>_ContinueButtonLockCursor_
                      );
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar2;
-    func_?(value + 1,pOVar2);
-    pOVar2 = value[1].klass;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+    (this_00->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_00->fields,pLVar2);
+    pLVar2 = (this_00->fields)._._defaultValue_k__BackingField;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__PlayButton__OnContinuePressed__,(MethodInfo *)0x0)
+              (this_01,(Object *)this,MethodInfo__PlayButton__OnContinuePressed__,(MethodInfo *)0x0)
     ;
-    if (pOVar2 != (Object__Class *)0x0) {
+    if (pLVar2 != (List_1_System_Object_ *)0x0) {
       ContinueButtonLockCursor::ContinueButtonLockCursor_Initialize
-                ((ContinueButtonLockCursor *)pOVar2,(Action *)this_00,(MethodInfo *)0x0);
+                ((ContinueButtonLockCursor *)pLVar2,(Action *)this_01,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -413,7 +415,7 @@ void Assembly-CSharp.dll::PlayButton::PlayButton_OnPromotionShown
                           );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
                  MethodInfo__PlayButton____c__DisplayClass12_0___OnPromotionShown_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -664,30 +666,13 @@ void Assembly-CSharp.dll::PlayButton::PlayButton__Play_b__11_0
   UnityAction_2_System_Boolean_System_Boolean___ctor
             (this_00,(Object *)this,MethodInfo__PlayButton__OnPromotionShown_bool__bool_,
              (MethodInfo *)0x0);
-  if (x == (IDeathPromotionSelector *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+  if (x != (IDeathPromotionSelector *)0x0) {
+    func_?(1,TypeInfo__IDeathPromotionSelector);
     return;
   }
-  pIVar2 = x->klass;
-  uVar3 = 0;
-  uVar4._0_1_ = (pIVar2->_1).rank;
-  uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-  if (uVar4 != 0) {
-    do {
-      if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-          (Il2CppClass *)TypeInfo__IDeathPromotionSelector) {
-        ppMVar5 = &(&(x->klass->vtable).TryShowPromotion)[x->klass->interfaceOffsets[uVar3].offset].
-                   method;
-        goto code_?;
-      }
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < uVar4);
-  }
-  ppMVar5 = (MethodInfo **)func_?(x,TypeInfo__IDeathPromotionSelector,1);
-code_?:
-  (*(code *)*ppMVar5)(x,ppMVar5[1]);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

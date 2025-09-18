@@ -10,14 +10,19 @@ Assembly-CSharp.dll::TouristPromotion::TouristPromotion_FadeOutAndPopPromotion
     func_?(&TypeInfo__TouristPromotion___FadeOutAndPopPromotion_d__13);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TouristPromotion___FadeOutAndPopPromotion_d__13;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__TouristPromotion___FadeOutAndPopPromotion_d__13);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+    func_?(this_00 + 1);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 
@@ -192,61 +197,22 @@ void Assembly-CSharp.dll::TouristPromotion::TouristPromotion_Start
     pTVar1 = (this->fields).looksData;
     pTVar2 = (this->fields).promotionHeader;
     if (pTVar1 != (TouristPromotionLooksData *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pLVar3 = (pTVar1->fields).promotionData;
-      if (pLVar3 != (List_1_TouristPromotionLooksData_PromotionLooksData_ *)0x0) {
-        pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xffffffe4,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLVar3,
-                            (pTVar1->fields).promotionIndex,
-                            MethodInfo__System__Collections__Generic__List<TouristPromotionLooksData::PromotionLooksData>__get_Item_int_
-                           );
-        key = pVVar4->path;
-        TM::TM__((String *)key,(MethodInfo *)0x0);
-        if (pTVar2 != (Text *)0x0) {
-          (*(code *)(pTVar2->klass->vtable).set_text.method)();
-          pTVar1 = (this->fields).looksData;
-          if (pTVar1 != (TouristPromotionLooksData *)0x0) {
-            if (cRam_? == '\0') {
-              func_?();
-              func_?();
-              func_?();
-              cRam_? = '\x01';
-            }
-            pLVar3 = (pTVar1->fields).promotionData;
-            if (pLVar3 != (List_1_TouristPromotionLooksData_PromotionLooksData_ *)0x0) {
-              pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                       VisualTreeAsset+UsingEntry]::
-                       List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                 ((VisualTreeAsset_UsingEntry *)&stack0xffffffe4,
-                                  (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                                  pLVar3,(pTVar1->fields).promotionIndex,
-                                  MethodInfo__System__Collections__Generic__List<TouristPromotionLooksData::PromotionLooksData>__get_Item_int_
-                                 );
-              original = pVVar4->alias;
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              this_00 = (Component *)
-                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                  ((Object *)original,
-                                   UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image_
-                                  );
-              if (this_00 != (Component *)0x0) {
-                this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform(this_00,(MethodInfo *)0x0);
-                if (this_01 != (Transform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                            (this_01,(Transform *)(this->fields).promotionImageParent,0,
-                             (MethodInfo *)0x0);
-                  return;
-                }
-              }
+      TouristPromotionLooksData::TouristPromotionLooksData_GetPromotionText
+                (pTVar1,(MethodInfo *)0x0);
+      if (pTVar2 != (Text *)0x0) {
+        (*(code *)(pTVar2->klass->vtable).set_text.method)();
+        pTVar1 = (this->fields).looksData;
+        if (pTVar1 != (TouristPromotionLooksData *)0x0) {
+          this_00 = TouristPromotionLooksData::TouristPromotionLooksData_GetPromotionImage
+                              (pTVar1,(MethodInfo *)0x0);
+          if (this_00 != (Image *)0x0) {
+            this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)this_00,(MethodInfo *)0x0);
+            if (this_01 != (Transform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                        (this_01,(Transform *)(this->fields).promotionImageParent,0,
+                         (MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -254,8 +220,8 @@ void Assembly-CSharp.dll::TouristPromotion::TouristPromotion_Start
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

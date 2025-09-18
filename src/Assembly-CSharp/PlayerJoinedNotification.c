@@ -362,8 +362,8 @@ void Assembly-CSharp.dll::PlayerJoinedNotification::PlayerJoinedNotification__ct
     (this->fields).Country = (Dictionary_2_System_String_System_String_ *)this_00;
     func_?();
     (this->fields)._.lifeTime = 2;
-    Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-    Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+              ((MonoBehaviour *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
