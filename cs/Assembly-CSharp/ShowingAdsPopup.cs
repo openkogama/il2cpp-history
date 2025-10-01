@@ -18,7 +18,6 @@ public class ShowingAdsPopup : MonoBehaviour
 	private float startTime;
 	private float timeoutTime;
 	private Action skipAction;
-	private bool previousMuteState;
 
 	// Constructors
 	public ShowingAdsPopup();

@@ -96,7 +96,7 @@ void Assembly-CSharp.dll::DesktopInGameGUIController::DesktopInGameGUIController
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar6,1,(MethodInfo *)0x0);
       }
       pLVar8 = (this->fields).levelBadge;
-      pTVar1 = (this->fields).GameMetersTransform;
+      pTVar1 = (this->fields).levelBadgeParentTransform;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }

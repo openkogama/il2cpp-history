@@ -28,20 +28,19 @@ bool Assembly-CSharp.dll::GameMeterShake+<ShakeAnimation>d__5::GameMeterShake_Sh
   else {
     fVar5 = MathFunctions::MathFunctions_SmoothInverseLerp(0.0,0.5,(this->fields)._shakeTime_5__2,(MethodInfo *)0x0);
     if (pGVar2 != (GameMeterShake *)0x0) {
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(-10.0,10.0,(MethodInfo *)0x0);
-      pMVar7 = (MethodInfo *)(fVar6 * (1.0 - fVar5));
-      fVar8 = 10.0;
-      puVar9 = &UNK_?;
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(-10.0,10.0,pMVar7);
+      UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(-10.0,10.0,(MethodInfo *)0x0);
+      fVar6 = -10.0;
+      puVar7 = &UNK_?;
+      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(-10.0,10.0,(MethodInfo *)0x0);
       pRVar4 = (pGVar2->fields).rectTransform;
       if (pRVar4 != (RectTransform *)0x0) {
-        value.y = fVar6 * (1.0 - fVar5) + (float)puVar9;
-        value.x = (float)pMVar7 + fVar8;
+        value.y = fVar8 * (1.0 - fVar5) + fVar6;
+        value.x = (float)puVar7;
         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(pRVar4,value,(MethodInfo *)0x0);
-        pMVar7 = (MethodInfo *)(this->fields)._shakeTime_5__2;
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime(pMVar7);
+        fVar5 = (this->fields)._shakeTime_5__2;
+        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
         (this->fields).__2__current = (Object *)0x0;
-        (this->fields)._shakeTime_5__2 = fVar5 + (float)pMVar7;
+        (this->fields)._shakeTime_5__2 = fVar8 + fVar5;
         func_?();
         (this->fields).__1__state = 1;
         return 1;
@@ -49,9 +48,9 @@ bool Assembly-CSharp.dll::GameMeterShake+<ShakeAnimation>d__5::GameMeterShake_Sh
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
-  return bVar11;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 

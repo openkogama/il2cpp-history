@@ -152,8 +152,8 @@ String * Assembly-CSharp.dll::RTG::StringEx::StringEx_RemoveTrailingSlashes(Stri
       if (uVar1 != 0x2f) {
         return str;
       }
-      if (str == (String *)0x0) break;
     }
+    if (str == (String *)0x0) break;
   }
   func_?();
   pcVar2 = (code *)swi(3);

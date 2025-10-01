@@ -68,7 +68,7 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection::GizmoLineSlider3DCol
     pMStack_7 = (MonitorData *)pLVar9->_index;
     pGStack_1 = (GizmoCap3D *)0x1;
     pGStack_11 = (GizmoSglAxisOffsetDrag3D *)&pGStack_6;
-    do {
+    while( true ) {
       do {
         this_03 = (Gizmo *)&pGStack_6;
         bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)this_03,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoLineSlider3D>__MoveNext__);
@@ -83,21 +83,11 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection::GizmoLineSlider3DCol
           func_?();
           cRam_? = '\x01';
         }
-        if ((GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z == (GizmoLineSlider3DLookAndFeel *)0x0) {
-          pGVar14 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.y;
-          if (pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar14 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z;
-        }
+        pGVar14 = (GizmoLineSlider3DLookAndFeel *)(&(this_03->fields)._hoverInfo._hoverPoint.y)[(GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z != (GizmoLineSlider3DLookAndFeel *)0x0];
+        if (pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
       } while ((pGVar14->fields)._useZoomFactor == 0);
-      if ((GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z == (GizmoLineSlider3DLookAndFeel *)0x0) {
-        pGVar14 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.y;
-        if (pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) break;
-      }
-      else {
-        pGVar14 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z;
-      }
+      pGVar14 = (GizmoLineSlider3DLookAndFeel *)(&(this_03->fields)._hoverInfo._hoverPoint.y)[(GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z != (GizmoLineSlider3DLookAndFeel *)0x0];
+      if (pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) break;
       if ((pGVar14->fields)._useZoomFactor == 0) {
         zoomFactor = 1.0;
       }
@@ -107,15 +97,8 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection::GizmoLineSlider3DCol
         zoomFactor = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
       }
       pIVar15 = (IGizmoLineSlider3DController__Array *)(this_03->fields).PostDragBegin;
-      if ((GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z == (GizmoLineSlider3DLookAndFeel *)0x0) {
-        pGVar14 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.y;
-        if (pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) break;
-      }
-      else {
-        pGVar14 = (GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z;
-      }
-      uVar16 = (pGVar14->fields)._lineType;
-      if (pIVar15 == (IGizmoLineSlider3DController__Array *)0x0) break;
+      pGVar14 = (GizmoLineSlider3DLookAndFeel *)(&(this_03->fields)._hoverInfo._hoverPoint.y)[(GizmoLineSlider3DLookAndFeel *)(this_03->fields)._hoverInfo._hoverPoint.z != (GizmoLineSlider3DLookAndFeel *)0x0];
+      if ((pGVar14 == (GizmoLineSlider3DLookAndFeel *)0x0) || (uVar16 = (pGVar14->fields)._lineType, pIVar15 == (IGizmoLineSlider3DController__Array *)0x0)) break;
       if (pIVar15->max_length <= uVar16) goto code_?;
       if (pIVar15->vector[uVar16] == (IGizmoLineSlider3DController *)0x0) break;
       func_?(1,TypeInfo__RTG__IGizmoLineSlider3DController,pIVar15->vector[uVar16],zoomFactor);
@@ -133,7 +116,7 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection::GizmoLineSlider3DCol
       sliderDirection.x = (float)pIStack_20;
       sliderDirection.y = (float)pGStack_21;
       GizmoCap3D::GizmoCap3D_CapSlider3D((GizmoCap3D *)pGStack_17,sliderDirection,*pVVar18,(MethodInfo *)0x0);
-    } while( true );
+    }
   }
 code_?:
   func_?();

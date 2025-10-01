@@ -142,13 +142,10 @@ code_?:
     return 0;
   }
   func_?();
-  pbVar16 = (byte *)(extraout_ECX + 0x10);
-  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
-  pbVar16 = (byte *)(extraout_ECX + 0x10);
-  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  *(char *)&this->klass = *(char *)&this->klass + (char)((uint)&stack0xfffffffc >> 8) + (extraout_AH < extraout_DH);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

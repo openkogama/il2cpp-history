@@ -21,7 +21,7 @@ public class GameMeterHealth : GameMeterBase
 	private UnityEngine.UI.Text healthText;
 	[SerializeField]
 	private GameMeterShake shaker;
-	private int maxValue;
+	private int maxHealthValue;
 	private float storedHealthValue;
 
 	// Properties
@@ -31,11 +31,11 @@ public class GameMeterHealth : GameMeterBase
 	public GameMeterHealth();
 
 	// Methods
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
 	public override void SetShowGameMeter(bool show);
 	public override void Initialize();
-	private void OnMaxValueUpdate(int maxValue);
-	private void OnProgressUpdate(float newValue);
+	private void OnMaxHealthChange(int maxHealthValue);
+	private void OnHealthChange(float newHealthValue);
 }
 

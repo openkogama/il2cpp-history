@@ -197,7 +197,7 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize(Spaw
                                                       iVar17 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_03,(MethodInfo *)0x0);
                                                       pMVar15 = (this->fields).body;
                                                       if ((pMVar15 != (MVBodyObject *)0x0) && (this_02 = (pMVar15->fields).boneAnimation, this_02 != (BoneAnimation *)0x0)) {
-                                                        BoneAnimation::BoneAnimation_StartAnimation(this_02,StringLiteral_Idle,(iVar17 + -500) - iVar4,(MethodInfo *)0x0);
+                                                        BoneAnimation::BoneAnimation_StartAnimation(this_02,StringLiteral_Idle,iVar17 + (-500 - iVar4),(MethodInfo *)0x0);
                                                         return;
                                                       }
                                                     }
@@ -415,7 +415,7 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_StartInactiveAn
     iVar4 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_01,(MethodInfo *)0x0);
     pMVar1 = (this->fields).body;
     if ((pMVar1 != (MVBodyObject *)0x0) && (this_00 = (pMVar1->fields).boneAnimation, this_00 != (BoneAnimation *)0x0)) {
-      BoneAnimation::BoneAnimation_StartAnimation(this_00,StringLiteral_Idle,(iVar4 + -500) - iVar3,(MethodInfo *)0x0);
+      BoneAnimation::BoneAnimation_StartAnimation(this_00,StringLiteral_Idle,iVar4 + (-500 - iVar3),(MethodInfo *)0x0);
       return;
     }
   }

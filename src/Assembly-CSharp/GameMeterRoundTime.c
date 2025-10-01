@@ -274,9 +274,9 @@ code_?:
 }
 
 
-/* Void SetGameMeterVisibility() */
+/* Boolean SetGameMeterVisibility() */
 
-void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVisibility(GameMeterRoundTime *this,MethodInfo *method)
+bool Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVisibility(GameMeterRoundTime *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -298,7 +298,7 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
         pTVar2 = (this->fields).roundTime;
         if (pTVar2 != (Text *)0x0) {
           (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,::StringLiteral__,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-          return;
+          return 0;
         }
       }
     }
@@ -325,7 +325,7 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
               if (pTVar2 == (Text *)0x0) goto code_?;
               (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar9,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             }
-            return;
+            return 1;
           }
         }
       }
@@ -334,8 +334,8 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
 code_?:
   func_?();
   pcVar10 = (code *)swi(3);
-  (*pcVar10)();
-  return;
+  bVar11 = (*pcVar10)();
+  return bVar11;
 }
 
 

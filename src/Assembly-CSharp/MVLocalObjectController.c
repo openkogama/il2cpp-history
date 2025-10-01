@@ -1400,8 +1400,8 @@ HashSet_1_System_Int32_ * Assembly-CSharp.dll::MVLocalObjectController::MVLocalO
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa8;
-  puVar5 = &stack0xffffffa8;
+  puStack_4 = &stack0xffffffac;
+  puVar5 = &stack0xffffffac;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVLocalObjectController::DismountedPlayerControlledObject>__get_Keys__);
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ILocalObject>__Dispose__);
@@ -1426,16 +1426,16 @@ HashSet_1_System_Int32_ * Assembly-CSharp.dll::MVLocalObjectController::MVLocalO
     pHStack_8 = pHVar6;
     if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_10,this_01,MethodInfo__System__Collections__Generic__List<ILocalObject>__GetEnumerator__);
-      LStack_10._current = (RegexCharClass_SingleRange)&stack0xffffffb4;
+      LStack_10._current = (RegexCharClass_SingleRange)&stack0xffffffb8;
       method_00 = (MethodInfo *)pLVar9->_version;
       RVar11 = pLVar9->_current;
       LStack_10._version = 0;
       uStack_1 = 1;
       while( true ) {
-        bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb4,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ILocalObject>__MoveNext__);
+        bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ILocalObject>__MoveNext__);
         if (bVar12 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffb4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ILocalObject>__Dispose__,method_00);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ILocalObject>__Dispose__,method_00);
           *unaff_FS_OFFSET = uStack_3;
           return pHVar6;
         }
@@ -1443,30 +1443,28 @@ HashSet_1_System_Int32_ * Assembly-CSharp.dll::MVLocalObjectController::MVLocalO
         if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
         iStack_14 = *(int *)RVar11;
         uVar15 = 0;
-        uVar16 = *(ushort *)(iStack_14 + 0xb6);
-        uStack_17 = (uint)uVar16;
-        if (uVar16 != 0) {
+        if (*(short *)(iStack_14 + 0xb6) != 0) {
           do {
             if (*(ILocalObject__Class **)(*(int *)(iStack_14 + 0x58) + (uint)uVar15 * 8) == TypeInfo__ILocalObject) {
-              puVar18 = (undefined4 *)(*(int *)RVar11 + (*(int *)(*(int *)(*(int *)RVar11 + 0x58) + 4 + (uint)uVar15 * 8) + 0x18) * 8);
+              puVar16 = (undefined4 *)(*(int *)RVar11 + (*(int *)(*(int *)(*(int *)RVar11 + 0x58) + 4 + (uint)uVar15 * 8) + 0x18) * 8);
               goto code_?;
             }
             uVar15 = uVar15 + 1;
-          } while (uVar15 < uVar16);
+          } while (uVar15 < *(ushort *)(*(int *)RVar11 + 0xb6));
         }
-        puVar18 = (undefined4 *)func_?();
+        puVar16 = (undefined4 *)func_?();
 code_?:
-        item = (*(code *)*puVar18)(RVar11,puVar18[1]);
+        item = (*(code *)*puVar16)(RVar11,puVar16[1]);
         pHVar6 = pHStack_7;
         if (pHStack_7 == (HashSet_1_System_Int32_ *)0x0) break;
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add(pHStack_7,item,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
       }
     }
   }
-  uVar19 = func_?();
-  func_?(uVar19);
-  pcVar20 = (code *)swi(3);
-  pHVar6 = (HashSet_1_System_Int32_ *)(*pcVar20)();
+  uVar17 = func_?();
+  func_?(uVar17);
+  pcVar18 = (code *)swi(3);
+  pHVar6 = (HashSet_1_System_Int32_ *)(*pcVar18)();
   return pHVar6;
 }
 

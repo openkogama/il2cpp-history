@@ -189,13 +189,13 @@ void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_Initialize(Avat
                                                             cameraBases = AvatarCamerasWrapper::AvatarCamerasWrapper_GetCameraBases(pAVar8,(MethodInfo *)0x0);
                                                             if (this_00 != (MVCameraController *)0x0) {
                                                               MVCameraController::MVCameraController_Initialize(this_00,cameraBases,(MethodInfo *)0x0);
-                                                              this_01 = (SchemaElementDecl *)MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-                                                              if (this_01 != (SchemaElementDecl *)0x0) {
-                                                                bVar11 = System.Xml.dll::System::Xml::Schema::SchemaElementDecl::SchemaElementDecl_get_HasDefaultAttribute(this_01,(MethodInfo *)0x0);
-                                                                if (bVar11 == 0) {
-                                                                  this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-                                                                  if (this_02 == (MainCameraManager *)0x0) goto code_?;
-                                                                  MainCameraManager::MainCameraManager_SetCameraController(this_02,(this->fields).cameraController,(MethodInfo *)0x0);
+                                                              pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+                                                              if (pMVar11 != (MainCameraManager *)0x0) {
+                                                                bVar12 = System.dll::System::Diagnostics::ProcessStartInfo::ProcessStartInfo_get_HaveEnvVars((ProcessStartInfo *)pMVar11,(MethodInfo *)0x0);
+                                                                if (bVar12 == 0) {
+                                                                  pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+                                                                  if (pMVar11 == (MainCameraManager *)0x0) goto code_?;
+                                                                  MainCameraManager::MainCameraManager_SetCameraController(pMVar11,(this->fields).cameraController,(MethodInfo *)0x0);
                                                                 }
                                                                 return;
                                                               }
@@ -231,8 +231,8 @@ void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_Initialize(Avat
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

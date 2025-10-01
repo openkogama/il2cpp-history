@@ -61,13 +61,8 @@ code_?:
 void Assembly-CSharp.dll::TeritiaryNotificationsOffsetAdjuster::TeritiaryNotificationsOffsetAdjuster_OnIsChatConsoleStateChange(TeritiaryNotificationsOffsetAdjuster *this,ChatConsoleMode__Enum mode,MethodInfo *method)
 
 {
-  if (mode == ChatConsoleMode__Enum_ChatPlayMode) {
-    fVar1 = (this->fields).rectWidthWithChat;
-  }
-  else {
-    fVar1 = (this->fields).rectWidth;
-  }
   this_00 = (this->fields).rectTransform;
+  fVar1 = (&(this->fields).rectWidth)[mode == ChatConsoleMode__Enum_ChatPlayMode];
   if (this_00 != (RectTransform *)0x0) {
     VVar2 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta(this_00,(MethodInfo *)0x0);
     VVar2.y = VVar2.y;
@@ -87,46 +82,42 @@ void Assembly-CSharp.dll::TeritiaryNotificationsOffsetAdjuster::TeritiaryNotific
 void Assembly-CSharp.dll::TeritiaryNotificationsOffsetAdjuster::TeritiaryNotificationsOffsetAdjuster_OnIsPausedStateChange(TeritiaryNotificationsOffsetAdjuster *this,bool isPaused,MethodInfo *method)
 
 {
-  pTVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__GamePassesManager);
     cRam_? = '\x01';
   }
   if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
-    bVar2 = 0;
+    bVar1 = 0;
   }
   else {
-    bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
+    bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
   }
+  fVar2 = (&(this->fields).topPaddingInMenu)[isPaused ^ 1];
   if (isPaused == 0) {
-    _isPaused = (this->fields).topPaddingInGame;
-    this = (TeritiaryNotificationsOffsetAdjuster *)(this->fields).bottomPaddingInGame;
+    fVar3 = (this->fields).bottomPaddingInGame;
+  }
+  else if (bVar1 == 0) {
+    fVar3 = (this->fields).bottomPaddingInMenu;
   }
   else {
-    _isPaused = (this->fields).topPaddingInMenu;
-    if (bVar2 == 0) {
-      this = (TeritiaryNotificationsOffsetAdjuster *)(this->fields).bottomPaddingInMenu;
-    }
-    else {
-      this = (TeritiaryNotificationsOffsetAdjuster *)(this->fields).bottomPaddingInMenuGamePass;
-    }
+    fVar3 = (this->fields).bottomPaddingInMenuGamePass;
   }
-  pRVar3 = (pTVar1->fields).rectTransform;
-  if (pRVar3 != (RectTransform *)0x0) {
-    VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(pRVar3,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(pRVar3,(Vector2)(CONCAT44(_isPaused,VVar4.x) ^ 0x8000000000000000),(MethodInfo *)0x0);
-    pRVar3 = (pTVar1->fields).rectTransform;
-    if (pRVar3 != (RectTransform *)0x0) {
-      VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta(pRVar3,(MethodInfo *)0x0);
-      VVar4.y = -_isPaused - (float)this;
-      VVar4.x = VVar5.x;
-      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar3,VVar4,(MethodInfo *)0x0);
+  pRVar4 = (this->fields).rectTransform;
+  if (pRVar4 != (RectTransform *)0x0) {
+    VVar5 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(pRVar4,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(pRVar4,(Vector2)(CONCAT44(fVar2,VVar5.x) ^ 0x8000000000000000),(MethodInfo *)0x0);
+    pRVar4 = (this->fields).rectTransform;
+    if (pRVar4 != (RectTransform *)0x0) {
+      VVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta(pRVar4,(MethodInfo *)0x0);
+      VVar5.y = -fVar2 - fVar3;
+      VVar5.x = VVar6.x;
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar4,VVar5,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -169,41 +160,26 @@ void Assembly-CSharp.dll::TeritiaryNotificationsOffsetAdjuster::TeritiaryNotific
   pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   pDVar4 = (Delegate *)this;
   if (pIVar3 != (IPlayModeUI *)0x0) {
-    cVar5 = func_?(7,TypeInfo__IPlayModeUI,pIVar3);
+    bVar5 = func_?(7,TypeInfo__IPlayModeUI,pIVar3);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__GamePassesManager);
       cRam_? = '\x01';
     }
-    if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
-      bVar6 = 0;
+    if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
+      GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
     }
-    else {
-      bVar6 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
-    }
-    if (cVar5 == '\0') {
-      fVar7 = (this->fields).topPaddingInGame;
-      fVar8 = (this->fields).bottomPaddingInGame;
-    }
-    else {
-      fVar7 = (this->fields).topPaddingInMenu;
-      if (bVar6 == 0) {
-        fVar8 = (this->fields).bottomPaddingInMenu;
-      }
-      else {
-        fVar8 = (this->fields).bottomPaddingInMenuGamePass;
-      }
-    }
-    pRVar9 = (this->fields).rectTransform;
-    if (pRVar9 != (RectTransform *)0x0) {
-      VVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(pRVar9,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(pRVar9,(Vector2)(CONCAT44(fVar7,VVar10.x) ^ 0x8000000000000000),(MethodInfo *)0x0);
-      pRVar9 = (this->fields).rectTransform;
-      if (pRVar9 != (RectTransform *)0x0) {
-        puVar11 = &UNK_?;
-        VVar12 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta(pRVar9,(MethodInfo *)0x0);
-        VVar10.y = -(float)puVar11 - fVar8;
-        VVar10.x = VVar12.x;
-        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar9,VVar10,(MethodInfo *)0x0);
+    fVar6 = (&(this->fields).topPaddingInMenu)[bVar5 ^ 1];
+    pRVar7 = (this->fields).rectTransform;
+    if (pRVar7 != (RectTransform *)0x0) {
+      VVar8 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(pRVar7,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(pRVar7,(Vector2)(CONCAT44(fVar6,VVar8.x) ^ 0x8000000000000000),(MethodInfo *)0x0);
+      pRVar7 = (this->fields).rectTransform;
+      if (pRVar7 != (RectTransform *)0x0) {
+        puVar9 = &UNK_?;
+        VVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta(pRVar7,(MethodInfo *)0x0);
+        VVar8.y = -fVar6 - (float)puVar9;
+        VVar8.x = VVar10.x;
+        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta(pRVar7,VVar8,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -211,13 +187,10 @@ void Assembly-CSharp.dll::TeritiaryNotificationsOffsetAdjuster::TeritiaryNotific
         pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
         if (pIVar3 != (IPlayModeUI *)0x0) {
           pDVar4 = (Delegate *)func_?(3,TypeInfo__IPlayModeUI,pIVar3);
-          pUVar13 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar13,(Object *)this,MethodInfo__TeritiaryNotificationsOffsetAdjuster__OnIsPausedStateChange_bool_,(MethodInfo *)0x0);
-          pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar4,(Delegate *)pUVar13,(MethodInfo *)0x0);
-          if (pDVar4 != (Delegate *)0x0) {
-            iVar14 = func_?(pDVar4);
-            if (iVar14 == 0) goto code_?;
-          }
+          pUVar11 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar11,(Object *)this,MethodInfo__TeritiaryNotificationsOffsetAdjuster__OnIsPausedStateChange_bool_,(MethodInfo *)0x0);
+          pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar4,(Delegate *)pUVar11,(MethodInfo *)0x0);
+          if ((pDVar4 != (Delegate *)0x0) && (iVar12 = func_?(pDVar4), iVar12 == 0)) goto code_?;
           func_?(4,TypeInfo__IPlayModeUI,pIVar3);
           if (cRam_? == '\0') {
             func_?(&TypeInfo__MVGameControllerBase);
@@ -226,16 +199,13 @@ void Assembly-CSharp.dll::TeritiaryNotificationsOffsetAdjuster::TeritiaryNotific
           pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if (pIVar3 != (IPlayModeUI *)0x0) {
             pDVar4 = (Delegate *)func_?(5,TypeInfo__IPlayModeUI,pIVar3);
-            pUVar13 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<ChatConsoleMode>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar13,(Object *)this,MethodInfo__TeritiaryNotificationsOffsetAdjuster__OnIsChatConsoleStateChange_ChatConsoleMode_,(MethodInfo *)0x0);
-            pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar4,(Delegate *)pUVar13,(MethodInfo *)0x0);
-            if (pDVar4 == (Delegate *)0x0) {
-code_?:
+            pUVar11 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<ChatConsoleMode>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(pUVar11,(Object *)this,MethodInfo__TeritiaryNotificationsOffsetAdjuster__OnIsChatConsoleStateChange_ChatConsoleMode_,(MethodInfo *)0x0);
+            pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar4,(Delegate *)pUVar11,(MethodInfo *)0x0);
+            if ((pDVar4 == (Delegate *)0x0) || (iVar12 = func_?(pDVar4), iVar12 != 0)) {
               func_?(6,TypeInfo__IPlayModeUI,pIVar3);
               return;
             }
-            iVar14 = func_?(pDVar4);
-            if (iVar14 != 0) goto code_?;
             goto code_?;
           }
         }
@@ -245,8 +215,8 @@ code_?:
   func_?();
 code_?:
   func_?(pDVar4);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

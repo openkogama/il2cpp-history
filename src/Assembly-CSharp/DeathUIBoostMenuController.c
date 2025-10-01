@@ -55,7 +55,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        cVar8 = -0x12;
+        cVar8 = '^';
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar2,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_);
         cVar9 = (char)((uint)callbackFunction >> 0x18);
         if (((char)((uint)pGVar2 >> 0x10) == '\0') || (cVar8 != '\0')) {

@@ -105,7 +105,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
                   fVar11 = (float10)func_?();
                   UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
                   pVVar12 = (Vector3 *)func_?();
-                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.5262537e-29,*pVVar12,(MethodInfo *)0x0);
+                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.5296963e-29,*pVVar12,(MethodInfo *)0x0);
                   fVar4 = pQVar7->x;
                   fVar5 = pQVar7->y;
                   fVar6 = pQVar7->z;
@@ -463,8 +463,7 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateMoveables
   if (pIVar6 != (IEnumerable_1_KeyValuePair_2_System_Object_System_Object_ *)0x0) {
     piVar7 = (int *)func_?();
     uStack_1 = 1;
-    while( true ) {
-      if (piVar7 == (int *)0x0) break;
+    while (piVar7 != (int *)0x0) {
       cVar8 = func_?();
       if (cVar8 == '\0') {
         uStack_1 = 0xffffffff;
@@ -475,16 +474,16 @@ void Assembly-CSharp.dll::MoveableController::MoveableController_UpdateMoveables
         return;
       }
       if (piVar7 == (int *)0x0) break;
-      uVar9 = 0;
-      uVar10 = *(ushort *)(*piVar7 + 0xb6);
-      if (uVar10 != 0) {
+      iVar9 = *piVar7;
+      uVar10 = 0;
+      if (*(ushort *)(iVar9 + 0xb6) != 0) {
         do {
-          if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MVMovable___Class **)(*(int *)(*piVar7 + 0x58) + (uint)uVar9 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>) {
-            puVar11 = (undefined4 *)(*piVar7 + (*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
+          if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MVMovable___Class **)(*(int *)(iVar9 + 0x58) + (uint)uVar10 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>) {
+            puVar11 = (undefined4 *)(iVar9 + (*(int *)(*(int *)(iVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
-          uVar9 = uVar9 + 1;
-        } while (uVar9 < uVar10);
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < *(ushort *)(iVar9 + 0xb6));
       }
       puVar11 = (undefined4 *)func_?();
 code_?:

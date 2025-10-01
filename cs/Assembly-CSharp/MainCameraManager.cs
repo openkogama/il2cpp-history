@@ -16,6 +16,21 @@ using UnityEngine.Rendering.PostProcessing;
 public class MainCameraManager : MonoBehaviour
 {
 	// Fields
+	public static Action<bool> OnMuteChange;
+	public static Action<bool> OnCameraEffectsChange;
+	public static Action OnCameraSettingAdded;
+	public static Action<bool> OnCameraCubeAddedRemoved;
+	public static Action<bool> OnGameCameraEffectsChange;
+	public static PostProcessingSettings CurrentPostProcessingSettings;
+	public static float DistanceToAvatarBase;
+	public static CameraType DefaultCameraType;
+	public static bool IsCameraForcedFirstPerson;
+	private static Dictionary<MVGameType, ICameraSettings> cameraSettings;
+	private static float baseVolume;
+	private static bool isMuted;
+	private static bool isTemporarilyMuted;
+	private static bool storedMuteValue;
+	private static bool gameHasCameraEffects;
 	[SerializeField]
 	private Camera mainCamera;
 	[SerializeField]
@@ -42,27 +57,14 @@ public class MainCameraManager : MonoBehaviour
 	private PostProcessVolume postProcessVolume;
 	[SerializeField]
 	public PostProcessResources postProcessResources;
-	public static PostProcessingSettings CurrentPostProcessingSettings;
-	private MVCameraController cameraController;
-	private bool isLogicRendered;
-	private static Dictionary<MVGameType, ICameraSettings> cameraSettings;
 	public Shader transparentMultiplyColor;
 	[CompilerGenerated]
-	private EventHandler<OnIgnoreInputTypesArgs> onIgnoreInputTypes;
-	private bool blueModeEnabled;
-	public static float DistanceToAvatarBase;
-	public static CameraType DefaultCameraType;
-	public static bool IsCameraForcedFirstPerson;
+	private EventHandler<OnIgnoreInputTypesArgs> OnIgnoreInputTypes;
+	private MVCameraController cameraController;
 	private ProtectedTransform protectedTransform;
-	private static float baseVolume;
-	private static bool mute;
-	private static bool gameHasCameraEffects;
+	private bool isLogicRendered;
+	private bool blueModeEnabled;
 	private bool cameraEffects;
-	public static Action<bool> OnMuteChange;
-	public static Action<bool> OnCameraEffectsChange;
-	public static Action OnCameraSettingAdded;
-	public static Action<bool> OnCameraCubeAddedRemoved;
-	public static Action<bool> OnGameCameraEffectsChange;
 	private int cullingMask;
 	private MaskMode maskMode;
 
@@ -72,10 +74,10 @@ public class MainCameraManager : MonoBehaviour
 	public float FieldOfView { get; set; }
 	public Camera MainCamera { get; }
 	public MVCameraBase CurrentCamera { get; }
-	public bool BlueModeEnabled { get; set; }
 	public ProtectedTransform ProtectedTransform { get; }
 	public Vector3 FireDirection { get; }
 	public Vector3 FireOrigin { get; }
+	public bool BlueModeEnabled { get; set; }
 	public static bool Mute { get; set; }
 	public static bool GameHasCameraEffects { get; set; }
 	public bool CameraEffects { get; set; }
@@ -86,7 +88,7 @@ public class MainCameraManager : MonoBehaviour
 	public bool IsLogicRendered { get; set; }
 
 	// Events
-	public event EventHandler<OnIgnoreInputTypesArgs> onIgnoreInputTypes {
+	public event EventHandler<OnIgnoreInputTypesArgs> OnIgnoreInputTypes {
 		add;
 		remove;
 	}
@@ -96,18 +98,14 @@ public class MainCameraManager : MonoBehaviour
 	static MainCameraManager();
 
 	// Methods
+	protected void Awake();
+	public void Init();
 	public void EnableScreenOptimizer();
-	public static void RegisterCameraWithSettings(MVGameType gameType, ICameraSettings camSettings);
-	public static void UnRegisterCameraWithSettings(MVGameType gameType);
-	public static ICameraSettings GetSettings(MVGameType gameType);
-	public static bool HasSetting(MVGameType gameType);
 	public void PlayPlingSound();
 	public void SetCameraController(MVCameraController camController);
 	public void UpdateAudioListener();
 	public bool IsCameraControllerSet();
-	protected void Awake();
 	public void IgnoreInputTypes(IgnoreInputTypes inputTypes);
-	public void Init();
 	public void UpdateCamera();
 	public void StartTransitionCam(float transitionTime = 2f, bool soft = false);
 	public void CancelTransitionCam();
@@ -115,6 +113,11 @@ public class MainCameraManager : MonoBehaviour
 	protected void OnDestroy();
 	private void HandleCameraCubeAddedRemoved(bool cubeAddedRemoved);
 	public bool ApplyPostProcessingThis(PostProcessingSettings data);
+	public static void TemporaryMute(bool muteTemporarily);
+	public static void RegisterCameraWithSettings(MVGameType gameType, ICameraSettings camSettings);
+	public static void UnRegisterCameraWithSettings(MVGameType gameType);
+	public static ICameraSettings GetSettings(MVGameType gameType);
+	public static bool HasSetting(MVGameType gameType);
 	public static bool ApplyPostProcessing(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingSettings data);
 	private static bool DoPostProcessingColor(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingColorSettings colorSettings);
 	private static bool DoPostProcessingBloom(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingBloomSettings bloomSettings);

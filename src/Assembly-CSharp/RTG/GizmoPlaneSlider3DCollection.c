@@ -71,7 +71,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     LStack_8._version = 0;
     uStack_1 = 1;
     LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
-    do {
+    while( true ) {
       do {
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
         pOVar10 = LStack_6._current;
@@ -86,21 +86,11 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
           func_?();
           cRam_? = '\x01';
         }
-        if (*(int *)((int)pOVar10 + 0x74) == 0) {
-          iVar11 = *(int *)((int)pOVar10 + 0x70);
-          if (iVar11 == 0) goto code_?;
-        }
-        else {
-          iVar11 = *(int *)((int)pOVar10 + 0x74);
-        }
+        iVar11 = *(int *)((int)pOVar10 + (uint)(*(int *)((int)pOVar10 + 0x74) != 0) * 4 + 0x70);
+        if (iVar11 == 0) goto code_?;
       } while (*(char *)(iVar11 + 0x10) == '\0');
-      if (*(int *)((int)pOVar10 + 0x74) == 0) {
-        iVar11 = *(int *)((int)pOVar10 + 0x70);
-        if (iVar11 == 0) break;
-      }
-      else {
-        iVar11 = *(int *)((int)pOVar10 + 0x74);
-      }
+      iVar11 = *(int *)((int)pOVar10 + (uint)(*(int *)((int)pOVar10 + 0x74) != 0) * 4 + 0x70);
+      if (iVar11 == 0) break;
       if (*(char *)(iVar11 + 0x10) == '\0') {
         fVar12 = 1.0;
       }
@@ -109,26 +99,20 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
         fVar12 = GizmoHandle::GizmoHandle_GetZoomFactor(*(GizmoHandle **)((int)pOVar10 + 8),camera,(MethodInfo *)0x0);
       }
       iVar11 = *(int *)((int)pOVar10 + 100);
-      if (*(int *)((int)pOVar10 + 0x74) == 0) {
-        iVar13 = *(int *)((int)pOVar10 + 0x70);
-        if (iVar13 == 0) break;
-      }
-      else {
-        iVar13 = *(int *)((int)pOVar10 + 0x74);
-      }
-      if (iVar11 == 0) break;
-      if (*(uint *)(iVar11 + 0xc) <= *(uint *)(iVar13 + 8)) goto code_?;
-      iVar11 = *(int *)(iVar11 + 0x10 + *(uint *)(iVar13 + 8) * 4);
+      iVar13 = *(int *)((int)pOVar10 + (uint)(*(int *)((int)pOVar10 + 0x74) != 0) * 4 + 0x70);
+      if ((iVar13 == 0) || (uVar14 = *(uint *)(iVar13 + 8), iVar11 == 0)) break;
+      if (*(uint *)(iVar11 + 0xc) <= uVar14) goto code_?;
+      iVar11 = *(int *)(iVar11 + 0x10 + uVar14 * 4);
       if (iVar11 == 0) break;
       func_?(1,TypeInfo__RTG__IGizmoPlaneSlider3DController,iVar11,fVar12);
-    } while( true );
+    }
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -487,18 +471,12 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
           cRam_? = '\x01';
         }
       } while (isVisible == *(bool *)((int)pOVar10 + 0x39));
-      iVar11 = *(int *)((int)pOVar10 + 100);
       *(bool *)((int)pOVar10 + 0x39) = isVisible;
-      if (*(int *)((int)pOVar10 + 0x74) == 0) {
-        iVar12 = *(int *)((int)pOVar10 + 0x70);
-        if (iVar12 == 0) goto code_?;
-      }
-      else {
-        iVar12 = *(int *)((int)pOVar10 + 0x74);
-      }
-      if (iVar11 == 0) goto code_?;
-      if (*(uint *)(iVar11 + 0xc) <= *(uint *)(iVar12 + 8)) break;
-      iVar11 = *(int *)(iVar11 + 0x10 + *(uint *)(iVar12 + 8) * 4);
+      iVar11 = *(int *)((int)pOVar10 + 100);
+      iVar12 = *(int *)((int)pOVar10 + (uint)(*(int *)((int)pOVar10 + 0x74) != 0) * 4 + 0x70);
+      if ((iVar12 == 0) || (uVar13 = *(uint *)(iVar12 + 8), iVar11 == 0)) goto code_?;
+      if (*(uint *)(iVar11 + 0xc) <= uVar13) break;
+      iVar11 = *(int *)(iVar11 + 0x10 + uVar13 * 4);
       if (iVar11 == 0) goto code_?;
       func_?(0,TypeInfo__RTG__IGizmoPlaneSlider3DController,iVar11);
     }
@@ -506,8 +484,8 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

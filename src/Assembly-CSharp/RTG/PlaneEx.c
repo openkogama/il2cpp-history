@@ -52,7 +52,7 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane
         (__return_storage_ptr__->m_Normal).x = (float)uVar14;
         (__return_storage_ptr__->m_Normal).y = (float)uVar15;
         (__return_storage_ptr__->m_Normal).z = fVar3;
-        __return_storage_ptr__->m_Distance = -((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.3844048e-29 + (float)uVar13 * fVar3);
+        __return_storage_ptr__->m_Distance = -((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.388088e-29 + (float)uVar13 * fVar3);
         return __return_storage_ptr__;
       }
       (__return_storage_ptr__->m_Normal).x = 0.0;

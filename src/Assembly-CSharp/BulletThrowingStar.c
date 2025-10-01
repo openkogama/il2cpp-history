@@ -643,8 +643,8 @@ code_?:
       fVar16 = uStack_25._4_4_ * fVar9;
       uStack_21 = CONCAT44(fStack_26 * fVar9,(undefined4)uStack_21);
       pMStack_17 = (MeshRenderer__Array *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      fVar9 = uStack_21._4_4_ * (float)pMStack_17;
       ppMStack_2 = (Material **)((float)pMStack_17 * fVar16);
+      fVar9 = (float)pMStack_17 * uStack_21._4_4_;
       fVar16 = (float)pMStack_17 * VStack_18.z;
       VStack_23.z = fVar9;
       if ((this->fields).isFalling != 0) {

@@ -56,8 +56,8 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Initi
     initialLevelData = (InitialLevelData *)(this->fields)._.xpProgress;
     if (initialLevelData != (InitialLevelData *)0x0) {
       a = (XPProgress_OnXPProgressDataDelegate *)(initialLevelData->fields).BadgeUrlData;
-      this_01 = (UnityAction_1_System_Object_ *)func_?(TypeInfo__XPProgress__OnXPProgressDataDelegate);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::UnityAction_1_System_Object___ctor(this_01,(Object *)this,MethodInfo__MVLocalPlayerRegistered__OnXPProgressDataChangeRegistered_XPProgressData_,(MethodInfo *)0x0);
+      this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?(TypeInfo__XPProgress__OnXPProgressDataDelegate);
+      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::VideoCapture+OnVideoCaptureResourceCreatedCallback::VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor(this_01,(Object *)this,MethodInfo__MVLocalPlayerRegistered__OnXPProgressDataChangeRegistered_XPProgressData_,(MethodInfo *)0x0);
       pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
       if (pDVar2 == (Delegate *)0x0) {
         (initialLevelData->fields).BadgeUrlData = (List_1_BadgeUrlData_ *)0x0;

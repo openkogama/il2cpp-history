@@ -299,7 +299,7 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint(Vector3 point,
             c_00.x = (float)__return_storage_ptr__;
             c_00.z = (float)pVVar29;
             UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor_2((Plane *)baseCenter.x,a,(Vector3)(auVar49 << 0x20),c_00,(MethodInfo *)0x0);
-            if ((float)puVar43 * fVar26 + (float)this_00 * (float)pVVar33 + fVar32 * 4.3909286e-29 + (float)pVVar24 <= epsilon._ptContainEps) {
+            if ((float)puVar43 * fVar26 + (float)this_00 * (float)pVVar33 + fVar32 * 4.3946023e-29 + (float)pVVar24 <= epsilon._ptContainEps) {
               return 1;
             }
           }

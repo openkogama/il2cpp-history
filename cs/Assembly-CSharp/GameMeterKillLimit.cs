@@ -24,7 +24,7 @@ public class GameMeterKillLimit : GameMeterKillBase
 	public override void Initialize();
 	private void OnVictoryConditionMet(object sender, EventArgs args);
 	private void OnDestroy();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
 }
 

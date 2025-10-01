@@ -424,8 +424,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff90;
-  puVar5 = &stack0xffffff90;
+  puStack_4 = &stack0xffffff94;
+  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__);
@@ -447,7 +447,7 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
   DStack_6._getEnumeratorRetType = 0;
   this_01 = (Dictionary_2_System_UInt32_System_Object_ *)AccessoryDataManager::AccessoryDataManager_GetAccessoriesCategoryMap((MethodInfo *)0x0);
   if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffff9c,this_01,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__);
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffa0,this_01,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__);
     uStack_8 = 0;
     DStack_6._dictionary = pDVar7->_dictionary;
     DStack_6._version = pDVar7->_version;

@@ -79,6 +79,7 @@ void Assembly-CSharp.dll::CubeModelingTransitionTable::CubeModelingTransitionTab
             this_00 = (pCVar7->fields)._.table;
             if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
               pDVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffff9c,(Dictionary_2_System_UInt32_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__GetEnumerator__);
+              pDStack_15 = &DStack_8;
               DStack_8._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar16->_dictionary;
               DStack_8._version = pDVar16->_version;
               DStack_8._index = pDVar16->_index;
@@ -86,7 +87,6 @@ void Assembly-CSharp.dll::CubeModelingTransitionTable::CubeModelingTransitionTab
               DStack_8._16_8_ = *(undefined8 *)&(pDVar16->_current).value;
               uStack_17 = 0;
               uStack_1 = 1;
-              pDStack_15 = &DStack_8;
               while( true ) {
                 bVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext(&DStack_8,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__MoveNext__);
                 if (bVar18 == 0) {
@@ -111,6 +111,8 @@ void Assembly-CSharp.dll::CubeModelingTransitionTable::CubeModelingTransitionTab
       }
     }
   }
+  func_?();
+code_?:
   func_?();
 code_?:
   func_?();

@@ -6,12 +6,9 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
 {
   fVar1 = i - this->zeroValue;
   if (fVar1 < 0.0) {
-    fVar2 = this->exchangeRateNegative;
+    this = (APFloatCalcZeroValueLinear *)&this->exchangeRateNegative;
   }
-  else {
-    fVar2 = this->exchangeRatePositive;
-  }
-  fVar1 = fVar1 * fVar2;
+  fVar1 = fVar1 * this->exchangeRatePositive;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
@@ -19,32 +16,32 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  dVar3 = (double)fVar1;
-  if (dVar3 < 0.0) {
-    fVar4 = (float10)func_?(dVar3,&dStack_5);
-    if ((double)fVar4 == -0.5) {
-      uVar6 = func_?();
-      if ((uVar6 & 1) != 0) {
-        return (int)(dStack_5 - 1.0);
+  dVar2 = (double)fVar1;
+  if (dVar2 < 0.0) {
+    fVar3 = (float10)func_?(dVar2,&dStack_4);
+    if ((double)fVar3 == -0.5) {
+      uVar5 = func_?();
+      if ((uVar5 & 1) != 0) {
+        return (int)(dStack_4 - 1.0);
       }
     }
     else {
-      fVar4 = (float10)func_?((double)fVar1 - 0.5);
-      dStack_5 = (double)fVar4;
+      fVar3 = (float10)func_?((double)fVar1 - 0.5);
+      dStack_4 = (double)fVar3;
     }
   }
   else {
-    fVar4 = (float10)func_?(dVar3,&dStack_5);
-    if ((double)fVar4 != 0.5) {
-      fVar4 = (float10)func_?((double)fVar1 + 0.5);
-      return (int)fVar4;
+    fVar3 = (float10)func_?(dVar2,&dStack_4);
+    if ((double)fVar3 != 0.5) {
+      fVar3 = (float10)func_?((double)fVar1 + 0.5);
+      return (int)fVar3;
     }
-    uVar6 = func_?();
-    if ((uVar6 & 1) != 0) {
-      return (int)(dStack_5 + 1.0);
+    uVar5 = func_?();
+    if ((uVar5 & 1) != 0) {
+      return (int)(dStack_4 + 1.0);
     }
   }
-  return (int)dStack_5;
+  return (int)dStack_4;
 }
 
 

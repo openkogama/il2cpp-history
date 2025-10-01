@@ -32,7 +32,7 @@ public class GameMeterRoundTime : GameMeterBase
 	// Methods
 	public override void Initialize();
 	private void OnDestroy();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
 	private void Update();
 	public override void SetShowGameMeter(bool show);

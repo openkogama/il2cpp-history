@@ -176,11 +176,11 @@ code_?:
                                       if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pMVar41 = TypeInfo__MainCameraManager->static_fields;
+                                      pPVar41 = &TypeInfo__MainCameraManager->static_fields->CurrentPostProcessingSettings;
                                       puVar42 = (undefined4 *)&stack0xffffff38;
                                       for (iVar1 = 0x2a; this_02 = pPStack_31, iVar1 != 0; iVar1 = iVar1 + -1) {
-                                        *puVar42 = *(undefined4 *)&(pMVar41->CurrentPostProcessingSettings).colorSettings;
-                                        pMVar41 = (MainCameraManager__StaticFields *)&(pMVar41->CurrentPostProcessingSettings).colorSettings.postExposure;
+                                        *puVar42 = *(undefined4 *)&pPVar41->colorSettings;
+                                        pPVar41 = (PostProcessingSettings *)&(pPVar41->colorSettings).postExposure;
                                         puVar42 = puVar42 + 1;
                                       }
                                       if ((pPStack_31 != (PostProcessLayer *)0x0) && (this_07 = (PostProcessLayer *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1((GameObject *)pPStack_31,UnityEngine__Rendering__PostProcessing__PostProcessLayer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Rendering::PostProcessing::PostProcessLayer>__), pPStack_31 = this_07, this_07 != (PostProcessLayer *)0x0)) {

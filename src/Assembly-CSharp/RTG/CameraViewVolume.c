@@ -480,7 +480,7 @@ bool Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume_CheckAABB_1(Ca
     fStack_4 = pMVar1->m12;
     fStack_5 = pMVar1->m22;
     fStack_6 = pMVar1->m32;
-    unique0x10000cb3 = pMVar1->m03;
+    unique0x10000ef3 = pMVar1->m03;
     aabb._size.x = pMVar1->m33;
     BStack_17.m_Extents.z = (float)&UNK_?;
     planes = UnityEngine.CoreModule.dll::UnityEngine::GeometryUtility::GeometryUtility_CalculateFrustumPlanes(*pMVar1,(MethodInfo *)0x0);

@@ -653,7 +653,7 @@ void Assembly-CSharp.dll::GameTierProgressBarGainEffectController::GameTierProgr
         if (this_01 != (RegexCharClass_SingleRange)0x0) {
           this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
-            func_?();
+            func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
           }
           if (this_02 != (Transform *)0x0) {
@@ -688,15 +688,35 @@ void Assembly-CSharp.dll::GameTierProgressBarGainEffectController::GameTierProgr
                 }
                 RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<GameTierProgressBarGainEffectController::TierTargetData>__get_Item_int_);
                 if (RVar6 != (RegexCharClass_SingleRange)0x0) {
-                  GamePointGainEffect::GamePointGainEffect_StartEffect((GamePointGainEffect *)this_01,*(Transform **)((int)RVar6 + 8),(this->fields).offsetDirectionXMin,(this->fields).offsetDirectionXMax,(this->fields).offsetDirectionYMin,(this->fields).offsetDirectionYMax,(MethodInfo *)0x0);
+                  fVar3 = (this->fields).offsetDirectionXMin;
+                  uVar7 = *(undefined4 *)((int)RVar6 + 8);
+                  fVar8 = (this->fields).offsetDirectionXMax;
+                  minInclusive = (this->fields).offsetDirectionYMin;
+                  maxInclusive = (this->fields).offsetDirectionYMax;
+                  *(undefined4 *)((int)this_01 + 0x30) = uVar7;
+                  func_?((int)this_01 + 0x30,uVar7);
+                  *(undefined4 *)((int)this_01 + 0x1c) = 0;
+                  fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(*(float *)((int)this_01 + 0x18),*(float *)((int)this_01 + 0x14),(MethodInfo *)0x0);
+                  *(float *)((int)this_01 + 0x20) = fVar9;
+                  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(fVar3,fVar8,(MethodInfo *)0x0);
+                  *(float *)((int)this_01 + 0x24) = fVar3;
+                  if (0.0 < fVar3) {
+                    fVar3 = fVar3 + 0.2;
+                  }
+                  else {
+                    fVar3 = fVar3 - 0.2;
+                  }
+                  *(float *)((int)this_01 + 0x24) = fVar3;
+                  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(minInclusive,maxInclusive,(MethodInfo *)0x0);
+                  *(float *)((int)this_01 + 0x28) = fVar3;
                   this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
                   if (this_03 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_03,1,(MethodInfo *)0x0);
                     pLVar1 = (this->fields).gamePointGainEffectCurrentlyUsed;
                     if (pLVar1 != (List_1_GamePointGainEffect_ *)0x0) {
                       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)pLVar1,(Object *)this_01,MethodInfo__System__Collections__Generic__List<GamePointGainEffect>__Add_GamePointGainEffect_);
-                      piVar7 = &(this->fields).gamePointsToInstantiate;
-                      *piVar7 = *piVar7 + -1;
+                      piVar10 = &(this->fields).gamePointsToInstantiate;
+                      *piVar10 = *piVar10 + -1;
                       fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
                       fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(0.1,0.2,(MethodInfo *)0x0);
                       (this->fields).createGamePointTime = fVar8 + fVar3;
@@ -712,8 +732,8 @@ void Assembly-CSharp.dll::GameTierProgressBarGainEffectController::GameTierProgr
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

@@ -60,30 +60,29 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElemen
     if (((TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase->_1).naturalAligment <= (pKVar4->klass->_1).naturalAligment) && ((pKVar4->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase)) {
       spawnRoleId = 0;
       if (pKVar4[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
-        pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffa0,(Dictionary_2_System_UInt32_System_Object_ *)pKVar4[1].klass,MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__);
+        pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffffa4,(Dictionary_2_System_UInt32_System_Object_ *)pKVar4[1].klass,MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__);
         uVar6 = *(undefined8 *)&(pDVar5->_current).value;
         uStack_1 = 1;
         while( true ) {
-          bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&stack0xffffffb8,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__);
+          bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)&stack0xffffffbc,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__);
           if (bVar7 == 0) {
             uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffb8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__,(MethodInfo *)uVar6);
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffbc,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__,(MethodInfo *)uVar6);
             *unaff_FS_OFFSET = uStack_3;
             return spawnRoleId;
           }
           if ((MethodInfo *)uVar6 == (MethodInfo *)0x0) break;
           iVar8 = func_?();
           if ((iVar8 == 0) || (piVar9 = (int *)func_?(), piVar9 == (int *)0x0)) goto code_?;
-          iVar8 = *piVar9;
           uVar10 = 0;
-          if (*(ushort *)(iVar8 + 0xb6) != 0) {
+          if (*(short *)(*piVar9 + 0xb6) != 0) {
             do {
-              if (*(IAttributeSetting__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) == TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting) {
-                puVar11 = (undefined4 *)(iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
+              if (*(IAttributeSetting__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) == TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting) {
+                puVar11 = (undefined4 *)(*piVar9 + (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
                 goto code_?;
               }
               uVar10 = uVar10 + 1;
-            } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
+            } while (uVar10 < *(ushort *)(*piVar9 + 0xb6));
           }
           puVar11 = (undefined4 *)func_?();
 code_?:
@@ -140,7 +139,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_C
       if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier2)) {
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0xd2,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,0x52,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {

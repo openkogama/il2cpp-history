@@ -218,15 +218,18 @@ code_?:
           if (bVar7 != 0) goto code_?;
           pLVar10 = pMVar8[1].fields.objectLinkRefs;
           pGVar11 = (this->fields)._._.gameObject;
-          if (((pGVar11 != (GameObject *)0x0) && (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar11,(MethodInfo *)0x0), pTVar12 != (Transform *)0x0)) && (pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc4,pTVar12,(MethodInfo *)0x0), pLVar10 != (List_1_MV_WorldObject_ObjectLink_ *)0x0)) {
-            uVar5._4_4_ = (int32_t)pLVar10;
-            uVar5._0_4_ = (Object *)&stack0xffffffb8;
-            pMVar6 = (MethodInfo *)&UNK_?;
-            UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_ClosestPointOnBounds((Vector3 *)&stack0xffffffb8,(Collider *)pLVar10,*pVVar13,(MethodInfo *)0x0);
-            pGVar11 = (this->fields)._._.gameObject;
-            if (pGVar11 != (GameObject *)0x0) {
-              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar11,(MethodInfo *)0x0);
-              if (pTVar12 != (Transform *)0x0) goto code_?;
+          if ((pGVar11 != (GameObject *)0x0) && (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar11,(MethodInfo *)0x0), pTVar12 != (Transform *)0x0)) {
+            pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc4,pTVar12,(MethodInfo *)0x0);
+            if (pLVar10 != (List_1_MV_WorldObject_ObjectLink_ *)0x0) {
+              uVar5._4_4_ = (int32_t)pLVar10;
+              uVar5._0_4_ = (Object *)&stack0xffffffb8;
+              pMVar6 = (MethodInfo *)&UNK_?;
+              UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_ClosestPointOnBounds((Vector3 *)&stack0xffffffb8,(Collider *)pLVar10,*pVVar13,(MethodInfo *)0x0);
+              pGVar11 = (this->fields)._._.gameObject;
+              if (pGVar11 != (GameObject *)0x0) {
+                pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar11,(MethodInfo *)0x0);
+                if (pTVar12 != (Transform *)0x0) goto code_?;
+              }
             }
           }
         }
@@ -398,7 +401,7 @@ void Assembly-CSharp.dll::MVSentryGun::MVSentryGun_Initialize(MVSentryGun *this,
               return;
             }
             if (*(SphereVolumeIndicator **)(iVar7 + 0x54) != (SphereVolumeIndicator *)0x0) {
-              SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(*(SphereVolumeIndicator **)(iVar7 + 0x54),1.6234711e+32,(MethodInfo *)0x0);
+              SphereVolumeIndicator::SphereVolumeIndicator_SetRadius(*(SphereVolumeIndicator **)(iVar7 + 0x54),1.6234713e+32,(MethodInfo *)0x0);
               return;
             }
           }

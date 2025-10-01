@@ -29,11 +29,11 @@ void Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_AddPostProces
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pMVar3 = TypeInfo__MainCameraManager->static_fields;
+  pPVar3 = &TypeInfo__MainCameraManager->static_fields->CurrentPostProcessingSettings;
   puVar4 = auStack_5;
   for (iVar6 = 0x2a; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar4 = *(undefined4 *)&(pMVar3->CurrentPostProcessingSettings).colorSettings;
-    pMVar3 = (MainCameraManager__StaticFields *)&(pMVar3->CurrentPostProcessingSettings).colorSettings.postExposure;
+    *puVar4 = *(undefined4 *)&pPVar3->colorSettings;
+    pPVar3 = (PostProcessingSettings *)&(pPVar3->colorSettings).postExposure;
     puVar4 = puVar4 + 1;
   }
   if (((screenshotCamObject != (GameObject *)0x0) && (this = (PostProcessLayer *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(screenshotCamObject,UnityEngine__Rendering__PostProcessing__PostProcessLayer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Rendering::PostProcessing::PostProcessLayer>__), mainCameraManager != (MainCameraManager *)0x0)) && (this != (PostProcessLayer *)0x0)) {

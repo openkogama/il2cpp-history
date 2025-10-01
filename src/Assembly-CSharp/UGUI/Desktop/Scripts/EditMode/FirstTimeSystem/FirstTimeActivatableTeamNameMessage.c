@@ -73,14 +73,15 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
 bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::FirstTimeActivatableTeamNameMessage::FirstTimeActivatableTeamNameMessage_get_CanShow(FirstTimeActivatableTeamNameMessage *this,MethodInfo *method)
 
 {
+  pFVar1 = this;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).inShopChecker;
   if (this_00 != (WorldObjectTypeInShopChecker *)0x0) {
-    bVar1 = WorldObjectTypeInShopChecker::WorldObjectTypeInShopChecker_IsItemInShop(this_00,WorldObjectType__Enum_TeamEditor,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
+    bVar2 = WorldObjectTypeInShopChecker::WorldObjectTypeInShopChecker_IsItemInShop(this_00,WorldObjectType__Enum_TeamEditor,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>);
         func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_);
@@ -88,38 +89,38 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
         func_?(&MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableTeamNameMessage___Register_b__4_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_);
         cRam_? = '\x01';
       }
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableTeamNameMessage___Register_b__4_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar2,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_);
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar3,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_);
       (this->fields)._._.isRegistered = 1;
     }
-    bVar3 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-    if (pGVar2 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar2,(MethodInfo *)0x0);
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar4 != (MVNetworkGame *)0x0) && (this_01 = (pMVar4->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
-        pLVar5 = MVTeamManager::MVTeamManager_GetTeamList(this_01,(MethodInfo *)0x0);
-        if (pLVar5 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
-          iVar6 = (pLVar5->fields)._size;
-          bVar7 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory((this->fields).inventoryButton,(MethodInfo *)0x0);
-          this._3_1_ = 0x10;
-          bVar8 = 0;
-          if (1 < iVar6) {
-            bVar8 = this._3_1_;
+    bVar4 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+    if (pGVar3 != (GameObject *)0x0) {
+      bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar3,(MethodInfo *)0x0);
+      this = (FirstTimeActivatableTeamNameMessage *)((uint)bVar5 << 0x18);
+      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)this);
+      if ((pMVar6 != (MVNetworkGame *)0x0) && (this_01 = (pMVar6->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
+        pLVar7 = MVTeamManager::MVTeamManager_GetTeamList(this_01,(MethodInfo *)0x0);
+        if (pLVar7 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
+          iVar8 = (pLVar7->fields)._size;
+          bVar9 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory((pFVar1->fields).inventoryButton,(MethodInfo *)0x0);
+          bVar10 = 0;
+          if (1 < iVar8) {
+            bVar10 = bVar5;
           }
-          return bVar7 & bVar8 & (bVar3 ^ 1) & bVar1;
+          return bVar9 & bVar10 & (bVar4 ^ 1) & bVar2;
         }
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar1 = (*pcVar9)();
-  return bVar1;
+  pcVar11 = (code *)swi(3);
+  bVar2 = (*pcVar11)();
+  return bVar2;
 }
 

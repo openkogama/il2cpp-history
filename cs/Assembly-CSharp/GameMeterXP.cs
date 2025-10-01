@@ -27,7 +27,7 @@ public class GameMeterXP : GameMeterBase
 	// Methods
 	public override void Initialize();
 	private void Init();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
 	private void Update();
 	private void OnProgressUpdate(XPProgressData xpProgress);

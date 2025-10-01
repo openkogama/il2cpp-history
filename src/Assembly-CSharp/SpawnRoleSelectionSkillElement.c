@@ -170,8 +170,8 @@ code_?:
           if (((skillSetting->klass->_1).naturalAligment < (TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat->_1).naturalAligment) || ((skillSetting->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat)) goto code_?;
           if ((skillSetting[1].klass == (KogamaSettingValueWrapperBase__Class *)0x0) || (iVar5 = ((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex, iVar5 == 0)) break;
           pIStack_1 = *(IAttributeSetting__Class **)(iVar5 + 0xc);
-          iVar5 = ((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex;
-          if ((iVar5 == 0) || (skillDataManager = *(SpawnRolesSkillDataManager **)(iVar5 + 8), unaff_EDI == (IAttributeSetting__Class *)0x0)) break;
+          skillDataManager = *(SpawnRolesSkillDataManager **)(((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex + 8);
+          if (unaff_EDI == (IAttributeSetting__Class *)0x0) break;
           pSVar25 = TypeInfo__System__Single;
           if ((Il2CppClass *)((unaff_EDI->_0).image)->codeGenModule != (TypeInfo__System__Single->_0).element_class) goto code_?;
           pfVar26 = (float *)func_?(unaff_EDI);
@@ -195,8 +195,8 @@ code_?:
         if (((skillSetting->klass->_1).naturalAligment < (TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt->_1).naturalAligment) || ((skillSetting->klass->_1).typeHierarchy[(TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt)) goto code_?;
         if ((skillSetting[1].klass == (KogamaSettingValueWrapperBase__Class *)0x0) || (pIVar29 = ((skillSetting[1].klass)->_0).byval_arg.data.array, pIVar29 == (Il2CppArrayType *)0x0)) break;
         pIStack_24 = (IAttributeSetting__Class *)(float)(int)pIVar29->lobounds;
-        pIVar29 = ((skillSetting[1].klass)->_0).byval_arg.data.array;
-        if ((pIVar29 == (Il2CppArrayType *)0x0) || (skillDataManager = (SpawnRolesSkillDataManager *)(float)(int)pIVar29->sizes, unaff_EDI == (IAttributeSetting__Class *)0x0)) break;
+        skillDataManager = (SpawnRolesSkillDataManager *)(float)(int)(((skillSetting[1].klass)->_0).byval_arg.data.array)->sizes;
+        if (unaff_EDI == (IAttributeSetting__Class *)0x0) break;
         pSVar25 = (Single__Class *)TypeInfo__System__Int32;
         if ((Il2CppClass *)((unaff_EDI->_0).image)->codeGenModule != (TypeInfo__System__Int32->_0).element_class) goto code_?;
         piVar30 = (int *)func_?(unaff_EDI);
@@ -310,7 +310,7 @@ code_?:
   }
 code_?:
   func_?();
-  pSVar25 = extraout_ECX;
+  pSVar25 = (Single__Class *)extraout_ECX;
 code_?:
   func_?(unaff_EDI,pSVar25);
   pAVar23 = extraout_EDX;

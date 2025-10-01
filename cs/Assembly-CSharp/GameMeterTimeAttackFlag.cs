@@ -28,10 +28,8 @@ public class GameMeterTimeAttackFlag : GameMeterBase
 	// Methods
 	public override void Initialize();
 	private void Update();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
-	private void Hide();
-	private void Show();
 	public override void SetShowGameMeter(bool show);
 	private void OnStartFlagCountdown();
 	private void OnStartFlagCountdown(int captureTime);

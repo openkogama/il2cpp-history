@@ -81,7 +81,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
         func_?(&TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
         cRam_? = '\x01';
       }
-      a = (pMVar1->fields).onIgnoreInputTypes;
+      a = (pMVar1->fields).OnIgnoreInputTypes;
       do {
         pEVar3 = a;
         unaff_EDI = (MainCameraManager *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
@@ -91,7 +91,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
           iVar5 = func_?(unaff_EDI,TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
           if (iVar5 == 0) goto code_?;
         }
-        a = (EventHandler_1_OnIgnoreInputTypesArgs_ *)func_?(&(pMVar1->fields).onIgnoreInputTypes,iVar5,a);
+        a = (EventHandler_1_OnIgnoreInputTypesArgs_ *)func_?(&(pMVar1->fields).OnIgnoreInputTypes,iVar5,a);
       } while (a != pEVar3);
       pMVar2 = MVCameraController_CameraStack_get_CurCamera(this,(MethodInfo *)0x0);
       if (pMVar2 != (MVCameraBase *)0x0) {
@@ -181,7 +181,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
       this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)RVar3,MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_,(MethodInfo *)0x0);
       if (this_00 == (MainCameraManager *)0x0) break;
-      MainCameraManager::MainCameraManager_remove_onIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
+      MainCameraManager::MainCameraManager_remove_OnIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
       pLVar1 = (this->fields).activeCameras;
       if (pLVar1 == (List_1_MVCameraBase_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<MVCameraBase>__RemoveAt_int_);
@@ -283,7 +283,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
       this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)RVar3,MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_,(MethodInfo *)0x0);
       if (this_00 == (MainCameraManager *)0x0) break;
-      MainCameraManager::MainCameraManager_remove_onIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
+      MainCameraManager::MainCameraManager_remove_OnIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
       pLVar1 = (this->fields).activeCameras;
       if (pLVar1 == (List_1_MVCameraBase_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<MVCameraBase>__RemoveAt_int_);
@@ -488,14 +488,14 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
       this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)object,MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_,(MethodInfo *)0x0);
       if (this_00 != (MainCameraManager *)0x0) {
-        MainCameraManager::MainCameraManager_remove_onIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
+        MainCameraManager::MainCameraManager_remove_OnIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
         pLVar1 = (this->fields).activeCameras;
         if (pLVar1 != (List_1_MVCameraBase_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<MVCameraBase>__RemoveAt_int_);
           if (index != iVar2) {
             return;
           }
-          if (index < 1) {
+          if (index == 0) {
             return;
           }
           pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).activeCameras;
@@ -569,7 +569,7 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
       this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)RVar3,MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_,(MethodInfo *)0x0);
       if (this_00 == (MainCameraManager *)0x0) break;
-      MainCameraManager::MainCameraManager_remove_onIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
+      MainCameraManager::MainCameraManager_remove_OnIgnoreInputTypes(this_00,(EventHandler_1_OnIgnoreInputTypesArgs_ *)this_01,(MethodInfo *)0x0);
       pLVar1 = (this->fields).activeCameras;
       if (pLVar1 == (List_1_MVCameraBase_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__RemoveAt((List_1_System_Object_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<MVCameraBase>__RemoveAt_int_);

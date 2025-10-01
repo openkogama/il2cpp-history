@@ -119,7 +119,7 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::DefaultSpawnRoleSele
   if (this_02 != (MVNetworkGame *)0x0) {
     iVar5 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_02,(MethodInfo *)0x0);
     if ((*(int *)(in_stack_2 + 0x3c) != 0) && (this_00 = *(BoneAnimation **)(*(int *)(in_stack_2 + 0x3c) + 0x18), this_00 != (BoneAnimation *)0x0)) {
-      BoneAnimation::BoneAnimation_StartAnimation(this_00,StringLiteral_Idle,(iVar5 + -500) - iVar4,(MethodInfo *)0x0);
+      BoneAnimation::BoneAnimation_StartAnimation(this_00,StringLiteral_Idle,iVar5 + (-500 - iVar4),(MethodInfo *)0x0);
       return;
     }
   }

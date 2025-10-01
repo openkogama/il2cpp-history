@@ -35,6 +35,15 @@ public class BrowserComm : MonoBehaviour
 		public JsonGoldUpdateData();
 	}
 
+	private class JsonMuteData
+	{
+		// Fields
+		public bool muteState;
+
+		// Constructors
+		public JsonMuteData();
+	}
+
 	private class JsonReturnData
 	{
 		// Fields
@@ -103,6 +112,7 @@ public class BrowserComm : MonoBehaviour
 	public void PublishPlanetFromWeb();
 	public void GiveBrowserInfo(string browserinfo);
 	public void UserGoldUpdate(string data);
+	public void SetMute(string data);
 	public void ExternalCallback(string jsonData);
 	public void Exit();
 }
