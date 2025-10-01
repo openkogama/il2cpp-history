@@ -470,15 +470,15 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
             fVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                      ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
             pAVar3 = (this->fields).ghostBehaviour;
+            fVar16 = (_UNK_? / fVar16) * fStack_2 * _UNK_?;
             pFVar1 = (this->fields).patrolPattern;
-            fStack_8 = (_UNK_? / fVar16) * fStack_2 * _UNK_?;
             if (pAVar3 != (AdvancedGhostBehaviour *)0x0) {
               fStack_2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                          ObscuredFloat::ObscuredFloat_op_Implicit_1
                                    ((pAVar3->fields).speed,(MethodInfo *)0x0);
               pAVar3 = (this->fields).ghostBehaviour;
               if (pAVar3 != (AdvancedGhostBehaviour *)0x0) {
-                fVar16 = (pAVar3->fields).radius;
+                fVar17 = (pAVar3->fields).radius;
                 pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                    ((Component *)pAVar3,(MethodInfo *)0x0);
                 if (pTVar9 != (Transform *)0x0) {
@@ -489,10 +489,10 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
                     puVar13 = (undefined8 *)
                              (*(pFVar1->fields)._._.invoke_impl)
                                        (&AStack_5,(pFVar1->fields)._._.method_code,
-                                        (int)fStack_8 + iVar4,fStack_2,fVar16,pTVar9,
+                                        (int)fVar16 + iVar4,fStack_2,fVar17,pTVar9,
                                         (pFVar1->fields)._._.method);
                     _pBStack_18 = *puVar13;
-                    pIStack_17 = (Il2CppArrayBounds *)(*(float *)(puVar13 + 1) - fVar7);
+                    pIStack_18 = (Il2CppArrayBounds *)(*(float *)(puVar13 + 1) - fVar7);
                     puVar13 = (undefined8 *)func_?(&AStack_5,&stack0xffffffdc,0);
                     uVar14 = *puVar13;
                     fVar7 = *(float *)(puVar13 + 1);
@@ -510,8 +510,8 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

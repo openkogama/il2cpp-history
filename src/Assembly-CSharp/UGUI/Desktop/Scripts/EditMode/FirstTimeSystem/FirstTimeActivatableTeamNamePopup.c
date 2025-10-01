@@ -348,8 +348,12 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                         (this_00,WorldObjectType__Enum_TeamEditor,(MethodInfo *)0x0);
       if (bVar1 == 0) {
         if (cRam_? == '\0') {
-          func_?(0x16b0);
-          func_?(0xb8);
+          func_?(&
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
+                         );
+          func_?(&
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IFirstTimeElementActivator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>_
+                         );
           func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
           func_?(&
                           MethodInfo__UGUI__Desktop__Scripts__EditMode__FirstTimeSystem__FirstTimeActivatableTeamNamePopup___Register_b__13_0_UnityEngine__EventSystems__IFirstTimeElementActivator__UnityEngine__EventSystems__BaseEventData_
@@ -360,8 +364,8 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction =
              (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?((short)
-                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IFirstTimeElementActivator>
                             );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
@@ -378,38 +382,38 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
                   );
         (this->fields)._.isRegistered = 1;
       }
-      bVar1 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
+      bVar3 = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked
                         ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-      bVar3 = 0;
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)((uint)bVar1 << 0x18));
+                         ((Component *)this,(MethodInfo *)0x0);
       if (pGVar2 != (GameObject *)0x0) {
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_get_activeInHierarchy(pGVar2,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                  (pGVar2,(MethodInfo *)0x0);
         this_01 = (this->fields).slots;
         if (this_01 != (InventorySlots *)0x0) {
           this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)this_01,(MethodInfo *)0x0);
           if (this_03 != (Transform *)0x0) {
-            iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+            iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                               (this_03,(MethodInfo *)0x0);
-            pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar6 != (MVNetworkGame *)0x0) &&
-               (this_02 = (pMVar6->fields).teamManager, this_02 != (MVTeamManager *)0x0)) {
-              pLVar7 = MVTeamManager::MVTeamManager_GetTeamList(this_02,(MethodInfo *)0x0);
-              if (pLVar7 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
-                iVar8 = (pLVar7->fields)._size;
-                bVar9 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
+            pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar5 != (MVNetworkGame *)0x0) &&
+               (this_02 = (pMVar5->fields).teamManager, this_02 != (MVTeamManager *)0x0)) {
+              pLVar6 = MVTeamManager::MVTeamManager_GetTeamList(this_02,(MethodInfo *)0x0);
+              if (pLVar6 != (List_1_MV_WorldObject_MVTeam_ *)0x0) {
+                iVar7 = (pLVar6->fields)._size;
+                bVar8 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory
                                   ((this->fields).insideInventory,(MethodInfo *)0x0);
+                bVar9 = 0;
+                if (1 < iVar7) {
+                  bVar9 = bVar8 & (bVar3 ^ 1);
+                }
+                this._3_1_ = 0x10;
                 bVar10 = 0;
-                if (0 < iVar5) {
-                  bVar10 = bVar9;
+                if (0 < iVar4) {
+                  bVar10 = this._3_1_;
                 }
-                bVar11 = 0;
-                if (1 < iVar8) {
-                  bVar11 = bVar4;
-                }
-                return bVar10 & bVar11 & (bVar1 ^ 1) & bVar3;
+                return bVar9 & bVar10 & bVar1;
               }
             }
           }
@@ -417,8 +421,8 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
       }
     }
     func_?();
-    pcVar12 = (code *)swi(3);
-    bVar1 = (*pcVar12)();
+    pcVar11 = (code *)swi(3);
+    bVar1 = (*pcVar11)();
     return bVar1;
   }
   return 0;

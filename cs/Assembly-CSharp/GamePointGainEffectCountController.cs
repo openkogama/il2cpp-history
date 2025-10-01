@@ -57,8 +57,5 @@ public class GamePointGainEffectCountController : MonoBehaviour
 	private void Start();
 	private void Update();
 	private void UpdateGamePointAmountTextEffect();
-	private void HandleSlideState();
-	private void HandleSlideIn();
-	private void HandleSlideOut();
 }
 

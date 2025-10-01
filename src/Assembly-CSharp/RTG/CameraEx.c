@@ -20,26 +20,25 @@ AABB * Assembly-CSharp.dll::RTG::CameraEx::CameraEx_CalculateFrustumAABB
     }
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
                        (camera,(MethodInfo *)0x0);
-    fVar3 = fVar2 * _UNK_? * _UNK_?;
+    dVar3 = (double)(fVar2 * _UNK_? * _UNK_?);
+    func_?();
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_aspect
                        (camera,(MethodInfo *)0x0);
-    dVar4 = (double)fVar3;
-    func_?();
-    fVar2 = (float)dVar4 * (fVar1 + fVar1) * fVar2;
+    fVar2 = fVar2 * (fVar1 + fVar1) * (float)dVar3;
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
                        (camera,(MethodInfo *)0x0);
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
                        (camera,(MethodInfo *)0x0);
-    dVar4 = (double)(fVar3 * _UNK_? * _UNK_?);
+    dVar3 = (double)(fVar4 * _UNK_? * _UNK_?);
     VStack_5.z = (float)&UNK_?;
     func_?();
-    fVar1 = (float)dVar4 * (fVar1 + fVar1);
+    fVar1 = (float)dVar3 * (fVar1 + fVar1);
     if (this != (Transform *)0x0) {
       pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                           (&VStack_5,this,(MethodInfo *)0x0);
       uVar7 = pVVar6->x;
       uVar8 = pVVar6->y;
-      fVar3 = pVVar6->z;
+      fVar4 = pVVar6->z;
       pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
                           ((Vector3 *)&stack0xffffffac,this,(MethodInfo *)0x0);
       VStack_5.x = pVVar6->x;
@@ -100,7 +99,7 @@ AABB * Assembly-CSharp.dll::RTG::CameraEx::CameraEx_CalculateFrustumAABB
             *(IEnumerable_1_UnityEngine_Vector3_ *)&pointCloud[3].monitor = IStack_20;
             IStack_20.monitor = pMVar28;
             IStack_20.klass = pIVar29;
-            pointCloud[4].monitor = (MonitorData *)(((fVar3 + fVar9) - fVar16) + fVar19);
+            pointCloud[4].monitor = (MonitorData *)(((fVar4 + fVar9) - fVar16) + fVar19);
             if ((MonitorData *)0x2 < pointCloud[1].monitor) {
               pointCloud[5] = IStack_20;
               IStack_20.monitor = (MonitorData *)fVar1;
@@ -755,17 +754,16 @@ float Assembly-CSharp.dll::RTG::CameraEx::CameraEx_GetFrustumWidthFromDistance
   if (camera != (Camera *)0x0) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
                       (camera,(MethodInfo *)0x0);
-    fVar1 = fVar1 * _UNK_? * _UNK_?;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_aspect
-                      (camera,(MethodInfo *)0x0);
-    dVar3 = (double)fVar1;
+    dVar2 = (double)(fVar1 * _UNK_? * _UNK_?);
     func_?();
-    return (float)dVar3 * (distance + distance) * fVar2;
+    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_aspect
+                      (camera,(MethodInfo *)0x0);
+    return (distance + distance) * (float)dVar2 * fVar1;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  pcVar3 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar3)();
+  return (float)fVar4;
 }
 
 
@@ -1056,11 +1054,11 @@ void Assembly-CSharp.dll::RTG::CameraEx::CameraEx_GetVisibleObjects
             if (this == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
             goto code_?;
             pLVar22 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                               (&LStack_13,this,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                               );
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                                (&LStack_13,this,
+                                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                                );
             VStack_15._4_8_ = ZEXT48(&LStack_6) << 0x20;
             LStack_6._list = (List_1_System_Object_ *)pLVar22->_list;
             LStack_6._index = pLVar22->_index;
@@ -1069,10 +1067,10 @@ void Assembly-CSharp.dll::RTG::CameraEx::CameraEx_GetVisibleObjects
             uStack_1 = 1;
             while( true ) {
               bVar23 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                      Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                (&LStack_6,
-                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                );
+                       Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                 (&LStack_6,
+                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                                 );
               gameObject = LStack_6._current;
               if (bVar23 == 0) break;
               if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
@@ -1083,8 +1081,8 @@ void Assembly-CSharp.dll::RTG::CameraEx::CameraEx_GetVisibleObjects
               queryConfig.NoVolumeSize.y = (float)(int)((ulonglong)uVar20 >> 0x20);
               queryConfig.NoVolumeSize.z = (float)pMVar21;
               pAVar24 = ObjectBounds::ObjectBounds_CalcWorldAABB
-                                 ((AABB *)&stack0xffffff84,(GameObject *)gameObject,queryConfig,
-                                  (MethodInfo *)0x0);
+                                  ((AABB *)&stack0xffffff84,(GameObject *)gameObject,queryConfig,
+                                   (MethodInfo *)0x0);
               LStack_13._list =
                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                    (pAVar24->_center).x;
@@ -1093,8 +1091,21 @@ void Assembly-CSharp.dll::RTG::CameraEx::CameraEx_GetVisibleObjects
               LStack_13._version = (int32_t)(pAVar24->_center).z;
               if ((char)LStack_13._current.First != '\0') {
                 in_stack_25 = (MethodInfo *)(pAVar24->_size).y;
+                uVar26 = (pAVar24->_size).x;
+                uVar27 = (pAVar24->_size).y;
+                uVar28 = (pAVar24->_size).z;
+                aabb._size.z = (float)uVar28;
+                aabb._size.y = (float)uVar27;
+                aabb._size.x = (float)uVar26;
+                uVar29 = (pAVar24->_center).x;
+                uVar30 = (pAVar24->_center).y;
+                uVar31 = (pAVar24->_center).z;
+                aabb._center.z = (float)uVar31;
+                aabb._center.y = (float)uVar30;
+                aabb._center.x = (float)uVar29;
+                aabb._24_4_ = LStack_13._current;
                 bVar23 = CameraViewVolume::CameraViewVolume_CheckAABB
-                                  (viewVolume,*pAVar24,(MethodInfo *)0x0);
+                                   (viewVolume,aabb,(MethodInfo *)0x0);
                 if (bVar23 != 0) {
                   uVar20 = CONCAT44(gameObject,visibleObjects);
                   pMVar21 = 
@@ -1122,10 +1133,10 @@ void Assembly-CSharp.dll::RTG::CameraEx::CameraEx_GetVisibleObjects
     }
   }
 code_?:
-  uVar26 = func_?();
-  func_?(uVar26);
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  uVar32 = func_?();
+  func_?(uVar32);
+  pcVar33 = (code *)swi(3);
+  (*pcVar33)();
   return;
 }
 

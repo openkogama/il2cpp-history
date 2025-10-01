@@ -643,8 +643,8 @@ float Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ComputeObjec
   uVar11 = pVVar10->x;
   uVar12 = pVVar10->y;
   fVar6 = pVVar10->z * _UNK_?;
-  return (float)uVar11 * _UNK_? * (float)uVar11 * _UNK_? +
-         (float)uVar12 * _UNK_? * (float)uVar12 * _UNK_? + fVar6 * fVar6;
+  return (float)uVar12 * _UNK_? * (float)uVar12 * _UNK_? +
+         (float)uVar11 * _UNK_? * (float)uVar11 * _UNK_? + fVar6 * fVar6;
 }
 
 
@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.5361416e-29;
-              value.x = (float)uVar4 * 4.5361416e-29;
-              value.z = (pVVar3->oneVector).z * 4.5361416e-29;
+              value.y = (float)uVar5 * 4.5408938e-29;
+              value.x = (float)uVar4 * 4.5408938e-29;
+              value.z = (pVVar3->oneVector).z * 4.5408938e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1497,24 +1497,25 @@ code_?:
                          (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
      pMVar2 == (MVWorldObjectClient *)0x0)) {
     bVar3 = 0;
-    func_?();
-    piVar4 = &(this->fields)._.itemId;
-    bVar5 = (char)*piVar4 + extraout_AH;
-    bVar6 = CARRY1((byte)*piVar4,extraout_AH) || CARRY1(bVar5,bVar3);
-    *(byte *)piVar4 = bVar5 + bVar3;
-    piVar4 = &(this->fields)._.itemId;
-    iVar7 = *piVar4;
-    bVar5 = (char)*piVar4 + extraout_AH;
-    *(byte *)piVar4 = bVar5 + bVar6;
-    piVar4 = &(this->fields)._.itemId;
-    *(byte *)piVar4 =
-         (char)*piVar4 + extraout_AH + (CARRY1((byte)iVar7,extraout_AH) || CARRY1(bVar5,bVar6));
-    pcVar8 = (code *)swi(3);
-    pMVar2 = (MVWorldObjectClient *)(*pcVar8)();
+    iVar4 = func_?();
+    LOCK();
+    *(undefined1 *)((int)&(this->fields)._.OnInputLinkChanged + 2) = extraout_CL;
+    UNLOCK();
+    pbVar5 = (byte *)(iVar4 + 0x4e);
+    bVar6 = *pbVar5;
+    bVar7 = *pbVar5;
+    *pbVar5 = bVar7 + extraout_DL + bVar3;
+    pcVar8 = (char *)((int)&this[-0x3d8dc0].fields._.scale.y + 2);
+    *pcVar8 = *pcVar8 + (char)iVar4 +
+              (CARRY1(in_stack_9,extraout_DL) ||
+              CARRY1(in_stack_9 + extraout_DL,
+                     CARRY1(bVar6,extraout_DL) || CARRY1(bVar7 + extraout_DL,bVar3)));
+    pcVar10 = (code *)swi(3);
+    pMVar2 = (MVWorldObjectClient *)(*pcVar10)();
     return pMVar2;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_9;
+  unaff_EBP = in_stack_11;
   unaff_ESI = pMVar1;
   this = pMVar2;
   goto code_?;

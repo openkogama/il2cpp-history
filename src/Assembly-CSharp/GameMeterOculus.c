@@ -89,9 +89,9 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_OnVictoryConditionMet
 }
 
 
-/* Void SetGameMeterVisibility() */
+/* Boolean SetGameMeterVisibility() */
 
-void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_SetGameMeterVisibility
+bool Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_SetGameMeterVisibility
                (GameMeterOculus *this,MethodInfo *method)
 
 {
@@ -115,29 +115,18 @@ void Assembly-CSharp.dll::GameMeterOculus::GameMeterOculus_SetGameMeterVisibilit
     func_?(&(this->fields).oculusClient,pOVar2);
     bVar3 = WinningConditionControl::WinningConditionControl_IsWinConditionPresent
                       (WinningConditionType__Enum_Oculus,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,0,(MethodInfo *)0x0);
-        return;
-      }
-    }
-    else {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,1,(MethodInfo *)0x0);
-        return;
-      }
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_01,0,(MethodInfo *)0x0);
+      return bVar3;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
+  pcVar4 = (code *)swi(3);
+  bVar3 = (*pcVar4)();
+  return bVar3;
 }
 
 

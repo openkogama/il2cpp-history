@@ -17,8 +17,8 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
   if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
-  str0 = StringLiteral_Would_have_sent_function__;
-  pSVar3 = StringLiteral___to_JSBridge_with_args__;
+  str2 = StringLiteral___to_JSBridge_with_args__;
+  pSVar3 = StringLiteral_Would_have_sent_function__;
   if (TypeInfo__BrowserComm->static_fields->enableExternalCall == 0) {
     if (args == (Object__Array *)0x0) {
       str3 = (String *)0x0;
@@ -28,7 +28,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
              (**(code **)&args->klass[1]._0.this_arg.attrs)(args,args->klass[1]._0.element_class);
     }
     pSVar3 = mscorlib.dll::System::String::String_Concat_5
-                       (str0,functionName,pSVar3,str3,(MethodInfo *)0x0);
+                       (pSVar3,functionName,str2,str3,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -142,8 +142,8 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
   if ((TypeInfo__BrowserComm->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm);
   }
-  pSVar1 = StringLiteral_Would_have_sent_function__;
-  pSVar2 = StringLiteral___to_JSBridge_with_callback__;
+  pSVar1 = StringLiteral___to_JSBridge_with_callback__;
+  pSVar2 = StringLiteral_Would_have_sent_function__;
   if (TypeInfo__BrowserComm->static_fields->enableExternalCall == 0) {
     if (callback == (Action_2_Boolean_String_ *)0x0) {
       str3 = (String *)0x0;
@@ -154,7 +154,7 @@ void Assembly-CSharp.dll::BrowserComm+ToJavaScript::BrowserComm_ToJavaScript_Ext
                        (callback,(callback->klass->vtable).Clone.methodPtr);
     }
     pSVar2 = mscorlib.dll::System::String::String_Concat_5
-                       (pSVar1,functionName,pSVar2,str3,(MethodInfo *)0x0);
+                       (pSVar2,functionName,pSVar1,str3,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }

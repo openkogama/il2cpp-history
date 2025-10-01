@@ -43,17 +43,17 @@ ObscuredPrefs_ConstructByteArray(uint8_t value,int32_t length,MethodInfo *method
     cRam_? = '\x01';
   }
   pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,length);
+  uVar2 = 0;
   if (0 < length) {
-    uVar2 = 0;
-    if (pBVar1 == (Byte__Array *)0x0) {
-      func_?();
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      pBVar1 = (Byte__Array *)(*pcVar3)();
-      return pBVar1;
-    }
     do {
+      if (pBVar1 == (Byte__Array *)0x0) {
+        func_?();
+code_?:
+        func_?();
+        pcVar3 = (code *)swi(3);
+        pBVar1 = (Byte__Array *)(*pcVar3)();
+        return pBVar1;
+      }
       if (pBVar1->max_length <= uVar2) goto code_?;
       pBVar1->vector[uVar2] = value;
       uVar2 = uVar2 + 1;
@@ -520,26 +520,26 @@ code_?:
       }
       if (pBVar12->max_length != 0x10) goto code_?;
       pIVar9 = (Int32__Array *)func_?();
-      startIndex = 0;
+      uVar1 = 0;
       while( true ) {
         uVar14 = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
-                          (pBVar12,startIndex,(MethodInfo *)0x0);
+                          (pBVar12,uVar1,(MethodInfo *)0x0);
         if (pIVar9 == (Int32__Array *)0x0) break;
-        uVar1 = (int)(startIndex + (startIndex >> 0x1f & 3U)) >> 2;
-        if (pIVar9->max_length <= uVar1) goto code_?;
-        startIndex = startIndex + 4;
-        pIVar9->vector[uVar1] = uVar14;
-        if (0xf < startIndex) {
-          iVar15 = 0;
+        uVar15 = uVar1 >> 2;
+        if (pIVar9->max_length <= uVar15) goto code_?;
+        uVar1 = uVar1 + 4;
+        pIVar9->vector[uVar15] = uVar14;
+        if (0xf < (int)uVar1) {
           iVar16 = 0;
           iVar17 = 0;
           iVar18 = 0;
+          iVar19 = 0;
           mscorlib.dll::System::Decimal::Decimal__ctor_6
                     ((Decimal *)&stack0xffffffd8,pIVar9,(MethodInfo *)0x0);
-          __return_storage_ptr__->flags = iVar15;
-          __return_storage_ptr__->hi = iVar16;
-          __return_storage_ptr__->lo = iVar17;
-          __return_storage_ptr__->mid = iVar18;
+          __return_storage_ptr__->flags = iVar16;
+          __return_storage_ptr__->hi = iVar17;
+          __return_storage_ptr__->lo = iVar18;
+          __return_storage_ptr__->mid = iVar19;
           return __return_storage_ptr__;
         }
       }
@@ -555,9 +555,9 @@ code_?:
   mscorlib.dll::System::Exception::Exception__ctor_1(this_00,register0x00000000,method_00);
   func_?();
   func_?();
-  pcVar19 = (code *)swi(3);
-  pDVar20 = (Decimal *)(*pcVar19)();
-  return pDVar20;
+  pcVar20 = (code *)swi(3);
+  pDVar21 = (Decimal *)(*pcVar20)();
+  return pDVar21;
 code_?:
   func_?();
   goto code_?;
@@ -2102,10 +2102,10 @@ code_?:
   }
   iVar3 = (key->fields)._stringLength;
   pBVar2 = (Byte__Array *)func_?(TypeInfo__System__Byte,dataLength);
+  uVar4 = 0;
   if (0 < dataLength) {
-    uVar4 = 0;
-    if (bytes == (Byte__Array *)0x0) goto code_?;
     do {
+      if (bytes == (Byte__Array *)0x0) goto code_?;
       if (bytes->max_length <= uVar4) goto code_?;
       bVar5 = bytes->vector[uVar4];
       uVar6 = mscorlib.dll::System::String::String_get_Chars
@@ -2608,11 +2608,7 @@ ObscuredPrefs_GetByteArray(String *key,MethodInfo *method)
       == 0) {
     func_?();
   }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pBVar3 = (Byte__Array *)func_?();
+  pBVar3 = ObscuredPrefs_ConstructByteArray(0,0,(MethodInfo *)0x0);
   return pBVar3;
 }
 

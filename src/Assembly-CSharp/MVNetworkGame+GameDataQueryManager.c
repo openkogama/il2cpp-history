@@ -67,7 +67,7 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
               ((BytePacker *)pOVar5,value_00,(MethodInfo *)0x0);
     pOVar5 = pOVar4[1].klass;
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
-    queryDataLeft = 0x48;
+    queryDataLeft = 0xf8;
     MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_set_Position
               ((BytePacker *)value[1].klass,0,(MethodInfo *)0x0);
     if (value[1].klass == (Object__Class *)0x0) goto code_?;
@@ -136,7 +136,7 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
                           (gameDataQuery,(MethodInfo *)0x0);
     iVar2 = (gameDataQuery->fields).instigatorActorNumber;
     unaff_EBX = (ReceivedItemFromQueryEventArgs *)func_?();
-    puStackY_38 = &UNK_?;
+    uStackY_38 = &UNK_?;
     ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
               (unaff_EBX,(BytePacker *)unaff_EDI,iVar2,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -169,13 +169,12 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
         ;
         pEVar5 = mscorlib.dll::System::Text::Encoding::Encoding_get_ASCII((MethodInfo *)0x0);
         if (pEVar5 != (Encoding *)0x0) {
-          this = (MVNetworkGame_GameDataQueryManager *)
-                 (pEVar5->klass->vtable).GetString_1.methodPtr;
+          this = (MVNetworkGame_GameDataQueryManager *)(pEVar5->klass->vtable).GetString_1.methodPtr
+          ;
           (*(code *)(pEVar5->klass->vtable).GetString.method)();
           pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar1 != (MVNetworkGame *)0x0) &&
-             (pAVar6 = (pMVar1->fields).ReceivedAccessoryData, pAVar6 != (Action_1_String_ *)0x0))
-          {
+             (pAVar6 = (pMVar1->fields).ReceivedAccessoryData, pAVar6 != (Action_1_String_ *)0x0)) {
             (*(pAVar6->fields)._._.invoke_impl)();
             return;
           }
@@ -196,7 +195,7 @@ void Assembly-CSharp.dll::MVNetworkGame+GameDataQueryManager::
                           (gameDataQuery,(MethodInfo *)0x0);
     iVar2 = (gameDataQuery->fields).instigatorActorNumber;
     unaff_EBX = (ReceivedItemFromQueryEventArgs *)func_?();
-    puStackY_38 = &UNK_?;
+    uStackY_38 = &UNK_?;
     ReceivedItemFromQueryEventArgs::ReceivedItemFromQueryEventArgs__ctor
               (unaff_EBX,(BytePacker *)unaff_EDI,iVar2,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -212,19 +211,37 @@ code_?:
     return;
   }
 code_?:
-  bVar7 = 0;
-  func_?();
-  piVar8 = (int *)((int)&unaff_EDI[-0x37c877d].monitor + 1);
-  *piVar8 = *piVar8 + -1;
-  pbVar9 = &stack0x3910658c + in_GS_OFFSET;
-  bVar10 = *pbVar9;
-  bVar11 = (byte)((uint)unaff_EBX >> 8);
-  bVar12 = *pbVar9 + bVar11;
-  *pbVar9 = bVar12 + bVar7;
-  acStackY_79[in_GS_OFFSET] =
-       acStackY_79[in_GS_OFFSET] + (char)extraout_DX +
-       (CARRY1(bVar10,bVar11) || CARRY1(bVar12,bVar7));
-  in(extraout_DX);
+  pWVar7 = (WorldNetwork__Class *)func_?();
+  ppMVar8 = &unaff_EDI->monitor;
+  bVar9 = pWVar7 < unaff_EDI->klass;
+  pcVar10 = (code *)swi(0x65);
+  (*pcVar10)();
+  bVar11 = (byte)unaff_EBX;
+  cVar12 = *(char *)ppMVar8;
+  bVar13 = *(char *)ppMVar8 + bVar11;
+  bVar14 = CARRY1(*(byte *)ppMVar8,bVar11) || CARRY1(bVar13,bVar9);
+  *(byte *)ppMVar8 = bVar13 + bVar9;
+  pcVar10 = (code *)swi(4);
+  uVar15 = extraout_CX;
+  uVar16 = extraout_DX;
+  if (SCARRY1(cVar12,bVar11) != SCARRY1(bVar13,bVar9)) {
+    (*pcVar10)();
+    uVar15 = extraout_CX_00;
+    uVar16 = extraout_DX_00;
+  }
+  pbVar17 = (byte *)((int)&uStackY_38 + in_GS_OFFSET + 2);
+  bVar11 = (byte)((ushort)uVar15 >> 8);
+  bVar18 = CARRY1(*pbVar17,bVar11) || CARRY1(*pbVar17 + bVar11,bVar14);
+  *pbVar17 = *pbVar17 + bVar11 + bVar14;
+  bVar13 = (byte)uVar15;
+  cVar12 = CARRY1(bVar13,bVar11) || CARRY1(bVar13 + bVar11,bVar18);
+  pcVar10 = (code *)swi(4);
+  if (SCARRY1(bVar13,bVar11) != SCARRY1(bVar13 + bVar11,bVar18)) {
+    (*pcVar10)();
+    uVar16 = extraout_DX_01;
+  }
+  acStackY_79[in_GS_OFFSET] = acStackY_79[in_GS_OFFSET] + (char)uVar16 + cVar12;
+  in(uVar16);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -244,8 +261,8 @@ code_?:
     return;
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

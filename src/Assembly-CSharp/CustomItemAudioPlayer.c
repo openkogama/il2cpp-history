@@ -182,12 +182,12 @@ void Assembly-CSharp.dll::CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClipF
         pAVar1 = (this->fields).audioSource;
         if (pAVar1 != (AudioSource *)0x0) {
           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayScheduled
-                    (pAVar1,1.33749284692485e-315,in_stack_6);
+                    (pAVar1,1.33757308318574e-315,in_stack_6);
           pAVar1 = (this->fields).audioSource;
           if (pAVar1 != (AudioSource *)0x0) {
-            uStack7 = SUB84(dStack_5 + 3.2092968351008677e-29,0);
+            uStack7 = SUB84(dStack_5 + 3.2141838823347503e-29,0);
             UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_SetScheduledEndTime
-                      (pAVar1,(double)((ulonglong)(dStack_5 + 3.2092968351008677e-29) >> 0x20),
+                      (pAVar1,(double)((ulonglong)(dStack_5 + 3.2141838823347503e-29) >> 0x20),
                        in_stack_8);
             return;
           }
@@ -359,15 +359,16 @@ float Assembly-CSharp.dll::CustomItemAudioPlayer::CustomItemAudioPlayer_get_Clip
         if (pcRam_? == (code *)0x0) {
           pcRam_? = (code *)func_?();
         }
-        fVar4 = (float10)(*pcRam_?)();
-        return (float)fVar4;
+        pcStack4 = pcRam_?;
+        fVar5 = (float10)(*pcRam_?)();
+        return (float)fVar5;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  fVar4 = (float10)(*pcVar5)();
-  return (float)fVar4;
+  pcVar6 = (code *)swi(3);
+  fVar5 = (float10)(*pcVar6)();
+  return (float)fVar5;
 }
 
 

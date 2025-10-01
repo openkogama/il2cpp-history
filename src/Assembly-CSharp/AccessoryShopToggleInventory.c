@@ -128,22 +128,22 @@ void Assembly-CSharp.dll::AccessoryShopToggleInventory::
   }
   pTVar1 = (this->fields).toggle;
   if (pTVar1 != (Toggle *)0x0) {
-    bVar2 = (pTVar1->fields).m_IsOn;
     if (x != (IAccessoryInventoryControl *)0x0) {
-      pIVar3 = x->klass;
-      uVar4 = 0;
-      uVar5._0_1_ = (pIVar3->_1).rank;
-      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+      bVar2 = (pTVar1->fields).m_IsOn;
+      uVar3 = 0;
+      pIVar4 = x->klass;
+      uVar5._0_1_ = (pIVar4->_1).rank;
+      uVar5._1_1_ = (pIVar4->_1).minimumAlignment;
       if (uVar5 != 0) {
         do {
-          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+          if (pIVar4->interfaceOffsets[uVar3].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl) {
             ppMVar6 = &(&(x->klass->vtable).DisplayPurchasableItems)
-                       [x->klass->interfaceOffsets[uVar4].offset].method;
+                       [x->klass->interfaceOffsets[uVar3].offset].method;
             goto code_?;
           }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar5);
+          uVar3 = uVar3 + 1;
+        } while (uVar3 < uVar5);
       }
       ppMVar6 = (MethodInfo **)
                 func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl,0)

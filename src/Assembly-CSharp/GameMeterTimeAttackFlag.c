@@ -157,37 +157,26 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_OnSta
 }
 
 
-/* Void SetGameMeterVisibility() */
+/* Boolean SetGameMeterVisibility() */
 
-void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_SetGameMeterVisibility
+bool Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_SetGameMeterVisibility
                (GameMeterTimeAttackFlag *this,MethodInfo *method)
 
 {
   bVar1 = WinningConditionControl::WinningConditionControl_IsWinConditionPresent
                     (WinningConditionType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (pGVar2 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
-      return;
-    }
+  bVar2 = bVar1;
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (this_00 != (GameObject *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (this_00,bVar2,(MethodInfo *)0x0);
+    return bVar1;
   }
-  else {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (pGVar2 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,1,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
   func_?();
   pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
+  bVar2 = (*pcVar3)();
+  return bVar2;
 }
 
 

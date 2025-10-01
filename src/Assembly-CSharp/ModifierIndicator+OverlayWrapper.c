@@ -137,21 +137,22 @@ float Assembly-CSharp.dll::ModifierIndicator+OverlayWrapper::
                 (ModifierIndicator_OverlayWrapper *this,MethodInfo *method)
 
 {
-  pCStack_1 = (CanvasGroup *)&stack0xfffffffc;
+  pcStack_1 = (code *)&stack0xfffffffc;
   pCVar2 = (this->fields).image.alphaHandler;
   if (pCVar2 != (CanvasGroup *)0x0) {
     if (pcRam_? == (code *)0x0) {
       pcRam_? = (code *)func_?();
     }
-    pCStack_1 = pCVar2;
-    fVar3 = (float10)(*pcRam_?)();
-    return (float)fVar3;
+    pCStack_3 = pCVar2;
+    pcStack_1 = pcRam_?;
+    fVar4 = (float10)(*pcRam_?)();
+    return (float)fVar4;
   }
-  uVar4 = func_?(auStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar6)();
-  return (float)fVar3;
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar7)();
+  return (float)fVar4;
 }
 
 

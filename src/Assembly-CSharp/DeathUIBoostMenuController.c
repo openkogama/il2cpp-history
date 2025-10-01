@@ -90,7 +90,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
            ) {
           func_?();
         }
-        cVar8 = -0x12;
+        cVar8 = '^';
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                   (pGVar2,(BaseEventData *)0x0,callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
@@ -674,38 +674,37 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
     cRam_? = '\x01';
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).startTime;
-  fVar3 = (this->fields).timeUntilGhostMode;
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (((pMVar4 != (MVLocalPlayer *)0x0) &&
-      (pSVar5 = (pMVar4->fields).spawnRoleDataMediator, pSVar5 != (SpawnRoleDataMediator *)0x0)) &&
-     (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar5->fields).spawnRoleMode,
+  fVar1 = _UNK_? - (fVar1 - (this->fields).startTime) / (this->fields).timeUntilGhostMode;
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if (((pMVar2 != (MVLocalPlayer *)0x0) &&
+      (pSVar3 = (pMVar2->fields).spawnRoleDataMediator, pSVar3 != (SpawnRoleDataMediator *)0x0)) &&
+     (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar3->fields).spawnRoleMode,
      this_00 != (WebCompletionSource_1_System_Object_ *)0x0)) {
-    pTVar6 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+    pTVar4 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
              WebCompletionSource_1_System_Object__get_Task
                        (this_00,
                         MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
                        );
-    if ((pTVar6 == (Task *)0x2) || (_UNK_? < _UNK_? - (fVar1 - fVar2) / fVar3)) {
-      pNVar7 = (this->fields).buttonFader;
-      if (pNVar7 != (NotificationFade *)0x0) {
-        NotificationFade::NotificationFade_Unpause(pNVar7,(MethodInfo *)0x0);
-        pNVar7 = (this->fields).resetButtonFader;
-        if (pNVar7 != (NotificationFade *)0x0) {
-          NotificationFade::NotificationFade_Activate(pNVar7,(MethodInfo *)0x0);
-          pNVar7 = (this->fields).boostFader;
-          if (pNVar7 != (NotificationFade *)0x0) {
-            NotificationFade::NotificationFade_Activate(pNVar7,(MethodInfo *)0x0);
-            pNVar7 = (this->fields).menuButtonFader;
-            if (pNVar7 != (NotificationFade *)0x0) {
-              NotificationFade::NotificationFade_Activate(pNVar7,(MethodInfo *)0x0);
-              pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+    if ((pTVar4 == (Task *)0x2) || (_UNK_? < fVar1)) {
+      pNVar5 = (this->fields).buttonFader;
+      if (pNVar5 != (NotificationFade *)0x0) {
+        NotificationFade::NotificationFade_Unpause(pNVar5,(MethodInfo *)0x0);
+        pNVar5 = (this->fields).resetButtonFader;
+        if (pNVar5 != (NotificationFade *)0x0) {
+          NotificationFade::NotificationFade_Activate(pNVar5,(MethodInfo *)0x0);
+          pNVar5 = (this->fields).boostFader;
+          if (pNVar5 != (NotificationFade *)0x0) {
+            NotificationFade::NotificationFade_Activate(pNVar5,(MethodInfo *)0x0);
+            pNVar5 = (this->fields).menuButtonFader;
+            if (pNVar5 != (NotificationFade *)0x0) {
+              NotificationFade::NotificationFade_Activate(pNVar5,(MethodInfo *)0x0);
+              pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
                                  ((MethodInfo *)0x0);
-              if ((pGVar8 != (GameEventManager *)0x0) &&
-                 (pGVar9 = (pGVar8->fields).AvatarCommandsPlayMode,
-                 pGVar9 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+              if ((pGVar6 != (GameEventManager *)0x0) &&
+                 (pGVar7 = (pGVar6->fields).AvatarCommandsPlayMode,
+                 pGVar7 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
                 GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
-                RewardedAd__RegisterAdEvents_m__7((RewardedAd *)pGVar9,(MethodInfo *)0x0);
+                RewardedAd__RegisterAdEvents_m__7((RewardedAd *)pGVar7,(MethodInfo *)0x0);
                 (this->fields).wantsToPlay = 1;
                 return;
               }
@@ -744,19 +743,19 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if ((pGVar8 != (GameEventManager *)0x0) &&
-         (pGVar9 = (pGVar8->fields).AvatarCommandsPlayMode,
-         pGVar9 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+      pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar6 != (GameEventManager *)0x0) &&
+         (pGVar7 = (pGVar6->fields).AvatarCommandsPlayMode,
+         pGVar7 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
         GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
-                  ((RewardedAd *)pGVar9,(MethodInfo *)0x0);
+                  ((RewardedAd *)pGVar7,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

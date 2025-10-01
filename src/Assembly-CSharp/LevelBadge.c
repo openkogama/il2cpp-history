@@ -238,9 +238,10 @@ code_?:
     pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
     pXVar8 = (pMVar2->fields).OnXPProgressData;
-    this_03 = (UnityAction_1_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
+    this_03 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
               (this_03,(Object *)this,MethodInfo__LevelBadge__UpdateProgress_XPProgressData_,
                (MethodInfo *)0x0);
     pXVar8 = (XPProgress_OnXPProgressDataDelegate *)

@@ -200,13 +200,15 @@ code_?:
             pSVar8 = (pPVar1->fields).color;
             pIVar14 = (pPVar1->fields).preview;
             if (pSVar8 != (Single__Array *)0x0) {
-              if (((pSVar8->max_length == 0) || (pSVar8->max_length < 2)) ||
-                 (pSVar8->max_length < 3)) goto code_?;
-              if (pIVar14 != (Image *)0x0) {
-                (*(code *)(pIVar14->klass->vtable).set_color.method)
-                          (pIVar14,pSVar8->vector[0],pSVar8->vector[1],pSVar8->vector[2],
-                           0x3f800000,(pIVar14->klass->vtable).get_raycastTarget.methodPtr);
-                return;
+              if ((pSVar8->max_length == 0) || (pSVar8->max_length < 2)) goto code_?;
+              if (pSVar8 != (Single__Array *)0x0) {
+                if (pSVar8->max_length < 3) goto code_?;
+                if (pIVar14 != (Image *)0x0) {
+                  (*(code *)(pIVar14->klass->vtable).set_color.method)
+                            (pIVar14,pSVar8->vector[0],pSVar8->vector[1],pSVar8->vector[2],
+                             0x3f800000,(pIVar14->klass->vtable).get_raycastTarget.methodPtr);
+                  return;
+                }
               }
             }
           }
@@ -257,11 +259,10 @@ void Assembly-CSharp.dll::PointLightSettings::PointLightSettings_OnSettingChange
         bVar1 = mscorlib.dll::System::String::String_op_Equality
                           (a,StringLiteral_halo,(MethodInfo *)0x0);
         if (bVar1 == 0) {
-          pSVar2 = (this->fields).settingsBase;
-          if (pSVar2 != (SettingsBase *)0x0) {
+          if (pSRam00000018 != (SettingsBase *)0x0) {
             method = (MethodInfo *)0x0;
             key = a;
-            SettingsBase::SettingsBase_OnSettingChanged(pSVar2,a,value,(MethodInfo *)0x0);
+            SettingsBase::SettingsBase_OnSettingChanged(pSRam00000018,a,value,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -278,9 +279,8 @@ void Assembly-CSharp.dll::PointLightSettings::PointLightSettings_OnSettingChange
           }
           method = (MethodInfo *)0x0;
           key = (String *)&UNK_?;
-          iVar3 = mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
-          (this->fields).intType = iVar3;
-          pSVar2 = (this->fields).settingsBase;
+          iRam_? = mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+          pSVar2 = pSRam00000018;
           method = (MethodInfo *)&key;
           value = (Object *)TypeInfo__System__Int32;
           key = (String *)&UNK_?;
@@ -296,14 +296,14 @@ void Assembly-CSharp.dll::PointLightSettings::PointLightSettings_OnSettingChange
         }
       }
       else {
-        pSVar4 = (this->fields).color;
-        if (pSVar4 != (Single__Array *)0x0) {
+        pSVar3 = (this->fields).color;
+        if (pSVar3 != (Single__Array *)0x0) {
           if (value != (Object *)0x0) {
             if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
             goto code_?;
-            pfVar5 = (float *)func_?();
-            if (2 < pSVar4->max_length) {
-              pSVar4->vector[2] = *pfVar5;
+            pfVar4 = (float *)func_?();
+            if (2 < pSVar3->max_length) {
+              pSVar3->vector[2] = *pfVar4;
               goto code_?;
             }
             goto code_?;
@@ -312,14 +312,14 @@ void Assembly-CSharp.dll::PointLightSettings::PointLightSettings_OnSettingChange
       }
     }
     else {
-      pSVar4 = (this->fields).color;
-      if (pSVar4 != (Single__Array *)0x0) {
+      pSVar3 = (this->fields).color;
+      if (pSVar3 != (Single__Array *)0x0) {
         if (value != (Object *)0x0) {
           if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
           goto code_?;
-          pfVar5 = (float *)func_?(value);
-          if (1 < pSVar4->max_length) {
-            pSVar4->vector[1] = *pfVar5;
+          pfVar4 = (float *)func_?(value);
+          if (1 < pSVar3->max_length) {
+            pSVar3->vector[1] = *pfVar4;
             goto code_?;
           }
           goto code_?;
@@ -328,40 +328,42 @@ void Assembly-CSharp.dll::PointLightSettings::PointLightSettings_OnSettingChange
     }
   }
   else {
-    pSVar4 = (this->fields).color;
-    if (pSVar4 != (Single__Array *)0x0) {
+    pSVar3 = (this->fields).color;
+    if (pSVar3 != (Single__Array *)0x0) {
       if (value != (Object *)0x0) {
         if ((value->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
         goto code_?;
-        pfVar5 = (float *)func_?(value);
-        if (pSVar4->max_length == 0) {
+        pfVar4 = (float *)func_?(value);
+        if (pSVar3->max_length == 0) goto code_?;
+        pSVar3->vector[0] = *pfVar4;
 code_?:
-          method = (MethodInfo *)&UNK_?;
-          func_?();
-        }
-        else {
-          pSVar4->vector[0] = *pfVar5;
+        pSVar2 = (this->fields).settingsBase;
+        if (pSVar2 != (SettingsBase *)0x0) {
+          method = (MethodInfo *)0x0;
+          value = (Object *)(this->fields).color;
+          key = StringLiteral_color;
+          SettingsBase::SettingsBase_OnSettingChanged
+                    (pSVar2,StringLiteral_color,value,(MethodInfo *)0x0);
+          pSVar3 = (this->fields).color;
+          pIVar5 = (this->fields).preview;
+          if (pSVar3 != (Single__Array *)0x0) {
+            if ((pSVar3->max_length == 0) ||
+               (method = (MethodInfo *)pSVar3->vector[0], pSVar3->max_length < 2)) {
 code_?:
-          pSVar2 = (this->fields).settingsBase;
-          if (pSVar2 != (SettingsBase *)0x0) {
-            method = (MethodInfo *)0x0;
-            value = (Object *)(this->fields).color;
-            key = StringLiteral_color;
-            SettingsBase::SettingsBase_OnSettingChanged
-                      (pSVar2,StringLiteral_color,value,(MethodInfo *)0x0);
-            pSVar4 = (this->fields).color;
-            pIVar6 = (this->fields).preview;
-            if (pSVar4 != (Single__Array *)0x0) {
-              if (((pSVar4->max_length == 0) ||
-                  (method = (MethodInfo *)pSVar4->vector[0], pSVar4->max_length < 2)) ||
-                 (pcStack7 = (char *)pSVar4->vector[1], pSVar4->max_length < 3))
-              goto code_?;
-              pIStack8 = (Il2CppClass *)pSVar4->vector[2];
-              if (pIVar6 != (Image *)0x0) {
-                key = (String *)&UNK_?;
-                value = (Object *)pIVar6;
-                (*(code *)(pIVar6->klass->vtable).set_color.method)();
-                return;
+              method = (MethodInfo *)&UNK_?;
+              func_?();
+            }
+            else {
+              pcStack6 = (char *)pSVar3->vector[1];
+              if (pSVar3 != (Single__Array *)0x0) {
+                if (pSVar3->max_length < 3) goto code_?;
+                pIStack7 = (Il2CppClass *)pSVar3->vector[2];
+                if (pIVar5 != (Image *)0x0) {
+                  key = (String *)&UNK_?;
+                  value = (Object *)pIVar5;
+                  (*(code *)(pIVar5->klass->vtable).set_color.method)();
+                  return;
+                }
               }
             }
           }
@@ -373,8 +375,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

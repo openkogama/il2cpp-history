@@ -150,8 +150,8 @@ int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMostAligned
     }
     uVar1 = 0xffffffff;
     uVar2 = 0;
+    fVar3 = _UNK_?;
     if (checkSameDirection == 0) {
-      fVar3 = _UNK_?;
       for (; (int)uVar2 < (int)vectors->max_length; uVar2 = uVar2 + 1) {
         if (vectors->max_length <= uVar2) goto code_?;
         uVar4 = vectors->vector[uVar2].x;
@@ -163,13 +163,12 @@ int32_t Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetMostAligned
           uVar7 = uVar1;
           fVar6 = fVar3;
         }
-        fVar3 = fVar6;
         uVar1 = uVar7;
+        fVar3 = fVar6;
       }
     }
     else {
       pVVar8 = vectors->vector;
-      fVar3 = _UNK_?;
       for (; (int)uVar2 < (int)vectors->max_length; uVar2 = uVar2 + 1) {
         if (vectors->max_length <= uVar2) goto code_?;
         uVar9 = pVVar8->x;
@@ -299,8 +298,8 @@ Vector3 * Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_GetPointCloudCenter
           func_?(0,TypeInfo__System__IDisposable,apiStack_20[0]);
         }
         fVar23 = (fStack_18 + fStack_12) * _UNK_?;
-        fVar25 = (fStack_16 + fStack_10) * _UNK_?;
-        __return_storage_ptr__->x = (fStack_14 + fStack_8) * _UNK_?;
+        fVar25 = (fStack_10 + fStack_16) * _UNK_?;
+        __return_storage_ptr__->x = (fStack_8 + fStack_14) * _UNK_?;
         __return_storage_ptr__->y = fVar25;
         __return_storage_ptr__->z = fVar23;
         *unaff_FS_OFFSET = uStack_4;
@@ -359,12 +358,12 @@ code_?:
       uStack_39 = uVar38;
       uStack_37 = uVar35;
       fStack_40 = fStack_36;
-      fStack_15 = fStack_14;
       fStack_19 = fStack_36;
-      fStack_17 = fStack_16;
       fStack_9 = fStack_8;
       fStack_11 = fStack_10;
       fStack_13 = fStack_12;
+      fStack_15 = fStack_14;
+      fStack_17 = fStack_16;
       fVar23 = fStack_36;
       if (fStack_18 < fStack_36) {
         fStack_19 = fStack_18;
@@ -544,7 +543,7 @@ float Assembly-CSharp.dll::RTG::Vector3Ex::Vector3Ex_SignedAngle
     pMVar2 = (MethodInfo *)pVVar1->z;
     fVar3 = MathEx::MathEx_SafeAcos(cosine,pMVar2);
     to.z = fVar3 * _UNK_?;
-    if (axis.y * cosine + axis.x * 4.3983464e-29 + axis.z * (float)pMVar2 < 0.0) {
+    if (axis.y * cosine + axis.x * 4.402025e-29 + axis.z * (float)pMVar2 < 0.0) {
       to.z = (float)((uint)to.z ^
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }

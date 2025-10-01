@@ -12,7 +12,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
   puStack_4 = &stack0xffffffa4;
   puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__Dispose__
+                   );
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<WorldObjectClientRef>__MoveNext__
                    );
@@ -34,13 +36,13 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
   pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
   if (pIVar7 != (IEditModeUI *)0x0) {
     uVar8 = CONCAT44(unaff_EDI,pIVar7);
-    cVar9 = func_?(0,TypeInfo__IEditModeUI);
+    cVar9 = func_?(0,TypeInfo__IEditModeUI,pIVar7);
     uStack_10 = _UNK_?;
     if (cVar9 == '\0') {
       uStack_10 = _UNK_?;
@@ -89,17 +91,17 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::RotationHelpe
                             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                            );
         if (pOVar16 != (Object *)0x0) {
-          func_?();
-          puVar17 = (undefined8 *)func_?(&LStack_12._index,0x41,pOVar16,uStack_10);
+          puVar17 = (undefined8 *)func_?(auStack_18);
+          puVar17 = (undefined8 *)func_?(&LStack_12._index,0x41,pOVar16,uStack_10,*puVar17);
           uVar8 = *puVar17;
-          func_?(0x1e,pOVar16);
+          func_?(0x1e,pOVar16,uVar8);
         }
       }
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

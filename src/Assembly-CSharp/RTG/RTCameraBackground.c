@@ -190,26 +190,28 @@ void Assembly-CSharp.dll::RTG::RTCameraBackground::RTCameraBackground_Render_Sys
                               ((Component *)renderCamera,(MethodInfo *)0x0);
           this_02 = (QuadShape3D *)func_?(TypeInfo__RTG__QuadShape3D);
           QuadShape3D::QuadShape3D__ctor(this_02,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
-                    (renderCamera,(MethodInfo *)0x0);
+          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+                             (renderCamera,(MethodInfo *)0x0);
           if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
-                    (renderCamera,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_aspect
-                    (renderCamera,(MethodInfo *)0x0);
-          func_?();
-          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
                              (renderCamera,(MethodInfo *)0x0);
+          dVar6 = (double)(fVar5 * _UNK_? * _UNK_?);
+          func_?();
+          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_aspect
+                             (renderCamera,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+                    (renderCamera,(MethodInfo *)0x0);
+          fVar4 = fVar5 * (fVar4 + fVar4) * (float)dVar6 + _UNK_?;
           fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
                              (renderCamera,(MethodInfo *)0x0);
           dVar6 = (double)(fVar5 * _UNK_? * _UNK_?);
           puVar7 = &UNK_?;
           func_?();
           if ((this_02 != (QuadShape3D *)0x0) &&
-             (value.y = (float)dVar6 * (fVar4 + fVar4) + _UNK_?, value.x = (float)puVar7,
-             QuadShape3D::QuadShape3D_set_Size(this_02,value,(MethodInfo *)0x0),
+             (value.y = (float)dVar6 * ((float)puVar7 + (float)puVar7) + _UNK_?,
+             value.x = fVar4, QuadShape3D::QuadShape3D_set_Size(this_02,value,(MethodInfo *)0x0),
              this_01 != (Transform *)0x0)) {
             pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                                ((Quaternion *)&stack0xffffffd0,this_01,(MethodInfo *)0x0);

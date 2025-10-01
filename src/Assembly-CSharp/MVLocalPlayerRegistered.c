@@ -72,10 +72,11 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Initi
     initialLevelData = (InitialLevelData *)(this->fields)._.xpProgress;
     if (initialLevelData != (InitialLevelData *)0x0) {
       a = (XPProgress_OnXPProgressDataDelegate *)(initialLevelData->fields).BadgeUrlData;
-      this_01 = (UnityAction_1_System_Object_ *)
+      this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
                 func_?(TypeInfo__XPProgress__OnXPProgressDataDelegate);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-      UnityAction_1_System_Object___ctor
+      UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+      VideoCapture+OnVideoCaptureResourceCreatedCallback::
+      VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
                 (this_01,(Object *)this,
                  MethodInfo__MVLocalPlayerRegistered__OnXPProgressDataChangeRegistered_XPProgressData_
                  ,(MethodInfo *)0x0);

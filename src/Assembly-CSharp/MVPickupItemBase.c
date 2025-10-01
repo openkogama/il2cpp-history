@@ -1038,7 +1038,8 @@ code_?:
     if (pUVar8 == (UseInteractor *)0x0) goto code_?;
     cVar4 = '\x10';
     SVar11 = UseInteractor::UseInteractor_GetGUIShowOptions(pUVar8,(MethodInfo *)0x0);
-    if ((((~SVar11 & 1) == 0) || ((~(byte)(UVar10 >> 3) & 1) == 0)) || (cVar4 == '\0')) {
+    if ((((SVar11 & ShowUseOption__Enum_UsingGameCoins) != ShowUseOption__Enum_Normal) ||
+        ((UVar10 & UseGUIResult__Enum_CannotAfford) != 0)) || (cVar4 == '\0')) {
       return 0;
     }
   }

@@ -31,11 +31,10 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnDestroy
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Resuming_audio,(MethodInfo *)0x0);
-  value = (this->fields).previousMuteState;
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  MainCameraManager::MainCameraManager_set_Mute(value,(MethodInfo *)0x0);
+  MainCameraManager::MainCameraManager_TemporaryMute(0,(MethodInfo *)0x0);
   return;
 }
 
@@ -52,51 +51,15 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnEnable
     func_?(&StringLiteral_Muting_audio);
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MainCameraManager);
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MainCameraManager);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MainCameraManager);
-  }
-  (this->fields).previousMuteState = TypeInfo__MainCameraManager->static_fields->mute;
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Muting_audio,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  TypeInfo__MainCameraManager->static_fields->mute = in_stack_1;
-  if (TypeInfo__MainCameraManager->static_fields->mute == 0) {
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    value = TypeInfo__MainCameraManager->static_fields->baseVolume;
-  }
-  else {
-    value = 0.0;
-  }
-  UnityEngine.AudioModule.dll::UnityEngine::AudioListener::AudioListener_set_volume
-            (value,(MethodInfo *)0x0);
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pAVar2 = TypeInfo__MainCameraManager->static_fields->OnMuteChange;
-  if (pAVar2 != (Action_1_Boolean_ *)0x0) {
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    (*(pAVar2->fields)._._.invoke_impl)((pAVar2->fields)._._.method_code);
-  }
+  MainCameraManager::MainCameraManager_TemporaryMute(1,(MethodInfo *)0x0);
   return;
 }
 
@@ -107,8 +70,8 @@ void Assembly-CSharp.dll::ShowingAdsPopup::ShowingAdsPopup_OnSkip
                (ShowingAdsPopup *this,MethodInfo *method)
 
 {
-  if ((this->fields).skipAction != (Action *)0x0) {
-    pAVar1 = (this->fields).skipAction;
+  pAVar1 = (this->fields).skipAction;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }

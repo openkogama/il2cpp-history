@@ -813,17 +813,17 @@ void Assembly-CSharp.dll::BoostController::BoostController__cctor(MethodInfo *me
   pSVar2 = TM::TM__(StringLiteral_X_ray_vision,(MethodInfo *)0x0);
   pBVar3 = TypeInfo__Boost;
   pOVar4 = (Object *)func_?();
-  pSVar5 = StringLiteral_XRayVision;
-  pSVar6 = ::StringLiteral__;
+  pSVar5 = ::StringLiteral__;
+  pSVar6 = StringLiteral_XRayVision;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)pBVar3);
-  pOVar4[1].monitor = (MonitorData *)pSVar5;
+  pOVar4[1].monitor = (MonitorData *)pSVar6;
   pOVar4[1].klass = (Object__Class *)0x4;
-  func_?(&pOVar4[1].monitor,pSVar5);
+  func_?(&pOVar4[1].monitor,pSVar6);
   pOVar4[3].monitor = (MonitorData *)pSVar1;
   func_?(&pOVar4[3].monitor,pSVar1);
-  pOVar4[2].klass = (Object__Class *)pSVar6;
-  func_?(pOVar4 + 2,pSVar6);
+  pOVar4[2].klass = (Object__Class *)pSVar5;
+  func_?(pOVar4 + 2,pSVar5);
   pOVar4[2].monitor = (MonitorData *)pSVar2;
   this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)&UNK_?;
   func_?(&pOVar4[2].monitor);

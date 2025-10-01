@@ -252,16 +252,14 @@ code_?:
                                           cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pMVar41 = TypeInfo__MainCameraManager->static_fields;
+                                      pPVar41 = &TypeInfo__MainCameraManager->static_fields->
+                                                 CurrentPostProcessingSettings;
                                       puVar42 = (undefined4 *)&stack0xffffff38;
                                       for (iVar1 = 0x2a; this_02 = pPStack_31, iVar1 != 0;
                                           iVar1 = iVar1 + -1) {
-                                        *puVar42 = *(undefined4 *)
-                                                    &(pMVar41->CurrentPostProcessingSettings).
-                                                     colorSettings;
-                                        pMVar41 = (MainCameraManager__StaticFields *)
-                                                  &(pMVar41->CurrentPostProcessingSettings).
-                                                   colorSettings.postExposure;
+                                        *puVar42 = *(undefined4 *)&pPVar41->colorSettings;
+                                        pPVar41 = (PostProcessingSettings *)
+                                                  &(pPVar41->colorSettings).postExposure;
                                         puVar42 = puVar42 + 1;
                                       }
                                       if ((pPStack_31 != (PostProcessLayer *)0x0) &&

@@ -251,14 +251,15 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
   statType = (GameStatCounterType__Enum)
              mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   values = (String__Array *)func_?();
+  cVar8 = '\0';
   if (values != (String__Array *)0x0) {
-    uStack8 = 0;
-    pSStack9 = pSVar1;
+    uStack9 = 0;
+    pSStack10 = pSVar1;
     func_?();
-    puStack10 = (undefined *)statType;
-    uStack11 = 1;
+    puStack11 = (undefined *)statType;
+    uStack12 = 1;
     func_?();
-    pSStack12 = ::StringLiteral__;
+    pSStack13 = ::StringLiteral__;
     func_?();
     method = (MethodInfo *)&UNK_?;
     func_?();
@@ -271,15 +272,20 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
     return pSVar1;
   }
-  uVar13 = func_?();
-  iVar4 = (int)((ulonglong)uVar13 >> 0x20);
-  piVar14 = (int *)uVar13;
-  *piVar14 = *piVar14 - iVar4;
-  *piVar14 = *piVar14 - iVar4;
-  *piVar14 = *piVar14 - iVar4;
-  *piVar14 = *piVar14 - iVar4;
-  pcVar15 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar15)();
+  uVar14 = func_?();
+  uVar15 = (uint)((ulonglong)uVar14 >> 0x20);
+  puVar16 = (uint *)uVar14;
+  pSStack10 = (String *)0x7a1029de;
+  *(char *)((int)puVar16 + -0x22) = *(char *)((int)puVar16 + -0x22) + extraout_CH + cVar8;
+  uVar17 = *puVar16;
+  *puVar16 = *puVar16 - uVar15;
+  uStack9 = 0x681029de;
+  *(char *)((int)puVar16 + -0x22) = *(char *)((int)puVar16 + -0x22) + extraout_CH + (uVar17 < uVar15)
+  ;
+  *puVar16 = *puVar16 - uVar15;
+  puStack11 = (undefined *)0x7a1029de;
+  pcVar18 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar18)();
   return pSVar1;
 }
 

@@ -41,7 +41,8 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
   }
   func_?();
   func_?();
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
 }
 

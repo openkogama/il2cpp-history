@@ -7,14 +7,10 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamViewportUpdater::SceneGizmoCamViewpo
 
 {
   pSVar1 = (this->fields)._sceneGizmo;
-  if (pSVar1 == (SceneGizmo *)0x0) goto code_?;
-  if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-    this_00 = (pSVar1->fields)._lookAndFeel;
-    if (this_00 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    this_00 = (pSVar1->fields)._sharedLookAndFeel;
-  }
+  if ((pSVar1 == (SceneGizmo *)0x0) ||
+     (this_00 = (&(pSVar1->fields)._lookAndFeel)
+                [(pSVar1->fields)._sharedLookAndFeel != (SceneGizmoLookAndFeel *)0x0],
+     this_00 == (SceneGizmoLookAndFeel *)0x0)) goto code_?;
   fStack_2 = (this_00->fields)._screenOffset.x;
   fVar3 = (this_00->fields)._screenOffset.y;
   if ((sceneGizmoCamera == (RTSceneGizmoCamera *)0x0) ||

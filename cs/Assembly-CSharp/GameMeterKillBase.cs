@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class GameMeterKillBase : GameMeterBase
+public abstract class GameMeterKillBase : GameMeterBase
 {
 	// Fields
 	[SerializeField]
@@ -18,20 +18,12 @@ public class GameMeterKillBase : GameMeterBase
 	[SerializeField]
 	protected UnityEngine.UI.Text killsText;
 
-	// Properties
-	public override GameMeterType GameMeterType { get; }
-
 	// Constructors
-	public GameMeterKillBase();
+	protected GameMeterKillBase();
 
 	// Methods
-	public override void Initialize();
-	public override void SetGameMeterVisibility();
-	public override void UpdateValue();
 	protected void SetCount(GameStatCounterType gameStatCounterType, int limit);
 	private static int GetCount(GameStatCounterType gameStatCounterType);
 	public override void SetShowGameMeter(bool show);
-	protected void Hide();
-	protected void Show();
 }
 

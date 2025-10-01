@@ -122,35 +122,30 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
   if (winningCondition != (IWinningCondition *)0x0) {
     iVar1 = func_?(winningCondition,TypeInfo__IWinningConditionBriefing);
     pIVar3 = TypeInfo__IWinningConditionBriefing;
-    if (iVar1 != 0) {
-      piVar4 = (int *)func_?(winningCondition,TypeInfo__IWinningConditionBriefing);
-      unaff_EBX = pIVar3;
-      if (piVar4 != (int *)0x0) {
-        uVar5 = 0;
-        uVar6 = *(ushort *)(*piVar4 + 0xb6);
-        if (uVar6 != 0) {
-          do {
-            if (*(IWinningConditionBriefing__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar5 * 8)
-                == TypeInfo__IWinningConditionBriefing) {
-              iVar1 = *piVar4;
-              iVar7 = *(int *)(*(int *)(iVar1 + 0x58) + 4 + (uint)uVar5 * 8) + 0x19;
-              (**(code **)(iVar1 + iVar7 * 8))(piVar4,this,*(undefined4 *)(iVar1 + 4 + iVar7 * 8));
-              return;
-            }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
-        }
-        puVar8 = (undefined4 *)func_?(piVar4,TypeInfo__IWinningConditionBriefing,1);
-        (*(code *)*puVar8)(piVar4,this,puVar8[1]);
-        return;
+    if ((iVar1 != 0) &&
+       (piVar4 = (int *)func_?(winningCondition,TypeInfo__IWinningConditionBriefing),
+       pIVar2 = pIVar3, piVar4 != (int *)0x0)) {
+      uVar5 = 0;
+      uVar6 = *(ushort *)(*piVar4 + 0xb6);
+      if (uVar6 != 0) {
+        do {
+          if (*(IWinningConditionBriefing__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar5 * 8) ==
+              TypeInfo__IWinningConditionBriefing) {
+            iVar1 = *piVar4;
+            iVar7 = *(int *)(*(int *)(iVar1 + 0x58) + 4 + (uint)uVar5 * 8) + 0x19;
+            (**(code **)(iVar1 + iVar7 * 8))(piVar4,this,*(undefined4 *)(iVar1 + 4 + iVar7 * 8));
+            return;
+          }
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar6);
       }
-      goto code_?;
+      puVar8 = (undefined4 *)func_?(piVar4,TypeInfo__IWinningConditionBriefing,1);
+      (*(code *)*puVar8)(piVar4,this,puVar8[1]);
+      return;
     }
     func_?(winningCondition,pIVar2);
   }
   func_?();
-code_?:
-  func_?(winningCondition,unaff_EBX);
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -521,7 +516,7 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
   if (bVar1 == 0) {
     return;
   }
-  winningCondition = (IWinningCondition *)0x0;
+  winningCondition = (IWinningCondition *)&UNK_?;
   MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar2 == MVGameMode__Enum_Play) {
 code_?:
@@ -530,15 +525,15 @@ code_?:
       pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                          ((MethodInfo *)0x0);
       if (((pSVar3 == (SpawnRoleDataMediator *)0x0) ||
-          (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar3->fields).reviveState,
-          this_00 == (WebCompletionSource_1_System_Object_ *)0x0)) ||
-         (this_01 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+          (winningCondition = (IWinningCondition *)(pSVar3->fields).reviveState,
+          (WebCompletionSource_1_System_Object_ *)winningCondition ==
+          (WebCompletionSource_1_System_Object_ *)0x0)) ||
+         (this_00 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
                     WebCompletionSource_1_System_Object__get_Task
-                              (this_00,
+                              ((WebCompletionSource_1_System_Object_ *)winningCondition,
                                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
-                              ), this_01 == (Task *)0x0)) goto code_?;
-      winningCondition = (IWinningCondition *)&UNK_?;
-      ReviveState::ReviveState_ResetSafePostions((ReviveState *)this_01,(MethodInfo *)0x0);
+                              ), this_00 == (Task *)0x0)) goto code_?;
+      ReviveState::ReviveState_ResetSafePostions((ReviveState *)this_00,(MethodInfo *)0x0);
     }
     if (cRam_? == '\0') {
       func_?();
@@ -560,16 +555,15 @@ code_?:
               if (*(IWinningConditionBriefing__Class **)
                    (*(int *)(*piVar5 + 0x58) + (uint)uVar6 * 8) ==
                   TypeInfo__IWinningConditionBriefing) {
-                puVar8 = (undefined4 *)
-                         (*piVar5 +
-                         (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar6 * 8) + 0x19) * 8);
-                goto code_?;
+                (**(code **)(*piVar5 +
+                            (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar6 * 8) + 0x19) * 8)
+                )();
+                return;
               }
               uVar6 = uVar6 + 1;
             } while (uVar6 < uVar7);
           }
           puVar8 = (undefined4 *)func_?();
-code_?:
           (*(code *)*puVar8)();
           return;
         }
@@ -587,11 +581,28 @@ code_?:
       func_?();
       cRam_? = '\x01';
     }
-    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
-        (IEditModeUI *)0x0) {
-      winningCondition = (IWinningCondition *)0x1;
-      cVar9 = func_?();
-      if (cVar9 == '\0') {
+    pIVar9 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+    if (pIVar9 != (IEditModeUI *)0x0) {
+      pIVar10 = pIVar9->klass;
+      uVar6 = 0;
+      uVar7._0_1_ = (pIVar10->_1).rank;
+      uVar7._1_1_ = (pIVar10->_1).minimumAlignment;
+      if (uVar7 != 0) {
+        do {
+          if (pIVar10->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI
+             ) {
+            ppMVar11 = &(&(pIVar9->klass->vtable).get_IsInPlayInEditMode)
+                       [pIVar9->klass->interfaceOffsets[uVar6].offset].method;
+            goto code_?;
+          }
+          uVar6 = uVar6 + 1;
+        } while (uVar6 < uVar7);
+      }
+      winningCondition = (IWinningCondition *)&UNK_?;
+      ppMVar11 = (MethodInfo **)func_?();
+code_?:
+      cVar12 = (*(code *)*ppMVar11)();
+      if (cVar12 == '\0') {
         return;
       }
       goto code_?;
@@ -601,8 +612,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

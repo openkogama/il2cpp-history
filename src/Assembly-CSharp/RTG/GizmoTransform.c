@@ -86,16 +86,14 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_ChangeLocalPositio
 {
   pGVar1 = (this->fields)._parent;
   (this->fields)._localPosition2D.x = localPosition.x;
+  fVar2 = (this->fields)._localPosition2D.x;
   (this->fields)._localPosition2D.y = localPosition.y;
-  if (pGVar1 == (GizmoTransform *)0x0) {
-    fVar2 = (this->fields)._localPosition2D.x;
-    fVar3 = (this->fields)._localPosition2D.y;
-  }
-  else {
+  fVar3 = (this->fields)._localPosition2D.y;
+  if (pGVar1 != (GizmoTransform *)0x0) {
     puStack_4 = (undefined *)0x0;
+    point.y = fVar3;
+    point.x = fVar2;
     point.z = 0.0;
-    point.x = (this->fields)._localPosition2D.x;
-    point.y = (this->fields)._localPosition2D.y;
     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                        (&VStack_6,(((this->fields)._parent)->fields)._rotation2D,point,
                         (MethodInfo *)0x0);
@@ -162,17 +160,16 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_ChangeLocalPositio
     (this->fields)._position3D.x = (float)uVar7 + (float)uVar4;
     (this->fields)._position3D.y = (float)uVar8 + (float)uVar5;
     (this->fields)._position3D.z = localPosition.z;
-    localPosition.y = 0.0;
   }
-  localPosition.x = (float)this;
-  GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)localPosition.y);
-  pGVar9 = (this->fields).Changed;
   localPosition.y = 0.0;
+  localPosition.x = (float)this;
+  GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
   (this->fields)._firingChanged3DEvent = 1;
-  if (pGVar9 != (GizmoEntityTransformChangedHandler *)0x0) {
+  localPosition.y = 0.0;
+  if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
     localPosition.z = 2.8026e-45;
     localPosition.x = (float)this;
-    (*(pGVar9->fields)._._.invoke_impl)();
+    (*(((this->fields).Changed)->fields)._._.invoke_impl)();
   }
   (this->fields)._firingChanged3DEvent = 0;
   return;
@@ -304,16 +301,10 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_ChangePosition3D
   (this->fields)._position3D.x = (float)(int)uVar1;
   (this->fields)._position3D.y = (float)(int)((ulonglong)uVar1 >> 0x20);
   (this->fields)._position3D.z = position.z;
-  if (pGVar2 == (GizmoTransform *)0x0) {
-    (this->fields)._localPosition3D.x = (float)(int)uVar1;
-    (this->fields)._localPosition3D.y = (float)(int)((ulonglong)uVar1 >> 0x20);
-    (this->fields)._localPosition3D.z = position.z;
-    GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
-  }
-  else {
+  if (pGVar2 != (GizmoTransform *)0x0) {
     pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
-                        ((Quaternion *)&stack0xffffffe0,
-                         (((this->fields)._parent)->fields)._rotation3D,(MethodInfo *)0x0);
+                       ((Quaternion *)&stack0xffffffe0,
+                        (((this->fields)._parent)->fields)._rotation3D,(MethodInfo *)0x0);
     uVar4 = (this->fields)._position3D.x;
     uVar5 = (this->fields)._position3D.y;
     pGVar2 = (this->fields)._parent;
@@ -334,19 +325,25 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_ChangePosition3D
     point.z = position.z;
     pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                         (&position,*pQVar3,point,(MethodInfo *)0x0);
-    fVar10 = pVVar9->y;
-    fVar11 = pVVar9->z;
-    (this->fields)._localPosition3D.x = pVVar9->x;
-    (this->fields)._localPosition3D.y = fVar10;
-    (this->fields)._localPosition3D.z = fVar11;
-    GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
+    uVar1._0_4_ = pVVar9->x;
+    uVar1._4_4_ = pVVar9->y;
+    position.z = pVVar9->z;
   }
-  pGVar12 = (this->fields).Changed;
-  position.y = 0.0;
-  position.z = 0.0;
+  (this->fields)._localPosition3D.x = (float)(int)uVar1;
+  (this->fields)._localPosition3D.y = (float)(int)((ulonglong)uVar1 >> 0x20);
+  (this->fields)._localPosition3D.z = position.z;
+  position.z = (float)this;
+  position.y = (float)&UNK_?;
+  GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
   (this->fields)._firingChanged3DEvent = 1;
-  if (pGVar12 != (GizmoEntityTransformChangedHandler *)0x0) {
-    (*(pGVar12->fields)._._.invoke_impl)((pGVar12->fields)._._.method_code,this,0,2);
+  if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
+    pGVar10 = (this->fields).Changed;
+    pvStack11 = (pGVar10->fields)._._.method;
+    uStack12 = 2;
+    position.z = (float)this;
+    position.y = (float)(pGVar10->fields)._._.method_code;
+    position.x = (float)&UNK_?;
+    (*(pGVar10->fields)._._.invoke_impl)();
   }
   (this->fields)._firingChanged3DEvent = 0;
   return;
@@ -1032,40 +1029,39 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_OnLocalPosition2DC
                (GizmoTransform *this,MethodInfo *method)
 
 {
-  if ((this->fields)._parent == (GizmoTransform *)0x0) {
-    fVar1 = (this->fields)._localPosition2D.x;
-    fVar2 = (this->fields)._localPosition2D.y;
-  }
-  else {
-    puStack_3 = (undefined *)0x0;
+  pVVar1 = &(this->fields)._localPosition2D;
+  fVar2 = pVVar1->x;
+  fVar3 = (this->fields)._localPosition2D.y;
+  if ((this->fields)._parent != (GizmoTransform *)0x0) {
+    puStack_4 = (undefined *)0x0;
     point.z = 0.0;
-    point.x = (this->fields)._localPosition2D.x;
-    point.y = (this->fields)._localPosition2D.y;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                       (&VStack_5,(((this->fields)._parent)->fields)._rotation2D,point,
+    point.x = pVVar1->x;
+    point.y = pVVar1->y;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                       (&VStack_6,(((this->fields)._parent)->fields)._rotation2D,point,
                         (MethodInfo *)0x0);
-    uVar6 = pVVar4->x;
-    uVar7 = pVVar4->y;
-    pGVar8 = (this->fields)._parent;
-    fStack_9 = (float)uVar6;
-    puStack_10 = (undefined *)uVar7;
-    if (pGVar8 == (GizmoTransform *)0x0) {
+    uVar7 = pVVar5->x;
+    uVar8 = pVVar5->y;
+    pGVar9 = (this->fields)._parent;
+    fStack_10 = (float)uVar7;
+    puStack_11 = (undefined *)uVar8;
+    if (pGVar9 == (GizmoTransform *)0x0) {
       func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
       return;
     }
-    fVar1 = (float)uVar6 + (pGVar8->fields)._position2D.x;
-    fVar2 = (float)uVar7 + (pGVar8->fields)._position2D.y;
+    fVar2 = (float)uVar7 + (pGVar9->fields)._position2D.x;
+    fVar3 = (float)uVar8 + (pGVar9->fields)._position2D.y;
   }
-  (this->fields)._position2D.x = fVar1;
-  (this->fields)._position2D.y = fVar2;
+  (this->fields)._position2D.x = fVar2;
+  (this->fields)._position2D.y = fVar3;
   GizmoTransform_UpdateChildTransforms2D(this,(MethodInfo *)0x0);
   (this->fields)._firingChanged2DEvent = 1;
   if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
-    pGVar12 = (this->fields).Changed;
-    puStack_3 = (pGVar12->fields)._._.method_code;
-    (*(pGVar12->fields)._._.invoke_impl)();
+    pGVar13 = (this->fields).Changed;
+    puStack_4 = (pGVar13->fields)._._.method_code;
+    (*(pGVar13->fields)._._.invoke_impl)();
   }
   (this->fields)._firingChanged2DEvent = 0;
   return;
@@ -1103,16 +1099,15 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_OnLocalPosition3DC
     fVar3 = (pGVar7->fields)._position3D.z + pVVar1->z;
     (this->fields)._position3D.x = (float)uVar9 + (float)uVar5;
     (this->fields)._position3D.y = (float)uVar10 + (float)uVar6;
-    unaff_retaddr = (MethodInfo *)0x0;
     VStack_4.x = (float)uVar9;
     VStack_4.y = (float)uVar10;
   }
   (this->fields)._position3D.z = fVar3;
   VStack_4.z = (float)&UNK_?;
-  GizmoTransform_UpdateChildTransforms3D(this,unaff_retaddr);
-  pGVar11 = (this->fields).Changed;
+  GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
   (this->fields)._firingChanged3DEvent = 1;
-  if (pGVar11 != (GizmoEntityTransformChangedHandler *)0x0) {
+  if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
+    pGVar11 = (this->fields).Changed;
     VStack_4.z = (float)(pGVar11->fields)._._.method_code;
     VStack_4.y = (float)&UNK_?;
     (*(pGVar11->fields)._._.invoke_impl)();
@@ -1435,17 +1430,14 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_OnPosition3DChange
 
 {
   if ((this->fields)._parent == (GizmoTransform *)0x0) {
-    fVar1 = (this->fields)._position3D.y;
+    uVar1._0_4_ = (this->fields)._position3D.x;
+    uVar1._4_4_ = (this->fields)._position3D.y;
     fVar2 = (this->fields)._position3D.z;
-    (this->fields)._localPosition3D.x = (this->fields)._position3D.x;
-    (this->fields)._localPosition3D.y = fVar1;
-    (this->fields)._localPosition3D.z = fVar2;
-    GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
   }
   else {
     pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
-                        ((Quaternion *)&stack0xffffffd4,
-                         (((this->fields)._parent)->fields)._rotation3D,(MethodInfo *)0x0);
+                       ((Quaternion *)&stack0xffffffd4,
+                        (((this->fields)._parent)->fields)._rotation3D,(MethodInfo *)0x0);
     uVar4 = (this->fields)._position3D.x;
     uVar5 = (this->fields)._position3D.y;
     pGVar6 = (this->fields)._parent;
@@ -1462,17 +1454,20 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_OnPosition3DChange
     point.z = (this->fields)._position3D.z - (pGVar6->fields)._position3D.z;
     pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                         ((Vector3 *)&stack0xffffffe4,*pQVar3,point,(MethodInfo *)0x0);
-    fVar1 = pVVar10->y;
+    uVar1._0_4_ = pVVar10->x;
+    uVar1._4_4_ = pVVar10->y;
     fVar2 = pVVar10->z;
-    (this->fields)._localPosition3D.x = pVVar10->x;
-    (this->fields)._localPosition3D.y = fVar1;
-    (this->fields)._localPosition3D.z = fVar2;
-    GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
   }
-  pGVar11 = (this->fields).Changed;
+  (this->fields)._localPosition3D.x = (float)(int)uVar1;
+  (this->fields)._localPosition3D.y = (float)(int)((ulonglong)uVar1 >> 0x20);
+  (this->fields)._localPosition3D.z = fVar2;
+  GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
   (this->fields)._firingChanged3DEvent = 1;
-  if (pGVar11 != (GizmoEntityTransformChangedHandler *)0x0) {
-    (*(pGVar11->fields)._._.invoke_impl)((pGVar11->fields)._._.method_code,this,0,2);
+  if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
+    pGVar11 = (this->fields).Changed;
+    pvStack12 = (pGVar11->fields)._._.method;
+    uStack13 = 2;
+    (*(pGVar11->fields)._._.invoke_impl)();
   }
   (this->fields)._firingChanged3DEvent = 0;
   return;
@@ -2750,44 +2745,46 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_set_LocalPosition2
                (GizmoTransform *this,Vector2 value,MethodInfo *method)
 
 {
-  if (((this->fields)._firingChanged2DEvent == 0) &&
-     (fVar1 = (this->fields)._localPosition2D.x - value.x,
-     fVar2 = (this->fields)._localPosition2D.y - value.y,
-     _UNK_? <= fVar2 * fVar2 + fVar1 * fVar1)) {
-    pGVar3 = (this->fields)._parent;
-    (this->fields)._localPosition2D.x = value.x;
-    (this->fields)._localPosition2D.y = value.y;
-    if (pGVar3 != (GizmoTransform *)0x0) {
-      puStack_4 = (undefined *)0x0;
-      point.z = 0.0;
-      point._0_8_ = value;
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                         (&VStack_6,(((this->fields)._parent)->fields)._rotation2D,point,
-                          (MethodInfo *)0x0);
-      uVar7 = pVVar5->x;
-      uVar8 = pVVar5->y;
-      pGVar3 = (this->fields)._parent;
-      fStack_9 = (float)uVar7;
-      puStack_10 = (undefined *)uVar8;
-      if (pGVar3 == (GizmoTransform *)0x0) {
-        func_?();
-        pcVar11 = (code *)swi(3);
-        (*pcVar11)();
-        return;
+  if ((this->fields)._firingChanged2DEvent == 0) {
+    fVar1 = (this->fields)._localPosition2D.x - value.x;
+    fVar2 = (this->fields)._localPosition2D.y - value.y;
+    bVar3 = fVar2 * fVar2 + fVar1 * fVar1 < _UNK_?;
+    puStack_4 = (undefined *)(uint)bVar3;
+    if (puStack_4 == (undefined *)0x0) {
+      (this->fields)._localPosition2D.x = value.x;
+      (this->fields)._localPosition2D.y = value.y;
+      if ((this->fields)._parent != (GizmoTransform *)0x0) {
+        point.z._0_1_ = bVar3;
+        point._0_8_ = value;
+        point.z._1_3_ = 0;
+        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                           (&VStack_6,(((this->fields)._parent)->fields)._rotation2D,point,
+                            (MethodInfo *)0x0);
+        uVar7 = pVVar5->x;
+        uVar8 = pVVar5->y;
+        pGVar9 = (this->fields)._parent;
+        fStack_10 = (float)uVar7;
+        puStack_11 = (undefined *)uVar8;
+        if (pGVar9 == (GizmoTransform *)0x0) {
+          func_?();
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
+        }
+        value.x = (pGVar9->fields)._position2D.x + (float)uVar7;
+        value.y = (pGVar9->fields)._position2D.y + (float)uVar8;
       }
-      value.x = (pGVar3->fields)._position2D.x + (float)uVar7;
-      value.y = (pGVar3->fields)._position2D.y + (float)uVar8;
+      (this->fields)._position2D.x = value.x;
+      (this->fields)._position2D.y = value.y;
+      GizmoTransform_UpdateChildTransforms2D(this,(MethodInfo *)0x0);
+      (this->fields)._firingChanged2DEvent = 1;
+      if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
+        pGVar13 = (this->fields).Changed;
+        puStack_4 = (pGVar13->fields)._._.method_code;
+        (*(pGVar13->fields)._._.invoke_impl)();
+      }
+      (this->fields)._firingChanged2DEvent = 0;
     }
-    (this->fields)._position2D.x = value.x;
-    (this->fields)._position2D.y = value.y;
-    GizmoTransform_UpdateChildTransforms2D(this,(MethodInfo *)0x0);
-    (this->fields)._firingChanged2DEvent = 1;
-    if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
-      pGVar12 = (this->fields).Changed;
-      puStack_4 = (pGVar12->fields)._._.method_code;
-      (*(pGVar12->fields)._._.invoke_impl)();
-    }
-    (this->fields)._firingChanged2DEvent = 0;
   }
   return;
 }
@@ -2807,47 +2804,45 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_set_LocalPosition3
         ((float)uVar2 - value.y) * ((float)uVar2 - value.y) +
         ((float)uVar1 - value.x) * ((float)uVar1 - value.x) +
         (VStack_3.z - value.z) * (VStack_3.z - value.z)) {
-      pGVar4 = (this->fields)._parent;
-      uVar5 = value._0_8_;
-      (this->fields)._localPosition3D.x = (float)(int)uVar5;
-      (this->fields)._localPosition3D.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+      uVar4 = value._0_8_;
+      (this->fields)._localPosition3D.x = (float)(int)uVar4;
+      (this->fields)._localPosition3D.y = (float)(int)((ulonglong)uVar4 >> 0x20);
       (this->fields)._localPosition3D.z = value.z;
       VStack_3.x = (float)uVar1;
       VStack_3.y = (float)uVar2;
-      if (pGVar4 == (GizmoTransform *)0x0) {
-        (this->fields)._position3D.x = (float)(int)uVar5;
-        (this->fields)._position3D.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+      if ((this->fields)._parent == (GizmoTransform *)0x0) {
+        (this->fields)._position3D.x = (float)(int)uVar4;
+        (this->fields)._position3D.y = (float)(int)((ulonglong)uVar4 >> 0x20);
         (this->fields)._position3D.z = value.z;
       }
       else {
-        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                             (&VStack_3,(((this->fields)._parent)->fields)._rotation3D,value,
                              (MethodInfo *)0x0);
-        uVar7 = pVVar6->x;
-        uVar8 = pVVar6->y;
-        fVar9 = pVVar6->z;
-        pGVar4 = (this->fields)._parent;
-        if (pGVar4 == (GizmoTransform *)0x0) {
+        uVar6 = pVVar5->x;
+        uVar7 = pVVar5->y;
+        fVar8 = pVVar5->z;
+        pGVar9 = (this->fields)._parent;
+        if (pGVar9 == (GizmoTransform *)0x0) {
           func_?();
           pcVar10 = (code *)swi(3);
           (*pcVar10)();
           return;
         }
-        uVar11 = (pGVar4->fields)._position3D.x;
-        uVar12 = (pGVar4->fields)._position3D.y;
-        fVar13 = (pGVar4->fields)._position3D.z;
-        (this->fields)._position3D.x = (float)uVar11 + (float)uVar7;
-        (this->fields)._position3D.y = (float)uVar12 + (float)uVar8;
-        (this->fields)._position3D.z = fVar13 + fVar9;
-        unaff_retaddr = (MethodInfo *)0x0;
+        uVar11 = (pGVar9->fields)._position3D.x;
+        uVar12 = (pGVar9->fields)._position3D.y;
+        fVar13 = (pGVar9->fields)._position3D.z;
+        (this->fields)._position3D.x = (float)uVar11 + (float)uVar6;
+        (this->fields)._position3D.y = (float)uVar12 + (float)uVar7;
+        (this->fields)._position3D.z = fVar13 + fVar8;
         VStack_3.x = (float)uVar11;
         VStack_3.y = (float)uVar12;
       }
       VStack_3.z = (float)&UNK_?;
-      GizmoTransform_UpdateChildTransforms3D(this,unaff_retaddr);
-      pGVar14 = (this->fields).Changed;
+      GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
       (this->fields)._firingChanged3DEvent = 1;
-      if (pGVar14 != (GizmoEntityTransformChangedHandler *)0x0) {
+      if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
+        pGVar14 = (this->fields).Changed;
         VStack_3.z = (float)(pGVar14->fields)._._.method_code;
         VStack_3.y = (float)&UNK_?;
         (*(pGVar14->fields)._._.invoke_impl)();
@@ -2939,27 +2934,26 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_set_Position2D
   if (((this->fields)._firingChanged2DEvent == 0) &&
      (fVar1 = (this->fields)._position2D.x - value.x, fVar2 = (this->fields)._position2D.y - value.y
      , _UNK_? <= fVar2 * fVar2 + fVar1 * fVar1)) {
-    pGVar3 = (this->fields)._parent;
     (this->fields)._position2D.x = value.x;
     (this->fields)._position2D.y = value.y;
     fVar2 = value.y;
     fVar1 = value.x;
-    if (pGVar3 != (GizmoTransform *)0x0) {
-      pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
+    if ((this->fields)._parent != (GizmoTransform *)0x0) {
+      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
                          ((Quaternion *)&stack0xffffffe0,
                           (((this->fields)._parent)->fields)._rotation2D,(MethodInfo *)0x0);
-      pGVar3 = (this->fields)._parent;
-      if (pGVar3 == (GizmoTransform *)0x0) {
+      pGVar4 = (this->fields)._parent;
+      if (pGVar4 == (GizmoTransform *)0x0) {
         func_?();
         pcVar5 = (code *)swi(3);
         (*pcVar5)();
         return;
       }
-      point.y = (this->fields)._position2D.y - (pGVar3->fields)._position2D.y;
-      point.x = (this->fields)._position2D.x - (pGVar3->fields)._position2D.x;
+      point.y = (this->fields)._position2D.y - (pGVar4->fields)._position2D.y;
+      point.x = (this->fields)._position2D.x - (pGVar4->fields)._position2D.x;
       point.z = 0.0;
       pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                         ((Vector3 *)&stack0xffffffe4,*pQVar4,point,(MethodInfo *)0x0);
+                         ((Vector3 *)&stack0xffffffe4,*pQVar3,point,(MethodInfo *)0x0);
       fVar1 = pVVar6->x;
       fVar2 = pVVar6->y;
     }
@@ -2997,13 +2991,7 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_set_Position3D
       (this->fields)._position3D.x = (float)(int)uVar5;
       (this->fields)._position3D.y = (float)(int)((ulonglong)uVar5 >> 0x20);
       (this->fields)._position3D.z = value.z;
-      if (pGVar4 == (GizmoTransform *)0x0) {
-        (this->fields)._localPosition3D.x = (float)(int)uVar5;
-        (this->fields)._localPosition3D.y = (float)(int)((ulonglong)uVar5 >> 0x20);
-        (this->fields)._localPosition3D.z = value.z;
-        GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
-      }
-      else {
+      if (pGVar4 != (GizmoTransform *)0x0) {
         pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
                             ((Quaternion *)&stack0xffffffd4,
                              (((this->fields)._parent)->fields)._rotation3D,(MethodInfo *)0x0);
@@ -3023,17 +3011,17 @@ void Assembly-CSharp.dll::RTG::GizmoTransform::GizmoTransform_set_Position3D
         point.z = (this->fields)._position3D.z - (pGVar4->fields)._position3D.z;
         pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                             ((Vector3 *)&stack0xffffffe4,*pQVar6,point,(MethodInfo *)0x0);
-        fVar13 = pVVar12->y;
-        fVar3 = pVVar12->z;
-        (this->fields)._localPosition3D.x = pVVar12->x;
-        (this->fields)._localPosition3D.y = fVar13;
-        (this->fields)._localPosition3D.z = fVar3;
-        GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
+        uVar5._0_4_ = pVVar12->x;
+        uVar5._4_4_ = pVVar12->y;
+        value.z = pVVar12->z;
       }
-      pGVar14 = (this->fields).Changed;
+      (this->fields)._localPosition3D.x = (float)(int)uVar5;
+      (this->fields)._localPosition3D.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+      (this->fields)._localPosition3D.z = value.z;
+      GizmoTransform_UpdateChildTransforms3D(this,(MethodInfo *)0x0);
       (this->fields)._firingChanged3DEvent = 1;
-      if (pGVar14 != (GizmoEntityTransformChangedHandler *)0x0) {
-        (*(pGVar14->fields)._._.invoke_impl)((pGVar14->fields)._._.method_code,this,0,2);
+      if ((this->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
+        (*(((this->fields).Changed)->fields)._._.invoke_impl)();
       }
       (this->fields)._firingChanged3DEvent = 0;
     }

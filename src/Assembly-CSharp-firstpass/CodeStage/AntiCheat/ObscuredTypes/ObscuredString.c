@@ -218,8 +218,8 @@ code_?:
             pOVar2 = extraout_EDX;
             goto code_?;
           }
-          if (pBVar5->vector[uVar7] !=
-              *(uint8_t *)((int)pBVar5 + (int)pBVar6 + uVar7 + (0x10 - (int)pBVar5))) {
+          if (*(uint8_t *)((int)pBVar6 + (int)pBVar5 + ((uVar7 + 0x10) - (int)pBVar6)) !=
+              pBVar6->vector[uVar7]) {
             return 0;
           }
         }

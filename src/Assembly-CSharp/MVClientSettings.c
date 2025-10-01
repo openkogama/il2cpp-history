@@ -149,7 +149,7 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_InterstitialsAd
     func_?(&TypeInfo__MVClientSettings);
     cRam_? = '\x01';
   }
-  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1b & 1) == 0) {
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) == 0) {
     return 0;
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -216,12 +216,12 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_JoinFlowAdsEnab
     func_?(&TypeInfo__MVClientSettings);
     cRam_? = '\x01';
   }
-  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0xd & 1) != 0) {
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x2000U) != 0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVClientSettings);
       cRam_? = '\x01';
     }
-    if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1b & 1) != 0) {
+    if ((TypeInfo__MVClientSettings->static_fields->flags & 0x8000000U) != 0) {
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((((pMVar1 == (MVNetworkGame *)0x0) ||
            (this = (pMVar1->fields).playerContainer, this == (MVPlayerContainer *)0x0)) ||
@@ -357,7 +357,7 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_ReviveEnabled(M
         func_?();
         cRam_? = '\x01';
       }
-      if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1a & 1) != 0) {
+      if ((TypeInfo__MVClientSettings->static_fields->flags & 0x4000000U) != 0) {
         pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if ((pMVar3 != (MVNetworkGame *)0x0) &&
            (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
@@ -409,7 +409,7 @@ bool Assembly-CSharp.dll::MVClientSettings::MVClientSettings_get_RewardedAdsEnab
     func_?(&TypeInfo__MVClientSettings);
     cRam_? = '\x01';
   }
-  if (((uint)TypeInfo__MVClientSettings->static_fields->flags >> 0x1a & 1) == 0) {
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x4000000U) == 0) {
     return 0;
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);

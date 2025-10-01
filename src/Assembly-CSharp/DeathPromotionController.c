@@ -10,14 +10,10 @@ void Assembly-CSharp.dll::DeathPromotionController::DeathPromotionController_Ini
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pRVar2 = (this->fields).registeredAdController;
-  }
-  else {
-    pRVar2 = (RegisteredPromotionController *)(this->fields).touristAdController;
-  }
-  (this->fields).adController = (IPromotionController *)pRVar2;
-  func_?(&(this->fields).adController,pRVar2);
+  pTVar2 = (&(this->fields).touristAdController)[bVar1 ^ 1];
+  (this->fields).adController =
+       (IPromotionController *)(&(this->fields).touristAdController)[bVar1 ^ 1];
+  func_?(&(this->fields).adController,pTVar2);
   if ((this->fields).adController != (IPromotionController *)0x0) {
     func_?(0,TypeInfo__IPromotionController,(this->fields).adController);
   }

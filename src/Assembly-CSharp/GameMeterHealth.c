@@ -6,8 +6,8 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__GameMeterHealth__OnMaxValueUpdate_int_);
-    func_?(&MethodInfo__GameMeterHealth__OnProgressUpdate_float_);
+    func_?(&MethodInfo__GameMeterHealth__OnHealthChange_float_);
+    func_?(&MethodInfo__GameMeterHealth__OnMaxHealthChange_int_);
     func_?(&
                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<int>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<int>_
                    );
@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
     UnityAction_1_System_Single___ctor
               ((UnityAction_1_System_Single_ *)pSVar3,(Object *)this,
-               MethodInfo__GameMeterHealth__OnProgressUpdate_float_,(MethodInfo *)0x0);
+               MethodInfo__GameMeterHealth__OnHealthChange_float_,(MethodInfo *)0x0);
     if (pSVar2 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
       SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
@@ -57,7 +57,7 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
                   ((UnityAction_1_System_Int32Enum_ *)pSVar3,(Object *)this,
-                   MethodInfo__GameMeterHealth__OnMaxValueUpdate_int_,(MethodInfo *)0x0);
+                   MethodInfo__GameMeterHealth__OnMaxHealthChange_int_,(MethodInfo *)0x0);
         if (pSVar2 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0
            ) {
           Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
@@ -73,13 +73,13 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
           if ((pSVar1 != (SpawnRoleDataMediator *)0x0) &&
              (this_00 = (SpawnRoleVariable_1_System_Single_ *)(pSVar1->fields).health,
              this_00 != (SpawnRoleVariable_1_System_Single_ *)0x0)) {
-            newValue = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                       SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
-                       SpawnRoleVariable_1_System_Single__get_Value
-                                 (this_00,
-                                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
-                                 );
-            GameMeterHealth_OnProgressUpdate(this,newValue,(MethodInfo *)0x0);
+            newHealthValue =
+                 Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
+                 ::SpawnRoleVariable`1[System::Single]::SpawnRoleVariable_1_System_Single__get_Value
+                           (this_00,
+                            MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
+                           );
+            GameMeterHealth_OnHealthChange(this,newHealthValue,(MethodInfo *)0x0);
             return;
           }
         }
@@ -93,22 +93,10 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
 }
 
 
-/* Void OnMaxValueUpdate(Int32) */
+/* Void OnHealthChange(Single) */
 
-void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnMaxValueUpdate
-               (GameMeterHealth *this,int32_t maxValue,MethodInfo *method)
-
-{
-  (this->fields).maxValue = maxValue;
-  GameMeterHealth_OnProgressUpdate(this,(this->fields).storedHealthValue,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Void OnProgressUpdate(Single) */
-
-void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnProgressUpdate
-               (GameMeterHealth *this,float newValue,MethodInfo *method)
+void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnHealthChange
+               (GameMeterHealth *this,float newHealthValue,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -123,7 +111,7 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnProgressUpdate
     cRam_? = '\x01';
   }
   pGVar1 = this;
-  if (newValue < (this->fields).storedHealthValue) {
+  if (newHealthValue < (this->fields).storedHealthValue) {
     this_00 = (this->fields).shaker;
     if ((this_00 == (GameMeterShake *)0x0) ||
        (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -157,10 +145,10 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnProgressUpdate
       Coroutines::Coroutines_Start(*(IEnumerator **)&(pOVar3->_0).this_arg.attrs,(MethodInfo *)0x0);
     }
   }
-  func_?((double)newValue);
+  func_?((double)newHealthValue);
   pSVar6 = mscorlib.dll::System::Single::Single_ToString
                      ((Single *)&stack0xfffffff8,(MethodInfo *)0x0);
-  this = (GameMeterHealth *)(pGVar1->fields).maxValue;
+  this = (GameMeterHealth *)(pGVar1->fields).maxHealthValue;
   pTVar7 = (pGVar1->fields).healthText;
   pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&this);
   pSVar6 = mscorlib.dll::System::String::String_Format_1
@@ -169,9 +157,9 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnProgressUpdate
     (*(code *)(pTVar7->klass->vtable).set_text.method)
               (pTVar7,pSVar6,(pTVar7->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     pPVar8 = (pGVar1->fields).progressBar;
-    (pGVar1->fields).storedHealthValue = newValue;
+    (pGVar1->fields).storedHealthValue = newHealthValue;
     if (pPVar8 != (ProgressBar *)0x0) {
-      value = newValue / (float)(pGVar1->fields).maxValue;
+      value = newHealthValue / (float)(pGVar1->fields).maxHealthValue;
       if (value < 0.0) {
         value = 0.0;
       }
@@ -213,13 +201,25 @@ code_?:
 }
 
 
+/* Void OnMaxHealthChange(Int32) */
+
+void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnMaxHealthChange
+               (GameMeterHealth *this,int32_t maxHealthValue,MethodInfo *method)
+
+{
+  (this->fields).maxHealthValue = maxHealthValue;
+  GameMeterHealth_OnHealthChange(this,(this->fields).storedHealthValue,(MethodInfo *)0x0);
+  return;
+}
+
+
 /* GameMeterHealth() */
 
 void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth__ctor
                (GameMeterHealth *this,MethodInfo *method)
 
 {
-  (this->fields).maxValue = 100;
+  (this->fields).maxHealthValue = 100;
   (this->fields).storedHealthValue = -1.0;
   if (cRam_? == '\0') {
     func_?(&

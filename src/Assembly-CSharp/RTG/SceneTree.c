@@ -546,8 +546,8 @@ code_?:
     func_?();
   }
   pVVar19 = Vector3Ex::Vector3Ex_FromValue
-                     (&VStack_8,TypeInfo__RTG__SceneTree->static_fields->_nonMeshObjectSize,
-                      (MethodInfo *)0x0);
+                      (&VStack_8,TypeInfo__RTG__SceneTree->static_fields->_nonMeshObjectSize,
+                       (MethodInfo *)0x0);
   uStack_15._0_4_ = pVVar19->x;
   uStack_15._4_4_ = pVVar19->y;
   fStack_16 = pVVar19->z;
@@ -568,8 +568,8 @@ code_?:
     if (pLVar22 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
     method_00 = (MethodInfo *)&UNK_?;
-    pMVar23 = 
-    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__GetEnumerator__
+    pGVar23 = (GameObjectRayHit *)
+              MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__GetEnumerator__
     ;
     pLVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
@@ -623,25 +623,25 @@ code_?:
         in_stack_32 = fVar31;
         in_stack_34 = fVar33;
         if (bVar11 != 0) {
-          pOVar35 = (Object_1 *)
+          pGVar35 = (GameObjectRayHit *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                               (pGVar28,
                                UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
                               );
-          uStack_36 = CONCAT44(pOVar35,(undefined4)uStack_36);
+          pGStack_36 = pGVar35;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
-            pOVar35 = (Object_1 *)uStack_36._4_4_;
+            pGVar35 = pGStack_36;
           }
           method_00 = (MethodInfo *)0x0;
           bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            (pOVar35,(Object_1 *)0x0,(MethodInfo *)0x0);
+                            ((Object_1 *)pGVar35,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar11 != 0) {
-            if (uStack_36._4_4_ == (MethodInfo *)0x0) goto code_?;
+            if (pGStack_36 == (GameObjectRayHit *)0x0) goto code_?;
             puVar27 = (undefined *)0x0;
-            pMVar23 = uStack_36._4_4_;
+            pGVar23 = pGStack_36;
             bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_isVisible
-                              ((Renderer *)uStack_36._4_4_,(MethodInfo *)0x0);
+                              ((Renderer *)pGStack_36,(MethodInfo *)0x0);
             in_stack_17 = puVar29;
             in_stack_18 = pGVar30;
             in_stack_32 = fVar31;
@@ -659,7 +659,7 @@ code_?:
             ray_02.m_Direction.x = ray.m_Direction.x;
             ray_02.m_Direction.y = ray.m_Direction.y;
             ray_02.m_Direction.z = ray.m_Direction.z;
-            pGVar38 = SceneTree_RaycastMeshObject(this,ray_02,pGVar28,(MethodInfo *)0x0);
+            pGVar35 = SceneTree_RaycastMeshObject(this,ray_02,pGVar28,(MethodInfo *)0x0);
           }
           else {
             if (GVar37 == GameObjectType__Enum_Terrain) {
@@ -698,20 +698,21 @@ code_?:
                   BStack_25.Center.x = ray.m_Origin.y;
                   BStack_25.Center.y = ray.m_Origin.z;
                   BStack_25.Center.z = ray.m_Direction.x;
-                  uStack_39 = CONCAT44(iStack_40,(undefined4)uStack_39);
-                  uStack_36 = CONCAT44(ray.m_Direction.z,ray.m_Direction.y);
+                  uStack_38._4_4_ = (Object *)fStack_39;
+                  fStack_40 = ray.m_Direction.y;
+                  pGStack_36 = (GameObjectRayHit *)ray.m_Direction.z;
                   VStack_8.y = VStack_41.x;
                   VStack_8.z = VStack_41.y;
                   pGVar42 = TypeInfo__RTG__GameObjectRayHit;
-                  pGVar38 = (GameObjectRayHit *)func_?();
+                  pGVar35 = (GameObjectRayHit *)func_?();
                   hitRay.m_Origin.y = BStack_25.Center.x;
                   hitRay.m_Origin.x = BStack_25.Plane.m_Distance;
                   hitRay.m_Origin.z = BStack_25.Center.y;
                   hitRay.m_Direction.x = BStack_25.Center.z;
-                  hitRay.m_Direction.y = (float)(undefined4)uStack_36;
-                  hitRay.m_Direction.z = (float)uStack_36._4_4_;
+                  hitRay.m_Direction.y = fStack_40;
+                  hitRay.m_Direction.z = (float)pGStack_36;
                   hit3D.m_Point.y = (float)puVar27;
-                  hit3D.m_Point.x = (float)pMVar23;
+                  hit3D.m_Point.x = (float)pGVar23;
                   hit3D.m_Point.z = (float)this_03;
                   hit3D.m_Normal.x = (float)pGVar42;
                   hit3D.m_Normal.y = (float)puVar29;
@@ -720,15 +721,15 @@ code_?:
                   hit3D.m_Distance = fVar33;
                   hit3D.m_UV.x = VStack_8.y;
                   hit3D.m_UV.y = VStack_8.z;
-                  hit3D.m_Collider = (int32_t)uStack_39._4_4_;
-                  GameObjectRayHit::GameObjectRayHit__ctor(pGVar38,hitRay,hit3D,(MethodInfo *)0x0);
+                  hit3D.m_Collider = (int32_t)uStack_38._4_4_;
+                  GameObjectRayHit::GameObjectRayHit__ctor(pGVar35,hitRay,hit3D,(MethodInfo *)0x0);
                   method_00 = (MethodInfo *)&UNK_?;
-                  pMVar23 = 
-                  MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
+                  pGVar23 = (GameObjectRayHit *)
+                            MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                   ;
                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                   List_1_System_Object__Add
-                            ((List_1_System_Object_ *)hits,(Object *)pGVar38,
+                            ((List_1_System_Object_ *)hits,(Object *)pGVar35,
                              MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                             );
                 }
@@ -761,11 +762,12 @@ code_?:
               in_stack_32 = fVar31;
               in_stack_34 = fVar33;
               if ((char)uStack_54 != '\0') {
-                uStack_39 = CONCAT44(ray.m_Direction.z,ray.m_Direction.y);
                 fStack_55 = ray.m_Origin.x;
                 VStack_8.x = ray.m_Origin.y;
                 VStack_8.y = ray.m_Origin.z;
                 VStack_8.z = ray.m_Direction.x;
+                uStack_38._0_4_ = ray.m_Direction.y;
+                uStack_38._4_4_ = (Object *)ray.m_Direction.z;
                 if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
@@ -773,8 +775,8 @@ code_?:
                 ray_00.m_Origin.x = fStack_55;
                 ray_00.m_Origin.z = VStack_8.y;
                 ray_00.m_Direction.x = VStack_8.z;
-                ray_00.m_Direction.y = (float)(int)uStack_39;
-                ray_00.m_Direction.z = (float)((ulonglong)uStack_39 >> 0x20);
+                ray_00.m_Direction.y = (float)uStack_38;
+                ray_00.m_Direction.z = SUB84(uStack_38,4);
                 boxCenter.y = fStack_48;
                 boxCenter.x = fStack_47;
                 boxCenter.z = fStack_49;
@@ -794,20 +796,20 @@ code_?:
                 in_stack_34 = fVar33;
                 if (bVar11 != 0) {
                   pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                                     ((Vector3 *)&stack0xfffffef4,&ray,afStack_7[0],
-                                      (MethodInfo *)0x0);
-                  uStack_39._0_4_ = pVVar19->x;
-                  uStack_39._4_4_ = (Object *)pVVar19->y;
-                  uStack_36._4_4_ = (MethodInfo *)pVVar19->z;
+                                      ((Vector3 *)&stack0xfffffef4,&ray,afStack_7[0],
+                                       (MethodInfo *)0x0);
+                  uStack_38._0_4_ = pVVar19->x;
+                  uStack_38._4_4_ = (Object *)pVVar19->y;
+                  pGStack_36 = (GameObjectRayHit *)pVVar19->z;
                   if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
                   in_stack_34 = 0.0;
                   in_stack_17 = (undefined *)uStack_20;
                   in_stack_18 = (GameObjectTypeHelper__Class *)((ulonglong)uStack_20 >> 0x20);
-                  point.z = (float)uStack_36._4_4_;
-                  point.x = (float)(undefined4)uStack_39;
-                  point.y = (float)uStack_39._4_4_;
+                  point.z = (float)pGStack_36;
+                  point.x = (float)uStack_38;
+                  point.y = (float)uStack_38._4_4_;
                   boxCenter_01.y = fStack_48;
                   boxCenter_01.x = fStack_47;
                   boxCenter_01.z = fStack_49;
@@ -830,13 +832,13 @@ code_?:
                   fVar57 = (pBVar56->Plane).m_Normal.z;
                   VStack_8.y = ray.m_Direction.y;
                   VStack_8.z = ray.m_Direction.z;
-                  uStack_36 = CONCAT44(afStack_7[0],(undefined4)uStack_36);
+                  pGStack_36 = (GameObjectRayHit *)afStack_7[0];
                   puVar27 = &UNK_?;
                   fVar58 = ray.m_Origin.x;
                   fVar59 = ray.m_Origin.y;
                   pGVar42 = TypeInfo__RTG__GameObjectRayHit;
-                  pGVar38 = (GameObjectRayHit *)func_?();
-                  uStack_39 = CONCAT44(pGVar38,(undefined4)uStack_39);
+                  pGVar23 = (GameObjectRayHit *)func_?();
+                  uStack_38._4_4_ = (Object *)pGVar23;
                   hitRay_00.m_Origin.y = fVar59;
                   hitRay_00.m_Origin.x = fVar58;
                   hitRay_00.m_Origin.z = (float)puVar27;
@@ -847,15 +849,15 @@ code_?:
                   hitNormal.x = fVar31;
                   hitNormal.z = fVar57;
                   GameObjectRayHit::GameObjectRayHit__ctor_2
-                            (pGVar38,hitRay_00,pGVar28,hitNormal,(float)uStack_36._4_4_,
-                             (MethodInfo *)0x0);
+                            (pGVar23,hitRay_00,pGVar28,hitNormal,(float)pGStack_36,(MethodInfo *)0x0)
+                  ;
                   method_00 = (MethodInfo *)&UNK_?;
-                  pMVar23 = 
-                  MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
+                  pGVar23 = (GameObjectRayHit *)
+                            MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                   ;
                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                   List_1_System_Object__Add
-                            ((List_1_System_Object_ *)hits,uStack_39._4_4_,
+                            ((List_1_System_Object_ *)hits,uStack_38._4_4_,
                              MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                             );
                 }
@@ -868,19 +870,19 @@ code_?:
             ray_01.m_Direction.x = ray.m_Direction.x;
             ray_01.m_Direction.y = ray.m_Direction.y;
             ray_01.m_Direction.z = ray.m_Direction.z;
-            pGVar38 = SceneTree_RaycastSpriteObject(this,ray_01,pGVar28,(MethodInfo *)0x0);
+            pGVar35 = SceneTree_RaycastSpriteObject(this,ray_01,pGVar28,(MethodInfo *)0x0);
           }
           in_stack_17 = puVar29;
           in_stack_18 = pGVar30;
           in_stack_32 = fVar31;
           in_stack_34 = fVar33;
-          if (pGVar38 != (GameObjectRayHit *)0x0) {
+          if (pGVar35 != (GameObjectRayHit *)0x0) {
             method_00 = 
             MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
             ;
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
             List_1_System_Object__Add
-                      ((List_1_System_Object_ *)hits,(Object *)pGVar38,
+                      ((List_1_System_Object_ *)hits,(Object *)pGVar35,
                        MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                       );
             in_stack_17 = puVar29;
@@ -935,22 +937,22 @@ code_?:
         bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                 GameObject_get_activeInHierarchy(pGVar28,(MethodInfo *)0x0);
         if (bVar11 != 0) {
-          pOVar35 = (Object_1 *)
+          pGVar23 = (GameObjectRayHit *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                               (pGVar28,
                                UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
                               );
-          uStack_36 = CONCAT44(pOVar35,(undefined4)uStack_36);
+          pGStack_36 = pGVar23;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
-            pOVar35 = (Object_1 *)uStack_36._4_4_;
+            pGVar23 = pGStack_36;
           }
           bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            (pOVar35,(Object_1 *)0x0,(MethodInfo *)0x0);
+                            ((Object_1 *)pGVar23,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar11 != 0) {
-            if (uStack_36._4_4_ == (MethodInfo *)0x0) goto code_?;
+            if (pGStack_36 == (GameObjectRayHit *)0x0) goto code_?;
             bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_isVisible
-                              ((Renderer *)uStack_36._4_4_,(MethodInfo *)0x0);
+                              ((Renderer *)pGStack_36,(MethodInfo *)0x0);
             if (bVar11 == 0) goto code_?;
           }
           if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
@@ -980,15 +982,18 @@ code_?:
             BStack_25.Center.z = ray.m_Direction.x;
             VStack_8.y = ray.m_Direction.y;
             VStack_8.z = ray.m_Direction.z;
+            uVar60 = ray.m_Direction._4_8_;
             if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
+              uVar60._4_4_ = VStack_8.z;
+              uVar60._0_4_ = VStack_8.y;
             }
             ray_03.m_Origin.y = BStack_25.Center.x;
             ray_03.m_Origin.x = BStack_25.Plane.m_Distance;
             ray_03.m_Origin.z = BStack_25.Center.y;
             ray_03.m_Direction.x = BStack_25.Center.z;
-            ray_03.m_Direction.y = VStack_8.y;
-            ray_03.m_Direction.z = VStack_8.z;
+            ray_03.m_Direction.y = (float)uVar60;
+            ray_03.m_Direction.z = SUB84(uVar60,4);
             boxCenter_00.y = fStack_48;
             boxCenter_00.x = fStack_47;
             boxCenter_00.z = fStack_49;
@@ -1005,19 +1010,19 @@ code_?:
                                (BoxEpsilon)ZEXT812(0),(MethodInfo *)0x0);
             if (bVar11 != 0) {
               pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                                 ((Vector3 *)&stack0xfffffef4,&ray,fStack_9,(MethodInfo *)0x0);
-              uVar60._0_4_ = pVVar19->x;
-              uVar60._4_4_ = pVVar19->y;
-              VStack_8.y = (float)(undefined4)uVar60;
-              VStack_8.z = (float)uVar60._4_4_;
-              uStack_39._4_4_ = (Object *)pVVar19->z;
+                                  ((Vector3 *)&stack0xfffffef4,&ray,fStack_9,(MethodInfo *)0x0);
+              uVar61._0_4_ = pVVar19->x;
+              uVar61._4_4_ = pVVar19->y;
+              VStack_8.y = (float)(undefined4)uVar61;
+              VStack_8.z = (float)uVar61._4_4_;
+              uStack_38._4_4_ = (Object *)pVVar19->z;
               if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
-                uVar60 = CONCAT44(VStack_8.z,VStack_8.y);
+                uVar61 = CONCAT44(VStack_8.z,VStack_8.y);
               }
-              point_00.z = (float)uStack_39._4_4_;
-              point_00.x = (float)(int)uVar60;
-              point_00.y = (float)(int)((ulonglong)uVar60 >> 0x20);
+              point_00.z = (float)uStack_38._4_4_;
+              point_00.x = (float)(int)uVar61;
+              point_00.y = (float)(int)((ulonglong)uVar61 >> 0x20);
               boxCenter_02.y = fStack_48;
               boxCenter_02.x = fStack_47;
               boxCenter_02.z = fStack_49;
@@ -1044,10 +1049,10 @@ code_?:
               VStack_8.y = ray.m_Direction.y;
               VStack_8.z = ray.m_Direction.z;
               LStack_6._index = (int32_t)TypeInfo__RTG__GameObjectRayHit;
-              uStack_39 = CONCAT44(fStack_9,(undefined4)uStack_39);
+              uStack_38._4_4_ = (Object *)fStack_9;
               LStack_6._list = (List_1_System_Object_ *)&UNK_?;
-              pGVar38 = (GameObjectRayHit *)func_?();
-              uStack_36 = CONCAT44(pGVar38,(undefined4)uStack_36);
+              pGVar23 = (GameObjectRayHit *)func_?();
+              pGStack_36 = pGVar23;
               hitRay_01.m_Origin.y = BStack_25.Center.x;
               hitRay_01.m_Origin.x = BStack_25.Plane.m_Distance;
               hitRay_01.m_Origin.z = BStack_25.Center.y;
@@ -1058,12 +1063,12 @@ code_?:
               hitNormal_00.x = fVar31;
               hitNormal_00.z = fVar57;
               GameObjectRayHit::GameObjectRayHit__ctor_2
-                        (pGVar38,hitRay_01,pGVar28,hitNormal_00,(float)uStack_39._4_4_,
+                        (pGVar23,hitRay_01,pGVar28,hitNormal_00,(float)uStack_38._4_4_,
                          (MethodInfo *)0x0);
               method_00 = (MethodInfo *)&UNK_?;
               mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
               List_1_System_Object__Add
-                        ((List_1_System_Object_ *)hits,(Object *)uStack_36._4_4_,
+                        ((List_1_System_Object_ *)hits,(Object *)pGStack_36,
                          MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                         );
             }

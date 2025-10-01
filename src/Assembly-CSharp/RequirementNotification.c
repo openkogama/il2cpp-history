@@ -105,23 +105,23 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_Initi
               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
               ;
               bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 method_00,(Object *)StringLiteral_levelAmount,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                );
+                       Object,UnityEngine::UIElements::TextureId]::
+                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                 ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                  method_00,(Object *)StringLiteral_levelAmount,
+                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                 );
               if (bVar10 == 0) {
 code_?:
                 pDVar11 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                          (pMVar9->fields).data;
                 if (pDVar11 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
                   bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,UnityEngine::UIElements::TextureId]::
-                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                    (pDVar11,(Object *)StringLiteral_gameCoinAmount,
-                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                    );
+                           Object,UnityEngine::UIElements::TextureId]::
+                           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                     (pDVar11,(Object *)StringLiteral_gameCoinAmount,
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                     );
                   if (bVar10 == 0) {
 code_?:
                     pDVar11 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
@@ -129,11 +129,11 @@ code_?:
                     if (pDVar11 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                                   0x0) {
                       bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                              Object,UnityEngine::UIElements::TextureId]::
-                              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                        (pDVar11,(Object *)StringLiteral_starAmount,
-                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                        );
+                               Object,UnityEngine::UIElements::TextureId]::
+                               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                         (pDVar11,(Object *)StringLiteral_starAmount,
+                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                         );
                       if (bVar10 == 0) {
 code_?:
                         pDVar11 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
@@ -141,11 +141,11 @@ code_?:
                         if (pDVar11 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
                                        *)0x0) {
                           bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Object,UnityEngine::UIElements::TextureId]::
-                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                            (pDVar11,(Object *)StringLiteral_team,
-                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                            );
+                                   Object,UnityEngine::UIElements::TextureId]::
+                                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                             (pDVar11,(Object *)StringLiteral_team,
+                                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                             );
                           if (bVar10 == 0) {
 code_?:
                             pDVar11 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
@@ -153,12 +153,12 @@ code_?:
                             if (pDVar11 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
                                            *)0x0) {
                               bVar10 = mscorlib.dll::System::Collections::Generic::
-                                      Dictionary`2[System::Object,UnityEngine::UIElements::
-                                      TextureId]::
-                                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                                (pDVar11,(Object *)StringLiteral_RequiredRank,
-                                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                                );
+                                       Dictionary`2[System::Object,UnityEngine::UIElements::
+                                       TextureId]::
+                                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                                 (pDVar11,(Object *)StringLiteral_RequiredRank,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                                 );
                               if (bVar10 == 0) {
 code_?:
                                 pTVar12 = (this->fields).Label;
@@ -256,12 +256,8 @@ code_?:
                                         *(bool *)&pOVar5[2].klass =
                                              bVar17 <= (pPVar18->fields).gamePassTier;
                                       }
-                                      if (*(char *)&pOVar5[2].klass == '\0') {
-                                        pSVar19 = (this->fields).OffSprite;
-                                      }
-                                      else {
-                                        pSVar19 = (this->fields).OnSprite;
-                                      }
+                                      pSVar19 = (&(this->fields).OnSprite)
+                                               [*(char *)&pOVar5[2].klass == '\0'];
                                       pOVar5[1].monitor = (MonitorData *)pSVar19;
                                       func_?(&pOVar5[1].monitor,pSVar19);
                                       if (pGVar16 != (GameObject *)0x0) {
@@ -414,12 +410,7 @@ code_?:
                             iVar8 = MVGameCoinManager::MVGameCoinManager_get_GameCoinAmount
                                                (this_00,(MethodInfo *)0x0);
                             *(bool *)&pOVar5[2].klass = (int)pOVar22 <= iVar8;
-                            if (iVar8 < (int)pOVar22) {
-                              pSVar19 = (this->fields).OffSprite;
-                            }
-                            else {
-                              pSVar19 = (this->fields).OnSprite;
-                            }
+                            pSVar19 = (&(this->fields).OnSprite)[iVar8 < (int)pOVar22];
                             pOVar5[1].monitor = (MonitorData *)pSVar19;
                             func_?(&pOVar5[1].monitor,pSVar19);
                             if (pGVar16 != (GameObject *)0x0) {
@@ -518,12 +509,7 @@ code_?:
                         if (pMVar25 != (MVLocalPlayer *)0x0) {
                           iVar2 = (pMVar25->fields)._.level;
                           *(bool *)&pOVar5[2].klass = (int)pOVar22 <= iVar2;
-                          if (iVar2 < (int)pOVar22) {
-                            pSVar19 = (this->fields).OffSprite;
-                          }
-                          else {
-                            pSVar19 = (this->fields).OnSprite;
-                          }
+                          pSVar19 = (&(this->fields).OnSprite)[iVar2 < (int)pOVar22];
                           pOVar5[1].monitor = (MonitorData *)pSVar19;
                           func_?(&pOVar5[1].monitor,pSVar19);
                           data = (Dictionary_2_System_Object_System_Object_ *)
@@ -673,23 +659,17 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
        this_00 != (MVGameCoinManager *)0x0)) {
       iVar3 = MVGameCoinManager::MVGameCoinManager_get_GameCoinAmount(this_00,(MethodInfo *)0x0);
       *(bool *)&value[2].klass = (int)pOVar1 <= iVar3;
-      if (iVar3 < (int)pOVar1) {
-        pSVar4 = (this->fields).OffSprite;
-      }
-      else {
-        pSVar4 = (this->fields).OnSprite;
-      }
-      value[1].monitor = (MonitorData *)pSVar4;
+      value[1].monitor = (MonitorData *)(&(this->fields).OnSprite)[iVar3 < (int)pOVar1];
       func_?();
       if (this_01 != (GameObject *)0x0) {
-        pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+        pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                            (this_01,
                             NotificationRequirementPanel_MethodInfo__UnityEngine__GameObject__GetComponent<NotificationRequirementPanel>__
                            );
-        if ((pOVar5 != (Object *)0x0) && ((Behaviour *)pOVar5[2].monitor != (Behaviour *)0x0)) {
+        if ((pOVar4 != (Object *)0x0) && ((Behaviour *)pOVar4[2].monitor != (Behaviour *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                    ((Behaviour *)pOVar5[2].monitor,0,(MethodInfo *)0x0);
-          pOVar5[2].monitor = (MonitorData *)0x0;
+                    ((Behaviour *)pOVar4[2].monitor,0,(MethodInfo *)0x0);
+          pOVar4[2].monitor = (MonitorData *)0x0;
           func_?();
           functor = (ExecuteEvents_EventFunction_1_System_Object_ *)
                     func_?(
@@ -714,8 +694,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -766,13 +746,7 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
       if (pPVar2 == (PlayerPlanetData *)0x0) goto code_?;
       *(bool *)&value[2].klass = bVar1 <= (pPVar2->fields).gamePassTier;
     }
-    if (*(char *)&value[2].klass == '\0') {
-      pSVar3 = (this->fields).OffSprite;
-    }
-    else {
-      pSVar3 = (this->fields).OnSprite;
-    }
-    value[1].monitor = (MonitorData *)pSVar3;
+    value[1].monitor = (MonitorData *)(&(this->fields).OnSprite)[*(char *)&value[2].klass == '\0'];
     func_?(&value[1].monitor);
     if (this_00 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
@@ -798,8 +772,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowG
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -830,7 +804,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowL
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)level;
-    RequirementNotification_InstantiatePanel(this,(this->fields).LevelPanel,(MethodInfo *)0x0);
+    target = RequirementNotification_InstantiatePanel
+                       (this,(this->fields).LevelPanel,(MethodInfo *)0x0);
     pOVar1 = value[1].klass;
     this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (this_00 != (MVNetworkGame *)0x0) {
@@ -838,17 +813,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowL
       if (pMVar2 != (MVLocalPlayer *)0x0) {
         iVar3 = (pMVar2->fields)._.level;
         *(bool *)&value[2].klass = (int)pOVar1 <= iVar3;
-        if (iVar3 < (int)pOVar1) {
-          pSStack4 = (this->fields).OffSprite;
-        }
-        else {
-          pSStack4 = (this->fields).OnSprite;
-        }
-        value[1].monitor = (MonitorData *)pSStack4;
+        value[1].monitor = (MonitorData *)(&(this->fields).OnSprite)[iVar3 < (int)pOVar1];
         func_?();
-        target = 
-        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>
-        ;
         functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
@@ -860,7 +826,7 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowL
           func_?();
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_Execute_18
-                  ((GameObject *)target,(BaseEventData *)0x0,functor,
+                  (target,(BaseEventData *)0x0,functor,
                    bool_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__Execute<INotificationRequirementPanel>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>_
                   );
         return;
@@ -868,8 +834,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowL
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -913,23 +879,17 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowS
                           ((MVPlayer *)this_02,GameStatCounterType__Enum_Collectible,
                            (MethodInfo *)0x0);
         *(bool *)&value[2].klass = 2 < iVar1;
-        if (iVar1 < 3) {
-          pSVar2 = (this->fields).OffSprite;
-        }
-        else {
-          pSVar2 = (this->fields).OnSprite;
-        }
-        value[1].monitor = (MonitorData *)pSVar2;
+        value[1].monitor = (MonitorData *)(&(this->fields).OnSprite)[iVar1 < 3];
         func_?();
         if (this_00 != (GameObject *)0x0) {
-          pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+          pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                              (this_00,
                               NotificationRequirementPanel_MethodInfo__UnityEngine__GameObject__GetComponent<NotificationRequirementPanel>__
                              );
-          if ((pOVar3 != (Object *)0x0) && ((Behaviour *)pOVar3[2].monitor != (Behaviour *)0x0)) {
+          if ((pOVar2 != (Object *)0x0) && ((Behaviour *)pOVar2[2].monitor != (Behaviour *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                      ((Behaviour *)pOVar3[2].monitor,0,(MethodInfo *)0x0);
-            pOVar3[2].monitor = (MonitorData *)0x0;
+                      ((Behaviour *)pOVar2[2].monitor,0,(MethodInfo *)0x0);
+            pOVar2[2].monitor = (MonitorData *)0x0;
             func_?();
             functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
@@ -952,8 +912,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowS
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1005,23 +965,18 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowT
           bVar4 = false;
         }
         *(bool *)&value[2].klass = bVar4;
-        if (bVar4 == false) {
-          pSVar5 = (this->fields).OffSprite;
-        }
-        else {
-          pSVar5 = (this->fields).OnSprite;
-        }
-        value[1].monitor = (MonitorData *)pSVar5;
+        value[1].monitor =
+             (MonitorData *)(&(this->fields).OnSprite)[*(char *)&value[2].klass == '\0'];
         func_?();
         if (this_01 != (GameObject *)0x0) {
-          pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+          pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                              (this_01,
                               NotificationRequirementPanel_MethodInfo__UnityEngine__GameObject__GetComponent<NotificationRequirementPanel>__
                              );
-          if ((pOVar6 != (Object *)0x0) && ((Behaviour *)pOVar6[2].monitor != (Behaviour *)0x0)) {
+          if ((pOVar5 != (Object *)0x0) && ((Behaviour *)pOVar5[2].monitor != (Behaviour *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                      ((Behaviour *)pOVar6[2].monitor,0,(MethodInfo *)0x0);
-            pOVar6[2].monitor = (MonitorData *)0x0;
+                      ((Behaviour *)pOVar5[2].monitor,0,(MethodInfo *)0x0);
+            pOVar5[2].monitor = (MonitorData *)0x0;
             func_?();
             functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
@@ -1045,8 +1000,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowT
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

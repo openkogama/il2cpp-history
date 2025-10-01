@@ -274,7 +274,7 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
       VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
       if (pAVar15 != (AnimationCurve *)0x0) {
         fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar15,(float)((uint)(3.9814286e-29 / ((float)iVar6 * VVar7.x)) &
+                           (pAVar15,(float)((uint)(3.985242e-29 / ((float)iVar6 * VVar7.x)) &
                                           _UNK_?),(MethodInfo *)0x0);
         fVar3 = (this_00->fields).desiredDeltaX;
         pCVar17 = (this_00->fields).m_HorizontalVirtualAxis;

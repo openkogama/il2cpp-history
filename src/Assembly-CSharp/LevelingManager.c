@@ -367,78 +367,54 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager__cctor(MethodInfo *me
             (this,
              MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Dictionary__)
   ;
-  pXVar1 = TypeInfo__XPLevelLimits;
-  pOVar2 = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
-  pOVar2[1].klass = (Object__Class *)0x0;
-  pOVar2[1].monitor = (MonitorData *)0x64;
-  pOVar2[2].klass = (Object__Class *)0x1;
+  pEVar1 = (ExceptionFilter *)func_?(TypeInfo__XPLevelLimits);
+  System.Core.dll::System::Linq::Expressions::Interpreter::ExceptionFilter::ExceptionFilter__ctor
+            (pEVar1,0,100,1,(MethodInfo *)0x0);
   if (this != (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
                *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
-              ((Dictionary_2_System_Int32_System_Object_ *)this,1,pOVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)this,1,(Object *)pEVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
               );
-    pXVar1 = TypeInfo__XPLevelLimits;
-    pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
-    pOVar2[1].klass = (Object__Class *)0x65;
-    pOVar2[1].monitor = (MonitorData *)0xc8;
-    pOVar2[2].klass = (Object__Class *)0x2;
+    pEVar1 = (ExceptionFilter *)func_?();
+    System.Core.dll::System::Linq::Expressions::Interpreter::ExceptionFilter::ExceptionFilter__ctor
+              (pEVar1,0x65,200,2,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
-              ((Dictionary_2_System_Int32_System_Object_ *)this,2,pOVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)this,2,(Object *)pEVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
               );
-    pXVar1 = TypeInfo__XPLevelLimits;
-    pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
-    pOVar2[1].klass = (Object__Class *)0xc9;
-    pOVar2[1].monitor = (MonitorData *)0x12c;
-    pOVar2[2].klass = (Object__Class *)0x3;
+    pEVar1 = (ExceptionFilter *)func_?();
+    System.Core.dll::System::Linq::Expressions::Interpreter::ExceptionFilter::ExceptionFilter__ctor
+              (pEVar1,0xc9,300,3,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
-              ((Dictionary_2_System_Int32_System_Object_ *)this,3,pOVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)this,3,(Object *)pEVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
               );
-    pXVar1 = TypeInfo__XPLevelLimits;
-    pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
-    pOVar2[1].klass = (Object__Class *)0x12d;
-    pOVar2[1].monitor = (MonitorData *)0x190;
-    pOVar2[2].klass = (Object__Class *)0x4;
+    pEVar1 = (ExceptionFilter *)func_?();
+    System.Core.dll::System::Linq::Expressions::Interpreter::ExceptionFilter::ExceptionFilter__ctor
+              (pEVar1,0x12d,400,4,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
-              ((Dictionary_2_System_Int32_System_Object_ *)this,4,pOVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)this,4,(Object *)pEVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
               );
-    pXVar1 = TypeInfo__XPLevelLimits;
-    pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
-    pOVar2[1].klass = (Object__Class *)0x191;
-    pOVar2[1].monitor = (MonitorData *)0x1f4;
-    pOVar2[2].klass = (Object__Class *)0x5;
+    pEVar1 = (ExceptionFilter *)func_?();
+    System.Core.dll::System::Linq::Expressions::Interpreter::ExceptionFilter::ExceptionFilter__ctor
+              (pEVar1,0x191,500,5,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
-              ((Dictionary_2_System_Int32_System_Object_ *)this,5,pOVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)this,5,(Object *)pEVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
               );
-    pXVar1 = TypeInfo__XPLevelLimits;
-    pOVar2 = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)pXVar1);
-    pOVar2[1].klass = (Object__Class *)0x1f5;
-    pOVar2[1].monitor = (MonitorData *)0x258;
-    pOVar2[2].klass = (Object__Class *)0x6;
+    pEVar1 = (ExceptionFilter *)func_?();
+    System.Core.dll::System::Linq::Expressions::Interpreter::ExceptionFilter::ExceptionFilter__ctor
+              (pEVar1,0x1f5,600,6,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
-              ((Dictionary_2_System_Int32_System_Object_ *)this,6,pOVar2,
+              ((Dictionary_2_System_Int32_System_Object_ *)this,6,(Object *)pEVar1,
                MethodInfo__System__Collections__Generic__Dictionary<int,_XPLevelLimits>__Add_int__XPLevelLimits_
               );
     TypeInfo__LevelingManager->static_fields->TestLevelToLimits =
@@ -447,8 +423,8 @@ void Assembly-CSharp.dll::LevelingManager::LevelingManager__cctor(MethodInfo *me
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

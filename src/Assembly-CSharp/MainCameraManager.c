@@ -28,15 +28,13 @@ bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_ApplyPostProcessi
         func_?();
       }
       pPVar3 = &data;
-      pMVar4 = TypeInfo__MainCameraManager->static_fields;
+      pPVar4 = &TypeInfo__MainCameraManager->static_fields->CurrentPostProcessingSettings;
       for (iVar5 = 0x2a; iVar5 != 0; iVar5 = iVar5 + -1) {
         uVar6 = *(undefined3 *)&(pPVar3->colorSettings).field_0x1;
-        (pMVar4->CurrentPostProcessingSettings).colorSettings.colors =
-             (pPVar3->colorSettings).colors;
-        *(undefined3 *)&(pMVar4->CurrentPostProcessingSettings).colorSettings.field_0x1 = uVar6;
+        (pPVar4->colorSettings).colors = (pPVar3->colorSettings).colors;
+        *(undefined3 *)&(pPVar4->colorSettings).field_0x1 = uVar6;
         pPVar3 = (PostProcessingSettings *)&(pPVar3->colorSettings).postExposure;
-        pMVar4 = (MainCameraManager__StaticFields *)
-                  &(pMVar4->CurrentPostProcessingSettings).colorSettings.postExposure;
+        pPVar4 = (PostProcessingSettings *)&(pPVar4->colorSettings).postExposure;
       }
       colorSettings.postExposure = data.colorSettings.postExposure;
       colorSettings.colors = data.colorSettings.colors;
@@ -207,15 +205,13 @@ bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_ApplyPostProcessi
         func_?(TypeInfo__MainCameraManager);
       }
       pPVar3 = &data;
-      pMVar4 = TypeInfo__MainCameraManager->static_fields;
+      pPVar4 = &TypeInfo__MainCameraManager->static_fields->CurrentPostProcessingSettings;
       for (iVar5 = 0x2a; iVar5 != 0; iVar5 = iVar5 + -1) {
         uVar6 = *(undefined3 *)&(pPVar3->colorSettings).field_0x1;
-        (pMVar4->CurrentPostProcessingSettings).colorSettings.colors =
-             (pPVar3->colorSettings).colors;
-        *(undefined3 *)&(pMVar4->CurrentPostProcessingSettings).colorSettings.field_0x1 = uVar6;
+        (pPVar4->colorSettings).colors = (pPVar3->colorSettings).colors;
+        *(undefined3 *)&(pPVar4->colorSettings).field_0x1 = uVar6;
         pPVar3 = (PostProcessingSettings *)&(pPVar3->colorSettings).postExposure;
-        pMVar4 = (MainCameraManager__StaticFields *)
-                  &(pMVar4->CurrentPostProcessingSettings).colorSettings.postExposure;
+        pPVar4 = (PostProcessingSettings *)&(pPVar4->colorSettings).postExposure;
       }
       colorSettings.postExposure = data.colorSettings.postExposure;
       colorSettings.colors = data.colorSettings.colors;
@@ -372,43 +368,13 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_Awake
   pMVar1 = (MainCameraManager__Class *)
            UnityEngine.AudioModule.dll::UnityEngine::AudioListener::AudioListener_get_volume
                      ((MethodInfo *)0x0);
+  pMVar2 = TypeInfo__MainCameraManager;
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    pMVar1 = TypeInfo__MainCameraManager;
     func_?();
+    pMVar1 = pMVar2;
   }
-  bVar2 = cRam_? == '\0';
   TypeInfo__MainCameraManager->static_fields->baseVolume = (float)pMVar1;
-  if (bVar2) {
-    func_?(&TypeInfo__MainCameraManager);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MainCameraManager);
-  }
-  TypeInfo__MainCameraManager->static_fields->mute = 0;
-  if (TypeInfo__MainCameraManager->static_fields->mute == 0) {
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MainCameraManager);
-    }
-    value = TypeInfo__MainCameraManager->static_fields->baseVolume;
-  }
-  else {
-    value = 0.0;
-  }
-  UnityEngine.AudioModule.dll::UnityEngine::AudioListener::AudioListener_set_volume
-            (value,(MethodInfo *)0x0);
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pAVar3 = TypeInfo__MainCameraManager->static_fields->OnMuteChange;
-  if (pAVar3 != (Action_1_Boolean_ *)0x0) {
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MainCameraManager);
-    }
-    (*(pAVar3->fields)._._.invoke_impl)
-              ((pAVar3->fields)._._.method_code,TypeInfo__MainCameraManager->static_fields->mute,
-               (pAVar3->fields)._._.method);
-  }
+  MainCameraManager_set_Mute(0,(MethodInfo *)0x0);
   dictionary = (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                 *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this,(MethodInfo *)0x0);
@@ -1252,13 +1218,29 @@ code_?:
       func_?(TypeInfo__MainCameraManager);
     }
     MainCameraManager_EnablePostProcessing(ppLayer,ppVolume,0,(MethodInfo *)0x0);
-    if (this_00 != (ShortcutHandler *)0x0) {
-      ShortcutHandler::ShortcutHandler_UnRegisterShortcutKey(this_00,(MethodInfo *)0x0);
-      return;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      if (this_00 != (ShortcutHandler *)0x0) {
+        ShortcutHandler::ShortcutHandler_UnRegisterShortcutKey(this_00,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
     }
   }
-  else if (this_00 != (ShortcutHandler *)0x0) {
-    ShortcutHandler::ShortcutHandler_RegisterShortcutKey(this_00,(MethodInfo *)0x0);
+  else {
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      if (this_00 == (ShortcutHandler *)0x0) goto code_?;
+      ShortcutHandler::ShortcutHandler_RegisterShortcutKey(this_00,(MethodInfo *)0x0);
+    }
   }
   return;
 }
@@ -1305,7 +1287,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_IgnoreInputTypes
     func_?(&TypeInfo__OnIgnoreInputTypesArgs);
     cRam_? = '\x01';
   }
-  pEVar1 = (this->fields).onIgnoreInputTypes;
+  pEVar1 = (this->fields).OnIgnoreInputTypes;
   if (pEVar1 != (EventHandler_1_OnIgnoreInputTypesArgs_ *)0x0) {
     this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
               func_?(TypeInfo__OnIgnoreInputTypesArgs);
@@ -1692,6 +1674,81 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_StartTransitionCa
 }
 
 
+/* Void TemporaryMute(Boolean) */
+
+void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_TemporaryMute
+               (bool muteTemporarily,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MainCameraManager);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MainCameraManager);
+  }
+  bVar1 = 0;
+  if (TypeInfo__MainCameraManager->static_fields->isTemporarilyMuted == 0) {
+    bVar1 = muteTemporarily;
+  }
+  if (bVar1 == 0) {
+    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MainCameraManager);
+    }
+    if ((TypeInfo__MainCameraManager->static_fields->isTemporarilyMuted == 0) ||
+       (muteTemporarily != 0)) {
+      return;
+    }
+    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MainCameraManager);
+    }
+    TypeInfo__MainCameraManager->static_fields->isTemporarilyMuted = 0;
+    bVar1 = TypeInfo__MainCameraManager->static_fields->storedMuteValue;
+  }
+  else {
+    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MainCameraManager);
+    }
+    TypeInfo__MainCameraManager->static_fields->isTemporarilyMuted = 1;
+    TypeInfo__MainCameraManager->static_fields->storedMuteValue =
+         TypeInfo__MainCameraManager->static_fields->isMuted;
+    bVar1 = 1;
+  }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__MainCameraManager,unaff_EBP);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MainCameraManager);
+  }
+  TypeInfo__MainCameraManager->static_fields->isMuted = bVar1;
+  if (TypeInfo__MainCameraManager->static_fields->isMuted == 0) {
+    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MainCameraManager);
+    }
+    value = TypeInfo__MainCameraManager->static_fields->baseVolume;
+  }
+  else {
+    value = 0.0;
+  }
+  UnityEngine.AudioModule.dll::UnityEngine::AudioListener::AudioListener_set_volume
+            (value,(MethodInfo *)0x0);
+  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pAVar2 = TypeInfo__MainCameraManager->static_fields->OnMuteChange;
+  if (pAVar2 != (Action_1_Boolean_ *)0x0) {
+    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MainCameraManager);
+    }
+    (*(pAVar2->fields)._._.invoke_impl)
+              ((pAVar2->fields)._._.method_code,TypeInfo__MainCameraManager->static_fields->isMuted,
+               (pAVar2->fields)._._.method);
+  }
+  return;
+}
+
+
 /* Void UnRegisterCameraWithSettings(MVGameType) */
 
 void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_UnRegisterCameraWithSettings
@@ -1831,6 +1888,9 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager__cctor(MethodInfo
     func_?(&TypeInfo__MainCameraManager);
     cRam_? = '\x01';
   }
+  TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase = 5.0;
+  TypeInfo__MainCameraManager->static_fields->DefaultCameraType = 0;
+  TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson = 0;
   this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameType,_ICameraSettings>
@@ -1844,11 +1904,10 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager__cctor(MethodInfo
   TypeInfo__MainCameraManager->static_fields->cameraSettings =
        (Dictionary_2_MV_Common_MVGameType_ICameraSettings_ *)this;
   func_?(&TypeInfo__MainCameraManager->static_fields->cameraSettings,this);
-  TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase = 5.0;
-  TypeInfo__MainCameraManager->static_fields->DefaultCameraType = 0;
-  TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson = 0;
   TypeInfo__MainCameraManager->static_fields->baseVolume = 0.0;
-  TypeInfo__MainCameraManager->static_fields->mute = 0;
+  TypeInfo__MainCameraManager->static_fields->isMuted = 0;
+  TypeInfo__MainCameraManager->static_fields->isTemporarilyMuted = 0;
+  TypeInfo__MainCameraManager->static_fields->storedMuteValue = 0;
   TypeInfo__MainCameraManager->static_fields->gameHasCameraEffects = 0;
   return;
 }
@@ -1872,9 +1931,9 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager__ctor
 }
 
 
-/* Void add_onIgnoreInputTypes(EventHandler`1[OnIgnoreInputTypesArgs]) */
+/* Void add_OnIgnoreInputTypes(EventHandler`1[OnIgnoreInputTypesArgs]) */
 
-void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_add_onIgnoreInputTypes
+void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_add_OnIgnoreInputTypes
                (MainCameraManager *this,EventHandler_1_OnIgnoreInputTypesArgs_ *value,
                MethodInfo *method)
 
@@ -1883,7 +1942,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_add_onIgnoreInput
     func_?(&TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
     cRam_? = '\x01';
   }
-  a = (this->fields).onIgnoreInputTypes;
+  a = (this->fields).OnIgnoreInputTypes;
   do {
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
@@ -1899,7 +1958,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_add_onIgnoreInput
       }
     }
     pEVar5 = (EventHandler_1_OnIgnoreInputTypesArgs_ *)
-             func_?(&(this->fields).onIgnoreInputTypes,iVar3,a);
+             func_?(&(this->fields).OnIgnoreInputTypes,iVar3,a);
     bVar6 = pEVar5 != a;
     a = pEVar5;
   } while (bVar6);
@@ -1951,21 +2010,22 @@ float Assembly-CSharp.dll::MainCameraManager::MainCameraManager_get_FieldOfView
                 (MainCameraManager *this,MethodInfo *method)
 
 {
-  pCStack_1 = (Camera *)&stack0xfffffffc;
+  pcStack_1 = (code *)&stack0xfffffffc;
   pCVar2 = (this->fields).mainCamera;
   if (pCVar2 != (Camera *)0x0) {
     if (pcRam_? == (code *)0x0) {
       pcRam_? = (code *)func_?();
     }
-    pCStack_1 = pCVar2;
-    fVar3 = (float10)(*pcRam_?)();
-    return (float)fVar3;
+    pCStack_3 = pCVar2;
+    pcStack_1 = pcRam_?;
+    fVar4 = (float10)(*pcRam_?)();
+    return (float)fVar4;
   }
-  uVar4 = func_?(auStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar6)();
-  return (float)fVar3;
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar7 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar7)();
+  return (float)fVar4;
 }
 
 
@@ -2066,7 +2126,7 @@ bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_get_Mute(MethodIn
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MainCameraManager);
   }
-  return TypeInfo__MainCameraManager->static_fields->mute;
+  return TypeInfo__MainCameraManager->static_fields->isMuted;
 }
 
 
@@ -2150,9 +2210,9 @@ bool Assembly-CSharp.dll::MainCameraManager::MainCameraManager_get_TertiaryCamer
 }
 
 
-/* Void remove_onIgnoreInputTypes(EventHandler`1[OnIgnoreInputTypesArgs]) */
+/* Void remove_OnIgnoreInputTypes(EventHandler`1[OnIgnoreInputTypesArgs]) */
 
-void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_remove_onIgnoreInputTypes
+void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_remove_OnIgnoreInputTypes
                (MainCameraManager *this,EventHandler_1_OnIgnoreInputTypesArgs_ *value,
                MethodInfo *method)
 
@@ -2161,7 +2221,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_remove_onIgnoreIn
     func_?(&TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
     cRam_? = '\x01';
   }
-  source = (this->fields).onIgnoreInputTypes;
+  source = (this->fields).OnIgnoreInputTypes;
   do {
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
@@ -2177,7 +2237,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_remove_onIgnoreIn
       }
     }
     pEVar5 = (EventHandler_1_OnIgnoreInputTypesArgs_ *)
-             func_?(&(this->fields).onIgnoreInputTypes,iVar3,source);
+             func_?(&(this->fields).OnIgnoreInputTypes,iVar3,source);
     bVar6 = pEVar5 != source;
     source = pEVar5;
   } while (bVar6);
@@ -2393,8 +2453,8 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_set_Mute
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MainCameraManager);
   }
-  TypeInfo__MainCameraManager->static_fields->mute = value;
-  if (TypeInfo__MainCameraManager->static_fields->mute == 0) {
+  TypeInfo__MainCameraManager->static_fields->isMuted = value;
+  if (TypeInfo__MainCameraManager->static_fields->isMuted == 0) {
     if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MainCameraManager);
     }
@@ -2414,7 +2474,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_set_Mute
       func_?(TypeInfo__MainCameraManager);
     }
     (*(pAVar1->fields)._._.invoke_impl)
-              ((pAVar1->fields)._._.method_code,TypeInfo__MainCameraManager->static_fields->mute,
+              ((pAVar1->fields)._._.method_code,TypeInfo__MainCameraManager->static_fields->isMuted,
                (pAVar1->fields)._._.method);
   }
   return;

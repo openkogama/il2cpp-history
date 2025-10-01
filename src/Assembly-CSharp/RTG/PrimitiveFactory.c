@@ -1215,15 +1215,15 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_GenerateSphereBorde
                   fStack_10 * fStack_30;
           if (_UNK_? < (float)((uint)fVar4 & _UNK_?)) {
             fStack_37 = MathEx::MathEx_SafeAcos(fVar4,(MethodInfo *)0x0);
+            fStack_37 = fStack_37 * _UNK_?;
             fStack_38 = fStack_33 * uStack_9._4_4_ - fStack_34 * uStack_29._4_4_;
             uStack_5 = CONCAT44(fStack_35 * fStack_34 - fStack_36 * fStack_33,
                                  fStack_36 * uStack_29._4_4_ - fStack_35 * uStack_9._4_4_);
             fStack_6 = fStack_38;
             pVVar1 = (Vector3 *)func_?(auStack_39);
             pQVar40 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                               ((Quaternion *)&stack0xfffffe60,
-                                _UNK_? - fStack_37 * _UNK_?,*pVVar1,(MethodInfo *)0x0)
-            ;
+                               ((Quaternion *)&stack0xfffffe60,_UNK_? - fStack_37,*pVVar1,
+                                (MethodInfo *)0x0);
             point.z = uStack_11._4_4_;
             point.x = (float)(undefined4)uStack_23;
             point.y = (float)uStack_23._4_4_;

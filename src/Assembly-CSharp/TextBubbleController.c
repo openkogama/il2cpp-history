@@ -680,8 +680,8 @@ void Assembly-CSharp.dll::TextBubbleController::TextBubbleController_Update
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
+  puStack_4 = &stack0xffffffa0;
+  puVar5 = &stack0xffffffa0;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__GetEnumerator__

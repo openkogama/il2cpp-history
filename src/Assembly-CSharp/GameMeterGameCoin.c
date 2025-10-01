@@ -101,18 +101,16 @@ void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_OnActivationChang
   (this->fields)._.meterActive = wantToShow;
   (*(code *)(pGVar1->vtable).SetShowGameMeter.method)
             (this,_wantToShow,(pGVar1->vtable).UpdateValue.methodPtr);
-  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-  if (pGVar2 != (GameObject *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
-    }
-    (*pcRam_?)(0);
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (this_00 != (GameObject *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (this_00,wantToShow,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -253,9 +251,9 @@ void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_OnGameCoinAmountC
 }
 
 
-/* Void SetGameMeterVisibility() */
+/* Boolean SetGameMeterVisibility() */
 
-void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_SetGameMeterVisibility
+bool Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_SetGameMeterVisibility
                (GameMeterGameCoin *this,MethodInfo *method)
 
 {
@@ -268,29 +266,18 @@ void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_SetGameMeterVisib
     (this->fields)._.meterActive = bVar2;
     (*(code *)(pGVar3->vtable).SetShowGameMeter.method)
               (this,bVar2,(pGVar3->vtable).UpdateValue.methodPtr);
-    if (bVar2 == 0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,0,(MethodInfo *)0x0);
-        return;
-      }
-    }
-    else {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,1,(MethodInfo *)0x0);
-        return;
-      }
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_01,0,(MethodInfo *)0x0);
+      return bVar2;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
+  pcVar4 = (code *)swi(3);
+  bVar2 = (*pcVar4)();
+  return bVar2;
 }
 
 

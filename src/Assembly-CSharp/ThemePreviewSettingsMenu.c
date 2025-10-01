@@ -687,6 +687,8 @@ code_?:
   func_?();
 code_?:
   func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

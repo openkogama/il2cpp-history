@@ -177,13 +177,15 @@ code_?:
       pSVar6 = (pWVar1->fields).color;
       pIVar11 = (pWVar1->fields).preview;
       if (pSVar6 != (Single__Array *)0x0) {
-        if (((pSVar6->max_length == 0) || (pSVar6->max_length < 2)) || (pSVar6->max_length < 3))
-        goto code_?;
-        if (pIVar11 != (Image *)0x0) {
-          (*(code *)(pIVar11->klass->vtable).set_color.method)
-                    (pIVar11,pSVar6->vector[0],pSVar6->vector[1],pSVar6->vector[2],0x3f800000,
-                     (pIVar11->klass->vtable).get_raycastTarget.methodPtr);
-          return;
+        if ((pSVar6->max_length == 0) || (pSVar6->max_length < 2)) goto code_?;
+        if (pSVar6 != (Single__Array *)0x0) {
+          if (pSVar6->max_length < 3) goto code_?;
+          if (pIVar11 != (Image *)0x0) {
+            (*(code *)(pIVar11->klass->vtable).set_color.method)
+                      (pIVar11,pSVar6->vector[0],pSVar6->vector[1],pSVar6->vector[2],0x3f800000,
+                       (pIVar11->klass->vtable).get_raycastTarget.methodPtr);
+            return;
+          }
         }
       }
       goto code_?;
@@ -306,13 +308,15 @@ void Assembly-CSharp.dll::WaterBoxSettings::WaterBoxSettings_UpdateWaterColor
     pSVar1 = (this->fields).color;
     pIVar2 = (this->fields).preview;
     if (pSVar1 != (Single__Array *)0x0) {
-      if (((pSVar1->max_length == 0) || (pSVar1->max_length < 2)) || (pSVar1->max_length < 3))
-      goto code_?;
-      if (pIVar2 != (Image *)0x0) {
-        (*(code *)(pIVar2->klass->vtable).set_color.method)
-                  (pIVar2,pSVar1->vector[0],pSVar1->vector[1],pSVar1->vector[2],0x3f800000,
-                   (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
-        return;
+      if ((pSVar1->max_length == 0) || (pSVar1->max_length < 2)) goto code_?;
+      if (pSVar1 != (Single__Array *)0x0) {
+        if (pSVar1->max_length < 3) goto code_?;
+        if (pIVar2 != (Image *)0x0) {
+          (*(code *)(pIVar2->klass->vtable).set_color.method)
+                    (pIVar2,pSVar1->vector[0],pSVar1->vector[1],pSVar1->vector[2],0x3f800000,
+                     (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
+          return;
+        }
       }
     }
   }

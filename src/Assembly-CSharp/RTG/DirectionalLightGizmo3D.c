@@ -15,133 +15,130 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3D::
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields)._targetLight;
-  if ((pLVar1 != (Light *)0x0) &&
-     (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pLVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_4,pTVar2,(MethodInfo *)0x0);
-    uStack_5._0_4_ = pVVar3->x;
-    uStack_5._4_4_ = pVVar3->y;
-    fVar6 = pVVar3->z;
-    fStack_7 = fVar6;
-    uStack_8 = uStack_5;
-    if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-      VStack_4.y = (float)TypeInfo__RTG__CameraEx;
-      VStack_4.x = (float)&UNK_?;
-      func_?();
-    }
-    worldPos.z = fVar6;
-    worldPos.x = (float)(undefined4)uStack_8;
-    worldPos.y = uStack_8._4_4_;
-    fVar6 = CameraEx::CameraEx_EstimateZoomFactor(camera,worldPos,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-      pDVar9 = (this->fields)._lookAndFeel;
-      if (pDVar9 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pDVar9 = (this->fields)._sharedLookAndFeel;
-    }
-    fVar6 = fVar6 * (pDVar9->fields)._sourceCircleRadius;
-    pLVar1 = (this->fields)._targetLight;
-    if ((pLVar1 != (Light *)0x0) &&
-       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pLVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                         (&VStack_4,pTVar2,(MethodInfo *)0x0);
-      uStack_10._0_4_ = pVVar3->x;
-      uStack_10._4_4_ = pVVar3->y;
-      fStack_11 = pVVar3->z;
-      pLVar1 = (this->fields)._targetLight;
-      if ((pLVar1 != (Light *)0x0) &&
-         (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pLVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                           (&VStack_4,pTVar2,(MethodInfo *)0x0);
-        pLVar12 = (this->fields)._lightRayEmissionPoints;
-        uStack_13._0_4_ = pVVar3->x;
-        uStack_13._4_4_ = pVVar3->y;
-        fStack_14 = pVVar3->z;
-        if (pLVar12 != (List_1_UnityEngine_Vector3_ *)0x0) {
-          piVar15 = &(pLVar12->fields)._version;
-          *piVar15 = *piVar15 + 1;
-          (pLVar12->fields)._size = 0;
-          if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-            pDVar9 = (this->fields)._lookAndFeel;
-            if (pDVar9 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
-          }
-          else {
-            pDVar9 = (this->fields)._sharedLookAndFeel;
-          }
-          iVar16 = 0;
-          fVar17 = _UNK_? / (float)((pDVar9->fields)._numLightRays + -1);
-          uStack_8 = CONCAT44(fVar17,(undefined4)uStack_8);
-          while( true ) {
-            while( true ) {
-              if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-                pDVar9 = (this->fields)._lookAndFeel;
-                if (pDVar9 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
+  if (pLVar1 != (Light *)0x0) {
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pLVar1,(MethodInfo *)0x0);
+    if (pTVar2 != (Transform *)0x0) {
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          (&VStack_4,pTVar2,(MethodInfo *)0x0);
+      uStack_5._0_4_ = pVVar3->x;
+      uStack_5._4_4_ = pVVar3->y;
+      fVar6 = pVVar3->z;
+      fStack_7 = fVar6;
+      uStack_8 = uStack_5;
+      if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
+        VStack_4.y = (float)TypeInfo__RTG__CameraEx;
+        VStack_4.x = (float)&UNK_?;
+        func_?();
+      }
+      worldPos.z = fVar6;
+      worldPos.x = (float)(undefined4)uStack_8;
+      worldPos.y = uStack_8._4_4_;
+      fVar6 = CameraEx::CameraEx_EstimateZoomFactor(camera,worldPos,(MethodInfo *)0x0);
+      pDVar9 = (&(this->fields)._lookAndFeel)
+               [(this->fields)._sharedLookAndFeel != (DirectionalLightGizmo3DLookAndFeel *)0x0];
+      if (pDVar9 != (DirectionalLightGizmo3DLookAndFeel *)0x0) {
+        fVar6 = fVar6 * (pDVar9->fields)._sourceCircleRadius;
+        pLVar1 = (this->fields)._targetLight;
+        if (pLVar1 != (Light *)0x0) {
+          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pLVar1,(MethodInfo *)0x0);
+          if (pTVar2 != (Transform *)0x0) {
+            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                                (&VStack_4,pTVar2,(MethodInfo *)0x0);
+            uStack_10._0_4_ = pVVar3->x;
+            uStack_10._4_4_ = pVVar3->y;
+            fStack_11 = pVVar3->z;
+            pLVar1 = (this->fields)._targetLight;
+            if (pLVar1 != (Light *)0x0) {
+              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pLVar1,(MethodInfo *)0x0);
+              if (pTVar2 != (Transform *)0x0) {
+                pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                                    (&VStack_4,pTVar2,(MethodInfo *)0x0);
+                pLVar12 = (this->fields)._lightRayEmissionPoints;
+                uStack_13._0_4_ = pVVar3->x;
+                uStack_13._4_4_ = pVVar3->y;
+                fStack_14 = pVVar3->z;
+                if (pLVar12 != (List_1_UnityEngine_Vector3_ *)0x0) {
+                  piVar15 = &(pLVar12->fields)._version;
+                  *piVar15 = *piVar15 + 1;
+                  (pLVar12->fields)._size = 0;
+                  pDVar9 = (&(this->fields)._lookAndFeel)
+                           [(this->fields)._sharedLookAndFeel !=
+                            (DirectionalLightGizmo3DLookAndFeel *)0x0];
+                  if (pDVar9 != (DirectionalLightGizmo3DLookAndFeel *)0x0) {
+                    iVar16 = 0;
+                    fVar17 = _UNK_? / (float)((pDVar9->fields)._numLightRays + -1);
+                    uStack_8 = CONCAT44(fVar17,(undefined4)uStack_8);
+                    while (pDVar9 = (&(this->fields)._lookAndFeel)
+                                    [(this->fields)._sharedLookAndFeel !=
+                                     (DirectionalLightGizmo3DLookAndFeel *)0x0],
+                          pDVar9 != (DirectionalLightGizmo3DLookAndFeel *)0x0) {
+                      if ((pDVar9->fields)._numLightRays <= iVar16) {
+                        return;
+                      }
+                      this_00 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                (this->fields)._lightRayEmissionPoints;
+                      fStack_18 = (float)iVar16 * fVar17 * _UNK_?;
+                      dVar19 = (double)fStack_18;
+                      func_?();
+                      fVar17 = (float)dVar19;
+                      fStack_20 = (float)uStack_5 + (float)uStack_10 * fVar17 * fVar6;
+                      fStack_21 = uStack_5._4_4_ + uStack_10._4_4_ * fVar17 * fVar6;
+                      fStack_22 = fStack_7 + fStack_11 * fVar17 * fVar6;
+                      dVar19 = (double)fStack_18;
+                      func_?();
+                      pMVar23 = 
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                      ;
+                      fVar17 = (float)dVar19;
+                      puStack_24 = (undefined *)((float)uStack_13 * fVar17 * fVar6 + fStack_20);
+                      pCStack_25 = (CameraEx__Class *)
+                                   (uStack_13._4_4_ * fVar17 * fVar6 + fStack_21);
+                      fStack_26 = fStack_14 * fVar17 * fVar6 + fStack_22;
+                      if (this_00 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) break;
+                      piVar15 = &(this_00->fields)._version;
+                      *piVar15 = *piVar15 + 1;
+                      pPVar27 = (this_00->fields)._items;
+                      if (pPVar27 == (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) break;
+                      uVar28 = (this_00->fields)._size;
+                      if (uVar28 < pPVar27->max_length) {
+                        (this_00->fields)._size = uVar28 + 1;
+                        VStack_4.x = (float)puStack_24;
+                        VStack_4.y = (float)pCStack_25;
+                        VStack_4.z = fStack_26;
+                        if (pPVar27->max_length <= uVar28) {
+                          func_?();
+                          break;
+                        }
+                        iVar16 = iVar16 + 1;
+                        pPVar27->vector[uVar28].Quadrant = (int32_t)puStack_24;
+                        pPVar27->vector[uVar28].FirstAxisSign = (int32_t)pCStack_25;
+                        pPVar27->vector[uVar28].SecondAxisSign = (int32_t)fStack_26;
+                        fVar17 = uStack_8._4_4_;
+                      }
+                      else {
+                        item.FirstAxisSign = (int32_t)pCStack_25;
+                        item.Quadrant = (int32_t)puStack_24;
+                        item.SecondAxisSign = (int32_t)fStack_26;
+                        mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                        PlaneIdHelper+PlaneQuadrantInfo]::
+                        List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                  (this_00,item,pMVar23->klass->rgctx_data[0xe].method);
+                        iVar16 = iVar16 + 1;
+                        fVar17 = uStack_8._4_4_;
+                      }
+                    }
+                  }
+                }
               }
-              else {
-                pDVar9 = (this->fields)._sharedLookAndFeel;
-              }
-              if ((pDVar9->fields)._numLightRays <= iVar16) {
-                return;
-              }
-              this_00 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
-                        (this->fields)._lightRayEmissionPoints;
-              fStack_18 = (float)iVar16 * fVar17 * _UNK_?;
-              dVar19 = (double)fStack_18;
-              func_?();
-              fVar17 = (float)dVar19;
-              fStack_20 = (float)uStack_5 + (float)uStack_10 * fVar17 * fVar6;
-              fStack_21 = uStack_5._4_4_ + uStack_10._4_4_ * fVar17 * fVar6;
-              fStack_22 = fStack_7 + fStack_11 * fVar17 * fVar6;
-              dVar19 = (double)fStack_18;
-              func_?();
-              pMVar23 = 
-              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-              ;
-              fVar17 = (float)dVar19;
-              puStack_24 = (undefined *)((float)uStack_13 * fVar17 * fVar6 + fStack_20);
-              pCStack_25 = (CameraEx__Class *)(uStack_13._4_4_ * fVar17 * fVar6 + fStack_21);
-              fStack_26 = fStack_14 * fVar17 * fVar6 + fStack_22;
-              if (this_00 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0)
-              goto code_?;
-              piVar15 = &(this_00->fields)._version;
-              *piVar15 = *piVar15 + 1;
-              pPVar27 = (this_00->fields)._items;
-              if (pPVar27 == (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) goto code_?;
-              uVar28 = (this_00->fields)._size;
-              if (uVar28 < pPVar27->max_length) break;
-              item.FirstAxisSign = (int32_t)pCStack_25;
-              item.Quadrant = (int32_t)puStack_24;
-              item.SecondAxisSign = (int32_t)fStack_26;
-              mscorlib.dll::System::Collections::Generic::List`1[RTG::
-              PlaneIdHelper+PlaneQuadrantInfo]::
-              List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
-                        (this_00,item,pMVar23->klass->rgctx_data[0xe].method);
-              iVar16 = iVar16 + 1;
-              fVar17 = uStack_8._4_4_;
             }
-            (this_00->fields)._size = uVar28 + 1;
-            VStack_4.x = (float)puStack_24;
-            VStack_4.y = (float)pCStack_25;
-            VStack_4.z = fStack_26;
-            if (pPVar27->max_length <= uVar28) break;
-            iVar16 = iVar16 + 1;
-            pPVar27->vector[uVar28].Quadrant = (int32_t)puStack_24;
-            pPVar27->vector[uVar28].FirstAxisSign = (int32_t)pCStack_25;
-            pPVar27->vector[uVar28].SecondAxisSign = (int32_t)fStack_26;
-            fVar17 = uStack_8._4_4_;
           }
-          goto code_?;
         }
       }
     }
   }
-code_?:
-  func_?();
-code_?:
   func_?();
   pcVar29 = (code *)swi(3);
   (*pcVar29)();
@@ -219,99 +216,99 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3D::DirectionalLightGizmo3D_
   (this->fields)._dirSnapTick = pGVar1;
   func_?(&(this->fields)._dirSnapTick,pGVar1);
   this_00 = (GizmoCap3D *)(this->fields)._dirSnapTick;
-  if (this_00 == (GizmoCap3D *)0x0) goto code_?;
-  GizmoCap3D::GizmoCap3D_set_DragSession
-            (this_00,(IGizmoDragSession *)(this->fields)._dummyDragSession,(MethodInfo *)0x0);
-  if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-    pDVar2 = (this->fields)._lookAndFeel;
-    if (pDVar2 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pDVar2 = (this->fields)._sharedLookAndFeel;
-  }
-  pGVar1 = (this->fields)._dirSnapTick;
-  if (pGVar1 == (GizmoCap2D *)0x0) goto code_?;
-  pGVar3 = (pDVar2->fields)._dirSnapTickLookAndFeel;
-  (pGVar1->fields)._sharedLookAndFeel = pGVar3;
-  func_?(&(pGVar1->fields)._sharedLookAndFeel,pGVar3);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  fVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  fVar5 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).z;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pVVar6 = &TypeInfo__UnityEngine__Vector3->static_fields->upVector;
-  uVar7 = pVVar6->y;
-  circleCenter.y = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
-  circleCenter.x = (float)uVar7;
-  circleCenter.z = fVar4;
-  circleRight.z = fVar5;
-  circleRight.x = 1.4013e-43;
-  circleRight.y = 0.0;
-  pLVar8 = PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
-                      (circleCenter,1.0,circleRight,*pVVar6,100,(MethodInfo *)0x0);
-  (this->fields)._sourceCirclePoints = pLVar8;
-  func_?(&(this->fields)._sourceCirclePoints);
-  pMVar9 = 
-  MethodInfo__System__Collections__Generic__List<RTG::GameObjectType>__Add_RTG__GameObjectType_;
-  pSVar10 = (this->fields)._raycastFilter;
-  if ((pSVar10 == (SceneRaycastFilter *)0x0) ||
-     (pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (pSVar10->fields)._allowedObjectTypes,
-     pLVar11 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
-  goto code_?;
-  piVar12 = &(pLVar11->fields)._version;
-  *piVar12 = *piVar12 + 1;
-  pRVar13 = (pLVar11->fields)._items;
-  if (pRVar13 == (RegexCharClass_SingleRange__Array *)0x0) goto code_?;
-  uVar14 = (pLVar11->fields)._size;
-  if (uVar14 < pRVar13->max_length) {
-    (pLVar11->fields)._size = uVar14 + 1;
-    if (uVar14 < pRVar13->max_length) {
-      pRVar13->vector[uVar14].First = 1;
-      pRVar13->vector[uVar14].Last = 0;
-      goto code_?;
-    }
-  }
-  else {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-    RegexCharClass+SingleRange]::
-    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
-              (pLVar11,(RegexCharClass_SingleRange)0x1,pMVar9->klass->rgctx_data[0xe].method);
-code_?:
-    pMVar9 = 
-    MethodInfo__System__Collections__Generic__List<RTG::GameObjectType>__Add_RTG__GameObjectType_;
-    pSVar10 = (this->fields)._raycastFilter;
-    if ((pSVar10 == (SceneRaycastFilter *)0x0) ||
-       (pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (pSVar10->fields)._allowedObjectTypes,
-       pLVar11 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
-    goto code_?;
-    piVar12 = &(pLVar11->fields)._version;
-    *piVar12 = *piVar12 + 1;
-    pRVar13 = (pLVar11->fields)._items;
-    if (pRVar13 == (RegexCharClass_SingleRange__Array *)0x0) goto code_?;
-    uVar14 = (pLVar11->fields)._size;
-    if (pRVar13->max_length <= uVar14) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-      RegexCharClass+SingleRange]::
-      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
-                (pLVar11,(RegexCharClass_SingleRange)0x2,pMVar9->klass->rgctx_data[0xe].method);
-      return;
-    }
-    (pLVar11->fields)._size = uVar14 + 1;
-    if (uVar14 < pRVar13->max_length) {
-      pRVar13->vector[uVar14].First = 2;
-      pRVar13->vector[uVar14].Last = 0;
-      return;
+  if (this_00 != (GizmoCap3D *)0x0) {
+    GizmoCap3D::GizmoCap3D_set_DragSession
+              (this_00,(IGizmoDragSession *)(this->fields)._dummyDragSession,(MethodInfo *)0x0);
+    pDVar2 = (&(this->fields)._lookAndFeel)
+             [(this->fields)._sharedLookAndFeel != (DirectionalLightGizmo3DLookAndFeel *)0x0];
+    if ((pDVar2 != (DirectionalLightGizmo3DLookAndFeel *)0x0) &&
+       (pGVar1 = (this->fields)._dirSnapTick, pGVar1 != (GizmoCap2D *)0x0)) {
+      pGVar3 = (pDVar2->fields)._dirSnapTickLookAndFeel;
+      (pGVar1->fields)._sharedLookAndFeel = pGVar3;
+      func_?(&(pGVar1->fields)._sharedLookAndFeel,pGVar3);
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      fVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      fVar5 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).z;
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pVVar6 = &TypeInfo__UnityEngine__Vector3->static_fields->upVector;
+      uVar7 = pVVar6->y;
+      circleCenter.y = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
+      circleCenter.x = (float)uVar7;
+      circleCenter.z = fVar4;
+      circleRight.z = fVar5;
+      circleRight.x = 1.4013e-43;
+      circleRight.y = 0.0;
+      pLVar8 = PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
+                          (circleCenter,1.0,circleRight,*pVVar6,100,(MethodInfo *)0x0);
+      (this->fields)._sourceCirclePoints = pLVar8;
+      func_?(&(this->fields)._sourceCirclePoints);
+      pMVar9 = 
+      MethodInfo__System__Collections__Generic__List<RTG::GameObjectType>__Add_RTG__GameObjectType_;
+      pSVar10 = (this->fields)._raycastFilter;
+      if ((pSVar10 != (SceneRaycastFilter *)0x0) &&
+         (pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                   (pSVar10->fields)._allowedObjectTypes,
+         pLVar11 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+        piVar12 = &(pLVar11->fields)._version;
+        *piVar12 = *piVar12 + 1;
+        pRVar13 = (pLVar11->fields)._items;
+        if (pRVar13 != (RegexCharClass_SingleRange__Array *)0x0) {
+          uVar14 = (pLVar11->fields)._size;
+          if (uVar14 < pRVar13->max_length) {
+            (pLVar11->fields)._size = uVar14 + 1;
+            if (pRVar13->max_length <= uVar14) goto code_?;
+            pRVar13->vector[uVar14].First = 1;
+            pRVar13->vector[uVar14].Last = 0;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+            RegexCharClass+SingleRange]::
+            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
+                      (pLVar11,(RegexCharClass_SingleRange)0x1,pMVar9->klass->rgctx_data[0xe].method
+                      );
+          }
+          pMVar9 = 
+          MethodInfo__System__Collections__Generic__List<RTG::GameObjectType>__Add_RTG__GameObjectType_
+          ;
+          pSVar10 = (this->fields)._raycastFilter;
+          if ((pSVar10 != (SceneRaycastFilter *)0x0) &&
+             (pLVar11 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       (pSVar10->fields)._allowedObjectTypes,
+             pLVar11 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+            piVar12 = &(pLVar11->fields)._version;
+            *piVar12 = *piVar12 + 1;
+            pRVar13 = (pLVar11->fields)._items;
+            if (pRVar13 != (RegexCharClass_SingleRange__Array *)0x0) {
+              uVar14 = (pLVar11->fields)._size;
+              if (pRVar13->max_length <= uVar14) {
+                mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
+                          (pLVar11,(RegexCharClass_SingleRange)0x2,
+                           pMVar9->klass->rgctx_data[0xe].method);
+                return;
+              }
+              (pLVar11->fields)._size = uVar14 + 1;
+              if (uVar14 < pRVar13->max_length) {
+                pRVar13->vector[uVar14].First = 2;
+                pRVar13->vector[uVar14].Last = 0;
+                return;
+              }
+              goto code_?;
+            }
+          }
+        }
+      }
     }
   }
   func_?();
@@ -479,230 +476,235 @@ code_?:
     return;
   }
   pLVar10 = (this->fields)._targetLight;
-  if ((pLVar10 != (Light *)0x0) &&
-     (pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pLVar10,(MethodInfo *)0x0), pTVar11 != (Transform *)0x0)) {
-    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffff70,pTVar11,(MethodInfo *)0x0);
-    uStack_13._0_4_ = pVVar12->x;
-    uStack_13._4_4_ = pVVar12->y;
-    pSVar14 = (String *)pVVar12->z;
-    uStack_15 = uStack_13;
-    pSStack_16 = pSVar14;
-    if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    worldPos.z = (float)pSVar14;
-    worldPos.x = (float)(undefined4)uStack_15;
-    worldPos.y = (float)uStack_15._4_4_;
-    fStack_17 = CameraEx::CameraEx_EstimateZoomFactor(camera,worldPos,(MethodInfo *)0x0);
-    if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-      pDVar18 = (this->fields)._lookAndFeel;
-      if (pDVar18 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pDVar18 = (this->fields)._sharedLookAndFeel;
-    }
-    fVar19 = (pDVar18->fields)._sourceCircleRadius * fStack_17;
-    if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pLStack_20 = (List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
-                 MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                           (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-    if (pLStack_20 != (List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
-      if (cRam_? == '\0') {
+  if (pLVar10 != (Light *)0x0) {
+    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pLVar10,(MethodInfo *)0x0);
+    if (pTVar11 != (Transform *)0x0) {
+      pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          ((Vector3 *)&stack0xffffff70,pTVar11,(MethodInfo *)0x0);
+      uStack_13._0_4_ = pVVar12->x;
+      uStack_13._4_4_ = pVVar12->y;
+      pSVar14 = (String *)pVVar12->z;
+      uStack_15 = uStack_13;
+      pSStack_16 = pSVar14;
+      if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
-        cRam_? = '\x01';
       }
-      if (pLStack_20[3]._version != 0) {
-        if (1 < *(int *)(pLStack_20[3]._version + 0xc)) {
-          DirectionalLightGizmo3D_UpdateTicks(this,camera,(MethodInfo *)0x0);
-        }
-        if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0)
+      worldPos.z = (float)pSVar14;
+      worldPos.x = (float)(undefined4)uStack_15;
+      worldPos.y = (float)uStack_15._4_4_;
+      fStack_17 = CameraEx::CameraEx_EstimateZoomFactor(camera,worldPos,(MethodInfo *)0x0);
+      pDVar18 = (&(this->fields)._lookAndFeel)
+               [(this->fields)._sharedLookAndFeel != (DirectionalLightGizmo3DLookAndFeel *)0x0];
+      if (pDVar18 != (DirectionalLightGizmo3DLookAndFeel *)0x0) {
+        fVar19 = (pDVar18->fields)._sourceCircleRadius * fStack_17;
+        if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0)
         {
-          func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+          func_?();
         }
-        method_00 = (MethodInfo *)
-                    Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                              (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-        if (method_00 != (MethodInfo *)0x0) {
-          GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
-                    ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
-          if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-            pDVar18 = (this->fields)._lookAndFeel;
-            if (pDVar18 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
+        pLStack_20 = (List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                     MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                               (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+        if (pLStack_20 != (List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
           }
-          else {
-            pDVar18 = (this->fields)._sharedLookAndFeel;
-          }
-          GizmoLineMaterial::GizmoLineMaterial_SetColor
-                    ((GizmoLineMaterial *)method_00,(pDVar18->fields)._sourceCircleBorderColor,
-                     (MethodInfo *)0x0);
-          pMVar21 = GizmoLineMaterial::GizmoLineMaterial_get_Material
-                              ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
-          if (pMVar21 != (Material *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
-                      (pMVar21,0,(MethodInfo *)0x0);
-            UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-            pLVar10 = (this->fields)._targetLight;
-            if ((pLVar10 != (Light *)0x0) &&
-               (pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                   ((Component *)pLVar10,(MethodInfo *)0x0),
-               pTVar11 != (Transform *)0x0)) {
-              pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                  ((Quaternion *)&stack0xffffff58,pTVar11,(MethodInfo *)0x0);
-              pLStack_20 = (List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x3f800000;
-              pos.z = (float)pSStack_16;
-              pos.x = (float)uStack_13;
-              pos.y = uStack_13._4_4_;
-              s.y = fVar19;
-              s.x = fVar19;
-              s.z = 1.0;
-              pMVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                                  ((Matrix4x4 *)&stack0xffffff10,pos,*pQVar22,s,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar23,(MethodInfo *)0x0)
-              ;
-              GLRenderer::GLRenderer_DrawLines3D
-                        ((this->fields)._sourceCirclePoints,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-              this_00 = (this->fields)._._gizmo;
-              if (this_00 != (Gizmo *)0x0) {
-                pSStack_16 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                             PointerEventBase`1[System::Object]::
-                             PointerEventBase_1_System_Object__get_pointerType
-                                       ((PointerEventBase_1_System_Object_ *)this_00,
-                                        (MethodInfo *)0x0);
-                pGVar24 = (this->fields)._dirSnapTick;
-                if (pGVar24 != (GizmoCap2D *)0x0) {
-                  pSVar14 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-                            AndroidJavaObject__GetRawClass
-                                      ((AndroidJavaObject *)pGVar24,(MethodInfo *)0x0);
-                  if (pSStack_16 == pSVar14) {
-                    if ((this->fields)._sharedLookAndFeel ==
-                        (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-                      pDVar18 = (this->fields)._lookAndFeel;
-                      if (pDVar18 == (DirectionalLightGizmo3DLookAndFeel *)0x0)
-                      goto code_?;
-                    }
-                    else {
-                      pDVar18 = (this->fields)._sharedLookAndFeel;
-                    }
-                    GizmoLineMaterial::GizmoLineMaterial_SetColor
-                              ((GizmoLineMaterial *)method_00,(pDVar18->fields)._dirSnapSegmentColor
-                               ,(MethodInfo *)0x0);
-                    pMVar21 = GizmoLineMaterial::GizmoLineMaterial_get_Material
-                                        ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
-                    if (pMVar21 == (Material *)0x0) goto code_?;
-                    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
-                              (pMVar21,0,(MethodInfo *)0x0);
-                    pLVar10 = (this->fields)._targetLight;
-                    if ((pLVar10 == (Light *)0x0) ||
-                       (pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                 Component_get_transform((Component *)pLVar10,(MethodInfo *)0x0),
-                       pTVar11 == (Transform *)0x0)) goto code_?;
-                    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_position
-                                        ((Vector3 *)&stack0xffffff70,pTVar11,(MethodInfo *)0x0);
-                    GLRenderer::GLRenderer_DrawLine3D
-                              (*pVVar12,(this->fields)._pickedWorldSnapPoint,(MethodInfo *)0x0);
-                  }
-                  if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0
-                     ) {
-                    pDVar18 = (this->fields)._lookAndFeel;
-                    if (pDVar18 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
-                  }
-                  else {
-                    pDVar18 = (this->fields)._sharedLookAndFeel;
-                  }
-                  GizmoLineMaterial::GizmoLineMaterial_SetColor
-                            ((GizmoLineMaterial *)method_00,(pDVar18->fields)._lightRaysColor,
-                             (MethodInfo *)0x0);
-                  pMVar21 = GizmoLineMaterial::GizmoLineMaterial_get_Material
-                                      ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
-                  if (pMVar21 != (Material *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
-                              (pMVar21,0,(MethodInfo *)0x0);
-                    pLVar10 = (this->fields)._targetLight;
-                    if (pLVar10 != (Light *)0x0) {
-                      pLStack_25 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                                   &UNK_?;
-                      pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_transform((Component *)pLVar10,(MethodInfo *)0x0);
-                      if (pTVar11 != (Transform *)0x0) {
-                        pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_forward
-                                            ((Vector3 *)&stack0xffffff70,pTVar11,(MethodInfo *)0x0);
-                        uStack_13._0_4_ = pVVar12->x;
-                        uStack_13._4_4_ = pVVar12->y;
-                        fStack_26 = pVVar12->z;
-                        DirectionalLightGizmo3D_GenerateLightRayEmissionPoints
-                                  (this,camera,(MethodInfo *)0x0);
-                        if ((this->fields)._sharedLookAndFeel ==
-                            (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-                          pDVar18 = (this->fields)._lookAndFeel;
-                          if (pDVar18 == (DirectionalLightGizmo3DLookAndFeel *)0x0)
-                          goto code_?;
-                        }
-                        else {
-                          pDVar18 = (this->fields)._sharedLookAndFeel;
-                        }
-                        pSStack_16 = (String *)((pDVar18->fields)._lightRayLength * fStack_17);
-                        this_01 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                                  (this->fields)._lightRayEmissionPoints;
-                        if (this_01 !=
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-                          pLVar27 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
-                                    UIElements::VisualTreeAsset+UsingEntry]::
-                                    List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                                              ((List_1_T_Enumerator_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_
-                                                *)&pLStack_25,this_01,
-                                               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
-                                              );
-                          uStack_15 = uStack_15 & 0xffffffff;
-                          LStack_8._list =
-                               (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar27->_list;
-                          LStack_8._index = pLVar27->_index;
-                          LStack_8._version = pLVar27->_version;
-                          LStack_8._current.Quadrant = (int32_t)(pLVar27->_current).alias;
-                          uVar28 = (pLVar27->_current).path;
-                          uVar29 = (pLVar27->_current).asset;
-                          uStack_2 = 1;
-                          LStack_8._current.FirstAxisSign = uVar28;
-                          LStack_8._current.SecondAxisSign = uVar29;
-                          pLStack_20 = &LStack_8;
-                          while (bVar9 = mscorlib.dll::System::Collections::Generic::
-                                         List`1[T]+Enumerator[RTG::PlaneIdHelper+PlaneQuadrantInfo]
-                                         ::
-                                         List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                                                   (&LStack_8,
-                                                                                                        
-                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
-                                                  ), bVar9 != 0) {
-                            startPoint.y = (float)LStack_8._current.FirstAxisSign;
-                            startPoint.x = (float)LStack_8._current.Quadrant;
-                            startPoint.z = (float)LStack_8._current.SecondAxisSign;
-                            endPoint.y = (float)LStack_8._current.FirstAxisSign +
-                                         uStack_13._4_4_ * (float)pSStack_16;
-                            endPoint.x = (float)LStack_8._current.Quadrant +
-                                         (float)uStack_13 * (float)pSStack_16;
-                            endPoint.z = (float)LStack_8._current.SecondAxisSign +
-                                         fStack_26 * (float)pSStack_16;
-                            GLRenderer::GLRenderer_DrawLine3D(startPoint,endPoint,(MethodInfo *)0x0)
-                            ;
-                          }
-                          uStack_2 = 0xffffffff;
-                          mscorlib.dll::System::ThrowHelper::
-                          ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                    ((Object *)&LStack_8,
-                                     (ExceptionArgument__Enum)
-                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                                     ,method_00);
-                          uStack_2 = 0xffffffff;
-                          pGVar24 = (this->fields)._dirSnapTick;
-                          if (pGVar24 != (GizmoCap2D *)0x0) {
-                            (*(code *)(pGVar24->klass->vtable).Render_1.method)();
+          if (pLStack_20[3]._version != 0) {
+            if (1 < *(int *)(pLStack_20[3]._version + 0xc)) {
+              DirectionalLightGizmo3D_UpdateTicks(this,camera,(MethodInfo *)0x0);
+            }
+            if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor ==
+                0) {
+              func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+            }
+            method_00 = (MethodInfo *)
+                        Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                                  (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+            if (method_00 != (MethodInfo *)0x0) {
+              GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
+                        ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
+              pDVar18 = (&(this->fields)._lookAndFeel)
+                       [(this->fields)._sharedLookAndFeel !=
+                        (DirectionalLightGizmo3DLookAndFeel *)0x0];
+              if (pDVar18 != (DirectionalLightGizmo3DLookAndFeel *)0x0) {
+                GizmoLineMaterial::GizmoLineMaterial_SetColor
+                          ((GizmoLineMaterial *)method_00,(pDVar18->fields)._sourceCircleBorderColor,
+                           (MethodInfo *)0x0);
+                pMVar21 = GizmoLineMaterial::GizmoLineMaterial_get_Material
+                                    ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
+                if (pMVar21 != (Material *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                            (pMVar21,0,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
+                  pLVar10 = (this->fields)._targetLight;
+                  if (pLVar10 != (Light *)0x0) {
+                    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Component_get_transform((Component *)pLVar10,(MethodInfo *)0x0);
+                    if (pTVar11 != (Transform *)0x0) {
+                      pQVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                Transform_get_rotation
+                                          ((Quaternion *)&stack0xffffff58,pTVar11,(MethodInfo *)0x0)
+                      ;
+                      pLStack_20 = (List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                   0x3f800000;
+                      pos.z = (float)pSStack_16;
+                      pos.x = (float)uStack_13;
+                      pos.y = uStack_13._4_4_;
+                      s.y = fVar19;
+                      s.x = fVar19;
+                      s.z = 1.0;
+                      pMVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                                          ((Matrix4x4 *)&stack0xffffff10,pos,*pQVar22,s,
+                                           (MethodInfo *)0x0);
+                      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix
+                                (*pMVar23,(MethodInfo *)0x0);
+                      GLRenderer::GLRenderer_DrawLines3D
+                                ((this->fields)._sourceCirclePoints,(MethodInfo *)0x0);
+                      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
+                      this_00 = (this->fields)._._gizmo;
+                      if (this_00 != (Gizmo *)0x0) {
+                        pSStack_16 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                                     PointerEventBase`1[System::Object]::
+                                     PointerEventBase_1_System_Object__get_pointerType
+                                               ((PointerEventBase_1_System_Object_ *)this_00,
+                                                (MethodInfo *)0x0);
+                        pGVar24 = (this->fields)._dirSnapTick;
+                        if (pGVar24 != (GizmoCap2D *)0x0) {
+                          pSVar14 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject
+                                    ::AndroidJavaObject__GetRawClass
+                                              ((AndroidJavaObject *)pGVar24,(MethodInfo *)0x0);
+                          if (pSStack_16 == pSVar14) {
+                            pDVar18 = (&(this->fields)._lookAndFeel)
+                                     [(this->fields)._sharedLookAndFeel !=
+                                      (DirectionalLightGizmo3DLookAndFeel *)0x0];
+                            if (pDVar18 == (DirectionalLightGizmo3DLookAndFeel *)0x0)
                             goto code_?;
+                            GizmoLineMaterial::GizmoLineMaterial_SetColor
+                                      ((GizmoLineMaterial *)method_00,
+                                       (pDVar18->fields)._dirSnapSegmentColor,(MethodInfo *)0x0);
+                            pMVar21 = GizmoLineMaterial::GizmoLineMaterial_get_Material
+                                                ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
+                            if (pMVar21 == (Material *)0x0) goto code_?;
+                            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                                      (pMVar21,0,(MethodInfo *)0x0);
+                            pLVar10 = (this->fields)._targetLight;
+                            if (pLVar10 == (Light *)0x0) goto code_?;
+                            pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                      Component_get_transform((Component *)pLVar10,(MethodInfo *)0x0)
+                            ;
+                            if (pTVar11 == (Transform *)0x0) goto code_?;
+                            pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                      Transform_get_position
+                                                ((Vector3 *)&stack0xffffff70,pTVar11,
+                                                 (MethodInfo *)0x0);
+                            GLRenderer::GLRenderer_DrawLine3D
+                                      (*pVVar12,(this->fields)._pickedWorldSnapPoint,
+                                       (MethodInfo *)0x0);
+                          }
+                          pDVar18 = (&(this->fields)._lookAndFeel)
+                                   [(this->fields)._sharedLookAndFeel !=
+                                    (DirectionalLightGizmo3DLookAndFeel *)0x0];
+                          if (pDVar18 != (DirectionalLightGizmo3DLookAndFeel *)0x0) {
+                            GizmoLineMaterial::GizmoLineMaterial_SetColor
+                                      ((GizmoLineMaterial *)method_00,
+                                       (pDVar18->fields)._lightRaysColor,(MethodInfo *)0x0);
+                            pMVar21 = GizmoLineMaterial::GizmoLineMaterial_get_Material
+                                                ((GizmoLineMaterial *)method_00,(MethodInfo *)0x0);
+                            if (pMVar21 != (Material *)0x0) {
+                              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                                        (pMVar21,0,(MethodInfo *)0x0);
+                              pLVar10 = (this->fields)._targetLight;
+                              if (pLVar10 != (Light *)0x0) {
+                                pLStack_25 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_
+                                              *)&UNK_?;
+                                pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                          Component_get_transform
+                                                    ((Component *)pLVar10,(MethodInfo *)0x0);
+                                if (pTVar11 != (Transform *)0x0) {
+                                  pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                            Transform_get_forward
+                                                      ((Vector3 *)&stack0xffffff70,pTVar11,
+                                                       (MethodInfo *)0x0);
+                                  uStack_13._0_4_ = pVVar12->x;
+                                  uStack_13._4_4_ = pVVar12->y;
+                                  fStack_26 = pVVar12->z;
+                                  DirectionalLightGizmo3D_GenerateLightRayEmissionPoints
+                                            (this,camera,(MethodInfo *)0x0);
+                                  pDVar18 = (&(this->fields)._lookAndFeel)
+                                           [(this->fields)._sharedLookAndFeel !=
+                                            (DirectionalLightGizmo3DLookAndFeel *)0x0];
+                                  if (pDVar18 != (DirectionalLightGizmo3DLookAndFeel *)0x0) {
+                                    pSStack_16 = (String *)
+                                                 ((pDVar18->fields)._lightRayLength * fStack_17);
+                                    this_01 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_
+                                               *)(this->fields)._lightRayEmissionPoints;
+                                    if (this_01 !=
+                                        (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *
+                                        )0x0) {
+                                      pLVar27 = mscorlib.dll::System::Collections::Generic::
+                                                List`1[UnityEngine::UIElements::
+                                                VisualTreeAsset+UsingEntry]::
+                                                List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
+                                                          ((
+                                                  List_1_T_Enumerator_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_
+                                                  *)&pLStack_25,this_01,
+                                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
+                                                  );
+                                      uStack_15 = uStack_15 & 0xffffffff;
+                                      LStack_8._list =
+                                           (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                           pLVar27->_list;
+                                      LStack_8._index = pLVar27->_index;
+                                      LStack_8._version = pLVar27->_version;
+                                      LStack_8._current.Quadrant =
+                                           (int32_t)(pLVar27->_current).alias;
+                                      uVar28 = (pLVar27->_current).path;
+                                      uVar29 = (pLVar27->_current).asset;
+                                      uStack_2 = 1;
+                                      LStack_8._current.FirstAxisSign = uVar28;
+                                      LStack_8._current.SecondAxisSign = uVar29;
+                                      pLStack_20 = &LStack_8;
+                                      while( true ) {
+                                        bVar9 = mscorlib.dll::System::Collections::Generic::
+                                                List`1[T]+Enumerator[RTG::
+                                                PlaneIdHelper+PlaneQuadrantInfo]::
+                                                List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
+                                                          (&LStack_8,
+                                                                                                                      
+                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                                                  );
+                                        if (bVar9 == 0) break;
+                                        startPoint.y = (float)LStack_8._current.FirstAxisSign;
+                                        startPoint.x = (float)LStack_8._current.Quadrant;
+                                        startPoint.z = (float)LStack_8._current.SecondAxisSign;
+                                        endPoint.y = (float)LStack_8._current.FirstAxisSign +
+                                                     uStack_13._4_4_ * (float)pSStack_16;
+                                        endPoint.x = (float)LStack_8._current.Quadrant +
+                                                     (float)uStack_13 * (float)pSStack_16;
+                                        endPoint.z = (float)LStack_8._current.SecondAxisSign +
+                                                     fStack_26 * (float)pSStack_16;
+                                        GLRenderer::GLRenderer_DrawLine3D
+                                                  (startPoint,endPoint,(MethodInfo *)0x0);
+                                      }
+                                      uStack_2 = 0xffffffff;
+                                      mscorlib.dll::System::ThrowHelper::
+                                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                                                ((Object *)&LStack_8,
+                                                 (ExceptionArgument__Enum)
+                                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                                                 ,method_00);
+                                      uStack_2 = 0xffffffff;
+                                      pGVar24 = (this->fields)._dirSnapTick;
+                                      if (pGVar24 != (GizmoCap2D *)0x0) {
+                                        (*(code *)(pGVar24->klass->vtable).Render_1.method)();
+                                        goto code_?;
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
                           }
                         }
                       }
@@ -789,21 +791,15 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3D::
 
 {
   ppGStack_1 = (GizmoCap2DLookAndFeel **)&stack0xfffffffc;
-  if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-    pDVar2 = (this->fields)._lookAndFeel;
-    if (pDVar2 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pDVar2 = (this->fields)._sharedLookAndFeel;
-  }
-  pGVar3 = (this->fields)._dirSnapTick;
-  if (pGVar3 != (GizmoCap2D *)0x0) {
+  pDVar2 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (DirectionalLightGizmo3DLookAndFeel *)0x0];
+  if ((pDVar2 != (DirectionalLightGizmo3DLookAndFeel *)0x0) &&
+     (pGVar3 = (this->fields)._dirSnapTick, pGVar3 != (GizmoCap2D *)0x0)) {
     (pGVar3->fields)._sharedLookAndFeel = (pDVar2->fields)._dirSnapTickLookAndFeel;
     ppGStack_1 = &(pGVar3->fields)._sharedLookAndFeel;
     func_?();
     return;
   }
-code_?:
   uVar4 = func_?(auStack_5);
   func_?(uVar4);
   pcVar6 = (code *)swi(3);
@@ -840,68 +836,70 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3D::DirectionalLightGizmo3D_
   if (pOVar1 != (Object *)0x0) {
     pOVar2 = pOVar1[2].klass;
     this_00 = (this->fields)._._gizmo;
-    if ((((this_00 != (Gizmo *)0x0) &&
-         (pCVar3 = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0),
-         pOVar2 != (Object__Class *)0x0)) &&
-        (pRVar4 = (Ray *)func_?(&stack0xffffffa0,6,TypeInfo__RTG__IInputDevice,pOVar2,
-                                          pCVar3), this_01 != (RTScene *)0x0)) &&
-       (this_02 = (IPAddress *)
-                  RTScene::RTScene_Raycast
-                            (this_01,*pRVar4,SceneRaycastPrecision__Enum_BestFit,
-                             (this->fields)._raycastFilter,(MethodInfo *)0x0),
-       this_02 != (IPAddress *)0x0)) {
-      bVar5 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UQuery+SingleQueryMatcher
-               ::UQuery_SingleQueryMatcher_IsInUse
-                         ((UQuery_SingleQueryMatcher *)this_02,(MethodInfo *)0x0);
-      if (bVar5 == 0) {
-        bVar5 = System.dll::System::Net::IPAddress::IPAddress_get_IsIPv6(this_02,(MethodInfo *)0x0)
-        ;
+    if ((this_00 != (Gizmo *)0x0) &&
+       (pCVar3 = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0),
+       pOVar2 != (Object__Class *)0x0)) {
+      pRVar4 = (Ray *)func_?(&stack0xffffffa0,6,TypeInfo__RTG__IInputDevice,pOVar2,pCVar3
+                                      );
+      if ((this_01 != (RTScene *)0x0) &&
+         (this_02 = (IPAddress *)
+                    RTScene::RTScene_Raycast
+                              (this_01,*pRVar4,SceneRaycastPrecision__Enum_BestFit,
+                               (this->fields)._raycastFilter,(MethodInfo *)0x0),
+         this_02 != (IPAddress *)0x0)) {
+        bVar5 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                 UQuery+SingleQueryMatcher::UQuery_SingleQueryMatcher_IsInUse
+                           ((UQuery_SingleQueryMatcher *)this_02,(MethodInfo *)0x0);
         if (bVar5 == 0) {
-          return;
-        }
-        pUVar6 = (this_02->fields)._numbers;
-      }
-      else {
-        pUVar6 = (UInt16__Array *)(this_02->fields)._addressOrScopeId;
-      }
-      if (pUVar6 != (UInt16__Array *)0x0) {
-        uVar7._0_4_ = pUVar6->max_length;
-        uVar7._4_2_ = pUVar6->vector[0];
-        uVar7._6_2_ = pUVar6->vector[1];
-        fVar8 = *(float *)(pUVar6->vector + 2);
-        (this->fields)._pickedWorldSnapPoint.x = (float)(undefined4)uVar7;
-        (this->fields)._pickedWorldSnapPoint.y = (float)(int)((ulonglong)uVar7 >> 0x20);
-        (this->fields)._pickedWorldSnapPoint.z = fVar8;
-        uVar9 = (this->fields)._pickedWorldSnapPoint.x;
-        uVar10 = (this->fields)._pickedWorldSnapPoint.y;
-        pLVar11 = (this->fields)._targetLight;
-        if ((pLVar11 != (Light *)0x0) &&
-           (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pLVar11,(MethodInfo *)0x0), pTVar12 != (Transform *)0x0
-           )) {
-          pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffa8,pTVar12,(MethodInfo *)0x0);
-          uVar14 = pVVar13->x;
-          uVar15 = pVVar13->y;
-          fVar16 = pVVar13->z;
-          fVar17 = (float)uVar9 - (float)uVar14;
-          fVar18 = (float)uVar10 - (float)uVar15;
-          fVar19 = (float10)func_?();
-          if (_UNK_? < (float)fVar19) {
-            pLVar11 = (this->fields)._targetLight;
-            if (pLVar11 == (Light *)0x0) goto code_?;
-            pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pLVar11,(MethodInfo *)0x0);
-            value.y = fVar18;
-            value.x = fVar17;
-            value.z = fVar8 - fVar16;
-            pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                ((Vector3 *)&stack0xffffffa8,value,(MethodInfo *)0x0);
-            TransformEx::TransformEx_Align
-                      ((Quaternion *)&stack0xffffffa8,pTVar12,*pVVar13,TransformAxis__Enum_PositiveZ
-                       ,(MethodInfo *)0x0);
+          bVar5 = System.dll::System::Net::IPAddress::IPAddress_get_IsIPv6
+                             (this_02,(MethodInfo *)0x0);
+          if (bVar5 == 0) {
+            return;
           }
-          return;
+          pUVar6 = (this_02->fields)._numbers;
+        }
+        else {
+          pUVar6 = (UInt16__Array *)(this_02->fields)._addressOrScopeId;
+        }
+        if (pUVar6 != (UInt16__Array *)0x0) {
+          uVar7._0_4_ = pUVar6->max_length;
+          uVar7._4_2_ = pUVar6->vector[0];
+          uVar7._6_2_ = pUVar6->vector[1];
+          fVar8 = *(float *)(pUVar6->vector + 2);
+          (this->fields)._pickedWorldSnapPoint.x = (float)(undefined4)uVar7;
+          (this->fields)._pickedWorldSnapPoint.y = (float)(int)((ulonglong)uVar7 >> 0x20);
+          (this->fields)._pickedWorldSnapPoint.z = fVar8;
+          uVar9 = (this->fields)._pickedWorldSnapPoint.x;
+          uVar10 = (this->fields)._pickedWorldSnapPoint.y;
+          pLVar11 = (this->fields)._targetLight;
+          if ((pLVar11 != (Light *)0x0) &&
+             (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pLVar11,(MethodInfo *)0x0),
+             pTVar12 != (Transform *)0x0)) {
+            pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&stack0xffffffa8,pTVar12,(MethodInfo *)0x0);
+            uVar14 = pVVar13->x;
+            uVar15 = pVVar13->y;
+            fVar16 = pVVar13->z;
+            fVar17 = (float)uVar9 - (float)uVar14;
+            fVar18 = (float)uVar10 - (float)uVar15;
+            fVar19 = (float10)func_?();
+            if (_UNK_? < (float)fVar19) {
+              pLVar11 = (this->fields)._targetLight;
+              if (pLVar11 == (Light *)0x0) goto code_?;
+              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pLVar11,(MethodInfo *)0x0);
+              value.y = fVar18;
+              value.x = fVar17;
+              value.z = fVar8 - fVar16;
+              pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                  ((Vector3 *)&stack0xffffffa8,value,(MethodInfo *)0x0);
+              TransformEx::TransformEx_Align
+                        ((Quaternion *)&stack0xffffffa8,pTVar12,*pVVar13,
+                         TransformAxis__Enum_PositiveZ,(MethodInfo *)0x0);
+            }
+            return;
+          }
         }
       }
     }
@@ -1120,21 +1118,15 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3D::
 {
   (this->fields)._sharedLookAndFeel = value;
   func_?(&(this->fields)._sharedLookAndFeel,value);
-  if ((this->fields)._sharedLookAndFeel == (DirectionalLightGizmo3DLookAndFeel *)0x0) {
-    pDVar1 = (this->fields)._lookAndFeel;
-    if (pDVar1 == (DirectionalLightGizmo3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pDVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  pGVar2 = (this->fields)._dirSnapTick;
-  if (pGVar2 != (GizmoCap2D *)0x0) {
+  pDVar1 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (DirectionalLightGizmo3DLookAndFeel *)0x0];
+  if ((pDVar1 != (DirectionalLightGizmo3DLookAndFeel *)0x0) &&
+     (pGVar2 = (this->fields)._dirSnapTick, pGVar2 != (GizmoCap2D *)0x0)) {
     pGVar3 = (pDVar1->fields)._dirSnapTickLookAndFeel;
     (pGVar2->fields)._sharedLookAndFeel = pGVar3;
     func_?(&(pGVar2->fields)._sharedLookAndFeel,pGVar3);
     return;
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();

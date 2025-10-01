@@ -10,43 +10,52 @@ using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class GamePointGainEffectController : MonoBehaviour
+public class GameMeterGamePoints : GameMeterBase
 {
 	// Fields
+	private const float createGamePointDelayMax = 0.2f;
+	private const float createGamePointDelayMin = 0.1f;
+	private const int maxAmountOfQueuedGainEffects = 10;
 	[SerializeField]
-	private Transform gamePointEffectContainer;
+	private GameObject gamePointMeterMainObject;
 	[SerializeField]
-	private Transform gamePointEffectTargetTransform;
+	private Transform gamePointEffectSpawnPoint;
+	[SerializeField]
+	private Transform gamePointEffectTarget;
 	[SerializeField]
 	private GamePointGainEffectCountController countController;
 	[SerializeField]
 	private GamePointGainEffect gamePointGainEffectPrefab;
 	[SerializeField]
 	private bool disableSpawnOffset;
-	private int currentGamePoints;
-	private int gamePointsToInstantiate;
-	private float createGamePointTime;
-	private const float createGamePointDelayMax = 0.2f;
-	private const float createGamePointDelayMin = 0.1f;
-	private const int maxAmountOfQueuedGainEffects = 10;
 	private readonly Vector3 gainEffectSpawnOffset;
 	private readonly List<GamePointGainEffect> gamePointGainEffectPool;
 	private readonly List<GamePointGainEffect> gamePointGainEffectCurrentlyUsed;
+	private int currentGamePoints;
+	private int gamePointsToInstantiate;
+	private float createGamePointTime;
+
+	// Properties
+	public override GameMeterType GameMeterType { get; }
 
 	// Constructors
-	public GamePointGainEffectController();
+	public GameMeterGamePoints();
 
 	// Methods
-	private void Start();
+	public override void Initialize();
+	public override void SetShowGameMeter(bool show);
+	public override void UpdateValue();
+	public override bool SetGameMeterVisibility();
 	private void OnDestroy();
 	private void OnDisable();
 	private void Update();
 	private void OnPlayerPlanetDataUpdated();
 	private void OnFakeGainEffect(int newGamePoints);
-	private void OnHaveShownGainEffect(int gamePointAmountShown);
 	private void OnInGameGainEffectShown(int gamePointAmountShown);
-	private void HandleNewGamePointAmount(int newGamePointsAmount);
-	private void HandleAddedGamePoints(int newAddedGamePoints);
+	private void OnHaveShownGainEffect(int gamePointAmountShown);
+	private void SetGamePoints(int newGamePoints);
+	private void AddGamePoints(int addedGamePoints);
+	private void GamePointsModified();
 	private void StartGamePointGainEffect();
 	private void CreateGamePointGainEffect();
 	private void OnGamePointReached(int id);

@@ -11,19 +11,18 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_AvatarStateChanged
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
-    MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
-    if ((this->fields).buttonEnabler != (GameObject *)0x0) {
-      if (pcRam_? == (code *)0x0) {
-        pcRam_? = (code *)func_?();
-      }
-      (*pcRam_?)();
+    iVar2 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
+    this_01 = (this->fields).buttonEnabler;
+    if (this_01 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_01,1 < iVar2,(MethodInfo *)0x0);
       return;
     }
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -116,10 +115,9 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_SetButtonIsActive
       return;
     }
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -280,11 +278,11 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_Start
               pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if ((pMVar2 != (MVNetworkGame *)0x0) &&
                  (pMVar3 = (pMVar2->fields).teamManager, pMVar3 != (MVTeamManager *)0x0)) {
-                iVar5 = MVTeamManager::MVTeamManager_TeamCount(pMVar3,(MethodInfo *)0x0);
+                MVTeamManager::MVTeamManager_TeamCount(pMVar3,(MethodInfo *)0x0);
                 this_01 = (this->fields).buttonEnabler;
                 if (this_01 != (GameObject *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (this_01,1 < iVar5,(MethodInfo *)0x0);
+                            (this_01,0,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -295,8 +293,8 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_Start
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -424,13 +424,13 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
         return;
       }
       pOStack_8 = (Object *)uVar6;
-      BStack_9 = CONCAT31(BStack_9._1_3_,(char)pMVar4);
+      BStack_9 = CONCAT31(BStack_9._1_3_,(uint8_t)pMVar4);
       if (xpRewardRemovalAllowed == (Dictionary_2_MV_Common_GamePassTier_System_Boolean_ *)0x0)
       break;
       bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
               Boolean]::Dictionary_2_System_ByteEnum_System_Boolean__get_Item
                         ((Dictionary_2_System_ByteEnum_System_Boolean_ *)xpRewardRemovalAllowed,
-                         (ByteEnum__Enum)pMVar4,
+                         BStack_9,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_bool>__get_Item_MV__Common__GamePassTier_
                         );
       value = (Object *)func_?();

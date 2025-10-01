@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility
     cRam_? = '\x01';
   }
   if (((uVar1 & 1) == 0) ||
-     ((TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField & 0x10) != 0)) {
+     ((TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField & 0x10U) != 0)) {
     pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                        ((MethodInfo *)0x0);
     if (pSVar2 == (SpawnRoleDataMediator *)0x0) goto code_?;
@@ -51,7 +51,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility
       goto code_?;
     }
     if (method_00 == (MethodInfo *)0x0) goto code_?;
-    value = 9;
+    value = 0x9d;
     pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)method_00,(MethodInfo *)0x0);
     if (pGVar4 == (GameObject *)0x0) goto code_?;

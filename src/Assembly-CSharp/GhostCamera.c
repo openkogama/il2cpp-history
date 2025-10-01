@@ -236,13 +236,13 @@ void Assembly-CSharp.dll::GhostCamera::GhostCamera_Enter
                              (&VStack_4,*pQVar9,(this->fields).offset,(MethodInfo *)0x0);
           uVar10 = pVVar3->x;
           uVar11 = pVVar3->y;
-          QStack_5.y = fVar6 + (float)uVar10;
-          QStack_5.w = fStack_8 + pVVar3->z;
-          QStack_5.z = fStack_7 + (float)uVar11;
+          QStack_5.y = (float)uVar10 + fVar6;
+          QStack_5.w = pVVar3->z + fStack_8;
+          QStack_5.z = (float)uVar11 + fStack_7;
           if (pTVar2 != (Transform *)0x0) {
             value.z = QStack_5.w;
             value.x = QStack_5.y;
-            value.y = fStack_7 + (float)uVar11;
+            value.y = (float)uVar11 + fStack_7;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                       (pTVar2,value,(MethodInfo *)0x0);
             bVar12 = MVClientSettings::MVClientSettings_get_ReviveEnabled((MethodInfo *)0x0);
@@ -614,7 +614,7 @@ void Assembly-CSharp.dll::GhostCamera::GhostCamera_UpdatePosition
                         func_?(&stack0x00000018,&method,0,puVar40,puVar39,uVar1);
               fVar21 = (this->fields).distance;
               fVar41 = (this->fields).distance;
-              dVar42 = (double)((fVar11 * fVar11 + fVar21 * fVar21) -
+              dVar42 = (double)((fVar21 * fVar21 + fVar11 * fVar11) -
                                ((float)((ulonglong)*puVar40 >> 0x20) * fStack_35 +
                                 (float)*puVar40 * fStack_24 + *(float *)(puVar40 + 1) * fStack_26) *
                                (fVar41 + fVar41) * fVar11);

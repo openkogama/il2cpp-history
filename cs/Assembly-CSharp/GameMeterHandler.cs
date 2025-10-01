@@ -15,6 +15,10 @@ public class GameMeterHandler : MonoBehaviour
 	// Fields
 	[SerializeField]
 	private List<GameMeterBase> gameMeters;
+	[SerializeField]
+	private GameObject collectiblesAndTimersSpacer;
+	[SerializeField]
+	private GameObject timersAndWinConditionsSpacer;
 
 	// Constructors
 	public GameMeterHandler();

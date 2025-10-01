@@ -6,54 +6,42 @@ Vector3 * Assembly-CSharp.dll::ClosestPointSphere::ClosestPointSphere_GetClosest
                     MethodInfo *method)
 
 {
-  fVar1 = (this->fields).offset.z;
-  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar2 != (Transform *)0x0) {
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                        ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-    fVar4 = pVVar3->z;
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  if (pTVar1 != (Transform *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+              ((Vector3 *)&stack0xffffffcc,pTVar1,(MethodInfo *)0x0);
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
+    if (pTVar1 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                ((Vector3 *)&stack0xffffffcc,pTVar1,(MethodInfo *)0x0);
+      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar2 != (Transform *)0x0) {
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-        fVar5 = pVVar3->z;
-        fVar6 = 0.0;
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      if (pTVar1 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                  ((Vector3 *)&stack0xffffffcc,pTVar1,(MethodInfo *)0x0);
+        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar2 != (Transform *)0x0) {
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-          uVar7 = pVVar3->x;
-          uVar8 = pVVar3->y;
-          pVVar9 = (Vector3 *)(spectator.x - (float)uVar7);
-          value.y = spectator.y - (float)uVar8;
-          value.x = (float)pVVar9;
-          value.z = spectator.z - pVVar3->z;
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                              ((Vector3 *)&stack0xffffffc8,value,(MethodInfo *)0x0);
-          uVar10 = pVVar3->x;
-          uVar11 = pVVar3->y;
-          fVar6 = fVar6 * (float)this;
-          fVar12 = pVVar3->z;
-          pVVar9->x = (float)uVar10 * fVar6 + (spectator.y - (float)uVar8);
-          pVVar9->y = (float)uVar11 * fVar6 + 3.2603493e-29;
-          pVVar9->z = fVar12 * fVar6 + fVar5 + fVar4 * fVar1;
-          return pVVar9;
+        if (pTVar1 != (Transform *)0x0) {
+          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffcc,pTVar1,(MethodInfo *)0x0);
+          uVar3 = pVVar2->x;
+          uVar4 = pVVar2->y;
+          value.y = spectator.y - (float)uVar4;
+          value.x = spectator.x - (float)uVar3;
+          value.z = spectator.z - pVVar2->z;
+          UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                    ((Vector3 *)&stack0xffffffcc,value,(MethodInfo *)0x0);
+          return (Vector3 *)&stack0xffffffcc;
         }
       }
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar3 = (Vector3 *)(*pcVar13)();
-  return pVVar3;
+  pcVar5 = (code *)swi(3);
+  pVVar2 = (Vector3 *)(*pcVar5)();
+  return pVVar2;
 }
 
 

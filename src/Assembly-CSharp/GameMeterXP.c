@@ -23,10 +23,11 @@ code_?:
   }
   else {
     pXVar3 = (pMVar2->fields).OnXPProgressData;
-    this_01 = (UnityAction_1_System_Object_ *)
+    this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
               func_?(TypeInfo__XPProgress__OnXPProgressDataDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
+    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+    VideoCapture+OnVideoCaptureResourceCreatedCallback::
+    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
               (this_01,(Object *)this,MethodInfo__GameMeterXP__OnProgressUpdate_XPProgressData_,
                (MethodInfo *)0x0);
     pXVar3 = (XPProgress_OnXPProgressDataDelegate *)
@@ -226,9 +227,10 @@ code_?:
       }
       else {
         pXVar7 = (pMVar5->fields).OnXPProgressData;
-        this_00 = (UnityAction_1_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-        UnityAction_1_System_Object___ctor
+        this_00 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+        VideoCapture+OnVideoCaptureResourceCreatedCallback::
+        VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
                   (this_00,(Object *)in_stack_8,
                    MethodInfo__GameMeterXP__OnProgressUpdate_XPProgressData_,(MethodInfo *)0x0);
         pXVar7 = (XPProgress_OnXPProgressDataDelegate *)

@@ -371,17 +371,11 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      uVar6 = func_?();
-      iVar7 = (int)((ulonglong)uVar6 >> 0x20);
-      piVar8 = (int *)uVar6;
-      *piVar8 = *piVar8 - iVar7;
-      *piVar8 = *piVar8 - iVar7;
-      *piVar8 = *piVar8 - iVar7;
-      *piVar8 = *piVar8 - iVar7;
-      *piVar8 = *piVar8 - iVar7;
-      pcVar9 = (code *)swi(3);
-      bVar3 = (*pcVar9)();
-      return bVar3;
+      func_?();
+      piVar6 = (int *)in(0xe9);
+      *piVar6 = *piVar6 - extraout_EDX;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
       return 0;
@@ -409,6 +403,7 @@ code_?:
 }
 
 
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* WARNING (jumptable): Removing unreachable block (ram,0xADDR) */
 /* Void UpdateNotification(Int32, GameStatCounterType, Int32) */
 
@@ -457,10 +452,11 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
   pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  GVar4 = counterType & 0xff;
   if ((pMVar3 != (MVNetworkGame *)0x0) &&
      (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    bVar4 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    bVar5 = MVPlayerContainer::MVPlayerContainer_ContainsKey(this,actorNumber,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
       switch(counterType & 0xff) {
       case GameStatCounterType__Enum_Kill:
       case GameStatCounterType__Enum_Collectible:
@@ -468,10 +464,11 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
         break;
       case GameStatCounterType__Enum_TimeAttackFlag:
         pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        GVar4 = actorNumber;
         if ((pMVar3 == (MVNetworkGame *)0x0) ||
-           (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
-           pMVar5 == (MVLocalPlayer *)0x0)) goto code_?;
-        if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
+           (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+           pMVar6 == (MVLocalPlayer *)0x0)) goto code_?;
+        if ((pMVar6->fields)._._ActorNr_k__BackingField == actorNumber) {
           return;
         }
       case GameStatCounterType__Enum_Flag:
@@ -480,18 +477,58 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
 code_?:
-  uVar6 = func_?();
-  iRam_? = (int)((ulonglong)uVar6 >> 0x20);
-  uVar7 = (undefined3)((ulonglong)uVar6 >> 8);
-  cVar8 = (char)uVar6 + 'A';
-  piVar9 = (int *)CONCAT31(uVar7,cVar8);
-  *piVar9 = *piVar9 - iRam_?;
-  *piVar9 = *piVar9 - iRam_?;
-  *piVar9 = *piVar9 - iRam_?;
-  uRam_? = 0xbfbc1029;
-  uRam_? = 0;
-  piVar9 = (int *)CONCAT31(uVar7,cVar8);
-  *piVar9 = *piVar9 - iRam_?;
+  uVar7 = func_?();
+  bVar8 = (byte)((ulonglong)uVar7 >> 0x28);
+  uVar9 = (undefined2)((ulonglong)uVar7 >> 0x30);
+  uVar10 = (undefined1)((ulonglong)uVar7 >> 0x20);
+  uVar11 = CONCAT11(bVar8 - 0x29,uVar10);
+  iVar12 = CONCAT22(uVar9,uVar11);
+  pcVar13 = (char *)(iVar12 + 0x3a1029ee);
+  *pcVar13 = *pcVar13 + (char)uVar7 + (bVar8 < 0x29);
+  uVar14 = in(uVar11);
+  piVar15 = (int *)CONCAT31((int3)((ulonglong)uVar7 >> 8),uVar14);
+  *piVar15 = *piVar15 - iVar12;
+  uVar11 = CONCAT11(bVar8 + 0xae,uVar10);
+  iVar12 = CONCAT22(uVar9,uVar11);
+  *(char *)(extraout_ECX + -0x14) =
+       *(char *)(extraout_ECX + -0x14) + (char)GVar4 + ((byte)(bVar8 - 0x29) < 0x29);
+  *piVar15 = *piVar15 - iVar12;
+  *(undefined2 *)(iStack_16 + -4) = in_DS;
+  piVar15 = (int *)in(uVar11);
+  *piVar15 = *piVar15 - iVar12;
+  piVar15 = (int *)in(uVar11);
+  *piVar15 = *piVar15 - iVar12;
+  *(undefined2 *)(iStack_16 + -8) = in_DS;
+  piVar15 = (int *)in(uVar11);
+  *piVar15 = *piVar15 - iVar12;
+  piVar15 = (int *)in(uVar11);
+  *piVar15 = *piVar15 - iVar12;
+  *(undefined2 *)(iStack_16 + -0xc) = in_DS;
+  piVar15 = (int *)in(uVar11);
+  *piVar15 = *piVar15 - iVar12;
+  piVar15 = (int *)in(uVar11);
+  *piVar15 = *piVar15 - iVar12;
+  *(undefined1 **)(iStack_16 + -0x10) = &stack0xfffffffc;
+  iVar12 = *(int *)(iStack_16 + -8);
+  *(undefined4 *)(iVar12 + 0x10) = 2;
+  *(undefined4 *)(iStack_16 + -4) = 0;
+  *(int *)(iStack_16 + -8) = iVar12;
+  puVar17 = (undefined1 *)(iStack_16 + -0x10);
+  *(undefined4 *)(iStack_16 + -0x10) = *(undefined4 *)(iStack_16 + -0x10);
+  if (cRam_? == '\0') {
+    *(Object_1__Class ***)(iStack_16 + -0x14) = &TypeInfo__UnityEngine__Object;
+    puVar18 = (undefined1 *)(iStack_16 + -0x18);
+    *(undefined **)(iStack_16 + -0x18) = &UNK_?;
+    func_?();
+    puVar17 = puVar18 + 4;
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    *(Object_1__Class **)(puVar17 + -4) = TypeInfo__UnityEngine__Object;
+    *(undefined **)(puVar17 + -8) = &UNK_?;
+    func_?();
+  }
+  *(undefined4 *)(iStack_16 + -4) = 0;
   return;
 }
 

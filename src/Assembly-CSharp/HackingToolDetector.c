@@ -336,170 +336,152 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__HackingToolDetector);
-    func_?(&TypeInfo__HackingToolDetector__ReportCategory);
-    func_?(&TypeInfo__StatHatWrapper);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_Application_quit_);
-    func_?(&StringLiteral_Running_process__);
-    func_?(&StringLiteral___detected_);
-    func_?(&StringLiteral_cheatDetected_ReportCategory_);
-    func_?(&StringLiteral___detected_as__);
-    func_?(&StringLiteral_Registry_key__);
-    func_?(&StringLiteral_Report_default_label_have_been_h);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral___associated_with__);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   pSVar1 = StringLiteral_Report_default_label_have_been_h;
   index = 2;
-  if (a != (HackingToolDetector_HackingToolReport *)0x0) {
-    switch((a->fields).kind) {
-    case 0:
-      index = 0;
-      unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,5);
-      if (unaff_EBX != (String__Array *)0x0) {
-        func_?(0,StringLiteral_Running_process__);
-        pAVar2 = (a->fields).app;
-        if (pAVar2 != (ApplicationDesc *)0x0) {
-          pSVar1 = (pAVar2->fields)._ExeCertSubjectName_k__BackingField;
+  if (a == (HackingToolDetector_HackingToolReport *)0x0) goto code_?;
+  switch((a->fields).kind) {
+  case 0:
+    index = 0;
+    unaff_EBX = (String__Array *)func_?();
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    func_?();
+    pAVar2 = (a->fields).app;
+    break;
+  case 1:
+    index = 0;
+    unaff_EBX = (String__Array *)func_?();
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    func_?();
+    pAVar2 = (a->fields).app;
+    goto joined_?;
+  case 2:
+    index = 1;
+    unaff_EBX = (String__Array *)func_?();
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    func_?();
+    pAVar2 = (ApplicationDesc *)(a->fields).foundKey;
+    break;
+  case 3:
+    index = 1;
+    unaff_EBX = (String__Array *)func_?();
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
+    func_?();
+    pAVar2 = (ApplicationDesc *)(a->fields).foundKey;
+joined_?:
+    if (pAVar2 == (ApplicationDesc *)0x0) goto code_?;
+    func_?();
+    func_?();
+    if ((a->fields).app == (ApplicationDesc *)0x0) goto code_?;
+    func_?();
+    func_?();
+    func_?();
+    goto code_?;
+  case 4:
+    goto code_?;
+  default:
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)pSVar1,(MethodInfo *)0x0);
+    a = (HackingToolDetector_HackingToolReport *)pSVar1;
+    goto code_?;
+  }
+  if (pAVar2 != (ApplicationDesc *)0x0) {
+    func_?();
+    func_?();
+    if ((a->fields).app != (ApplicationDesc *)0x0) {
+      func_?();
 code_?:
-          func_?(1,pSVar1);
-          func_?(2,StringLiteral___associated_with__);
-          pAVar2 = (a->fields).app;
-          if (pAVar2 != (ApplicationDesc *)0x0) {
-            func_?(3,(pAVar2->fields).programName);
-            uVar3 = 4;
-            pSVar1 = StringLiteral___detected_;
-code_?:
-            func_?(uVar3,pSVar1);
-            a = (HackingToolDetector_HackingToolReport *)
-                mscorlib.dll::System::String::String_Concat_6(unaff_EBX,(MethodInfo *)0x0);
-            goto code_?;
-          }
-        }
-      }
-      break;
-    case 1:
-      index = 0;
-      unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,7);
-      if (unaff_EBX != (String__Array *)0x0) {
-        func_?(0,StringLiteral_Running_process__);
-        pAVar2 = (a->fields).app;
-        if (pAVar2 != (ApplicationDesc *)0x0) {
-          pSVar1 = (pAVar2->fields)._ExeCertSubjectName_k__BackingField;
-code_?:
-          func_?(1,pSVar1);
-          func_?(2,StringLiteral___associated_with__);
-          pAVar2 = (a->fields).app;
-          if (pAVar2 != (ApplicationDesc *)0x0) {
-            func_?(3,(pAVar2->fields).programName);
-            func_?(4,StringLiteral___detected_as__);
-            func_?(5,(a->fields).exactFind);
-            uVar3 = 6;
-            pSVar1 = ::StringLiteral__;
-            goto code_?;
-          }
-        }
-      }
-      break;
-    case 2:
-      index = 1;
-      unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,5);
-      if (unaff_EBX != (String__Array *)0x0) {
-        func_?(0,StringLiteral_Registry_key__);
-        pAVar4 = (a->fields).foundKey;
-        if (pAVar4 != (ApplicationDesc_RegistryKey *)0x0) {
-          pSVar1 = (pAVar4->fields).name;
-          goto code_?;
-        }
-      }
-      break;
-    case 3:
-      index = 1;
-      unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,7);
-      if (unaff_EBX != (String__Array *)0x0) {
-        func_?(0,StringLiteral_Registry_key__);
-        pAVar4 = (a->fields).foundKey;
-        if (pAVar4 != (ApplicationDesc_RegistryKey *)0x0) {
-          pSVar1 = (pAVar4->fields).name;
-          goto code_?;
-        }
-      }
-      break;
-    case 4:
-      goto code_?;
-    default:
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar1,(MethodInfo *)0x0);
-      a = (HackingToolDetector_HackingToolReport *)pSVar1;
+      func_?();
+      a = (HackingToolDetector_HackingToolReport *)
+          mscorlib.dll::System::String::String_Concat_6(unaff_EBX,(MethodInfo *)0x0);
 code_?:
       if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__HackingToolDetector);
+        func_?();
       }
-      pBVar5 = (this->fields).alreadyReported;
+      pBVar3 = (this->fields).alreadyReported;
       unaff_EBX = (String__Array *)this;
-      if (pBVar5 != (BitArray *)0x0) {
-        bVar6 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
-                          (pBVar5,index,(MethodInfo *)0x0);
-        if (bVar6 != 0) {
-          return;
-        }
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)a,(MethodInfo *)0x0);
-        EStack_7.klass = (Enum__Class *)TypeInfo__HackingToolDetector__ReportCategory;
-        EStack_7.monitor = (MonitorData *)0xffffffff;
-        iStack_8 = index;
-        pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_7,(MethodInfo *)0x0);
-        a = (HackingToolDetector_HackingToolReport *)
-            mscorlib.dll::System::String::String_Concat_3
-                      (StringLiteral_cheatDetected_ReportCategory_,pSVar1,(MethodInfo *)0x0);
-        if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__StatHatWrapper);
-        }
-        StatHatWrapper::StatHatWrapper_Count((String *)a,1,(MethodInfo *)0x0);
-        pBVar5 = (this->fields).alreadyReported;
-        if (pBVar5 != (BitArray *)0x0) {
-          mscorlib.dll::System::Collections::BitArray::BitArray_set_Item
-                    (pBVar5,index,1,(MethodInfo *)0x0);
-          if (index != 0) {
-            return;
-          }
+      if (pBVar3 != (BitArray *)0x0) {
+        bVar4 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
+                          (pBVar3,index,(MethodInfo *)0x0);
+        if (bVar4 == 0) {
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Debug);
+            func_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)StringLiteral_Application_quit_,(MethodInfo *)0x0);
-          this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                              ((MethodInfo *)0x0);
-          if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)a,(MethodInfo *)0x0)
+          ;
+          EStack_5.klass = (Enum__Class *)TypeInfo__HackingToolDetector__ReportCategory;
+          EStack_5.monitor = (MonitorData *)0xffffffff;
+          iStack_6 = index;
+          pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_5,(MethodInfo *)0x0);
+          a = (HackingToolDetector_HackingToolReport *)
+              mscorlib.dll::System::String::String_Concat_3
+                        (StringLiteral_cheatDetected_ReportCategory_,pSVar1,(MethodInfo *)0x0);
+          if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          StatHatWrapper::StatHatWrapper_Count((String *)a,1,(MethodInfo *)0x0);
+          pBVar3 = (this->fields).alreadyReported;
+          if (pBVar3 == (BitArray *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::BitArray::BitArray_set_Item
+                    (pBVar3,index,1,(MethodInfo *)0x0);
+          if (index == 0) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                      ((Object *)StringLiteral_Application_quit_,(MethodInfo *)0x0);
+            this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                ((MethodInfo *)0x0);
+            if (this_00 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
             MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Ban
                       (this_00,CheatType__Enum_CheatSoftwareRunning,(MethodInfo *)0x0);
             BrowserCommGotoRequests::BrowserCommGotoRequests_GotoSignout((MethodInfo *)0x0);
-            return;
           }
         }
+code_?:
+        return;
       }
     }
   }
-  bVar9 = 0;
-  pbVar10 = (byte *)func_?();
-  bVar11 = (byte)unaff_EBX + extraout_DL;
-  *(byte *)(&a->klass + CONCAT31((int3)((uint)unaff_EBX >> 8),bVar11 + bVar9) * 2) =
-       *(char *)(&a->klass + CONCAT31((int3)((uint)unaff_EBX >> 8),bVar11 + bVar9) * 2) + extraout_DL
-       + (CARRY1((byte)unaff_EBX,extraout_DL) || CARRY1(bVar11,bVar9));
-  if ((char)(extraout_DL & *pbVar10) < '\0') {
-    pcVar12 = (code *)swi(3);
-    (*pcVar12)();
+code_?:
+  bVar7 = 0;
+  uVar8 = func_?();
+  bVar9 = (byte)uVar8 - 0x23;
+  (&stack0x1d33100b)[(int)unaff_EBX] =
+       (&stack0x1d33100b)[(int)unaff_EBX] + (char)((ulonglong)uVar8 >> 8) +
+       ((byte)uVar8 < 0x23 || bVar9 < bVar7);
+  if (((uint)((ulonglong)uVar8 >> 0x20) &
+      *(uint *)CONCAT31((int3)((ulonglong)uVar8 >> 8),bVar9 - bVar7)) != 0) {
+    a->klass = (HackingToolDetector_HackingToolReport__Class *)(float)extraout_ST0;
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
     return;
   }
-code_?:
+  func_?();
+  uRam_? = 1;
+  pSVar1 = TM::TM__(StringLiteral_Cheating_Hacking_is_not_allowed_,(MethodInfo *)0x0);
+  TypeInfo__HackingToolDetector->static_fields->CheatWarning = pSVar1;
+  func_?();
+  TypeInfo__HackingToolDetector->static_fields->instance = (HackingToolDetector *)0x0;
+  func_?();
   return;
 }
 

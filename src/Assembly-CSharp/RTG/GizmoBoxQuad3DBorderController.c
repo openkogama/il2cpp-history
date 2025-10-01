@@ -339,7 +339,7 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                                 ((RightAngTriangle2D *)this_01,fVar23,
                                                  (MethodInfo *)0x0);
                                       TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                                ((TriangPrismShape3D *)this_01,4.2848724e-29,
+                                                ((TriangPrismShape3D *)this_01,4.288676e-29,
                                                  (MethodInfo *)0x0);
                                       direction.z = fVar10;
                                       direction.x = (float)(int)uVar24;
@@ -370,13 +370,13 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                           BoxShape3D::BoxShape3D_AlignWidth
                                                     (pBVar32,axis_00,(MethodInfo *)0x0);
                                           TorusShape3D::TorusShape3D_set_TubeRadius
-                                                    ((TorusShape3D *)pBVar32,4.2848724e-29,
+                                                    ((TorusShape3D *)pBVar32,4.288676e-29,
                                                      (MethodInfo *)0x0);
                                           RightAngTriangle2D::RightAngTriangle2D_set_XLength
                                                     ((RightAngTriangle2D *)pBVar32,fVar23,
                                                      (MethodInfo *)0x0);
                                           TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                                    ((TriangPrismShape3D *)pBVar32,4.2848724e-29,
+                                                    ((TriangPrismShape3D *)pBVar32,4.288676e-29,
                                                      (MethodInfo *)0x0);
                                           direction_00.z = fVar10;
                                           direction_00.x = (float)(int)uVar24;
@@ -410,14 +410,14 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                               BoxShape3D::BoxShape3D_AlignWidth
                                                         (pBVar32,axis_02,(MethodInfo *)0x0);
                                               TorusShape3D::TorusShape3D_set_TubeRadius
-                                                        ((TorusShape3D *)pBVar32,4.2848724e-29,
+                                                        ((TorusShape3D *)pBVar32,4.288676e-29,
                                                          (MethodInfo *)0x0);
                                               RightAngTriangle2D::RightAngTriangle2D_set_XLength
                                                         ((RightAngTriangle2D *)pBVar32,fVar23,
                                                          (MethodInfo *)0x0);
                                               TriangPrismShape3D::TriangPrismShape3D_set_Width
-                                                        ((TriangPrismShape3D *)pBVar32,4.2848724e-29
-                                                         ,(MethodInfo *)0x0);
+                                                        ((TriangPrismShape3D *)pBVar32,4.288676e-29,
+                                                         (MethodInfo *)0x0);
                                               direction_01.z = fVar10;
                                               direction_01.x = (float)(int)uVar24;
                                               direction_01.y =
@@ -453,14 +453,14 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                                   BoxShape3D::BoxShape3D_AlignWidth
                                                             (pBVar34,axis_04,(MethodInfo *)0x0);
                                                   TorusShape3D::TorusShape3D_set_TubeRadius
-                                                            ((TorusShape3D *)pBVar34,4.2848724e-29,
+                                                            ((TorusShape3D *)pBVar34,4.288676e-29,
                                                              (MethodInfo *)0x0);
                                                   RightAngTriangle2D::RightAngTriangle2D_set_XLength
                                                             ((RightAngTriangle2D *)pBVar34,fVar23,
                                                              (MethodInfo *)0x0);
                                                   TriangPrismShape3D::TriangPrismShape3D_set_Width
                                                             ((TriangPrismShape3D *)pBVar34,
-                                                             4.2848724e-29,(MethodInfo *)0x0);
+                                                             4.288676e-29,(MethodInfo *)0x0);
                                                   direction_02.z = fVar10;
                                                   direction_02.x = (float)(int)uVar24;
                                                   direction_02.y =
@@ -517,7 +517,7 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                                                (MethodInfo *)0x0);
                                                     TriangPrismShape3D::TriangPrismShape3D_set_Width
                                                               ((TriangPrismShape3D *)pBVar34,
-                                                               4.2848724e-29,(MethodInfo *)0x0);
+                                                               4.288676e-29,(MethodInfo *)0x0);
                                                     pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
                                                                         ((Vector3 *)&stack0xffffff40
                                                                          ,this_01,
@@ -560,7 +560,7 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                                                (MethodInfo *)0x0);
                                                     TriangPrismShape3D::TriangPrismShape3D_set_Width
                                                               ((TriangPrismShape3D *)pBVar34,
-                                                               4.2848724e-29,(MethodInfo *)0x0);
+                                                               4.288676e-29,(MethodInfo *)0x0);
                                                     pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
                                                                         ((Vector3 *)&stack0xffffff40
                                                                          ,pBVar33,BoxFace__Enum_Back
@@ -602,7 +602,7 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                                       TriangPrismShape3D::
                                                       TriangPrismShape3D_set_Width
                                                                 ((TriangPrismShape3D *)pBVar33,
-                                                                 4.2848724e-29,(MethodInfo *)0x0);
+                                                                 4.288676e-29,(MethodInfo *)0x0);
                                                       pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
                                                                           ((Vector3 *)
                                                                            &stack0xffffff40,this_03,
@@ -646,7 +646,7 @@ void Assembly-CSharp.dll::RTG::GizmoBoxQuad3DBorderController::
                                                                (MethodInfo *)0x0);
                                                     TriangPrismShape3D::TriangPrismShape3D_set_Width
                                                               ((TriangPrismShape3D *)pBVar30,
-                                                               4.2848724e-29,(MethodInfo *)0x0);
+                                                               4.288676e-29,(MethodInfo *)0x0);
                                                     pVVar4 = BoxShape3D::BoxShape3D_GetFaceCenter
                                                                         ((Vector3 *)&stack0xffffff40
                                                                          ,this_01,BoxFace__Enum_Back

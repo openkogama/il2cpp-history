@@ -213,7 +213,7 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledPosition
         radius.y = fVar7 * scale;
         radius.x = fVar5 * scale;
         radius.z = fVar6 * scale;
-        position_00.z = position.z + fVar4 * scale;
+        position_00.z = fVar4 * scale + position.z;
         position_00.x = position.x + (float)uVar2 * scale;
         position_00.y = position.y + (float)uVar3 * scale;
         bVar8 = MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOverlapCheckBool
@@ -247,9 +247,9 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledRelativePosition
       uStack_6._0_4_ = pVVar4->x;
       uStack_6._4_4_ = pVVar4->y;
       fStack_7 = pVVar4->z;
-      fStack_3 = relativeTestPos.x + (float)(undefined4)uStack_6;
-      fVar8 = relativeTestPos.y + (float)uStack_6._4_4_;
-      fStack_9 = relativeTestPos.z + fStack_7;
+      fVar8 = relativeTestPos.x + (float)(undefined4)uStack_6;
+      fStack_9 = relativeTestPos.y + (float)uStack_6._4_4_;
+      fStack_3 = relativeTestPos.z + fStack_7;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MVElipsoidOverlapCheck);
         func_?(&TypeInfo__SizeState);
@@ -261,15 +261,14 @@ bool Assembly-CSharp.dll::SizeState::SizeState_GetIsValidScaledRelativePosition
         uStack_6._0_4_ = (pMVar1->fields).centerBase.x;
         uStack_6._4_4_ = (pMVar1->fields).centerBase.y;
         fStack_7 = (pMVar1->fields).centerBase.z;
-        fVar2 = fStack_7 * scale;
+        fVar2 = (float)uStack_6._4_4_ * scale;
         pMVar1 = (this->fields).controllerLocal;
         if (pMVar1 != (MvCharacterController *)0x0) {
           VStack_5.x = (pMVar1->fields).radiusBase.x * scale;
           VStack_5.y = (pMVar1->fields).radiusBase.y * scale;
           VStack_5.z = (pMVar1->fields).radiusBase.z * scale;
-          fStack_7 = fStack_9 + fVar2;
-          uStack_6 = CONCAT44(fVar8 + (float)uStack_6._4_4_ * scale,
-                               (float)(undefined4)uStack_6 * scale + fStack_3);
+          fStack_7 = fStack_7 * scale + fStack_3;
+          uStack_6 = CONCAT44(fStack_9 + fVar2,fVar8 + (float)(undefined4)uStack_6 * scale);
           fStack_3 = fVar2;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Quaternion);
@@ -402,10 +401,10 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
                         uVar22 = pVVar3->x;
                         uVar23 = pVVar3->y;
                         stack0xffffffd4 = fVar6 + (float)uVar23;
-                        puStack_4 = (undefined *)((float)uVar22 + 3.339112e-29);
+                        puStack_4 = (undefined *)((float)uVar22 + 3.3425017e-29);
                         if (pTVar2 != (Transform *)0x0) {
                           value.y = fVar6 + (float)uVar23;
-                          value.x = (float)uVar22 + 3.339112e-29;
+                          value.x = (float)uVar22 + 3.3425017e-29;
                           value.z = fVar9 + pVVar3->z;
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                     (pTVar2,value,(MethodInfo *)0x0);
@@ -586,7 +585,7 @@ code_?:
     if ((pSVar1->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
       pEVar15 = (pSVar1->fields).CameraScaleEvent;
       this_01 = (SizeState *)func_?();
-      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.3393498e-29,(MethodInfo *)0x0);
+      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.3427394e-29,(MethodInfo *)0x0);
       (*(pEVar15->fields)._._.invoke_impl)();
     }
     (pSVar1->fields).currentSize = (float)this_01;

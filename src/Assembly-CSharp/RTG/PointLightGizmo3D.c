@@ -555,13 +555,9 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_OnGizmoAttem
   (this->fields)._offsetDragWorkData.DragOrigin.x = pVVar2->x;
   (this->fields)._offsetDragWorkData.DragOrigin.y = fVar4;
   (this->fields)._offsetDragWorkData.DragOrigin.z = fVar5;
-  if ((this->fields)._sharedSettings == (PointLightGizmo3DSettings *)0x0) {
-    pPVar6 = (this->fields)._settings;
-    if (pPVar6 == (PointLightGizmo3DSettings *)0x0) goto code_?;
-  }
-  else {
-    pPVar6 = (this->fields)._sharedSettings;
-  }
+  pPVar6 = (&(this->fields)._settings)
+           [(this->fields)._sharedSettings != (PointLightGizmo3DSettings *)0x0];
+  if (pPVar6 == (PointLightGizmo3DSettings *)0x0) goto code_?;
   (this->fields)._offsetDragWorkData.SnapStep = (pPVar6->fields)._radiusSnapStep;
   pGVar7 = (this->fields)._leftTick;
   if (pGVar7 == (GizmoCap2D *)0x0) goto code_?;
@@ -712,15 +708,11 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_OnGizmoDragU
   }
   pGVar2 = (this->fields)._offsetDrag;
   if ((this->fields)._isSnapEnabled == 0) {
-    if ((this->fields)._sharedHotkeys == (PointLightGizmo3DHotkeys *)0x0) {
-      pPVar3 = (this->fields)._hotkeys;
-      if (pPVar3 == (PointLightGizmo3DHotkeys *)0x0) goto code_?;
-    }
-    else {
-      pPVar3 = (this->fields)._sharedHotkeys;
-    }
-    this_00 = (pPVar3->fields)._enableSnapping;
-    if (this_00 == (Hotkeys *)0x0) goto code_?;
+    pPVar3 = (&(this->fields)._hotkeys)
+             [(this->fields)._sharedHotkeys != (PointLightGizmo3DHotkeys *)0x0];
+    if ((pPVar3 == (PointLightGizmo3DHotkeys *)0x0) ||
+       (this_00 = (pPVar3->fields)._enableSnapping, this_00 == (Hotkeys *)0x0))
+    goto code_?;
     bVar1 = Hotkeys::Hotkeys_IsActive(this_00,1,(MethodInfo *)0x0);
   }
   else {
@@ -899,14 +891,10 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_OnGizmoRende
                       if (this_00 == (GizmoLineMaterial *)0x0) goto code_?;
                       GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
                                 (this_00,(MethodInfo *)0x0);
-                      if ((this->fields)._sharedLookAndFeel == (PointLightGizmo3DLookAndFeel *)0x0)
-                      {
-                        pPVar20 = (this->fields)._lookAndFeel;
-                        if (pPVar20 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
-                      }
-                      else {
-                        pPVar20 = (this->fields)._sharedLookAndFeel;
-                      }
+                      pPVar20 = (&(this->fields)._lookAndFeel)
+                               [(this->fields)._sharedLookAndFeel !=
+                                (PointLightGizmo3DLookAndFeel *)0x0];
+                      if (pPVar20 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
                       GizmoLineMaterial::GizmoLineMaterial_SetColor
                                 (this_00,(pPVar20->fields)._sphereBorderColor,(MethodInfo *)0x0);
                       this_01 = GizmoLineMaterial::GizmoLineMaterial_get_Material
@@ -1127,20 +1115,13 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_SetupSharedL
                (PointLightGizmo3D *this,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedLookAndFeel == (PointLightGizmo3DLookAndFeel *)0x0) {
-    pPVar1 = (this->fields)._lookAndFeel;
-    if (pPVar1 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    pPVar1 = (this->fields)._sharedLookAndFeel;
-  }
-  pGVar2 = (pPVar1->fields)._tickLookAndFeel;
-  pGVar3 = (this->fields)._rightTick;
-  if (pGVar2 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      func_?();
-    }
-    else {
+  pPVar1 = (&(this->fields)._lookAndFeel)
+           [(this->fields)._sharedLookAndFeel != (PointLightGizmo3DLookAndFeel *)0x0];
+  if (pPVar1 != (PointLightGizmo3DLookAndFeel *)0x0) {
+    pGVar2 = (pPVar1->fields)._tickLookAndFeel;
+    pGVar3 = (this->fields)._rightTick;
+    if (pGVar2 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+      if (pGVar2->max_length == 0) goto code_?;
       pGVar4 = pGVar2->vector[0];
       if (pGVar3 != (GizmoCap2D *)0x0) {
         (pGVar3->fields)._sharedLookAndFeel = pGVar4;
@@ -1150,6 +1131,7 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_SetupSharedL
       }
     }
   }
+  func_?();
 code_?:
   func_?();
   pcVar6 = (code *)swi(3);
@@ -1166,604 +1148,641 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateHandle
 {
   this_00 = (this->fields)._._gizmo;
   if (this_00 != (Gizmo *)0x0) {
-    this_01 = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-    pLVar1 = (this->fields)._targetLight;
-    if ((pLVar1 != (Light *)0x0) &&
-       (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pLVar1,(MethodInfo *)0x0), this_02 != (Transform *)0x0))
-    {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffff98,this_02,(MethodInfo *)0x0);
-      fVar3 = pVVar2->x;
-      fVar4 = pVVar2->y;
-      fVar5 = pVVar2->z;
-      pLVar1 = (this->fields)._targetLight;
-      if (pLVar1 != (Light *)0x0) {
-        fVar6 = fVar3;
-        fVar7 = fVar4;
-        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_range
-                           (pLVar1,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar10 = (pVVar9->rightVector).x;
-        uVar11 = (pVVar9->rightVector).y;
-        fVar3 = fVar3 - (float)uVar10 * fVar8;
-        fVar12 = fVar4 - (float)uVar11 * fVar8;
-        fVar13 = fVar5 - (pVVar9->rightVector).z * fVar8;
-        pGVar14 = (this->fields)._leftTick;
-        if (this_01 != (Camera *)0x0) {
-          ppVVar15 = (Vector3__Class **)0x0;
-          position_04.y = fVar12;
-          position_04.x = fVar3;
-          position_04.z = fVar13;
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                              ((Vector3 *)&stack0xffffffd0,this_01,position_04,(MethodInfo *)0x0);
-          value.x = pVVar2->x;
-          value.y = pVVar2->y;
-          if (pGVar14 != (GizmoCap2D *)0x0) {
-            GizmoCap2D::GizmoCap2D_set_Position(pGVar14,value,(MethodInfo *)0x0);
-            pPVar16 = (this->fields)._extentTicks;
-            if (pPVar16 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
-              if (2 < pPVar16->max_length) {
-                pPVar17 = pPVar16->vector[2];
-                if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0) goto code_?;
-                (pPVar17->fields).Position.x = fVar3;
-                (pPVar17->fields).Position.y = fVar12;
-                (pPVar17->fields).Position.z = fVar13;
-                pPVar16 = (this->fields)._extentTicks;
-                if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-                if (2 < pPVar16->max_length) {
-                  pPVar17 = pPVar16->vector[2];
-                  if (cRam_? == '\0') {
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                  uVar18 = (pVVar9->rightVector).x;
-                  uVar19 = (pVVar9->rightVector).y;
-                  uVar20 = uVar19 ^ 
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-                  fVar3 = (float)((uint)(pVVar9->rightVector).z ^
-                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                 );
-                  if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0) goto code_?;
-                  (pPVar17->fields).Normal.x =
-                       (float)(uVar18 ^ 
-                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                              );
-                  (pPVar17->fields).Normal.y = (float)uVar20;
-                  (pPVar17->fields).Normal.z = fVar3;
-                  if (cRam_? == '\0') {
-                    ppVVar15 = &TypeInfo__UnityEngine__Vector3;
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                  uVar21 = (pVVar9->rightVector).x;
-                  uVar22 = (pVVar9->rightVector).y;
-                  fVar13 = fVar4 + (float)uVar22 * fVar8;
-                  fVar3 = fVar5 + (pVVar9->rightVector).z * fVar8;
-                  pGVar14 = (this->fields)._rightTick;
-                  position.y = fVar13;
-                  position.x = (float)ppVVar15 + (float)uVar21 * fVar8;
-                  position.z = fVar3;
-                  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                            Camera_WorldToScreenPoint_1
-                                      ((Vector3 *)&stack0xffffffd0,this_01,position,
-                                       (MethodInfo *)0x0);
-                  value_00.x = pVVar2->x;
-                  value_00.y = pVVar2->y;
-                  if (pGVar14 == (GizmoCap2D *)0x0) goto code_?;
-                  fVar12 = 0.0;
-                  GizmoCap2D::GizmoCap2D_set_Position(pGVar14,value_00,(MethodInfo *)0x0);
-                  pPVar16 = (this->fields)._extentTicks;
-                  if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-                  if (3 < pPVar16->max_length) {
-                    pPVar17 = pPVar16->vector[3];
-                    if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0) goto code_?;
-                    (pPVar17->fields).Position.x = fVar12;
-                    (pPVar17->fields).Position.y = fVar13;
-                    (pPVar17->fields).Position.z = fVar3;
-                    pPVar16 = (this->fields)._extentTicks;
-                    if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                    goto code_?;
-                    if (3 < pPVar16->max_length) {
-                      pPVar17 = pPVar16->vector[3];
+    pCVar1 = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
+    pLVar2 = (this->fields)._targetLight;
+    if (pLVar2 != (Light *)0x0) {
+      this_02 = pCVar1;
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pLVar2,(MethodInfo *)0x0);
+      if (this_01 != (Transform *)0x0) {
+        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&stack0xffffff98,this_01,(MethodInfo *)0x0);
+        fVar4 = pVVar3->x;
+        fVar5 = pVVar3->y;
+        fVar6 = pVVar3->z;
+        pLVar2 = (this->fields)._targetLight;
+        if (pLVar2 != (Light *)0x0) {
+          fVar7 = fVar4;
+          fVar8 = fVar5;
+          fVar9 = fVar6;
+          value_08 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_range
+                               (pLVar2,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+          uVar11 = (pVVar10->rightVector).x;
+          uVar12 = (pVVar10->rightVector).y;
+          fVar4 = fVar4 - (float)uVar11 * value_08;
+          fVar13 = fVar5 - (float)uVar12 * value_08;
+          fVar14 = fVar6 - (pVVar10->rightVector).z * value_08;
+          pGVar15 = (this->fields)._leftTick;
+          if (pCVar1 != (Camera *)0x0) {
+            position_04.y = fVar13;
+            position_04.x = fVar4;
+            position_04.z = fVar14;
+            pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
+                                ((Vector3 *)&stack0xffffffd0,this_02,position_04,(MethodInfo *)0x0);
+            value.x = pVVar3->x;
+            value.y = pVVar3->y;
+            if (pGVar15 != (GizmoCap2D *)0x0) {
+              fVar16 = 0.0;
+              GizmoCap2D::GizmoCap2D_set_Position(pGVar15,value,(MethodInfo *)0x0);
+              pPVar17 = (this->fields)._extentTicks;
+              if (pPVar17 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                if (pPVar17->max_length < 3) goto code_?;
+                pPVar18 = pPVar17->vector[2];
+                if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
+                  (pPVar18->fields).Position.x = fVar4;
+                  (pPVar18->fields).Position.y = fVar13;
+                  (pPVar18->fields).Position.z = fVar14;
+                  pPVar17 = (this->fields)._extentTicks;
+                  if (pPVar17 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                    if (pPVar17->max_length < 3) goto code_?;
+                    pPVar18 = pPVar17->vector[2];
+                    if (cRam_? == '\0') {
+                      func_?();
+                      cRam_? = '\x01';
+                    }
+                    pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+                    uVar19 = (pVVar10->rightVector).x;
+                    uVar20 = (pVVar10->rightVector).y;
+                    uVar21 = uVar20 ^ 
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                    ;
+                    fVar4 = (float)((uint)(pVVar10->rightVector).z ^
+                                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                   );
+                    if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
+                      (pPVar18->fields).Normal.x =
+                           (float)(uVar19 ^ 
+                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                  );
+                      (pPVar18->fields).Normal.y = (float)uVar21;
+                      (pPVar18->fields).Normal.z = fVar4;
                       if (cRam_? == '\0') {
-                        ppVVar15 = &TypeInfo__UnityEngine__Vector3;
                         func_?();
                         cRam_? = '\x01';
                       }
-                      pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                      fVar13 = (pVVar9->rightVector).y;
-                      fVar3 = (pVVar9->rightVector).z;
-                      if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0) goto code_?;
-                      (pPVar17->fields).Normal.x = (pVVar9->rightVector).x;
-                      (pPVar17->fields).Normal.y = fVar13;
-                      (pPVar17->fields).Normal.z = fVar3;
-                      if (cRam_? == '\0') {
-                        ppVVar15 = &TypeInfo__UnityEngine__Vector3;
-                        func_?();
-                        cRam_? = '\x01';
-                      }
-                      pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                      uVar23 = (pVVar9->upVector).x;
-                      uVar24 = (pVVar9->upVector).y;
-                      fVar13 = fVar4 + (float)uVar24 * fVar8;
-                      fVar3 = fVar5 + (pVVar9->upVector).z * fVar8;
-                      pGVar14 = (this->fields)._topTick;
-                      position_00.y = fVar13;
-                      position_00.x = (float)ppVVar15 + (float)uVar23 * fVar8;
-                      position_00.z = fVar3;
-                      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                      pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+                      uVar22 = (pVVar10->rightVector).x;
+                      uVar23 = (pVVar10->rightVector).y;
+                      fVar14 = fVar5 + (float)uVar23 * value_08;
+                      fVar4 = fVar6 + (pVVar10->rightVector).z * value_08;
+                      pGVar15 = (this->fields)._rightTick;
+                      position.y = fVar14;
+                      position.x = fVar16 + (float)uVar22 * value_08;
+                      position.z = fVar4;
+                      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                 Camera_WorldToScreenPoint_1
-                                          ((Vector3 *)&stack0xffffffd0,this_01,position_00,
+                                          ((Vector3 *)&stack0xffffffd0,this_02,position,
                                            (MethodInfo *)0x0);
-                      value_01.x = pVVar2->x;
-                      value_01.y = pVVar2->y;
-                      if (pGVar14 == (GizmoCap2D *)0x0) goto code_?;
-                      fVar12 = 0.0;
-                      GizmoCap2D::GizmoCap2D_set_Position(pGVar14,value_01,(MethodInfo *)0x0);
-                      pPVar16 = (this->fields)._extentTicks;
-                      if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                      goto code_?;
-                      if (5 < pPVar16->max_length) {
-                        pPVar17 = pPVar16->vector[5];
-                        if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0) goto code_?;
-                        (pPVar17->fields).Position.x = fVar12;
-                        (pPVar17->fields).Position.y = fVar13;
-                        (pPVar17->fields).Position.z = fVar3;
-                        pPVar16 = (this->fields)._extentTicks;
-                        if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                        goto code_?;
-                        if (5 < pPVar16->max_length) {
-                          pPVar17 = pPVar16->vector[5];
-                          if (cRam_? == '\0') {
-                            ppVVar15 = &TypeInfo__UnityEngine__Vector3;
-                            func_?();
-                            cRam_? = '\x01';
-                          }
-                          pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                          fVar13 = (pVVar9->upVector).y;
-                          fVar3 = (pVVar9->upVector).z;
-                          if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0) goto code_?;
-                          (pPVar17->fields).Normal.x = (pVVar9->upVector).x;
-                          (pPVar17->fields).Normal.y = fVar13;
-                          (pPVar17->fields).Normal.z = fVar3;
-                          if (cRam_? == '\0') {
-                            ppVVar15 = &TypeInfo__UnityEngine__Vector3;
-                            func_?();
-                            cRam_? = '\x01';
-                          }
-                          pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                          uVar25 = (pVVar9->upVector).x;
-                          uVar26 = (pVVar9->upVector).y;
-                          fVar13 = fVar4 - (float)uVar26 * fVar8;
-                          fVar3 = fVar5 - (pVVar9->upVector).z * fVar8;
-                          pGVar14 = (this->fields)._bottomTick;
-                          position_01.y = fVar13;
-                          position_01.x = (float)ppVVar15 - (float)uVar25 * fVar8;
-                          position_01.z = fVar3;
-                          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                    Camera_WorldToScreenPoint_1
-                                              ((Vector3 *)&stack0xffffffd0,this_01,position_01,
-                                               (MethodInfo *)0x0);
-                          value_02.x = pVVar2->x;
-                          value_02.y = pVVar2->y;
-                          if (pGVar14 == (GizmoCap2D *)0x0) goto code_?;
-                          fVar12 = 0.0;
-                          GizmoCap2D::GizmoCap2D_set_Position(pGVar14,value_02,(MethodInfo *)0x0);
-                          pPVar16 = (this->fields)._extentTicks;
-                          if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                          goto code_?;
-                          if (4 < pPVar16->max_length) {
-                            pPVar17 = pPVar16->vector[4];
-                            if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0)
-                            goto code_?;
-                            (pPVar17->fields).Position.x = fVar12;
-                            (pPVar17->fields).Position.y = fVar13;
-                            (pPVar17->fields).Position.z = fVar3;
-                            pPVar16 = (this->fields)._extentTicks;
-                            if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                            goto code_?;
-                            if (4 < pPVar16->max_length) {
-                              pPVar17 = pPVar16->vector[4];
+                      value_00.x = pVVar3->x;
+                      value_00.y = pVVar3->y;
+                      if (pGVar15 != (GizmoCap2D *)0x0) {
+                        fVar13 = 0.0;
+                        GizmoCap2D::GizmoCap2D_set_Position(pGVar15,value_00,(MethodInfo *)0x0);
+                        pPVar17 = (this->fields)._extentTicks;
+                        if (pPVar17 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                          if (pPVar17->max_length < 4) goto code_?;
+                          pPVar18 = pPVar17->vector[3];
+                          if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
+                            (pPVar18->fields).Position.x = fVar13;
+                            (pPVar18->fields).Position.y = fVar14;
+                            (pPVar18->fields).Position.z = fVar4;
+                            pPVar17 = (this->fields)._extentTicks;
+                            if (pPVar17 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                              if (pPVar17->max_length < 4) goto code_?;
+                              pPVar18 = pPVar17->vector[3];
                               if (cRam_? == '\0') {
-                                ppVVar15 = &TypeInfo__UnityEngine__Vector3;
                                 func_?();
                                 cRam_? = '\x01';
                               }
-                              pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                              uVar27 = (pVVar9->upVector).x;
-                              uVar28 = (pVVar9->upVector).y;
-                              uVar20 = uVar28 ^ 
-                                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                              ;
-                              fVar3 = (float)((uint)(pVVar9->upVector).z ^
-                                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                             );
-                              if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0)
-                              goto code_?;
-                              (pPVar17->fields).Normal.x =
-                                   (float)(uVar27 ^ 
-                                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                          );
-                              (pPVar17->fields).Normal.y = (float)uVar20;
-                              (pPVar17->fields).Normal.z = fVar3;
-                              if (cRam_? == '\0') {
-                                ppVVar15 = &TypeInfo__UnityEngine__Vector3;
-                                func_?();
-                                cRam_? = '\x01';
-                              }
-                              pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                              uVar29 = (pVVar9->forwardVector).x;
-                              uVar30 = (pVVar9->forwardVector).y;
-                              fVar13 = fVar4 - (float)uVar30 * fVar8;
-                              fVar3 = fVar5 - (pVVar9->forwardVector).z * fVar8;
-                              pGVar14 = (this->fields)._frontTick;
-                              position_02.y = fVar13;
-                              position_02.x = (float)ppVVar15 - (float)uVar29 * fVar8;
-                              position_02.z = fVar3;
-                              pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                        Camera_WorldToScreenPoint_1
-                                                  ((Vector3 *)&stack0xffffffd0,this_01,position_02,
-                                                   (MethodInfo *)0x0);
-                              value_03.x = pVVar2->x;
-                              value_03.y = pVVar2->y;
-                              if (pGVar14 == (GizmoCap2D *)0x0) goto code_?;
-                              fVar12 = 0.0;
-                              GizmoCap2D::GizmoCap2D_set_Position
-                                        (pGVar14,value_03,(MethodInfo *)0x0);
-                              pPVar16 = (this->fields)._extentTicks;
-                              if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                              goto code_?;
-                              if (pPVar16->max_length != 0) {
-                                pPVar17 = pPVar16->vector[0];
-                                if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0)
-                                goto code_?;
-                                (pPVar17->fields).Position.x = fVar12;
-                                (pPVar17->fields).Position.y = fVar13;
-                                (pPVar17->fields).Position.z = fVar3;
-                                pPVar16 = (this->fields)._extentTicks;
-                                if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                                goto code_?;
-                                if (pPVar16->max_length != 0) {
-                                  pPVar17 = pPVar16->vector[0];
-                                  if (cRam_? == '\0') {
-                                    ppVVar15 = &TypeInfo__UnityEngine__Vector3;
-                                    func_?();
-                                    cRam_? = '\x01';
-                                  }
-                                  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                                  uVar31 = (pVVar9->forwardVector).x;
-                                  uVar32 = (pVVar9->forwardVector).y;
-                                  uVar20 = uVar32 ^ 
-                                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                  ;
-                                  fVar3 = (float)((uint)(pVVar9->forwardVector).z ^
-                                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                 );
-                                  if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0)
-                                  goto code_?;
-                                  (pPVar17->fields).Normal.x =
-                                       (float)(uVar31 ^ 
-                                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                              );
-                                  (pPVar17->fields).Normal.y = (float)uVar20;
-                                  (pPVar17->fields).Normal.z = fVar3;
-                                  if (cRam_? == '\0') {
-                                    ppVVar15 = &TypeInfo__UnityEngine__Vector3;
-                                    func_?();
-                                    cRam_? = '\x01';
-                                  }
-                                  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                                  uVar33 = (pVVar9->forwardVector).x;
-                                  uVar34 = (pVVar9->forwardVector).y;
-                                  fVar4 = (float)uVar34 * fVar8 + fVar4;
-                                  fVar13 = (float)ppVVar15 + (float)uVar33 * fVar8;
-                                  fVar3 = fVar5 + (pVVar9->forwardVector).z * fVar8;
-                                  pGVar14 = (this->fields)._backTick;
-                                  position_03.y = fVar4;
-                                  position_03.x = fVar13;
-                                  position_03.z = fVar3;
-                                  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                            Camera_WorldToScreenPoint_1
-                                                      ((Vector3 *)&stack0xffffffa8,this_01,
-                                                       position_03,(MethodInfo *)0x0);
-                                  value_04.x = pVVar2->x;
-                                  value_04.y = pVVar2->y;
-                                  if (pGVar14 == (GizmoCap2D *)0x0) goto code_?;
+                              pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+                              fVar14 = (pVVar10->rightVector).y;
+                              fVar4 = (pVVar10->rightVector).z;
+                              if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
+                                (pPVar18->fields).Normal.x = (pVVar10->rightVector).x;
+                                (pPVar18->fields).Normal.y = fVar14;
+                                (pPVar18->fields).Normal.z = fVar4;
+                                if (cRam_? == '\0') {
+                                  func_?();
+                                  cRam_? = '\x01';
+                                }
+                                pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+                                uVar24 = (pVVar10->upVector).x;
+                                uVar25 = (pVVar10->upVector).y;
+                                fVar14 = (float)uVar25 * value_08 + fVar5;
+                                fVar4 = fVar6 + (pVVar10->upVector).z * value_08;
+                                pGVar15 = (this->fields)._topTick;
+                                position_00.y = fVar14;
+                                position_00.x = (float)uVar24 * value_08 + fVar16;
+                                position_00.z = fVar4;
+                                pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                                          Camera_WorldToScreenPoint_1
+                                                    ((Vector3 *)&stack0xffffffd0,this_02,position_00
+                                                     ,(MethodInfo *)0x0);
+                                value_01.x = pVVar3->x;
+                                value_01.y = pVVar3->y;
+                                if (pGVar15 != (GizmoCap2D *)0x0) {
+                                  fVar13 = 0.0;
                                   GizmoCap2D::GizmoCap2D_set_Position
-                                            (pGVar14,value_04,(MethodInfo *)0x0);
-                                  pPVar16 = (this->fields)._extentTicks;
-                                  if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                                  goto code_?;
-                                  if (1 < pPVar16->max_length) {
-                                    pPVar17 = pPVar16->vector[1];
-                                    if (pPVar17 == (PointLightGizmo3D_ExtentTick *)0x0)
-                                    goto code_?;
-                                    (pPVar17->fields).Position.x = fVar13;
-                                    (pPVar17->fields).Position.y = fVar4;
-                                    (pPVar17->fields).Position.z = fVar3;
-                                    pPVar16 = (this->fields)._extentTicks;
-                                    if (pPVar16 == (PointLightGizmo3D_ExtentTick__Array *)0x0)
-                                    goto code_?;
-                                    if (1 < pPVar16->max_length) {
-                                      pPVar17 = pPVar16->vector[1];
-                                      if (cRam_? == '\0') {
-                                        func_?();
-                                        cRam_? = '\x01';
-                                      }
-                                      pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-                                      fVar4 = (pVVar9->forwardVector).y;
-                                      fVar3 = (pVVar9->forwardVector).z;
-                                      if (pPVar17 != (PointLightGizmo3D_ExtentTick *)0x0) {
-                                        (pPVar17->fields).Normal.x = (pVVar9->forwardVector).x;
-                                        (pPVar17->fields).Normal.y = fVar4;
-                                        (pPVar17->fields).Normal.z = fVar3;
-                                        pGVar35 = (this->fields)._axialCircleXY;
-                                        if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                          value_05.y = fVar7;
-                                          value_05.x = fVar6;
-                                          value_05.z = fVar5;
-                                          GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_Position
-                                                    (pGVar35,value_05,(MethodInfo *)0x0);
-                                          pGVar35 = (this->fields)._axialCircleYZ;
-                                          if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                            value_06.y = fVar7;
-                                            value_06.x = fVar6;
-                                            value_06.z = fVar5;
-                                            GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_Position
-                                                      (pGVar35,value_06,(MethodInfo *)0x0);
-                                            pGVar35 = (this->fields)._axialCircleZX;
-                                            if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                              value_07.y = fVar7;
-                                              value_07.x = fVar6;
-                                              value_07.z = fVar5;
-                                              GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_Position
-                                                        (pGVar35,value_07,(MethodInfo *)0x0);
-                                              pGVar35 = (this->fields)._axialCircleXY;
-                                              if (cRam_? == '\0') {
-                                                func_?();
-                                                cRam_? = '\x01';
-                                              }
-                                              if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_Rotation
-                                                          (pGVar35,TypeInfo__UnityEngine__Quaternion
-                                                                   ->static_fields->
-                                                                   identityQuaternion,
-                                                           (MethodInfo *)0x0);
-                                                pGVar35 = (this->fields)._axialCircleYZ;
-                                                auVar36._4_8_ = 0;
-                                                auVar36._0_4_ = _UNK_?;
-                                                fVar3 = _UNK_?;
-                                                pQVar37 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                          Quaternion::
-                                                          Quaternion_Internal_FromEulerRad
-                                                                    ((Quaternion *)&stack0xffffff80,
-                                                                     (Vector3)(auVar36 << 0x20),
-                                                                     (MethodInfo *)0x0);
-                                                if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                  GizmoPlaneSlider3D::
-                                                  GizmoPlaneSlider3D_set_Rotation
-                                                            (pGVar35,*pQVar37,(MethodInfo *)0x0);
-                                                  pGVar35 = (this->fields)._axialCircleZX;
-                                                  euler.y = 0.0;
-                                                  euler.z = 0.0;
-                                                  euler.x = fVar3;
-                                                  pQVar37 = UnityEngine.CoreModule.dll::UnityEngine
+                                            (pGVar15,value_01,(MethodInfo *)0x0);
+                                  pPVar17 = (this->fields)._extentTicks;
+                                  if (pPVar17 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                                    if (pPVar17->max_length < 6) goto code_?;
+                                    pPVar18 = pPVar17->vector[5];
+                                    if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
+                                      (pPVar18->fields).Position.x = fVar13;
+                                      (pPVar18->fields).Position.y = fVar14;
+                                      (pPVar18->fields).Position.z = fVar4;
+                                      pPVar17 = (this->fields)._extentTicks;
+                                      if (pPVar17 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                                        if (pPVar17->max_length < 6) goto code_?;
+                                        pPVar18 = pPVar17->vector[5];
+                                        if (cRam_? == '\0') {
+                                          func_?();
+                                          cRam_? = '\x01';
+                                        }
+                                        pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+                                        fVar14 = (pVVar10->upVector).y;
+                                        fVar4 = (pVVar10->upVector).z;
+                                        if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
+                                          (pPVar18->fields).Normal.x = (pVVar10->upVector).x;
+                                          (pPVar18->fields).Normal.y = fVar14;
+                                          (pPVar18->fields).Normal.z = fVar4;
+                                          if (cRam_? == '\0') {
+                                            func_?();
+                                            cRam_? = '\x01';
+                                          }
+                                          pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+                                          uVar26 = (pVVar10->upVector).x;
+                                          uVar27 = (pVVar10->upVector).y;
+                                          fVar14 = fVar5 - (float)uVar27 * value_08;
+                                          fVar4 = fVar6 - (pVVar10->upVector).z * value_08;
+                                          pGVar15 = (this->fields)._bottomTick;
+                                          position_01.y = fVar14;
+                                          position_01.x = fVar16 - (float)uVar26 * value_08;
+                                          position_01.z = fVar4;
+                                          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera
+                                                    ::Camera_WorldToScreenPoint_1
+                                                              ((Vector3 *)&stack0xffffffd0,this_02,
+                                                               position_01,(MethodInfo *)0x0);
+                                          value_02.x = pVVar3->x;
+                                          value_02.y = pVVar3->y;
+                                          if (pGVar15 != (GizmoCap2D *)0x0) {
+                                            fVar13 = 0.0;
+                                            GizmoCap2D::GizmoCap2D_set_Position
+                                                      (pGVar15,value_02,(MethodInfo *)0x0);
+                                            pPVar17 = (this->fields)._extentTicks;
+                                            if (pPVar17 !=
+                                                (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                                              if (pPVar17->max_length < 5) goto code_?;
+                                              pPVar18 = pPVar17->vector[4];
+                                              if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0) {
+                                                (pPVar18->fields).Position.x = fVar13;
+                                                (pPVar18->fields).Position.y = fVar14;
+                                                (pPVar18->fields).Position.z = fVar4;
+                                                pPVar17 = (this->fields)._extentTicks;
+                                                if (pPVar17 !=
+                                                    (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+                                                  if (pPVar17->max_length < 5)
+                                                  goto code_?;
+                                                  pPVar18 = pPVar17->vector[4];
+                                                  if (cRam_? == '\0') {
+                                                    func_?();
+                                                    cRam_? = '\x01';
+                                                  }
+                                                  pVVar10 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  uVar28 = (pVVar10->upVector).x;
+                                                  uVar29 = (pVVar10->upVector).y;
+                                                  uVar21 = uVar29 ^ 
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  ;
+                                                  fVar4 = (float)((uint)(pVVar10->upVector).z ^
+                                                                                                                                  
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  );
+                                                  if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0
+                                                     ) {
+                                                    (pPVar18->fields).Normal.x =
+                                                         (float)(uVar28 ^ 
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  );
+                                                  (pPVar18->fields).Normal.y = (float)uVar21;
+                                                  (pPVar18->fields).Normal.z = fVar4;
+                                                  if (cRam_? == '\0') {
+                                                    func_?();
+                                                    cRam_? = '\x01';
+                                                  }
+                                                  pVVar10 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  uVar30 = (pVVar10->forwardVector).x;
+                                                  uVar31 = (pVVar10->forwardVector).y;
+                                                  fVar14 = fVar5 - (float)uVar31 * value_08;
+                                                  fVar4 = fVar6 - (pVVar10->forwardVector).z *
+                                                                   value_08;
+                                                  pGVar15 = (this->fields)._frontTick;
+                                                  position_02.y = fVar14;
+                                                  position_02.x = fVar16 - (float)uVar30 * value_08;
+                                                  position_02.z = fVar4;
+                                                  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine
+                                                            ::Camera::Camera_WorldToScreenPoint_1
+                                                                      ((Vector3 *)&stack0xffffffd0,
+                                                                       this_02,position_02,
+                                                                       (MethodInfo *)0x0);
+                                                  value_03.x = pVVar3->x;
+                                                  value_03.y = pVVar3->y;
+                                                  if (pGVar15 != (GizmoCap2D *)0x0) {
+                                                    fVar13 = 0.0;
+                                                    GizmoCap2D::GizmoCap2D_set_Position
+                                                              (pGVar15,value_03,(MethodInfo *)0x0);
+                                                    pPVar17 = (this->fields)._extentTicks;
+                                                    if (pPVar17 !=
+                                                        (PointLightGizmo3D_ExtentTick__Array *)0x0)
+                                                    {
+                                                      if (pPVar17->max_length == 0)
+                                                      goto code_?;
+                                                      pPVar18 = pPVar17->vector[0];
+                                                      if (pPVar18 !=
+                                                          (PointLightGizmo3D_ExtentTick *)0x0) {
+                                                        (pPVar18->fields).Position.x = fVar13;
+                                                        (pPVar18->fields).Position.y = fVar14;
+                                                        (pPVar18->fields).Position.z = fVar4;
+                                                        pPVar17 = (this->fields)._extentTicks;
+                                                        if (pPVar17 !=
+                                                            (PointLightGizmo3D_ExtentTick__Array *)
+                                                            0x0) {
+                                                          if (pPVar17->max_length == 0)
+                                                          goto code_?;
+                                                          pPVar18 = pPVar17->vector[0];
+                                                          if (cRam_? == '\0') {
+                                                            func_?();
+                                                            cRam_? = '\x01';
+                                                          }
+                                                          pVVar10 = TypeInfo__UnityEngine__Vector3->
+                                                                    static_fields;
+                                                          uVar32 = (pVVar10->forwardVector).x;
+                                                          uVar33 = (pVVar10->forwardVector).y;
+                                                          uVar21 = uVar33 ^ 
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  ;
+                                                  fVar4 = (float)((uint)(pVVar10->forwardVector).z ^
+                                                                                                                                  
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  );
+                                                  if (pPVar18 != (PointLightGizmo3D_ExtentTick *)0x0
+                                                     ) {
+                                                    (pPVar18->fields).Normal.x =
+                                                         (float)(uVar32 ^ 
+                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  );
+                                                  (pPVar18->fields).Normal.y = (float)uVar21;
+                                                  (pPVar18->fields).Normal.z = fVar4;
+                                                  if (cRam_? == '\0') {
+                                                    func_?();
+                                                    cRam_? = '\x01';
+                                                  }
+                                                  pVVar10 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  uVar34 = (pVVar10->forwardVector).x;
+                                                  uVar35 = (pVVar10->forwardVector).y;
+                                                  fVar5 = (float)uVar35 * value_08 + fVar5;
+                                                  fVar6 = fVar6 + (pVVar10->forwardVector).z *
+                                                                    value_08;
+                                                  pGVar15 = (this->fields)._backTick;
+                                                  position_03.y = fVar5;
+                                                  position_03.x = (float)uVar34 * value_08 + fVar16;
+                                                  position_03.z = fVar6;
+                                                  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine
+                                                            ::Camera::Camera_WorldToScreenPoint_1
+                                                                      ((Vector3 *)&stack0xffffffa8,
+                                                                       this_02,position_03,
+                                                                       (MethodInfo *)0x0);
+                                                  value_04.x = pVVar3->x;
+                                                  value_04.y = pVVar3->y;
+                                                  if (pGVar15 != (GizmoCap2D *)0x0) {
+                                                    fVar4 = 0.0;
+                                                    GizmoCap2D::GizmoCap2D_set_Position
+                                                              (pGVar15,value_04,(MethodInfo *)0x0);
+                                                    pPVar17 = (this->fields)._extentTicks;
+                                                    if (pPVar17 !=
+                                                        (PointLightGizmo3D_ExtentTick__Array *)0x0)
+                                                    {
+                                                      if (pPVar17->max_length < 2)
+                                                      goto code_?;
+                                                      pPVar18 = pPVar17->vector[1];
+                                                      if (pPVar18 !=
+                                                          (PointLightGizmo3D_ExtentTick *)0x0) {
+                                                        (pPVar18->fields).Position.x = fVar4;
+                                                        (pPVar18->fields).Position.y = fVar5;
+                                                        (pPVar18->fields).Position.z = fVar6;
+                                                        pPVar17 = (this->fields)._extentTicks;
+                                                        if (pPVar17 !=
+                                                            (PointLightGizmo3D_ExtentTick__Array *)
+                                                            0x0) {
+                                                          if (pPVar17->max_length < 2)
+                                                          goto code_?;
+                                                          pPVar18 = pPVar17->vector[1];
+                                                          if (cRam_? == '\0') {
+                                                            func_?();
+                                                            cRam_? = '\x01';
+                                                          }
+                                                          pVVar10 = TypeInfo__UnityEngine__Vector3->
+                                                                    static_fields;
+                                                          fVar5 = (pVVar10->forwardVector).y;
+                                                          fVar4 = (pVVar10->forwardVector).z;
+                                                          if (pPVar18 !=
+                                                              (PointLightGizmo3D_ExtentTick *)0x0) {
+                                                            (pPVar18->fields).Normal.x =
+                                                                 (pVVar10->forwardVector).x;
+                                                            (pPVar18->fields).Normal.y = fVar5;
+                                                            (pPVar18->fields).Normal.z = fVar4;
+                                                            pGVar36 = (this->fields)._axialCircleXY;
+                                                            if (pGVar36 != (GizmoPlaneSlider3D *)0x0
+                                                               ) {
+                                                              value_05.y = fVar8;
+                                                              value_05.x = fVar7;
+                                                              value_05.z = fVar9;
+                                                              GizmoPlaneSlider3D::
+                                                              GizmoPlaneSlider3D_set_Position
+                                                                        (pGVar36,value_05,
+                                                                         (MethodInfo *)0x0);
+                                                              pGVar36 = (this->fields).
+                                                                        _axialCircleYZ;
+                                                              if (pGVar36 !=
+                                                                  (GizmoPlaneSlider3D *)0x0) {
+                                                                value_06.y = fVar8;
+                                                                value_06.x = fVar7;
+                                                                value_06.z = fVar9;
+                                                                GizmoPlaneSlider3D::
+                                                                GizmoPlaneSlider3D_set_Position
+                                                                          (pGVar36,value_06,
+                                                                           (MethodInfo *)0x0);
+                                                                pGVar36 = (this->fields).
+                                                                          _axialCircleZX;
+                                                                if (pGVar36 !=
+                                                                    (GizmoPlaneSlider3D *)0x0) {
+                                                                  value_07.y = fVar8;
+                                                                  value_07.x = fVar7;
+                                                                  value_07.z = fVar9;
+                                                                  GizmoPlaneSlider3D::
+                                                                  GizmoPlaneSlider3D_set_Position
+                                                                            (pGVar36,value_07,
+                                                                             (MethodInfo *)0x0);
+                                                                  pGVar36 = (this->fields).
+                                                                            _axialCircleXY;
+                                                                  if (cRam_? == '\0') {
+                                                                    func_?();
+                                                                    cRam_? = '\x01';
+                                                                  }
+                                                                  if (pGVar36 !=
+                                                                      (GizmoPlaneSlider3D *)0x0) {
+                                                                    GizmoPlaneSlider3D::
+                                                                    GizmoPlaneSlider3D_set_Rotation
+                                                                              (pGVar36,
+                                                  TypeInfo__UnityEngine__Quaternion->static_fields->
+                                                  identityQuaternion,(MethodInfo *)0x0);
+                                                  pGVar36 = (this->fields)._axialCircleYZ;
+                                                  auVar37._4_8_ = 0;
+                                                  auVar37._0_4_ = _UNK_?;
+                                                  fVar4 = _UNK_?;
+                                                  pQVar38 = UnityEngine.CoreModule.dll::UnityEngine
                                                             ::Quaternion::
                                                             Quaternion_Internal_FromEulerRad
                                                                       ((Quaternion *)
-                                                                       &stack0xffffff70,euler,
+                                                                       &stack0xffffff98,
+                                                                       (Vector3)(auVar37 << 0x20),
                                                                        (MethodInfo *)0x0);
-                                                  if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
+                                                  if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
                                                     GizmoPlaneSlider3D::
                                                     GizmoPlaneSlider3D_set_Rotation
-                                                              (pGVar35,*pQVar37,(MethodInfo *)0x0);
-                                                    pGVar35 = (this->fields)._axialCircleXY;
-                                                    if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                      pGVar38 = GizmoPlaneSlider3D::
-                                                                GizmoPlaneSlider3D_get_LookAndFeel
-                                                                          (pGVar35,(MethodInfo *)0x0
-                                                                          );
-                                                      if ((this->fields)._sharedLookAndFeel ==
-                                                          (PointLightGizmo3DLookAndFeel *)0x0) {
-                                                        pPVar39 = (this->fields)._lookAndFeel;
-                                                        if (pPVar39 ==
-                                                            (PointLightGizmo3DLookAndFeel *)0x0)
-                                                        goto code_?;
-                                                      }
-                                                      else {
-                                                        pPVar39 = (this->fields)._sharedLookAndFeel;
-                                                      }
-                                                      fVar3 = (pPVar39->fields)._wireColor.g;
-                                                      fVar4 = (pPVar39->fields)._wireColor.b;
-                                                      fVar5 = (pPVar39->fields)._wireColor.a;
-                                                      if (pGVar38 !=
-                                                          (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                                        (pGVar38->fields)._borderColor.r =
-                                                             (pPVar39->fields)._wireColor.r;
-                                                        (pGVar38->fields)._borderColor.g = fVar3;
-                                                        (pGVar38->fields)._borderColor.b = fVar4;
-                                                        (pGVar38->fields)._borderColor.a = fVar5;
-                                                        pGVar40 = (this->fields)._axialCircleYZ;
-                                                        if (pGVar40 != (GizmoPlaneSlider3D *)0x0) {
-                                                          pGVar38 = GizmoPlaneSlider3D::
-                                                                                                                                        
-                                                  GizmoPlaneSlider3D_get_LookAndFeel
-                                                            (pGVar40,(MethodInfo *)0x0);
-                                                  if ((this->fields)._sharedLookAndFeel ==
-                                                      (PointLightGizmo3DLookAndFeel *)0x0) {
-                                                    pPVar39 = (this->fields)._lookAndFeel;
-                                                    if (pPVar39 ==
-                                                        (PointLightGizmo3DLookAndFeel *)0x0)
-                                                    goto code_?;
-                                                  }
-                                                  else {
-                                                    pPVar39 = (this->fields)._sharedLookAndFeel;
-                                                  }
-                                                  fVar3 = (pPVar39->fields)._wireColor.g;
-                                                  fVar4 = (pPVar39->fields)._wireColor.b;
-                                                  fVar5 = (pPVar39->fields)._wireColor.a;
-                                                  if (pGVar38 !=
-                                                      (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                                    (pGVar38->fields)._borderColor.r =
-                                                         (pPVar39->fields)._wireColor.r;
-                                                    (pGVar38->fields)._borderColor.g = fVar3;
-                                                    (pGVar38->fields)._borderColor.b = fVar4;
-                                                    (pGVar38->fields)._borderColor.a = fVar5;
-                                                    pGVar40 = (this->fields)._axialCircleZX;
-                                                    if (pGVar40 != (GizmoPlaneSlider3D *)0x0) {
-                                                      pGVar38 = GizmoPlaneSlider3D::
-                                                                GizmoPlaneSlider3D_get_LookAndFeel
-                                                                          (pGVar40,(MethodInfo *)0x0
-                                                                          );
-                                                      if ((this->fields)._sharedLookAndFeel ==
-                                                          (PointLightGizmo3DLookAndFeel *)0x0) {
-                                                        pPVar39 = (this->fields)._lookAndFeel;
-                                                        if (pPVar39 ==
-                                                            (PointLightGizmo3DLookAndFeel *)0x0)
-                                                        goto code_?;
-                                                      }
-                                                      else {
-                                                        pPVar39 = (this->fields)._sharedLookAndFeel;
-                                                      }
-                                                      fVar3 = (pPVar39->fields)._wireColor.g;
-                                                      fVar4 = (pPVar39->fields)._wireColor.b;
-                                                      fVar5 = (pPVar39->fields)._wireColor.a;
-                                                      if (pGVar38 !=
-                                                          (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                                                        (pGVar38->fields)._borderColor.r =
-                                                             (pPVar39->fields)._wireColor.r;
-                                                        (pGVar38->fields)._borderColor.g = fVar3;
-                                                        (pGVar38->fields)._borderColor.b = fVar4;
-                                                        (pGVar38->fields)._borderColor.a = fVar5;
-                                                        pGVar40 = (this->fields)._axialCircleXY;
-                                                        if ((pGVar40 != (GizmoPlaneSlider3D *)0x0)
-                                                           && (pGVar38 = GizmoPlaneSlider3D::
-                                                                                                                                                  
-                                                  GizmoPlaneSlider3D_get_LookAndFeel
-                                                            (pGVar40,(MethodInfo *)0x0),
-                                                  pGVar38 != (GizmoPlaneSlider3DLookAndFeel *)0x0))
-                                                  {
-                                                    GizmoPlaneSlider3DLookAndFeel::
-                                                    GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
-                                                              (pGVar38,(float)pGVar35,
-                                                               (MethodInfo *)0x0);
-                                                    pGVar40 = (this->fields)._axialCircleYZ;
-                                                    if ((pGVar40 != (GizmoPlaneSlider3D *)0x0) &&
-                                                       (pGVar38 = GizmoPlaneSlider3D::
+                                                              (pGVar36,*pQVar38,(MethodInfo *)0x0);
+                                                    pGVar36 = (this->fields)._axialCircleZX;
+                                                    euler.y = 0.0;
+                                                    euler.z = 0.0;
+                                                    euler.x = fVar4;
+                                                    pQVar38 = UnityEngine.CoreModule.dll::
+                                                              UnityEngine::Quaternion::
+                                                              Quaternion_Internal_FromEulerRad
+                                                                        ((Quaternion *)
+                                                                         &stack0xffffff80,euler,
+                                                                         (MethodInfo *)0x0);
+                                                    if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                      GizmoPlaneSlider3D::
+                                                      GizmoPlaneSlider3D_set_Rotation
+                                                                (pGVar36,*pQVar38,(MethodInfo *)0x0)
+                                                      ;
+                                                      pGVar36 = (this->fields)._axialCircleXY;
+                                                      if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                        pGVar39 = GizmoPlaneSlider3D::
                                                                   GizmoPlaneSlider3D_get_LookAndFeel
-                                                                            (pGVar40,(MethodInfo *)
-                                                                                     0x0),
-                                                       pGVar38 !=
-                                                       (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
-                                                      GizmoPlaneSlider3DLookAndFeel::
-                                                      GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
-                                                                (pGVar38,(float)pGVar35,
-                                                                 (MethodInfo *)0x0);
-                                                      pGVar40 = (this->fields)._axialCircleZX;
-                                                      if ((pGVar40 != (GizmoPlaneSlider3D *)0x0) &&
-                                                         (pGVar38 = GizmoPlaneSlider3D::
-                                                                                                                                        
+                                                                            (pGVar36,(MethodInfo *)
+                                                                                     0x0);
+                                                        pPVar40 = (&(this->fields)._lookAndFeel)
+                                                                  [(this->fields)._sharedLookAndFeel
+                                                                   != (PointLightGizmo3DLookAndFeel
+                                                                       *)0x0];
+                                                        if (pPVar40 !=
+                                                            (PointLightGizmo3DLookAndFeel *)0x0) {
+                                                          fVar4 = (pPVar40->fields)._wireColor.g;
+                                                          fVar5 = (pPVar40->fields)._wireColor.b;
+                                                          fVar6 = (pPVar40->fields)._wireColor.a;
+                                                          if (pGVar39 !=
+                                                              (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                                          {
+                                                            (pGVar39->fields)._borderColor.r =
+                                                                 (pPVar40->fields)._wireColor.r;
+                                                            (pGVar39->fields)._borderColor.g = fVar4
+                                                            ;
+                                                            (pGVar39->fields)._borderColor.b =
+                                                                 fVar5;
+                                                            (pGVar39->fields)._borderColor.a =
+                                                                 fVar6;
+                                                            pGVar36 = (this->fields)._axialCircleYZ;
+                                                            if (pGVar36 != (GizmoPlaneSlider3D *)0x0
+                                                               ) {
+                                                              pGVar39 = GizmoPlaneSlider3D::
+                                                                                                                                                
                                                   GizmoPlaneSlider3D_get_LookAndFeel
-                                                            (pGVar40,(MethodInfo *)0x0),
-                                                  pGVar38 != (GizmoPlaneSlider3DLookAndFeel *)0x0))
-                                                  {
+                                                            (pGVar36,(MethodInfo *)0x0);
+                                                  pPVar40 = (&(this->fields)._lookAndFeel)
+                                                            [(this->fields)._sharedLookAndFeel !=
+                                                             (PointLightGizmo3DLookAndFeel *)0x0];
+                                                  if (pPVar40 != (PointLightGizmo3DLookAndFeel *)0x0
+                                                     ) {
+                                                    fVar4 = (pPVar40->fields)._wireColor.g;
+                                                    fVar5 = (pPVar40->fields)._wireColor.b;
+                                                    fVar6 = (pPVar40->fields)._wireColor.a;
+                                                    if (pGVar39 !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                      (pGVar39->fields)._borderColor.r =
+                                                           (pPVar40->fields)._wireColor.r;
+                                                      (pGVar39->fields)._borderColor.g = fVar4;
+                                                      (pGVar39->fields)._borderColor.b = fVar5;
+                                                      (pGVar39->fields)._borderColor.a = fVar6;
+                                                      pGVar36 = (this->fields)._axialCircleZX;
+                                                      if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                        pGVar39 = GizmoPlaneSlider3D::
+                                                                  GizmoPlaneSlider3D_get_LookAndFeel
+                                                                            (pGVar36,(MethodInfo *)
+                                                                                     0x0);
+                                                        pPVar40 = (&(this->fields)._lookAndFeel)
+                                                                  [(this->fields)._sharedLookAndFeel
+                                                                   != (PointLightGizmo3DLookAndFeel
+                                                                       *)0x0];
+                                                        if (pPVar40 !=
+                                                            (PointLightGizmo3DLookAndFeel *)0x0) {
+                                                          fVar4 = (pPVar40->fields)._wireColor.g;
+                                                          fVar5 = (pPVar40->fields)._wireColor.b;
+                                                          fVar6 = (pPVar40->fields)._wireColor.a;
+                                                          if (pGVar39 !=
+                                                              (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                                          {
+                                                            (pGVar39->fields)._borderColor.r =
+                                                                 (pPVar40->fields)._wireColor.r;
+                                                            (pGVar39->fields)._borderColor.g = fVar4
+                                                            ;
+                                                            (pGVar39->fields)._borderColor.b =
+                                                                 fVar5;
+                                                            (pGVar39->fields)._borderColor.a =
+                                                                 fVar6;
+                                                            pGVar36 = (this->fields)._axialCircleXY;
+                                                            if (pGVar36 != (GizmoPlaneSlider3D *)0x0
+                                                               ) {
+                                                              pGVar39 = GizmoPlaneSlider3D::
+                                                                                                                                                
+                                                  GizmoPlaneSlider3D_get_LookAndFeel
+                                                            (pGVar36,(MethodInfo *)0x0);
+                                                  if (pGVar39 !=
+                                                      (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                                                     GizmoPlaneSlider3DLookAndFeel::
                                                     GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
-                                                              (pGVar38,(float)pGVar35,
-                                                               (MethodInfo *)0x0);
-                                                    pGVar35 = (this->fields)._axialCircleXY;
-                                                    if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                      pGVar38 = GizmoPlaneSlider3D::
+                                                              (pGVar39,value_08,(MethodInfo *)0x0);
+                                                    pGVar36 = (this->fields)._axialCircleYZ;
+                                                    if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                      pGVar39 = GizmoPlaneSlider3D::
                                                                 GizmoPlaneSlider3D_get_LookAndFeel
-                                                                          (pGVar35,(MethodInfo *)0x0
+                                                                          (pGVar36,(MethodInfo *)0x0
                                                                           );
-                                                      if ((this->fields)._sharedLookAndFeel ==
-                                                          (PointLightGizmo3DLookAndFeel *)0x0) {
-                                                        pPVar39 = (this->fields)._lookAndFeel;
-                                                        if (pPVar39 ==
-                                                            (PointLightGizmo3DLookAndFeel *)0x0)
-                                                        goto code_?;
-                                                      }
-                                                      else {
-                                                        pPVar39 = (this->fields)._sharedLookAndFeel;
-                                                      }
-                                                      if (pGVar38 !=
+                                                      if (pGVar39 !=
                                                           (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                                                         GizmoPlaneSlider3DLookAndFeel::
                                                                                                                 
+                                                  GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
+                                                            (pGVar39,value_08,(MethodInfo *)0x0);
+                                                  pGVar36 = (this->fields)._axialCircleZX;
+                                                  if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                    pGVar39 = GizmoPlaneSlider3D::
+                                                              GizmoPlaneSlider3D_get_LookAndFeel
+                                                                        (pGVar36,(MethodInfo *)0x0);
+                                                    if (pGVar39 !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                      GizmoPlaneSlider3DLookAndFeel::
+                                                      GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
+                                                                (pGVar39,value_08,(MethodInfo *)0x0)
+                                                      ;
+                                                      pGVar36 = (this->fields)._axialCircleXY;
+                                                      if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                        pGVar39 = GizmoPlaneSlider3D::
+                                                                  GizmoPlaneSlider3D_get_LookAndFeel
+                                                                            (pGVar36,(MethodInfo *)
+                                                                                     0x0);
+                                                        pPVar40 = (&(this->fields)._lookAndFeel)
+                                                                  [(this->fields)._sharedLookAndFeel
+                                                                   != (PointLightGizmo3DLookAndFeel
+                                                                       *)0x0];
+                                                        if ((pPVar40 !=
+                                                             (PointLightGizmo3DLookAndFeel *)0x0) &&
+                                                           (pGVar39 !=
+                                                            (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
+                                                          GizmoPlaneSlider3DLookAndFeel::
+                                                                                                                    
                                                   GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
-                                                            (pGVar38,(pPVar39->fields).
+                                                            (pGVar39,(pPVar40->fields).
                                                                      _axialCircleCullAlphaScale,
                                                              (MethodInfo *)0x0);
-                                                  pGVar35 = (this->fields)._axialCircleYZ;
-                                                  if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                    pGVar38 = GizmoPlaneSlider3D::
+                                                  pGVar36 = (this->fields)._axialCircleYZ;
+                                                  if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                    pGVar39 = GizmoPlaneSlider3D::
                                                               GizmoPlaneSlider3D_get_LookAndFeel
-                                                                        (pGVar35,(MethodInfo *)0x0);
-                                                    if ((this->fields)._sharedLookAndFeel ==
-                                                        (PointLightGizmo3DLookAndFeel *)0x0) {
-                                                      pPVar39 = (this->fields)._lookAndFeel;
-                                                      if (pPVar39 ==
-                                                          (PointLightGizmo3DLookAndFeel *)0x0)
-                                                      goto code_?;
-                                                    }
-                                                    else {
-                                                      pPVar39 = (this->fields)._sharedLookAndFeel;
-                                                    }
-                                                    if (pGVar38 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                                        (pGVar36,(MethodInfo *)0x0);
+                                                    pPVar40 = (&(this->fields)._lookAndFeel)
+                                                              [(this->fields)._sharedLookAndFeel !=
+                                                               (PointLightGizmo3DLookAndFeel *)0x0];
+                                                    if ((pPVar40 !=
+                                                         (PointLightGizmo3DLookAndFeel *)0x0) &&
+                                                       (pGVar39 !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
                                                       GizmoPlaneSlider3DLookAndFeel::
                                                                                                             
                                                   GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
-                                                            (pGVar38,(pPVar39->fields).
+                                                            (pGVar39,(pPVar40->fields).
                                                                      _axialCircleCullAlphaScale,
                                                              (MethodInfo *)0x0);
-                                                  pGVar35 = (this->fields)._axialCircleZX;
-                                                  if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                    pGVar38 = GizmoPlaneSlider3D::
+                                                  pGVar36 = (this->fields)._axialCircleZX;
+                                                  if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                    pGVar39 = GizmoPlaneSlider3D::
                                                               GizmoPlaneSlider3D_get_LookAndFeel
-                                                                        (pGVar35,(MethodInfo *)0x0);
-                                                    if ((this->fields)._sharedLookAndFeel ==
-                                                        (PointLightGizmo3DLookAndFeel *)0x0) {
-                                                      pPVar39 = (this->fields)._lookAndFeel;
-                                                      if (pPVar39 ==
-                                                          (PointLightGizmo3DLookAndFeel *)0x0)
-                                                      goto code_?;
-                                                    }
-                                                    else {
-                                                      pPVar39 = (this->fields)._sharedLookAndFeel;
-                                                    }
-                                                    if (pGVar38 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                                        (pGVar36,(MethodInfo *)0x0);
+                                                    pPVar40 = (&(this->fields)._lookAndFeel)
+                                                              [(this->fields)._sharedLookAndFeel !=
+                                                               (PointLightGizmo3DLookAndFeel *)0x0];
+                                                    if ((pPVar40 !=
+                                                         (PointLightGizmo3DLookAndFeel *)0x0) &&
+                                                       (pGVar39 !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
                                                       GizmoPlaneSlider3DLookAndFeel::
                                                                                                             
                                                   GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
-                                                            (pGVar38,(pPVar39->fields).
+                                                            (pGVar39,(pPVar40->fields).
                                                                      _axialCircleCullAlphaScale,
                                                              (MethodInfo *)0x0);
-                                                  pGVar35 = (this->fields)._axialCircleXY;
-                                                  if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                    GizmoPlaneSlider3D::GizmoPlaneSlider3D_Refresh
-                                                              (pGVar35,(MethodInfo *)0x0);
-                                                    pGVar35 = (this->fields)._axialCircleYZ;
-                                                    if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
-                                                      GizmoPlaneSlider3D::GizmoPlaneSlider3D_Refresh
-                                                                (pGVar35,(MethodInfo *)0x0);
-                                                      pGVar35 = (this->fields)._axialCircleZX;
-                                                      if (pGVar35 != (GizmoPlaneSlider3D *)0x0) {
+                                                  pGVar36 = (this->fields)._axialCircleXY;
+                                                  if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                    GizmoPlaneSlider3D::
+                                                    GizmoPlaneSlider3D_OnGizmoPostEnabled
+                                                              (pGVar36,(Gizmo *)0x0,
+                                                               in_stack_41);
+                                                    pGVar36 = (this->fields)._axialCircleYZ;
+                                                    if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
+                                                      GizmoPlaneSlider3D::
+                                                      GizmoPlaneSlider3D_OnGizmoPostEnabled
+                                                                (pGVar36,(Gizmo *)0x0,
+                                                                 in_stack_42);
+                                                      pGVar36 = (this->fields)._axialCircleZX;
+                                                      if (pGVar36 != (GizmoPlaneSlider3D *)0x0) {
                                                         GizmoPlaneSlider3D::
-                                                        GizmoPlaneSlider3D_Refresh
-                                                                  (pGVar35,(MethodInfo *)0x0);
+                                                        GizmoPlaneSlider3D_OnGizmoPostEnabled
+                                                                  (pGVar36,(Gizmo *)0x0,
+                                                                   in_stack_43);
                                                         return;
                                                       }
                                                     }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
                                                   }
                                                   }
                                                   }
@@ -1787,7 +1806,6 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateHandle
                                           }
                                         }
                                       }
-                                      goto code_?;
                                     }
                                   }
                                 }
@@ -1800,17 +1818,17 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateHandle
                   }
                 }
               }
-              func_?();
             }
           }
         }
       }
     }
   }
+  func_?();
 code_?:
   func_?();
-  pcVar41 = (code *)swi(3);
-  (*pcVar41)();
+  pcVar44 = (code *)swi(3);
+  (*pcVar44)();
   return;
 }
 
@@ -1867,10 +1885,8 @@ code_?:
                 pPVar1 = (this->fields)._extentTicks;
                 if (pPVar1 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
                   if (pPVar1->max_length < 6) goto code_?;
-                  pPVar2 = (this->fields)._extentTicks;
                   pPVar3 = pPVar1->vector[5];
-                  if (pPVar2->max_length < 5) goto code_?;
-                  pPVar4 = pPVar2->vector[4];
+                  pPVar4 = ((this->fields)._extentTicks)->vector[4];
                   if ((pPVar3 != (PointLightGizmo3D_ExtentTick *)0x0) &&
                      (pGVar5 = (pPVar3->fields).Tick, pGVar5 != (GizmoCap2D *)0x0)) {
                     pSVar6 = Newtonsoft.Json.dll::Newtonsoft::Json::Converters::
@@ -2066,133 +2082,129 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_UpdateTickCo
     func_?(&TypeInfo__RTG__CameraEx);
     cRam_? = '\x01';
   }
-  if ((camera != (Camera *)0x0) &&
-     (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)camera,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                        ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
-    VVar3 = *pVVar2;
+  if (camera != (Camera *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)camera,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
-      uVar4 = pVVar2->x;
-      uVar5 = pVVar2->y;
-      fVar6 = pVVar2->z;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          ((Vector3 *)&stack0xffffffb0,VVar3,(MethodInfo *)0x0);
-      fVar7 = pVVar2->x;
-      fVar8 = pVVar2->y;
-      fVar9 = pVVar2->z;
-      uStack_10 = 0;
-      pPVar11 = (this->fields)._extentTicks;
-      fVar6 = (float)((uint)((float)uVar5 * fVar8 + (float)uVar4 * fVar7 + fVar6 * fVar9) ^
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      if (pPVar11 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
-        ppPVar12 = pPVar11->vector;
-        do {
-          if ((int)pPVar11->max_length <= (int)uStack_10) {
-            return;
-          }
-          if (pPVar11->max_length <= uStack_10) goto code_?;
-          pPVar13 = *ppPVar12;
-          if (pPVar13 == (PointLightGizmo3D_ExtentTick *)0x0) break;
-          this_00 = (pPVar13->fields).Tick;
-          this_01 = (this->fields)._._gizmo;
-          if ((this_01 == (Gizmo *)0x0) ||
-             (pvVar14 = (void *)UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                                PointerCaptureEventBase`1[System::Object]::
-                                PointerCaptureEventBase_1_System_Object__get_pointerId
-                                          ((PointerCaptureEventBase_1_System_Object_ *)this_01,
-                                           (MethodInfo *)0x0), this_00 == (GizmoCap2D *)0x0)) break;
-          pvVar15 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-                    AndroidJavaObject__GetRawClass((AndroidJavaObject *)this_00,(MethodInfo *)0x0);
-          if (pvVar14 == pvVar15) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                          ((Vector3 *)&stack0xffffffb4,pTVar1,(MethodInfo *)0x0);
+      VVar3 = *pVVar2;
+      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)camera,(MethodInfo *)0x0);
+      if (pTVar1 != (Transform *)0x0) {
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&stack0xffffffb4,pTVar1,(MethodInfo *)0x0);
+        uVar4 = pVVar2->x;
+        uVar5 = pVVar2->y;
+        fVar6 = pVVar2->z;
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                            ((Vector3 *)&stack0xffffffb4,VVar3,(MethodInfo *)0x0);
+        fVar7 = pVVar2->x;
+        fVar8 = pVVar2->y;
+        fVar9 = pVVar2->z;
+        uStack_10 = 0;
+        pPVar11 = (this->fields)._extentTicks;
+        fVar6 = (float)((uint)((float)uVar5 * fVar8 + (float)uVar4 * fVar7 + fVar6 * fVar9) ^
+                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+        if (pPVar11 != (PointLightGizmo3D_ExtentTick__Array *)0x0) {
+          ppPVar12 = pPVar11->vector;
+          while( true ) {
+            if ((int)pPVar11->max_length <= (int)uStack_10) {
+              return;
+            }
+            if (pPVar11->max_length <= uStack_10) break;
+            pPVar13 = *ppPVar12;
+            if (pPVar13 == (PointLightGizmo3D_ExtentTick *)0x0) goto code_?;
+            this_00 = (this->fields)._._gizmo;
+            this_01 = (pPVar13->fields).Tick;
+            if (this_00 == (Gizmo *)0x0) goto code_?;
+            pvVar14 = (void *)UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                              PointerCaptureEventBase`1[System::Object]::
+                              PointerCaptureEventBase_1_System_Object__get_pointerId
+                                        ((PointerCaptureEventBase_1_System_Object_ *)this_00,
+                                         (MethodInfo *)0x0);
+            if (this_01 == (GizmoCap2D *)0x0) goto code_?;
+            pvVar15 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
+                      AndroidJavaObject__GetRawClass((AndroidJavaObject *)this_01,(MethodInfo *)0x0)
+            ;
+            if (pvVar14 == pvVar15) {
 code_?:
-            pGVar16 = (this_00->fields)._overrideFillColor;
-            if (pGVar16 == (GizmoOverrideColor *)0x0) break;
-            (pGVar16->fields)._isActive = 0;
-            pGVar16 = (this_00->fields)._overrideBorderColor;
-            if (pGVar16 == (GizmoOverrideColor *)0x0) break;
-            (pGVar16->fields)._isActive = 0;
-          }
-          else {
-            VVar3 = (pPVar13->fields).Position;
-            pointNormal = (pPVar13->fields).Normal;
-            if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            bVar17 = CameraEx::CameraEx_IsPointFacingCamera
-                               (camera,VVar3,pointNormal,(MethodInfo *)0x0);
-            if (bVar17 != 0) goto code_?;
-            pGVar16 = (this_00->fields)._overrideFillColor;
-            if (pGVar16 == (GizmoOverrideColor *)0x0) break;
-            (pGVar16->fields)._isActive = 1;
-            pGVar16 = (this_00->fields)._overrideBorderColor;
-            if (pGVar16 == (GizmoOverrideColor *)0x0) break;
-            (pGVar16->fields)._isActive = 1;
-            pGVar18 = (this_00->fields)._sharedLookAndFeel;
-            if (pGVar18 == (GizmoCap2DLookAndFeel *)0x0) break;
-            pGVar16 = (this_00->fields)._overrideFillColor;
-            if ((this->fields)._sharedLookAndFeel == (PointLightGizmo3DLookAndFeel *)0x0) {
-              pPVar19 = (this->fields)._lookAndFeel;
-              if (pPVar19 == (PointLightGizmo3DLookAndFeel *)0x0) break;
+              pGVar16 = (this_01->fields)._overrideFillColor;
+              if (pGVar16 == (GizmoOverrideColor *)0x0) goto code_?;
+              (pGVar16->fields)._isActive = 0;
+              pGVar16 = (this_01->fields)._overrideBorderColor;
+              if (pGVar16 == (GizmoOverrideColor *)0x0) goto code_?;
+              (pGVar16->fields)._isActive = 0;
             }
             else {
-              pPVar19 = (this->fields)._sharedLookAndFeel;
+              VVar3 = (pPVar13->fields).Position;
+              pointNormal = (pPVar13->fields).Normal;
+              if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              bVar17 = CameraEx::CameraEx_IsPointFacingCamera
+                                 (camera,VVar3,pointNormal,(MethodInfo *)0x0);
+              if (bVar17 != 0) goto code_?;
+              pGVar16 = (this_01->fields)._overrideFillColor;
+              if (pGVar16 == (GizmoOverrideColor *)0x0) goto code_?;
+              (pGVar16->fields)._isActive = 1;
+              pGVar16 = (this_01->fields)._overrideBorderColor;
+              if (pGVar16 == (GizmoOverrideColor *)0x0) goto code_?;
+              (pGVar16->fields)._isActive = 1;
+              pGVar18 = (this_01->fields)._sharedLookAndFeel;
+              if (pGVar18 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+              pGVar16 = (this_01->fields)._overrideFillColor;
+              pPVar19 = (&(this->fields)._lookAndFeel)
+                        [(this->fields)._sharedLookAndFeel != (PointLightGizmo3DLookAndFeel *)0x0];
+              if (pPVar19 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
+              pCVar20 = ColorEx::ColorEx_KeepAllButAlpha
+                                  ((Color *)&stack0xffffff94,(pGVar18->fields)._color,
+                                   (pGVar18->fields)._color.a *
+                                   (pPVar19->fields)._tickCullAlphaScale,(MethodInfo *)0x0);
+              fVar7 = pCVar20->g;
+              fVar8 = pCVar20->b;
+              fVar9 = pCVar20->a;
+              if (pGVar16 == (GizmoOverrideColor *)0x0) goto code_?;
+              (pGVar16->fields)._color.r = pCVar20->r;
+              (pGVar16->fields)._color.g = fVar7;
+              (pGVar16->fields)._color.b = fVar8;
+              (pGVar16->fields)._color.a = fVar9;
+              pGVar18 = (this_01->fields)._sharedLookAndFeel;
+              if (pGVar18 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+              pGVar16 = (this_01->fields)._overrideBorderColor;
+              pPVar19 = (&(this->fields)._lookAndFeel)
+                        [(this->fields)._sharedLookAndFeel != (PointLightGizmo3DLookAndFeel *)0x0];
+              if (pPVar19 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
+              fVar7 = (pGVar18->fields)._borderColor.g;
+              fVar8 = (pGVar18->fields)._borderColor.b;
+              fVar9 = (pGVar18->fields)._borderColor.a;
+              pCVar20 = ColorEx::ColorEx_KeepAllButAlpha
+                                  ((Color *)&stack0xffffff84,(pGVar18->fields)._borderColor,
+                                   (pGVar18->fields)._borderColor.a *
+                                   (pPVar19->fields)._tickCullAlphaScale,(MethodInfo *)0x0);
+              fVar21 = pCVar20->g;
+              fVar22 = pCVar20->b;
+              fVar23 = pCVar20->a;
+              if (pGVar16 == (GizmoOverrideColor *)0x0) goto code_?;
+              (pGVar16->fields)._color.r = pCVar20->r;
+              (pGVar16->fields)._color.g = fVar21;
+              (pGVar16->fields)._color.b = fVar22;
+              (pGVar16->fields)._color.a = fVar23;
             }
-            pCVar20 = ColorEx::ColorEx_KeepAllButAlpha
-                                ((Color *)&stack0xffffff90,(pGVar18->fields)._color,
-                                 (pGVar18->fields)._color.a * (pPVar19->fields)._tickCullAlphaScale,
-                                 (MethodInfo *)0x0);
-            fVar7 = pCVar20->g;
-            fVar8 = pCVar20->b;
-            fVar9 = pCVar20->a;
-            if (pGVar16 == (GizmoOverrideColor *)0x0) break;
-            (pGVar16->fields)._color.r = pCVar20->r;
-            (pGVar16->fields)._color.g = fVar7;
-            (pGVar16->fields)._color.b = fVar8;
-            (pGVar16->fields)._color.a = fVar9;
-            pGVar18 = (this_00->fields)._sharedLookAndFeel;
-            if (pGVar18 == (GizmoCap2DLookAndFeel *)0x0) break;
-            pGVar16 = (this_00->fields)._overrideBorderColor;
-            if ((this->fields)._sharedLookAndFeel == (PointLightGizmo3DLookAndFeel *)0x0) {
-              pPVar19 = (this->fields)._lookAndFeel;
-              if (pPVar19 == (PointLightGizmo3DLookAndFeel *)0x0) break;
-            }
-            else {
-              pPVar19 = (this->fields)._sharedLookAndFeel;
-            }
-            fVar7 = (pGVar18->fields)._borderColor.g;
-            fVar8 = (pGVar18->fields)._borderColor.b;
-            fVar9 = (pGVar18->fields)._borderColor.a;
-            pCVar20 = ColorEx::ColorEx_KeepAllButAlpha
-                                ((Color *)&stack0xffffff80,(pGVar18->fields)._borderColor,
-                                 (pGVar18->fields)._borderColor.a *
-                                 (pPVar19->fields)._tickCullAlphaScale,(MethodInfo *)0x0);
-            fVar21 = pCVar20->g;
-            fVar22 = pCVar20->b;
-            fVar23 = pCVar20->a;
-            if (pGVar16 == (GizmoOverrideColor *)0x0) break;
-            (pGVar16->fields)._color.r = pCVar20->r;
-            (pGVar16->fields)._color.g = fVar21;
-            (pGVar16->fields)._color.b = fVar22;
-            (pGVar16->fields)._color.a = fVar23;
+            uVar24 = (pPVar13->fields).Position.x;
+            uVar25 = (pPVar13->fields).Position.y;
+            GizmoCap::GizmoCap_SetVisible
+                      ((GizmoCap *)this_01,
+                       0.0 < fVar8 * (float)uVar25 + fVar7 * (float)uVar24 +
+                             fVar9 * (pPVar13->fields).Position.z + fVar6,(MethodInfo *)0x0);
+            uStack_10 = uStack_10 + 1;
+            ppPVar12 = ppPVar12 + 1;
           }
-          uVar24 = (pPVar13->fields).Position.x;
-          uVar25 = (pPVar13->fields).Position.y;
-          GizmoCap::GizmoCap_SetVisible
-                    ((GizmoCap *)this_00,
-                     0.0 < fVar8 * (float)uVar25 + fVar7 * (float)uVar24 +
-                           fVar9 * (pPVar13->fields).Position.z + fVar6,(MethodInfo *)0x0);
-          uStack_10 = uStack_10 + 1;
-          ppPVar12 = ppPVar12 + 1;
-        } while( true );
+          func_?();
+        }
       }
     }
   }
-  func_?();
 code_?:
   func_?();
   pcVar26 = (code *)swi(3);
@@ -2305,19 +2317,13 @@ bool Assembly-CSharp.dll::RTG::PointLightGizmo3D::PointLightGizmo3D_get_IsSnapEn
   if ((this->fields)._isSnapEnabled != 0) {
     return 1;
   }
-  if ((this->fields)._sharedHotkeys == (PointLightGizmo3DHotkeys *)0x0) {
-    pPVar1 = (this->fields)._hotkeys;
-    if (pPVar1 == (PointLightGizmo3DHotkeys *)0x0) goto code_?;
-  }
-  else {
-    pPVar1 = (this->fields)._sharedHotkeys;
-  }
-  this_00 = (pPVar1->fields)._enableSnapping;
-  if (this_00 != (Hotkeys *)0x0) {
+  pPVar1 = (&(this->fields)._hotkeys)
+           [(this->fields)._sharedHotkeys != (PointLightGizmo3DHotkeys *)0x0];
+  if ((pPVar1 != (PointLightGizmo3DHotkeys *)0x0) &&
+     (this_00 = (pPVar1->fields)._enableSnapping, this_00 != (Hotkeys *)0x0)) {
     bVar2 = Hotkeys::Hotkeys_IsActive(this_00,1,(MethodInfo *)0x0);
     return bVar2;
   }
-code_?:
   uVar3 = func_?(&stack0xfffffff0);
   func_?(uVar3);
   pcVar4 = (code *)swi(3);

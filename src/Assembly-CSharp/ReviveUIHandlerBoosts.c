@@ -498,10 +498,10 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    pOVar1 = unaff_EDI;
+    method_00 = unaff_EDI;
     unaff_ESI = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)pOVar1);
+              (unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     if (unaff_ESI != (Object *)0x0) {
       unaff_ESI[1].monitor = (MonitorData *)this;
       func_?(&unaff_ESI[1].monitor,this);
@@ -518,7 +518,7 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
       func_?(unaff_ESI + 1,pOVar1);
       unaff_EBX = unaff_ESI[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-      unaff_EDI = (Object__Class *)this;
+      unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)
                func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
@@ -564,19 +564,20 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   default:
     return;
   }
-  bVar4 = 0;
-  pcVar5 = (char *)func_?();
-  bVar6 = *(byte *)&(unaff_EBX->_0).image;
-  bVar7 = (byte)((uint)unaff_EBX >> 8);
-  bVar8 = *(char *)&(unaff_EBX->_0).image - bVar7;
-  *(byte *)&(unaff_EBX->_0).image = bVar8 - bVar4;
-  *pcVar5 = *pcVar5 + (char)unaff_EBX + (bVar6 < bVar7 || bVar8 < bVar4);
-  *(char *)&unaff_ESI->klass =
-       *(char *)&unaff_ESI->klass + extraout_DL +
-       ((byte)(bVar7 + extraout_CH + (unaff_EDI < unaff_ESI->klass)) < *(byte *)&unaff_ESI->klass);
-  *pcVar5 = *pcVar5 + (char)unaff_EBX + (unaff_EDI < unaff_ESI->klass);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pbVar4 = (byte *)func_?();
+  bVar5 = *(byte *)((int)&unaff_ESI[7].monitor + 2) < (byte)unaff_EBX;
+  bVar6 = (byte)((uint)unaff_EBX >> 8);
+  bVar7 = CARRY1(*pbVar4,bVar6) || CARRY1(*pbVar4 + bVar6,bVar5);
+  *pbVar4 = *pbVar4 + bVar6 + bVar5;
+  bVar8 = *(char *)&unaff_EDI->klass + extraout_CL;
+  bVar5 = CARRY1(*(byte *)&unaff_EDI->klass,extraout_CL) || CARRY1(bVar8,bVar7);
+  *(byte *)&unaff_EDI->klass = bVar8 + bVar7;
+  bVar8 = *unaff_retaddr;
+  bVar9 = *unaff_retaddr;
+  *unaff_retaddr = bVar9 + extraout_DH + bVar5;
+  *pbVar4 = *pbVar4 + bVar6 + (CARRY1(bVar8,extraout_DH) || CARRY1(bVar9 + extraout_DH,bVar5));
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

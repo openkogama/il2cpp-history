@@ -48,8 +48,19 @@ Assembly-CSharp.dll::FaceCursor::FaceCursor_SetUVs
         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
         )0x0) {
 code_?:
-      pVVar1 = (Vector2__Array *)func_?();
-      return pVVar1;
+      bVar1 = false;
+      uVar2 = func_?();
+      pcVar3 = (char *)((ulonglong)uVar2 >> 0x20);
+      if (bVar1) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        pVVar4 = (Vector2__Array *)(**(code **)((int)uVar2 + 0x28))();
+        return pVVar4;
+      }
+      *pcVar3 = *pcVar3 + (char)uVar2;
+      pcVar5 = (code *)swi(3);
+      pVVar4 = (Vector2__Array *)(*pcVar5)();
+      return pVVar4;
     }
     func_?(this_00,0,0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
@@ -60,7 +71,7 @@ code_?:
     func_?(this_00,0x3f800000,0x3f800000,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    fStack_2 = 0.0;
+    fStack_6 = 0.0;
     break;
   case Edge__Enum_Front:
     if (this_00 ==
@@ -108,8 +119,8 @@ code_?:
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
 code_?:
-    uStack_3 = 0;
-    fStack_2 = (float)mirror;
+    uStack_7 = 0;
+    fStack_6 = (float)mirror;
     goto code_?;
   case Edge__Enum_Right:
     if (this_00 ==
@@ -124,7 +135,7 @@ code_?:
     func_?(this_00,(float)(mirror ^ 1),0,
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
-    fStack_2 = (float)(mirror ^ 1);
+    fStack_6 = (float)(mirror ^ 1);
     break;
   default:
     if (this_00 ==
@@ -132,19 +143,19 @@ code_?:
         )0x0) goto code_?;
     goto code_?;
   }
-  uStack_3 = 0x3f800000;
+  uStack_7 = 0x3f800000;
 code_?:
-  func_?(this_00,fStack_2,uStack_3,
+  func_?(this_00,fStack_6,uStack_7,
                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                  );
 code_?:
-  pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+  pMVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
            MultiColumnCollectionHeader+ViewState+ColumnState]::
            List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                      (this_00,
                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__
                      );
-  return (Vector2__Array *)pMVar4;
+  return (Vector2__Array *)pMVar8;
 }
 
 
@@ -157,7 +168,7 @@ void Assembly-CSharp.dll::FaceCursor::FaceCursor_UpdateCursor
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x8e1c);
+    func_?(0x6f38);
     func_?(&
                     UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::MeshRenderer>__
                    );

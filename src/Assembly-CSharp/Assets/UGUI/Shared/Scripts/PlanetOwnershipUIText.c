@@ -72,23 +72,19 @@ void Assembly-CSharp.dll::Assets::UGUI::Shared::Scripts::PlanetOwnershipUIText::
   func_?();
 code_?:
   uVar7 = func_?();
-  pbVar8 = (byte *)((int)uVar7 * 5 + 0x50);
-  bVar9 = (byte)((ulonglong)uVar7 >> 0x28);
-  bVar10 = *pbVar8 + bVar9;
-  bVar11 = CARRY1(*pbVar8,bVar9) || CARRY1(bVar10,bVar6);
-  *pbVar8 = bVar10 + bVar6;
-  pSVar5 = pSVar1 + -8;
-  bVar10 = (byte)((uint)unaff_EBX >> 8);
-  bVar6 = *(char *)&pSVar5->klass + bVar10;
-  bVar12 = CARRY1(*(byte *)&pSVar5->klass,bVar10) || CARRY1(bVar6,bVar11);
-  *(byte *)&pSVar5->klass = bVar6 + bVar11;
-  pbVar8 = (byte *)((int)((ulonglong)uVar7 >> 0x20) + -0x77efaf80);
+  pbVar8 = (byte *)((ulonglong)uVar7 >> 0x20);
+  bVar9 = *(byte *)&pSVar1->klass;
+  iVar4 = CONCAT31((int3)((ulonglong)uVar7 >> 8),bVar9);
+  pbVar10 = (byte *)((int)&stack0xfffffffc * 4 + -0x52f1efb0);
+  bVar11 = CARRY1(*pbVar10,bVar9) || CARRY1(*pbVar10 + bVar9,bVar6);
+  *pbVar10 = *pbVar10 + bVar9 + bVar6;
   bVar6 = *pbVar8;
-  bVar9 = (byte)((ulonglong)uVar7 >> 0x20);
-  bVar10 = *pbVar8 + bVar9;
-  *pbVar8 = bVar10 + bVar12;
-  pcVar13 = (char *)((int)uVar7 + 0x10);
-  *pcVar13 = *pcVar13 + 'U' + (CARRY1(bVar6,bVar9) || CARRY1(bVar10,bVar12));
+  bVar12 = (byte)((ulonglong)uVar7 >> 8);
+  bVar9 = *pbVar8 + bVar12;
+  *pbVar8 = bVar9 + bVar11;
+  pcVar13 = *(char **)((int)&pSVar1->klass + 1);
+  *pcVar13 = *pcVar13 + unaff_BL + (CARRY1(bVar6,bVar12) || CARRY1(bVar9,bVar11));
+  in((short)((ulonglong)uVar7 >> 0x20));
   if (cRam_? == '\0') {
     func_?(&TypeInfo__GNU__Gettext__PluralFormsNode__IterateNodesDelegate);
     func_?(&TypeInfo__GNU__Gettext__RecursiveTracer);
@@ -101,13 +97,14 @@ code_?:
     func_?(&TypeInfo__GNU__Gettext__PluralFormsCalculator____c__DisplayClass9_0);
     cRam_? = '\x01';
   }
-  if (iRam_? == 0) {
+  if (*(int *)(iVar4 + 0xc) == 0) {
     return;
   }
   method_00 = TypeInfo__GNU__Gettext__PluralFormsCalculator____c__DisplayClass9_0;
   value = (Object *)
           func_?(TypeInfo__GNU__Gettext__PluralFormsCalculator____c__DisplayClass9_0,
-                          unaff_EDI,pSVar1);
+                          unaff_EDI,(undefined1 *)((int)&(pSVar1->fields)._stringLength + 1));
+  pOVar14 = value;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   this_02 = (Object__Class *)func_?(TypeInfo__GNU__Gettext__RecursiveTracer);
@@ -115,18 +112,18 @@ code_?:
   ;
   if (value != (Object *)0x0) {
     value[1].klass = this_02;
-    func_?(value + 1,this_02);
+    func_?(value + 1,this_02,pOVar14);
     if ((value[1].klass != (Object__Class *)0x0) &&
-       (pSVar14 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar14 != (StringBuilder *)0x0))
+       (pSVar15 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar15 != (StringBuilder *)0x0))
     {
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                (pSVar14,pSRamffffff90,(MethodInfo *)0x0);
+                (pSVar15,*(String **)(iVar4 + 0x10),(MethodInfo *)0x0);
       if ((value[1].klass != (Object__Class *)0x0) &&
-         (pSVar14 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar14 != (StringBuilder *)0x0
+         (pSVar15 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar15 != (StringBuilder *)0x0
          )) {
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendLine
-                  (pSVar14,(MethodInfo *)0x0);
-        iVar4 = iRam_?;
+                  (pSVar15,(MethodInfo *)0x0);
+        iVar4 = *(int *)(iVar4 + 0xc);
         this_03 = (PluralFormsNode_IterateNodesDelegate *)
                   func_?(TypeInfo__GNU__Gettext__PluralFormsNode__IterateNodesDelegate);
         doBefore = this_03;
@@ -145,32 +142,32 @@ code_?:
         if (this_03 != (PluralFormsNode_IterateNodesDelegate *)0x0) {
           (*(((UnityAction_1_System_Object___Fields *)&this_03->fields)->_)._.invoke_impl)
                     ((((UnityAction_1_System_Object___Fields *)&this_03->fields)->_)._.method_code,
-                     iVar4,(((UnityAction_1_System_Object___Fields *)&this_03->fields)->_)._.method)
-          ;
-          uVar15 = 0;
+                     iVar4,(((UnityAction_1_System_Object___Fields *)&this_03->fields)->_)._.method
+                    );
+          uVar16 = 0;
           if (iVar4 != 0) {
-            iVar16 = 0x10;
-            while (iVar17 = *(int *)(iVar4 + 0xc), iVar17 != 0) {
-              if (*(int *)(iVar17 + 0xc) <= (int)uVar15) {
+            iVar17 = 0x10;
+            while (iVar18 = *(int *)(iVar4 + 0xc), iVar18 != 0) {
+              if (*(int *)(iVar18 + 0xc) <= (int)uVar16) {
                 if (doAfter != (PluralFormsNode_IterateNodesDelegate *)0x0) {
-                  pvVar18 = (doAfter->fields)._._.method_code;
-                  (*(doAfter->fields)._._.invoke_impl)(pvVar18,iVar4,(doAfter->fields)._._.method);
-                  if (*(RecursiveTracer **)((int)pvVar18 + 8) != (RecursiveTracer *)0x0) {
+                  (*(doAfter->fields)._._.invoke_impl)
+                            ((doAfter->fields)._._.method_code,iVar4,(doAfter->fields)._._.method);
+                  if (*(RecursiveTracer **)(iVar4 + 8) != (RecursiveTracer *)0x0) {
                     GNU::Gettext::RecursiveTracer::RecursiveTracer_SaveToFile
-                              (*(RecursiveTracer **)((int)pvVar18 + 8),pSVar1,(MethodInfo *)0x0);
+                              (*(RecursiveTracer **)(iVar4 + 8),pSVar1,(MethodInfo *)0x0);
                     return;
                   }
                 }
                 break;
               }
-              if (*(uint *)(iVar17 + 0xc) <= uVar15) goto code_?;
-              if (*(int *)(iVar16 + iVar17) != 0) {
+              if (*(uint *)(iVar18 + 0xc) <= uVar16) goto code_?;
+              if (*(int *)(iVar17 + iVar18) != 0) {
                 GNU::Gettext::PluralFormsNode::PluralFormsNode_IterateNodes
-                          (*(PluralFormsNode **)(iVar16 + iVar17),doBefore,doAfter,(MethodInfo *)0x0)
+                          (*(PluralFormsNode **)(iVar17 + iVar18),doBefore,doAfter,(MethodInfo *)0x0)
                 ;
               }
-              uVar15 = uVar15 + 1;
-              iVar16 = iVar16 + 4;
+              uVar16 = uVar16 + 1;
+              iVar17 = iVar17 + 4;
             }
           }
         }

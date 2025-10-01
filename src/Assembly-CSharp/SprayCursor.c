@@ -177,7 +177,6 @@ void Assembly-CSharp.dll::SprayCursor::SprayCursor_UpdateCursor
     (this->fields).addCubeTime = fVar6;
   }
   pCVar7 = (this->fields).sprayCursor;
-  unaff_EDI = selectedCube;
   if (selectedCube == (CubePickingInfo *)0x0) {
     if (pCVar7 != (CellCursor *)0x0) {
       CellCursor::CellCursor_set_Active(pCVar7,0,(MethodInfo *)0x0);
@@ -237,16 +236,16 @@ code_?:
   i2.x = in_stack_9;
   i2.z = (int16_t)(undefined4)uStack_10;
   IVar11 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar11,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
-  unaff_ESI = IVar11._0_4_;
-  uStack_10._0_2_ = unaff_ESI->x;
-  uStack_10._2_2_ = unaff_ESI->y;
-  in_stack_9 = unaff_ESI->z;
+                    (IVar11,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
+  pIVar14 = IVar11._0_4_;
+  uStack_10._0_2_ = pIVar14->x;
+  uStack_10._2_2_ = pIVar14->y;
+  in_stack_9 = pIVar14->z;
   if (targetCubeModel != (MVCubeModelBase *)0x0) {
     pCVar7 = (this->fields).sprayCursor;
     pIStack_8 = (IntVector__Class *)(targetCubeModel->fields)._.gameObject;
     if ((pCVar7 != (CellCursor *)0x0) &&
-       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*unaff_ESI,(MethodInfo *)0x0),
+       (this_00 = CellCursor::CellCursor_GetCellCursor(pCVar7,*pIVar14,(MethodInfo *)0x0),
        this_00 != (CellCursorCubeLineMesh *)0x0)) {
       position.z = in_stack_9;
       position.x = (int16_t)uStack_10;
@@ -269,24 +268,11 @@ code_?:
     }
   }
 code_?:
-  bVar14 = 0;
   func_?();
-  uRam_? = in(extraout_DX);
-  bVar15 = (byte)((uint)this >> 8);
-  bVar16 = extraout_CL + bVar15;
-  bVar17 = CARRY1(extraout_CL,bVar15) || CARRY1(bVar16,bVar14);
-  bVar16 = bVar16 + bVar14;
-  bVar15 = *(byte *)&unaff_EDI->klass;
-  bVar14 = *(char *)&unaff_EDI->klass + bVar16;
-  uRam_? = uRam_?;
-  *(byte *)&unaff_EDI->klass = bVar14 + bVar17;
-  *(char *)&unaff_EDI->klass = (char)unaff_ESI->y;
-  piVar18 = &unaff_ESI->z;
-  *(char *)piVar18 =
-       (char)*piVar18 + (char)extraout_DX + (CARRY1(bVar15,bVar16) || CARRY1(bVar14,bVar17));
-  *(char *)((int)&unaff_EDI->klass + 1) = (char)*piVar18;
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar15 = (code *)swi(0xd7);
+  (*pcVar15)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

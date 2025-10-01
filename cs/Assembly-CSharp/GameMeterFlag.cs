@@ -23,10 +23,8 @@ public class GameMeterFlag : GameMeterBase
 
 	// Methods
 	public override void Initialize();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
 	public override void SetShowGameMeter(bool show);
-	private void Hide();
-	private void Show();
 }
 

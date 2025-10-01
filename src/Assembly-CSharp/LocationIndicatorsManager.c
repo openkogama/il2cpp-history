@@ -205,31 +205,31 @@ code_?:
         piVar11 = (int *)(*(code *)*ppMVar10)();
         uStack_1 = 1;
         while (piVar11 != (int *)0x0) {
-          uVar8 = 0;
-          uVar9 = *(ushort *)(*piVar11 + 0xb6);
-          if (uVar9 != 0) {
+          iVar12 = *piVar11;
+          uVar9 = 0;
+          if (*(ushort *)(iVar12 + 0xb6) != 0) {
             do {
-              if (*(IEnumerator__Class **)(*(int *)(*piVar11 + 0x58) + (uint)uVar8 * 8) ==
+              if (*(IEnumerator__Class **)(*(int *)(iVar12 + 0x58) + (uint)uVar9 * 8) ==
                   TypeInfo__System__Collections__IEnumerator) {
-                puVar12 = (undefined4 *)
-                          (*piVar11 +
-                          (*(int *)(*(int *)(*piVar11 + 0x58) + 4 + (uint)uVar8 * 8) + 0x18) * 8);
+                puVar13 = (undefined4 *)
+                          (iVar12 + (*(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18)
+                                   * 8);
                 goto code_?;
               }
-              uVar8 = uVar8 + 1;
-            } while (uVar8 < uVar9);
+              uVar9 = uVar9 + 1;
+            } while (uVar9 < *(ushort *)(iVar12 + 0xb6));
           }
-          puVar12 = (undefined4 *)func_?();
+          puVar13 = (undefined4 *)func_?();
 code_?:
-          cVar13 = (*(code *)*puVar12)();
-          if (cVar13 == '\0') {
+          cVar14 = (*(code *)*puVar13)();
+          if (cVar14 == '\0') {
             uStack_1 = 0xffffffff;
             if (piVar11 != (int *)0x0) {
               func_?();
             }
             uStack_1 = 0xffffffff;
             if (method_00 != (MethodInfo *)0x0) {
-              pLVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+              pLVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                         RegularExpressions::RegexCharClass+SingleRange]::
                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                                   ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -238,30 +238,30 @@ code_?:
                                     *)method_00,
                                    MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__
                                   );
-              key_00 = pLVar14->_current;
+              key_00 = pLVar15->_current;
               uStack_1 = 4;
               goto code_?;
             }
             break;
           }
           if (piVar11 == (int *)0x0) break;
-          uVar8 = 0;
-          uVar9 = *(ushort *)(*piVar11 + 0xb6);
-          if (uVar9 != 0) {
+          iVar12 = *piVar11;
+          uVar9 = 0;
+          if (*(ushort *)(iVar12 + 0xb6) != 0) {
             do {
-              if (*(IEnumerator_1_MVPlayer___Class **)(*(int *)(*piVar11 + 0x58) + (uint)uVar8 * 8)
-                  == TypeInfo__System__Collections__Generic__IEnumerator<MVPlayer>) {
-                puVar12 = (undefined4 *)
-                          (*piVar11 +
-                          (*(int *)(*(int *)(*piVar11 + 0x58) + 4 + (uint)uVar8 * 8) + 0x18) * 8);
+              if (*(IEnumerator_1_MVPlayer___Class **)(*(int *)(iVar12 + 0x58) + (uint)uVar9 * 8) ==
+                  TypeInfo__System__Collections__Generic__IEnumerator<MVPlayer>) {
+                puVar13 = (undefined4 *)
+                          (iVar12 + (*(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18)
+                                   * 8);
                 goto code_?;
               }
-              uVar8 = uVar8 + 1;
-            } while (uVar8 < uVar9);
+              uVar9 = uVar9 + 1;
+            } while (uVar9 < *(ushort *)(iVar12 + 0xb6));
           }
-          puVar12 = (undefined4 *)func_?();
+          puVar13 = (undefined4 *)func_?();
 code_?:
-          pOVar15 = (Object__Class *)(*(code *)*puVar12)();
+          pOVar16 = (Object__Class *)(*(code *)*puVar13)();
           if (cRam_? == '\0') {
             func_?();
             func_?();
@@ -269,19 +269,19 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          if (pOVar15 == (Object__Class *)0x0) break;
-          key = (pOVar15->_0).parent;
-          pDVar16 = (this->fields).indicators;
-          if (pDVar16 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) break;
-          bVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+          if (pOVar16 == (Object__Class *)0x0) break;
+          key = (pOVar16->_0).parent;
+          pDVar17 = (this->fields).indicators;
+          if (pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) break;
+          bVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                   Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                            ((Dictionary_2_System_Int32_System_Single_ *)pDVar16,(int32_t)key,
+                            ((Dictionary_2_System_Int32_System_Single_ *)pDVar17,(int32_t)key,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__ContainsKey_int_
                             );
-          if (bVar17 == 0) {
-            pMVar18 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-            if (pMVar18 == (MVLocalPlayer *)0x0) break;
-            if (key == (Il2CppClass *)(pMVar18->fields)._._ProfileID_k__BackingField)
+          if (bVar18 == 0) {
+            pMVar19 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+            if (pMVar19 == (MVLocalPlayer *)0x0) break;
+            if (key == (Il2CppClass *)(pMVar19->fields)._._ProfileID_k__BackingField)
             goto code_?;
             original = (this->fields).indicatorPrefab;
             parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -294,16 +294,16 @@ code_?:
                                LocationIndicator_MethodInfo__UnityEngine__Object__Instantiate<LocationIndicator>_LocationIndicator__UnityEngine__Transform_
                               );
             if (value == (Object *)0x0) break;
-            value[5].klass = pOVar15;
+            value[5].klass = pOVar16;
             func_?();
-            if (((pOVar15->_0).klass == (Il2CppClass *)0x0) ||
+            if (((pOVar16->_0).klass == (Il2CppClass *)0x0) ||
                (value[3].klass == (Object__Class *)0x0)) break;
             (*(code *)((value[3].klass)->_0).image[0x12].name)();
-            pDVar16 = (this->fields).indicators;
-            if (pDVar16 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) break;
+            pDVar17 = (this->fields).indicators;
+            if (pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) break;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__Add
-                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar16,(int32_t)key,value,
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,(int32_t)key,value,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__Add_int__LocationIndicator_
                       );
             bVar6 = true;
@@ -313,7 +313,7 @@ code_?:
             if (method_00 == (MethodInfo *)0x0) break;
             mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
             List_1_System_Int32__Remove
-                      ((List_1_System_Int32_ *)method_00,(int32_t)(pOVar15->_0).parent,
+                      ((List_1_System_Int32_ *)method_00,(int32_t)(pOVar16->_0).parent,
                        MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
           }
         }
@@ -323,24 +323,24 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 code_?:
-  bVar17 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
+  bVar18 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
           RegularExpressions::RegexCharClass+SingleRange]::
           List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
                     ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                       *)&stack0xffffffa4,
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
                     );
-  if (bVar17 == 0) goto code_?;
-  pDVar16 = (this->fields).indicators;
-  if ((pDVar16 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) ||
+  if (bVar18 == 0) goto code_?;
+  pDVar17 = (this->fields).indicators;
+  if ((pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) ||
      (this_02 = (Component *)
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar16,(int32_t)key_00,
+                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,(int32_t)key_00,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_
                           ), this_02 == (Component *)0x0)) goto code_?;
   method_00 = (MethodInfo *)&UNK_?;
@@ -351,11 +351,11 @@ code_?:
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
             ((Object_1 *)obj,(MethodInfo *)0x0);
-  pDVar16 = (this->fields).indicators;
-  if (pDVar16 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) goto code_?;
+  pDVar17 = (this->fields).indicators;
+  if (pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) goto code_?;
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
   Dictionary_2_System_Int32_System_Object__Remove
-            ((Dictionary_2_System_Int32_System_Object_ *)pDVar16,(int32_t)key_00,
+            ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,(int32_t)key_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__Remove_int_
             );
   goto code_?;
@@ -372,9 +372,9 @@ code_?:
       func_?();
       cRam_? = '\x01';
     }
-    pPVar20 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
-    if (pPVar20 == (PlanetOwnershipsManager *)0x0) goto code_?;
-    if ((pPVar20->fields)._RecievedPlanetOwnershipData_k__BackingField != 0) {
+    pPVar21 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
+    if (pPVar21 == (PlanetOwnershipsManager *)0x0) goto code_?;
+    if ((pPVar21->fields)._RecievedPlanetOwnershipData_k__BackingField != 0) {
       LocationIndicatorsManager_SetIndicatorsOwnership(this,(MethodInfo *)0x0);
     }
   }
@@ -413,8 +413,11 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
                (LocationIndicatorsManager *this,MethodInfo *method)
 
 {
-  puVar1 = (undefined *)*unaff_FS_OFFSET;
+  this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff0;
+  pMVar1 = (MethodInfo *)&stack0xffffffbc;
+  method_00 = (MethodInfo *)&stack0xffffffbc;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
@@ -442,6 +445,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
+    method_00 = pMVar1;
   }
   bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if ((bVar2 != 0) &&
@@ -451,8 +455,8 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
       func_?();
       cRam_? = '\x01';
     }
-    in_stack_4 =
-         (MethodInfo *)TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
+    method_00 = (MethodInfo *)
+                TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
     this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?();
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
@@ -461,10 +465,9 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
               (this_02,(Object *)this,
                MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
                ,(MethodInfo *)0x0);
-    if (in_stack_4 == (MethodInfo *)0x0) goto code_?;
-    puVar1 = (undefined *)0x0;
+    if (method_00 == (MethodInfo *)0x0) goto code_?;
     PlanetOwnershipsManager::PlanetOwnershipsManager_remove_OnReceivedPlanetOwnershipData
-              ((PlanetOwnershipsManager *)in_stack_4,
+              ((PlanetOwnershipsManager *)method_00,
                (Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
                 *)this_02,(MethodInfo *)0x0);
   }
@@ -484,59 +487,60 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
      this_03 !=
      (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
       *)0x0)) {
-    pDVar5 = mscorlib.dll::System::Collections::Generic::
+    pDVar4 = mscorlib.dll::System::Collections::Generic::
              Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
              StyleSheetCache+SheetHandleKey,System::Object]::
              Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                         *)&stack0xffffffd4,
+                         *)&stack0xffffffdc,
                         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                          *)this_03,
                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_LocationIndicator>__GetEnumerator__
                        );
-    key = pDVar5->_currentValue;
+    key = pDVar4->_currentValue;
     while( true ) {
       bVar2 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::UInt32,System
               ::Object]::
               Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                         ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                          *)&stack0xffffffc4,
+                          *)&stack0xffffffc8,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_LocationIndicator>__MoveNext__
                         );
       if (bVar2 == 0) {
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc4,
+                  ((Object *)&stack0xffffffc8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_LocationIndicator>__Dispose__
-                   ,in_stack_4);
-        *unaff_FS_OFFSET = puVar1;
+                   ,method_00);
+        *unaff_FS_OFFSET = this_02;
         return;
       }
       this_01 = (this->fields).indicators;
       if ((this_01 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) ||
-         (this_04 = (Component *)
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                    Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                              ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_
-                              ), this_04 == (Component *)0x0)) break;
-      in_stack_4 =
-           (MethodInfo *)
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     (this_04,(MethodInfo *)0x0);
+         (this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
+                       ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,
+                                  MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_
+                                 ),
+         this_02 ==
+         (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)0x0)) break;
+      method_00 = (MethodInfo *)&UNK_?;
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this_02,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      puVar1 = &UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)in_stack_4,(MethodInfo *)0x0);
+                ((Object_1 *)obj,(MethodInfo *)0x0);
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

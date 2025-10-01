@@ -11,7 +11,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_AddCube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0xab54);
+    func_?(0x8a30);
     cRam_? = '\x01';
   }
   pCVar4 = (this->fields)._SelectedCube_k__BackingField;
@@ -50,7 +50,7 @@ code_?:
             IVar14.x = uVar12;
             this._2_2_ = (pCVar4->fields).iLocalPos.z;
             if (cRam_? == '\0') {
-              this._2_2_ = 0x11b4;
+              this._2_2_ = 0x11b5;
               func_?();
               func_?();
               cRam_? = '\x01';
@@ -402,29 +402,31 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_DoPickin
   VStack_5.y = (pVVar4->zeroVector).y;
   VStack_5.z = (pVVar4->zeroVector).z;
   bVar3 = DrawPlane::DrawPlane_Pick(&VStack_5,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
-    return pCStack_2;
-  }
-  this_00 = (this->fields).mainCamera;
-  if ((this_00 != (Camera *)0x0) &&
-     (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-              ((Vector3 *)&stack0xffffffd0,this_01,(MethodInfo *)0x0);
-    fVar6 = (float10)func_?();
-    if (pCStack_2 != (CubePickingInfo *)0x0) {
-      fStack_7 = (float)fVar6 - _UNK_?;
+  if (bVar3 != 0) {
+    this_00 = (this->fields).mainCamera;
+    if ((this_00 != (Camera *)0x0) &&
+       (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0))
+    {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                ((Vector3 *)&stack0xffffffd4,this_01,(MethodInfo *)0x0);
       fVar6 = (float10)func_?();
-      if ((float)fVar6 <= fStack_7) {
-        return pCStack_2;
+      pCVar1 = pCStack_2;
+      if (pCStack_2 != (CubePickingInfo *)0x0) {
+        pCStack_2 = (CubePickingInfo *)((float)fVar6 - _UNK_?);
+        fVar6 = (float10)func_?();
+        if ((float)pCStack_2 < (float)fVar6) {
+          return (CubePickingInfo *)0x0;
+        }
+        return pCVar1;
       }
-      return (CubePickingInfo *)0x0;
     }
+    func_?();
+    pcVar7 = (code *)swi(3);
+    pCVar1 = (CubePickingInfo *)(*pcVar7)();
+    return pCVar1;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pCVar1 = (CubePickingInfo *)(*pcVar8)();
-  return pCVar1;
+  return pCStack_2;
 }
 
 
@@ -457,7 +459,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0xabd4);
+    func_?(0x8ab0);
     cRam_? = '\x01';
   }
   if (action == AudioActions__Enum_CubeAdded) {

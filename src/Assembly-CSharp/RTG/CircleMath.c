@@ -341,12 +341,12 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Raycast
   PStack_1.m_Normal.x = pVVar4->x;
   PStack_1.m_Normal.y = pVVar4->y;
   PStack_1.m_Normal.z = pVVar4->z;
-  ray_00.m_Direction.z = ray.m_Direction.z;
-  ray_00.m_Direction.y = ray.m_Direction.y;
   PStack_1.m_Distance =
        (float)((uint)(circleCenter.y * PStack_1.m_Normal.y + circleCenter.x * PStack_1.m_Normal.x
                      + circleCenter.z * PStack_1.m_Normal.z) ^
               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  ray_00.m_Direction.z = ray.m_Direction.z;
+  ray_00.m_Direction.y = ray.m_Direction.y;
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
   ray_00.m_Origin.z = ray.m_Origin.z;
@@ -375,10 +375,10 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Raycast
      ((float)((uint)(ray.m_Direction.x * circleNormal.x + ray.m_Direction.y * circleNormal.y +
                     ray.m_Direction.z * circleNormal.z) & _UNK_?) < _UNK_?)) {
     PStack_1.m_Distance = circleCenter.z + circleNormal.z * epsilon._extrudeEps;
-    fStack_6 = 0.0;
-    fStack_7 = 0.0;
     ray_01.m_Direction.z = ray.m_Direction.z;
     ray_01.m_Direction.y = ray.m_Direction.y;
+    fStack_6 = 0.0;
+    fStack_7 = 0.0;
     ray_01.m_Origin.y = ray.m_Origin.y;
     ray_01.m_Origin.x = ray.m_Origin.x;
     ray_01.m_Origin.z = ray.m_Origin.z;
@@ -389,10 +389,8 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Raycast
     cylinderAxisPt1.y = circleCenter.y + circleNormal.y * epsilon._extrudeEps;
     cylinderAxisPt1.x = circleCenter.x + circleNormal.x * epsilon._extrudeEps;
     cylinderAxisPt1.z = PStack_1.m_Distance;
-    cylinderRadius = fStack_2;
-    fStack_2 = circleNormal.z * epsilon._extrudeEps;
     bVar8 = CylinderMath::CylinderMath_Raycast
-                      (ray_01,t,cylinderAxisPt0,cylinderAxisPt1,cylinderRadius,(CylinderEpsilon)0x0,
+                      (ray_01,t,cylinderAxisPt0,cylinderAxisPt1,fStack_2,(CylinderEpsilon)0x0,
                        (MethodInfo *)0x0);
     return bVar8;
   }
@@ -407,47 +405,60 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_RaycastWire
                CircleEpsilon epsilon,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
+  uStack_1 = (ulonglong)(uint)uStack_1;
   *t = 0.0;
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-            ((Vector3 *)&stack0xffffffc0,circleNormal,(MethodInfo *)0x0);
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_3,circleNormal,(MethodInfo *)0x0);
+  uStack_4._0_4_ = pVVar2->x;
+  uStack_4._4_4_ = pVVar2->y;
+  fStack_5 = pVVar2->z;
   ray_00.m_Direction.z = ray.m_Direction.z;
   ray_00.m_Direction.y = ray.m_Direction.y;
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
   ray_00.m_Origin.z = ray.m_Origin.z;
   ray_00.m_Direction.x = ray.m_Direction.x;
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                    ((Plane *)&stack0xffffffd0,ray_00,&fStack_1,(MethodInfo *)circleCenter.x);
-  if (bVar2 != 0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-              ((Vector3 *)&stack0xffffffc0,&ray,fStack_1,(MethodInfo *)0x0);
-    fVar3 = (float10)func_?();
-    if ((circleRadius - epsilon._wireEps <= (float)fVar3) &&
-       ((float)fVar3 <= epsilon._wireEps + circleRadius)) {
-      *t = fStack_1;
+  bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+                    ((Plane *)&stack0xffffffb8,ray_00,(float *)((int)&uStack_1 + 4),
+                     (MethodInfo *)circleCenter.x);
+  if (bVar6 != 0) {
+    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                       (&VStack_3,&ray,uStack_1._4_4_,(MethodInfo *)0x0);
+    uVar7 = pVVar2->x;
+    uVar8 = pVVar2->y;
+    VStack_3.z = circleCenter.z - pVVar2->z;
+    uStack_4 = CONCAT44(circleCenter.y - (float)uVar8,circleCenter.x - (float)uVar7);
+    fStack_5 = VStack_3.z;
+    fVar9 = (float10)func_?();
+    if ((circleRadius - epsilon._wireEps <= (float)fVar9) &&
+       ((float)fVar9 <= epsilon._wireEps + circleRadius)) {
+      *t = uStack_1._4_4_;
       return 1;
     }
   }
   if (epsilon._extrudeEps != 0.0) {
     if ((float)((uint)(ray.m_Direction.x * circleNormal.x + ray.m_Direction.y * circleNormal.y +
                       ray.m_Direction.z * circleNormal.z) & _UNK_?) < _UNK_?) {
+      fStack_5 = circleCenter.z - circleNormal.z * epsilon._extrudeEps;
+      fStack_10 = circleCenter.y + circleNormal.y * epsilon._extrudeEps;
+      VStack_3.z = circleCenter.z + circleNormal.z * epsilon._extrudeEps;
       ray_01.m_Direction.z = ray.m_Direction.z;
       ray_01.m_Direction.y = ray.m_Direction.y;
+      uStack_1 = 0;
       ray_01.m_Origin.y = ray.m_Origin.y;
       ray_01.m_Origin.x = ray.m_Origin.x;
       ray_01.m_Origin.z = ray.m_Origin.z;
       ray_01.m_Direction.x = ray.m_Direction.x;
       cylinderAxisPt0.y = circleCenter.y - circleNormal.y * epsilon._extrudeEps;
       cylinderAxisPt0.x = circleCenter.x - circleNormal.x * epsilon._extrudeEps;
-      cylinderAxisPt0.z = epsilon._wireEps + circleRadius;
-      cylinderAxisPt1.y = circleCenter.y + circleNormal.y * epsilon._extrudeEps;
+      cylinderAxisPt0.z = fStack_5;
+      cylinderAxisPt1.y = fStack_10;
       cylinderAxisPt1.x = circleCenter.x + circleNormal.x * epsilon._extrudeEps;
-      cylinderAxisPt1.z = circleCenter.z + circleNormal.z * epsilon._extrudeEps;
-      bVar2 = CylinderMath::CylinderMath_Raycast
+      cylinderAxisPt1.z = VStack_3.z;
+      bVar6 = CylinderMath::CylinderMath_Raycast
                         (ray_01,t,cylinderAxisPt0,cylinderAxisPt1,epsilon._wireEps + circleRadius,
                          (CylinderEpsilon)0x0,(MethodInfo *)0x0);
-      return bVar2;
+      return bVar6;
     }
   }
   return 0;

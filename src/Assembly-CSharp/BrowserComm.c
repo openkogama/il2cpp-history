@@ -261,6 +261,41 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_PublishPlanetFromWeb
 }
 
 
+/* Void SetMute(String) */
+
+void Assembly-CSharp.dll::BrowserComm::BrowserComm_SetMute
+               (BrowserComm *this,String *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?();
+    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    func_?(&TypeInfo__MainCameraManager);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  pOVar1 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                     (data,
+                      BrowserComm__JsonMuteData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<BrowserComm::JsonMuteData>_System__String_
+                     );
+  if (pOVar1 != (Object *)0x0) {
+    muteTemporarily = *(bool *)&pOVar1[1].klass;
+    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    MainCameraManager::MainCameraManager_TemporaryMute(muteTemporarily,(MethodInfo *)0x0);
+    return;
+  }
+  uVar2 = func_?(&stack0xfffffff8);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
 /* Void UserGoldUpdate(String) */
 
 void Assembly-CSharp.dll::BrowserComm::BrowserComm_UserGoldUpdate

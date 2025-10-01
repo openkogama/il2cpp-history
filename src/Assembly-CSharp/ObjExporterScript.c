@@ -378,13 +378,13 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
                                   (pSVar2,pSVar5,(MethodInfo *)0x0);
                         pCVar19 = pCStack_7;
                       }
-                      submesh = (Vector3 *)0x0;
+                      pVVar21 = (Vector3__Array *)0x0;
                       pCStack_7 = (Color__Array *)pMStack_1->vector;
                       while( true ) {
-                        pVStack_8 = submesh;
+                        pVStack_11 = pVVar21;
                         iVar27 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::
                                  Mesh_get_subMeshCount(this,(MethodInfo *)0x0);
-                        if (iVar27 <= (int)submesh) {
+                        if (iVar27 <= (int)pVVar21) {
                           pSVar5 = (String *)
                                    (*(code *)(pSVar2->klass->vtable).ToString.method)
                                              (pSVar2,(pSVar2->klass->vtable).
@@ -398,7 +398,8 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
                         pSVar4 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                            (pSVar2,StringLiteral_usemtl_,(MethodInfo *)0x0);
                         if (pMStack_1 == (Material__Array *)0x0) break;
-                        if ((undefined8 *)pMStack_1->max_length <= submesh) goto code_?;
+                        if ((Vector3__Array *)pMStack_1->max_length <= pVVar21)
+                        goto code_?;
                         if (((pCStack_7->klass == (Color__Array__Class *)0x0) ||
                             (pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::
                                       Object_1_get_name((Object_1 *)pCStack_7->klass,
@@ -411,7 +412,8 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
                                   (pSVar4,StringLiteral_u000A,(MethodInfo *)0x0);
                         pSVar2 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                            (pSVar2,StringLiteral_usemap_,(MethodInfo *)0x0);
-                        if ((undefined8 *)pMStack_1->max_length <= submesh) goto code_?;
+                        if ((Vector3__Array *)pMStack_1->max_length <= pVVar21)
+                        goto code_?;
                         if (((pCStack_7->klass == (Color__Array__Class *)0x0) ||
                             (pSVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::
                                       Object_1_get_name((Object_1 *)pCStack_7->klass,
@@ -423,31 +425,35 @@ String * Assembly-CSharp.dll::ObjExporterScript::ObjExporterScript_MeshToString
                         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                   (pSVar2,StringLiteral_u000A,(MethodInfo *)0x0);
                         pIVar28 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_GetTriangles
-                                            (this,(int32_t)submesh,(MethodInfo *)0x0);
-                        piVar29 = pIVar28->vector + 2;
+                                            (this,(int32_t)pVVar21,(MethodInfo *)0x0);
+                        pVVar29 = (Vector3 *)(pIVar28->vector + 2);
                         uVar30 = 0;
+                        pVStack_8 = pVVar29;
                         if (pIVar28 == (Int32__Array *)0x0) break;
-                        for (; (int)uVar30 < (int)pIVar28->max_length; uVar30 = uVar30 + 3) {
+                        for (; pVStack_8 = pVVar29, (int)uVar30 < (int)pIVar28->max_length;
+                            uVar30 = uVar30 + 3) {
                           if (pIVar28->max_length <= uVar30) goto code_?;
-                          pCStack_20 = (Color__Array *)(piVar29[-2] + 1);
-                          pVStack_11 = (Vector3__Array *)
-                                       func_?(TypeInfo__System__Int32,&pCStack_20);
+                          pCStack_20 = (Color__Array *)
+                                       ((int)&(*(Il2CppArrayBounds **)((int)(pVVar29 + -1) + 4))->
+                                              length + 1);
+                          pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&pCStack_20);
                           if (pIVar28->max_length <= uVar30 + 1) goto code_?;
-                          pVStack_6 = (Vector3__Array *)(piVar29[-1] + 1);
+                          pVStack_6 = (Vector3__Array *)
+                                       (*(il2cpp_array_size_t *)((int)(pVVar29 + -1) + 8) + 1);
                           pMStack_13 = (Material *)
                                        func_?(TypeInfo__System__Int32,&pVStack_6);
+                          pVVar29 = pVStack_8;
                           if (pIVar28->max_length <= uVar30 + 2) goto code_?;
-                          pMStack_15 = (Material *)(*piVar29 + 1);
-                          pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&pMStack_15);
+                          pMStack_15 = (Material *)((int)pVStack_8->x + 1);
+                          pOVar14 = (Object *)func_?(TypeInfo__System__Int32,&pMStack_15);
                           pSVar5 = mscorlib.dll::System::String::String_Format_2
-                                             (StringLiteral_f__0___0___0___1___1___1___2___2,
-                                              (Object *)pVStack_11,(Object *)pMStack_13,pOVar12,
-                                              (MethodInfo *)0x0);
+                                             (StringLiteral_f__0___0___0___1___1___1___2___2,pOVar12,
+                                              (Object *)pMStack_13,pOVar14,(MethodInfo *)0x0);
                           mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                                     (pSStack_3,pSVar5,(MethodInfo *)0x0);
-                          piVar29 = piVar29 + 3;
+                          pVVar29 = pVVar29 + 1;
                         }
-                        submesh = (Vector3 *)((int)&pVStack_8->x + 1);
+                        pVVar21 = (Vector3__Array *)((int)&pVStack_11->klass + 1);
                         pCStack_7 = (Color__Array *)&pCStack_7->monitor;
                         pSVar2 = pSStack_3;
                       }

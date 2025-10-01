@@ -412,7 +412,7 @@ code_?:
         dVar25 = SQRT(dVar25);
       }
       fVar11 = (float)dVar25;
-      fVar10 = 3.9821484e-29 / fVar11;
+      fVar10 = 3.9859618e-29 / fVar11;
       fStack_23 = fStack_23 / fVar11;
       uVar19._4_4_ = fStack_23;
       uVar19._0_4_ = in_stack_24 / fVar11;

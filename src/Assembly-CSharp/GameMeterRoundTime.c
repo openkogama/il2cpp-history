@@ -346,9 +346,9 @@ code_?:
 }
 
 
-/* Void SetGameMeterVisibility() */
+/* Boolean SetGameMeterVisibility() */
 
-void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVisibility
+bool Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVisibility
                (GameMeterRoundTime *this,MethodInfo *method)
 
 {
@@ -380,7 +380,7 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
           (*(code *)(pTVar2->klass->vtable).set_text.method)
                     (pTVar2,::StringLiteral__,
                      (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-          return;
+          return 0;
         }
       }
     }
@@ -408,13 +408,13 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
               arg0 = (Object *)func_?();
               arg1 = (Object *)func_?();
               pSVar9 = mscorlib.dll::System::String::String_Format_1
-                                 (StringLiteral__0_00___1_00_,arg0,arg1,(MethodInfo *)0x0);
+                                  (StringLiteral__0_00___1_00_,arg0,arg1,(MethodInfo *)0x0);
               if (pTVar2 == (Text *)0x0) goto code_?;
               (*(code *)(pTVar2->klass->vtable).set_text.method)
                         (pTVar2,pSVar9,
                          (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             }
-            return;
+            return 1;
           }
         }
       }
@@ -423,8 +423,8 @@ void Assembly-CSharp.dll::GameMeterRoundTime::GameMeterRoundTime_SetGameMeterVis
 code_?:
   func_?();
   pcVar10 = (code *)swi(3);
-  (*pcVar10)();
-  return;
+  bVar11 = (*pcVar10)();
+  return bVar11;
 }
 
 

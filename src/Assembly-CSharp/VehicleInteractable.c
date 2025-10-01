@@ -1,4 +1,6 @@
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void AddModifier(AvatarModifierPackageType, Int32, AvatarModifierPackage+AvatarModifier[]) */
 
 void Assembly-CSharp.dll::VehicleInteractable::VehicleInteractable_AddModifier
@@ -228,10 +230,17 @@ code_?:
   }
   uVar9 = func_?();
 code_?:
-  func_?(uVar9);
-  cRam_? = (cRam_? - extraout_DL) + -0x28;
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar13 = (char *)func_?(uVar9);
+  *pcVar13 = *pcVar13 - extraout_DL;
+  if ((POPCOUNT(*pcVar13) & 1U) == 0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *pcVar13 = *pcVar13 - extraout_DL;
+  out(0x28,(char)pcVar13);
+  out(0x28,(char)pcVar13);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

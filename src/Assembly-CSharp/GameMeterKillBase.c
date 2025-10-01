@@ -45,33 +45,6 @@ int32_t Assembly-CSharp.dll::GameMeterKillBase::GameMeterKillBase_GetCount
 }
 
 
-/* Void Initialize() */
-
-void Assembly-CSharp.dll::GameMeterKillBase::GameMeterKillBase_Initialize
-               (GameMeterKillBase *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppSStack_1 = &::StringLiteral__;
-    func_?();
-    cRam_? = '\x01';
-  }
-  pTStack_2 = (this->fields).killsText;
-  if (pTStack_2 != (Text *)0x0) {
-    ppSStack_1 = (String **)(pTStack_2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-    pSStack_3 = ::StringLiteral__;
-    (*(code *)(pTStack_2->klass->vtable).set_text.method)();
-    return;
-  }
-  ppSStack_1 = (String **)&stack0xfffffffc;
-  uVar4 = func_?(&pTStack_2);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
 /* Void SetCount(GameStatCounterType, Int32) */
 
 void Assembly-CSharp.dll::GameMeterKillBase::GameMeterKillBase_SetCount

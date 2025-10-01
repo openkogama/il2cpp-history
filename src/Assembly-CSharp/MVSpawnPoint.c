@@ -128,8 +128,6 @@ Vector3 * Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_GetClosestGridPoint
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void Initialize() */
 
 void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
@@ -155,11 +153,11 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
   (pMVar1->fields).isInWorld = 1;
   if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
     bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                       (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                       );
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
     if (bVar3 != 0) {
       pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (pMVar1->fields)._._._.data;
@@ -169,35 +167,33 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
       ;
       TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                        (pDVar2,(Object *)StringLiteral_onlyFirstSpawn,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
       if (TVar4.m_Index != 0) {
         TVar5.m_Index = 0;
         if (*(Boolean__Class **)TVar4.m_Index == TypeInfo__System__Boolean) {
           TVar5 = TVar4;
         }
         if (TVar5.m_Index != 0) {
-          pIVar6 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20);
-          pIVar7 = (TypeInfo__System__Boolean->_0).element_class;
-          bVar8 = pIVar6 < pIVar7;
-          uVar9 = SBORROW4((int)pIVar6,(int)pIVar7);
-          if (pIVar6 != pIVar7) goto code_?;
+          pIVar6 = (TypeInfo__System__Boolean->_0).element_class;
+          cVar7 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar6;
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar6) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar10 = (int8_t *)func_?();
+          piVar8 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar10,
+                    ((Nullable_1_SByte_ *)&this,*piVar8,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar11 != (MVNetworkGame *)0x0) {
-      this_00 = (MethodInfo *)(pMVar11->fields).teamManager;
+    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar9 != (MVNetworkGame *)0x0) {
+      this_00 = (MethodInfo *)(pMVar9->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -224,54 +220,30 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
     }
   }
 code_?:
-  uVar9 = 0;
-  bVar8 = 0;
+  cVar7 = '\0';
   func_?();
   TVar4.m_Index = (int32_t)extraout_EDX;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
-  uVar12 = func_?();
-  this = (MVSpawnPoint *)CONCAT22(this._2_2_,in_DS);
-  if (!(bool)uVar9) {
+  func_?();
+  pcVar10 = (char *)((int)pMVar1 * 2 + 0x36950510);
+  *pcVar10 = *pcVar10 + '\x01';
+  pcVar10 = (char *)(extraout_EDX_00 * 4 + -0x6aecefca);
+  *pcVar10 = *pcVar10 + extraout_CL + cVar7;
+  in((short)extraout_EDX_00);
+  switch(this) {
+  case (MVSpawnPoint *)0x27:
+    return;
+  case (MVSpawnPoint *)0x28:
+    return;
+  case (MVSpawnPoint *)0x29:
+    return;
+  case (MVSpawnPoint *)0x2a:
+    return;
+  default:
     return;
   }
-  bVar13 = (byte)((ulonglong)uVar12 >> 8);
-  bVar14 = SCARRY1(bRam_?,bVar13);
-  bVar15 = bRam_? + bVar13;
-  bVar16 = CARRY1(bRam_?,bVar13) || CARRY1(bVar15,bVar8);
-  bRam_? = bVar15 + bVar8;
-  if (bVar14 == SCARRY1(bVar15,bVar8)) {
-    *(char *)uVar12 = *(char *)uVar12 + (char)uVar12;
-  }
-  else {
-    cVar17 = (char)((ulonglong)uVar12 >> 0x28);
-    cVar18 = *unaff_EBX;
-    cVar19 = *unaff_EBX + cVar17;
-    *unaff_EBX = cVar19 + bVar16;
-    if (SCARRY1(cVar18,cVar17) == SCARRY1(cVar19,bVar16)) {
-      pbVar20 = (byte *)(extraout_ECX + 0x71931036 + (int)pMVar1 * 2);
-      bVar8 = *pbVar20;
-      *pbVar20 = *pbVar20 + (byte)extraout_ECX;
-      pcVar21 = (char *)((int)((ulonglong)uVar12 >> 0x20) + -0x33efc98f);
-      *pcVar21 = *pcVar21 + (char)unaff_EBX + CARRY1(bVar8,(byte)extraout_ECX);
-      pcVar22 = (code *)swi(3);
-      (*pcVar22)();
-      return;
-    }
-    in((short)((ulonglong)uVar12 >> 0x20));
-    switch(this) {
-    case (MVSpawnPoint *)0x27:
-      return;
-    case (MVSpawnPoint *)0x28:
-      return;
-    case (MVSpawnPoint *)0x29:
-      return;
-    case (MVSpawnPoint *)0x2a:
-      return;
-    }
-  }
-  return;
 }
 
 

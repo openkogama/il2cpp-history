@@ -432,13 +432,11 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_OnUpdate(MVGameCoin *this,Metho
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)pRVar2,0,(MethodInfo *)0x0);
       }
-      fVar4 = (this->fields).pickedUpTime;
-      fVar6 = (this->fields).pickedUpStateDuration;
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+      fVar4 = (this->fields).pickedUpTime + (this->fields).pickedUpStateDuration;
+      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                         ((MethodInfo *)0x0);
-      fVar7 = fVar7 - (fVar6 + fVar4);
       pfVar5 = &(this->fields).reshowingStateDuration;
-      if (*pfVar5 <= fVar7 && fVar7 != *pfVar5) {
+      if (*pfVar5 <= fVar6 - fVar4 && fVar6 - fVar4 != *pfVar5) {
         (this->fields).state = 3;
       }
     }
@@ -462,8 +460,8 @@ void Assembly-CSharp.dll::MVGameCoin::MVGameCoin_OnUpdate(MVGameCoin *this,Metho
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

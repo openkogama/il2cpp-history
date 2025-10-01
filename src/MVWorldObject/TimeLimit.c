@@ -144,30 +144,18 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
     }
   }
   bVar4 = 0;
+  uVar5 = 0x10f1;
   func_?();
-  LOCK();
-  bVar5 = (byte)unaff_EBX;
-  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar4);
-  *extraout_EDX = *extraout_EDX + bVar5 + bVar4;
-  UNLOCK();
-  LOCK();
-  pbVar7 = extraout_EDX + -0x2a;
-  bVar8 = CARRY1(*pbVar7,bVar5) || CARRY1(*pbVar7 + bVar5,bVar6);
-  *pbVar7 = *pbVar7 + bVar5 + bVar6;
-  UNLOCK();
-  LOCK();
-  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar8);
-  *extraout_EDX = *extraout_EDX + bVar5 + bVar8;
-  UNLOCK();
-  LOCK();
-  bVar4 = *extraout_EDX;
-  bVar9 = *extraout_EDX;
-  *extraout_EDX = bVar9 + bVar5 + bVar6;
-  UNLOCK();
-  LOCK();
-  extraout_EDX[0x1a10f0d6] =
-       extraout_EDX[0x1a10f0d6] + bVar5 + (CARRY1(bVar4,bVar5) || CARRY1(bVar9 + bVar5,bVar6));
-  UNLOCK();
+  func_?(CONCAT22(uVar5,in_CS));
+  bVar6 = (byte)unaff_EBX;
+  bVar7 = CARRY1(*extraout_EDX,bVar6) || CARRY1(*extraout_EDX + bVar6,bVar4);
+  *extraout_EDX = *extraout_EDX + bVar6 + bVar4;
+  bVar4 = (byte)extraout_EDX + bVar6;
+  bVar8 = CARRY1((byte)extraout_EDX,bVar6) || CARRY1(bVar4,bVar7);
+  bVar4 = bVar4 + bVar7;
+  bVar9 = bVar4 + bVar6;
+  pcVar10 = (char *)(CONCAT31((int3)((uint)extraout_EDX >> 8),bVar9 + bVar8) + -1);
+  *pcVar10 = *pcVar10 + bVar6 + (CARRY1(bVar4,bVar6) || CARRY1(bVar9,bVar8));
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }
@@ -298,30 +286,18 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
     }
   }
   bVar4 = 0;
+  uVar5 = 0x10f1;
   func_?();
-  LOCK();
-  bVar5 = (byte)unaff_EBX;
-  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar4);
-  *extraout_EDX = *extraout_EDX + bVar5 + bVar4;
-  UNLOCK();
-  LOCK();
-  pbVar7 = extraout_EDX + -0x2a;
-  bVar8 = CARRY1(*pbVar7,bVar5) || CARRY1(*pbVar7 + bVar5,bVar6);
-  *pbVar7 = *pbVar7 + bVar5 + bVar6;
-  UNLOCK();
-  LOCK();
-  bVar6 = CARRY1(*extraout_EDX,bVar5) || CARRY1(*extraout_EDX + bVar5,bVar8);
-  *extraout_EDX = *extraout_EDX + bVar5 + bVar8;
-  UNLOCK();
-  LOCK();
-  bVar4 = *extraout_EDX;
-  bVar9 = *extraout_EDX;
-  *extraout_EDX = bVar9 + bVar5 + bVar6;
-  UNLOCK();
-  LOCK();
-  extraout_EDX[0x1a10f0d6] =
-       extraout_EDX[0x1a10f0d6] + bVar5 + (CARRY1(bVar4,bVar5) || CARRY1(bVar9 + bVar5,bVar6));
-  UNLOCK();
+  func_?(CONCAT22(uVar5,in_CS));
+  bVar6 = (byte)unaff_EBX;
+  bVar7 = CARRY1(*extraout_EDX,bVar6) || CARRY1(*extraout_EDX + bVar6,bVar4);
+  *extraout_EDX = *extraout_EDX + bVar6 + bVar4;
+  bVar4 = (byte)extraout_EDX + bVar6;
+  bVar8 = CARRY1((byte)extraout_EDX,bVar6) || CARRY1(bVar4,bVar7);
+  bVar4 = bVar4 + bVar7;
+  bVar9 = bVar4 + bVar6;
+  pcVar10 = (char *)(CONCAT31((int3)((uint)extraout_EDX >> 8),bVar9 + bVar8) + -1);
+  *pcVar10 = *pcVar10 + bVar6 + (CARRY1(bVar4,bVar6) || CARRY1(bVar9,bVar8));
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

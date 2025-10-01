@@ -176,7 +176,7 @@ void Assembly-CSharp.dll::BoneAnimation::BoneAnimation_ComputeAnimation
     if (pAVar2 == (AnimationData *)0x0) goto code_?;
     iVar4 = (pAVar2->fields).timeStamp;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__TransformNetworkManager);
+      func_?();
       cRam_? = '\x01';
     }
     if (iVar4 < TypeInfo__TransformNetworkManager->static_fields->_DelayedTime_k__BackingField) {
@@ -199,8 +199,9 @@ code_?:
          (pAVar7 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState
                              (pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0),
          pAVar7 == (AnimationState *)0x0)) goto code_?;
-      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_get_length
-                (pAVar7,(MethodInfo *)0x0);
+      fVar8 = (float)(iVar4 - iVar6) * _UNK_?;
+      fVar9 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
+              AnimationState_get_length(pAVar7,(MethodInfo *)0x0);
       pAVar2 = (this->fields).currentAnim;
       if ((pAVar2 == (AnimationData *)0x0) ||
          ((pAVar3 = (this->fields).avatarAnimation, pAVar3 == (Animation *)0x0 ||
@@ -208,15 +209,14 @@ code_?:
                               (pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0),
           pAVar7 == (AnimationState *)0x0)))) goto code_?;
       UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time
-                (pAVar7,((float)(iVar4 - iVar6) * _UNK_?) / 3.453384e-29,(MethodInfo *)0x0);
+                (pAVar7,fVar8 / fVar9,(MethodInfo *)0x0);
     }
-    pAStack8 = (this->fields).currentAnim;
-    (this->fields).prevAnim = pAStack8;
-    ppAStack9 = &(this->fields).prevAnim;
+    pAStack10 = (this->fields).currentAnim;
+    (this->fields).prevAnim = pAStack10;
+    ppAStack11 = &(this->fields).prevAnim;
     func_?();
-    ppAStack10 = &(this->fields).currentAnim;
     (this->fields).currentAnim = (AnimationData *)0x0;
-    puStack11 = (undefined *)0x0;
+    puStack12 = (undefined *)0x0;
     func_?();
   }
   return;
@@ -450,7 +450,8 @@ code_?:
          (pAVar9 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState
                              (pAVar6,(pAVar3->fields).state,(MethodInfo *)0x0),
          pAVar9 == (AnimationState *)0x0)) goto code_?;
-      fVar10 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
+      fVar10 = (float)(iVar2 - iVar8) * _UNK_?;
+      fVar11 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::
                AnimationState_get_length(pAVar9,(MethodInfo *)0x0);
       pAVar3 = (this->fields).currentAnim;
       if ((pAVar3 == (AnimationData *)0x0) ||
@@ -459,14 +460,14 @@ code_?:
                               (pAVar6,(pAVar3->fields).state,(MethodInfo *)0x0),
           pAVar9 == (AnimationState *)0x0)))) goto code_?;
       UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time
-                (pAVar9,((float)(iVar2 - iVar8) * _UNK_?) / fVar10,(MethodInfo *)0x0);
+                (pAVar9,fVar10 / fVar11,(MethodInfo *)0x0);
     }
-    pAStack11 = (this->fields).currentAnim;
-    (this->fields).prevAnim = pAStack11;
-    ppAStack12 = &(this->fields).prevAnim;
+    pAStack12 = (this->fields).currentAnim;
+    (this->fields).prevAnim = pAStack12;
+    ppAStack13 = &(this->fields).prevAnim;
     func_?();
     (this->fields).currentAnim = (AnimationData *)0x0;
-    puStack13 = (undefined *)0x0;
+    puStack14 = (undefined *)0x0;
     func_?();
   }
   return;

@@ -196,8 +196,7 @@ code_?:
             }
             if ((Il2CppClass *)pIVar17->lobounds <= pIVar18) break;
             value = (Object *)
-                    CONCAT13(*(uint8_t *)
-                              ((int)&(pIVar17 + 1)[-1].etype + (int)&(pIVar18->byval_arg).data),
+                    CONCAT13(*(uint8_t *)((int)&pIVar17->etype + (int)&(pIVar18->byval_arg).data),
                              value._0_3_);
             if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).
                 cctor_finished_or_no_cctor == 0) {

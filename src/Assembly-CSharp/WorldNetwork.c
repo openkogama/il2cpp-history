@@ -1201,52 +1201,44 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_HandleDeserializedWorldData
   switch(dataType & 0xff) {
   case KogamaDataType__Enum_Prototypes:
     pMVar1 = (this->fields)._.worldInventory;
-    bVar2 = pMVar1 == (MVWorldInventory *)0x0;
-    if (!bVar2) {
+    if (pMVar1 != (MVWorldInventory *)0x0) {
       MVWorldInventory::MVWorldInventory_AddPrototype(pMVar1,data,(MethodInfo *)0x0);
       return;
     }
     break;
   case KogamaDataType__Enum_WorldObjects:
     this_00 = (this->fields)._.worldObjectClientManager;
-    bVar2 = this_00 == (MVWorldObjectClientManagerNetwork *)0x0;
-    if (!bVar2) {
-      pMVar1 = (this->fields)._.worldInventory;
-      bVar2 = pMVar1 == (MVWorldInventory *)0x0;
-      if (!bVar2) {
-        this_01 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
-                            (data,(this_00->fields)._.worldObjects,
-                             (pMVar1->fields).runtimePrototypes,(MethodInfo *)0x0);
-        if (this_01 == (MVWorldObjectClient *)0x0) {
+    if ((this_00 != (MVWorldObjectClientManagerNetwork *)0x0) &&
+       (pMVar1 = (this->fields)._.worldInventory, pMVar1 != (MVWorldInventory *)0x0)) {
+      this_01 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
+                          (data,(this_00->fields)._.worldObjects,(pMVar1->fields).runtimePrototypes,
+                           (MethodInfo *)0x0);
+      if (this_01 == (MVWorldObjectClient *)0x0) {
 code_?:
-          MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_AddToWorldObjects
-                    (this_00,this_01,(MethodInfo *)0x0);
-          return;
-        }
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        bVar2 = pMVar3 == (MVNetworkGame *)0x0;
-        if (!bVar2) {
-          pOVar4 = (Object *)(this_01->fields)._.id;
-          pTVar5 = (pMVar3->fields).transformNetworkManager;
-          bVar2 = pTVar5 == (TransformNetworkManager *)0x0;
-          unaff_EBX = (char *)0x0;
-          if (!bVar2) {
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            pOVar4 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
-                     CollectionExtensions_GetValueOrDefault_1
-                               ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
-                                (pTVar5->fields).networkedObjects,pOVar4,
-                                MVNetworkObject_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_MVNetworkObject>_System__Collections__Generic__IReadOnlyDictionary<int,_MVNetworkObject>__int_
-                               );
-            if (pOVar4 == (Object *)0x0) {
-              MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(this_01,0,(MethodInfo *)0x0)
-              ;
-            }
-            goto code_?;
+        MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_AddToWorldObjects
+                  (this_00,this_01,(MethodInfo *)0x0);
+        return;
+      }
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar2 != (MVNetworkGame *)0x0) {
+        pOVar3 = (Object *)(this_01->fields)._.id;
+        pTVar4 = (pMVar2->fields).transformNetworkManager;
+        unaff_EBX = 0;
+        if (pTVar4 != (TransformNetworkManager *)0x0) {
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
           }
+          pOVar3 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+                   CollectionExtensions_GetValueOrDefault_1
+                             ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                              (pTVar4->fields).networkedObjects,pOVar3,
+                              MVNetworkObject_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_MVNetworkObject>_System__Collections__Generic__IReadOnlyDictionary<int,_MVNetworkObject>__int_
+                             );
+          if (pOVar3 == (Object *)0x0) {
+            MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(this_01,0,(MethodInfo *)0x0);
+          }
+          goto code_?;
         }
       }
     }
@@ -1259,14 +1251,10 @@ code_?:
   default:
     return;
   }
-  bVar6 = false;
-  func_?();
-  if (!bVar6 && !bVar2) {
-    do {
-                    /* WARNING: Do nothing block with infinite loop */
-    } while( true );
-  }
-  *unaff_EBX = *unaff_EBX + (char)((uint)unaff_EBX >> 8) + bVar6;
+  cVar5 = '\0';
+  uVar6 = func_?();
+  out(0x95,uVar6);
+  *(char *)(unaff_EBX + -0x42ef976a) = *(char *)(unaff_EBX + -0x42ef976a) + extraout_CH + cVar5;
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;

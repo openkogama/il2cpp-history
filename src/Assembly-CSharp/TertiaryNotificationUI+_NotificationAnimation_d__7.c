@@ -1,6 +1,4 @@
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Boolean MoveNext() */
 
 bool Assembly-CSharp.dll::TertiaryNotificationUI+<NotificationAnimation>d__7::
@@ -9,7 +7,7 @@ bool Assembly-CSharp.dll::TertiaryNotificationUI+<NotificationAnimation>d__7::
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__UnityEngine__WaitForSeconds);
     cRam_? = '\x01';
   }
@@ -72,7 +70,7 @@ bool Assembly-CSharp.dll::TertiaryNotificationUI+<NotificationAnimation>d__7::
         obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this_00,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__UnityEngine__Object);
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                   ((Object_1 *)obj,(MethodInfo *)0x0);
@@ -109,8 +107,9 @@ code_?:
   default:
     goto code_?;
   }
-  uVar9 = func_?(&stack0xfffffff8);
-  func_?(uVar9);
+  func_?();
+  uVar9 = in(extraout_DX);
+  *unaff_EDI = uVar9;
   pcVar10 = (code *)swi(3);
   bVar11 = (*pcVar10)();
   return bVar11;

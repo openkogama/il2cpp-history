@@ -164,43 +164,41 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Inp
   pSVar3 = (pSVar1->fields).slider;
   this = (SkillSettingFloatDecimal *)(float)dVar2;
   if (pSVar3 != (Slider *)0x0) {
-    pMVar4 = (pSVar3->klass->vtable).get_value.method;
-    uStack_5 = (double)CONCAT44(pMVar4,(undefined4)uStack_5);
-    fVar6 = (float10)(*(code *)pMVar4)();
-    pSVar7 = pSVar3->klass;
-    uStack_5 = (double)(float)(fVar6 * (float10)(float)this);
-    fVar6 = (float10)func_?(uStack_5,(pSVar7->vtable).SetValueWithoutNotify.methodPtr);
-    uStack_5 = (double)fVar6;
-    (*(code *)(pSVar7->vtable).set_value.method)(pSVar3,(float)fVar6 / (float)this);
-    pIVar8 = (pSVar1->fields).inputField;
+    SStack_4.m_value = (float)(pSVar3->klass->vtable).get_value.method;
+    fVar5 = (float10)(*(code *)SStack_4.m_value)(pSVar3,(pSVar3->klass->vtable).set_value.methodPtr)
+    ;
+    fVar5 = (float10)func_?((double)(fVar5 * (float10)(float)this));
+    SStack_4.m_value = (float)fVar5;
+    (*(code *)(pSVar3->klass->vtable).set_value.method)
+              (pSVar3,SStack_4.m_value / (float)this,
+               (pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr);
+    pIVar6 = (pSVar1->fields).inputField;
     this = (SkillSettingFloatDecimal *)0x0;
-    if (pIVar8 != (InputField *)0x0) {
+    if (pIVar6 != (InputField *)0x0) {
       mscorlib.dll::System::Single::Single_TryParse
-                ((pIVar8->fields).m_Text,(float *)&this,(MethodInfo *)0x0);
+                ((pIVar6->fields).m_Text,(float *)&this,(MethodInfo *)0x0);
       pSVar3 = (pSVar1->fields).slider;
       if (pSVar3 != (Slider *)0x0) {
         (*(code *)(pSVar3->klass->vtable).set_value.method)
                   (pSVar3,this,(pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr);
         pSVar3 = (pSVar1->fields).slider;
-        pIVar8 = (pSVar1->fields).inputField;
+        pIVar6 = (pSVar1->fields).inputField;
         if (pSVar3 != (Slider *)0x0) {
           this = (SkillSettingFloatDecimal *)(pSVar3->klass->vtable).get_value.method;
-          fVar6 = (float10)(*(code *)this)();
-          uStack_5 = (double)CONCAT44((float)fVar6,(undefined4)uStack_5);
-          value = mscorlib.dll::System::Single::Single_ToString
-                            ((Single *)((int)&uStack_5 + 4),(MethodInfo *)0x0);
-          if (pIVar8 != (InputField *)0x0) {
+          fVar5 = (float10)(*(code *)this)(pSVar3,(pSVar3->klass->vtable).set_value.methodPtr);
+          SStack_4.m_value = (float)fVar5;
+          value = mscorlib.dll::System::Single::Single_ToString(&SStack_4,(MethodInfo *)0x0);
+          if (pIVar6 != (InputField *)0x0) {
             UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                      (pIVar8,value,(MethodInfo *)0x0);
+                      (pIVar6,value,(MethodInfo *)0x0);
             pSVar3 = (pSVar1->fields).slider;
             if (pSVar3 != (Slider *)0x0) {
-              pIVar9 = (pSVar3->klass->vtable).set_value.methodPtr;
               this = (SkillSettingFloatDecimal *)(pSVar3->klass->vtable).get_value.method;
-              fVar6 = (float10)(*(code *)this)();
-              fStack_10 = (float)fVar6;
-              uVar11 = func_?(TypeInfo__System__Single,&fStack_10,pSVar3,pIVar9);
+              fVar5 = (float10)(*(code *)this)(pSVar3,(pSVar3->klass->vtable).set_value.methodPtr);
+              fStack_7 = (float)fVar5;
+              uVar8 = func_?(TypeInfo__System__Single,&fStack_7);
               (*(code *)(pSVar1->klass->vtable).UpdateSkillData.method)
-                        (pSVar1,uVar11,(pSVar1->klass->vtable).InitializeInfoButton.methodPtr);
+                        (pSVar1,uVar8,(pSVar1->klass->vtable).InitializeInfoButton.methodPtr);
               return;
             }
           }
@@ -209,8 +207,8 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Inp
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -229,40 +227,40 @@ void Assembly-CSharp.dll::SkillSettingFloatDecimal::SkillSettingFloatDecimal_Sli
   func_?();
   pSVar2 = (this->fields).slider;
   if (pSVar2 != (Slider *)0x0) {
-    pMVar3 = (pSVar2->klass->vtable).get_value.method;
-    uStack_4 = (double)CONCAT44(pMVar3,(undefined4)uStack_4);
-    fVar5 = (float10)(*(code *)pMVar3)();
-    pSVar6 = pSVar2->klass;
-    uStack_4 = (double)(float)(fVar5 * (float10)(float)dVar1);
-    fVar5 = (float10)func_?(uStack_4,(pSVar6->vtable).SetValueWithoutNotify.methodPtr);
-    uStack_4 = (double)fVar5;
-    (*(code *)(pSVar6->vtable).set_value.method)(pSVar2,(float)fVar5 / (float)dVar1);
+    SStack_3.m_value = (float)(pSVar2->klass->vtable).get_value.method;
+    fVar4 = (float10)(*(code *)SStack_3.m_value)(pSVar2,(pSVar2->klass->vtable).set_value.methodPtr)
+    ;
+    fVar4 = (float10)func_?((double)(fVar4 * (float10)(float)dVar1));
+    SStack_3.m_value = (float)fVar4;
+    (*(code *)(pSVar2->klass->vtable).set_value.method)
+              (pSVar2,SStack_3.m_value / (float)dVar1,
+               (pSVar2->klass->vtable).SetValueWithoutNotify.methodPtr);
     pSVar2 = (this->fields).slider;
     this_00 = (this->fields).inputField;
     if (pSVar2 != (Slider *)0x0) {
-      fVar5 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)();
-      uStack_4 = (double)CONCAT44((float)fVar5,(undefined4)uStack_4);
-      value = mscorlib.dll::System::Single::Single_ToString
-                        ((Single *)((int)&uStack_4 + 4),(MethodInfo *)0x0);
+      fVar4 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)
+                                 (pSVar2,(pSVar2->klass->vtable).set_value.methodPtr);
+      SStack_3.m_value = (float)fVar4;
+      value = mscorlib.dll::System::Single::Single_ToString(&SStack_3,(MethodInfo *)0x0);
       if (this_00 != (InputField *)0x0) {
         UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
                   (this_00,value,(MethodInfo *)0x0);
         pSVar2 = (this->fields).slider;
         if (pSVar2 != (Slider *)0x0) {
-          pIVar7 = (pSVar2->klass->vtable).set_value.methodPtr;
-          fVar5 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)();
-          fStack_8 = (float)fVar5;
-          uVar9 = func_?(TypeInfo__System__Single,&fStack_8,pSVar2,pIVar7);
+          fVar4 = (float10)(*(code *)(pSVar2->klass->vtable).get_value.method)
+                                     (pSVar2,(pSVar2->klass->vtable).set_value.methodPtr);
+          fStack_5 = (float)fVar4;
+          uVar6 = func_?(TypeInfo__System__Single,&fStack_5);
           (*(code *)(this->klass->vtable).UpdateSkillData.method)
-                    (this,uVar9,(this->klass->vtable).InitializeInfoButton.methodPtr);
+                    (this,uVar6,(this->klass->vtable).InitializeInfoButton.methodPtr);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

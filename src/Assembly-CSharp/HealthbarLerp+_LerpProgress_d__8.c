@@ -83,9 +83,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar10 = (*pcVar9)();
-  return bVar10;
+  this = (HealthbarLerp_LerpProgress_d_8 *)CONCAT22(this._2_2_,in_CS);
+  bVar9 = func_?();
+  return bVar9;
 }
 
 

@@ -170,7 +170,7 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       bVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields->cryptoKey
       ;
     }
-    return (byte)(bVar1 ^ bVar3) == (byte)(obj.hiddenValue ^ bVar2);
+    return (byte)(bVar1 ^ bVar3) == (byte)(bVar2 ^ obj.hiddenValue);
   }
   return bVar1 == obj.hiddenValue;
 }

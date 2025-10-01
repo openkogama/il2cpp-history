@@ -70,9 +70,10 @@ code_?:
             pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
             if (pMVar4 != (MVLocalPlayer *)0x0) {
               pXVar5 = (pMVar4->fields).OnXPProgressData;
-              this_01 = (UnityAction_1_System_Object_ *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-              UnityAction_1_System_Object___ctor
+              this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+              UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+              VideoCapture+OnVideoCaptureResourceCreatedCallback::
+              VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
                         (this_01,(Object *)&UNK_?,
                          MethodInfo__LevelProgressAccessoryShop__OnXPUpdate_XPProgressData_,
                          (MethodInfo *)0x0);
@@ -179,9 +180,10 @@ code_?:
       pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
       if (pMVar2 != (MVLocalPlayer *)0x0) {
         pXVar3 = (pMVar2->fields).OnXPProgressData;
-        this_02 = (UnityAction_1_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-        UnityAction_1_System_Object___ctor
+        this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+        VideoCapture+OnVideoCaptureResourceCreatedCallback::
+        VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
                   (this_02,(Object *)&UNK_?,
                    MethodInfo__LevelProgressAccessoryShop__OnXPUpdate_XPProgressData_,
                    (MethodInfo *)0x0);
@@ -525,9 +527,10 @@ code_?:
             pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0);
             if (pMVar6 != (MVLocalPlayer *)0x0) {
               pXVar7 = (pMVar6->fields).OnXPProgressData;
-              this_00 = (UnityAction_1_System_Object_ *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-              UnityAction_1_System_Object___ctor
+              this_00 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+              UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+              VideoCapture+OnVideoCaptureResourceCreatedCallback::
+              VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
                         (this_00,(Object *)&UNK_?,
                          MethodInfo__LevelProgressAccessoryShop__OnXPUpdate_XPProgressData_,
                          (MethodInfo *)0x0);

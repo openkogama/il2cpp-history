@@ -5,8 +5,23 @@ void Assembly-CSharp.dll::GameMeterHandler::GameMeterHandler_Awake
                (GameMeterHandler *this,MethodInfo *method)
 
 {
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffffb8;
+  puVar5 = &stack0xffffffb8;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<GameMeterBase>__Dispose__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<GameMeterBase>__MoveNext__
+                   );
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<GameMeterBase>__get_Current__
+                   );
     func_?(&TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
     func_?(&TypeInfo__System__EventHandler<System::EventArgs>);
     func_?(&
@@ -19,110 +34,185 @@ void Assembly-CSharp.dll::GameMeterHandler::GameMeterHandler_Awake
                     MethodInfo__GameMeterHandler__OnGameStatUpdated_System__Object__OnCounterTypeChangedArgs_
                    );
     func_?(&MethodInfo__GameMeterHandler__UpdateValue__);
-    func_?(&MethodInfo__System__Collections__Generic__List<GameMeterBase>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<GameMeterBase>__get_Item_int_);
+    func_?(&MethodInfo__System__Collections__Generic__List<GameMeterBase>__GetEnumerator__)
+    ;
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
+    puVar5 = puStack_4;
   }
-  index = 0;
-  pLVar1 = (this->fields).gameMeters;
-  if (pLVar1 != (List_1_GameMeterBase_ *)0x0) {
-    while (index < (pLVar1->fields)._size) {
-      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).gameMeters;
-      if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar2,index,
-                             MethodInfo__System__Collections__Generic__List<GameMeterBase>__get_Item_int_
-                            ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0xe8))(RVar3,*(undefined4 *)(*(int *)RVar3 + 0xec));
-      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).gameMeters;
-      if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar2,index,
-                             MethodInfo__System__Collections__Generic__List<GameMeterBase>__get_Item_int_
-                            ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      (**(code **)(*(int *)RVar3 + 0x100))(RVar3,*(undefined4 *)(*(int *)RVar3 + 0x104));
-      pLVar1 = (this->fields).gameMeters;
-      index = index + 1;
-      if (pLVar1 == (List_1_GameMeterBase_ *)0x0) goto code_?;
+  puStack_4 = puVar5;
+  bStack_6 = 0;
+  LStack_7._list = (List_1_System_Object_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current = (Object *)0x0;
+  bStack_8 = 0;
+  bStack_9 = 0;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).gameMeters;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+             RegexCharClass+SingleRange]::
+             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                       (&LStack_11,this_00,
+                        MethodInfo__System__Collections__Generic__List<GameMeterBase>__GetEnumerator__
+                       );
+    unaff_ESI = (RegexCharClass_SingleRange)&LStack_7;
+    LStack_7._list = (List_1_System_Object_ *)pLVar10->_list;
+    LStack_7._index = pLVar10->_index;
+    LStack_7._version = pLVar10->_version;
+    LStack_7._current = *(Object **)&pLVar10->_current;
+    LStack_11._version = 0;
+    uStack_1 = 1;
+    LStack_11._current = unaff_ESI;
+    while( true ) {
+      bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_7,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<GameMeterBase>__MoveNext__
+                        );
+      pOVar13 = LStack_7._current;
+      if (bVar12 == 0) break;
+      if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
+      (**(code **)(*(int *)LStack_7._current + 0xe8))
+                (LStack_7._current,*(undefined4 *)(*(int *)LStack_7._current + 0xec));
+      if ((RegexCharClass_SingleRange)pOVar13 == (RegexCharClass_SingleRange)0x0)
+      goto code_?;
+      cVar14 = (**(code **)(*(int *)pOVar13 + 0x100))(pOVar13,*(undefined4 *)(*(int *)pOVar13 + 0x104));
+      if (cVar14 != '\0') {
+        iVar15 = func_?(4,pOVar13);
+        if ((iVar15 == 4) || (iVar15 == 10)) {
+          bStack_8 = 1;
+        }
+        else if ((iVar15 == 3) || (iVar15 == 8)) {
+          bStack_9 = 1;
+        }
+        else if ((((iVar15 == 6) || (iVar15 == 2)) || (iVar15 == 0)) || (iVar15 == 1)) {
+          bStack_6 = 1;
+        }
+      }
     }
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar4 != (MVNetworkGame *)0x0) {
-      pGVar5 = (pMVar4->fields).gameStatCounterManager;
-      pEVar6 = (EventHandler_1_Object_ *)
-               func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)unaff_ESI,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<GameMeterBase>__Dispose__
+               ,in_stack_16);
+    uStack_1 = 0xffffffff;
+    pGVar17 = (this->fields).collectiblesAndTimersSpacer;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pGVar17,(Object_1 *)0x0,(MethodInfo *)0x0);
+    unaff_ESI = (RegexCharClass_SingleRange)this;
+    if (bVar12 != 0) {
+      pGVar17 = (this->fields).collectiblesAndTimersSpacer;
+      if (pGVar17 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar17,bStack_9 & bStack_8,(MethodInfo *)0x0);
+    }
+    pGVar17 = (this->fields).timersAndWinConditionsSpacer;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pGVar17,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar12 != 0) {
+      pGVar17 = (this->fields).timersAndWinConditionsSpacer;
+      if (pGVar17 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar17,bStack_6 & bStack_9,(MethodInfo *)0x0);
+    }
+    pMVar18 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar18 != (MVNetworkGame *)0x0) {
+      pGVar19 = (pMVar18->fields).gameStatCounterManager;
+      LStack_11._current =
+           (RegexCharClass_SingleRange)
+           func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                (pEVar6,(Object *)this,
+                ((EventHandler_1_Object_ *)LStack_11._current,(Object *)this,
                  MethodInfo__GameMeterHandler__CounterChanged_System__Object__OnCounterTypeChangedArgs_
                  ,(MethodInfo *)0x0);
-      if (pGVar5 != (GameStatCounterManager *)0x0) {
+      if (pGVar19 != (GameStatCounterManager *)0x0) {
         MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_add_OnCounterTypeChanged
-                  (pGVar5,(EventHandler_1_OnCounterTypeChangedArgs_ *)pEVar6,(MethodInfo *)0x0);
-        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar4 != (MVNetworkGame *)0x0) {
-          pGVar5 = (pMVar4->fields).gameStatCounterManager;
-          pEVar6 = (EventHandler_1_Object_ *)
-                   func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
+                  (pGVar19,(EventHandler_1_OnCounterTypeChangedArgs_ *)LStack_11._current,
+                   (MethodInfo *)0x0);
+        pMVar18 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar18 != (MVNetworkGame *)0x0) {
+          pGVar19 = (pMVar18->fields).gameStatCounterManager;
+          LStack_11._current =
+               (RegexCharClass_SingleRange)
+               func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
           mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                    (pEVar6,(Object *)this,
+                    ((EventHandler_1_Object_ *)LStack_11._current,(Object *)this,
                      MethodInfo__GameMeterHandler__OnGameStatUpdated_System__Object__OnCounterTypeChangedArgs_
                      ,(MethodInfo *)0x0);
-          if (pGVar5 != (GameStatCounterManager *)0x0) {
+          if (pGVar19 != (GameStatCounterManager *)0x0) {
             MVWorldObject.dll::GameStatCounterManager::
             GameStatCounterManager_add_OnCounterTypeChanged
-                      (pGVar5,(EventHandler_1_OnCounterTypeChangedArgs_ *)pEVar6,(MethodInfo *)0x0);
-            pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (pMVar4 != (MVNetworkGame *)0x0) {
-              this_00 = (pMVar4->fields)._WinningConditionManager_k__BackingField;
-              pEVar6 = (EventHandler_1_Object_ *)
-                       func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+                      (pGVar19,(EventHandler_1_OnCounterTypeChangedArgs_ *)LStack_11._current,
+                       (MethodInfo *)0x0);
+            pMVar18 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if (pMVar18 != (MVNetworkGame *)0x0) {
+              this_01 = (pMVar18->fields)._WinningConditionManager_k__BackingField;
+              LStack_11._current =
+                   (RegexCharClass_SingleRange)
+                   func_?(TypeInfo__System__EventHandler<System::EventArgs>);
               mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                        (pEVar6,(Object *)this,
+                        ((EventHandler_1_Object_ *)LStack_11._current,(Object *)this,
                          MethodInfo__GameMeterHandler__ConditionCountChanged_System__Object__System__EventArgs_
                          ,(MethodInfo *)0x0);
-              if (this_00 != (WinningConditionManager *)0x0) {
+              if (this_01 != (WinningConditionManager *)0x0) {
                 MVWorldObject.dll::WinningConditionManager::
                 WinningConditionManager_add_OnWinningConditionAddedOrRemoved
-                          (this_00,(EventHandler_1_EventArgs_ *)pEVar6,(MethodInfo *)0x0);
-                pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar4 != (MVNetworkGame *)0x0) &&
-                   (pMVar7 = (pMVar4->fields).playerContainer, pMVar7 != (MVPlayerContainer *)0x0))
-                {
-                  pAVar8 = (pMVar7->fields).OnPlayerListChanged;
-                  this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-                  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                  NavMesh_OnNavMeshPreUpdate__ctor
-                            (this_01,(Object *)this,MethodInfo__GameMeterHandler__UpdateValue__,
-                             (MethodInfo *)0x0);
-                  pAVar8 = (Action *)
-                           mscorlib.dll::System::Delegate::Delegate_Combine
-                                     ((Delegate *)pAVar8,(Delegate *)this_01,(MethodInfo *)0x0);
-                  if (pAVar8 == (Action *)0x0) {
-                    (pMVar7->fields).OnPlayerListChanged = (Action *)0x0;
-                  }
-                  else {
-                    pAVar9 = (Action *)0x0;
-                    if (pAVar8->klass == TypeInfo__System__Action) {
-                      pAVar9 = pAVar8;
-                    }
-                    if (pAVar9 == (Action *)0x0) {
+                          (this_01,(EventHandler_1_EventArgs_ *)LStack_11._current,(MethodInfo *)0x0
+                          );
+                pMVar18 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if (pMVar18 != (MVNetworkGame *)0x0) {
+                  LStack_11._current = (RegexCharClass_SingleRange)(pMVar18->fields).playerContainer
+                  ;
+                  if (LStack_11._current != (RegexCharClass_SingleRange)0x0) {
+                    a = *(Delegate **)((int)LStack_11._current + 0x14);
+                    unaff_ESI = (RegexCharClass_SingleRange)
+                                func_?(TypeInfo__System__Action);
+                    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                    NavMesh_OnNavMeshPreUpdate__ctor
+                              ((NavMesh_OnNavMeshPreUpdate *)unaff_ESI,(Object *)this,
+                               MethodInfo__GameMeterHandler__UpdateValue__,(MethodInfo *)0x0);
+                    LStack_7._version =
+                         (int32_t)mscorlib.dll::System::Delegate::Delegate_Combine
+                                            (a,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+                    LStack_7._current = (Object *)0x0;
+                    if ((Delegate *)LStack_7._version == (Delegate *)0x0) {
+                      *(MonitorData **)((int)LStack_11._current + 0x14) = (MonitorData *)0x0;
+code_?:
+                      LStack_7._version = (int)LStack_11._current + 0x14;
+                      LStack_7._index = (int32_t)&UNK_?;
                       func_?();
+                      *unaff_FS_OFFSET = uStack_3;
+                      return;
+                    }
+                    if ((Action__Class *)((Delegate *)LStack_7._version)->klass ==
+                        TypeInfo__System__Action) {
+                      LStack_7._current = (Object *)LStack_7._version;
+                    }
+                    if ((Delegate *)LStack_7._current != (Delegate *)0x0) {
+                      *(Object **)((int)LStack_11._current + 0x14) = LStack_7._current;
+                      LStack_7._current = (Object *)(Delegate *)0x0;
+                      if ((Action__Class *)((Delegate *)LStack_7._version)->klass ==
+                          TypeInfo__System__Action) {
+                        LStack_7._current = (Object *)LStack_7._version;
+                      }
+                      unaff_ESI = (RegexCharClass_SingleRange)TypeInfo__System__Action;
+                      if ((Delegate *)LStack_7._current != (Delegate *)0x0) goto code_?;
                       goto code_?;
                     }
-                    (pMVar7->fields).OnPlayerListChanged = pAVar9;
-                    pAVar9 = (Action *)0x0;
-                    if (pAVar8->klass == TypeInfo__System__Action) {
-                      pAVar9 = pAVar8;
-                    }
-                    if (pAVar9 == (Action *)0x0) goto code_?;
+                    LStack_7._current = (Object *)TypeInfo__System__Action;
+                    LStack_7._index = (int32_t)&UNK_?;
+                    func_?();
                   }
-                  func_?();
-                  return;
                 }
               }
             }
@@ -132,11 +222,14 @@ void Assembly-CSharp.dll::GameMeterHandler::GameMeterHandler_Awake
     }
   }
 code_?:
-  func_?();
+  uVar20 = func_?();
+  LStack_7._version = func_?(uVar20);
 code_?:
+  LStack_7._index = (int32_t)&UNK_?;
+  LStack_7._current = (Object *)unaff_ESI;
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

@@ -1326,18 +1326,15 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetupCulling
              ,(MethodInfo *)0x0);
   pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
                      ((Delegate *)pUVar1,(Delegate *)pUVar2,(MethodInfo *)0x0);
-  pAVar4 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
-           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+  pUVar4 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
   ;
   if (pDVar3 == (Delegate *)0x0) {
     (this->fields)._._.PositionChanged =
          (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0;
   }
   else {
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
+    pUStack5 =
          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
     pUStack6 =
          (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)&UNK_?;
@@ -1346,21 +1343,17 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetupCulling
     if (pUVar1 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
     goto code_?;
     (this->fields)._._.PositionChanged = pUVar1;
-    pAVar4 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
-             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-    ;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
+    pUVar4 = 
+    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    pUStack5 =
          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
     pUStack6 =
          (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)&UNK_?;
     pDStack7 = pDVar3;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
-         func_?();
-    if (pAStack5 ==
-        (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0)
-    goto code_?;
+    pUStack5 =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
+    if (pUStack5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0
+       ) goto code_?;
   }
   pDStack7 = (Delegate *)&(this->fields)._._.PositionChanged;
   pUStack6 =
@@ -1377,18 +1370,17 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetupCulling
              ,(MethodInfo *)0x0);
   pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
                      ((Delegate *)pUVar8,(Delegate *)pUVar2,(MethodInfo *)0x0);
-  pAVar4 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
+  pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>
   ;
   if (pDVar3 == (Delegate *)0x0) {
     (this->fields)._._.RotationChanged =
          (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0;
   }
   else {
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
+    pUStack5 =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
     pUStack6 =
          (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)&UNK_?;
@@ -1397,21 +1389,19 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetupCulling
     if (pUVar8 == (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0)
     goto code_?;
     (this->fields)._._.RotationChanged = pUVar8;
-    pAVar4 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
+    pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
              TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>
     ;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
+    pUStack5 =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
     pUStack6 =
          (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)&UNK_?;
     pDStack7 = pDVar3;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
-         func_?();
-    if (pAStack5 ==
-        (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0)
-    goto code_?;
+    pUStack5 =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
+    if (pUStack5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0
+       ) goto code_?;
   }
   pDStack7 = (Delegate *)&(this->fields)._._.RotationChanged;
   pUStack6 =
@@ -1431,13 +1421,13 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetupCulling
              ,(MethodInfo *)0x0);
   pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
                      ((Delegate *)pAVar9,(Delegate *)this_01,(MethodInfo *)0x0);
-  pAVar4 = 
-  TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+  pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+           TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+  ;
   if (pDVar3 == (Delegate *)0x0) {
     (this->fields)._.ChunksChanged =
          (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0;
+    pUStack5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0;
 code_?:
     pDStack7 = (Delegate *)&(this->fields)._.ChunksChanged;
     pUStack6 =
@@ -1445,7 +1435,8 @@ code_?:
     func_?();
     return;
   }
-  pAStack5 =
+  pUStack5 =
+       (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
        TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
   pUStack6 =
        (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)&UNK_?;
@@ -1454,26 +1445,26 @@ code_?:
            func_?();
   if (pAVar9 != (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
     (this->fields)._.ChunksChanged = pAVar9;
-    pAVar4 = 
-    TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
-    pAStack5 =
+    pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+             TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+    ;
+    pUStack5 =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
          TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
     ;
     pUStack6 =
          (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)&UNK_?;
     pDStack7 = pDVar3;
-    pAStack5 =
-         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)
-         func_?();
-    if (pAStack5 !=
-        (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector___Class *)0x0)
-    goto code_?;
+    pUStack5 =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?();
+    if (pUStack5 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0
+       ) goto code_?;
   }
 code_?:
   pUStack6 =
        (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)&UNK_?;
   pDStack7 = pDVar3;
-  pAStack5 = pAVar4;
+  pUStack5 = pUVar4;
   func_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();

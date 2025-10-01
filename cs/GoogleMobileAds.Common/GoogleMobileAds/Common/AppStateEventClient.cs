@@ -35,6 +35,6 @@ namespace GoogleMobileAds.Common
 		// Methods
 		private void OnApplicationPause(bool isPaused);
 		[CompilerGenerated]
-		private static void _AppStateChanged_m__0(AppState param_00012824);
+		private static void _AppStateChanged_m__0(AppState param_00012827);
 	}
 }

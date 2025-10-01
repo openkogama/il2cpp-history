@@ -143,31 +143,53 @@ code_?:
       (this->fields).voxelPos.x = (short)uVar15;
       (this->fields).voxelPos.y = (short)((uint)uVar15 >> 0x10);
       (this->fields).voxelPos.z = iVar16;
-      VStack_8.z = (float)collisionState.scanAxis;
+      VStack_8.z = (float)&(this->fields).voxelPos;
       if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__IntVector);
       }
-      iVar17 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+      uVar4 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                          (&(this->fields).voxelPos,iVar14,(MethodInfo *)0x0);
+      pIStack_17 = (ICubeModelCollider *)(uint)uVar4;
+      pCVar18 = &collisionState;
+      pfVar19 = (float *)&stack0xffffff18;
+      for (iVar6 = 0x31; iVar6 != 0; iVar6 = iVar6 + -1) {
+        *pfVar19 = (pCVar18->localOrigin).x;
+        pCVar18 = (CollisionState *)&(pCVar18->localOrigin).y;
+        pfVar19 = pfVar19 + 1;
+      }
+      sVar20 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+                         (&collisionState.minBounds,iStack_21,(MethodInfo *)0x0);
+      iVar6 = 0x31;
+      pCVar18 = &collisionState;
+      pfVar19 = (float *)&stack0xffffff18;
+      while( true ) {
+        if (iVar6 == 0) break;
+        iVar6 = iVar6 + -1;
+        *pfVar19 = (pCVar18->localOrigin).x;
+        pCVar18 = (CollisionState *)&(pCVar18->localOrigin).y;
+        pfVar19 = pfVar19 + 1;
+      }
       iVar16 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                         (&collisionState.minBounds,collisionState.scanAxis,(MethodInfo *)0x0);
-      iVar18 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                         (&collisionState.maxBounds,collisionState.scanAxis,(MethodInfo *)0x0);
-      if ((iVar16 <= iVar17) && (iVar16 = iVar17, iVar18 < iVar17)) {
-        iVar16 = iVar18;
+                         (&collisionState.maxBounds,iStack_21,(MethodInfo *)0x0);
+      sVar22 = (short)pIStack_17;
+      if ((sVar20 <= sVar22) && (sVar20 = sVar22, iVar16 < sVar22)) {
+        sVar20 = iVar16;
       }
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-                (&(this->fields).voxelPos,(int32_t)VStack_8.z,iVar16,(MethodInfo *)0x0);
-      uStack_19 = (ulonglong)uVar20;
-      uStack_21 = (uint)uStack_21._2_2_ << 0x10;
+                ((IntVector *)VStack_8.z,iVar14,sVar20,(MethodInfo *)0x0);
+      auStack_23._4_4_ = 0;
+      uStack_24 = (uint)uStack_24._2_2_ << 0x10;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&fStack_22,(uint)(ushort)(this->fields).voxelPos.x,
+                ((IntVector *)(auStack_23 + 4),(uint)(ushort)(this->fields).voxelPos.x,
                  (uint)(ushort)(this->fields).voxelPos.y,(uint)(ushort)(this->fields).voxelPos.z,
                  (MethodInfo *)0x0);
+      auVar25 = auStack_23;
       pIVar1 = collisionState.cmb;
-      *(float *)&(this->fields).localChunkSpaceVoxelPos = fStack_22;
-      (this->fields).localChunkSpaceVoxelPos.z = (int16_t)uStack_21;
-      VStack_8.z = (float)collisionState.cmb;
+      (this->fields).localChunkSpaceVoxelPos.x = auStack_23._4_2_;
+      (this->fields).localChunkSpaceVoxelPos.y = auStack_23._6_2_;
+      (this->fields).localChunkSpaceVoxelPos.z = (int16_t)uStack_24;
+      pIStack_17 = collisionState.cmb;
+      auStack_23 = auVar25;
       if (collisionState.cmb != (ICubeModelCollider *)0x0) {
         pIVar2 = (collisionState.cmb)->klass;
         uVar4 = 0;
@@ -204,38 +226,37 @@ code_?:
         VStack_8.x = (this->fields).intersectRay.m_Direction.x;
         VStack_8.y = (this->fields).intersectRay.m_Direction.y;
         VStack_8.z = (this->fields).intersectRay.m_Direction.z;
-        uStack_19 = uStack_19 & 0xffffffff00000000;
         iVar14 = mscorlib.dll::System::Math::Math_Sign_2(VStack_8.z,(MethodInfo *)0x0);
         (this->fields).stepZ = iVar14;
         uVar15 = _UNK_?;
-        sVar23 = (this->fields).voxelPos.x;
         iVar6 = (this->fields).stepX;
-        sVar24 = (this->fields).voxelPos.z;
-        iVar25 = (this->fields).stepY;
-        sVar26 = (this->fields).voxelPos.y;
+        sVar20 = (this->fields).voxelPos.x;
+        sVar22 = (this->fields).voxelPos.z;
+        iVar26 = (this->fields).stepY;
+        sVar27 = (this->fields).voxelPos.y;
         (this->fields).tMax.x = (float)_UNK_?;
         (this->fields).tMax.y = (float)uVar15;
         (this->fields).tMax.z = INFINITY;
         fVar10 = _UNK_?;
-        uVar27 = (this->fields).intersectRay.m_Direction.x;
-        if ((float)uVar27 != 0.0) {
-          uVar28 = (this->fields).intersectRay.m_Origin.x;
-          uVar29 = (this->fields).intersectRay.m_Direction.x;
+        uVar28 = (this->fields).intersectRay.m_Direction.x;
+        if ((float)uVar28 != 0.0) {
+          uVar29 = (this->fields).intersectRay.m_Origin.x;
+          uVar30 = (this->fields).intersectRay.m_Direction.x;
           (this->fields).tMax.x =
-               ((float)(int)((int)sVar23 + (uint)(0 < iVar6)) - ((float)uVar28 + _UNK_?)) /
-               (float)uVar29;
+               ((float)(int)((int)sVar20 + (uint)(0 < iVar6)) - ((float)uVar29 + _UNK_?)) /
+               (float)uVar30;
         }
-        uVar30 = (this->fields).intersectRay.m_Direction.y;
-        if ((float)uVar30 != 0.0) {
-          uVar31 = (this->fields).intersectRay.m_Origin.y;
-          uVar32 = (this->fields).intersectRay.m_Direction.y;
+        uVar31 = (this->fields).intersectRay.m_Direction.y;
+        if ((float)uVar31 != 0.0) {
+          uVar32 = (this->fields).intersectRay.m_Origin.y;
+          uVar33 = (this->fields).intersectRay.m_Direction.y;
           (this->fields).tMax.y =
-               ((float)(int)((uint)(0 < iVar25) + (int)sVar26) - ((float)uVar31 + fVar10)) /
-               (float)uVar32;
+               ((float)(int)((uint)(0 < iVar26) + (int)sVar27) - ((float)uVar32 + fVar10)) /
+               (float)uVar33;
         }
         if ((this->fields).intersectRay.m_Direction.z != 0.0) {
           (this->fields).tMax.z =
-               ((float)(int)((uint)(0 < iVar14) + (int)sVar24) -
+               ((float)(int)((uint)(0 < iVar14) + (int)sVar22) -
                ((this->fields).intersectRay.m_Origin.z + fVar10)) /
                (this->fields).intersectRay.m_Direction.z;
         }
@@ -247,15 +268,15 @@ code_?:
         (this->fields).tDelta.x = (float)uVar15;
         (this->fields).tDelta.y = (float)uVar15;
         (this->fields).tDelta.z = INFINITY;
-        uVar33 = (this->fields).intersectRay.m_Direction.x;
-        if ((float)uVar33 != 0.0) {
-          uVar34 = (this->fields).intersectRay.m_Direction.x;
-          (this->fields).tDelta.x = (float)(this->fields).stepX / (float)uVar34;
+        uVar34 = (this->fields).intersectRay.m_Direction.x;
+        if ((float)uVar34 != 0.0) {
+          uVar35 = (this->fields).intersectRay.m_Direction.x;
+          (this->fields).tDelta.x = (float)(this->fields).stepX / (float)uVar35;
         }
-        uVar35 = (this->fields).intersectRay.m_Direction.y;
-        if ((float)uVar35 != 0.0) {
-          uVar36 = (this->fields).intersectRay.m_Direction.y;
-          (this->fields).tDelta.y = (float)(this->fields).stepY / (float)uVar36;
+        uVar36 = (this->fields).intersectRay.m_Direction.y;
+        if ((float)uVar36 != 0.0) {
+          uVar37 = (this->fields).intersectRay.m_Direction.y;
+          (this->fields).tDelta.y = (float)(this->fields).stepY / (float)uVar37;
         }
         if ((this->fields).intersectRay.m_Direction.z != 0.0) {
           (this->fields).tDelta.z =
@@ -266,8 +287,8 @@ code_?:
     }
   }
   func_?();
-  pcVar37 = (code *)swi(3);
-  (*pcVar37)();
+  pcVar38 = (code *)swi(3);
+  (*pcVar38)();
   return;
 }
 

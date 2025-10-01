@@ -19,6 +19,7 @@ public enum GameMeterType
 	Flag = 6,
 	Shield = 7,
 	TimeAttackFlag = 8,
-	XP = 9
+	XP = 9,
+	GamePoints = 10
 }
 

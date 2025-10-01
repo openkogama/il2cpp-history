@@ -30,7 +30,7 @@ public class GameMeterShield : GameMeterBase
 
 	// Methods
 	public override void Initialize();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
 	private void Update();
 	private void OnProgressUpdate(float newValue);

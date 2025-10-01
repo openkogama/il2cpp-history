@@ -116,41 +116,40 @@ code_?:
       if (pAVar4->vector[iVar5 + 1] == (AccessoryDataClient *)0x0) break;
       if (((pAVar4->vector[iVar5 + 1]->fields)._.lvl == 0) ||
          ((((this_00->fields).previewData)->vector[iVar5 + 1]->fields)._.cost != 0)) {
-        pAVar4 = (this_00->fields).previewData;
-        if (pAVar4 == (AccessoryDataClient__Array *)0x0) break;
-        if (pAVar4->max_length <= uVar6) goto code_?;
-        unaff_EBX = (pAVar4->vector[iVar5 + 1]->fields)._.cost;
+        pAVar7 = ((this_00->fields).previewData)->vector[iVar5 + 1];
+        if (pAVar7 == (AccessoryDataClient *)0x0) break;
+        iVar8 = (pAVar7->fields)._.cost;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
         }
-        pRVar7 = Styles::Styles_GetAccessoryColorsFromPrice(unaff_EBX,(MethodInfo *)0x0);
+        pRVar9 = Styles::Styles_GetAccessoryColorsFromPrice(iVar8,(MethodInfo *)0x0);
       }
       else {
         pAVar4 = (this_00->fields).previewData;
         if (pAVar4 == (AccessoryDataClient__Array *)0x0) break;
         if (pAVar4->max_length <= uVar6) goto code_?;
         if (pAVar4->vector[iVar5 + 1] == (AccessoryDataClient *)0x0) break;
-        unaff_EBX = (pAVar4->vector[iVar5 + 1]->fields)._.lvl;
+        iVar8 = (pAVar4->vector[iVar5 + 1]->fields)._.lvl;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
         }
-        pRVar7 = Styles::Styles_GetAccessoryColorsFromLevel(unaff_EBX,(MethodInfo *)0x0);
+        pRVar9 = Styles::Styles_GetAccessoryColorsFromLevel(iVar8,(MethodInfo *)0x0);
       }
-      if (pRVar7 != (RarityStylesDef *)0x0) {
-        fVar3 = (pRVar7->fields).backgroundColor.g;
-        fVar8 = (pRVar7->fields).backgroundColor.b;
-        fVar9 = (pRVar7->fields).backgroundColor.a;
-        (this_00->fields).targetColorBackground.r = (pRVar7->fields).backgroundColor.r;
+      if (pRVar9 != (RarityStylesDef *)0x0) {
+        fVar3 = (pRVar9->fields).backgroundColor.g;
+        fVar10 = (pRVar9->fields).backgroundColor.b;
+        fVar11 = (pRVar9->fields).backgroundColor.a;
+        (this_00->fields).targetColorBackground.r = (pRVar9->fields).backgroundColor.r;
         (this_00->fields).targetColorBackground.g = fVar3;
-        (this_00->fields).targetColorBackground.b = fVar8;
-        (this_00->fields).targetColorBackground.a = fVar9;
-        fVar3 = (pRVar7->fields).glowColor.g;
-        fVar8 = (pRVar7->fields).glowColor.b;
-        fVar9 = (pRVar7->fields).glowColor.a;
-        (this_00->fields).targetColorGlow.r = (pRVar7->fields).glowColor.r;
+        (this_00->fields).targetColorBackground.b = fVar10;
+        (this_00->fields).targetColorBackground.a = fVar11;
+        fVar3 = (pRVar9->fields).glowColor.g;
+        fVar10 = (pRVar9->fields).glowColor.b;
+        fVar11 = (pRVar9->fields).glowColor.a;
+        (this_00->fields).targetColorGlow.r = (pRVar9->fields).glowColor.r;
         (this_00->fields).targetColorGlow.g = fVar3;
-        (this_00->fields).targetColorGlow.b = fVar8;
-        (this_00->fields).targetColorGlow.a = fVar9;
+        (this_00->fields).targetColorGlow.b = fVar10;
+        (this_00->fields).targetColorGlow.a = fVar11;
         routine = PurchasedAccessoryPreviewer::PurchasedAccessoryPreviewer_DisplayAndFadeImages
                             (this_00,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
@@ -174,12 +173,10 @@ code_?:
   default:
     return 0;
   }
-  uVar10 = func_?();
-  puVar11 = (ushort *)(unaff_EBX + 0x10);
-  sVar12 = (uVar10 & 3) - (*puVar11 & 3);
-  *puVar11 = *puVar11 + (ushort)(0 < sVar12) * sVar12;
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 

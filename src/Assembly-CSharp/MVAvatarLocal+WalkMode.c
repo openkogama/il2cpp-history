@@ -502,11 +502,12 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_FixedUp
   pMVar1 = (this->fields)._.mvAvatar;
   if (((pMVar1 == (MVAvatarLocal *)0x0) ||
       (this_00 = (pMVar1->fields)._._._.gameObject, this_00 == (GameObject *)0x0)) ||
-     ((pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (this_00,(MethodInfo *)0x0), pTVar10 == (Transform *)0x0 ||
-      (pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           (&VStack_5,pTVar10,(MethodInfo *)0x0),
-      this_02 == (WaterPlaneManager *)0x0)))) goto code_?;
+     (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_00,(MethodInfo *)0x0), pTVar10 == (Transform *)0x0))
+  goto code_?;
+  pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                      (&VStack_5,pTVar10,(MethodInfo *)0x0);
+  if (this_02 == (WaterPlaneManager *)0x0) goto code_?;
   fVar15 = WaterPlaneManager::WaterPlaneManager_ComputeAvatarWaterProximity
                      (this_02,*pVVar14,(MethodInfo *)0x0);
   fVar16 = (this->fields).swimStartProximity;
@@ -1649,13 +1650,13 @@ void Assembly-CSharp.dll::MVAvatarLocal+WalkMode::MVAvatarLocal_WalkMode_HandleW
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
   pMVar2 = (this->fields)._.mvAvatar;
-  if ((((pMVar2 != (MVAvatarLocal *)0x0) &&
-       (this_00 = (pMVar2->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) &&
-      (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (this_00,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) &&
-     (pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xfffffff0,this_02,(MethodInfo *)0x0),
-     this_01 != (WaterPlaneManager *)0x0)) {
+  if (((pMVar2 != (MVAvatarLocal *)0x0) &&
+      (this_00 = (pMVar2->fields)._._._.gameObject, this_00 != (GameObject *)0x0)) &&
+     (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_00,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)&stack0xfffffff0,this_02,(MethodInfo *)0x0);
+    if (this_01 == (WaterPlaneManager *)0x0) goto code_?;
     pMVar4 = (MVAvatarLocal_WalkMode *)
              WaterPlaneManager::WaterPlaneManager_ComputeAvatarWaterProximity
                        (this_01,*pVVar3,(MethodInfo *)0x0);
@@ -1683,6 +1684,7 @@ code_?:
       return;
     }
   }
+code_?:
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();

@@ -8,8 +8,6 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
 {
   if (bytePacker == (BytePacker *)0x0) {
     func_?();
-    *(char *)(extraout_EDX + -0x3f) = *(char *)(extraout_EDX + -0x3f) + (char)((uint)unaff_EBX >> 8)
-    ;
     pcVar1 = (code *)swi(1);
     pRVar2 = (RuntimeEvent *)(*pcVar1)();
     return pRVar2;
@@ -127,6 +125,7 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   }
   if (bytePacker == (BytePacker *)0x0) {
 code_?:
+    func_?();
     func_?();
     pcVar4 = (code *)swi(1);
     pRVar5 = (RuntimeEvent *)(*pcVar4)();

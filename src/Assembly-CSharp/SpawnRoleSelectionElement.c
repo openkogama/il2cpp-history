@@ -105,7 +105,7 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionElement::
         pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                  Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                            ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                            &stack0xffffffa0,
+                            &stack0xffffffa4,
                             (Dictionary_2_System_UInt32_System_Object_ *)pKVar4[1].klass,
                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                            );
@@ -116,13 +116,13 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionElement::
                   Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                   Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
                             ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                             &stack0xffffffb8,
+                             &stack0xffffffbc,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
                             );
           if (bVar7 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&stack0xffffffb8,
+                      ((Object *)&stack0xffffffbc,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
                        ,(MethodInfo *)uVar6);
@@ -133,20 +133,19 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionElement::
           iVar8 = func_?();
           if ((iVar8 == 0) || (piVar9 = (int *)func_?(), piVar9 == (int *)0x0))
           goto code_?;
-          iVar8 = *piVar9;
           uVar10 = 0;
-          if (*(ushort *)(iVar8 + 0xb6) != 0) {
+          if (*(short *)(*piVar9 + 0xb6) != 0) {
             do {
-              if (*(IAttributeSetting__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar10 * 8) ==
+              if (*(IAttributeSetting__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                  ) {
                 puVar11 = (undefined4 *)
-                         (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) *
-                                  8);
+                         (*piVar9 +
+                         (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
                 goto code_?;
               }
               uVar10 = uVar10 + 1;
-            } while (uVar10 < *(ushort *)(iVar8 + 0xb6));
+            } while (uVar10 < *(ushort *)(*piVar9 + 0xb6));
           }
           puVar11 = (undefined4 *)func_?();
 code_?:
@@ -209,7 +208,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionElement::SpawnRoleSelectionElement_C
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xd2,(MethodInfo *)0x0);
+                  (pGVar1,0x52,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {

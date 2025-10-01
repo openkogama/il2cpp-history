@@ -43,7 +43,7 @@ bool Assembly-CSharp.dll::RotateOrientationWarning+<RotationAnimationCoroutine>d
         fStack_4 = fVar5;
       }
       pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)this_00,(MethodInfo *)0x0);
+                         ((Component *)this_00,(MethodInfo *)0x0);
       auVar7._4_8_ = 0;
       auVar7._0_4_ = ((fVar3 - fVar1) * fStack_4 + fVar1) * _UNK_?;
       pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
@@ -67,7 +67,7 @@ bool Assembly-CSharp.dll::RotateOrientationWarning+<RotationAnimationCoroutine>d
     if (this_00 != (RotateOrientationWarning *)0x0) {
       if ((this_00->fields).targetFadeTime < (this->fields)._fadeTime_5__3) {
         pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this_00,(MethodInfo *)0x0);
+                           ((Component *)this_00,(MethodInfo *)0x0);
         auVar9._4_8_ = 0;
         auVar9._0_4_ = (this_00->fields).startRotationAngle * _UNK_?;
         pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
@@ -104,21 +104,21 @@ code_?:
           pIVar10 = (this_00->fields).image;
           if (pIVar10 != (Image *)0x0) {
             puVar11 = (undefined4 *)
-                      (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
+                     (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
             pIVar12 = (this_00->fields).image;
             uVar13 = *puVar11;
             if (pIVar12 != (Image *)0x0) {
               iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)
-                                 (&stack0xffffffb0,pIVar12,
-                                  (pIVar12->klass->vtable).set_color.methodPtr);
+                                (&stack0xffffffb0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr
+                                );
               pIVar12 = (this_00->fields).image;
               fVar1 = *(float *)(iVar14 + 4);
               if (pIVar12 != (Image *)0x0) {
                 iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)
-                                   (&stack0xffffffa0,pIVar12,
-                                    (pIVar12->klass->vtable).set_color.methodPtr);
-                func_?(0x17,pIVar10,uVar13,fVar1,*(undefined4 *)(iVar14 + 8),fStack_4 + 0.0
-                               );
+                                  (&stack0xffffffa0,pIVar12,
+                                   (pIVar12->klass->vtable).set_color.methodPtr);
+                func_?(0x17,pIVar10,uVar13,fVar1,*(undefined4 *)(iVar14 + 8),fStack_4 + 0.0)
+                ;
                 (this->fields).__2__current = (Object *)0x0;
                 func_?(&(this->fields).__2__current,0);
                 (this->fields).__1__state = 4;
@@ -143,19 +143,18 @@ code_?:
         pIVar10 = (this_00->fields).image;
         if (pIVar10 != (Image *)0x0) {
           puVar11 = (undefined4 *)
-                    (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
+                   (*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
           pIVar12 = (this_00->fields).image;
           uVar13 = *puVar11;
           if (pIVar12 != (Image *)0x0) {
             iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)
-                               (&stack0xffffffb0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr)
-            ;
+                              (&stack0xffffffb0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr);
             pIVar12 = (this_00->fields).image;
             uVar15 = *(undefined4 *)(iVar14 + 4);
             if (pIVar12 != (Image *)0x0) {
               iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)
-                                 (&stack0xffffffb0,pIVar12,
-                                  (pIVar12->klass->vtable).set_color.methodPtr);
+                                (&stack0xffffffb0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr
+                                );
               func_?(0x17,pIVar10,uVar13,uVar15,*(undefined4 *)(iVar14 + 8),
                               fStack_4 * _UNK_? + _UNK_?);
               (this->fields).__2__current = (Object *)0x0;
@@ -176,13 +175,11 @@ code_?:
     return 0;
   }
   func_?();
-  pbVar16 = (byte *)(extraout_ECX + 0x10);
-  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
-  pbVar16 = (byte *)(extraout_ECX + 0x10);
-  *pbVar16 = *pbVar16 << 1 | (char)*pbVar16 < '\0';
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  *(char *)&this->klass =
+       *(char *)&this->klass + (char)((uint)&stack0xfffffffc >> 8) + (extraout_AH < extraout_DH);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 }
 
 

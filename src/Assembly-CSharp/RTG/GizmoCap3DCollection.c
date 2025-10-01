@@ -132,47 +132,31 @@ void Assembly-CSharp.dll::RTG::GizmoCap3DCollection::GizmoCap3DCollection_ApplyZ
           func_?();
           cRam_? = '\x01';
         }
-        if (*(int *)((int)pOVar10 + 0x50) == 0) {
-          iVar11 = *(int *)((int)pOVar10 + 0x4c);
-          if (iVar11 == 0) goto code_?;
-        }
-        else {
-          iVar11 = *(int *)((int)pOVar10 + 0x50);
-        }
+        iVar11 = *(int *)((int)pOVar10 + (uint)(*(int *)((int)pOVar10 + 0x50) != 0) * 4 + 0x4c);
+        if (iVar11 == 0) goto code_?;
       } while (*(char *)(iVar11 + 0x18) == '\0');
       iVar11 = *(int *)((int)pOVar10 + 0x40);
-      if (*(int *)((int)pOVar10 + 0x50) == 0) {
-        iVar12 = *(int *)((int)pOVar10 + 0x4c);
-        if (iVar12 == 0) goto code_?;
-      }
-      else {
-        iVar12 = *(int *)((int)pOVar10 + 0x50);
-      }
+      iVar12 = *(int *)((int)pOVar10 + (uint)(*(int *)((int)pOVar10 + 0x50) != 0) * 4 + 0x4c);
+      if ((iVar12 == 0) || (uVar13 = *(uint *)(iVar12 + 8), iVar11 == 0)) goto code_?;
+      if (*(uint *)(iVar11 + 0xc) <= uVar13) break;
+      iStack_14 = *(int *)(iVar11 + 0x10 + uVar13 * 4);
+      iVar11 = *(int *)((int)pOVar10 + (uint)(*(int *)((int)pOVar10 + 0x50) != 0) * 4 + 0x4c);
       if (iVar11 == 0) goto code_?;
-      if (*(uint *)(iVar11 + 0xc) <= *(uint *)(iVar12 + 8)) break;
-      iStack_13 = *(int *)(iVar11 + 0x10 + *(uint *)(iVar12 + 8) * 4);
-      if (*(int *)((int)pOVar10 + 0x50) == 0) {
-        iVar11 = *(int *)((int)pOVar10 + 0x4c);
-        if (iVar11 == 0) goto code_?;
-      }
-      else {
-        iVar11 = *(int *)((int)pOVar10 + 0x50);
-      }
-      fVar14 = _UNK_?;
+      fVar15 = _UNK_?;
       if (*(char *)(iVar11 + 0x18) != '\0') {
         if (*(GizmoHandle **)((int)pOVar10 + 0xc) == (GizmoHandle *)0x0) goto code_?;
-        fVar14 = GizmoHandle::GizmoHandle_GetZoomFactor
+        fVar15 = GizmoHandle::GizmoHandle_GetZoomFactor
                           (*(GizmoHandle **)((int)pOVar10 + 0xc),camera,(MethodInfo *)0x0);
       }
-      if (iStack_13 == 0) goto code_?;
-      func_?(1,TypeInfo__RTG__IGizmoCap3DController,iStack_13,fVar14);
+      if (iStack_14 == 0) goto code_?;
+      func_?(1,TypeInfo__RTG__IGizmoCap3DController,iStack_14,fVar15);
     }
     func_?();
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

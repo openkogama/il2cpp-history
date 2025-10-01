@@ -57,7 +57,7 @@ bool MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_Equals_1
       uVar3 = 0;
       pBVar2 = (this->fields).faceMaterials;
       while( true ) {
-        if ((int)((this->fields).faceMaterials)->max_length <= (int)uVar3) {
+        if ((int)pBVar2->max_length <= (int)uVar3) {
           return 1;
         }
         if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) break;
@@ -88,25 +88,24 @@ MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
     switch(faceFlag & 0xff) {
     case FaceFlags__Enum_Top:
     case FaceFlags__Enum_Bottom|FaceFlags__Enum_Top:
-      goto code_?;
+      return Face__Enum_Top;
     case FaceFlags__Enum_Bottom:
       return Face__Enum_Bottom;
     case FaceFlags__Enum_Front:
       return Face__Enum_Front;
-    default:
-      FVar1 = Face__Enum_Top;
-      if ((undefined1)faceFlag == FaceFlags__Enum_Back) {
-        FVar1 = Face__Enum_Back;
-      }
-      return FVar1;
     }
+    FVar1 = Face__Enum_Top;
+    if ((undefined1)faceFlag == FaceFlags__Enum_Back) {
+      FVar1 = Face__Enum_Back;
+    }
+    return FVar1;
   }
   if ((undefined1)faceFlag != FaceFlags__Enum_Left) {
-    if ((undefined1)faceFlag != FaceFlags__Enum_Right) {
-code_?:
-      return Face__Enum_Top;
+    FVar1 = Face__Enum_Top;
+    if ((undefined1)faceFlag == FaceFlags__Enum_Right) {
+      FVar1 = Face__Enum_Right;
     }
-    return Face__Enum_Right;
+    return FVar1;
   }
   return Face__Enum_Left;
 }
@@ -230,8 +229,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar1 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar4 = *corners;
+    pVVar1 = *faceVertices;
     break;
   case Face__Enum_Front:
     pVVar1 = *faceVertices;
@@ -246,8 +245,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar1 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar4 = *corners;
+    pVVar1 = *faceVertices;
     break;
   case Face__Enum_Back:
     pVVar1 = *faceVertices;
@@ -262,8 +261,8 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar1 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar4 = *corners;
+    pVVar1 = *faceVertices;
     break;
   case Face__Enum_Left:
     pVVar1 = *faceVertices;
@@ -280,7 +279,7 @@ joined_?:
     if ((pVVar4 == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar1 = *faceVertices;
     if (*corners == (Vector3__Array *)0x0) goto code_?;
     goto code_?;
   case Face__Enum_Right:
@@ -296,36 +295,25 @@ joined_?:
     if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar1 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar4 = *corners;
+    pVVar1 = *faceVertices;
     break;
   default:
     goto code_?;
   }
-  if (pVVar1 != (Vector3__Array *)0x0) {
+  if (pVVar4 != (Vector3__Array *)0x0) {
 code_?:
     func_?();
-    bVar5 = (Vector3__Array *)faceVertices != (Vector3__Array *)0x0;
-    faceVertices = (Vector3__Array **)0x0;
-    if (bVar5) {
+    if (pVVar1 != (Vector3__Array *)0x0) {
       func_?(3,uStack_2,uStack_3);
 code_?:
       return;
     }
   }
 code_?:
-  cVar6 = '\0';
-  uVar7 = func_?();
-  uVar8 = (undefined2)((uint6)uVar7 >> 0x20);
-  out(uVar8,(int)uVar7);
-  *(char *)&((Vector3__Array *)((int)faceVertices + 0x7310ef00))->vector[0xc].x =
-       *(char *)&((Vector3__Array *)((int)faceVertices + 0x7310ef00))->vector[0xc].x +
-       (char)((uint6)uVar7 >> 8) + cVar6;
-  out(uVar8,uRam_?);
-  uRam_? = (undefined1)uRam_?;
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -439,7 +427,7 @@ code_?:
       if (iVar1 == 0) goto code_?;
       if (*(uint *)(iVar1 + 0xc) <= uVar3) goto code_?;
       uVar6 = pBVar4->vector[uVar3];
-      *(bool *)(iVar1 + 0x10 + uVar3) = uVar5 != uVar6;
+      *(bool *)(uVar3 + 0x10 + iVar1) = uVar5 != uVar6;
       if (*(uint *)(iVar1 + 0xc) <= uVar3) goto code_?;
       iVar7 = iStack_2 + 1;
       if (uVar5 == uVar6) {
@@ -972,7 +960,7 @@ bool MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
       uVar3 = 0;
       pBVar2 = (a->fields).faceMaterials;
       while( true ) {
-        if ((int)((a->fields).faceMaterials)->max_length <= (int)uVar3) {
+        if ((int)pBVar2->max_length <= (int)uVar3) {
           return 1;
         }
         if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) break;

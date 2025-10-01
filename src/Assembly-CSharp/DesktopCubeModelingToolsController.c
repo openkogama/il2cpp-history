@@ -169,6 +169,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void SetButtonTransparency(CubeModelingEvent) */
 
 void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
@@ -177,74 +179,55 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
                MethodInfo *method)
 
 {
-  puVar1 = (undefined4 *)&stack0xfffffffc;
-  puStackY_28 = &UNK_?;
   DesktopCubeModelingToolsController_SetAllToTransparent(this,(MethodInfo *)0x0);
   switch(cubeTool) {
   case CubeModelingEvent__Enum_EditCubes:
-    this_00 = (this->fields).editCube;
+    this_01 = (this->fields).editCube;
     break;
   case CubeModelingEvent__Enum_DeleteCubes:
-    this_00 = (this->fields).deletecube;
+    this_01 = (this->fields).deletecube;
     break;
   case CubeModelingEvent__Enum_PaintCubes:
-    this_00 = (this->fields).paintCube;
+    this_01 = (this->fields).paintCube;
     break;
   default:
     goto code_?;
   case CubeModelingEvent__Enum_ColorPicker:
-    this_00 = (this->fields).pickCubeColor;
+    this_01 = (this->fields).pickCubeColor;
   }
-  if (this_00 != (Button *)0x0) {
-    pIVar2 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                       ((Selectable *)this_00,(MethodInfo *)0x0);
-    fStack_3 = (this->fields).enabledAlpha;
-    if (pIVar2 != (Image *)0x0) {
-      apIStack_4[1] = (pIVar2->klass->vtable).set_color.methodPtr;
-      iVar5 = (*(code *)(pIVar2->klass->vtable).get_color.method)();
-      apIStack_4[1] = *(Il2CppMethodPointer *)(iVar5 + 4);
-      apIStack_4[2] = *(Il2CppMethodPointer *)(iVar5 + 8);
-      puStackY_28 = &UNK_?;
-      (*(code *)(pIVar2->klass->vtable).set_color.method)();
+  if (this_01 != (Button *)0x0) {
+    pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                       ((Selectable *)this_01,(MethodInfo *)0x0);
+    pIVar2 = (Image *)(this->fields).enabledAlpha;
+    if (pIVar1 != (Image *)0x0) {
+      pIStack_3 = pIVar1;
+      puVar4 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_3);
+      pIStack_3 = pIVar2;
+      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar4,puVar4[1],puVar4[2]);
 code_?:
       return;
     }
   }
-  apIStack_4[1] = (Il2CppMethodPointer)&UNK_?;
+  uVar5 = func_?();
+  if ((GameObject *)(uVar5 | 1) != (GameObject *)0x0) {
+    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                      ((GameObject *)(uVar5 | 1),in_stack_7);
+    if (bVar6 != 0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      this_00 = (this->fields).cubeModelingStateMachine;
+      value = (Object *)func_?();
+      if (this_00 == (CubeModelingStateMachine *)0x0) goto code_?;
+      FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
+    }
+    return;
+  }
+code_?:
   func_?();
-  puStackY_88 = apIStack_4 + 1;
-  puVar6 = apIStack_4 + 1;
-  apuStackY_10c4[1] = apIStack_4 + 1;
-  puVar7 = apIStack_4 + 1;
-  cVar8 = '\x1d';
-  do {
-    puVar1 = puVar1 + -1;
-    puVar6 = puVar6 + -1;
-    *puVar6 = *puVar1;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  puStackY_10cc = apuStackY_10c4 + 1;
-  puVar1 = apuStackY_10c4 + 1;
-  apuStackY_2108[1] = apuStackY_10c4 + 1;
-  puVar6 = apuStackY_10c4 + 1;
-  cVar8 = '\x02';
-  do {
-    puVar7 = puVar7 + -1;
-    puVar1 = puVar1 + -1;
-    *puVar1 = *puVar7;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  ppuVar9 = apuStackY_2108 + 1;
-  cVar8 = '\x12';
-  do {
-    puVar6 = puVar6 + -1;
-    ppuVar9 = ppuVar9 + -1;
-    *ppuVar9 = (undefined4 *)*puVar6;
-    cVar8 = cVar8 + -1;
-  } while ('\0' < cVar8);
-  pcVar10 = (code *)swi(3);
-  apIStack_4[1] = (Il2CppMethodPointer)&stack0xfffffffc;
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

@@ -341,9 +341,9 @@ bool Assembly-CSharp.dll::WorldEditorDrawPlane::WorldEditorDrawPlane_GetCubePosO
             uVar10 = pVVar6->x;
             uVar11 = pVVar6->y;
             fVar2 = (float)(int)((uint)(_UNK_? < VStack_7.y) * 2 + -1);
-            VStack_7.z = fVar2 * pVVar6->z * _UNK_? + (float)puStack_9;
-            vector.y = fVar2 * (float)uVar11 * _UNK_? + uStack_8._4_4_;
-            vector.x = fVar2 * (float)uVar10 * _UNK_? + (float)uStack_8;
+            VStack_7.z = (float)puStack_9 + fVar2 * pVVar6->z * _UNK_?;
+            vector.y = uStack_8._4_4_ + fVar2 * (float)uVar11 * _UNK_?;
+            vector.x = (float)uStack_8 + fVar2 * (float)uVar10 * _UNK_?;
             vector.z = VStack_7.z;
             pVVar6 = MathFunctions::MathFunctions_RoundVector
                                ((Vector3 *)&stack0xffffffb8,vector,0,(MethodInfo *)0x0);

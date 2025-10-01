@@ -11,8 +11,8 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionSkillMenu::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
+  puStack_4 = &stack0xffffff98;
+  puVar5 = &stack0xffffff98;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
@@ -89,42 +89,48 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionSkillMenu::
                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                              );
       if (iVar14 == 0) goto code_?;
+      pKStack_15 = (KogamaSettingsCollectionBase__Class *)
+                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+      ;
       subSettingData =
            (KogamaSettingsCollectionBase *)
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-      ;
-      piStack_15 = (int *)func_?(pOVar6,
-                                          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                         );
-      if (piStack_15 == (int *)0x0) goto code_?;
-      iVar14 = *piStack_15;
+           func_?(pOVar6,
+                           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                          );
+      if (subSettingData == (KogamaSettingsCollectionBase *)0x0) goto code_?;
+      pKStack_15 = subSettingData->klass;
       uVar16 = 0;
       uStack_17 = 0;
-      uVar18 = *(ushort *)(iVar14 + 0xb6);
-      uStack_19 = (uint)uVar18;
-      if (uVar18 != 0) {
+      sVar18._0_1_ = (pKStack_15->_1).rank;
+      sVar18._1_1_ = (pKStack_15->_1).minimumAlignment;
+      if (sVar18 != 0) {
         do {
-          if (*(IAttributeSetting__Class **)(*(int *)(iVar14 + 0x58) + (uint)uVar16 * 8) ==
+          if (pKStack_15->interfaceOffsets[uVar16].interfaceType ==
+              (Il2CppClass *)
               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
              ) {
-            puVar20 = (undefined4 *)
-                     (iVar14 + (*(int *)(*(int *)(iVar14 + 0x58) + 4 + (uint)uVar16 * 8) + 0x18) * 8);
+            ppMVar19 = &(&(subSettingData->klass->vtable).Equals)
+                       [subSettingData->klass->interfaceOffsets[uVar16].offset].method;
             goto code_?;
           }
           uVar16 = uVar16 + 1;
-        } while (uVar16 < uVar18);
+          uVar20._0_1_ = (subSettingData->klass->_1).rank;
+          uVar20._1_1_ = (subSettingData->klass->_1).minimumAlignment;
+        } while (uVar16 < uVar20);
       }
-      puVar20 = (undefined4 *)
-               func_?(piStack_15,
-                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                               ,0);
+      ppMVar19 = (MethodInfo **)
+                func_?(subSettingData,
+                                TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                ,0);
 code_?:
-      iVar14 = (*(code *)*puVar20)(piStack_15,puVar20[1]);
+      iVar14 = (*(code *)*ppMVar19)(subSettingData,ppMVar19[1]);
       pOVar6 = (Object *)((int)&pOStack_8->klass + iVar14);
       pOStack_8 = pOVar6;
     }
   }
   func_?();
+code_?:
+  func_?(pOVar6,pKStack_15);
 code_?:
   uVar21 = func_?(pOVar6,subSettingData);
   func_?(uVar21);
@@ -159,7 +165,7 @@ void Assembly-CSharp.dll::SpawnRoleSelectionSkillMenu::SpawnRoleSelectionSkillMe
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xa2,(MethodInfo *)0x0);
+                  (pGVar1,0x22,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
