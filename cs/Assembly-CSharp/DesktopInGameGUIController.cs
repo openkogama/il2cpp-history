@@ -16,7 +16,7 @@ public class DesktopInGameGUIController : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Transform GameMetersTransform;
+	private Transform levelBadgeParentTransform;
 	[SerializeField]
 	private ShowUse3D use3DPrefab;
 	[SerializeField]

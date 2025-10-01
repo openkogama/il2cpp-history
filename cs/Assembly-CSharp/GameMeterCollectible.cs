@@ -30,7 +30,7 @@ public class GameMeterCollectible : GameMeterBase
 	public override void Initialize();
 	private void OnVictoryConditionMet(object sender, EventArgs args);
 	private void OnDestroy();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	public override void UpdateValue();
 	private void Hide();
 	private void Show();

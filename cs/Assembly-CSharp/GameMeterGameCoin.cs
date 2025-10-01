@@ -32,13 +32,11 @@ public class GameMeterGameCoin : GameMeterBase
 
 	// Methods
 	public override void Initialize();
-	public override void SetGameMeterVisibility();
+	public override bool SetGameMeterVisibility();
 	private void OnGameCoinAmountChanged(int amount);
 	private void OnDestroy();
 	public void OnActivationChange(bool wantToShow);
 	public override void UpdateValue();
 	public override void SetShowGameMeter(bool show);
-	private void Show();
-	private void Hide();
 }
 

@@ -19,7 +19,7 @@ internal sealed class _PrivateImplementationDetails_
 	internal static readonly __StaticArrayInitTypeSize_512 _4666F65F06B4D88A8B0A0B9B14E88555CB0664EC0219F1C8B5315FD000218E28;
 
 	// Nested types
-	private struct __StaticArrayInitTypeSize_512
+	internal struct __StaticArrayInitTypeSize_512
 	{
 	}
 }

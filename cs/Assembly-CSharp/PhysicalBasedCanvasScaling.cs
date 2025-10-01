@@ -12,8 +12,8 @@ using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent(typeof(CanvasScaler))]
 [RequireComponent(typeof(Canvas))]
+[RequireComponent(typeof(CanvasScaler))]
 public class PhysicalBasedCanvasScaling : MonoBehaviour
 {
 	// Fields
